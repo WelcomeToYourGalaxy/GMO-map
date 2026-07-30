@@ -1,0 +1,626 @@
+{
+ "USA": {
+  "name": "United States",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "USDA APHIS — Biotechnology Regulatory Services",
+    "url": "https://www.aphis.usda.gov/biotechnology",
+    "desc": "The federal office that authorises the environmental release, import and interstate movement of regulated engineered organisms, and that decides which organisms fall outside regulation altogether. CAN: find permits and notifications by applicant, organism and phenotype; read the regulatory-status determinations that exempt an organism from oversight. CAN'T: cover organisms already exempted — by definition they generate no record. FOR: this is the front door for any US release, and the exemption determinations are where the largest silent gap in the whole US picture is created.",
+    "tags": [
+     "projects:nepa",
+     "projects:trackers",
+     "environment:eia"
+    ]
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "FDA — biotechnology consultations & animal biotech",
+    "url": "https://www.fda.gov/food/food-new-plant-varieties/consultation-programs-food-new-plant-varieties",
+    "desc": "The voluntary pre-market consultation record for foods from new plant varieties, plus the separate approval route for intentional genomic alterations in animals. CAN: see which developers consulted, on what, and what the agency concluded. CAN'T: prove safety — the consultation is voluntary and rests on the developer's own submitted data. FOR: the word 'voluntary' is doing enormous work in the US system, and this page is where you can demonstrate that in writing.",
+    "tags": [
+     "environment:eia",
+     "environment:health",
+     "records:publications"
+    ]
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "EPA — plant-incorporated protectants & biopesticides",
+    "url": "https://www.epa.gov/regulation-biotechnology-under-tsca-and-fifra",
+    "desc": "Where an engineered plant produces its own pesticide, EPA regulates that pesticide — registration documents, risk assessments and resistance-management conditions. CAN: get the pesticidal-trait assessment and the conditions attached to it, including insect-resistance management obligations growers must follow. CAN'T: address the plant itself, only the substance it makes. FOR: resistance-management failures are documented, enforceable conditions — a rare hard hook in a soft regulatory system.",
+    "tags": [
+     "environment:epa",
+     "environment:pollution",
+     "environment:eia"
+    ]
+   },
+   {
+    "kind": "institution",
+    "voice": "interpretive",
+    "skind": "ngo",
+    "type": "institutional",
+    "trust": "high",
+    "name": "Center for Food Safety",
+    "url": "https://www.centerforfoodsafety.org/",
+    "desc": "US legal and policy organisation that has litigated repeatedly against approvals and deregulation decisions, and publishes the underlying analysis. CAN: find case histories, legal filings, and plain-language breakdowns of what a given approval actually permits. CAN'T: act as a neutral record — it is an advocacy litigator, and reads as one. FOR: if a US approval has been challenged in court, the challenge is very likely documented here first.",
+    "tags": [
+     "advocacy:watchdog",
+     "courts:federal",
+     "organizing:legal"
+    ]
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "stats",
+    "type": "records-data",
+    "trust": "record",
+    "name": "USDA ERS — adoption of genetically engineered crops",
+    "url": "https://www.ers.usda.gov/data-products/adoption-of-genetically-engineered-crops-in-the-u-s",
+    "desc": "The official time series of GE crop adoption by trait, crop and state. CAN: establish, with a government citation, how much of a given crop in a given state is engineered — the baseline for any coexistence or contamination argument. CAN'T: tell you about any specific field. FOR: when you need one number a regulator cannot dispute, it comes from here.",
+    "tags": [
+     "environment:pollution",
+     "projects:trackers",
+     "advocacy:data"
+    ]
+   }
+  ]
+ },
+ "BRA": {
+  "name": "Brazil",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "CTNBio — Comissão Técnica Nacional de Biossegurança",
+    "url": "https://ctnbio.mctic.gov.br/",
+    "desc": "Brazil's national biosafety commission: technical opinions, commercial-release decisions and the register of approved events. Brazil is one of three countries holding the large majority of the world's GM crop land, so decisions here carry weight far beyond Brazil. CAN: read the technical opinion behind each release, including dissenting positions where they were recorded. CAN'T: give field locations. FOR: the dissents and conditions in a CTNBio opinion are frequently the most quotable material in the whole file.",
+    "tags": [
+     "projects:nepa",
+     "projects:trackers",
+     "environment:eia",
+     "records:publications"
+    ]
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "IBAMA — environmental licensing & enforcement",
+    "url": "https://www.gov.br/ibama/",
+    "desc": "The federal environmental agency: licensing, inspection and the sanctions register. CAN: check whether an applicant carries environmental infractions, and follow licensing where a release touches a licensed activity. CAN'T: substitute for CTNBio on the biosafety decision itself. FOR: an applicant's environmental enforcement history is admissible context in a biosafety objection, and it is public.",
+    "tags": [
+     "environment:epa",
+     "environment:pollution",
+     "courts:federal"
+    ]
+   }
+  ]
+ },
+ "ARG": {
+  "name": "Argentina",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Biotecnología agropecuaria — CONABIA / Ministerio de Agricultura",
+    "url": "https://www.argentina.gob.ar/agricultura/alimentos-y-bioeconomia/biotecnologia",
+    "desc": "Argentina's agricultural biotechnology authority, including the CONABIA advisory commission: authorisations for release, the register of approved events, and the rules for confined trials. Argentina is the third of the three countries holding most GM crop land. CAN: find what has been authorised and under what conditions. CAN'T: provide trial coordinates. FOR: Argentina approves quickly and publishes tersely — read the conditions closely, because that is where the substance is.",
+    "tags": [
+     "projects:nepa",
+     "projects:trackers",
+     "environment:eia"
+    ]
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "SENASA — national agri-food health & quality service",
+    "url": "https://www.argentina.gob.ar/senasa",
+    "desc": "Plant and animal health authority, including seed and product controls. CAN: reach the inspection and certification side of the system, and the registers that govern what may move. CAN'T: rule on biosafety. FOR: seed movement and certification records are the practical route to showing where an authorised event has physically travelled.",
+    "tags": [
+     "environment:testing",
+     "financial:property",
+     "projects:local"
+    ]
+   }
+  ]
+ },
+ "CAN": {
+  "name": "Canada",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "CFIA — plants with novel traits & confined field trials",
+    "url": "https://inspection.canada.ca/en/plant-varieties/plants-novel-traits",
+    "desc": "Canada regulates by trait novelty rather than by technique, which produces a distinctive record: confined research field trials, unconfined release decisions, and the decision documents behind them. CAN: find confined-trial authorisations by applicant, trait and growing season, plus the reasoning for each unconfined release. CAN'T: capture organisms judged not novel — the Canadian equivalent of the exemption gap. FOR: the 'novelty' test is the argument in Canada, and this is where it is applied on the record.",
+    "tags": [
+     "projects:nepa",
+     "projects:trackers",
+     "environment:eia"
+    ]
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Health Canada — novel foods",
+    "url": "https://www.canada.ca/en/health-canada/services/food-nutrition/genetically-modified-foods-other-novel-foods.html",
+    "desc": "Pre-market assessment decisions for novel foods, including those derived from engineering. CAN: read the decision summary for each approved food. CAN'T: give you the underlying data, which is held as confidential business information. FOR: the gap between the published summary and the withheld data is the FOI target.",
+    "tags": [
+     "environment:health",
+     "environment:eia",
+     "records:foia"
+    ]
+   },
+   {
+    "kind": "institution",
+    "voice": "interpretive",
+    "skind": "ngo",
+    "type": "institutional",
+    "trust": "high",
+    "name": "Canadian Biotechnology Action Network (CBAN)",
+    "url": "https://cban.ca/",
+    "desc": "The national network coordinating research and campaigning on genetic engineering in food and farming, and the closest thing Canada has to a standing public record on the subject. CAN: get contamination case histories, corporate-control analysis, regulatory critiques and current campaign fronts. CAN'T: act as an official record. FOR: CBAN keeps the institutional memory that regulators do not — including incidents that have otherwise disappeared from public view.",
+    "tags": [
+     "advocacy:watchdog",
+     "advocacy:data",
+     "organizing:help"
+    ]
+   }
+  ]
+ },
+ "AUS": {
+  "name": "Australia",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "OGTR — Office of the Gene Technology Regulator",
+    "url": "https://www.ogtr.gov.au/",
+    "desc": "The strongest release register in the world. Every dealing involving intentional release (DIR) and not involving release (DNIR) is licensed and published, each with a full Risk Assessment and Risk Management Plan, and — uniquely — the locations of active crop field-trial sites are published too. CAN: get licence, assessment, conditions and, for active crop trials, where they physically are. CAN'T: cover exempt dealings, which are not listed. FOR: use Australia as the benchmark when arguing that another country's register is inadequate — it proves full publication is possible.",
+    "tags": [
+     "projects:nepa",
+     "projects:trackers",
+     "projects:local",
+     "environment:eia"
+    ]
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "OGTR — GMO Record",
+    "url": "https://www.ogtr.gov.au/what-weve-approved/gmo-record",
+    "desc": "The searchable record of every approved dealing and every GM product notified by other regulators. CAN: confirm, with a citable identifier, that a given organism is or is not currently authorised in Australia. CAN'T: show applications still under assessment — those sit in the consultation stream. FOR: the identifier here cross-walks to the OECD unique identifier and from there to every other country's decision.",
+    "tags": [
+     "projects:trackers",
+     "environment:eia",
+     "records:publications"
+    ]
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "FSANZ — Food Standards Australia New Zealand",
+    "url": "https://www.foodstandards.gov.au/consumer/gmfood",
+    "desc": "The binational food regulator: pre-market approvals for GM food, the approved-food list, and public submission rounds on each application. CAN: file a submission on a live application — the windows are real and are answered on the record. CAN'T: address environmental release, which is OGTR's job in Australia and the EPA's in New Zealand. FOR: the submission rounds are one of the few genuinely open comment processes in this subject anywhere.",
+    "tags": [
+     "environment:health",
+     "records:calendars",
+     "projects:nepa"
+    ]
+   }
+  ]
+ },
+ "NZL": {
+  "name": "New Zealand",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "EPA New Zealand — new organisms",
+    "url": "https://www.epa.govt.nz/industry-areas/new-organisms/",
+    "desc": "Applications and decisions on new organisms, covering containment, field test and release, with full published decision reasoning. CAN: read the decision-making committee's reasoning in unusual detail, including how it weighed cultural and Treaty considerations. CAN'T: cover food approvals, which run through FSANZ. FOR: New Zealand's decisions are among the best-reasoned public documents in this field, and are useful as persuasive material well outside New Zealand.",
+    "tags": [
+     "projects:nepa",
+     "projects:trackers",
+     "environment:eia",
+     "environment:cultural"
+    ]
+   },
+   {
+    "kind": "institution",
+    "voice": "interpretive",
+    "skind": "ngo",
+    "type": "institutional",
+    "trust": "high",
+    "name": "GE-Free New Zealand",
+    "url": "https://www.gefree.org.nz/",
+    "desc": "Long-running national campaign network on genetic engineering, with a detailed memory of past applications, trials and contamination incidents in New Zealand. CAN: find case history and the local organising picture. CAN'T: act as an official record. FOR: New Zealand's regulatory record is strong but its campaign history is where the practical lessons are kept.",
+    "tags": [
+     "advocacy:watchdog",
+     "organizing:help",
+     "conserve:protect"
+    ]
+   }
+  ]
+ },
+ "IND": {
+  "name": "India",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Ministry of Environment, Forest & Climate Change — GEAC",
+    "url": "https://moef.gov.in/",
+    "desc": "The Genetic Engineering Appraisal Committee sits under this ministry and approves confined field trials and commercial releases, publishing its decisions as meeting minutes rather than as a database. CAN: read what was approved, for whom, in which states and seasons — if you are willing to work through minutes. CAN'T: query it like a register; there is no structured endpoint, which is why India's releases are hard to map. FOR: India is where the gap between a real public record and a usable public record is clearest.",
+    "tags": [
+     "projects:nepa",
+     "projects:trackers",
+     "records:publications",
+     "environment:eia"
+    ]
+   },
+   {
+    "kind": "institution",
+    "voice": "interpretive",
+    "skind": "ngo",
+    "type": "institutional",
+    "trust": "high",
+    "name": "Coalition for a GM-Free India",
+    "url": "https://indiagminfo.org/",
+    "desc": "The national coalition tracking approvals, trials and litigation, and the main aggregator of documents obtained under India's Right to Information Act. CAN: get RTI-obtained material that is not published anywhere official, plus trial locations reconstructed from minutes. CAN'T: substitute for the official file. FOR: in India the campaign record is frequently more complete than the government's own published record, because of sustained RTI work.",
+    "tags": [
+     "advocacy:watchdog",
+     "advocacy:data",
+     "records:foia",
+     "organizing:help"
+    ]
+   }
+  ]
+ },
+ "MEX": {
+  "name": "Mexico",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "CIBIOGEM — Comisión Intersecretarial de Bioseguridad de los OGM",
+    "url": "https://www.conahcyt.mx/cibiogem/",
+    "desc": "Mexico's inter-ministerial biosafety commission, holding the national register of permits for experimental, pilot and commercial release. CAN: find permit applications and decisions, and the biosafety framework governing them. CAN'T: resolve the contested politics around native maize on its own. FOR: Mexico is a centre of origin for maize, which makes every release decision here a decision about an irreplaceable global reservoir — the highest-stakes register on this map.",
+    "tags": [
+     "projects:nepa",
+     "projects:trackers",
+     "environment:species",
+     "conserve:protect"
+    ]
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "SENASICA — plant health & agri-food safety",
+    "url": "https://www.gob.mx/senasica",
+    "desc": "Plant-health authority handling inspection, seed movement and phytosanitary control. CAN: reach the enforcement and movement-control side. CAN'T: rule on biosafety. FOR: how material physically moves is the practical question in a centre-of-origin contamination argument.",
+    "tags": [
+     "environment:testing",
+     "projects:local"
+    ]
+   }
+  ]
+ },
+ "DEU": {
+  "name": "Germany",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "BVL — Bundesamt für Verbraucherschutz und Lebensmittelsicherheit",
+    "url": "https://www.bvl.bund.de/EN/Home/home_node.html",
+    "desc": "The German competent authority for genetic engineering, including the location register of deliberate-release sites and the register of genetic-engineering facilities. CAN: find where releases have been notified, at a level of geographic detail most countries do not publish. CAN'T: decide EU-wide authorisations, which run through the Commission and EFSA. FOR: Germany's site register is one of the few in Europe that will actually put a release on a map.",
+    "tags": [
+     "projects:nepa",
+     "projects:local",
+     "projects:trackers",
+     "environment:eia"
+    ]
+   },
+   {
+    "kind": "institution",
+    "voice": "interpretive",
+    "skind": "research",
+    "type": "institutional",
+    "trust": "high",
+    "name": "Testbiotech",
+    "url": "https://www.testbiotech.org/en",
+    "desc": "Independent institute that systematically re-reads EFSA and national risk assessments and publishes point-by-point critiques, in English and German. CAN: get a technical, citable critique of the exact dossier you are objecting to — often the fastest route to the specific weakness in an assessment. CAN'T: act as an official record. FOR: if you need one expert source to strengthen a submission on an EU application, start here.",
+    "tags": [
+     "environment:eia",
+     "advocacy:watchdog",
+     "organizing:experts"
+    ]
+   }
+  ]
+ },
+ "GBR": {
+  "name": "United Kingdom",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "ACRE — Advisory Committee on Releases to the Environment",
+    "url": "https://www.gov.uk/government/groups/advisory-committee-on-releases-to-the-environment",
+    "desc": "The statutory advisory committee on releasing genetically modified and other novel organisms, with published advice and meeting papers. CAN: read the advice given to ministers on specific applications, and the reasoning behind it. CAN'T: capture organisms moved outside the GMO regime by precision-breeding legislation — an actively widening gap in England. FOR: the committee's own minuted uncertainties are the most useful material in the file.",
+    "tags": [
+     "projects:nepa",
+     "environment:eia",
+     "people:professional"
+    ]
+   },
+   {
+    "kind": "institution",
+    "voice": "interpretive",
+    "skind": "ngo",
+    "type": "institutional",
+    "trust": "high",
+    "name": "GM Freeze",
+    "url": "https://www.gmfreeze.org/",
+    "desc": "UK campaign coalition on genetic engineering in food and farming, tracking applications, trials and legislative change. CAN: find the current UK regulatory fight in plain language, and who else is in it. CAN'T: act as an official record. FOR: the UK's regime is changing quickly, and the campaign trackers are usually ahead of the government's own explanatory material.",
+    "tags": [
+     "advocacy:watchdog",
+     "organizing:help",
+     "conserve:protect"
+    ]
+   }
+  ]
+ },
+ "FRA": {
+  "name": "France",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "ANSES — Agence nationale de sécurité sanitaire",
+    "url": "https://www.anses.fr/en",
+    "desc": "The national agency carrying out risk assessment on genetically modified organisms for food, feed and environmental release, publishing its opinions in full. CAN: read detailed French assessments, which frequently diverge from EFSA's and are cited across Europe when they do. CAN'T: make the authorisation decision. FOR: a divergence between two competent authorities on the same dossier is one of the strongest things you can put in front of a decision-maker.",
+    "tags": [
+     "environment:eia",
+     "environment:health",
+     "records:publications"
+    ]
+   }
+  ]
+ },
+ "AUT": {
+  "name": "Austria",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Federal Ministry — gene technology & biosafety",
+    "url": "https://www.bmgesundheit.gv.at/",
+    "desc": "Austria has been among the most restrictive EU member states on GM cultivation and has repeatedly invoked national safeguard measures. CAN: reach the national framework and the reasoning behind Austrian restrictions. CAN'T: be assumed current — Austrian ministries have been reorganised more than once, so confirm the responsible department before citing. FOR: Austria's safeguard reasoning is the standing template for a member state refusing a cultivation approval.",
+    "tags": [
+     "conserve:protect",
+     "projects:nepa",
+     "environment:eia"
+    ]
+   }
+  ]
+ },
+ "ZAF": {
+  "name": "South Africa",
+  "trackers": [
+   {
+    "kind": "institution",
+    "voice": "interpretive",
+    "skind": "research",
+    "type": "institutional",
+    "trust": "high",
+    "name": "African Centre for Biodiversity",
+    "url": "https://acbio.org.za/",
+    "desc": "The leading independent research and advocacy organisation on genetic engineering, seed law and corporate concentration across the African continent, with a deep archive of objections, appeals and analyses. CAN: get country-by-country analysis of biosafety law, seed law and specific approvals across Africa — material that exists nowhere else in consolidated form. CAN'T: act as an official record. FOR: for most of the continent this is the single most useful starting point on this map.",
+    "tags": [
+     "advocacy:watchdog",
+     "advocacy:data",
+     "spending:patents",
+     "conserve:recognize"
+    ]
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Department of Agriculture — GMO Act registrar",
+    "url": "https://www.dalrrd.gov.za/",
+    "desc": "South Africa's competent authority under its GMO Act: permits for trial and commercial release, and the public objection process attached to them. CAN: file an objection to a permit application, which South African law provides for explicitly. CAN'T: be relied on for a clean machine-readable register. FOR: South Africa is the largest GM cultivator on the continent, and its objection right is real and used.",
+    "tags": [
+     "projects:nepa",
+     "projects:trackers",
+     "records:calendars"
+    ]
+   }
+  ]
+ },
+ "KEN": {
+  "name": "Kenya",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "National Biosafety Authority",
+    "url": "https://www.biosafetykenya.go.ke/",
+    "desc": "Kenya's competent authority: applications and approvals for contained use, confined field trials and environmental release, plus the public-participation notices that accompany them. CAN: find live applications and the consultation notices attached to them. CAN'T: settle the contested legal status of Kenya's import position, which has moved through the courts. FOR: Kenya is a bellwether for the region — what is approved here tends to shape neighbouring frameworks.",
+    "tags": [
+     "projects:nepa",
+     "projects:trackers",
+     "records:calendars",
+     "environment:eia"
+    ]
+   }
+  ]
+ },
+ "NGA": {
+  "name": "Nigeria",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "National Biosafety Management Agency (NBMA)",
+    "url": "https://nbma.gov.ng/",
+    "desc": "Nigeria's competent authority for permits covering contained use, confined trials and commercial release, with public notices of applications received. CAN: see applications and permits, and the notice periods attached to them. CAN'T: be assumed complete — publication has been uneven. FOR: Nigeria has approved releases faster than most of the region, and the notice periods are short, so monitoring matters more than usual here.",
+    "tags": [
+     "projects:nepa",
+     "projects:trackers",
+     "records:calendars"
+    ]
+   }
+  ]
+ },
+ "PHL": {
+  "name": "Philippines",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Bureau of Plant Industry — biotech applications",
+    "url": "https://biotech.da.gov.ph/",
+    "desc": "The Philippine biotechnology approval process for field trials, propagation and direct use, including the public-notice stage that Philippine rules require. CAN: find applications at notice stage, when objection is still possible. CAN'T: be treated as stable — the Philippine framework has been rewritten following litigation. FOR: the Philippines is where a national court has actually halted approvals on procedural grounds, which makes its record unusually instructive.",
+    "tags": [
+     "projects:nepa",
+     "projects:trackers",
+     "courts:federal",
+     "records:calendars"
+    ]
+   },
+   {
+    "kind": "institution",
+    "voice": "interpretive",
+    "skind": "ngo",
+    "type": "institutional",
+    "trust": "high",
+    "name": "MASIPAG",
+    "url": "https://masipag.org/",
+    "desc": "Farmer-led network of scientists and smallholders running farmer-managed seed banks and participatory breeding as a direct alternative to proprietary seed. CAN: reach a working, decades-old model of farmer seed sovereignty, and the people running it. CAN'T: act as a regulatory record. FOR: the defensive half of this map — keeping an unmodified line alive in farmers' hands — has few better working examples anywhere.",
+    "tags": [
+     "conserve:acquire",
+     "conserve:recognize",
+     "organizing:help"
+    ]
+   }
+  ]
+ },
+ "JPN": {
+  "name": "Japan",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Japan Biosafety Clearing House (J-BCH)",
+    "url": "https://www.biodic.go.jp/bch/english/e_index.html",
+    "desc": "Japan's national biosafety clearing house: approvals under the Cartagena Act for Type 1 (environmental) and Type 2 (contained) use, in Japanese and English. CAN: find approved organisms and the ministry that approved them. CAN'T: cover food approvals, which run separately through the food-safety system. FOR: Japan approves a very large number of events for import while cultivating almost none — a useful demonstration that approval and cultivation are separable policy choices.",
+    "tags": [
+     "projects:nepa",
+     "projects:trackers",
+     "environment:eia"
+    ]
+   }
+  ]
+ },
+ "NOR": {
+  "name": "Norway",
+  "trackers": [
+   {
+    "kind": "institution",
+    "voice": "interpretive",
+    "skind": "research",
+    "type": "institutional",
+    "trust": "high",
+    "name": "Bioteknologirådet — Norwegian Biotechnology Advisory Board",
+    "url": "https://www.bioteknologiradet.no/english/",
+    "desc": "Independent public advisory body on biotechnology, publishing in English, whose remit explicitly includes ethical and social consequences alongside safety. CAN: get reasoned public assessments that address sustainability, benefit to society and ethics — criteria Norway's Gene Technology Act uniquely requires and most regimes exclude. CAN'T: authorise anything. FOR: when you want to argue that a regulator should be weighing more than molecular risk, Norway is the precedent that it can be done in law.",
+    "tags": [
+     "environment:eia",
+     "people:professional",
+     "advocacy:watchdog"
+    ]
+   }
+  ]
+ }
+}
