@@ -27,7 +27,9 @@ GMO-map/
 ├─ legmap_sub.json             optional subnational resources
 ├─ overlays/                   context overlay polygons — see overlays/README.md
 ├─ harvest/
-│   └─ wire_harvest.py         RSS harvester → wire.json
+│   ├─ wire_harvest.py         RSS harvester → wire.json
+│   ├─ bch_focal_points.py     CBD focal-point list → trackerdata stubs
+│   └─ check_links.py          link rot + staleness report
 ├─ .github/workflows/
 │   └─ wire.yml                runs the harvester every 6h and commits
 ├─ <country>.md / .pdf         optional per-country guides, ROOT level
@@ -105,12 +107,41 @@ a feed outage can't truncate it, dedupes on link, and keeps 120 days.
 python3 harvest/wire_harvest.py     # stdlib only, no dependencies
 ```
 
+`harvest/bch_focal_points.py` parses the CBD Secretariat's official BCH national
+focal point list (`cbd.int/doc/lists/bch-fp.pdf`, 189 countries) into per-country
+trackerdata stubs. It needs `pypdf`. It deliberately keeps only the institution
+name and the institution's published website — the source PDF also carries named
+officials, direct e-mail addresses and phone numbers, and the script asserts none
+of that survives into its output. The stubs are a review queue: a human writes
+the CAN / CAN'T / FOR description before anything is merged.
+
+Note that bch.cbd.int itself is a JavaScript application and returns nothing to a
+fetcher, which is why the PDF is the route.
+
 The release harvesters are specified but not written. Start with **OGTR** — it
 is the only register on Earth that publishes field-trial *site* locations, so it
 is the only feed that yields solid dots rather than dashed rings on day one.
 The full manifest is in `BUILD-NOTES.md`.
 
 ---
+
+## Keeping it true
+
+Every entry carries a `checked` date, and the map shows it under each entry:
+plain grey under a year, amber over a year, rust over two with "re-verify before
+relying on it". This exists because 300+ hand-written entries go stale quietly —
+registers move, agencies reorganise, and nothing about a stale entry looks wrong.
+
+```bash
+python3 harvest/check_links.py               # check every URL, report rot
+python3 harvest/check_links.py --stale-only  # no network, just verification ages
+python3 harvest/check_links.py --update-dates  # stamp today on entries that resolved
+```
+
+`--update-dates` is the weaker check and the tool says so: a URL resolving is not
+the same as an entry being accurate. A ministry can be reorganised without its
+domain moving. Treat the date as "this link worked", and re-read the description
+when the amber turns up.
 
 ## Honest gaps, carried into the UI
 

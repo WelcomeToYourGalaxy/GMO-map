@@ -321,3 +321,811 @@ against a simple anti-GMO frame — dengue control and forest restoration — si
 those are the strongest test of the map's framing, and it survives them: what is
 opposed is a release architecture with no recall, no consent and no independent
 monitoring, whatever the stated purpose.
+
+---
+
+## Round 7 changes
+
+**Framing corrected.** The wire opened "A release is any moment an engineered
+organism leaves containment", which frames the organism as a thing that
+inherently ought to be contained. That is not the argument. It now opens on the
+transaction: *every engineered organism outside a laboratory is there because
+somebody applied for permission and somebody granted it — that is the subject of
+this map; not the organism, the permission.*
+
+**Wire prose rewritten in form rather than in wording.** The previous draft
+tracked the unearthings piece sentence by sentence. Measured against the sample:
+**zero shared runs of 25 characters or more.** What is carried across is the
+shape — a definition, then the process walked in order, with the criticism
+inside the same sentence as the mechanism.
+
+The "world map of the paper trail" paragraph moved out of the help panel and
+into the wire, where it now closes the sequence. The help panel points at it
+instead of repeating it.
+
+Applied: "Then nothing ends" and "Permanence without a decision…" deleted; the
+"no review date, no expiry, no recall" sentence moved ahead of the patent
+paragraph; the ownership passage cut to two sentences.
+
+**Wire region filter — three separate faults, all fixed.**
+
+1. `_wireGeoTag()` was **defined and never called anywhere in the file**, so no
+   item ever received an `iso` or a `region`. Every bucket read 0. Now applied
+   at all three load paths via `_wireTagAll()`.
+2. The country list was built from `Object.keys(trackerData)` — 18 countries in
+   the seed, so most of the world was absent from the dropdown. Now built from
+   the full ISO table (102 nameable countries) unioned with `SUBGEO`,
+   `trackerData` and whatever the wire actually carries.
+3. Subregion names came only from `trackerData[iso].sub`, which the seed has
+   none of — so no subregion could be listed *or* matched. Now also drawn from
+   the embedded `SUBGEO` geometry: USA 52, JPN 46, IND 34, BRA 27, AUS 11.
+
+A fourth fault surfaced while testing: the country tagger only matched headlines
+that literally led with "Country:" or "Country —", so "Brazil approves new GM
+maize…" tagged as nothing. It now falls back to scanning the headline for any
+country name, longest first. Title only, never the snippet — body text
+name-drops far too many countries to tag on. Test feed went from 3/6 to 7/8
+country-tagged and 3/6 to 4/8 subregion-tagged, with the untagged item correctly
+untagged (a company story with no country in it).
+
+**Vivid blues darkened.** A second colour pass pulls blues in the 190–250° band
+with lightness 0.48–0.80 and saturation ≥0.38 down to 62% lightness. Text-weight
+blues above 0.80 are untouched so popup copy stays legible. One vivid blue
+survives by design: the cyan pinned for the GMO-free-zones overlay.
+
+---
+
+## Round 8 changes
+
+**Retitled** to *Live Global Genetic Frontlines Map* (`<title>` and `h1`).
+
+**Tour cut from 14 slides to 9.** The five context slides are gone from the
+popup; what was worth keeping is condensed into the wire panel as running prose.
+The tour is now the worked example and nothing else: the situation, seven steps,
+and the summary card.
+
+**The compounding claim was wrong and is corrected.** "Each tool makes the next
+one cheaper and faster to build" describes industry in general, not this. The
+distinctive property is the product, not the tooling: shut a refinery and the
+emissions stop, but an organism does not need the company to keep operating — it
+reproduces, crosses with its relatives, and travels. The decision is made once;
+what it authorises goes on repeating itself.
+
+**Show, don't tell.** "Irreversibility is what makes that indefensible rather
+than merely unwise" asserted a conclusion and carried no weight. It is replaced
+by the Oregon record: a grass engineered to survive glyphosate got out of its
+test plots, the source fields were taken out of production, a mitigation
+programme was run, and three years later 62 of 585 plants pulled and tested were
+still resistant, with the published conclusion that eradication was not
+realistic — from a grass that was never sold, escaping the trials meant to
+establish whether it was safe to sell.
+
+The abstract landrace/patent list is likewise replaced with the Mexican maize
+finding stated concretely: the reservoir every future maize variety is bred
+from, held for generations by people who licensed nothing and were asked
+nothing, with no procedure for taking it back out and no agency with a mandate
+to try.
+
+The basics fold now ends the same way — a beekeeper can send a jar of honey to a
+laboratory and get back a dated result naming the construct in it for the price
+of a week's groceries, but cannot be in the room where the trial upwind was
+approved. Checking has become cheap; deciding has not moved.
+
+**Deletions applied** (all verified at zero): the flourish disclaimer, "the
+distance between those two curves", "inherently wicked", "who decides, on what
+evidence", "Irreversibility is what makes…", "not the organism. The machine
+around it", "quietly lowers the cost of causing it", "a screening option, a
+health metric", "usually means supermarket food", "the microscope, not the
+tools", and "Now the practical part…".
+
+**Added:** assisted reproduction is now flagged in the wire as "not technically
+genetic modification, but a kind of genetic engineering nonetheless".
+
+---
+
+## Round 9 changes
+
+- Both wire folds ("The evidence, condensed" and "New to this? The basics")
+  deleted with their text. Wire panel is now the lead prose only, 988 words.
+- Tour button relabelled **"A worked example"**. Note: the round-4 relabel had
+  silently failed — the source uses `&mdash;`, and the replacement targeted
+  `\u2014`, so it never matched and was never verified. Now checked in output.
+- Help opener: pointer sentence to the wire panel removed.
+- Language filter shows full names via `Intl.DisplayNames`, with a ~70-entry
+  static map as fallback. Values stay as codes so filtering is unaffected.
+- Selected-pill fill changed from `var(--accent)` / `#081657` to `#24548c` with
+  `#eaf1ff` text and a `#3a6fae` border, on `.chip.on`, `.ps-pill.on` and
+  `.pt-pill.on`. Applied after the colour passes so it survives them.
+- `_wireBuildRegionOptions` now calls `_wireTagAll(items)` before counting, so
+  items are tagged whichever path they arrived by.
+
+### Correction to the round-7 wire diagnosis
+
+Round 7 claimed `_wireGeoTag()` was never called. That was wrong: line 1795
+already had `items = items.map(_wireGeoTag)`. The grep that produced the claim
+searched for `_wireGeoTag(` and missed the reference passed without parentheses.
+The other two faults found in round 7 (country list drawn from `trackerData`,
+subregion names drawn only from `trackerData[iso].sub`) were real and are fixed.
+
+---
+
+## Round 10 changes
+
+Global Wire panel cut to the two closing paragraphs only — **988 words down to
+137.** Everything else in the lead is gone: the permission framing, the
+stage-by-stage walk through application / standing / consultation / assessment /
+decision / conditions / monitoring, the Oregon bentgrass passage, the Mexican
+maize passage, and the no-review-date and patent lines.
+
+The panel now carries the scope statement and the wire's own description, and
+nothing else.
+
+---
+
+## Round 11 — deep tier, first pass
+
+`trackerdata.json`: **18 countries / 35 entries → 29 countries / 129 entries.**
+All 129 validate against the live taxonomy — every tag resolves to a real
+lens:sub, every skind/kind/voice is legal, every URL unique, every description
+in the CAN / CAN'T / FOR house style. Zero problems.
+
+New countries: UK, Spain, Italy, Netherlands, Austria, Switzerland, Norway,
+Poland, Sweden, South Korea, China, Uganda, Ghana. Deepened: US (19), Australia,
+Germany, Canada, India, France, Brazil, South Africa.
+
+Depth is deliberately uneven — a country gets what it actually has. US 19,
+UK 9, Australia/Germany 8, down to one entry each for Poland, Sweden, Korea,
+Uganda and Ghana.
+
+### Lens coverage, and where it is thin
+
+    projects 68   environment 51   records 48   conserve 37   advocacy 33
+    organizing 30 corporate 30     courts 25    spending 24
+    people 5      financial 3      osint 2
+
+The bottom three are genuinely under-served and it is not an oversight:
+
+- **osint** — satellite and monitoring tools are global products, not national
+  resources. They belong in `internationalBodies` rather than repeated 29 times.
+- **financial** — per-country land and parcel registries exist nearly
+  everywhere, but the URLs are the least stable of any category and many are
+  regional rather than national. Only the ones I could stand behind went in.
+- **people** — professional and vital-record databases are mostly commercial and
+  jurisdiction-specific; adding them at volume would mean guessing.
+
+### What is not here
+
+No GM testing labs per country. The major accredited labs are global companies
+operating across borders, so they belong at international level. No per-country
+lobbying registers beyond the US and EU, because most countries do not maintain
+one. Roughly 60 countries worldwide have no independent watchdog on this beat;
+those slots stay empty rather than being filled with a general environmental NGO.
+
+---
+
+## Round 12 — global tools, then the medium tier
+
+**Global tools moved to international level.** Six new bodies, 21 entries,
+fixing the three thin lenses at one stroke instead of repeating the same tools
+in 46 country files:
+
+- **Earth observation** (Frascati) — Copernicus Browser, USGS EarthExplorer,
+  NASA Worldview, OpenStreetMap
+- **Archiving & change monitoring** (San Francisco) — Wayback Machine,
+  archive.today, Google Alerts
+- **Independent GM testing** (Luxembourg) — the JRC EU reference laboratory that
+  validates event-specific detection methods, plus Eurofins and SGS
+- **Corporate ownership & money** (London) — OpenCorporates, OCCRP Aleph, ICIJ
+  Offshore Leaks, Open Ownership Register
+- **Land, tenure & territory** (Groningen) — Land Portal, LandMark, Land Matrix
+- **Researchers, publications & retractions** (Bethesda) — PubMed, OpenAlex,
+  Retraction Watch Database, Espacenet
+
+The ten round-1 international entries predated the `kind`/`skind` fields. The
+engine defaulted them at runtime, so nothing was broken, but they were falling
+into the wrong filter buckets. Now set explicitly.
+
+**Medium tier added** — 17 countries at 1–2 entries each: Chile, Colombia, Peru,
+Uruguay, Paraguay, Costa Rica, Ireland, Belgium, Denmark, Czechia, Hungary,
+Romania, Türkiye, Thailand, Taiwan, Zambia, Ethiopia.
+
+### Totals
+
+**46 countries · 12 international bodies · 180 entries · 0 validation problems.**
+
+    projects 99   environment 76   conserve 57   records 56   advocacy 40
+    corporate 40  organizing 35    spending 31   courts 29
+    osint 13      people 11        financial 9
+
+osint went 2 → 13, people 5 → 11, financial 3 → 9 — entirely from the
+international layer, which is where those resources belong.
+
+### Entries worth knowing about
+
+Several medium-tier countries are there because they are *arguments*, not
+because they are large: Peru administers one of the longest national moratoria
+anywhere; Hungary wrote a GMO-free commitment into its constitution; Denmark
+operates a statutory compensation fund for contamination of a neighbouring crop;
+Chile hosts GM seed multiplication for export while barring GM cultivation for
+its own farmers, and the site-location question there was won on transparency
+grounds rather than biosafety grounds.
+
+---
+
+## Round 13 — intent menu resequenced, thin tier begun
+
+**The intent menu now runs in the order you would actually work.** It was 17
+options in arbitrary order, each assuming you already knew how the process goes.
+It is now numbered 1–17 and grouped into phases with non-selectable separator
+rows:
+
+    FIRST: find out what is actually happening   1-3
+    THEN:  get what they did not publish         4
+    THEN:  work out who is behind it             5-9
+    THEN:  find out what the law already says    10
+    THEN:  build the side that fights it         11-15
+    DO THESE ANYWAY - they hold win or lose      16-17
+
+One new intent added along the way: **6 · Read the patent** (`spending:patents`)
+— it was reachable through the lens pills but had no goal entry, and it is one
+of the highest-value steps in the sequence.
+
+Every hint rewritten to carry its own context: why this step, why *now*, and
+what you come away with. Steps 1 and 3 name the two things people most often
+miss — the consent identifier and the comment-window closing date, and the
+neighbours inside the drift radius who have standing and do not know a trial has
+been consented. Step 13 says to contact a lawyer early, because the windows are
+short. Verified: 18 intents, 18 selectable options, 7 separators, every option
+maps to a real intent and every intent to an option.
+
+**Thin tier begun** — 8 more countries where a national source could be stood
+behind: Portugal (parcel-level GM maize declarations, the closest thing in
+Europe to a public map of where GM crops actually grow), Ecuador (constitutional
+prohibition), Viet Nam, Pakistan, Israel, Finland, Slovenia, Malaysia.
+
+### Totals
+
+**54 countries · 12 international bodies · 188 entries · 0 validation problems.**
+
+### How the rest of the thin tier should be built
+
+Not by hand. Roughly 90 countries remain, and I cannot verify that many national
+authority URLs at volume without guessing — which would break the standard the
+rest of this map is held to.
+
+The right source already exists: the **Biosafety Clearing-House publishes a
+competent-national-authority record for every Cartagena Protocol party**, with
+the authority's name, contact and website. That is an authoritative, machine-
+readable, per-country list of exactly the entry this map needs first for each
+remaining country. Harvest it, and the thin tier builds itself from the treaty
+registry rather than from anyone's recollection.
+
+---
+
+## Round 14
+
+**The wire tagging is now done in the harvester, not the browser.** Three
+attempts to fix it in `index.html` did not hold, and that path is hard to
+inspect from outside. `wire_harvest.py` now ships `wire.json` with `iso`,
+`region` and `lang` already populated, so the region dropdown counts come
+straight from the data and the output can be checked before it is committed.
+
+It carries 163 country name forms (including demonyms and "USDA"/"APHIS"),
+subregion tables for 16 countries, and infers the country from an unambiguous
+subregion name when the headline never names one — so "Oregon bentgrass escape,
+USDA says" tags as USA / Oregon. Ambiguous names are excluded by construction
+plus an explicit list: Georgia, Victoria, Washington, Pará, Córdoba, Valencia,
+New York. Feed language is read from the feed's own `<language>` element.
+
+    python3 harvest/wire_harvest.py --selftest
+
+prints the tagging for a sample and writes nothing. Currently 8/10, with the two
+misses correct — a Bayer patent story with no country in it, and an EU
+parliament vote, which is supranational.
+
+The harvest run also prints country-tagged and subregion-tagged counts, and
+warns on stderr if nothing was tagged at all.
+
+**A real bug found in `_wireGeoTag`.** The split regex had been emitted with
+doubled backslashes — `/[\\/:\\u2014|]|\\s-\\s/` — so it was splitting on
+literal backslashes and the letters `u`, `2`, `0`, `1`, `4` rather than on an em
+dash or " - ". Headlines in the common `Country — Headline` form were never
+being split, so the lead-name match could not fire. Fixed.
+
+**Index rows reworked.** Clicking an entry's title now opens its description
+instead of leaving the map. The source link moved to a button under the
+description: **Visit source ↗**. The caret still works and does the same thing.
+
+**"A worked example" moved to the foot of the help panel**, after the interface
+walkthrough rather than before it.
+
+**All active pills on one steel blue** (`#24548c` on `#3a6fae`): `.chip.on`,
+`.ps-pill.on`, `.pt-pill.on`, `.best-pill.on`, `.wire-tab.on`, `.skpill.on`.
+`.best-pill.on` and `.wire-tab.on` had been on separate blues and `.skpill.on`
+on a translucent navy.
+
+---
+
+## Round 15 — regional blocs, global movements, more countries
+
+**Three bodies that had no home on the map, 13 entries.**
+
+*European Union* — the single most consequential bloc for this subject and, until
+now, entirely absent. EFSA GMO Panel opinions (and the public comment window
+that opens when each one publishes — the most reachable intervention point in
+the European system), the Commission authorisation register, the Court of
+Justice, EUR-Lex, the EU Transparency Register, and the European Ombudsman.
+The Ombudsman is the one worth knowing about: free, no lawyer, and its published
+findings on EFSA's independence rules have changed practice.
+
+*Africa — regional* — the African Union model law that thirty national regimes
+were drafted against, COMESA's push to move approvals from national to regional
+level, and AFSA, the continent's largest civil-society alliance, which is the
+fastest route from a continental question to a named local organisation.
+
+*Global farmer & food-sovereignty movements* — La Vía Campesina, GRAIN, ETC
+Group, PAN International.
+
+**Eight more country entries**, including two worth singling out: Germany's
+**Standortregister**, the statutory public register of release sites searchable
+by location — the strongest available proof that publishing release locations is
+both possible and lawful — and the **APHIS docket view on Regulations.gov**,
+which is where a US deregulation proposal appears first.
+
+### Totals
+
+**55 countries · 15 international bodies · 211 entries · 0 validation problems.**
+
+    projects 125  environment 81  conserve 68  records 64  advocacy 46
+    corporate 45  organizing 38   courts 35    spending 35
+    financial 16  people 14       osint 13
+
+One defect caught in validation: the Court of Justice entry had `kind:"court"`,
+but `court` is a *source kind*, not a *kind*. It would have fallen into the
+wrong filter bucket silently. Fixed.
+
+---
+
+## Round 16 — courts, patents and access routes
+
+A deepening pass rather than a widening one: the countries already on the map
+mostly had a regulator and a watchdog but no way to check what the courts had
+already decided. Nineteen entries across seventeen countries, weighted to case
+law, plus four new countries (Greece, Serbia, Tanzania, Bulgaria).
+
+**`courts` went 35 → 54.** The additions that carry the most:
+
+- **Germany — Rechtsprechung im Internet.** German law imposes strict liability
+  on the GMO user for damage to a neighbouring crop. The case law interpreting
+  that is the closest thing in Europe to an answer to "who pays".
+- **Colombia — Constitutional Court.** Its prior-consultation jurisprudence is
+  among the strongest anywhere and applies directly to any release on or near
+  collective territory.
+- **Argentina — SAIJ.** Courts there have repeatedly restricted spraying near
+  schools and settlements; those judgments travel well across the region.
+- **Mexico — SCJN.** The procedural history of the transgenic-maize collective
+  action, which is the longest-running centre-of-origin case anywhere.
+- **Chile — Poder Judicial.** The seed-multiplication site-location question was
+  decided in litigation, on transparency grounds.
+
+**New international body: free legal information networks.** AfricanLII and
+WorldLII. For much of Africa, AfricanLII is the only public route to a country's
+biosafety statute, and the statute is usually the argument. WorldLII federates a
+search across dozens of jurisdictions at once — useful for finding *which*
+countries have litigated a question before going to the national source.
+
+Four new countries chosen for what their law says rather than their size:
+Bulgaria bans cultivation within a set distance of protected areas and organic
+farms; Serbia prohibits commercial cultivation and trade outright and is under
+continuous accession pressure over it; Tanzania's strict-liability clause was the
+most demanding in Africa, and its relaxation is a documented case of regulatory
+pressure working; Greece opted out of cultivation across its whole territory.
+
+### Totals
+
+**59 countries · 16 international bodies · 232 entries · 0 validation problems.**
+
+    projects 131  environment 86  conserve 78  records 72  courts 54
+    corporate 49  advocacy 46     organizing 39  spending 38
+    financial 17  people 14       osint 13
+
+---
+
+## Round 17 — the two thinnest lenses
+
+`people` and `financial` were the weakest parts of the map, and both matter more
+here than their size suggested: one answers *who decided and what they had
+declared*, the other answers *whose ground is this, and who has standing*.
+
+**`people` 14 → 27.** New international body, *Officials, interests & the
+revolving door*: LittleSis, Integrity Watch EU, ORCID, As You Sow, ICCR. Plus
+national interest and lobbying registers for the UK, Canada, Australia, Germany,
+the US and Ireland.
+
+Three of those are worth naming:
+
+- **ACOBA (UK)** publishes, case by case, which jobs former ministers and senior
+  civil servants may take and on what conditions. It is the rare public record of
+  a regulator's staff moving to the industry they regulated, written down by the
+  government itself.
+- **Integrity Watch EU** makes expert-group composition searchable. Expert groups
+  are the quietest form of influence and the easiest to demonstrate, because the
+  membership is published.
+- **As You Sow.** A shareholder resolution forces a company to answer a question
+  in writing, in public, on a fixed date. Nothing else on this map does that as
+  cheaply — though it requires a holding.
+
+**`financial` 17 → 26.** Cadastres and land registries for Mexico, Brazil,
+France, Spain, the Netherlands and India. Two of these change the nature of the
+question rather than just locating a parcel:
+
+- **Mexico's Registro Agrario Nacional** holds ejido and comunidad records —
+  collective tenure over a very large share of Mexican farmland. An ejido
+  assembly is a decision-making body, not a neighbour.
+- **Brazil's INCRA** shows whether a settlement or quilombola territory adjoins a
+  site, which changes both the consultation duty and who has standing.
+
+France's cadastre is open data and downloadable, so a drift radius can be mapped
+against real parcels for nothing. India's is the honest opposite: land is a state
+subject, there is no national search, and GEAC minutes give only a district — so
+the entry says where the route actually starts rather than pretending to a
+national answer.
+
+### Totals
+
+**59 countries · 17 international bodies · 251 entries · 0 validation problems.**
+
+    projects 135  environment 86  conserve 81  records 72  courts 54
+    corporate 54  advocacy 48     spending 47  organizing 43
+    people 27     financial 26    osint 14
+
+---
+
+## Round 18 — going after the rule, not just the permit
+
+The map could find precedent but had nothing for *changing* the law. Fixed at
+three levels.
+
+**New sub-filter: `courts:strategic` — "Strategic litigation & law reform."**
+`courts:federal` also relabelled to "National, federal **& international**
+courts", since regional human-rights courts were being misfiled under a label
+that said national.
+
+**New goal, step 11: "Go after the rule itself, not just this permit."** The
+hint makes the tactical point plainly: the routes that work here are procedural —
+consultation that was inadequate, evidence withheld, an exemption granted without
+assessment. *You do not have to prove an organism is dangerous to establish that
+the public was shut out of the decision, and the second is far easier to prove.*
+Most of these bodies take a complaint from any member of the public, free,
+without a lawyer.
+
+**Two new international bodies, 15 entries.**
+
+*International complaint mechanisms* — the **Aarhus Convention Compliance
+Committee** first, because it is the most under-used route on this map: it
+reaches the procedure itself, accepts communications from any member of the
+public, costs nothing, needs no lawyer, and publishes its findings. Then **OECD
+National Contact Points**, where a complaint can be filed against a multinational
+in its *home* country over conduct in yours. Then UN Special Procedures, the
+Escazú Agreement (with its defender-protection provisions), the Inter-American
+Commission, the African Commission — whose Charter names a right to a
+satisfactory environment explicitly, an unusually strong textual hook — and the
+CBD, where the global position on gene drives is being written.
+
+*Strategic litigation organisations* — **ELAW** first, a network of
+public-interest environmental lawyers and scientists across seventy-plus
+countries that supplies free legal and scientific back-up. For anyone outside the
+wealthy jurisdictions it is probably the single most useful entry on the map.
+Then ClientEarth, CIEL, Earthjustice, AIDA, Natural Justice, FIAN International
+and the Business & Human Rights Resource Centre.
+
+### Totals
+
+**59 countries · 19 international bodies · 266 entries · 0 validation problems.**
+
+    projects 136  environment 87  conserve 86  records 76  courts 75
+    corporate 56  organizing 53   advocacy 49  spending 47
+    people 27     financial 26    osint 14
+
+`courts` went 54 → 75, and 15 of those carry the new strategic tag.
+
+---
+
+## Round 19 — the BCH route, verified
+
+I had been recommending a Biosafety Clearing-House harvest for several rounds
+without having verified it. Doing that now changed the plan in two ways.
+
+**bch.cbd.int cannot be harvested.** It is a JavaScript application; its record
+pages return "Error loading the Biosafety Clearing-House" to any fetcher. There
+is no scrapeable HTML behind it.
+
+**But the Secretariat publishes the same information as a PDF.**
+`cbd.int/doc/lists/bch-fp.pdf` — the BCH national focal point list, **189
+countries**, regenerated periodically, currently dated 6 July 2026. It gives the
+institution for every Party, and for a good many it gives that institution's
+website. Fetched and read; the structure is stable and parseable.
+
+**`harvest/bch_focal_points.py`** parses it into per-country stubs. Two things
+about it worth stating plainly:
+
+- *Privacy.* The source carries named officials, their direct e-mail addresses
+  and their phone numbers. None of that belongs in a public map. The script keeps
+  only the institution and its published website, and asserts at the end that no
+  e-mail address and no honorific survived into the output.
+- *It produces a review queue, not a drop-in file.* Each stub says
+  "TODO write CAN / CAN'T / FOR", and warns that a BCH focal point is not always
+  the body that decides approvals. What the harvest removes is the guesswork
+  about which countries exist and what their institutions are called — not the
+  writing.
+
+**Thirteen new countries added by hand from that list**, using only entries where
+it gives an explicit institutional website. No domain was inferred from an e-mail
+address: Cyprus, Lithuania, Latvia, Slovakia, North Macedonia, Ukraine,
+Singapore, Guatemala, Panama, Kuwait, Sierra Leone, Bhutan, Lebanon — plus
+better addresses for Hungary (a dedicated government GMO portal), Serbia (the
+directorate rather than the ministry) and **a correction to Zambia**, whose
+authority I had at the wrong domain.
+
+Several were chosen for the argument rather than the size: Guatemala repealed a
+seed law after mass protest; Lebanon sits inside the Fertile Crescent, the centre
+of origin for wheat and barley, which is discussed far less than the maize one;
+Latvia lets municipalities declare themselves GM-free and a large share have;
+Bhutan built agricultural policy around organic production, which makes GM
+cultivation moot rather than prohibited.
+
+### Totals
+
+**72 countries · 19 international bodies · 282 entries · 0 validation problems.**
+
+    projects 155  conserve 96  environment 90  records 79  courts 75
+    corporate 59  organizing 53  advocacy 49  spending 47
+    people 27     financial 26   osint 14
+
+---
+
+## Round 20 — the subnational drilldown, which had never done anything
+
+Until now **no country had a `sub` block**, which means the map's entire
+state/province drilldown resolved to nothing: click into a country, descend a
+level, and every region was empty. A headline feature doing no work.
+
+**14 regions, 17 entries** across the United States and Australia. Region keys
+verified against the embedded geometry — zero name mismatches. (Caveat: the live
+drilldown matches against ADM1 names fetched from the boundary service, not the
+embedded copy; they share a source, so this is a good proxy rather than a
+guarantee.)
+
+**United States — 10 states.** The ones carrying the most:
+
+- **Hawaii.** The highest concentration of open-air GM breeding anywhere on
+  Earth, because the climate allows several generations a year — sitting on a
+  small island chain next to homes, schools and endemic species found nowhere
+  else. Paired with the state judiciary, because Kaua'i, Hawai'i and Maui
+  counties each passed measures and each was challenged. That litigation is the
+  clearest US test of whether a county may regulate what the state and federal
+  governments have not.
+- **Oregon.** Where the bentgrass escaped. The state's own control-area orders
+  are the paper record of how containment went, and Jackson County is the
+  standing example of a county ban that took effect and held.
+- **Vermont.** The first mandatory GMO labelling law to actually take effect in
+  the United States. Industry could not stop it in court; Congress preempted it
+  instead. The sequence is the lesson.
+- **Washington**, because it grows a large share of the world's brassica and beet
+  seed, where cross-pollination risk is highest and growers already organise
+  around it.
+
+**Australia — 4 states**, all chosen for the mechanism: Tasmania's moratorium,
+justified on **market-access and brand grounds rather than safety**, which
+sidesteps the argument industry is best equipped to win; South Australia, which
+kept the moratorium for Kangaroo Island after lifting it on the mainland;
+Western Australia, backdrop to the fully litigated neighbour-contamination case;
+and New South Wales, whose repeal debate is the fullest Australian record of the
+arguments on both sides.
+
+### Totals
+
+**72 countries · 14 subnational regions · 19 international bodies · 299 entries ·
+0 validation problems.**
+
+    projects 165  environment 105  conserve 105  records 83  courts 80
+    corporate 59  organizing 53    advocacy 51   spending 47
+    financial 28  people 27        osint 14
+
+---
+
+## Round 21 — subnational, continued
+
+Seven more countries given `sub` blocks: Mexico, Brazil, India, Argentina,
+Canada, Germany, Spain, South Africa. **10 countries · 32 regions · 35
+subnational entries**, region keys copied exactly from the boundary data
+including diacritics and native spellings — zero mismatches.
+
+These were picked for where the argument actually lives, not by size:
+
+- **Oaxaca and Chiapas** — Oaxaca is not a place where maize is grown so much as
+  the place it comes from, and several Mexican states declared themselves free of
+  transgenic maize before the federal position hardened. **Sinaloa** is in as the
+  other side: the commercial case for transgenic maize in Mexico is made from
+  there, and understanding it beats ignoring it.
+- **Rio Grande do Sul** — Brazil's GM soy was legalised *after* years of
+  unauthorised planting concentrated in this state. The clearest case anywhere of
+  approval following adoption rather than preceding it.
+- **Maharashtra and Gujarat** — unapproved herbicide-tolerant cotton has been
+  planted at scale in Maharashtra for years, and Gujarat is where India's first
+  unapproved Bt cotton was found before any approval existed. State enforcement
+  records are the record of what happens when approval is simply bypassed.
+- **Córdoba and Entre Ríos** — the first criminal convictions in Latin America
+  for spraying beside a populated area, and the school-buffer cases whose
+  reasoning has been borrowed across the region.
+- **Aragón and Cataluña** — almost all GM cultivation in the European Union
+  happens in these two Spanish regions, which makes their coexistence enforcement
+  the whole of Europe's practical experience of it.
+- **Mecklenburg-Vorpommern** — where German commercial GM maize actually was,
+  which makes the state's own record the best account of why it stopped.
+- **Prince Edward Island** — its legislative committee held one of the few
+  sustained, formal public deliberations on this subject by any legislature in
+  North America. The submissions are a record of what people actually said.
+- **Free State** — South Africa grows GM white maize as a staple food rather than
+  as feed, which is close to unique globally, and most of it is grown there.
+
+### Totals
+
+**72 countries · 10 with subnational data · 32 regions · 19 international bodies
+· 317 entries · 0 validation problems.**
+
+    projects 178  environment 121  conserve 116  records 84  courts 84
+    corporate 59  organizing 56    advocacy 54   spending 47
+    financial 29  people 27        osint 14
+
+---
+
+## Round 22 — bringing the anchors up to date
+
+Six of the map's factual anchors described a position that has since moved. A
+large, current map beats a larger stale one, so this round fixed the facts rather
+than adding volume.
+
+**United States — the SECURE rule was vacated.** The APHIS entry described
+"regulatory-status determinations that exempt an organism from oversight", which
+was the SECURE mechanism. A court vacated that rule on **2 December 2024**;
+APHIS reverted to the pre-2020 regulations at 7 CFR 340, and permitting,
+notifications and petitions restarted through early 2025. USDA then ran a request
+for information on a replacement framework, closing **15 June 2026**. The entry
+now says so, and makes the point that the framework governing every US release is
+being rewritten in public right now — which is the rarest and best moment to be
+watching one.
+
+**European Union — the NGT file is now law.** The Commission entry described a
+pending "deregulation file". **Regulation (EU) 2026/1388** was adopted by the
+Council on 21 April and Parliament on 17 June 2026, entered into force on 16 July
+2026, and applies from 17 July 2028. It splits NGT plants into NGT-1 (treated
+broadly as conventional, outside authorisation and labelling) and NGT-2 (inside).
+The entry now names it, and names what it costs: NGT-1 is the single largest
+deliberate reduction in the European public record on this subject.
+
+**EFSA — the comment window has mechanics.** Saying a window "opens" was not
+actionable. It is 30 days from EFSA publishing an opinion, comments go through
+Connect.EFSA, and they are archived on OpenEFSA.
+
+**OGTR — likewise, plus a warning.** Consultation runs a minimum of 30 days and
+is advertised in the Government Notices Gazette, with email alerts available. The
+entry now also says what the statute puts *out* of scope — trade, marketing, food
+safety and claimed benefits — because an objection built on any of those will not
+land, and that is worth knowing before writing one.
+
+**Mexico — the prohibition moved into the Constitution.** After a USMCA panel
+ruled against the maize decree on 20 December 2024, Mexico amended Articles 4 and
+27, published **17 March 2025**. The entry now frames Mexico as the clearest test
+anywhere of a constitutional prohibition set against a trade-agreement ruling.
+
+**Gene drives — the nearest approach stalled.** Burkina Faso sealed Target
+Malaria's facilities on **18 August 2025** and suspended all its activities on 22
+August, days after a non-drive trial release at Souroukoudingan on 11 August.
+
+**New country: Burkina Faso**, with its national biosafety agency and the farmer
+and civil-society side. It has now ended two flagship programmes on its own
+terms — Bt cotton, and the engineered-mosquito work — which is not the usual
+direction of travel and deserves its own entry rather than a footnote.
+
+### Totals
+
+**73 countries · 32 subnational regions · 19 international bodies · 319 entries ·
+0 validation problems.**
+
+---
+
+## Round 23 — making staleness visible
+
+Last round's finding was that drift is this map's main long-term risk: 300+
+hand-written entries go out of date quietly, and nothing about a stale entry
+looks wrong. This round builds the machinery for that instead of adding entries.
+
+**Every entry now carries a `checked` date** — all 319, country, subnational and
+international. The map renders it under each entry in both the unit popups and
+the index rows: grey under a year, amber over a year, rust over two with
+"re-verify before relying on it".
+
+**`harvest/check_links.py`** checks every URL and reports what has rotted,
+separating outcomes that mean different things: 404/410 is gone, 403/429 is
+usually a bot filter rather than a dead link, 5xx may be transient. `--stale-only`
+skips the network and just ranks entries by verification age. `--update-dates`
+stamps today on entries that resolved — and prints a warning that this is the
+weaker check, because a URL resolving is not the same as an entry being accurate.
+
+### A build failure worth recording
+
+The first attempt at this put a `put(2454, ...)` over two lines that turned out
+to be live code in the project popup. Caught by reading the target lines before
+trusting the line number — the same class of error as the round-1 `PJ_SEED`
+problem, where a line-numbered edit landed somewhere plausible and wrong.
+
+Then the rewritten build crashed on a `NameError`, and because the build command
+had `2>/dev/null` on it, the failure was invisible and the validator was reading
+a **stale output file from the previous run** — reporting clean results for code
+that had never been generated. Both fixed. The lesson is the same one twice:
+suppressing build output makes a validator lie.
+
+### Totals
+
+**73 countries · 32 subnational regions · 19 international bodies · 319 entries ·
+0 validation problems · 0 entries without a verification date.**
+
+---
+
+## Round 24 — the principals
+
+The map could find registers, courts and money but had no answer to the plainest
+question anyone asks first: *who is doing this?*
+
+**New sub-filter `corporate:principals` — "The principals: who is actually doing
+this."** New goal **5b · "See the handful of firms and agencies behind most of
+it"**, sitting beside the existing ownership step. Its hint carries the rule this
+whole section is built on: *a name without a document is only an accusation.*
+
+**Five new bodies, 18 entries.** Every one links to a public record that can be
+checked — filings, a registry, a lobbying return, an official page — not to a
+press summary or anyone's characterisation.
+
+*The four agricultural biotechnology majors.* Bayer (which absorbed Monsanto),
+Corteva, Syngenta (ChemChina/Sinochem) and BASF, each pointed at investor
+filings rather than corporate homepages, because the risk-factor section is the
+most candid account a company publishes of its own exposure. Syngenta is flagged
+for what state ownership changes: shareholder resolutions and securities
+disclosure do not reach it. BASF's seed holdings exist because a merger regulator
+required divestment — which is competition authorities already treating this as a
+concentrated market.
+
+*Industry associations.* BIO, CropLife International and ISAAA. ISAAA is included
+as a record while flagged as an industry voice, on the reasoning that citing an
+industry source for an industry figure is stronger than citing a critic for one.
+
+*Gene editing & synthetic biology.* An SEC full-text search for the phrase rather
+than a company list — you find firms you had not heard of, and the risk factors
+say what the press releases do not. Plus Colossal and Oxitec.
+
+*Assisted reproduction.* HFEA first, because clinic-level licensing, inspection
+and outcome data exists there and almost nowhere else — which makes it the answer
+to "oversight isn't possible". Then CDC ART data, which gives the United States
+clinic-level statistics and no clinic-level regulator; ESHRE; and clinic-chain
+ownership, because patients choose a clinic while the owner sets the policies and
+the owner is findable.
+
+*Public money & public agencies.* USDA NIFA, the Gates Foundation's own
+searchable grant database, CGIAR, and DARPA's biological technologies office —
+military biotechnology sitting outside civilian biosafety oversight in every
+country that runs it.
+
+All five are tagged `medium` or `low` trust where they are the subject's own
+voice, so the existing trust filters exclude them cleanly.
+
+### Totals
+
+**73 countries · 32 subnational regions · 24 international bodies · 337 entries ·
+0 validation problems.**
+
+    projects 185  environment 127  conserve 119  corporate 87  courts 85
+    records 84    advocacy 60      organizing 57  spending 56
+    financial 29  people 27        osint 14
+
+    trust tiers: record 251 · high 72 · medium 9 · low 5
