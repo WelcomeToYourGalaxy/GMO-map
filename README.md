@@ -1,69 +1,128 @@
-# Context overlays
+# GMO-map
 
-Areas, not points. Off by default in the map key. Filenames must match the `k`
-values in `PJ_OVERLAYS` inside `index.html`.
+A live global map of the paper trail behind the genetic-engineering industry —
+the registers where releases are applied for and consented, the dossiers behind
+them, the record of what has escaped, the patents asserted over living material,
+and the people and institutions holding the arrangement to account.
 
-Format: a plain `FeatureCollection`. The popup reads `properties.name` (falling
-back to `NAME`, then `title`), so give every feature one. Nothing else in the
-properties is used.
+Not an argument against the science. An argument about a decision procedure that
+runs on a commercial timetable, on self-generated evidence, with liability that
+does not reach the harm and enforcement that cannot cross a border.
+
+---
+
+## Repo layout
+
+Everything `index.html` fetches is **relative to itself**, so nearly all of it
+sits flat at the root. One real subfolder.
+
+```
+GMO-map/
+├─ index.html                  the map — must be at root for Pages
+├─ .nojekyll                   stops Pages' Jekyll pass touching the files
+├─ trackerdata.json            per-country resource directory
+├─ projects.json               release layer  (or projects.json.gz — see below)
+├─ wire.json                   news wire archive
+├─ wire_climate.json           optional second wire stream (absent = ignored)
+├─ legmap_sub.json             optional subnational resources
+├─ overlays/                   context overlay polygons — see overlays/README.md
+├─ harvest/
+│   └─ wire_harvest.py         RSS harvester → wire.json
+├─ .github/workflows/
+│   └─ wire.yml                runs the harvester every 6h and commits
+├─ <country>.md / .pdf         optional per-country guides, ROOT level
+└─ BUILD-NOTES.md              what was built, what's stubbed, what's next
+```
+
+Two things load from other repos and need nothing here:
+administrative boundaries from `WelcomeToYourGalaxy/cgaz-boundaries`, and
+facility dots from `WelcomeToYourGalaxy/executive-map`.
+
+**Deploy:** Settings → Pages → source `main`, folder `/ (root)`.
+
+---
+
+## The data files
+
+| file | state | notes |
+|---|---|---|
+| `trackerdata.json` | **seeded** | 18 countries, 35 entries, all verified |
+| `projects.json` | **seeded** | 5 records, transcribed from OGTR licence pages |
+| `wire.json` | empty `[]` | fills on the first workflow run |
+| `wire_climate.json` | absent | optional; the map skips it silently |
+| `legmap_sub.json` | absent | optional; the map skips it silently |
+| `overlays/*.geojson` | absent | map prints "— not yet available", which is true |
+
+### `projects.json`
 
 ```json
-{ "type": "FeatureCollection",
-  "features": [
-    { "type": "Feature",
-      "properties": { "name": "Mesoamerican centre \u2014 maize (indicative)" },
-      "geometry": { "type": "Polygon", "coordinates": [[[-104,22],[-96,22],[-96,15],[-104,15],[-104,22]]] } }
-  ] }
+{ "projects": [ {
+  "name": "...", "source": "ogtr:DIR-201", "type": "GM wheat field trial",
+  "lat": -34.34, "lng": 138.92, "state": "South Australia",
+  "precise": false, "impact": 2,
+  "company": "...", "size": "1 site, max 2 ha/yr",
+  "status": "Licence issued", "date": "2024-05-01",
+  "url": "https://...", "desc": "...",
+  "deadline": "2026-09-30"
+} ] }
+```
+
+- `source` must start with a `PJ_SRC` key (`bch`, `ogtr`, `aphis`, `eu_release`,
+  `cfia`, `ctnbio`, `conabia`, `geac`, `nzepa`, `oecd_biotrack`, `isaaa`,
+  `contamination`, `clinical`, `seed`) — a `key:id` suffix is fine.
+- `impact` 1–5 drives dot size and colour.
+- `precise: false` draws a dashed ring. Use it whenever the register gives a
+  district rather than a site — which is most of the time.
+- `status` decides the consent-phase filter: anything matching
+  *issued / granted / approved / permitted / construction* counts as consented,
+  everything else as in review.
+- `deadline` (optional) raises the countdown banner on the popup.
+- `type` + `name` + `desc` feed the organism classifier.
+
+If the file outgrows GitHub's size limit, commit `projects.json.gz` instead —
+the loader tries the gzip first and handles both hosting behaviours.
+
+### `wire.json`
+
+A flat array. `iso` and `region` can be left empty; the map geo-tags from the
+headline at render time.
+
+```json
+[ { "name": "GMWatch", "title": "...", "link": "https://...",
+    "date": "2026-07-30T09:12:00+00:00", "snippet": "...",
+    "iso": "", "region": "", "lang": "en", "sig": 0 } ]
 ```
 
 ---
 
-## Where each one comes from
+## Harvesters
 
-Only one of the five exists as a ready-made download. The rest have to be built,
-and the honest way to build them is by joining a published *list* to
-administrative boundaries you already have.
+`harvest/wire_harvest.py` runs now — it reads the feed list straight out of
+`index.html` so the feeds live in one place, merges with the existing archive so
+a feed outage can't truncate it, dedupes on link, and keeps 120 days.
 
-### `protected.geojson` — Protected areas & wild-relative habitat
-**Ready-made.** The World Database on Protected Areas, via Protected Planet
-(`protectedplanet.net`). Authoritative, maintained by UNEP-WCMC and IUCN,
-downloadable by country or globally. Enormous — clip to the countries you care
-about and simplify hard before committing. Check the terms; attribution is
-required and commercial redistribution is restricted.
+```bash
+python3 harvest/wire_harvest.py     # stdlib only, no dependencies
+```
 
-### `genebanks.geojson` — Genebanks & seed collections
-**Ready-made, but points.** Genesys (`genesys-pgr.org`) and FAO WIEWS both
-publish institute records with coordinates. `L.geoJSON` will render points as
-markers rather than filled areas, which looks different from the other four —
-either accept that or buffer the points into small circles before export.
-
-### `centres_origin.geojson` — Centres of crop origin & diversity
-**Must be built.** There is no canonical polygon file. Vavilov's centres are a
-historical construct with several competing versions, and the modern
-quantitative treatment (Khoury et al. 2016, *Proc. R. Soc. B*, "Origins of food
-crops connect countries worldwide") defines regions of diversity by country and
-subregion rather than by geometry. So: take their region definitions, join to
-country or admin-1 boundaries, dissolve. Put **"indicative"** in every feature
-name — it reaches the popup, and these boundaries are genuinely contested.
-
-### `gmofree.geojson` — GMO-free zones & regional bans
-**Must be built.** The GMO-free Regions network (`gmo-free-regions.org`)
-maintains the European directory of declared regions and municipalities; US
-county cultivation bans are documented individually rather than centrally.
-Neither publishes geodata. Geocode the declarations against admin-1/admin-2
-boundaries. Record the declaring body and the date in the feature name, because
-these lapse and get overturned.
-
-### `cultivation.geojson` — Approved GM cultivation area
-**Must be built, and hardest of the five.** No dataset holds this as geometry.
-At country level it can be assembled from national approval registers joined to
-country boundaries. Sub-nationally it exists only where an agricultural census
-publishes it — USDA NASS is the main example. Anything finer than that would be
-estimated, so don't ship it as if it were measured.
+The release harvesters are specified but not written. Start with **OGTR** — it
+is the only register on Earth that publishes field-trial *site* locations, so it
+is the only feed that yields solid dots rather than dashed rings on day one.
+The full manifest is in `BUILD-NOTES.md`.
 
 ---
 
-**These files are deliberately absent from the repo.** A missing overlay makes
-the map print "— not yet available" beside the toggle, which is accurate. An
-empty `FeatureCollection` would instead render a silent no-op layer that looks
-like data. Ship a file only once it holds real geometry.
+## Honest gaps, carried into the UI
+
+- Contained use is under-recorded everywhere: most lab work is notified, not
+  licensed, and notifications are rarely published individually.
+- Gene-edited organisms are increasingly invisible by design. Where a
+  jurisdiction has moved editing techniques outside GMO registration, there is
+  no record to harvest — the absence of a dot means the law stopped requiring
+  one. This is the largest structural gap and it is growing.
+- Coordinates are the exception. Expect dashed rings to outnumber solid dots.
+- The human side — germline, embryo selection, IVF and assisted reproduction —
+  is not a release register and is not forced into the release layer. It lives
+  in the lenses and the index.
+- No coverage percentage is claimed anywhere. No dataset holds the true global
+  count, so any figure would be invented.

@@ -261,3 +261,63 @@ says so rather than implying the files are just missing.
 **One more classifier fix:** a GM veterinary vaccine was landing in `livestock`
 because the target species was tested before the word "vaccine". Vaccine now
 takes precedence. Regression back to 12/12.
+
+---
+
+## Round 5 changes
+
+**"Other angles" removed** from the angle selector. The internal `other` bucket
+is left in place, so "Show all angles" still passes everything — only the
+menu entry is gone.
+
+**The angle selector had no CSS rule at all.** `#intentSel` was styled;
+`#angleSel` was an unstyled browser default, which is why it looked wrong beside
+it. Both selectors now share one rule, as do `#intentHint` / `#angleHint`.
+
+**Wire description rewritten** in the register-walk style of the unearthings
+map: a definition, then the process stage by stage, with the structural critique
+carried inside the same sentence as the mechanism rather than argued separately.
+Runs: what a release is → whether the law recognises it as one → who has
+standing → consultation and what it reliably produces → who pays for the
+assessment → the decision and the register → the conditions → the absence of
+surveillance → patents outlasting all of it → nothing ever ending. Closes on the
+feed count, which is checked against `WIRE_FEEDS` (30) rather than asserted.
+
+---
+
+## Round 6 changes
+
+**Left rail re-flows when a unit is opened.** Previously the resources panel was
+positioned under the help panel — the same slot the index occupies in
+`#sidebar` — so opening a unit covered the index. `window._reflowInfo` now moves
+the index into the left column beneath the wire (which already yields its lower
+half via `body.info-open`), and puts it back when the panel closes. Both columns
+bottom-align at `viewport - 18px`.
+
+Two details that mattered: `#indexPanel` carries `position/left/top/width/
+max-height: static !important` from the sidebar rule, so the reflow has to use
+`setProperty(..., 'important')` rather than plain inline styles; and the wire's
+height change is a .22s transition, so `showInfoPanel` / `hideInfoPanel` measure
+once immediately and again at 240ms.
+
+**Community-resistance how-tos removed.** `_GUIDES` is now `{}`, which kills
+every guide button through `_usGuide` and `_grpGuide` without touching the call
+sites. `SUBNATIONAL` turned out to be declared and never read anywhere in the
+file — one occurrence total — so it is emptied outright. Zero
+"community-resistance" strings remain.
+
+**New wire fold: "The evidence, condensed."** Three parts — what people think
+(World Risk Poll 2019 and Pew 2019–20, with the point that the undecided share
+exceeds the approval share, and the income split running opposite to the common
+assumption), what eating it shows (GRACE / G-TwYST / GMO90+, the livestock
+dataset and its broiler caveat, the ~900-study review, the dissenting reading,
+and the structural reason no human dietary study exists), and what releasing it
+shows (Oregon bentgrass, feral canola, the Jacobina *Aedes* introgression,
+Mexican maize landraces, GM eucalyptus and the GE chestnut, Bt persistence and
+mirid release, gene drives).
+
+It closes on the registrant-monitoring problem and on the two cases that cut
+against a simple anti-GMO frame — dengue control and forest restoration — since
+those are the strongest test of the map's framing, and it survives them: what is
+opposed is a release architecture with no recall, no consent and no independent
+monitoring, whatever the stated purpose.
