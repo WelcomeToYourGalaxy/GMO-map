@@ -1129,3 +1129,118 @@ voice, so the existing trust filters exclude them cleanly.
     financial 29  people 27        osint 14
 
     trust tiers: record 251 · high 72 · medium 9 · low 5
+
+---
+
+## Round 25 — the release layer finally has a harvester
+
+The map's headline feature has read near-empty since round 1. Fixed.
+
+**The OGTR recommendation was wrong.** For several rounds these notes said to
+start with OGTR, because it publishes field-trial site locations and nothing else
+does. That was said without checking. `ogtr.gov.au` **disallows automated access
+in robots.txt** — its records are still the best in the world to read by hand,
+but they cannot be harvested, and recommending it repeatedly without verifying
+was the same failure as the BCH portal two rounds ago.
+
+**APHIS publishes exactly what was needed, and invites reuse.** Two CSVs,
+updated every business day, public domain (CC0):
+
+    https://www.aphis.usda.gov/sites/default/files/efile-data.csv      (current)
+    https://www.aphis.usda.gov/sites/default/files/brs-public-apps.csv (legacy)
+
+Schema verified by fetching and reading the file, not assumed: authorisation
+number, type, movement type, organisation, organism, status, effective and
+expiration dates, `Location(s)`, CBI flag, number of release locations, and
+intended traits with two-letter prefix codes.
+
+**`harvest/aphis_releases.py`.** Gates applied, each for a stated reason:
+
+- keeps only records with a `Rel -` component — **import and interstate movement
+  are not environmental releases**, and most rows in the file are one of those
+- drops withdrawn, denied, superseded, expired, cancelled
+- drops anything past its expiration date: a lapsed authorisation is not a live
+  release
+- sets `phase` explicitly from status, so the map's consent-phase filter
+  distinguishes *issued/acknowledged* from *still under assessment* rather than
+  guessing from a keyword
+- sets `precise: false` on every record, because **APHIS publishes release states
+  and never coordinates** — every dot is a state centroid and draws as a dashed
+  ring, which is what that means
+- rates `impact` from declared release locations and state span, and the code
+  says in a comment that this sorts rather than quantifies
+- says in the description when the applicant claimed CBI, rather than silently
+  presenting a redacted trait list as complete
+
+Tested offline against six real rows captured from the live file: it kept the
+three genuine releases and correctly dropped an import-only record, a denied one
+and a superseded one. Classification through the map's own `pjTypeCat`: cotton →
+fibre crops, chestnut → trees, fruit fly → insects, bacteria → microbes.
+
+`pjPhase()` in the map now honours an explicit `phase` field and falls back to
+the old keyword inference for hand-written records.
+
+**`harvest/projects_curated.json`** holds the five hand-written OGTR records, and
+the harvester merges them in front of what it fetches — so `projects.json` can be
+overwritten weekly without losing anything written by hand.
+
+**New workflow** `.github/workflows/releases.yml`, weekly.
+
+### A near miss
+
+The `pjPhase` patch was first aimed at line 2489, which in the source is
+`this._draw(); },` inside the canvas renderer. Caught by reading the target line
+before building — the same check that saved the project popup two rounds ago.
+Line-numbered edits against a file this size need the target read every time.
+
+---
+
+## Round 26 — two bugs the first live run exposed
+
+The first real run reported `epermits 54903 rows → 0 live releases` and
+`+ 0 curated`. Both were real defects, not data.
+
+**The two APHIS files do not share a schema.** I assumed they did. Verified by
+reading both headers:
+
+    eFile:    Authorization Number / Organization / Organism / Location(s) /
+              Number of Release Locations / Intended Trait(s) / Expiration Date
+    ePermits: Permit Number / Institution / Article / Locations / Sites /
+              Acres / Phenotypes / Expire Date
+
+Every legacy row was therefore returning `None` for `Location(s)`, finding no
+release states, and being dropped. Fixed with an explicit `LEGACY_MAP` and a
+`get()` accessor.
+
+The separators differ too: eFile writes `Rel - HI-PR`, ePermits writes
+`Rel-IA,IL,IN`. The old regex would have taken only the first state from a
+comma-separated legacy list. Both forms now parse.
+
+**The legacy file has acreage; eFile does not.** `Acres` is a real measured
+quantity and it is now carried into the size line — so legacy records read
+"10 declared release locations across 4 states, 20 acres" while eFile records
+can only give the location count. That asymmetry is worth knowing: the newer
+system publishes *less* about scale than the one it replaced.
+
+Tested against real legacy rows: 3 of 4 kept, with the withdrawn one and the
+2022-expired one correctly dropped, and the four-state comma list parsed.
+
+**Expect the legacy file to stay near zero, and that is correct.** ePermits
+stopped accepting applications on 30 September 2022 and its permits expire on
+their own terms. A closed system with expired permits *should* yield almost
+nothing under a live-release gate. The bug was that it yielded nothing for the
+wrong reason.
+
+**`+ 0 curated` was a missing file, not a merge failure.**
+`harvest/projects_curated.json` is new and had not been added to the repo. The
+script now says so on stderr instead of printing a silent zero.
+
+**Concentration is now computed and printed.** From the first live run: Bayer 70,
+Syngenta 35, Pioneer 26 — **131 of 362 records, 36%, from three firms**, with
+Bayer alone at 19%. That is the map's own principals layer confirmed from the
+regulator's own file, and it is a stronger statement than any market-share figure
+because it counts authorisations rather than revenue.
+
+Also worth noting from that run: **333 consented against 29 under assessment.**
+The window where objection is cheapest is a small fraction of what is on the map,
+which is exactly why the consent-phase filter defaults to showing both.

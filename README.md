@@ -28,10 +28,13 @@ GMO-map/
 ├─ overlays/                   context overlay polygons — see overlays/README.md
 ├─ harvest/
 │   ├─ wire_harvest.py         RSS harvester → wire.json
+│   ├─ aphis_releases.py       APHIS release permits → projects.json
+│   ├─ projects_curated.json   hand-written records, merged by the above
 │   ├─ bch_focal_points.py     CBD focal-point list → trackerdata stubs
 │   └─ check_links.py          link rot + staleness report
 ├─ .github/workflows/
-│   └─ wire.yml                runs the harvester every 6h and commits
+│   ├─ wire.yml                runs the wire harvester every 6h and commits
+│   └─ releases.yml            runs the APHIS harvester weekly and commits
 ├─ <country>.md / .pdf         optional per-country guides, ROOT level
 └─ BUILD-NOTES.md              what was built, what's stubbed, what's next
 ```
@@ -118,10 +121,28 @@ the CAN / CAN'T / FOR description before anything is merged.
 Note that bch.cbd.int itself is a JavaScript application and returns nothing to a
 fetcher, which is why the PDF is the route.
 
-The release harvesters are specified but not written. Start with **OGTR** — it
-is the only register on Earth that publishes field-trial *site* locations, so it
-is the only feed that yields solid dots rather than dashed rings on day one.
-The full manifest is in `BUILD-NOTES.md`.
+`harvest/aphis_releases.py` harvests US environmental-release authorisations
+from the APHIS BRS public data files — two CSVs, updated every business day,
+public domain. It keeps only records with a `Rel -` component (import and
+interstate movement are not releases), drops withdrawn, denied, superseded and
+expired records, and drops anything past its expiration date.
+
+```bash
+python3 harvest/aphis_releases.py --dry-run   # summary, writes nothing
+python3 harvest/aphis_releases.py             # writes projects.json
+```
+
+Hand-written records for registers with no bulk file live in
+`harvest/projects_curated.json` and are merged in front of the harvested ones.
+Edit them there, not in `projects.json`, which is overwritten on every run.
+
+**A correction worth recording:** earlier notes here recommended starting with
+OGTR, because it is the only register that publishes field-trial *site*
+locations. That recommendation was made without checking, and it is wrong —
+`ogtr.gov.au` disallows automated access in its robots.txt. Its records remain
+the best in the world to read by hand; they cannot be harvested. APHIS
+explicitly publishes a bulk file for reuse, so that is where the layer starts.
+The rest of the manifest is in `BUILD-NOTES.md`.
 
 ---
 

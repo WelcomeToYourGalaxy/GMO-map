@@ -2477,7 +2477,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   function pjShow(){ pjOn=true; if(!pjData){pjLoad();} else { if(!_projLayer){_projLayer=new ProjectLayer();} if(!map.hasLayer(_projLayer))_projLayer.addTo(map); _projLayer.redraw(); } var b=document.getElementById('projChk'); if(b)b.checked=true; }
   function pjHide(){ pjOn=false; if(_projLayer)map.removeLayer(_projLayer); if(_pjPopup)map.closePopup(_pjPopup); var b=document.getElementById('projChk'); if(b)b.checked=false; }
   var pjPhases=new Set(['pre','post']);
-  function pjPhase(p){ var s=((p.status||'')+' '+(p.type||'')).toLowerCase();
+  function pjPhase(p){ if(p.phase==='pre'||p.phase==='post') return p.phase; var s=((p.status||'')+' '+(p.type||'')).toLowerCase();
     return /constru|issued|granted|approved|permitted|building permit|em construc|en construc|bouw|bau\b/.test(s)?'post':'pre'; }
   var chk=document.getElementById('projChk'); if(chk) chk.addEventListener('change',function(){ chk.checked?pjShow():pjHide(); });
   (function(){ var ps=document.querySelector('.proj-size'); if(!ps)return; function sync(){ ps.querySelectorAll('.ps-pill').forEach(function(x){ var v=x.getAttribute('data-ms'); x.classList.toggle('on', v==='all'? pjSizes.size===0 : pjSizes.has(+v)); }); } ps.addEventListener('click',function(e){ var b=e.target.closest('.ps-pill'); if(!b)return; var v=b.getAttribute('data-ms'); if(v==='all'){ pjSizes.clear(); } else { var n=+v; if(pjSizes.has(n)) pjSizes.delete(n); else pjSizes.add(n); } sync(); pjRender(); }); })();
