@@ -758,6 +758,22 @@
      "conserve:recognize"
     ],
     "checked": "2026-07-31"
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Ministério Público Federal",
+    "url": "https://www.mpf.mp.br/",
+    "desc": "Brazil's federal public prosecution service, which is constitutionally independent and has standing to bring public civil actions on environmental and consumer matters. CAN: find the public civil actions brought against biosafety approvals, and the route by which a citizen can ask a prosecutor to act — which costs nothing. CAN'T: be directed by a complainant. FOR: in Brazil the most effective challenges to GM approvals have come from prosecutors, not from private litigants, and anyone may file a representation asking them to open one.",
+    "tags": [
+     "courts:strategic",
+     "courts:grievance",
+     "organizing:legal"
+    ],
+    "checked": "2026-07-31"
    }
   ],
   "sub": {
@@ -937,6 +953,22 @@
      "courts:federal",
      "courts:state",
      "environment:health"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "INASE — National Seed Institute",
+    "url": "https://www.argentina.gob.ar/inase",
+    "desc": "Argentina's seed institute, running variety registration, seed certification and enforcement against unauthorised seed trade. CAN: reach the register of authorised varieties and the rules governing saved seed — the centre of Argentina's long royalty conflict. CAN'T: rule on biosafety. FOR: the fight over whether a farmer may replant their own seed runs through this institute, not through the biosafety commission.",
+    "tags": [
+     "conserve:recognize",
+     "spending:patents",
+     "environment:testing"
     ],
     "checked": "2026-07-31"
    }
@@ -1648,6 +1680,22 @@
     "tags": [
      "financial:property",
      "projects:local"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Protection of Plant Varieties and Farmers' Rights Authority",
+    "url": "https://plantauthority.gov.in/",
+    "desc": "The statutory authority under India's plant variety law, which is unusual in the world for registering farmers' varieties alongside breeders' and for recognising farmers' rights explicitly. CAN: register a farmers' variety, search what has been registered, and read the benefit-sharing provisions. CAN'T: address biosafety. FOR: India legislated a right that most countries only debate — this is where it is actually exercised.",
+    "tags": [
+     "conserve:recognize",
+     "conserve:acquire",
+     "spending:patents"
     ],
     "checked": "2026-07-31"
    }
@@ -2524,6 +2572,22 @@
      "organizing:help"
     ],
     "checked": "2026-07-31"
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "AGES — Austrian Agency for Health and Food Safety",
+    "url": "https://www.ages.at/en/",
+    "desc": "The national agency running food, feed and seed testing, including GM analysis. CAN: reach official testing capacity and published monitoring results in a country that tests seed lots systematically. CAN'T: set policy. FOR: Austria's seed monitoring is why its GM-free position is enforceable rather than declaratory — the testing is the mechanism.",
+    "tags": [
+     "environment:testing",
+     "environment:pollution",
+     "conserve:protect"
+    ],
+    "checked": "2026-07-31"
    }
   ]
  },
@@ -2623,6 +2687,22 @@
      "organizing:legal",
      "conserve:acquire",
      "advocacy:watchdog"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "interpretive",
+    "skind": "research",
+    "type": "institutional",
+    "trust": "high",
+    "name": "African Centre for Biodiversity — seed and farmer support",
+    "url": "https://acbio.org.za/seed-systems/",
+    "desc": "The seed-systems arm of the continent's leading independent research organisation on this subject, working on farmer seed systems and against seed-law harmonisation. CAN: get country-level analysis of seed law across Africa, and the practical farmer-seed material. CAN'T: act as an official record. FOR: African seed-law harmonisation is being decided now and there is very little independent analysis of it; this is most of what exists.",
+    "tags": [
+     "conserve:acquire",
+     "conserve:recognize",
+     "organizing:help"
     ],
     "checked": "2026-07-31"
    }
@@ -2751,6 +2831,21 @@
     "tags": [
      "corporate:filings",
      "corporate:ownership"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Federal Ministry of Environment",
+    "url": "https://environment.gov.ng/",
+    "desc": "The ministry above Nigeria's biosafety agency. CAN: reach the environmental policy framework and the ministry that oversees the agency issuing permits. CAN'T: substitute for the agency on permits themselves. FOR: where an agency approves quickly, the supervising ministry is the next place a complaint goes.",
+    "tags": [
+     "projects:nepa",
+     "courts:grievance"
     ],
     "checked": "2026-07-31"
    }
@@ -2904,6 +2999,21 @@
      "environment:health"
     ],
     "checked": "2026-07-31"
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Food Safety Commission of Japan",
+    "url": "https://www.fsc.go.jp/english/",
+    "desc": "The independent body assessing food safety, including foods derived from genetic modification, publishing its assessments. CAN: read the food-safety reasoning separately from the environmental decision — they are different bodies in Japan. CAN'T: cover cultivation approval. FOR: separating the two assessments makes it easier to see which questions each actually asked.",
+    "tags": [
+     "environment:health",
+     "environment:eia"
+    ],
+    "checked": "2026-07-31"
    }
   ]
  },
@@ -2938,6 +3048,22 @@
     "tags": [
      "projects:nepa",
      "environment:eia"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "interpretive",
+    "skind": "research",
+    "type": "institutional",
+    "trust": "high",
+    "name": "GenØk — Centre for Biosafety",
+    "url": "https://www.genok.no/",
+    "desc": "An independent biosafety research institute doing risk assessment research and capacity-building, particularly with countries in the global South. CAN: reach independent scientific work on biosafety methodology, and training material used by regulators elsewhere. CAN'T: be a regulator. FOR: much of the technical critique of risk-assessment practice used worldwide originates from a handful of institutes, and this is one of them.",
+    "tags": [
+     "environment:eia",
+     "organizing:research",
+     "advocacy:watchdog"
     ],
     "checked": "2026-07-31"
    }
@@ -3103,6 +3229,22 @@
      "conserve:protect"
     ],
     "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "interpretive",
+    "skind": "research",
+    "type": "institutional",
+    "trust": "high",
+    "name": "ISPRA — Italian Institute for Environmental Protection and Research",
+    "url": "https://www.isprambiente.gov.it/en",
+    "desc": "The national environmental research and protection institute, which contributes to GMO risk assessment and environmental monitoring. CAN: reach the technical side of the Italian position and its biodiversity monitoring data. CAN'T: issue permits. FOR: Italy refuses cultivation politically; ISPRA is where the ecological reasoning behind that sits.",
+    "tags": [
+     "environment:eia",
+     "environment:species",
+     "advocacy:data"
+    ],
+    "checked": "2026-07-31"
    }
   ]
  },
@@ -3185,6 +3327,22 @@
      "projects:local"
     ],
     "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "interpretive",
+    "skind": "research",
+    "type": "institutional",
+    "trust": "high",
+    "name": "COGEM — Netherlands Commission on Genetic Modification",
+    "url": "https://cogem.net/en/",
+    "desc": "The independent statutory body advising the Dutch government on genetic modification, publishing its advice in full and in English. CAN: read detailed technical advice on specific applications, plus the horizon-scanning reports that flag techniques before they reach a register. CAN'T: decide anything — it advises. FOR: COGEM publishes signalling reports on where the field is going, which is rare: most regulators only speak about what has already been applied for.",
+    "tags": [
+     "environment:eia",
+     "projects:nepa",
+     "advocacy:data"
+    ],
+    "checked": "2026-07-31"
    }
   ]
  },
@@ -3220,6 +3378,22 @@
      "conserve:protect",
      "advocacy:watchdog",
      "organizing:help"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Swiss Federal Institute of Intellectual Property",
+    "url": "https://www.ige.ch/en",
+    "desc": "Switzerland's patent office. CAN: search patents over plants, traits and processes held by the agrochemical and seed companies headquartered there. CAN'T: cover European Patent Office oppositions in detail. FOR: two of the four agricultural biotechnology majors have deep Swiss roots, so a surprising share of the ownership record resolves here.",
+    "tags": [
+     "spending:patents",
+     "corporate:ownership",
+     "corporate:principals"
     ],
     "checked": "2026-07-31"
    }
@@ -3261,6 +3435,22 @@
      "projects:nepa",
      "projects:local",
      "environment:eia"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "interpretive",
+    "skind": "research",
+    "type": "institutional",
+    "trust": "high",
+    "name": "Gene Technology Advisory Board (Gentekniknamnden)",
+    "url": "https://www.genteknik.se/",
+    "desc": "Sweden's independent advisory board on gene technology, publishing analysis in Swedish and English. CAN: get plain assessments of new techniques and their regulatory status, from a body whose remit includes ethics as well as safety. CAN'T: decide applications. FOR: Sweden took an early public position on how gene editing should be classified, and the reasoning is here rather than in a ministry statement.",
+    "tags": [
+     "environment:eia",
+     "records:publications",
+     "people:professional"
     ],
     "checked": "2026-07-31"
    }
@@ -3313,6 +3503,22 @@
     "tags": [
      "spending:patents",
      "environment:testing"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Korea Rural Development Administration — LMO",
+    "url": "https://www.rda.go.kr/",
+    "desc": "The agricultural research administration, which handles LMO risk assessment for agricultural use and runs the post-release monitoring programme. CAN: reach Korea's environmental monitoring for unintentional LMO release along transport and processing routes — a systematic programme few countries run. CAN'T: be read easily without Korean. FOR: Korea actively looks for escaped LMOs around ports and feed mills and publishes what it finds, which is close to unique.",
+    "tags": [
+     "environment:pollution",
+     "environment:incidents",
+     "projects:trackers"
     ],
     "checked": "2026-07-31"
    }
@@ -3384,6 +3590,22 @@
     "tags": [
      "spending:patents",
      "corporate:ownership"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Supreme People's Court — judgments online",
+    "url": "https://wenshu.court.gov.cn/",
+    "desc": "China's public judgment database. CAN: find seed-law, variety-rights and unauthorised-planting cases, which exist in numbers few outside China examine. CAN'T: be assumed complete; publication practice has varied. FOR: unauthorised planting of unapproved GM crops has been prosecuted in China, and the judgments are the record of it.",
+    "tags": [
+     "courts:federal",
+     "environment:incidents",
+     "spending:patents"
     ],
     "checked": "2026-07-31"
    }
@@ -3703,6 +3925,21 @@
      "environment:eia"
     ],
     "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "interpretive",
+    "skind": "research",
+    "type": "institutional",
+    "trust": "high",
+    "name": "Belgian Biosafety Advisory Council",
+    "url": "https://www.bio-council.be/",
+    "desc": "The advisory council that issues opinions on Belgian and EU notifications, published with the reasoning. CAN: read opinions on contained use and deliberate release from a country hosting substantial plant biotechnology research. CAN'T: cover EU-level authorisation. FOR: Belgium publishes contained-use information more openly than most, which partly fills the largest recording gap on this map.",
+    "tags": [
+     "environment:eia",
+     "projects:infrastructure"
+    ],
+    "checked": "2026-07-31"
    }
   ]
  },
@@ -3721,6 +3958,22 @@
     "tags": [
      "projects:nepa",
      "courts:liability",
+     "conserve:protect"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Retsinformation — Danish legislation",
+    "url": "https://www.retsinformation.dk/",
+    "desc": "The official database of Danish law. CAN: read the statutory compensation scheme for GM contamination of a neighbouring crop — one of very few in the world where the remedy is written into law rather than left to litigation. CAN'T: be searched without Danish. FOR: when the question is ‘what would compensation even look like’, this is the working answer to point at.",
+    "tags": [
+     "courts:liability",
+     "records:publications",
      "conserve:protect"
     ],
     "checked": "2026-07-31"
@@ -3840,6 +4093,21 @@
      "projects:infrastructure",
      "projects:nepa",
      "people:professional"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Department of Agriculture Thailand",
+    "url": "https://www.doa.go.th/",
+    "desc": "Thailand's agriculture department, which administers the plant quarantine controls under which GM field trials have been restricted for years. CAN: reach the quarantine framework, which is the actual legal mechanism behind Thailand's restriction. CAN'T: be searched easily without Thai. FOR: Thailand restricts trials through plant quarantine law rather than biosafety law — a mechanism worth understanding because it is available in many countries that lack a biosafety act.",
+    "tags": [
+     "projects:nepa",
+     "conserve:protect"
     ],
     "checked": "2026-07-31"
    }
@@ -4057,6 +4325,21 @@
      "environment:eia"
     ],
     "checked": "2026-07-31"
+   },
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Finnish Food Authority (Ruokavirasto)",
+    "url": "https://www.ruokavirasto.fi/en/",
+    "desc": "The national food authority, which runs seed certification and GM testing of food and feed. CAN: reach official testing and the seed certification system. CAN'T: authorise releases, which sit with the gene technology board. FOR: Finland's forestry research makes it one of the places engineered trees are actually studied, and seed certification is where that meets the market.",
+    "tags": [
+     "environment:testing",
+     "conserve:acquire"
+    ],
+    "checked": "2026-07-31"
    }
   ]
  },
@@ -4116,6 +4399,21 @@
     "tags": [
      "projects:nepa",
      "projects:trackers"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "ngo",
+    "type": "institutional",
+    "trust": "low",
+    "name": "Indonesian Biotechnology Information Centre",
+    "url": "https://indonesia.biotek.lipi.go.id/",
+    "desc": "The national biotechnology information node. CAN: reach the Indonesian research and approval picture. CAN'T: be treated as independent — information centres of this kind are generally industry-aligned, and the trust filters here mark it accordingly. FOR: included as a record rather than a voice, because for several Southeast Asian countries it is the only consolidated public account that exists.",
+    "tags": [
+     "projects:trackers",
+     "advocacy:frontgroups"
     ],
     "checked": "2026-07-31"
    }
