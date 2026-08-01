@@ -1,2085 +1,518 @@
 {
- "AUS": {
-  "name": "Australia",
-  "trackers": [
-   {
-    "desc": "Statements filed under the Commonwealth Modern Slavery Act 2018, searchable and downloadable. Reporting is mandatory above the revenue threshold, so a missing statement means something here.",
-    "kind": "structured",
-    "name": "Modern Slavery Statements Register",
-    "scope": "own",
-    "skind": "database",
-    "tags": [
-     "corporate:statements"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://modernslaveryregister.gov.au/",
-    "voice": "official"
-   },
-   {
-    "desc": "Wage and conditions enforcement, including for visa holders \u2014 the Ombudsman states that it will not share information about immigration status where a worker comes forward about exploitation. Publishes litigation outcomes and recovered wages by employer.",
-    "kind": "structured",
-    "name": "Fair Work Ombudsman",
-    "scope": "own",
-    "skind": "inspectorate",
-    "tags": [
-     "environment:wages",
-     "environment:inspect",
-     "conserve:compensation"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.fairwork.gov.au/",
-    "voice": "official"
-   },
-   {
-    "desc": "A specialist legal and research centre at UTS providing free legal help to people who have experienced trafficking, slavery and forced marriage, plus practical guides on visas and compensation.",
-    "kind": "institution",
-    "name": "Anti-Slavery Australia",
-    "scope": "own",
-    "skind": "helpline",
-    "tags": [
-     "organizing:legal",
-     "conserve:legalaid"
-    ],
-    "trust": "record",
-    "type": "institutional",
-    "url": "https://antislavery.org.au/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "131 AFP (131 237). The reporting route for trafficking, forced labour and forced marriage. Referral into the Support for Trafficked People Program runs through the AFP, which means the support and the criminal process are linked \u2014 a point to weigh with a lawyer before reporting.",
-    "kind": "structured",
-    "name": "Australian Federal Police \u2014 report human trafficking and slavery",
-    "skind": "justicegov",
-    "tags": [
-     "conserve:hotline",
-     "projects:inspect",
-     "environment:inspect"
-    ],
-    "url": "https://www.afp.gov.au/crimes/human-trafficking",
-    "voice": "official"
-   },
-   {
-    "desc": "Delivers the federally funded support programme for trafficked people: accommodation, living expenses, health care and casework. Entry is via police referral, which is the constraint to understand before anyone reports.",
-    "kind": "institution",
-    "name": "Australian Red Cross \u2014 Support for Trafficked People Program",
-    "skind": "ngo",
-    "tags": [
-     "conserve:shelter",
-     "organizing:help"
-    ],
-    "url": "https://www.redcross.org.au/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "1800 55 1800, free and twenty-four hours for anyone aged 5 to 25, by phone, web chat or email. The web-chat route is the usable one when a child cannot speak aloud where they are.",
-    "kind": "institution",
-    "name": "Kids Helpline",
-    "skind": "helpline",
-    "tags": [
-     "conserve:child",
-     "conserve:hotline"
-    ],
-    "url": "https://kidshelpline.com.au/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "BGD": {
-  "name": "Bangladesh",
-  "trackers": [
-   {
-    "desc": "Free legal aid across Bangladesh, including labour and migration cases, and public-interest litigation. One of the few routes to representation for a garment or brick-kiln worker.",
-    "kind": "institution",
-    "name": "Bangladesh Legal Aid and Services Trust (BLAST)",
-    "skind": "legalaid",
-    "tags": [
-     "organizing:legal",
-     "conserve:legalaid"
-    ],
-    "url": "https://www.blast.org.bd/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "Runs migration information and support services at district level, including help for returning workers who were defrauded by a recruiter or came home unpaid.",
-    "kind": "institution",
-    "name": "BRAC \u2014 migration programme",
-    "skind": "ngo",
-    "tags": [
-     "corporate:recruit",
-     "organizing:help"
-    ],
-    "url": "https://www.brac.net/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "Licenses recruiting agencies for overseas employment and holds the clearance record for departing workers. Bangladeshi cases very often begin with a fee several times the legal ceiling, and the licence file is where that is documented.",
-    "kind": "structured",
-    "name": "BMET \u2014 Bureau of Manpower, Employment and Training",
-    "skind": "inspectorate",
-    "tags": [
-     "corporate:recruit"
-    ],
-    "url": "https://bmet.gov.bd/",
-    "voice": "official"
-   }
-  ]
- },
- "BRA": {
-  "name": "Brazil",
-  "sub": {
-   "Acre": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Acre, seated in Porto Velho (14\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 14\u00aa Regi\u00e3o (Acre)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt14.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Acre. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Acre",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Alagoas": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Alagoas, seated in Macei\u00f3 (19\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 19\u00aa Regi\u00e3o (Alagoas)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt19.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Alagoas. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Alagoas",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Amap\u00e1": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Amap\u00e1, seated in Bel\u00e9m (8\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 8\u00aa Regi\u00e3o (Amap\u00e1)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt8.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Amap\u00e1. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Amap\u00e1",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Amazonas": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Amazonas, seated in Manaus (11\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil. Riverine and forestry work, where distance from any inspection office is itself the mechanism.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 11\u00aa Regi\u00e3o (Amazonas)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt11.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Amazonas. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Amazonas",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Bahia": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Bahia, seated in Salvador (5\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil. Cocoa, sisal and cattle, with recurring cases in charcoal.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 5\u00aa Regi\u00e3o (Bahia)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt5.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Bahia. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Bahia",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Cear\u00e1": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Cear\u00e1, seated in Fortaleza (7\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 7\u00aa Regi\u00e3o (Cear\u00e1)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt7.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Cear\u00e1. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Cear\u00e1",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Distrito Federal": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Distrito Federal, seated in Bras\u00edlia (10\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 10\u00aa Regi\u00e3o (Distrito Federal)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt10.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Distrito Federal. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Distrito Federal",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Esp\u00edrito Santo": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Esp\u00edrito Santo, seated in Vit\u00f3ria (17\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 17\u00aa Regi\u00e3o (Esp\u00edrito Santo)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt17.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Esp\u00edrito Santo. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Esp\u00edrito Santo",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Goi\u00e1s": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Goi\u00e1s, seated in Goi\u00e2nia (18\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil. Sugarcane and cattle. Also a common destination for workers recruited out of the north-east.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 18\u00aa Regi\u00e3o (Goi\u00e1s)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt18.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Goi\u00e1s. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Goi\u00e1s",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Maranh\u00e3o": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Maranh\u00e3o, seated in S\u00e3o Lu\u00eds (16\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil. Historically the largest origin state for workers recruited into slave labour elsewhere in Brazil, which makes the origin-side recruitment cases as important here as the destination-side ones.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 16\u00aa Regi\u00e3o (Maranh\u00e3o)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt16.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Maranh\u00e3o. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Maranh\u00e3o",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Mato Grosso": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Mato Grosso, seated in Cuiab\u00e1 (23\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil. Cattle, soy and cotton; frontier expansion, and a recurring pattern of workers recruited from other states and left without pay or a way home.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 23\u00aa Regi\u00e3o (Mato Grosso)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt23.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Mato Grosso. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Mato Grosso",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Mato Grosso do Sul": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Mato Grosso do Sul, seated in Campo Grande (24\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil. Cattle, sugarcane and ethanol, with cases involving indigenous workers recruited onto plantations.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 24\u00aa Regi\u00e3o (Mato Grosso do Sul)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt24.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Mato Grosso do Sul. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Mato Grosso do Sul",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Minas Gerais": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Minas Gerais, seated in Belo Horizonte (3\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil. Coffee harvesting and charcoal for the pig-iron industry are the two sectors that recur here on the register.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 3\u00aa Regi\u00e3o (Minas Gerais)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt3.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Minas Gerais. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Minas Gerais",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Paran\u00e1": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Paran\u00e1, seated in Curitiba (9\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 9\u00aa Regi\u00e3o (Paran\u00e1)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt9.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Paran\u00e1. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Paran\u00e1",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Para\u00edba": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Para\u00edba, seated in Jo\u00e3o Pessoa (13\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 13\u00aa Regi\u00e3o (Para\u00edba)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt13.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Para\u00edba. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Para\u00edba",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Par\u00e1": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Par\u00e1, seated in Bel\u00e9m (8\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil. Par\u00e1 has appeared on the employer register more often than any other state, concentrated in cattle ranching and charcoal production along the agricultural frontier.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 8\u00aa Regi\u00e3o (Par\u00e1)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt8.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Par\u00e1. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Par\u00e1",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Pernambuco": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Pernambuco, seated in Recife (6\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 6\u00aa Regi\u00e3o (Pernambuco)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt6.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Pernambuco. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Pernambuco",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Piau\u00ed": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Piau\u00ed, seated in Teresina (22\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil. An origin state for recruitment into agricultural work in the centre-west; carnauba wax harvesting has also produced cases.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 22\u00aa Regi\u00e3o (Piau\u00ed)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt22.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Piau\u00ed. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Piau\u00ed",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Rio Grande do Norte": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Rio Grande do Norte, seated in Natal (21\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 21\u00aa Regi\u00e3o (Rio Grande do Norte)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt21.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Rio Grande do Norte. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Rio Grande do Norte",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Rio Grande do Sul": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Rio Grande do Sul, seated in Porto Alegre (4\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil. Meatpacking and vineyard work; a 2023 winery case involving workers recruited from Bahia was among the largest single rescues in recent years.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 4\u00aa Regi\u00e3o (Rio Grande do Sul)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt4.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Rio Grande do Sul. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Rio Grande do Sul",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Rio de Janeiro": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Rio de Janeiro, seated in Rio de Janeiro (1\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil. Domestic servitude and construction, and the port through which much of the supply-chain question passes.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 1\u00aa Regi\u00e3o (Rio de Janeiro)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt1.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Rio de Janeiro. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Rio de Janeiro",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Rond\u00f4nia": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Rond\u00f4nia, seated in Porto Velho (14\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 14\u00aa Regi\u00e3o (Rond\u00f4nia)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt14.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Rond\u00f4nia. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Rond\u00f4nia",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Roraima": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Roraima, seated in Manaus (11\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 11\u00aa Regi\u00e3o (Roraima)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt11.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Roraima. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Roraima",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Santa Catarina": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Santa Catarina, seated in Florian\u00f3polis (12\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil. Meatpacking, textiles and construction, including migrant workers from Haiti and Venezuela.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 12\u00aa Regi\u00e3o (Santa Catarina)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt12.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Santa Catarina. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Santa Catarina",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Sergipe": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Sergipe, seated in Aracaju (20\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 20\u00aa Regi\u00e3o (Sergipe)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt20.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Sergipe. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Sergipe",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "S\u00e3o Paulo": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering S\u00e3o Paulo, seated in S\u00e3o Paulo (2\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil. Garment workshops in the capital, worked largely by Bolivian and Paraguayan migrants two or three tiers below a retail brand, and sugarcane in the interior. Note that the interior is covered by the 15th Region (prt15.mpt.mp.br), seated in Campinas, not by this office.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 2\u00aa Regi\u00e3o (S\u00e3o Paulo)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt2.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for S\u00e3o Paulo. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 S\u00e3o Paulo",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   },
-   "Tocantins": {
-    "trackers": [
-     {
-      "desc": "The Labour Prosecution Service office covering Tocantins, seated in Bras\u00edlia (10\u00aa Regi\u00e3o). This is where a complaint about work analogous to slavery or about child labour in this state is actually investigated: the MPT has its own investigative powers, brings public civil actions, and negotiates binding conduct adjustment agreements, and it does not depend on a criminal prosecution succeeding first. Anyone may file, including anonymously and including from outside Brazil. Cattle on the frontier, and a transit route for recruitment out of the north-east.",
-      "kind": "structured",
-      "name": "MPT \u2014 Procuradoria Regional do Trabalho, 10\u00aa Regi\u00e3o (Tocantins)",
-      "skind": "justicegov",
-      "tags": [
-       "courts:criminal",
-       "environment:inspect",
-       "conserve:hotline"
-      ],
-      "url": "https://www.prt10.mpt.mp.br/",
-      "voice": "official"
-     },
-     {
-      "desc": "The labour inspectorate's regional superintendence for Tocantins. Inspectors here are the ones who physically carry out the rescue operations and who make the finding that puts an employer on the national register. A report can be made through Disque 100 or directly to the superintendence; the inspectorate acts on conditions and unpaid wages without needing anyone to prove trafficking.",
-      "kind": "structured",
-      "name": "Superintend\u00eancia Regional do Trabalho \u2014 Tocantins",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:inspect",
-       "conserve:compensation"
-      ],
-      "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "voice": "official"
-     }
-    ]
-   }
-  },
-  "trackers": [
-   {
-    "desc": "The register of employers found by labour inspectors to have subjected workers to conditions analogous to slavery, published by the Ministry of Labour and Employment every six months under Portaria Interministerial 18/2024. Names, states and sectors, with each employer listed for two years. The April 2026 update added 169 employers, bringing the register to 613 and reflecting some 2,200 workers removed from such conditions. Nothing else in the world is this specific or this public.",
-    "kind": "structured",
-    "name": "Cadastro de Empregadores (\u2018Lista Suja\u2019)",
-    "scope": "own",
-    "skind": "inspectorate",
-    "tags": [
-     "projects:inspect",
-     "spending:debarred",
-     "environment:inspect"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.gov.br/trabalho-e-emprego/pt-br",
-    "voice": "official"
-   },
-   {
-    "desc": "A joint MPT and ILO observatory turning the inspection data into open dashboards: rescues by year, state, sector, age and gender, going back to 1995. The analytical layer on top of the raw register.",
-    "kind": "structured",
-    "name": "SmartLab \u2014 Observatory on slave labour and trafficking",
-    "scope": "own",
-    "skind": "research",
-    "tags": [
-     "projects:trackers",
-     "records:stats"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://smartlabbr.org/trabalhoescravo",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "The labour prosecution service that brings the civil and criminal actions following an inspection, and publishes its own case reporting. A complaint can be filed with the MPT directly.",
-    "kind": "structured",
-    "name": "Minist\u00e9rio P\u00fablico do Trabalho (MPT)",
-    "scope": "own",
-    "skind": "justicegov",
-    "tags": [
-     "courts:criminal",
-     "courts:civil",
-     "projects:inspect"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://mpt.mp.br/",
-    "voice": "official"
-   },
-   {
-    "desc": "The investigative organisation that has covered slave labour in Brazilian supply chains for two decades, with named-company reporting and its own monitoring tools. Much of what the world knows about Brazilian supply chains started here.",
-    "kind": "journalism",
-    "name": "Rep\u00f3rter Brasil",
-    "scope": "own",
-    "skind": "media",
-    "tags": [
-     "advocacy:journalism",
-     "corporate:supply"
-    ],
-    "trust": "record",
-    "type": "investigative-journalism",
-    "url": "https://reporterbrasil.org.br/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "Dial 100. The national human-rights channel, which takes anonymous reports of work analogous to slavery and of child labour and routes them to the labour inspectorate and the Public Ministry. The route most third-party reports take in Brazil.",
-    "kind": "structured",
-    "name": "Disque 100 \u2014 human rights hotline",
-    "skind": "helpline",
-    "tags": [
-     "conserve:hotline"
-    ],
-    "url": "https://www.gov.br/mdh/pt-br/ouvidoria",
-    "voice": "official"
-   },
-   {
-    "desc": "Receives complaints from rural workers across Brazil and has been the origin of a large share of inspection operations in agriculture and cattle. The point of contact when the worker is remote and has no other way to reach an authority.",
-    "kind": "institution",
-    "name": "Comiss\u00e3o Pastoral da Terra",
-    "skind": "ngo",
-    "tags": [
-     "organizing:help",
-     "conserve:hotline"
-    ],
-    "url": "https://www.cptnacional.org.br/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "The federal public defender, free to anyone who cannot afford a lawyer, and the body that represents rescued workers in claims for unpaid wages and damages after an operation. The MPT prosecutes; the DPU represents the worker.",
-    "kind": "structured",
-    "name": "Defensoria P\u00fablica da Uni\u00e3o",
-    "skind": "legalaid",
-    "tags": [
-     "organizing:legal",
-     "conserve:legalaid",
-     "conserve:compensation"
-    ],
-    "url": "https://www.dpu.def.br/",
-    "voice": "official"
-   }
-  ]
- },
- "CAN": {
-  "name": "Canada",
-  "trackers": [
-   {
-    "desc": "Reports filed under the Fighting Against Forced Labour and Child Labour in Supply Chains Act, plus the joint UK/Australia/Canada reporting template. Canadian reports must be approved by the governing body and signed by a director \u2014 a named person is accountable for the contents.",
-    "kind": "structured",
-    "name": "Forced and child labour in supply chains \u2014 reports",
-    "scope": "own",
-    "skind": "database",
-    "tags": [
-     "corporate:statements"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.publicsafety.gc.ca/cnt/cntrng-crm/frcd-lbr-cndn-spply-chns/index-en.aspx",
-    "voice": "official"
-   },
-   {
-    "desc": "1-833-900-1010, 24 hours, multilingual, confidential, with referral to services across the country.",
-    "kind": "institution",
-    "name": "Canadian Human Trafficking Hotline",
-    "scope": "own",
-    "skind": "helpline",
-    "tags": [
-     "conserve:hotline"
-    ],
-    "trust": "record",
-    "type": "institutional",
-    "url": "https://www.canadianhumantraffickinghotline.ca/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "The federal coordination point, national strategy and the temporary resident permit route for trafficking victims, which is what prevents removal while a case is assessed.",
-    "kind": "structured",
-    "name": "Public Safety Canada \u2014 human trafficking",
-    "skind": "oversight",
-    "tags": [
-     "conserve:legalaid"
-    ],
-    "url": "https://www.publicsafety.gc.ca/cnt/cntrng-crm/hmn-trffckng/index-en.aspx",
-    "voice": "official"
-   },
-   {
-    "desc": "1-800-668-6868, or text CONNECT to 686868. Reaches children directly in English and French, which matters where a young person cannot safely have an adult make the call for them.",
-    "kind": "institution",
-    "name": "Kids Help Phone",
-    "skind": "helpline",
-    "tags": [
-     "conserve:child",
-     "conserve:hotline"
-    ],
-    "url": "https://kidshelpphone.ca/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "CHN": {
-  "name": "China",
-  "trackers": [
-   {
-    "desc": "Hong Kong-based, tracking worker actions, wage arrears and workplace accidents across mainland China from public and social-media sources. Because independent unions do not exist there, this is one of very few systematic public records of Chinese labour disputes.",
-    "kind": "institution",
-    "name": "China Labour Bulletin",
-    "scope": "own",
-    "skind": "ngo",
-    "tags": [
-     "environment:freedom",
-     "environment:wages",
-     "advocacy:data"
-    ],
-    "trust": "record",
-    "type": "institutional",
-    "url": "https://clb.org.hk/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "CIV": {
-  "name": "C\u00f4te d'Ivoire",
-  "trackers": [
-   {
-    "desc": "Community child-labour monitoring and remediation in the world's largest cocoa-producing country, with published findings by cooperative and district. Cocoa from C\u00f4te d'Ivoire appears on the US Department of Labor list for both child labour and forced labour.",
-    "kind": "institution",
-    "name": "International Cocoa Initiative \u2014 C\u00f4te d'Ivoire",
-    "scope": "own",
-    "skind": "ngo",
-    "tags": [
-     "projects:trackers",
-     "conserve:child"
-    ],
-    "trust": "record",
-    "type": "institutional",
-    "url": "https://www.cocoainitiative.org/",
-    "voice": "interpretive"
-   }
-  ]
- },
  "DEU": {
   "name": "Germany",
   "trackers": [
    {
-    "desc": "The federal office that enforces the Lieferkettensorgfaltspflichtengesetz. Anyone \u2014 including a worker or an NGO outside Germany \u2014 can file a complaint about a German company's human rights due diligence, and BAFA can investigate and fine. One of the few due-diligence regimes with a real regulator behind it.",
-    "kind": "structured",
-    "name": "BAFA \u2014 Supply Chain Act (LkSG) complaints",
-    "scope": "own",
-    "skind": "oversight",
-    "tags": [
-     "courts:grievance",
-     "corporate:statements"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.bafa.de/",
-    "voice": "official"
-   },
-   {
-    "desc": "Customs' undeclared-work unit, which conducts the workplace inspections that surface exploitation in construction, meat processing and logistics, and enforces the minimum wage.",
-    "kind": "structured",
-    "name": "Finanzkontrolle Schwarzarbeit (Zoll)",
-    "scope": "own",
-    "skind": "inspectorate",
-    "tags": [
-     "environment:inspect",
-     "environment:wages"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.zoll.de/",
-    "voice": "official"
-   },
-   {
-    "desc": "116 111 for children and young people, and a separate parents' line. Anonymous and free, and the German entry point into child protection that does not begin with the police.",
     "kind": "institution",
-    "name": "Nummer gegen Kummer",
-    "skind": "helpline",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Bayer Crop Science",
+    "url": "https://www.bayer.com/en/agriculture/crop-science",
+    "desc": "WHAT. The largest seed and agricultural-trait business in the world, formed when Bayer bought Monsanto in 2018 for around $63 billion and retired the Monsanto name. It sells maize, soybean, cotton, vegetable and canola seed under the Dekalb, Asgrow and Seminis brands, licenses its traits to competitors, and sells the glyphosate herbicide those traits are engineered to survive. WHERE IT SITS. At the top. Its traits appear in seed sold by firms that compete with it, so its reach is wider than its market share suggests, and the same company supplies the seed and the chemical the seed is designed for. WHY IT MATTERS. Selling a herbicide-tolerant seed and the herbicide together means the trait creates the market for the chemical. That is a closed loop by design, and it is the single arrangement that shaped modern row-crop agriculture more than any other. The glyphosate litigation Bayer inherited runs to tens of thousands of claims and provisions in the billions — which is the company's own accounting of what the loop cost.",
     "tags": [
-     "conserve:child",
-     "conserve:hotline"
+     "seed:majors",
+     "seed:traits",
+     "editing:agtech"
     ],
-    "url": "https://www.nummergegenkummer.de/",
-    "voice": "interpretive"
+    "checked": "2026-07-31"
    }
   ]
  },
- "ESP": {
-  "name": "Spain",
+ "USA": {
+  "name": "United States",
   "trackers": [
    {
-    "desc": "Specialist support for trafficked women in Spain, including labour exploitation as well as sexual exploitation: shelter, legal representation and help with the residence and recovery periods.",
     "kind": "institution",
-    "name": "Proyecto ESPERANZA",
-    "skind": "ngo",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Corteva Agriscience",
+    "url": "https://www.corteva.com/",
+    "desc": "WHAT. The agricultural company spun out of the DowDuPont merger in 2019, carrying Pioneer — the oldest and one of the largest seed brands in the world — together with the Dow and DuPont trait portfolios and crop-protection lines. WHERE IT SITS. Second in seed globally, and a major licensor: its traits are grown by farmers who never bought a Corteva bag, and it in turn licenses in from Bayer. The four majors trade traits with each other constantly, which is why they are competitors in name and a shared platform in practice. WHY IT MATTERS. Cross-licensing between the majors means a farmer choosing between brands is often choosing between packages of the same underlying traits. It looks like a market and functions closer to a cartel of technology, without anyone having to agree to anything illegal.",
     "tags": [
-     "conserve:shelter",
-     "organizing:legal",
-     "conserve:legalaid",
-     "organizing:help"
+     "seed:majors",
+     "seed:traits",
+     "seed:licensees"
     ],
-    "url": "https://www.proyectoesperanza.org/",
-    "voice": "interpretive"
+    "checked": "2026-07-31"
    },
    {
-    "desc": "116 111 for children and 600 50 51 52 for adults with a concern. Free, confidential, and it does not appear on a phone bill \u2014 a detail that matters where the household is the problem.",
-    "kind": "institution",
-    "name": "Fundaci\u00f3n ANAR",
-    "skind": "helpline",
-    "tags": [
-     "conserve:child",
-     "conserve:hotline"
-    ],
-    "url": "https://www.anar.org/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "ETH": {
-  "name": "Ethiopia",
-  "trackers": [
-   {
-    "desc": "Regulates overseas employment agencies for a corridor \u2014 Ethiopia to the Gulf, largely domestic work \u2014 that has produced sustained documentation of confiscated passports, unpaid wages and deaths. The licensing register is the practical leverage point.",
     "kind": "structured",
-    "name": "Ministry of Labour and Skills",
-    "skind": "inspectorate",
-    "tags": [
-     "corporate:recruit",
-     "environment:inspect"
-    ],
-    "url": "https://mols.gov.et/",
-    "voice": "official"
-   }
-  ]
- },
- "FRA": {
-  "name": "France",
-  "trackers": [
-   {
-    "desc": "The 2017 statute requiring large French companies to publish a vigilance plan covering their subsidiaries, suppliers and subcontractors, and creating civil liability for failing to. The first law of its kind, and the source of the litigation the EU directive was modelled on.",
-    "kind": "structured",
-    "name": "Loi de vigilance \u2014 duty of vigilance",
-    "scope": "own",
+    "voice": "official",
     "skind": "database",
-    "tags": [
-     "corporate:statements",
-     "courts:strategic"
-    ],
-    "trust": "record",
     "type": "records-data",
-    "url": "https://www.legifrance.gouv.fr/",
-    "voice": "official"
+    "trust": "record",
+    "name": "Bayer — investor filings",
+    "url": "https://www.bayer.com/en/investors/annual-reports",
+    "desc": "WHAT. Bayer's own annual and quarterly reporting, including segment revenue and the litigation provisions. WHERE IT SITS. The company's account of itself, written for people who have money at stake rather than for the public. WHY IT MATTERS. The risk-factor section is the most candid document any of these companies produces. A company will tell shareholders what it will not tell a regulator, because misleading the former is a securities offence. Read it before reading anything the same company publishes about safety.",
+    "tags": [
+     "seed:majors",
+     "money:markets"
+    ],
+    "checked": "2026-07-31"
    },
    {
-    "desc": "The association that brings duty-of-vigilance cases against French multinationals. Its published case files set out the legal theory in detail.",
     "kind": "institution",
-    "name": "Sherpa",
-    "scope": "own",
-    "skind": "helpline",
-    "tags": [
-     "courts:strategic",
-     "organizing:legal"
-    ],
-    "trust": "record",
+    "voice": "commentary",
+    "skind": "other",
     "type": "institutional",
-    "url": "https://www.asso-sherpa.org/",
-    "voice": "interpretive"
+    "trust": "medium",
+    "name": "Corteva — CRISPR licensing framework",
+    "url": "https://www.corteva.com/who-we-are/open-innovation.html",
+    "desc": "WHAT. Corteva holds or controls a large share of the agricultural CRISPR patent estate, partly through an exclusive arrangement with the Broad Institute, and licenses it out. WHERE IT SITS. Between the academic institutions that hold the foundational patents and every agricultural company that wants to use the technique. WHY IT MATTERS. The technique was developed largely with public research funding, and the right to use it in crops is now controlled commercially. A university spin-out or a national breeding programme in a low-income country wanting to edit a local crop must negotiate with a company that competes with it. That is the enclosure of a method, not of a product.",
+    "tags": [
+     "editing:patents",
+     "editing:agtech",
+     "money:public"
+    ],
+    "checked": "2026-07-31"
    },
    {
-    "desc": "The French organisation specialising in domestic servitude: identification, shelter, and civil actions for unpaid wages and damages against employers, including diplomatic households.",
     "kind": "institution",
-    "name": "Comit\u00e9 contre l'esclavage moderne (CCEM)",
-    "skind": "ngo",
-    "tags": [
-     "conserve:shelter",
-     "organizing:legal",
-     "conserve:legalaid",
-     "conserve:compensation"
-    ],
-    "url": "https://www.esclavagemoderne.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "119, free and twenty-four hours, the French national number for a child in danger. Takes calls from children and from any adult with a concern, and routes to the departmental child-protection service.",
-    "kind": "structured",
-    "name": "119 \u2014 Allo Enfance en Danger",
-    "skind": "helpline",
-    "tags": [
-     "conserve:child",
-     "conserve:hotline"
-    ],
-    "url": "https://www.allo119.gouv.fr/",
-    "voice": "official"
-   }
-  ]
- },
- "GBR": {
-  "name": "United Kingdom",
-  "trackers": [
-   {
-    "desc": "0800 0121 700, 24 hours, confidential, independent of government and police \u2014 for potential victims, for the public, and for businesses. Unseen also publishes annual data on what the helpline receives, which is one of the few public pictures of the UK caseload.",
-    "kind": "institution",
-    "name": "Modern Slavery & Exploitation Helpline (Unseen)",
-    "scope": "own",
-    "skind": "helpline",
-    "tags": [
-     "conserve:hotline",
-     "conserve:shelter"
-    ],
-    "trust": "record",
+    "voice": "commentary",
+    "skind": "other",
     "type": "institutional",
-    "url": "https://www.unseenuk.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "The UK's labour-market enforcement body: licenses labour providers in agriculture, horticulture, shellfish and food processing, and since the Immigration Act 2016 investigates labour exploitation across the whole economy with police-style powers. Report to 0800 432 0804 or via its online form. Supplying labour unlicensed in the regulated sector carries up to ten years.",
-    "kind": "structured",
-    "name": "Gangmasters and Labour Abuse Authority",
-    "scope": "own",
-    "skind": "inspectorate",
+    "trust": "medium",
+    "name": "Ginkgo Bioworks",
+    "url": "https://www.ginkgobioworks.com/",
+    "desc": "WHAT. A synthetic biology company selling organism engineering as a service — clients specify what they want a microbe to produce and Ginkgo designs, builds and tests strains at scale. WHERE IT SITS. A foundry model: it does not own most of the products, it owns the capability to make them, and it sells that capability by the project. WHY IT MATTERS. Selling engineering as a service means capability accumulates in one place while responsibility spreads across dozens of clients. When something goes wrong the client holds the permit and the foundry holds the know-how, and no regulator has a view of the whole pipeline.",
     "tags": [
-     "environment:inspect",
-     "corporate:recruit",
-     "projects:inspect"
+     "editing:synbio",
+     "editing:platform",
+     "cro:cro"
     ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.gla.gov.uk/",
-    "voice": "official"
+    "checked": "2026-07-31"
    },
    {
-    "desc": "The statutory office that scrutinises the UK response, publishes on identification, support and prosecution rates, and can require public bodies to cooperate.",
     "kind": "institution",
-    "name": "Independent Anti-Slavery Commissioner",
-    "scope": "own",
-    "skind": "oversight",
-    "tags": [
-     "advocacy:watchdog",
-     "conserve:legalaid"
-    ],
-    "trust": "record",
+    "voice": "commentary",
+    "skind": "other",
     "type": "institutional",
-    "url": "https://www.antislaverycommissioner.co.uk/",
-    "voice": "official"
+    "trust": "medium",
+    "name": "Inari Agriculture",
+    "url": "https://inari.com/",
+    "desc": "WHAT. A crop-editing company using computational design and multiplex editing to alter yield and resource-use traits in soy, maize and wheat. WHERE IT SITS. In the space opened by editing being treated as outside GMO registration in several jurisdictions — designed for a regulatory route the older technology does not have. WHY IT MATTERS. Companies of this kind exist because of a regulatory decision, not despite one. Where editing has been ruled equivalent to conventional breeding there is no application, no assessment and no register entry, which means no public record that the product exists at all.",
+    "tags": [
+     "editing:agtech",
+     "editing:platform",
+     "rules:regulators"
+    ],
+    "checked": "2026-07-31"
    },
    {
-    "desc": "Free company registry: officers, filings, accounts, persons with significant control. The first check on any UK entity named on a contract or a licence.",
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Twist Bioscience",
+    "url": "https://www.twistbioscience.com/",
+    "desc": "WHAT. A DNA synthesis company using a silicon-chip platform to write genes and oligonucleotide libraries at high volume and low cost. WHERE IT SITS. Upstream of everything. Almost every engineered organism on this map began as a sequence ordered from a company like this one. WHY IT MATTERS. This is where capability is actually gated, and the gate is commercial rather than legal. Synthesis firms screen orders against sequences of concern voluntarily; no government requires it, and a meaningful share of global capacity sits outside the industry's own screening consortium. The most consequential control point in the whole industry is a company policy.",
+    "tags": [
+     "synthesis:synth",
+     "synthesis:reagents"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Integrated DNA Technologies (Danaher)",
+    "url": "https://www.idtdna.com/",
+    "desc": "WHAT. One of the largest suppliers of custom oligonucleotides, gene fragments and CRISPR guide RNAs, owned by the Danaher conglomerate. WHERE IT SITS. The everyday supply line for laboratories worldwide — the routine orders rather than the headline projects. WHY IT MATTERS. Ownership by a diversified industrial conglomerate is worth noticing. Decisions about who may buy synthesised DNA are taken inside a company whose main business is something else entirely, and which faces no biosafety regulator at group level.",
+    "tags": [
+     "synthesis:synth",
+     "synthesis:reagents"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Illumina",
+    "url": "https://www.illumina.com/",
+    "desc": "WHAT. The dominant supplier of high-throughput DNA sequencing instruments and the consumables they require. WHERE IT SITS. Effectively the infrastructure of genomics. Most large sequencing datasets in existence were generated on its machines. WHY IT MATTERS. The instruments are sold cheaply relative to the consumables they consume, which locks buyers into a proprietary supply chain for the life of the machine. A national genomics programme, an agricultural breeding institute and a hospital all end up dependent on one company's pricing, and that dependency is a design choice rather than an accident.",
+    "tags": [
+     "synthesis:seq",
+     "synthesis:reagents"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "official",
+    "skind": "igo",
+    "type": "institutional",
+    "trust": "high",
+    "name": "Addgene",
+    "url": "https://www.addgene.org/",
+    "desc": "WHAT. A non-profit plasmid repository that stores and distributes the genetic constructs behind published research, at low cost, to laboratories worldwide. WHERE IT SITS. The circulation layer. When a method is published, the construct that makes it usable generally moves through here. WHY IT MATTERS. Access requires a verified institutional account. That single requirement — repeated across plasmid repositories, cell-line banks and most reagent suppliers — is the largest practical barrier between the public and this technology, and it is rarely mentioned in writing about biotechnology being democratised. The knowledge is open; the materials are not.",
+    "tags": [
+     "synthesis:repos",
+     "synthesis:reagents"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Charles River Laboratories",
+    "url": "https://www.criver.com/",
+    "desc": "WHAT. A contract research organisation supplying laboratory animals, running preclinical safety studies, and providing the animal models used across pharmaceutical and biotechnology research. WHERE IT SITS. Both a supplier and a testing house — it breeds and sells the animals and also runs the studies performed on them. WHY IT MATTERS. The safety studies regulators read are commissioned and paid for by the company seeking approval and executed by a contractor that depends on repeat business from that industry. Nobody in that chain is paid by the public. It is a structural conflict rather than an allegation about any particular study.",
+    "tags": [
+     "cro:cro",
+     "animals:breeders",
+     "animals:services"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Labcorp Drug Development (formerly Covance)",
+    "url": "https://drugdevelopment.labcorp.com/",
+    "desc": "WHAT. One of the largest contract research organisations, running preclinical and clinical studies for pharmaceutical and biotechnology clients worldwide. WHERE IT SITS. The middle of the pipeline. Much of the evidence base a regulator assesses was generated here rather than by the company named on the application. WHY IT MATTERS. Following the contractor rather than the client shows an industry far more concentrated than its company list suggests. Dozens of sponsors, a handful of laboratories actually doing the work.",
+    "tags": [
+     "cro:cro",
+     "clinical:trials"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "official",
+    "skind": "igo",
+    "type": "institutional",
+    "trust": "high",
+    "name": "The Jackson Laboratory",
+    "url": "https://www.jax.org/",
+    "desc": "WHAT. A non-profit that breeds and distributes genetically defined mice, holding thousands of mutant and transgenic strains and shipping worldwide. WHERE IT SITS. The reference source for mouse models. A large share of published mouse research uses strains that originate here, which makes it infrastructure rather than a supplier. WHY IT MATTERS. Standardising the animal standardises the science, and thousands of strains exist because someone needed a specific disease phenotype bred into a living creature and kept alive as a line. The catalogue is the clearest available statement of what the industry does to animals at volume: it is a product list, and every entry is a lineage bred to be ill in a particular way.",
+    "tags": [
+     "animals:models",
+     "animals:breeders"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Taconic Biosciences",
+    "url": "https://www.taconic.com/",
+    "desc": "WHAT. A commercial supplier of genetically modified rodent models, including custom model generation to a client's specification. WHERE IT SITS. The made-to-order end of the animal trade — a company will engineer and breed a line that does not yet exist. WHY IT MATTERS. Custom model generation is genetic engineering sold as a routine service, with the resulting animals treated as a deliverable. There is no register of these organisms comparable to a crop release register, because they are contained — which means the largest volume of engineered vertebrates in the world is also the least publicly recorded.",
+    "tags": [
+     "animals:services",
+     "animals:breeders"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Envigo / Inotiv",
+    "url": "https://www.inotiv.com/",
+    "desc": "WHAT. A supplier of research animals and preclinical services, following the acquisition of Envigo's animal business by Inotiv. WHERE IT SITS. Alongside Charles River in the small group of firms supplying most of the world's laboratory animals. WHY IT MATTERS. Consolidation in animal supply means welfare standards across an entire research sector depend on the practices of very few companies, and enforcement actions against those companies have direct consequences for tens of thousands of animals at a time.",
+    "tags": [
+     "animals:breeders",
+     "cro:cro"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Acceligen (Recombinetics)",
+    "url": "https://acceligen.com/",
+    "desc": "WHAT. A company gene-editing cattle and other livestock for traits including heat tolerance and hornlessness, marketed as welfare and productivity improvements. WHERE IT SITS. At the front of the argument that edited livestock should not count as regulated articles, and a beneficiary wherever that argument has won. WHY IT MATTERS. Its hornless cattle line was found to contain unintended bacterial plasmid DNA that the developers had not detected and regulators found later. The animals were presented as a clean, precise edit. That episode is the strongest available evidence that precision claims in this field are claims rather than findings, and it came from the regulator, not from critics.",
+    "tags": [
+     "livestock:livestock",
+     "editing:agtech"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "AquaBounty Technologies",
+    "url": "https://aquabounty.com/",
+    "desc": "WHAT. Developer of AquAdvantage salmon, an Atlantic salmon engineered with a Chinook growth-hormone gene to reach market weight faster. The first engineered animal approved for human consumption anywhere. WHERE IT SITS. The precedent case for engineered food animals, cited in every subsequent argument in every jurisdiction. WHY IT MATTERS. Approval took roughly two decades, and the commercial result has been repeated retrenchment and facility closures. The lesson the industry drew was not that the product was wrong but that the regulatory route was too slow — which is why the effort since has gone into getting animals classified as unregulated rather than into getting them approved.",
+    "tags": [
+     "livestock:aqua",
+     "rules:regulators"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "ViaGen Pets & Equine",
+    "url": "https://www.viagenpets.com/",
+    "desc": "WHAT. A commercial cloning service that will clone a customer's dog, cat or horse from a tissue sample, for a published fee. WHERE IT SITS. Entirely outside biosafety regulation — a cloned animal contains no foreign DNA, so most frameworks have nothing to say about it. WHY IT MATTERS. This is the industry operating with no oversight at all, on companion animals, as a consumer purchase. Cloning requires many surrogate pregnancies and produces losses that do not appear in any published figure, because no one is required to publish one. The absence of a register here is not an oversight; it is the design.",
+    "tags": [
+     "livestock:cloning",
+     "livestock:pets"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "official",
+    "skind": "igo",
+    "type": "institutional",
+    "trust": "high",
+    "name": "Target Malaria",
+    "url": "https://targetmalaria.org/",
+    "desc": "WHAT. A non-profit research consortium developing gene-drive mosquitoes intended to suppress malaria-transmitting Anopheles populations across sub-Saharan Africa. WHERE IT SITS. The furthest-advanced gene-drive programme in the world, working through partner institutions in Burkina Faso, Uganda and Ghana. WHY IT MATTERS. A gene drive is designed to spread through a wild population and cannot be recalled or confined to a country that consented to it. In August 2025 Burkina Faso sealed the programme's facilities and suspended its activities, days after a non-drive trial release. Whatever the merits of eliminating malaria, the governance question the programme raises is whether any single national approval can be sufficient for an organism engineered to cross borders.",
+    "tags": [
+     "wild:drives",
+     "wild:insects"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Pivot Bio",
+    "url": "https://www.pivotbio.com/",
+    "desc": "WHAT. A company selling engineered soil microbes that fix nitrogen for cereal crops, applied at field scale as a replacement for part of a farmer's synthetic fertiliser. WHERE IT SITS. Agricultural biologicals — a fast-growing sector applying engineered organisms across millions of acres with far less public attention than engineered seed. WHY IT MATTERS. These are living organisms broadcast into soil in enormous quantity, and soil microbial communities are the least understood ecosystem being altered at that scale. The environmental case made for the product — less synthetic fertiliser — is real. It is also the reason the release is happening faster than the monitoring.",
+    "tags": [
+     "wild:microbes",
+     "editing:synbio"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Colossal Biosciences",
+    "url": "https://colossal.com/",
+    "desc": "WHAT. The best-funded de-extinction venture, working on engineered proxies for the woolly mammoth, thylacine and dodo, and on genetic rescue for living endangered species. WHERE IT SITS. At the intersection of venture capital and conservation, holding the resulting intellectual property. WHY IT MATTERS. What is produced is a modified living species engineered to resemble an extinct one, not a restoration. The deeper effect is rhetorical: if extinction can be presented as reversible, the argued cost of causing it falls. That reframing is already doing work in policy debate, years before any such animal exists, and it is doing it on behalf of a company that would own the result.",
+    "tags": [
+     "deextinct:ventures",
+     "deextinct:rescue"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Living Carbon",
+    "url": "https://www.livingcarbon.com/",
+    "desc": "WHAT. A company engineering poplar and other trees for faster growth and greater carbon accumulation, and planting them on reclaimed and private land. WHERE IT SITS. Where engineered organisms meet carbon markets — the tree is the product and the carbon credit is the revenue. WHY IT MATTERS. Trees are perennial, wind-pollinated, long-lived and frequently planted within their native range, which is the worst possible risk profile for containment. Attaching a carbon-credit revenue stream to planting them creates a financial reason to plant more, faster, and to argue against restrictions — a structural incentive that did not exist when engineered trees were only a research question.",
+    "tags": [
+     "deextinct:trees",
+     "money:markets"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Vertex / CRISPR Therapeutics — Casgevy",
+    "url": "https://www.crisprtx.com/",
+    "desc": "WHAT. The first approved CRISPR-based therapy, for sickle cell disease and beta thalassaemia, launched at roughly $2.2 million per patient. WHERE IT SITS. The proof that genome editing works as medicine, and the template for what such medicine costs. WHY IT MATTERS. Sickle cell disease is most prevalent in sub-Saharan Africa and among people of African descent. The first cure for it is priced at a level almost none of the affected population can access, and requires transplant-grade hospital infrastructure. The therapy is real and it works; who it reaches was decided commercially, not scientifically.",
+    "tags": [
+     "clinical:therapy",
+     "editing:platform"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
     "kind": "structured",
-    "name": "Companies House",
-    "scope": "own",
+    "voice": "official",
     "skind": "database",
-    "tags": [
-     "corporate:ownership",
-     "people:professional"
-    ],
-    "trust": "record",
     "type": "records-data",
-    "url": "https://find-and-update.company-information.service.gov.uk/",
-    "voice": "official"
+    "trust": "record",
+    "name": "ClinicalTrials.gov",
+    "url": "https://clinicaltrials.gov/",
+    "desc": "WHAT. The public registry of clinical trials, including gene transfer, gene editing and engineered cell products, with sponsor, phase and site. WHERE IT SITS. The only systematic public record of genetic engineering applied to human beings. WHY IT MATTERS. It records what is being trialled, on whom and where, which makes visible a pattern the industry does not advertise: trial sites and eventual markets are frequently not the same countries. It is also the only place the germline and embryo research boundary can be observed rather than assumed.",
+    "tags": [
+     "clinical:trials",
+     "clinical:germline"
+    ],
+    "checked": "2026-07-31"
    },
    {
-    "desc": "Full-text searchable tribunal judgments. Search an employer for unlawful-deduction, minimum-wage and unfair-dismissal findings \u2014 the paper trail that precedes most exploitation cases.",
-    "kind": "structured",
-    "name": "Employment tribunal decisions",
-    "scope": "own",
-    "skind": "court",
-    "tags": [
-     "courts:civil",
-     "environment:wages"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.gov.uk/employment-tribunal-decisions",
-    "voice": "official"
-   },
-   {
-    "desc": "Files and publishes Freedom of Information requests to UK public bodies. Requests and responses are public, so someone may already have asked what you need.",
-    "kind": "structured",
-    "name": "WhatDoTheyKnow",
-    "scope": "own",
-    "skind": "foi",
-    "tags": [
-     "records:foia"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.whatdotheyknow.com/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "Research and policy on labour exploitation in the UK, with detailed work on enforcement gaps, the seasonal worker visa and the interaction between immigration control and victim identification.",
     "kind": "institution",
-    "name": "Focus on Labour Exploitation (FLEX)",
-    "scope": "own",
-    "skind": "ngo",
-    "tags": [
-     "advocacy:watchdog",
-     "organizing:help"
-    ],
-    "trust": "record",
+    "voice": "commentary",
+    "skind": "other",
     "type": "institutional",
-    "url": "https://labourexploitation.org/",
-    "voice": "interpretive"
+    "trust": "medium",
+    "name": "Orchid Health",
+    "url": "https://www.orchidhealth.com/",
+    "desc": "WHAT. A company offering whole-genome sequencing of embryos before implantation, reporting risk scores across a range of conditions and traits. WHERE IT SITS. The furthest commercial edge of embryo selection — beyond screening for specific disorders and into ranking embryos on probabilistic scores. WHY IT MATTERS. Polygenic scores are weak predictors at the individual level and are derived largely from populations of European ancestry, so they perform worse for everyone else. Selling them as a basis for choosing which embryo becomes a person applies a statistical tool well outside what it can support, to a decision that cannot be revisited. This is where the eugenic question stops being theoretical and becomes a purchase.",
+    "tags": [
+     "repro:screening",
+     "clinical:germline"
+    ],
+    "checked": "2026-07-31"
    },
    {
-    "desc": "Specialist legal representation for victims of trafficking and labour exploitation \u2014 compensation, immigration and public-law challenges \u2014 plus training and resources for other lawyers.",
-    "kind": "institution",
-    "name": "ATLEU \u2014 Anti-Trafficking and Labour Exploitation Unit",
-    "scope": "own",
-    "skind": "helpline",
-    "tags": [
-     "organizing:legal",
-     "conserve:legalaid",
-     "conserve:compensation"
-    ],
-    "trust": "record",
-    "type": "institutional",
-    "url": "https://atleu.org.uk/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "Who owns the property \u2014 including the house or hostel workers are accommodated in, and overseas-company ownership of UK land. In labour-exploitation cases the accommodation and the employer are frequently the same interest.",
     "kind": "structured",
-    "name": "HM Land Registry",
-    "scope": "own",
+    "voice": "official",
     "skind": "database",
-    "tags": [
-     "financial:property"
-    ],
-    "trust": "record",
     "type": "records-data",
-    "url": "https://www.gov.uk/government/organisations/land-registry",
-    "voice": "official"
-   },
-   {
-    "desc": "0800 0121 700, twenty-four hours. Independent of government and of police, takes reports from workers, from the public and from businesses, and can refer into support without an immigration referral being the first thing that happens. The most commonly recommended first call in the UK.",
-    "kind": "structured",
-    "name": "Modern Slavery & Exploitation Helpline (Unseen)",
-    "skind": "helpline",
+    "trust": "record",
+    "name": "CDC ART clinic data",
+    "url": "https://www.cdc.gov/art/",
+    "desc": "WHAT. Federally mandated annual reporting of assisted reproductive technology outcomes by clinic in the United States. WHERE IT SITS. Statistics without a statutory clinic regulator behind them. WHY IT MATTERS. The United States has clinic-level numbers and no clinic-level regulator, which is an unusual combination. Reporting exists; enforcement does not. That gap is the shape of the American fertility industry.",
     "tags": [
-     "conserve:hotline",
-     "conserve:shelter"
+     "repro:clinics",
+     "rules:regulators"
     ],
-    "url": "https://www.unseenuk.org/modern-slavery-helpline/",
-    "voice": "official"
+    "checked": "2026-07-31"
    },
    {
-    "desc": "0800 432 0804. Licenses labour providers in agriculture, shellfish and food processing, and investigates labour exploitation across the wider economy. Reporting an unlicensed or abusive gangmaster here can pull a licence in weeks, which is far faster than any prosecution, and the licensing register lets you check a provider before anyone signs anything.",
     "kind": "structured",
-    "name": "Gangmasters and Labour Abuse Authority",
-    "skind": "inspectorate",
-    "tags": [
-     "projects:inspect",
-     "environment:inspect",
-     "environment:inspect"
-    ],
-    "url": "https://www.gla.gov.uk/report-issues/",
-    "voice": "official"
-   },
-   {
-    "desc": "The statutory route by which someone is formally identified as a victim of modern slavery, which is what unlocks support and a period of leave. Referral must be made by a designated first responder \u2014 not by any member of the public \u2014 so the practical step is contacting one of the first-responder organisations. Adults must consent; children are referred regardless.",
-    "kind": "structured",
-    "name": "National Referral Mechanism",
-    "skind": "oversight",
-    "tags": [
-     "conserve:legalaid"
-    ],
-    "url": "https://www.gov.uk/government/publications/human-trafficking-victims-referral-and-assessment-forms",
-    "voice": "official"
-   },
-   {
-    "desc": "Search what any UK-linked company has published under s.54 of the Modern Slavery Act. Submission is currently voluntary, which is itself the finding in many cases: check whether the company you are looking at has filed at all, and compare this year's statement with last year's.",
-    "kind": "institution",
-    "name": "Modern Slavery Statement Registry",
+    "voice": "official",
     "skind": "database",
-    "tags": [
-     "corporate:statements"
-    ],
-    "url": "https://modern-slavery-statement-registry.service.gov.uk/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "Advice and casework for migrant domestic workers in the UK \u2014 the group that has documented what the tied overseas domestic worker visa does in practice, which is that leaving an abusive employer means losing the right to be in the country.",
-    "kind": "institution",
-    "name": "Kalayaan",
-    "skind": "ngo",
-    "tags": [
-     "organizing:legal",
-     "conserve:legalaid",
-     "organizing:help",
-     "conserve:shelter"
-    ],
-    "url": "https://www.kalayaan.org.uk/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "Runs the UK Modern Slavery & Exploitation Helpline and safe houses. Unrestricted giving here funds the line itself, which is the hardest thing in this sector to fund and the first thing to be cut.",
-    "kind": "institution",
-    "name": "Unseen \u2014 donate",
-    "skind": "ngo",
-    "tags": [
-     "organizing:fund"
-    ],
-    "url": "https://www.unseenuk.org/donate/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "0808 800 5000, for adults worried about a child. Takes a call from anyone, including anonymously, and can refer to children's services or police. Use it when what you have is a concern rather than evidence \u2014 that is what it is for, and waiting for certainty is how cases are missed.",
-    "kind": "institution",
-    "name": "NSPCC helpline",
-    "skind": "helpline",
-    "tags": [
-     "conserve:child",
-     "conserve:hotline"
-    ],
-    "url": "https://www.nspcc.org.uk/keeping-children-safe/reporting-abuse/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "GHA": {
-  "name": "Ghana",
-  "trackers": [
-   {
-    "desc": "The multi-stakeholder foundation running child-labour monitoring and remediation systems in cocoa-growing communities in Ghana and C\u00f4te d'Ivoire, and publishing what those systems find. The most detailed public evidence base on child labour in any single commodity.",
-    "kind": "institution",
-    "name": "International Cocoa Initiative \u2014 Ghana",
-    "scope": "own",
-    "skind": "ngo",
-    "tags": [
-     "projects:trackers",
-     "conserve:child"
-    ],
-    "trust": "record",
-    "type": "institutional",
-    "url": "https://www.cocoainitiative.org/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "HKG": {
-  "name": "Hong Kong",
-  "trackers": [
-   {
-    "desc": "Files forced-labour petitions with customs authorities, works on financial-sector detection of trafficking proceeds, and produces the supply-chain research behind several import bans \u2014 including the petition that led to the Sime Darby palm oil order.",
-    "kind": "institution",
-    "name": "Liberty Shared",
-    "skind": "ngo",
-    "tags": [
-     "advocacy:data",
-     "corporate:supply",
-     "courts:grievance"
-    ],
-    "url": "https://libertyshared.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "Direct casework, shelter and wage claims for foreign domestic workers in Hong Kong, where the live-in requirement and the two-week rule are the two structural pressures that keep people in abusive placements.",
-    "kind": "institution",
-    "name": "Mission for Migrant Workers",
-    "skind": "ngo",
-    "tags": [
-     "conserve:shelter",
-     "organizing:help",
-     "conserve:compensation"
-    ],
-    "url": "https://www.migrants.net/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "IDN": {
-  "name": "Indonesia",
-  "trackers": [
-   {
-    "desc": "Regulates and records the placement of Indonesian workers abroad, publishes placement data by destination and province, and handles complaints against recruitment companies.",
-    "kind": "structured",
-    "name": "BP2MI \u2014 Indonesian Migrant Workers Protection Agency",
-    "scope": "own",
-    "skind": "court",
-    "tags": [
-     "corporate:recruit",
-     "records:stats"
-    ],
-    "trust": "record",
     "type": "records-data",
-    "url": "https://bp2mi.go.id/",
-    "voice": "official"
-   },
-   {
-    "desc": "Advocacy and casework for Indonesian migrant workers, including cases of workers detained abroad and of recruitment debt incurred before departure.",
-    "kind": "institution",
-    "name": "Migrant CARE",
-    "skind": "ngo",
-    "tags": [
-     "corporate:recruit",
-     "organizing:help",
-     "organizing:legal",
-     "conserve:legalaid"
-    ],
-    "url": "https://migrantcare.net/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "IND": {
-  "name": "India",
-  "trackers": [
-   {
-    "desc": "The Ministry of Labour and Employment's online platform for reporting child labour and tracking the complaint. Complaints route to the district nodal officer; the portal also carries state-level enforcement data.",
-    "kind": "structured",
-    "name": "PENCiL portal \u2014 report child labour",
-    "scope": "own",
-    "skind": "inspectorate",
-    "tags": [
-     "conserve:child",
-     "projects:inspect"
-    ],
     "trust": "record",
-    "type": "records-data",
-    "url": "https://pencil.gov.in/",
-    "voice": "official"
-   },
-   {
-    "desc": "The Bonded Labour System (Abolition) Act 1976 and the Child and Adolescent Labour (Prohibition and Regulation) Act, the rehabilitation scheme for released bonded labourers, and the district vigilance committees that are supposed to run it.",
-    "kind": "structured",
-    "name": "Ministry of Labour and Employment",
-    "scope": "own",
-    "skind": "court",
+    "name": "Gates Foundation — committed grants database",
+    "url": "https://www.gatesfoundation.org/about/committed-grants",
+    "desc": "WHAT. A searchable record of every grant the foundation has made, with recipient, amount and purpose, including its agricultural development programme. WHERE IT SITS. Among the largest funders of agricultural biotechnology deployment in Africa and South Asia, and a major funder of the institutions that regulate and evaluate it. WHY IT MATTERS. Private philanthropy setting agricultural research priorities for whole regions is governance without an electorate. The foundation publishes its grants, which is more than most funders do — and the published record is what makes the scale of that influence checkable rather than arguable.",
     "tags": [
-     "environment:inspect",
-     "conserve:compensation"
+     "money:philanthropy",
+     "money:public"
     ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://labour.gov.in/",
-    "voice": "official"
+    "checked": "2026-07-31"
    },
    {
-    "desc": "Takes complaints about bonded labour and child labour directly, including by post and online, and has its own investigation powers. In practice one of the more responsive national routes.",
     "kind": "structured",
-    "name": "National Human Rights Commission",
-    "scope": "own",
-    "skind": "oversight",
-    "tags": [
-     "courts:grievance",
-     "conserve:legalaid"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://nhrc.nic.in/",
-    "voice": "official"
-   },
-   {
-    "desc": "Case status and orders across district and high courts. Search a company, a contractor or a case number.",
-    "kind": "structured",
-    "name": "eCourts services",
-    "scope": "own",
-    "skind": "court",
-    "tags": [
-     "courts:criminal",
-     "courts:civil"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://ecourts.gov.in/",
-    "voice": "official"
-   },
-   {
-    "desc": "File a Right to Information request to central government bodies. Thirty-day statutory deadline, small fee, and a first-appeal route when refused.",
-    "kind": "structured",
-    "name": "RTI Online",
-    "scope": "own",
-    "skind": "foi",
-    "tags": [
-     "records:foia"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://rtionline.gov.in/",
-    "voice": "official"
-   },
-   {
-    "desc": "The Ministry of Corporate Affairs registry: directors, registered offices and filings for Indian companies.",
-    "kind": "structured",
-    "name": "MCA \u2014 company master data",
-    "scope": "own",
+    "voice": "official",
     "skind": "database",
-    "tags": [
-     "corporate:ownership"
-    ],
-    "trust": "record",
     "type": "records-data",
-    "url": "https://www.mca.gov.in/",
-    "voice": "official"
-   },
-   {
-    "desc": "The national child helpline, 1098, free and twenty-four hours. Takes calls about a child in danger from anyone, including from children themselves, and connects to district child-protection machinery. The standard first call for a child found working.",
-    "kind": "structured",
-    "name": "Childline 1098",
-    "skind": "helpline",
-    "tags": [
-     "conserve:hotline",
-     "conserve:child"
-    ],
-    "url": "https://www.childlineindia.org/",
-    "voice": "official"
-   },
-   {
-    "desc": "Takes complaints directly, including about official inaction, and has taken up bonded-labour cases where district authorities did not act. Filing is free and can be done online by anyone on behalf of anyone.",
-    "kind": "structured",
-    "name": "National Human Rights Commission",
-    "skind": "oversight",
-    "tags": [
-     "courts:grievance"
-    ],
-    "url": "https://nhrc.nic.in/complaints/lodge-complaint",
-    "voice": "official"
-   },
-   {
-    "desc": "Works with district authorities on bonded-labour rescue operations and on the aftercare and prosecution that follow, in several states. Relevant as the operational partner when a case needs a rescue rather than a complaint.",
-    "kind": "institution",
-    "name": "International Justice Mission \u2014 India",
-    "skind": "ngo",
-    "tags": [
-     "conserve:shelter",
-     "organizing:help"
-    ],
-    "url": "https://www.ijm.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "Long-running child-rights organisation that conducts rescues from child labour and trafficking and pursues the prosecutions afterwards. Takes information about a specific child or workplace.",
-    "kind": "institution",
-    "name": "Bachpan Bachao Andolan",
-    "skind": "ngo",
-    "tags": [
-     "conserve:child",
-     "organizing:help"
-    ],
-    "url": "https://www.bba.org.in/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "A national network of lawyers taking public-interest cases including bonded labour, with offices in most states. Files public interest litigation, which in India has been the route that forced district administrations to act where individual complaints did not.",
-    "kind": "institution",
-    "name": "Human Rights Law Network",
-    "skind": "legalaid",
-    "tags": [
-     "organizing:legal",
-     "conserve:legalaid",
-     "courts:strategic"
-    ],
-    "url": "https://hrln.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "The Ministry of External Affairs system for emigration clearance, carrying the register of licensed recruiting agents. Check the agent here before anyone pays a fee: an unlicensed agent is itself an offence and a far faster case than proving exploitation after the fact.",
-    "kind": "structured",
-    "name": "eMigrate \u2014 check a recruiting agent",
-    "skind": "inspectorate",
-    "tags": [
-     "corporate:recruit"
-    ],
-    "url": "https://emigrate.gov.in/",
-    "voice": "official"
-   }
-  ]
- },
- "IRL": {
-  "name": "Ireland",
-  "trackers": [
-   {
-    "desc": "Casework and organising with migrant workers in Ireland, with a long record on forced labour in fishing, agriculture and domestic work, and on the permit system that ties workers to one employer.",
-    "kind": "institution",
-    "name": "Migrant Rights Centre Ireland",
-    "skind": "ngo",
-    "tags": [
-     "organizing:help",
-     "organizing:legal",
-     "conserve:legalaid",
-     "organizing:help"
-    ],
-    "url": "https://www.mrci.ie/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "1800 66 66 66, free and twenty-four hours, plus text and live chat. Ireland's national listening service for children.",
-    "kind": "institution",
-    "name": "ISPCC Childline",
-    "skind": "helpline",
-    "tags": [
-     "conserve:child",
-     "conserve:hotline"
-    ],
-    "url": "https://www.ispcc.ie/childline/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "ITA": {
-  "name": "Italy",
-  "trackers": [
-   {
-    "desc": "Italy's national anti-trafficking freephone line, twenty-four hours and multilingual, run under the Department for Equal Opportunities. Takes anonymous reports and routes to the regional anti-trafficking projects that provide shelter and status support.",
-    "kind": "structured",
-    "name": "Numero Verde Anti-Tratta \u2014 800 290 290",
-    "skind": "helpline",
-    "tags": [
-     "conserve:hotline",
-     "conserve:shelter"
-    ],
-    "url": "https://www.pariopportunita.gov.it/",
-    "voice": "official"
-   },
-   {
-    "desc": "The union observatory that documents caporalato \u2014 illicit labour brokering in Italian agriculture \u2014 and publishes the periodic report that names the sectors and provinces where it concentrates.",
-    "kind": "institution",
-    "name": "Osservatorio Placido Rizzotto (FLAI-CGIL)",
-    "skind": "union",
-    "tags": [
-     "organizing:help",
-     "advocacy:data"
-    ],
-    "url": "https://www.flai.it/osservatoriopr/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "19696, free and twenty-four hours, for children and for adults reporting concern about one. Italy's oldest child-protection line, and it also handles online exploitation reports.",
-    "kind": "institution",
-    "name": "Telefono Azzurro",
-    "skind": "helpline",
-    "tags": [
-     "conserve:child",
-     "conserve:hotline"
-    ],
-    "url": "https://azzurro.it/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "KEN": {
-  "name": "Kenya",
-  "trackers": [
-   {
-    "desc": "Labour inspection, the National Employment Authority which regulates private recruitment agencies placing Kenyans in the Gulf, and the child-labour unit.",
-    "kind": "structured",
-    "name": "Ministry of Labour and Social Protection",
-    "scope": "own",
-    "skind": "inspectorate",
-    "tags": [
-     "environment:inspect",
-     "corporate:recruit"
-    ],
     "trust": "record",
-    "type": "records-data",
-    "url": "https://www.labour.go.ke/",
-    "voice": "official"
+    "name": "DARPA — Biological Technologies Office",
+    "url": "https://www.darpa.mil/research/offices/biological-technologies",
+    "desc": "WHAT. The US defence research agency's biology programme, which has funded gene drives, engineered organisms, and human performance and resilience work. WHERE IT SITS. Outside civilian biosafety oversight, in every country that runs an equivalent. WHY IT MATTERS. Military biotechnology is the facet with the least public visibility and the fewest constraints. DARPA at least publishes programme names and funds academic work that appears in the literature, which makes it the most legible example of the least legible part of the industry — and a reminder that equivalents in other states publish nothing at all.",
+    "tags": [
+     "money:defence",
+     "wild:drives"
+    ],
+    "checked": "2026-07-31"
    },
    {
-    "desc": "Kenya's principal anti-trafficking NGO: rescue, shelter, reintegration and legal support, plus research on the Gulf recruitment corridor that most Kenyan cases run through.",
     "kind": "institution",
-    "name": "HAART Kenya",
+    "voice": "commentary",
     "skind": "ngo",
-    "tags": [
-     "organizing:help",
-     "conserve:shelter",
-     "organizing:legal",
-     "conserve:legalaid"
-    ],
-    "url": "https://haartkenya.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "116, free from any network, twenty-four hours, run with the Department of Children's Services. The national route for reporting a child in labour or at risk.",
-    "kind": "institution",
-    "name": "Childline Kenya",
-    "skind": "helpline",
-    "tags": [
-     "conserve:child",
-     "conserve:hotline"
-    ],
-    "url": "https://childlinekenya.co.ke/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "KHM": {
-  "name": "Cambodia",
-  "trackers": [
-   {
-    "desc": "Cambodian labour-rights organisation providing legal support and documentation for garment, construction and migrant workers, including workers recruited into Thailand and Malaysia.",
-    "kind": "institution",
-    "name": "Central \u2014 Cambodian Alliance of Trade Unions support",
-    "skind": "ngo",
-    "tags": [
-     "organizing:legal",
-     "organizing:help",
-     "conserve:compensation"
-    ],
-    "url": "https://www.central-cambodia.org/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "LBN": {
-  "name": "Lebanon",
-  "trackers": [
-   {
-    "desc": "Works with migrant domestic workers in Lebanon, where the sponsorship system leaves workers outside labour law entirely. Provides a helpline, shelter referral and legal support, and has documented the pattern of confiscated passports and unpaid wages.",
-    "kind": "institution",
-    "name": "KAFA",
-    "skind": "ngo",
-    "tags": [
-     "conserve:hotline",
-     "conserve:shelter",
-     "organizing:legal",
-     "conserve:legalaid"
-    ],
-    "url": "https://kafa.org.lb/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "LKA": {
-  "name": "Sri Lanka",
-  "trackers": [
-   {
-    "desc": "Registers migrant workers and licenses recruitment agencies, and runs a welfare fund that pays compensation in death and injury cases abroad. Registration before departure is what makes a worker eligible for that fund \u2014 unregistered departure is common and forfeits it.",
-    "kind": "structured",
-    "name": "Sri Lanka Bureau of Foreign Employment",
-    "skind": "inspectorate",
-    "tags": [
-     "corporate:recruit"
-    ],
-    "url": "https://www.slbfe.lk/",
-    "voice": "official"
-   }
-  ]
- },
- "MEX": {
-  "name": "Mexico",
-  "trackers": [
-   {
-    "desc": "Federal labour inspection and the PROFEDET labour-defence service, which represents workers free of charge in wage and reinstatement claims.",
-    "kind": "structured",
-    "name": "Secretar\u00eda del Trabajo y Previsi\u00f3n Social",
-    "scope": "own",
-    "skind": "inspectorate",
-    "tags": [
-     "environment:inspect",
-     "conserve:legalaid"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.gob.mx/stps",
-    "voice": "official"
-   },
-   {
-    "desc": "Federal portal covering the labour inspectorate and the reporting routes for trafficking. Mexico appears on the US list of goods for child labour in sugarcane and forced labour in tomato production, so agricultural labour is where most documented cases sit.",
-    "kind": "structured",
-    "name": "Gobierno de M\u00e9xico \u2014 labour and trafficking reporting",
-    "skind": "court",
-    "tags": [
-     "projects:inspect",
-     "environment:inspect",
-     "environment:inspect"
-    ],
-    "url": "https://www.gob.mx/",
-    "voice": "official"
-   },
-   {
-    "desc": "Civil-society helpline taking trafficking reports in Mexico, including anonymous third-party reports, with referral to legal and psychological support.",
-    "kind": "institution",
-    "name": "Consejo Ciudadano \u2014 anti-trafficking line",
-    "skind": "ngo",
-    "tags": [
-     "conserve:hotline",
-     "conserve:shelter"
-    ],
-    "url": "https://consejociudadanomx.org/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "MMR": {
-  "name": "Myanmar",
-  "trackers": [
-   {
-    "desc": "Works with Burmese migrant workers, most of them in Thailand, on labour rights, documentation and access to compensation. Operates cross-border, which is what the situation requires.",
-    "kind": "institution",
-    "name": "Migrant Assistance Programme (MAP) Foundation",
-    "skind": "ngo",
-    "tags": [
-     "organizing:help",
-     "conserve:compensation"
-    ],
-    "url": "https://www.mapfoundationcm.org/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "MYS": {
-  "name": "Malaysia",
-  "trackers": [
-   {
-    "desc": "The peninsular labour department, which handles wage claims and inspects workplaces including plantations and manufacturing. Migrant workers can file claims, though the employer-tied permit makes it risky in practice.",
-    "kind": "structured",
-    "name": "Jabatan Tenaga Kerja (Labour Department)",
-    "scope": "own",
-    "skind": "inspectorate",
-    "tags": [
-     "environment:wages",
-     "environment:inspect"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://jtksm.mohr.gov.my/",
-    "voice": "official"
-   },
-   {
-    "desc": "A long-standing Malaysian organisation working directly with migrant workers, refugees and trafficking survivors, with casework, shelter and documentation of conditions in plantations and factories.",
-    "kind": "institution",
-    "name": "Tenaganita",
-    "scope": "own",
-    "skind": "ngo",
-    "tags": [
-     "organizing:help",
-     "conserve:shelter"
-    ],
-    "trust": "record",
     "type": "institutional",
-    "url": "https://tenaganita.net/",
-    "voice": "interpretive"
+    "trust": "low",
+    "name": "BIO — Biotechnology Innovation Organization",
+    "url": "https://www.bio.org/",
+    "desc": "WHAT. The largest biotechnology trade association, representing over 1,100 companies across more than 30 countries, lobbying on regulation, patents and pricing. WHERE IT SITS. The industry's collective voice, filing on members' behalf so individual firms need not appear. WHY IT MATTERS. Trade associations exist partly so that positions no single company wants attributed to it can still be advanced. Reading BIO's filings on a rule tells you which provisions the industry wants removed, in plainer language than any member company would use in its own name.",
+    "tags": [
+     "rules:associations",
+     "rules:influence"
+    ],
+    "checked": "2026-07-31"
+   },
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "ngo",
+    "type": "institutional",
+    "trust": "low",
+    "name": "ISAAA — GM approval database",
+    "url": "https://www.isaaa.org/gmapprovaldatabase/",
+    "desc": "WHAT. The most complete event-level record of GM crop approvals by country, maintained by an industry-supported organisation, together with the annual global adoption figures quoted on all sides of the argument. WHERE IT SITS. An advocacy organisation that happens to keep the best register in the field. WHY IT MATTERS. The database is genuinely useful and the organisation exists to promote adoption. Both are true. Citing an industry source for an industry figure is stronger than citing a critic for one — but the framing around the numbers is written to persuade, and the two should be read differently.",
+    "tags": [
+     "rules:influence",
+     "rules:standards"
+    ],
+    "checked": "2026-07-31"
    }
   ]
  },
- "NGA": {
-  "name": "Nigeria",
+ "CHE": {
+  "name": "Switzerland",
   "trackers": [
    {
-    "desc": "The National Agency for the Prohibition of Trafficking in Persons, created in 2003 and operating nationwide under the Trafficking in Persons (Prohibition) Enforcement and Administration Act as amended in 2015. Its mandate expressly covers forced labour, child labour and bonded labour as well as sexual exploitation, and it runs shelters and a reporting line.",
-    "kind": "structured",
-    "name": "NAPTIP",
-    "scope": "own",
-    "skind": "justicegov",
-    "tags": [
-     "projects:inspect",
-     "conserve:hotline",
-     "conserve:shelter",
-     "courts:criminal"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://naptip.gov.ng/",
-    "voice": "official"
-   },
-   {
-    "desc": "The umbrella body for Nigerian NGOs working on trafficking, child labour and abuse \u2014 the route to a member organisation in a specific state rather than the federal agency.",
     "kind": "institution",
-    "name": "NACTAL \u2014 network of anti-trafficking organisations",
-    "scope": "own",
-    "skind": "ngo",
-    "tags": [
-     "organizing:help",
-     "conserve:shelter"
-    ],
-    "trust": "record",
+    "voice": "commentary",
+    "skind": "other",
     "type": "institutional",
-    "url": "https://nactal.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "The National Agency for the Prohibition of Trafficking in Persons, established 2003, with a mandate expressly covering forced labour and child labour as well as trafficking. It investigates, prosecutes and runs shelters, and takes reports from the public through its offices and hotline.",
-    "kind": "structured",
-    "name": "NAPTIP \u2014 report trafficking",
-    "skind": "oversight",
+    "trust": "medium",
+    "name": "Syngenta Group",
+    "url": "https://www.syngentagroup.com/",
+    "desc": "WHAT. Seed and crop-protection company headquartered in Basel, acquired by ChemChina in 2017 for around $43 billion and now inside the Chinese state-owned Sinochem Holdings. Sells maize, soy, vegetable and cereal seed and one of the largest pesticide portfolios in the world. WHERE IT SITS. One of the four, and the only one that is an arm of a state. It combines a European research base, a Chinese owner and a global sales network. WHY IT MATTERS. State ownership removes the levers that work on the others. There is no shareholder resolution to file, no securities regulator to petition, and no proxy vote. Pressure on Syngenta has to run through trade policy or through the countries where it sells — a materially different problem from pressuring a listed company, and one most campaigning is not set up for.",
     "tags": [
-     "conserve:hotline",
-     "projects:inspect",
-     "environment:inspect",
-     "conserve:shelter"
+     "seed:majors",
+     "seed:traits",
+     "money:markets"
     ],
-    "url": "https://www.naptip.gov.ng/",
-    "voice": "official"
+    "checked": "2026-07-31"
    },
    {
-    "desc": "Nigerian anti-trafficking organisation running community reporting, training and survivor support, and one of the groups NAPTIP works with on referral.",
     "kind": "institution",
-    "name": "Devatop Centre for Africa Development",
-    "skind": "ngo",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Syngenta — seedcare & seeds portfolio",
+    "url": "https://www.syngenta.com/en/seeds",
+    "desc": "WHAT. The company's own product catalogue across field crops and vegetables. WHERE IT SITS. The commercial face of the trait pipeline — what has left the laboratory and reached a bag. WHY IT MATTERS. Catalogues are more informative than press releases. The treatments and traits listed against each variety show what the seed is designed to be used with, which is the practical shape of the input package a farmer is buying into.",
     "tags": [
-     "organizing:help",
-     "organizing:fund"
+     "seed:distribution",
+     "seed:traits"
     ],
-    "url": "https://devatop.org/",
-    "voice": "interpretive"
+    "checked": "2026-07-31"
    },
    {
-    "desc": "0800 800 8001, a child-focused helpline in Nigeria providing counselling, medical and legal support, and case follow-through rather than only referral.",
     "kind": "institution",
-    "name": "Cece Yara Foundation",
-    "skind": "helpline",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Novartis — gene therapy",
+    "url": "https://www.novartis.com/",
+    "desc": "WHAT. Manufacturer of Zolgensma, a one-time gene therapy for spinal muscular atrophy launched at around $2.1 million per dose, and of the CAR-T therapy Kymriah. WHERE IT SITS. The commercial leading edge of genetic medicine, and the origin of the pricing model the rest of the field follows. WHY IT MATTERS. The science behind these therapies rests heavily on decades of publicly funded research. The pricing puts them beyond every health system outside a handful of wealthy countries. A technology developed with public money, priced so that most of the world cannot reach it, is not a distribution failure at the margin — it is the business model working as intended.",
     "tags": [
-     "conserve:child",
-     "conserve:hotline"
+     "clinical:therapy",
+     "money:markets"
     ],
-    "url": "https://www.ceceyara.org/",
-    "voice": "interpretive"
+    "checked": "2026-07-31"
    }
   ]
  },
@@ -2087,814 +520,240 @@
   "name": "Netherlands",
   "trackers": [
    {
-    "desc": "The Dutch labour inspectorate, which investigates labour exploitation as well as ordinary employment breaches and publishes inspection results. Reports can be made anonymously.",
-    "kind": "structured",
-    "name": "Nederlandse Arbeidsinspectie",
-    "scope": "own",
-    "skind": "inspectorate",
-    "tags": [
-     "environment:inspect",
-     "projects:inspect"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.nlarbeidsinspectie.nl/",
-    "voice": "official"
-   },
-   {
-    "desc": "The national coordination centre on human trafficking: registers victims, arranges shelter and care, and publishes national figures.",
     "kind": "institution",
-    "name": "CoMensha",
-    "scope": "own",
-    "skind": "shelter",
-    "tags": [
-     "conserve:shelter",
-     "conserve:hotline"
-    ],
-    "trust": "record",
+    "voice": "commentary",
+    "skind": "other",
     "type": "institutional",
-    "url": "https://www.comensha.nl/",
-    "voice": "interpretive"
+    "trust": "medium",
+    "name": "BASF Agricultural Solutions",
+    "url": "https://agriculture.basf.com/global/en.html",
+    "desc": "WHAT. The agricultural arm of the German chemical group, holding seed and trait assets it bought when competition regulators forced Bayer to divest during the Monsanto acquisition. Runs vegetable seed under Nunhems and field crops including canola and cotton. WHERE IT SITS. Fourth of the four, with a portfolio assembled from what a merger review required someone else to sell. WHY IT MATTERS. The existence of these holdings is the clearest admission on record that competition authorities already regard this as a concentrated market. The remedy — moving assets from the first-largest firm to the fourth-largest — kept the count at four rather than reducing concentration in any meaningful sense.",
+    "tags": [
+     "seed:majors",
+     "seed:germplasm"
+    ],
+    "checked": "2026-07-31"
    },
    {
-    "desc": "Dutch organisation working on labour exploitation and trafficking: outreach to workers in agriculture, meat processing and cleaning, and support through the reporting and referral process.",
     "kind": "institution",
-    "name": "FairWork",
-    "skind": "ngo",
-    "tags": [
-     "organizing:help",
-     "conserve:shelter"
-    ],
-    "url": "https://www.fairwork.nu/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "0800 0432, free and not shown on the bill, for children who want to talk to someone outside the household. Chat as well as phone.",
-    "kind": "institution",
-    "name": "De Kindertelefoon",
-    "skind": "helpline",
-    "tags": [
-     "conserve:child",
-     "conserve:hotline"
-    ],
-    "url": "https://www.kindertelefoon.nl/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "NOR": {
-  "name": "Norway",
-  "trackers": [
-   {
-    "desc": "The consumer authority enforces the \u00c5penhetsloven. Its distinctive feature is the right to information: any person may ask any covered company how it handles human rights risks in its chain, and the company must answer within three weeks. No standing, no fee, no lawyer.",
-    "kind": "structured",
-    "name": "Forbrukertilsynet \u2014 Transparency Act",
-    "scope": "own",
-    "skind": "oversight",
-    "tags": [
-     "records:access",
-     "corporate:statements",
-     "courts:grievance"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.forbrukertilsynet.no/",
-    "voice": "official"
-   }
-  ]
- },
- "NPL": {
-  "name": "Nepal",
-  "trackers": [
-   {
-    "desc": "The best-known anti-trafficking organisation in Nepal: interception at border points, shelters, legal aid and reintegration. Nepal is overwhelmingly an origin country, so most of the work is at the border and in the recruitment stage rather than at a workplace.",
-    "kind": "institution",
-    "name": "Maiti Nepal",
-    "skind": "ngo",
-    "tags": [
-     "conserve:hotline",
-     "conserve:shelter",
-     "organizing:help",
-     "organizing:legal",
-     "conserve:legalaid"
-    ],
-    "url": "https://maitinepal.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "The state body handling Nepali migrant workers going abroad, including the welfare fund that pays compensation to families when a worker dies or is injured overseas. Check a recruiter's licence here before anyone pays a fee.",
-    "kind": "structured",
-    "name": "Foreign Employment Board",
-    "skind": "inspectorate",
-    "tags": [
-     "corporate:recruit",
-     "conserve:compensation"
-    ],
-    "url": "https://fepb.gov.np/",
-    "voice": "official"
-   },
-   {
-    "desc": "1098, run by CWIN, Nepal's longest-running child-rights organisation. Handles rescue and rehabilitation of children in labour, including children trafficked into work in India.",
-    "kind": "institution",
-    "name": "CWIN Child Helpline 1098",
-    "skind": "helpline",
-    "tags": [
-     "conserve:child",
-     "conserve:hotline"
-    ],
-    "url": "https://cwin.org.np/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "PAK": {
-  "name": "Pakistan",
-  "trackers": [
-   {
-    "desc": "The federal ministry with the bonded-labour and child-labour brief, including the 1043 human rights helpline. Enforcement of the Bonded Labour System (Abolition) Act is largely devolved to the provinces, so provincial labour departments are the operative level.",
-    "kind": "structured",
-    "name": "Ministry of Human Rights",
-    "scope": "own",
-    "skind": "court",
-    "tags": [
-     "conserve:hotline",
-     "environment:inspect"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://mohr.gov.pk/",
-    "voice": "official"
-   }
-  ]
- },
- "PHL": {
-  "name": "Philippines",
-  "trackers": [
-   {
-    "desc": "Licenses and regulates recruitment agencies deploying Filipino workers abroad, publishes the list of licensed agencies and those suspended or cancelled, and handles complaints against them. The single most useful register for a Filipino worker's recruitment chain.",
-    "kind": "structured",
-    "name": "Department of Migrant Workers",
-    "scope": "own",
-    "skind": "court",
-    "tags": [
-     "corporate:recruit",
-     "conserve:legalaid"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://dmw.gov.ph/",
-    "voice": "official"
-   },
-   {
-    "desc": "The national anti-trafficking body, with the 1343 Actionline reporting number and coordination across law enforcement, social welfare and foreign affairs.",
-    "kind": "structured",
-    "name": "IACAT \u2014 Inter-Agency Council Against Trafficking",
-    "scope": "own",
-    "skind": "justicegov",
-    "tags": [
-     "conserve:hotline",
-     "courts:criminal"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://iacat.gov.ph/",
-    "voice": "official"
-   },
-   {
-    "desc": "Casework and policy work for Filipino migrant workers, including repatriation and claims against recruitment agencies. Complements the government route, which is often slower for a worker already abroad.",
-    "kind": "institution",
-    "name": "Center for Migrant Advocacy",
-    "skind": "ngo",
-    "tags": [
-     "corporate:recruit",
-     "organizing:help",
-     "organizing:legal",
-     "conserve:legalaid"
-    ],
-    "url": "https://centerformigrantadvocacy.com/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "163, a national child-welfare helpline taking reports of abuse, neglect and child labour, with rescue and case management behind it.",
-    "kind": "institution",
-    "name": "Bantay Bata 163",
-    "skind": "helpline",
-    "tags": [
-     "conserve:child",
-     "conserve:hotline"
-    ],
-    "url": "https://www.bantaybata163.com/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "QAT": {
-  "name": "Qatar",
-  "trackers": [
-   {
-    "desc": "Labour complaints, the Workers' Support and Insurance Fund, and the post-2020 rules allowing a job change without employer consent and setting a minimum wage. Read the rules alongside independent reporting on how often they are actually applied.",
-    "kind": "structured",
-    "name": "Ministry of Labour",
-    "scope": "own",
-    "skind": "inspectorate",
-    "tags": [
-     "environment:wages",
-     "conserve:compensation"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.mol.gov.qa/",
-    "voice": "official"
-   },
-   {
-    "desc": "Files a wage or contract complaint, which routes to the labour dispute resolution committees. Since the 2020 reforms a worker may change employer without the sponsor's consent and a non-discriminatory minimum wage applies. Enforcement is the contested part: monitoring organisations continue to document blocked transfers and withheld wages, so treat the rule and the practice as separate questions.",
-    "kind": "structured",
-    "name": "Ministry of Labour \u2014 complaints and dispute committees",
-    "skind": "inspectorate",
-    "tags": [
-     "conserve:compensation",
-     "environment:inspect"
-    ],
-    "url": "https://www.mol.gov.qa/en/",
-    "voice": "official"
-   },
-   {
-    "desc": "Independent reporting and data on migrant workers across the Gulf: what each country's sponsorship rules actually say now, wage theft, worker deaths, and what changed when a reform was announced. The reference point when a government statement needs checking.",
-    "kind": "institution",
-    "name": "Migrant-Rights.org",
-    "skind": "ngo",
-    "tags": [
-     "advocacy:watchdog"
-    ],
-    "url": "https://www.migrant-rights.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "The ILO's regional office for the Arab States, which runs the technical cooperation programme in Qatar and publishes what the labour dispute committees are actually delivering. The place to check a claim about reform against the monitoring.",
-    "kind": "structured",
-    "name": "Migrant Workers' Rights \u2014 legal support",
-    "skind": "igo",
-    "tags": [
-     "environment:inspect",
-     "advocacy:watchdog"
-    ],
-    "url": "https://www.ilo.org/beirut",
-    "voice": "official"
-   }
-  ]
- },
- "SGP": {
-  "name": "Singapore",
-  "trackers": [
-   {
-    "desc": "Shelter, casework and a helpline for migrant workers and domestic workers in Singapore, and the organisation that documents what salary non-payment and repatriation look like in practice there.",
-    "kind": "institution",
-    "name": "HOME \u2014 Humanitarian Organization for Migration Economics",
-    "skind": "ngo",
-    "tags": [
-     "conserve:hotline",
-     "conserve:shelter",
-     "organizing:help",
-     "conserve:compensation"
-    ],
-    "url": "https://www.home.org.sg/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "THA": {
-  "name": "Thailand",
-  "trackers": [
-   {
-    "desc": "Worker-voice channels in Thai and regional supply chains: multilingual hotlines and apps that let workers report conditions directly, with the aggregated data fed back to buyers. Built specifically because audits do not detect this.",
-    "kind": "institution",
-    "name": "Issara Institute",
-    "scope": "own",
-    "skind": "ngo",
-    "tags": [
-     "osint:worker",
-     "organizing:help"
-    ],
-    "trust": "record",
+    "voice": "commentary",
+    "skind": "other",
     "type": "institutional",
-    "url": "https://www.issarainstitute.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "Thai labour inspection and wage-claim machinery, including the fishing-sector inspection regime introduced after the EU carding of Thai fisheries.",
-    "kind": "structured",
-    "name": "Department of Labour Protection and Welfare",
-    "scope": "own",
-    "skind": "inspectorate",
+    "trust": "medium",
+    "name": "Rijk Zwaan",
+    "url": "https://www.rijkzwaan.com/",
+    "desc": "WHAT. A large family-owned Dutch vegetable-breeding company, independent of the four majors, operating worldwide. WHERE IT SITS. Vegetable seed is a separate and highly concentrated market from row crops, dominated by a handful of Dutch and Japanese breeders. WHY IT MATTERS. The vegetable sector shows the same concentration as row crops with almost none of the public attention, and it reaches every kitchen. Most of what is eaten fresh worldwide descends from varieties bred by fewer than ten companies.",
     "tags": [
-     "environment:inspect",
-     "environment:wages"
+     "seed:licensees",
+     "seed:germplasm"
     ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.labour.go.th/",
-    "voice": "official"
-   },
-   {
-    "desc": "Investigations combining crew testimony with vessel and ownership records. Its reports name vessels, flags and beneficial owners, which is the level of detail a port authority needs before it will act.",
-    "kind": "institution",
-    "name": "Environmental Justice Foundation \u2014 fisheries",
-    "skind": "ngo",
-    "tags": [
-     "advocacy:data",
-     "osint:vessels"
-    ],
-    "url": "https://ejfoundation.org/",
-    "voice": "interpretive"
+    "checked": "2026-07-31"
    }
   ]
  },
- "TKM": {
-  "name": "Turkmenistan",
+ "FRA": {
+  "name": "France",
   "trackers": [
    {
-    "desc": "Documentation of the state-organised cotton harvest, in which public-sector workers are mobilised under threat of dismissal, and the ongoing pledge campaign against Turkmen cotton.",
-    "kind": "advocacy",
-    "name": "Cotton Campaign \u2014 Turkmenistan",
-    "scope": "own",
-    "skind": "ngo",
-    "tags": [
-     "advocacy:watchdog",
-     "projects:trackers"
-    ],
-    "trust": "record",
-    "type": "institutional",
-    "url": "https://www.cottoncampaign.org/",
-    "voice": "commentary"
-   }
-  ]
- },
- "USA": {
-  "name": "United States",
-  "sub": {
-   "California": {
-    "trackers": [
-     {
-      "desc": "Where an unpaid-wage claim is actually filed in California, regardless of immigration status. Also publishes judgments against employers.",
-      "kind": "structured",
-      "name": "California Labor Commissioner \u2014 wage claims",
-      "scope": "own",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:wages",
-       "conserve:compensation"
-      ],
-      "trust": "record",
-      "type": "records-data",
-      "url": "https://www.dir.ca.gov/dlse/",
-      "voice": "official"
-     }
-    ]
-   },
-   "New York": {
-    "trackers": [
-     {
-      "desc": "State wage-and-hour enforcement, including the Division of Immigrant Policies and Affairs and the farm-labour and nail-salon enforcement programmes.",
-      "kind": "structured",
-      "name": "New York State Department of Labor",
-      "scope": "own",
-      "skind": "inspectorate",
-      "tags": [
-       "environment:wages",
-       "environment:inspect"
-      ],
-      "trust": "record",
-      "type": "records-data",
-      "url": "https://dol.ny.gov/",
-      "voice": "official"
-     }
-    ]
-   }
-  },
-  "trackers": [
-   {
-    "desc": "1-888-373-7888, text 233733, or web chat \u2014 24 hours, more than 200 languages. Operated by Polaris, not by law enforcement and not by immigration, which is why people call it. Handles labour trafficking as well as sex trafficking, and will make a referral rather than a report if that is what the person wants.",
     "kind": "institution",
-    "name": "National Human Trafficking Hotline",
-    "scope": "own",
-    "skind": "helpline",
-    "tags": [
-     "conserve:hotline",
-     "conserve:shelter"
-    ],
-    "trust": "record",
+    "voice": "commentary",
+    "skind": "other",
     "type": "institutional",
-    "url": "https://humantraffickinghotline.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "The federal body that certifies trafficking victims for benefits and runs the National Human Trafficking Referral Directory. Certification is what unlocks federal assistance for a non-citizen survivor, so this is a step, not a leaflet.",
-    "kind": "structured",
-    "name": "Office on Trafficking in Persons (HHS)",
-    "scope": "own",
-    "skind": "court",
+    "trust": "medium",
+    "name": "Limagrain / Vilmorin",
+    "url": "https://www.limagrain.com/en",
+    "desc": "WHAT. A French agricultural cooperative that owns one of the largest seed businesses in the world, spanning field crops, vegetables and garden seed. WHERE IT SITS. Outside the four majors and comparable in size to them in some segments — evidence that the industry is not quite the four-firm story it is usually told as. WHY IT MATTERS. A cooperative structure means farmer-members own the business, which is often presented as a softer alternative. It has not produced a different position on seed ownership or plant variety rights, which suggests the ownership model matters less than the commercial logic acting on it.",
     "tags": [
-     "conserve:legalaid",
-     "conserve:longterm"
+     "seed:licensees",
+     "seed:germplasm",
+     "seed:distribution"
     ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.acf.hhs.gov/otip",
-    "voice": "official"
+    "checked": "2026-07-31"
    },
    {
-    "desc": "The federal rules on what work minors may do and the division that enforces them. Includes how to file a complaint \u2014 which can be made by anyone, not only the worker, and does not require the worker's immigration status to be raised.",
     "kind": "structured",
-    "name": "DOL Wage and Hour Division \u2014 child labour enforcement",
-    "scope": "own",
-    "skind": "inspectorate",
-    "tags": [
-     "environment:inspect",
-     "projects:inspect"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.dol.gov/agencies/whd/child-labor",
-    "voice": "official"
-   },
-   {
-    "desc": "Every Wage and Hour, OSHA, MSHA and OFCCP enforcement case, downloadable, with employer name, address, violation type, back wages assessed and penalties. Search an employer here before you believe its statement about itself.",
-    "kind": "structured",
-    "name": "DOL enforcement database",
-    "scope": "own",
+    "voice": "official",
     "skind": "database",
-    "tags": [
-     "environment:wages",
-     "environment:inspect",
-     "projects:inspect"
-    ],
-    "trust": "record",
     "type": "records-data",
-    "url": "https://enforcedata.dol.gov/",
-    "voice": "official"
-   },
-   {
-    "desc": "Inspection history by employer and site: what was found, what was cited, what was contested. Safety citations frequently document the conditions that a forced-labour case later relies on.",
-    "kind": "structured",
-    "name": "OSHA establishment search",
-    "scope": "own",
-    "skind": "database",
-    "tags": [
-     "environment:osh"
-    ],
     "trust": "record",
-    "type": "records-data",
-    "url": "https://www.osha.gov/ords/imis/establishment.html",
-    "voice": "official"
-   },
-   {
-    "desc": "Every filing by every US-listed company, full-text searchable. Search a supplier's name across all filings to find which listed companies have disclosed a relationship with it.",
-    "kind": "structured",
-    "name": "SEC EDGAR full-text search",
-    "scope": "own",
-    "skind": "database",
+    "name": "OECD BioTrack",
+    "url": "https://biotrackproductdatabase.oecd.org/",
+    "desc": "WHAT. The intergovernmental product database recording approved transgenic products by country, keyed on the OECD unique identifier. WHERE IT SITS. The identifier system the whole industry uses to refer to a specific engineered event. WHY IT MATTERS. Identifiers are assigned to transgenic events. An organism made by mutagenesis or gene editing carries no transgene to name, and generally receives no identifier — so the fastest-growing and least-regulated class of product is also the one this system cannot follow across borders.",
     "tags": [
-     "corporate:statements",
-     "corporate:supply"
+     "rules:standards",
+     "rules:regulators"
     ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://efts.sec.gov/LATEST/search-index?q=",
-    "voice": "official"
-   },
-   {
-    "desc": "Every federal contract, grant and payment, by recipient. If a supplier you are investigating holds federal contracts, there is an inspector general and a contracting officer already attached to it.",
-    "kind": "structured",
-    "name": "USAspending.gov",
-    "scope": "own",
-    "skind": "database",
-    "tags": [
-     "spending:contracts"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.usaspending.gov/",
-    "voice": "official"
-   },
-   {
-    "desc": "The register of entities barred from federal contracts and assistance, with the reason and the term. Check a company here alongside the customs and UFLPA lists.",
-    "kind": "structured",
-    "name": "SAM.gov \u2014 exclusions",
-    "scope": "own",
-    "skind": "database",
-    "tags": [
-     "spending:debarred"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://sam.gov/",
-    "voice": "official"
-   },
-   {
-    "desc": "Which federal agency holds what, and how to file. Response deadlines are statutory; agencies miss them routinely, and the appeal process is part of the tool.",
-    "kind": "structured",
-    "name": "FOIA.gov",
-    "scope": "own",
-    "skind": "foi",
-    "tags": [
-     "records:foia"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.foia.gov/",
-    "voice": "official"
-   },
-   {
-    "desc": "Free access to federal and many state dockets and opinions, including documents bought out of PACER by other users. Search the employer, the recruiter and the statute.",
-    "kind": "structured",
-    "name": "CourtListener / RECAP",
-    "scope": "own",
-    "skind": "database",
-    "tags": [
-     "courts:criminal",
-     "courts:civil"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.courtlistener.com/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "The 2010 statute that required large retailers and manufacturers doing business in California to disclose their efforts against slavery and trafficking in their supply chains \u2014 the predecessor of the UK, Australian and Canadian regimes, and still in force.",
-    "kind": "structured",
-    "name": "California Transparency in Supply Chains Act",
-    "scope": "own",
-    "skind": "court",
-    "tags": [
-     "corporate:statements"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://oag.ca.gov/SB657",
-    "voice": "official"
-   },
-   {
-    "desc": "Worker-driven social responsibility: binding agreements between growers and buyers, a worker-staffed complaint line, and independent auditing with real consequences. Cited repeatedly as the model that works where social auditing does not.",
-    "kind": "institution",
-    "name": "Coalition of Immokalee Workers \u2014 Fair Food Program",
-    "scope": "own",
-    "skind": "union",
-    "tags": [
-     "organizing:help",
-     "environment:freedom",
-     "corporate:audit"
-    ],
-    "trust": "record",
-    "type": "institutional",
-    "url": "https://fairfoodprogram.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "Legal and policy work on US agricultural labour, including the H-2A guestworker programme where employer-tied visas and recruitment debt produce the classic pattern.",
-    "kind": "institution",
-    "name": "Farmworker Justice",
-    "scope": "own",
-    "skind": "helpline",
-    "tags": [
-     "organizing:legal",
-     "corporate:recruit"
-    ],
-    "trust": "record",
-    "type": "institutional",
-    "url": "https://www.farmworkerjustice.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "The financial-intelligence unit's red-flag guidance on human trafficking and forced labour: the transaction patterns banks are told to look for \u2014 wages paid to a single account for many workers, recruitment-fee flows, funds moving to a labour broker. Useful in reverse, as a checklist of what to look for in the financial record you already have.",
-    "kind": "structured",
-    "name": "FinCEN \u2014 human trafficking financial advisories",
-    "scope": "own",
-    "skind": "oversight",
-    "tags": [
-     "financial:aml",
-     "financial:remit"
-    ],
-    "trust": "record",
-    "type": "records-data",
-    "url": "https://www.fincen.gov/resources/advisories",
-    "voice": "official"
-   },
-   {
-    "desc": "Annual analysis of every federal human trafficking prosecution in the United States, including the small but growing number of forced-labour cases, with defendants, sectors and outcomes.",
-    "kind": "institution",
-    "name": "Human Trafficking Institute \u2014 federal case data",
-    "scope": "own",
-    "skind": "research",
-    "tags": [
-     "courts:criminal",
-     "advocacy:data"
-    ],
-    "trust": "record",
-    "type": "institutional",
-    "url": "https://traffickinginstitute.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "1-888-373-7888, or text 233733. Twenty-four hours, over 200 languages, and it takes reports about someone else as well as calls from people in the situation. It is run by an NGO and is not law enforcement: it will not send police unless you ask it to or someone is in immediate danger, which is the reason many callers use it rather than 911. You do not need to be certain, and you can stay anonymous.",
-    "kind": "structured",
-    "name": "National Human Trafficking Hotline \u2014 report or get help",
-    "skind": "helpline",
-    "tags": [
-     "conserve:hotline",
-     "conserve:shelter"
-    ],
-    "url": "https://humantraffickinghotline.org/en/report-trafficking",
-    "voice": "official"
-   },
-   {
-    "desc": "Files a wage complaint for unpaid or underpaid work. Two things make this the most-used route in practice: it does not ask about immigration status, and it does not require proving coercion \u2014 only that the work was done and not paid. Complaints can be filed by a third party. There is a two-year limit, three if the violation was wilful.",
-    "kind": "structured",
-    "name": "Department of Labor \u2014 Wage and Hour Division complaint",
-    "skind": "inspectorate",
-    "tags": [
-     "conserve:compensation",
-     "environment:inspect"
-    ],
-    "url": "https://www.dol.gov/agencies/whd/contact/complaints",
-    "voice": "official"
-   },
-   {
-    "desc": "Triggers an inspection of a workplace. Worth knowing because an injury or unsafe-conditions complaint reaches a site that no anti-trafficking authority is watching, and the resulting inspection report becomes an official document about a workplace that had none.",
-    "kind": "structured",
-    "name": "OSHA \u2014 workplace safety complaint",
-    "skind": "inspectorate",
-    "tags": [
-     "environment:inspect"
-    ],
-    "url": "https://www.osha.gov/workers/file-complaint",
-    "voice": "official"
-   },
-   {
-    "desc": "The visa categories for trafficking victims (T) and victims of certain crimes who assist an investigation (U). This is the mechanism that stops removal while a case proceeds, and it is the reason status advice has to come before any report is made rather than after. Both are capped and slow; apply through a legal-aid provider rather than alone.",
-    "kind": "structured",
-    "name": "USCIS \u2014 T and U nonimmigrant status",
-    "skind": "helpline",
-    "tags": [
-     "conserve:legalaid"
-    ],
-    "url": "https://www.uscis.gov/humanitarian/victims-of-human-trafficking-and-other-crimes",
-    "voice": "official"
-   },
-   {
-    "desc": "Operates the national hotline and publishes the data that comes out of it \u2014 typologies of trafficking by industry, and analysis of what callers actually report. Also takes donations that fund the hotline directly.",
-    "kind": "institution",
-    "name": "Polaris",
-    "skind": "ngo",
-    "tags": [
-     "organizing:fund",
-     "organizing:help"
-    ],
-    "url": "https://polarisproject.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "The national alliance of anti-trafficking legal and service providers. Its member directory is the fastest route to a lawyer or case manager in a specific state who already does this work.",
-    "kind": "institution",
-    "name": "Freedom Network USA",
-    "skind": "ngo",
-    "tags": [
-     "conserve:legalaid",
-     "organizing:legal",
-     "organizing:help"
-    ],
-    "url": "https://freedomnetworkusa.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "Trains and supports pro bono lawyers taking trafficking cases, and maintains a public database of federal civil trafficking cases. Two uses: finding counsel, and checking what has already been argued and what damages courts have actually awarded.",
-    "kind": "institution",
-    "name": "Human Trafficking Legal Center",
-    "skind": "legalaid",
-    "tags": [
-     "organizing:legal",
-     "conserve:legalaid",
-     "courts:civil"
-    ],
-    "url": "https://htlegalcenter.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "Free and low-cost immigration representation, including T and U visa work for trafficking and crime victims. Relevant because in most US cases the immigration question has to be handled before, not after, anyone talks to law enforcement.",
-    "kind": "institution",
-    "name": "National Immigrant Justice Center",
-    "skind": "legalaid",
-    "tags": [
-     "organizing:legal",
-     "conserve:legalaid"
-    ],
-    "url": "https://immigrantjustice.org/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "Funds the national hotline directly, which is the single piece of US infrastructure that a person in this situation can reach without going through police.",
-    "kind": "institution",
-    "name": "Polaris \u2014 donate",
-    "skind": "ngo",
-    "tags": [
-     "organizing:fund"
-    ],
-    "url": "https://polarisproject.org/donate/",
-    "voice": "interpretive"
-   },
-   {
-    "desc": "1-800-422-4453, twenty-four hours, in over 170 languages. Staffed by counsellors rather than call handlers, takes anonymous reports about a child, and can tell you what the mandatory-reporting rules are in your specific state before you decide what to do.",
-    "kind": "institution",
-    "name": "Childhelp National Child Abuse Hotline",
-    "skind": "helpline",
-    "tags": [
-     "conserve:child",
-     "conserve:hotline"
-    ],
-    "url": "https://childhelphotline.org/",
-    "voice": "interpretive"
+    "checked": "2026-07-31"
    }
   ]
  },
- "UZB": {
-  "name": "Uzbekistan",
+ "GBR": {
+  "name": "United Kingdom",
   "trackers": [
    {
-    "desc": "The coalition that ran the Uzbek cotton boycott for more than a decade and lifted it in 2022 after systemic state-imposed forced labour in the harvest was found to have ended. Its archive is the fullest case study anywhere of a sustained commodity campaign that worked \u2014 and it now runs the same pressure on Turkmenistan.",
-    "kind": "advocacy",
-    "name": "Cotton Campaign",
-    "scope": "own",
-    "skind": "ngo",
-    "tags": [
-     "advocacy:watchdog",
-     "projects:trackers"
-    ],
-    "trust": "record",
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
     "type": "institutional",
-    "url": "https://www.cottoncampaign.org/",
-    "voice": "commentary"
-   }
-  ]
- },
- "VNM": {
-  "name": "Vietnam",
-  "trackers": [
+    "trust": "medium",
+    "name": "Oxford Nanopore Technologies",
+    "url": "https://nanoporetech.com/",
+    "desc": "WHAT. Maker of portable real-time DNA and RNA sequencers, including a device the size of a phone that costs roughly what a laptop costs. WHERE IT SITS. At the reading end of the supply chain, and the reason reading a genome is now cheap and mobile. WHY IT MATTERS. This is the one part of the industry whose spread genuinely cuts both ways. The same device that lets a company verify its own product lets a community group verify what is in a field. Reading has been democratised. Writing has not, and the asymmetry between those two facts describes the public's actual position better than any argument about biotechnology in general.",
+    "tags": [
+     "synthesis:seq",
+     "synthesis:reagents"
+    ],
+    "checked": "2026-07-31"
+   },
    {
-    "desc": "Carries out rescues of trafficked children and adults from within Vietnam and from across the Chinese border, then handles the aftercare, schooling and prosecutions. Takes information about a specific person.",
     "kind": "institution",
-    "name": "Blue Dragon Children's Foundation",
-    "skind": "ngo",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Oxitec",
+    "url": "https://www.oxitec.com/",
+    "desc": "WHAT. Developer of self-limiting engineered insects, principally Aedes aegypti mosquitoes carrying a gene intended to prevent female offspring reaching adulthood. Released in Brazil, the Cayman Islands, Panama, the United States and elsewhere. WHERE IT SITS. The most advanced commercial open-release programme for engineered animals anywhere. WHY IT MATTERS. In Jacobina, Brazil, genotyping after 27 months of weekly releases found DNA from the release strain had entered the wild population. What moved was the strain's background genome rather than the self-limiting transgene, and the company disputes the paper's framing — but the design premise had been that lethality was complete and the population's genetics would be unaffected. Self-limiting was a design claim, and the field tested it.",
     "tags": [
-     "conserve:hotline",
-     "conserve:shelter",
-     "organizing:help",
-     "organizing:fund"
+     "wild:insects",
+     "wild:drives"
     ],
-    "url": "https://www.bluedragon.org/",
-    "voice": "interpretive"
-   }
-  ]
- },
- "ZAF": {
-  "name": "South Africa",
-  "trackers": [
+    "checked": "2026-07-31"
+   },
    {
-    "desc": "Inspection and enforcement services, and the CCMA route for unfair-labour-practice and unpaid-wage disputes.",
     "kind": "structured",
-    "name": "Department of Employment and Labour",
-    "scope": "own",
-    "skind": "inspectorate",
-    "tags": [
-     "environment:inspect",
-     "environment:wages"
-    ],
-    "trust": "record",
+    "voice": "official",
+    "skind": "database",
     "type": "records-data",
-    "url": "https://www.labour.gov.za/",
-    "voice": "official"
-   },
-   {
-    "desc": "0800 222 777, twenty-four hours, free from any phone. Takes reports about another person, connects to shelter and legal support, and is run with civil-society partners rather than by police alone.",
-    "kind": "structured",
-    "name": "National Human Trafficking Hotline (South Africa)",
-    "skind": "helpline",
+    "trust": "record",
+    "name": "HFEA — licensed clinic register",
+    "url": "https://www.hfea.gov.uk/choose-a-clinic/clinic-search/",
+    "desc": "WHAT. The UK regulator's searchable register of every licensed fertility clinic, with inspection findings, licence conditions and outcome data by clinic. WHERE IT SITS. The only clinic-level public accounting of the fertility industry anywhere in the world. WHY IT MATTERS. It demonstrates that clinic-level transparency is achievable, which removes the industry's usual answer that it is not. Everywhere else, a patient choosing a clinic is choosing on marketing. Here they can read the inspection report.",
     "tags": [
-     "conserve:hotline",
-     "conserve:shelter"
+     "repro:clinics",
+     "rules:regulators"
     ],
-    "url": "https://www.0800222777.org.za/",
-    "voice": "official"
-   },
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "CHN": {
+  "name": "China",
+  "trackers": [
    {
-    "desc": "116, free and twenty-four hours. Takes calls from children and from adults reporting a child at risk, with counselling and legal support behind it.",
     "kind": "institution",
-    "name": "Childline South Africa",
-    "skind": "helpline",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "BGI Group",
+    "url": "https://www.bgi.com/global",
+    "desc": "WHAT. One of the world's largest genomics organisations, running sequencing at enormous scale and manufacturing its own instruments after acquiring Complete Genomics. WHERE IT SITS. The main non-Western pole of the sequencing industry, and a direct competitor to Illumina on instruments as well as services. WHY IT MATTERS. It breaks the assumption that this industry is Western and therefore governed by Western rules. Sequencing capacity at this scale, under a different regulatory and political system, means any framework that only reaches North America and Europe reaches a shrinking share of the field.",
     "tags": [
-     "conserve:child",
-     "conserve:hotline"
+     "synthesis:seq",
+     "synthesis:synth"
     ],
-    "url": "https://www.childlinesa.org.za/",
-    "voice": "interpretive"
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "JPN": {
+  "name": "Japan",
+  "trackers": [
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "CLEA Japan / Japan SLC",
+    "url": "https://www.clea-japan.com/en/",
+    "desc": "WHAT. Japanese breeders and suppliers of laboratory animals including transgenic and immunodeficient strains. WHERE IT SITS. The regional supply for one of the largest biomedical research bases in the world. WHY IT MATTERS. The animal trade is regional in a way the rest of the industry is not, and each region's practices are governed by its own welfare law. A model developed under one standard is used in publications read everywhere.",
+    "tags": [
+     "animals:breeders",
+     "animals:models"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "KOR": {
+  "name": "South Korea",
+  "trackers": [
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Sooam Biotech",
+    "url": "https://en.sooam.com/",
+    "desc": "WHAT. A South Korean laboratory offering commercial dog cloning and associated research services. WHERE IT SITS. The other pole of the commercial pet-cloning trade alongside the US operation. WHY IT MATTERS. Pet cloning is the clearest case of engineering-adjacent biotechnology sold direct to consumers with no biosafety framework engaged at any point. It also normalises the practice: an industry that can clone a pet for a paying customer has already answered, commercially, questions that are still being debated formally elsewhere.",
+    "tags": [
+     "livestock:cloning",
+     "livestock:pets"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "BRA": {
+  "name": "Brazil",
+  "trackers": [
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "Suzano / FuturaGene",
+    "url": "https://www.suzano.com.br/en/",
+    "desc": "WHAT. The world's largest pulp producer, whose FuturaGene subsidiary developed the first genetically modified eucalyptus approved anywhere, cleared by Brazil's CTNBio in 2015, followed by a glyphosate-tolerant version in 2021. WHERE IT SITS. The only commercial-scale engineered forestry programme approved in the world. WHY IT MATTERS. Post-release monitoring for the approved eucalyptus was compiled from questionnaires filled in by field technicians, in reports authored by the company's own employees and contractors. Self-reported surveillance by the party with the commercial interest is the norm in this industry rather than the exception, and this is the best-documented example of it.",
+    "tags": [
+     "deextinct:trees",
+     "seed:traits"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "ESP": {
+  "name": "Spain",
+  "trackers": [
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "other",
+    "type": "institutional",
+    "trust": "medium",
+    "name": "IVIRMA Global",
+    "url": "https://ivirma.com/",
+    "desc": "WHAT. One of the largest fertility clinic networks in the world, formed from the merger of Spain's IVI and the US RMA network, operating across Europe, the Americas and the Middle East. WHERE IT SITS. The consolidated end of assisted reproduction — the chain, not the clinic, is now the decision-making unit. WHY IT MATTERS. Spain is a major destination for cross-border reproductive care because its donor rules and legal framework differ from its neighbours'. Consolidation plus regulatory difference means a chain can route patients to whichever jurisdiction permits what they are buying, which is regulatory arbitrage operating on human reproduction.",
+    "tags": [
+     "repro:clinics",
+     "repro:surrogacy"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "BEL": {
+  "name": "Belgium",
+  "trackers": [
+   {
+    "kind": "institution",
+    "voice": "commentary",
+    "skind": "ngo",
+    "type": "institutional",
+    "trust": "low",
+    "name": "CropLife International",
+    "url": "https://croplife.org/",
+    "desc": "WHAT. The global federation of the pesticide and agricultural biotechnology industry, with national affiliates in most countries. WHERE IT SITS. Brussels, next to the institutions it lobbies, coordinating national bodies that lobby their own governments. WHY IT MATTERS. The national affiliate structure means the same positions arrive in dozens of consultations as though they were locally arrived at. Identifying the affiliate operating in a given country is the fastest way to see who is arguing the industry's case there.",
+    "tags": [
+     "rules:associations",
+     "rules:influence"
+    ],
+    "checked": "2026-07-31"
    }
   ]
  }

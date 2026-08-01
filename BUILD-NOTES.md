@@ -1523,3 +1523,216 @@ Several are here for what they demonstrate rather than what they publish:
 Roughly 95 countries still have no entry. The remaining ones are mostly small
 island states and territories where the focal point list gives a ministry but no
 website, which is precisely the case the no-guessing rule exists for.
+
+---
+
+## Round 34 — the defensive half
+
+**93 countries · 32 subnational regions · 24 international bodies · 395 entries ·
+0 validation problems.**
+
+Nineteen entries, all seed banks, farmer seed networks and testing capacity. The
+map has been strong on how to fight a permit and thin on the thing it repeatedly
+tells people to do first: get clean seed somewhere safe. `conserve` went 137 →
+168 and is now the second-largest lens.
+
+The ones that carry an argument:
+
+- **Ethiopia — Biodiversity Institute.** One of the oldest and largest genebanks
+  in Africa, built before most countries had one, in a centre of origin for
+  coffee, sorghum, teff and durum wheat. It is the working model everything in
+  the seed lens argues for.
+- **Peru — Parque de la Papa.** Six Quechua communities conserving over a
+  thousand native potato varieties **in the field, governed by the communities
+  themselves** rather than by an institution holding seed on their behalf. That
+  is farmers' rights exercised rather than legislated, inside the potato's centre
+  of origin.
+- **Syria — ICARDA.** The Aleppo evacuation and the first withdrawal ever made
+  from Svalbard. Every argument for duplicating a line in more than one place was
+  tested here, in public, and the duplication worked.
+- **Philippines — IRRI.** Rice accounted for roughly a third of all recorded GM
+  contamination incidents despite no GM rice being commercially grown anywhere,
+  and the global rice backup sits in Los Baños.
+- **Nigeria — IITA.** Bt cowpea was approved in Nigeria; the world's cowpea
+  diversity is held in the same country. That makes the contamination question
+  immediate rather than theoretical.
+- **France — Kokopelli.** Prosecuted for selling varieties not on the official
+  catalogue, and took it to the European Court of Justice. Whether a seed may be
+  sold at all if it is not registered is the quiet foundation under everything
+  else on this map.
+- **UK — Heritage Seed Library.** Varieties that can no longer legally be sold
+  because registration lapsed, distributed to members instead. The clearest
+  demonstration that seed law removes varieties from circulation quietly, without
+  anyone deciding they were bad.
+
+One entry is marked medium-trust and commentary for a structural reason:
+**Brazil's Embrapa develops engineered crops and also runs the reference
+laboratories used to detect them.** That is a fact about how the Brazilian system
+is arranged, and the entry says so without making it an accusation about anyone
+in it.
+
+    projects 214  conserve 168  environment 156  corporate 96  courts 91
+    records 86    organizing 66  advocacy 65     spending 60
+    financial 29  people 28      osint 14
+
+---
+
+## Round 35 — a marker in the wrong hemisphere, and two fixes
+
+**AfricanLII was pinned in Sydney.** Reported, and correct. The body was called
+"Free legal information networks" and I placed it at AustLII's coordinates
+because AustLII hosts the LII infrastructure — so the entry for African law sat
+off the coast of New South Wales.
+
+Split into two bodies: **AfricanLII in Cape Town**, where it is hosted, and
+**WorldLII in Sydney**, where it genuinely is.
+
+**Auditing the rest found five more of the same kind.** Every one was a body
+named after a *network* or a *category* rather than a place, so the pin drifted
+to whichever member came to mind:
+
+    Strategic & public-interest litigation   London      → Eugene, Oregon (ELAW)
+    Gene editing & synthetic biology firms   Cambridge MA → Washington DC (SEC)
+    The four — agricultural biotech majors   Frankfurt   → Leverkusen (Bayer)
+    Global farmer & food-sovereignty         Paris       → Barcelona (GRAIN)
+    Independent GM testing                   Luxembourg  → Ispra (the EURL lab)
+
+The rule now applied: **a body sits where its lead entry actually is.**
+
+**A build-time pin audit enforces it.** Expected coordinates for the seven
+corrected bodies, plus a check that no body has impossible coordinates or sits at
+null island. The build fails rather than shipping a marker in the wrong
+hemisphere again.
+
+**New goal 11b: "Change the law through legislation."** Step 11 already existed
+but was labelled "Go after the rule itself", which does not read as *change the
+law*, and it only covered the litigation route. 11 is now explicitly the courts
+route; 11b is the legislative one — bans, moratoria, labelling, seed rights.
+
+Its hint gives the entry points in order of difficulty (municipal declaration →
+regional moratorium → labelling or coexistence rule → national prohibition →
+constitutional provision) and notes that almost every one began with people who
+had no standing and no lawyer. It closes on what beat what: **Vermont's labelling
+law survived industry litigation and was ended by Congress instead** — which
+tells you where the fight moves once you start winning.
+
+**Pill saturation reduced.** `#24548c` → `#3d5673`, borders `#3a6fae` →
+`#567192`, applied across `.chip.on`, `.ps-pill.on`, `.pt-pill.on`,
+`.best-pill.on` and `.skpill.on`.
+
+21 intents, 21 selectable options, every one mapping both ways.
+
+---
+
+## Round 36 — resources grouped by goal, not by lens
+
+**A unit's resource box now groups by intention**, in the same order the
+"What are you trying to do?" menu runs. Previously it grouped by lens, which is a
+taxonomy of *source types* — useful for filtering, wrong for reading. Open a
+country now and it reads: find the record → read the assessment → locate the
+site → request what was withheld → who owns it → the money → the officials →
+past cases → change the law → find allies → secure seed.
+
+Three decisions inside it:
+
+- **The order is read off the menu at runtime**, not duplicated in a constant.
+  Add or move a goal and the popups follow automatically; the two cannot diverge.
+- **Entries repeat across goals.** A court database serves "find past cases" and
+  "change the law through the courts". Filing it under one would hide it from the
+  step where someone actually needs it, so it appears in both and each count is
+  the count for that group.
+- Anything matching no goal falls into **"Everything else here"** rather than
+  vanishing.
+
+Tested against real data: the US box produces 17 goal groups from 24 resources,
+Brazil 13 from 10, Kenya 7 from 4.
+
+### An escaping bug, caught by the validator
+
+The first version emitted `\\'collapsed\\'` into a single-quoted JavaScript
+string — a literal backslash that terminates the string early. `Unexpected
+identifier 'collapsed'`. Rewritten to build the handler with `\u0027`, which the
+parser resolves after the string closes and which cannot be mangled by escaping
+levels. Third time a quoting error has reached the output; the syntax check has
+caught every one.
+
+### Seventeen more entries
+
+Filling the goals that were thinnest now that the popup is organised by them —
+FOI routes, land registries and integrity bodies. `records` 86 → 103,
+`people` 28 → 34, `financial` 29 → 34.
+
+- **South Africa's PAIA** reaches **private bodies** where the record is needed
+  to exercise a right. That is rare in the world, and a company holding safety
+  data it will not publish is exactly the case the provision was written for.
+- **Chile's Consejo para la Transparencia** — the seed-multiplication site
+  question was decided there, on transparency grounds, not in a biosafety forum.
+- **New Zealand's LINZ Data Service** publishes national parcel geometry free and
+  downloadable. Almost nowhere else can you map a drift radius without paying per
+  title.
+- **South Africa's deeds registry** entry says what it does *not* cover:
+  communal land under traditional tenure, a large share of the country. Where
+  tenure is communal the neighbour with standing is an institution, not a
+  titleholder.
+- **Brazil's sanctions list** — a two-minute check on whether an applicant is
+  already barred from public contracting.
+
+**93 countries · 25 international bodies · 412 entries · 0 validation problems.**
+
+    projects 217  conserve 168  environment 156  records 103  courts 99
+    corporate 97  organizing 66  advocacy 65     spending 61
+    people 34     financial 34   osint 15
+
+---
+
+## Round 37 — pivot: industry-primary
+
+The map is no longer a toolkit for opposing releases. It is a map of the
+industry. The accountability material is gone rather than demoted.
+
+**Twelve facets replace the twelve lenses:** Seed & Traits · Gene Editing &
+Synthetic Biology · DNA Synthesis & Sequencing · Contract Research &
+Manufacturing · Laboratory Animals · Livestock, Aquaculture & Pets · Insects,
+Microbes & Open Release · De-extinction & Conservation Biotech · Human Clinical &
+Therapeutic · Assisted Reproduction · Money & Backers · Rules, Records &
+Advocacy. 51 sub-filters.
+
+**Every entry now has a fixed three-part description** — WHAT the organisation
+is and does, WHERE it sits in the chain, WHY it matters. The third part is the
+argument, and it is written from the documented position rather than from
+characterisation: market share, published terms, incident record, the structure
+of the arrangement. Enforced at build time — a missing section fails validation.
+
+**The goal menu became a navigation menu.** The map no longer tells anyone what
+to do, so the options name parts of the industry rather than tasks. The angle
+selector ("with your wallet / with media tactics / with your legal skills") is
+deleted outright — it only made sense on a campaign map.
+
+**The tour is rewritten**, 8 steps, running the chain backwards from the thing
+you can see: the narrow top, the synthesis layer nobody maps, who actually does
+the work, what it is done to, applied to people, what sets the pace, and the
+machinery around it. The old worked example — seven steps of campaign advice —
+is gone.
+
+**Data rebuilt from scratch: 12 countries, 46 entries**, every facet populated.
+The 412 accountability entries are not merged in; this is a different map.
+
+Entries carrying the most: Bayer selling both the tolerant seed and the herbicide
+it tolerates; Twist and IDT as the layer where capability is actually gated, by
+company policy rather than statute; Addgene requiring an institutional account,
+which is the real barrier between the public and this technology; Charles River
+both breeding the animals and running the studies performed on them; Jackson
+Laboratory's catalogue as a product list where every entry is a lineage bred to
+be ill; ViaGen cloning pets with no biosafety framework engaged at any point;
+Oxitec's self-limiting claim tested by the Jacobina genotyping; Colossal
+reframing extinction as reversible on behalf of a company that would own the
+result; Casgevy curing a disease most prevalent in Africa at $2.2m a patient;
+Orchid selling polygenic embryo scores that the underlying statistics cannot
+support.
+
+### Process note
+
+Four panel rewrites were attempted in one script; the last anchor failed and
+Python discarded all four, because the file write comes at the end. Split into
+four scripts, each writing independently. That is the third time an aborted
+multi-edit script has silently reverted good work in this project.
