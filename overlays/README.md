@@ -29,6 +29,8 @@ GMO-map/
 ├─ harvest/
 │   ├─ wire_harvest.py         RSS harvester → wire.json
 │   ├─ aphis_releases.py       APHIS release permits → projects.json
+│   ├─ cfia_approvals.py       CFIA Canadian approvals → merged by the above
+│   ├─ cfia_records.json       (generated)
 │   ├─ projects_curated.json   hand-written records, merged by the above
 │   ├─ bch_focal_points.py     CBD focal-point list → trackerdata stubs
 │   └─ check_links.py          link rot + staleness report
@@ -131,6 +133,18 @@ expired records, and drops anything past its expiration date.
 python3 harvest/aphis_releases.py --dry-run   # summary, writes nothing
 python3 harvest/aphis_releases.py             # writes projects.json
 ```
+
+`harvest/cfia_approvals.py` adds Canada, from the CFIA "Plants with Novel Traits"
+dataset on open.canada.ca (Open Government Licence, direct CSV). Worth having for
+two reasons beyond one more country: it carries the **OECD unique identifier**,
+which is the string that links one engineered event across every country that has
+ruled on it, and Canada regulates by novelty of trait rather than by technique —
+so transgenic events and products of mutagenesis and gene editing sit in the same
+register. That second group is being written out of registration almost
+everywhere else.
+
+Only rows approved for unconfined release in Canada are kept. "Not grown in
+Canada" means feed or food import clearance, never planting.
 
 Hand-written records for registers with no bulk file live in
 `harvest/projects_curated.json` and are merged in front of the harvested ones.
