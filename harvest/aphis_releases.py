@@ -87,7 +87,11 @@ def fetch(url):
 
 def parse_date(s):
     s = (s or "").strip()
-    for fmt in ("%m/%d/%Y", "%Y-%m-%d", "%d-%b-%y", "%m/%d/%y"):
+    # The two files use different date formats. eFile writes 5/2/2026; ePermits
+    # writes 01-May-2029. %d-%b-%Y must come before %d-%b-%y or every four-digit
+    # legacy year fails to parse - which is what let 20,344 dead legacy records
+    # through the expiry gate as though they had no expiry date at all.
+    for fmt in ("%m/%d/%Y", "%Y-%m-%d", "%d-%b-%Y", "%d-%b-%y", "%m/%d/%y"):
         try:
             return datetime.strptime(s, fmt).date()
         except ValueError:
@@ -151,6 +155,30 @@ def traits_of(raw):
     return out
 
 
+# Applicants file under inconsistent names: "Pioneer Hi-Bred International" and
+# "Pioneer Hi-Bred International, Inc." are one company, and counting them apart
+# UNDERSTATES concentration. Normalise for the summary only - each record keeps
+# the name exactly as filed.
+SUFFIX = re.compile(r"[,]?\s*\b(inc|llc|ltd|l\.?l\.?c|corp|corporation|company|co|"
+                    r"plc|gmbh|ag|sa|s\.a|bv|nv|pty|limited)\b\.?\s*$", re.I)
+GROUPS = [("bayer", "Bayer"), ("monsanto", "Bayer"), ("syngenta", "Syngenta"),
+          ("pioneer hi-bred", "Corteva (Pioneer)"), ("corteva", "Corteva (Pioneer)"),
+          ("basf", "BASF"), ("dow agro", "Corteva (Pioneer)")]
+
+
+def norm_org(name):
+    s = (name or "").strip()
+    low = s.lower()
+    for needle, group in GROUPS:
+        if needle in low:
+            return group
+    prev = None
+    while prev != s:
+        prev = s
+        s = SUFFIX.sub("", s).strip()
+    return s or "Not stated"
+
+
 def impact_for(n_locs, states):
     """Rated scale, 1-5. Based on how many release locations the applicant
     declared and how many states it spans. Not a measured area - the source
@@ -179,6 +207,12 @@ def build(rows, source_label):
         exp = parse_date(get(r, "Expiration Date", legacy))
         if exp and exp < date.today():
             continue                      # lapsed authorisation is not a live release
+        if legacy and not exp:
+            # ePermits stopped accepting applications on 30 September 2022 and its
+            # permits expire on their own terms. A legacy record with no expiry
+            # date cannot be shown to be current, so it is not a live release.
+            # Without this gate 20,344 dead legacy records passed as live.
+            continue
         try:
             n_locs = int(float(get(r, "Number of Release Locations", legacy) or 0))
         except ValueError:
@@ -286,9 +320,10 @@ def main():
           % (len(records), pre, len(records) - pre, len(curated)))
     orgs = {}
     for r in records:
-        orgs[r["company"]] = orgs.get(r["company"], 0) + 1
+        k = norm_org(r["company"])
+        orgs[k] = orgs.get(k, 0) + 1
     ranked = sorted(orgs.items(), key=lambda x: -x[1])
-    print("top applicants (%d distinct):" % len(orgs))
+    print("top applicants (%d distinct, corporate groups merged):" % len(orgs))
     for o, c in ranked[:10]:
         print("  %3d  %4.1f%%  %s" % (c, 100.0 * c / len(records), o[:56]))
     top3 = sum(c for _, c in ranked[:3])
