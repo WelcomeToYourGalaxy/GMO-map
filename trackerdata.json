@@ -4817,5 +4817,406 @@
     "checked": "2026-07-31"
    }
   ]
+ },
+ "EGY": {
+  "name": "Egypt",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Ministry of Environment — Egyptian Environmental Affairs Agency",
+    "url": "https://www.eeaa.gov.eg/",
+    "desc": "Egypt's environmental affairs agency, the national biosafety focal point. CAN: reach the framework in the largest wheat importer in the world. CAN'T: be relied on for a permit register. FOR: what a country of that import volume accepts sets the standard exporters have to meet, which gives importing states leverage they rarely use.",
+    "tags": [
+     "projects:nepa",
+     "corporate:supply"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "MAR": {
+  "name": "Morocco",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Ministère de la Transition Énergétique et du Développement Durable",
+    "url": "https://www.environnement.gov.ma/",
+    "desc": "Morocco's environment ministry, the biosafety focal point. CAN: reach the national framework. CAN'T: be assumed to publish decisions. FOR: Morocco is a significant seed-multiplication location for European companies, which is a quieter form of the same industry.",
+    "tags": [
+     "projects:nepa",
+     "corporate:supply"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "TUN": {
+  "name": "Tunisia",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Ministère de l'Environnement",
+    "url": "https://www.environnement.gov.tn/",
+    "desc": "Tunisia's environment ministry, the biosafety focal point. CAN: reach the framework of a country with a legal prohibition on GMO cultivation. CAN'T: be relied on for English. FOR: North African prohibitions are less discussed than European ones and rest on different legal grounds.",
+    "tags": [
+     "projects:nepa",
+     "conserve:protect"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "SEN": {
+  "name": "Senegal",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Direction de l'Environnement et des Établissements Classés",
+    "url": "https://www.denv.gouv.sn/",
+    "desc": "Senegal's environment directorate, the biosafety focal point. CAN: reach the national framework in a West African country that has held back from commercial GM release while neighbours moved. CAN'T: be assumed complete. FOR: Senegal's farmer organisations are among the strongest in the region, and the contrast with Burkina Faso and Ghana is instructive.",
+    "tags": [
+     "projects:nepa",
+     "conserve:protect"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "MLI": {
+  "name": "Mali",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Agence Nationale de la Gestion des Stations d'Épuration",
+    "url": "https://www.environnement.gouv.ml/",
+    "desc": "Mali's environment ministry, the biosafety focal point. CAN: reach the national framework. CAN'T: be assumed current. FOR: Mali sits in the Sahelian cotton belt beside Burkina Faso, whose Bt cotton withdrawal reshaped the regional argument.",
+    "tags": [
+     "projects:nepa",
+     "conserve:recognize"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "CMR": {
+  "name": "Cameroon",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Ministère de l'Environnement, de la Protection de la Nature",
+    "url": "https://www.minep.gov.cm/",
+    "desc": "Cameroon's environment ministry, the biosafety focal point. CAN: reach the national framework in a country with substantial cotton and cocoa sectors. CAN'T: be assumed to publish permits. FOR: Central African biosafety frameworks are the least documented anywhere and this is the entry point.",
+    "tags": [
+     "projects:nepa"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "MOZ": {
+  "name": "Mozambique",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Ministério da Terra e Ambiente",
+    "url": "https://www.mta.gov.mz/",
+    "desc": "Mozambique's land and environment ministry, the biosafety focal point. CAN: reach the framework of a country that ran confined trials of drought-tolerant maize. CAN'T: be assumed complete. FOR: Mozambique changed its biosafety regulations to permit confined trials after previously prohibiting them, which is the pattern the region is following.",
+    "tags": [
+     "projects:nepa",
+     "projects:trackers"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "MWI": {
+  "name": "Malawi",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Environmental Affairs Department",
+    "url": "https://www.environment.gov.mw/",
+    "desc": "Malawi's environmental affairs department, the biosafety focal point. CAN: reach the framework of one of the first southern African countries after South Africa to approve Bt cotton commercially. CAN'T: be assumed to publish decisions. FOR: Malawi's approval is cited across the region as precedent.",
+    "tags": [
+     "projects:nepa",
+     "projects:trackers"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "ZWE": {
+  "name": "Zimbabwe",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "database",
+    "type": "records-data",
+    "trust": "record",
+    "name": "National Biotechnology Authority of Zimbabwe",
+    "url": "https://www.nba.ac.zw/",
+    "desc": "Zimbabwe's biotechnology authority, which regulates both research and imports. CAN: reach the framework of a country that has maintained a prohibition on GM cultivation while permitting some processed imports. CAN'T: be assumed complete. FOR: Zimbabwe refused GM food aid alongside Zambia and has kept the position far longer than most.",
+    "tags": [
+     "projects:nepa",
+     "conserve:protect"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "BWA": {
+  "name": "Botswana",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Department of Environmental Affairs",
+    "url": "https://www.gov.bw/",
+    "desc": "Botswana's environmental affairs department, the biosafety focal point. CAN: reach the national framework. CAN'T: be assumed to hold a register. FOR: Botswana's beef export trade to the EU makes its position on GM feed commercially consequential in a way most of its neighbours' is not.",
+    "tags": [
+     "projects:nepa",
+     "corporate:supply"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "NAM": {
+  "name": "Namibia",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Ministry of Environment, Forestry and Tourism",
+    "url": "https://www.meft.gov.na/",
+    "desc": "Namibia's environment ministry, the biosafety focal point. CAN: reach the framework of a country with a biosafety act and a labelling requirement. CAN'T: be assumed to publish permits. FOR: Namibia legislated labelling early, which is unusual in the region.",
+    "tags": [
+     "projects:nepa",
+     "environment:health"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "LKA": {
+  "name": "Sri Lanka",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Central Environmental Authority",
+    "url": "https://www.cea.lk/",
+    "desc": "Sri Lanka's environmental authority, the biosafety focal point. CAN: reach the framework of a country that attempted a nationwide agrochemical prohibition and reversed it. CAN'T: be assumed to hold a GM register. FOR: Sri Lanka is the clearest recent case of an abrupt agricultural policy shift and its consequences, which is argued about in every direction.",
+    "tags": [
+     "projects:nepa",
+     "conserve:protect"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "NPL": {
+  "name": "Nepal",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Ministry of Forests and Environment",
+    "url": "https://mofe.gov.np/",
+    "desc": "Nepal's forests and environment ministry, the biosafety focal point. CAN: reach the national framework in a country whose seed supply depends heavily on Indian imports. CAN'T: be assumed to publish decisions. FOR: import dependence means Nepal inherits decisions made in Delhi, which is a common and under-examined situation.",
+    "tags": [
+     "projects:nepa",
+     "corporate:supply"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "KHM": {
+  "name": "Cambodia",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Ministry of Environment",
+    "url": "https://www.moe.gov.kh/",
+    "desc": "Cambodia's environment ministry, the biosafety focal point. CAN: reach the national framework. CAN'T: be assumed complete. FOR: Mekong-region seed movement crosses borders informally at scale, which makes national frameworks partly notional and worth understanding as such.",
+    "tags": [
+     "projects:nepa",
+     "corporate:supply"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "MMR": {
+  "name": "Myanmar",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Ministry of Natural Resources and Environmental Conservation",
+    "url": "https://www.monrec.gov.mm/",
+    "desc": "Myanmar's environment ministry, the biosafety focal point. CAN: reach the stated national framework. CAN'T: be assumed functional given the circumstances. FOR: recorded so the gap is visible rather than absent — a country with no working register is a different thing from a country not yet added.",
+    "tags": [
+     "projects:nepa"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "JOR": {
+  "name": "Jordan",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Ministry of Environment",
+    "url": "https://moenv.gov.jo/",
+    "desc": "Jordan's environment ministry, the biosafety focal point. CAN: reach the framework of a country inside the Fertile Crescent, a centre of origin for wheat and barley. CAN'T: be assumed to publish permits. FOR: the wheat and barley centre of origin spans several countries that are rarely discussed together; this is one.",
+    "tags": [
+     "projects:nepa",
+     "environment:species",
+     "conserve:protect"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "SYR": {
+  "name": "Syria",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Ministry of Local Administration and Environment",
+    "url": "http://www.mola.gov.sy/",
+    "desc": "Syria's environment ministry, the biosafety focal point. CAN: reach the stated framework. CAN'T: be assumed current. FOR: ICARDA's genebank was evacuated from Aleppo and became the first withdrawal from the Svalbard vault — the clearest demonstration anywhere of why duplicated seed storage exists.",
+    "tags": [
+     "projects:nepa",
+     "conserve:acquire",
+     "conserve:restore"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "IRQ": {
+  "name": "Iraq",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Ministry of Environment",
+    "url": "https://moen.gov.iq/",
+    "desc": "Iraq's environment ministry, the biosafety focal point. CAN: reach the stated framework. CAN'T: be assumed functional. FOR: Iraq sits at the heart of the wheat and barley centre of origin, and its seed system was substantially reorganised under occupation — a documented case of seed law being rewritten from outside.",
+    "tags": [
+     "projects:nepa",
+     "conserve:recognize",
+     "environment:species"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "AZE": {
+  "name": "Azerbaijan",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Ministry of Ecology and Natural Resources",
+    "url": "https://eco.gov.az/en",
+    "desc": "Azerbaijan's ecology ministry, the biosafety focal point. CAN: reach the national framework, in English. CAN'T: be assumed to publish permits. FOR: the Caucasus holds substantial crop diversity and almost no independent monitoring of it.",
+    "tags": [
+     "projects:nepa",
+     "environment:species"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
+ },
+ "KAZ": {
+  "name": "Kazakhstan",
+  "trackers": [
+   {
+    "kind": "structured",
+    "voice": "official",
+    "skind": "court",
+    "type": "records-data",
+    "trust": "record",
+    "name": "Ministry of Ecology and Natural Resources",
+    "url": "https://www.gov.kz/memleket/entities/ecogeo",
+    "desc": "Kazakhstan's ecology ministry, the biosafety focal point. CAN: reach the national framework in a major grain exporter. CAN'T: be assumed to hold a register. FOR: Kazakh wheat moves into markets with very different GM rules, which makes its own position consequential beyond its borders.",
+    "tags": [
+     "projects:nepa",
+     "corporate:supply"
+    ],
+    "checked": "2026-07-31"
+   }
+  ]
  }
 }

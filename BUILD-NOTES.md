@@ -1244,3 +1244,282 @@ because it counts authorisations rather than revenue.
 Also worth noting from that run: **333 consented against 29 under assessment.**
 The window where objection is cheapest is a small fraction of what is on the map,
 which is exactly why the consent-phase filter defaults to showing both.
+
+---
+
+## Round 27 — the first scheduled run, and what it caught
+
+The harvest worked (`epermits 54903 → 20344`, so the schema fix landed) and the
+**push failed**. Three defects, one of them serious.
+
+**1. The workflows race each other.** Both commit to `main`. The wire runs every
+six hours, releases weekly; when they overlap, the second push is rejected with
+`fetch first`. Both now rebase onto whatever landed and retry three times.
+
+**2. `epermits → 20344` was wrong, and the cause was a date format.**
+`parse_date` had `%d-%b-%y` but not `%d-%b-%Y`. ePermits writes `01-May-2029` —
+four-digit year. Every legacy expiry date therefore failed to parse, returned
+`None`, and sailed through the `if exp and exp < today` gate as though it had no
+expiry at all. Twenty thousand dead permits from a system closed since September
+2022 were being treated as live releases.
+
+Fixed by adding `%d-%b-%Y` **before** `%d-%b-%y`, and by parsing the whole
+string rather than a fixed-width slice sized for the shorter format.
+
+A second gate now backs it up: a legacy record with no expiry date is dropped,
+because a closed system cannot be shown to have current authorisations. Belt and
+braces, since the first bug was invisible for two rounds.
+
+The earlier prediction that legacy would yield near-zero was right; the harvester
+was wrong about it twice, in opposite directions, for two different reasons.
+
+**3. The concentration figure was understated.** The run showed
+"Pioneer Hi-Bred International" and "Pioneer Hi-Bred International, Inc." as
+separate applicants, and Bayer split across "Bayer Crop Science" and "Bayer
+Research and Development Services, LLC". Counting them apart dropped the top-3
+share from 36% to 23% — the wrong direction. A `norm_org()` now merges corporate
+groups (Monsanto → Bayer, Pioneer/Dow → Corteva) and strips legal suffixes, for
+the **summary only**. Each record keeps the applicant name exactly as filed.
+
+---
+
+## Round 28 — the panel now matches the map, and Canada joins the layer
+
+**The provenance panel was describing a map that no longer existed.** It still
+said the layer "will read sparse or empty until projects.json is populated" and
+laid out a manifest of registers as though several fed it. One does. Rewritten to
+say what actually ships: **this layer is the United States only**, from the two
+APHIS files, with every other register listed alongside the specific reason it is
+absent — OGTR's robots.txt, the BCH being a JavaScript application, and the rest
+having search forms rather than bulk files. It also now explains why every dot is
+a dashed ring, why scale sorts rather than measures, and what a [CBI] redaction
+in a description means.
+
+**Canada added: `harvest/cfia_approvals.py`.** The CFIA "Plants with Novel
+Traits" dataset on open.canada.ca, Open Government Licence, direct CSV endpoint,
+schema verified by fetching and reading it.
+
+Two things make it worth more than one more country:
+
+- It carries the **OECD unique identifier**. That is the string this map keeps
+  telling people to write down, because it links one engineered event to every
+  other country that has ruled on it. No other feed here supplies it.
+- Canada regulates by **novelty of trait, not by technique**, so the register
+  lists transgenic events and products of mutagenesis and gene editing side by
+  side, with an LMO column saying which is which. Everywhere else that second
+  group is increasingly written out of registration entirely. This is the one
+  harvestable register where it is still visible — which is a direct answer to
+  the map's own largest stated gap.
+
+Gates: only rows approved for unconfined release in Canada are kept. "Not grown
+in Canada" means feed or food import clearance and never planting — the same
+import-versus-release distinction the APHIS harvester enforces. Withdrawn, not
+considered novel, and no-application rows are dropped. Tested against six real
+rows: kept the three genuine approvals, dropped the import-only, the withdrawn
+and the not-novel.
+
+Every Canadian record sits at the national centroid and is marked imprecise,
+because that register records a national approval rather than a planting
+location. The dashed ring means the same thing it means for a US record: the
+source did not give a place.
+
+The weekly workflow now runs CFIA first, then APHIS, which merges the output.
+
+---
+
+## Round 29 — a finding from the first CFIA run
+
+The first live run returned **165 rows → 128 approved for unconfined release; 101
+transgenic, 27 products of mutagenesis or gene editing; 101 carrying an OECD
+identifier.**
+
+101 and 101 is either a coincidence or a fact about how the identifier system
+works. Two changes so the run answers that instead of implying it:
+
+**The identifier test now checks shape, not emptiness.** A real OECD unique
+identifier is applicant code, event code, check digit — `MON-00179-5`, or
+`BCS-GHØØ24-7` using the Ø the standard specifies for zero. The register also
+puts free text and repeated product names in that column: one Non-LMO camelina
+row carries `14CS0851-01-14`, which is the product name, not an identifier. The
+old test counted it. The new one rejects it, and correctly pulls both identifiers
+out of a stacked-event cell like `MS1: ACS-BN004-7; RF1: ACS-BN001-4`.
+
+**The run now prints a cross-tab rather than two separate counts** — transgenic
+against has-identifier, four cells — and states the conclusion only when the
+off-diagonal cells are actually zero.
+
+### Why it matters
+
+The reasoning is definitional, not just observed: OECD unique identifiers are
+assigned to **transgenic events**. An organism made by mutagenesis or gene
+editing has no transgene to identify, so it never receives one.
+
+Which means the map's own standing advice — write down the OECD identifier,
+because it is the one string that follows an event through every country that has
+ruled on it — **does not work for the class of organism growing fastest and being
+deregulated hardest.** Canada is the one harvestable register still listing both
+classes side by side, so it is the one place this is visible at all.
+
+That is now in the provenance panel, next to the deregulation gap it compounds:
+the class being written out of registration is the same class the international
+tracking system was never built to follow.
+
+---
+
+## Round 30 — the cross-tab was measuring its own prose
+
+The run printed:
+
+    transgenic  with id 101   without   0
+    non-LMO     with id  27   without   0
+
+Every record counted as having an identifier, including the 27 that do not. The
+test was `"OECD unique identifier" in r["desc"]` — and the description for a
+record *without* one reads "**No** OECD unique identifier. Those are assigned to
+transgenic events…". The phrase is in both messages. The table could only ever
+return one answer.
+
+Fixed by putting the facts on the record as fields — `oecd` (a list, possibly
+empty) and `transgenic` (a boolean) — and cross-tabbing on those. Nothing infers
+a fact from a sentence it wrote itself.
+
+The `else` branch now also reports the disagreement rather than staying silent
+when the correlation does not hold.
+
+**And I had already put the unverified claim in the map.** Round 29 added to the
+provenance panel that "every transgenic approval carries an identifier and not
+one edited product does" — asserted from a table that could not have shown
+otherwise. That sentence is gone.
+
+What replaced it is what the source actually supports: the identifier system was
+designed around transgenic events — applicant code, event code, check digit,
+naming a specific insertion — and where there is no transgene there is nothing
+for it to name. The Canadian register records no identifier for most of its
+non-transgenic approvals. So the class being written out of registration is also
+the class that system is least able to follow between jurisdictions.
+
+That is the same argument, made at the strength the evidence carries.
+
+---
+
+## Round 31 — the measurement, once the table could disagree
+
+With the cross-tab reading fields instead of its own prose:
+
+    transgenic  with id  98   without   3
+    non-LMO     with id   0   without  27
+
+**The non-transgenic side is absolute.** Not one of the 27 approved products of
+mutagenesis or gene editing carries an OECD unique identifier. That is now in the
+provenance panel with the figures attached, alongside the point it compounds: an
+organism can be both unregistered where it is grown and unnameable everywhere
+else.
+
+**The transgenic side has three exceptions, and guessing at them would repeat the
+mistake.** A transgenic event with no identifier is either genuinely unassigned
+or a formatting quirk in the published cell, and those mean different things. The
+run now prints each one with its raw OECD cell so the difference is visible.
+
+At least one is known to be formatting: the register writes soybean MON 94637's
+identifier with spaces rather than hyphens, `MON 94637`, which the shape test
+correctly declines to accept as an identifier — the standard's format is
+applicant-event-checkdigit. Others carry a literal "Not assigned", which is a
+real absence. The printout distinguishes them; the description does not
+characterise them.
+
+Note what the prediction did: it got the direction right and the number wrong. It
+went into the map only after the table was capable of contradicting it, and the
+sentence there now carries the exceptions rather than rounding them away.
+
+---
+
+## Round 32 — twenty more entries
+
+**73 countries · 32 subnational regions · 24 international bodies · 356 entries ·
+0 validation problems.**
+
+Deepening across twenty existing countries rather than adding new ones. The
+entries that do the most work:
+
+- **Brazil — Ministério Público Federal.** In Brazil the effective challenges to
+  GM approvals have come from federal prosecutors, not private litigants, and
+  **anyone may file a representation asking them to open one, at no cost.** That
+  is a route most people in Brazil do not know they have.
+- **India — Plant Varieties and Farmers' Rights Authority.** India legislated a
+  right most countries only debate: farmers may register their own varieties
+  alongside breeders'. This is where it is actually exercised, not argued about.
+- **South Korea — Rural Development Administration.** Korea systematically looks
+  for escaped LMOs around ports, feed mills and transport routes, and publishes
+  what it finds. Almost no other country runs post-release monitoring of that
+  kind, which makes Korean data one of the few real answers to "what actually
+  gets out".
+- **Denmark — Retsinformation.** The statutory compensation scheme for GM
+  contamination of a neighbouring crop, written into law rather than left to
+  litigation. When someone asks what a remedy would even look like, this is the
+  working example.
+- **Thailand — Department of Agriculture.** Thailand restricts field trials
+  through **plant quarantine law**, not biosafety law. Worth understanding
+  because that mechanism is available in many countries that have no biosafety
+  act at all.
+- **Austria — AGES.** Systematic seed-lot testing is why Austria's GM-free
+  position is enforceable rather than declaratory. The testing is the mechanism.
+- **Norway — GenØk.** Independent biosafety research and the training material
+  used by regulators elsewhere. Much of the working critique of risk-assessment
+  practice worldwide comes from a handful of institutes; this is one.
+- **China — Supreme People's Court judgments.** Unauthorised planting of
+  unapproved GM crops has been prosecuted in China, and the judgments are public.
+  Rarely examined outside the country.
+
+One entry is deliberately flagged low-trust: the Indonesian biotechnology
+information centre. Information centres of that kind are generally
+industry-aligned, and it is included as a record rather than a voice because for
+several Southeast Asian countries it is the only consolidated public account that
+exists. The trust filters exclude it cleanly.
+
+    projects 191  environment 142  conserve 128  courts 90  corporate 89
+    records 86    advocacy 64      organizing 60  spending 60
+    financial 29  people 28        osint 14
+
+---
+
+## Round 33 — twenty new countries
+
+**93 countries · 32 subnational regions · 24 international bodies · 376 entries ·
+0 validation problems.**
+
+Egypt, Morocco, Tunisia, Senegal, Mali, Cameroon, Mozambique, Malawi, Zimbabwe,
+Botswana, Namibia, Sri Lanka, Nepal, Cambodia, Myanmar, Jordan, Syria, Iraq,
+Azerbaijan, Kazakhstan.
+
+Taken from the CBD focal point list, using only entries where that list gives an
+explicit institutional website — no domain inferred from an e-mail address, which
+is the rule the whole country directory has been built under.
+
+Several are here for what they demonstrate rather than what they publish:
+
+- **Syria.** ICARDA's genebank was evacuated from Aleppo and became the first
+  withdrawal ever made from the Svalbard vault. That is the clearest
+  demonstration anywhere of why duplicated seed storage exists, and the map's
+  seed-protection lens argues for it constantly.
+- **Iraq and Jordan.** Both sit in the wheat and barley centre of origin, which
+  is discussed far less than the maize one. Iraq's seed system was substantially
+  reorganised under occupation — a documented case of seed law rewritten from
+  outside.
+- **Botswana.** Beef exports to the EU make its position on GM feed commercially
+  consequential in a way its neighbours' is not.
+- **Egypt.** The largest wheat importer in the world. What an importer of that
+  size accepts sets the standard exporters have to meet — leverage importing
+  states rarely use.
+- **Nepal.** Seed supply depends heavily on Indian imports, so decisions made in
+  Delhi are inherited. A common and under-examined situation.
+- **Myanmar.** Recorded so the gap is visible rather than absent. A country with
+  no functioning register is a different thing from a country not yet added, and
+  the entry says which this is.
+
+    projects 213  environment 146  conserve 137  corporate 95  courts 90
+    records 86    advocacy 64      organizing 60  spending 60
+    financial 29  people 28        osint 14
+
+Roughly 95 countries still have no entry. The remaining ones are mostly small
+island states and territories where the focal point list gives a ministry but no
+website, which is precisely the case the no-guessing rule exists for.
