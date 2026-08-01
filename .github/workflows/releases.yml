@@ -24,4 +24,11 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add projects.json
           git diff --staged --quiet || git commit -m "releases: refresh $(date -u +%Y-%m-%d)"
-          git push
+          # Both workflows commit to main and can finish at the same time, so a
+          # bare push loses the race. Rebase onto whatever landed first, retry.
+          for i in 1 2 3; do
+            git push && exit 0
+            echo "push rejected (attempt $i) - rebasing onto origin/main"
+            git pull --rebase origin main || exit 1
+          done
+          echo "push failed after 3 attempts"; exit 1
