@@ -1736,3 +1736,125 @@ Four panel rewrites were attempted in one script; the last anchor failed and
 Python discarded all four, because the file write comes at the end. Split into
 four scripts, each writing independently. That is the third time an aborted
 multi-edit script has silently reverted good work in this project.
+
+---
+
+## Round 38
+
+- Title back to **Live Global Genetic Frontlines Map**.
+- The "What this is" material moved out of the help panel and into the **Global
+  Wire** intro, which now opens the map and names all twelve facets in prose.
+- The help panel now begins at "Every entry says the same three things".
+  Deleted: "argued from the documented position rather than asserted", the
+  Trust-and-voice sentence, the "What this map does not do" paragraph.
+  "Clicking empty ocean" replaced with clicking the first name in the place row.
+- **The tour is removed** — button and content. The walkthrough text was
+  delivered in the reply instead.
+- **Facility dots removed** (`SETS=[]`). Town halls, courthouses and government
+  offices are civic buildings, not industry sites. The layer, its filters and
+  its legend remain in the engine, so a facility set can be restored later if a
+  genuinely industrial one is built.
+- **Lens pills recoloured** to the same light blue as the source-type pills
+  (`#7fa8cc` on `#9dc0dd`, dark text), and the index Expand-all / Collapse-all
+  controls matched to it.
+- **Release layer untouched.** All 14 source families survive the pivot,
+  including the `contamination` family for escapes and unauthorised releases,
+  plus 19 organism types and 5 overlays. Both harvesters unchanged.
+
+### Wire coverage: 30 feeds to 79
+
+Almost every region read zero because the feed list was 30 mostly-English
+sources. Now 79, across **20 query languages** — Arabic, Chinese (simplified and
+traditional), Dutch, English, French, German, Hindi, Indonesian, Italian,
+Japanese, Korean, Polish, Portuguese, Romanian, Russian, Spanish, Swedish, Thai,
+Turkish, Vietnamese — targeting **37 countries** directly.
+
+Structure: publisher feeds, then topic queries in English, then one region-
+targeted query per major territory, then non-English queries per language market.
+Regional Mongabay editions added for Latin America, Brazil, India and francophone
+Africa.
+
+The harvester now reads the language from the feed URL's `hl=` parameter rather
+than the feed's `<language>` element, which Google News endpoints do not reliably
+set — so the language filter will populate properly for the first time.
+
+---
+
+## Round 39 — overlays expanded to eight
+
+GMO-free zones, protected areas and genebanks kept rather than dropped, and
+reframed for an industry map rather than removed from it:
+
+- **GMO-free zones** are the negative space — the places the industry has been
+  kept out of, and therefore a direct measure of where its expansion met a limit.
+- **Protected areas** are the receiving environment: what sits next to a trial
+  site, and what a gene-flow question is actually about.
+- **Genebanks** are the industry's raw material. Commercial breeding starts from
+  landraces and wild relatives held in trust by public institutions, which is the
+  least-discussed subsidy the industry receives.
+
+Three added: **field trial density**, **regulatory regime by country**, and
+**seed & breeding infrastructure**. Eight total, all colours distinct.
+
+`overlays/README.md` rewritten with a source and a build route for each, ordered
+by how easily each can be built. Two notes worth carrying:
+
+- **Field trial density is buildable today** from `projects.json` alone —
+  aggregate by state, emit one polygon per unit. No external source, and it
+  refreshes whenever the harvester runs.
+- **Regulatory regime is the highest-value one to build.** It classifies each
+  country by how it decides what counts as a regulated organism, and it is the
+  layer that explains why an empty area on this map can mean deregulation rather
+  than absence.
+
+---
+
+## Round 40
+
+**Facilities section removed from the key box.** The toggle, the hint and the
+type filters are gone; `#facFilter` stays hidden in the DOM so the layer can be
+restored if an industrial facility set is ever built.
+
+**All toggled pills on one light blue.** `.chip.on`, `.skpill.on`, `.ps-pill.on`,
+`.pt-pill.on`, `.best-pill.on` and `.wire-tab.on` were drifting apart again after
+each edit, so the recolour is now a blanket swap applied after the rule list
+rather than a per-rule entry. Zero dark-blue pills remain.
+
+**Two overlays built from real geometry** — `harvest/build_overlays.py`.
+
+`trials.geojson` aggregates `projects.json` by state and draws the counts on the
+actual US state polygons already embedded in `index.html` as `SUBGEO`. No
+external source, and it regenerates whenever the release harvester runs. It
+currently shows one state, because `projects.json` holds only the five curated
+records; run the APHIS harvester and it fills.
+
+`regime.geojson` classifies each country by how it decides what counts as a
+regulated organism — technique-based, trait-based, or a carve-out that moves a
+class outside registration entirely — dissolved from the same embedded admin-1
+geometry into one shape per country. 36 of 71 classified countries have geometry
+in `SUBGEO`; the other 35 are named in the run output rather than approximated,
+and an unshaded country means "not classified here", never "no rules".
+
+The other six overlays need geometry this repo does not hold. The generator says
+so and does not invent them.
+
+**Industry entries: 46 → 71**, 13 countries, every facet populated, zero
+validation problems.
+
+    seed 30  editing 18  synthesis 18  money 14  rules 13  animals 13
+    clinical 12  cro 11  repro 9  livestock 8  wild 8  deextinct 4
+
+Entries carrying an argument this round: Bayer's FieldView, where the agronomic
+recommendation comes from the company selling the inputs; Benson Hill as the
+pattern rather than the company — independent trait developers exit into one of
+four buyers, so consolidation is the funding model's assumed endpoint; the Broad
+Institute converting publicly funded research into an exclusive agricultural
+licence; Thermo Fisher with visibility across the whole field that no regulator
+has; GenScript, where an order placed in one country, made in another and used in
+a third is overseen by none; Genus editing at breeding-stock level so a trait
+propagates through national herds without any farmer deciding; AquaGen, where
+farmed salmon genetics reach wild populations with no engineered organism
+involved at all; Agragene as a warning about reading concentration off a permit
+count; Cooper Surgical, where one faulty media batch reaches embryos in hundreds
+of clinics at once; bluebird bio withdrawing an approved cure from a continent
+over price.
