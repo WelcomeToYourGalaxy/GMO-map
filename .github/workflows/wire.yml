@@ -2,11 +2,17 @@ name: Harvest wire
 
 on:
   schedule:
-    - cron: '17 */6 * * *'      # every 6 hours
+    - cron: '17 */6 * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
+
+# Both workflows commit to main. Sharing one concurrency group makes them queue
+# instead of racing, which removes most conflicts before they happen.
+concurrency:
+  group: commit-main
+  cancel-in-progress: false
 
 jobs:
   harvest:
@@ -16,19 +22,24 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Harvest feeds
-        run: python3 harvest/wire_harvest.py
-      - name: Commit if changed
+
+      - name: Harvest and commit
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add wire.json
-          git diff --staged --quiet || git commit -m "wire: refresh $(date -u +%Y-%m-%dT%H:%MZ)"
-          # Both workflows commit to main and can finish at the same time, so a
-          # bare push loses the race. Rebase onto whatever landed first, retry.
+
+          # wire.json is regenerated whole, so a rebase can only ever conflict.
+          # On rejection, take the remote as the base, re-run the harvester
+          # against it (it merges a 120-day archive, so nothing is lost), and
+          # commit fresh. Retry three times.
           for i in 1 2 3; do
+            python3 harvest/wire_harvest.py
+            git add wire.json
+            git diff --staged --quiet && { echo "no change"; exit 0; }
+            git commit -m "wire: refresh $(date -u +%Y-%m-%dT%H:%MZ)"
             git push && exit 0
-            echo "push rejected (attempt $i) - rebasing onto origin/main"
-            git pull --rebase origin main || exit 1
+            echo "push rejected (attempt $i) - resetting to origin/main and re-harvesting"
+            git fetch origin main
+            git reset --hard origin/main
           done
           echo "push failed after 3 attempts"; exit 1

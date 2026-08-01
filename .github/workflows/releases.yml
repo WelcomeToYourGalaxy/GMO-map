@@ -2,11 +2,15 @@ name: Harvest APHIS releases
 
 on:
   schedule:
-    - cron: '43 5 * * 1'      # weekly, Monday
+    - cron: '43 5 * * 1'
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: commit-main
+  cancel-in-progress: false
 
 jobs:
   harvest:
@@ -16,21 +20,25 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Harvest Canadian approvals
-        run: python3 harvest/cfia_approvals.py
-      - name: Harvest release authorisations
-        run: python3 harvest/aphis_releases.py
-      - name: Commit if changed
+
+      - name: Harvest and commit
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add projects.json harvest/cfia_records.json
-          git diff --staged --quiet || git commit -m "releases: refresh $(date -u +%Y-%m-%d)"
-          # Both workflows commit to main and can finish at the same time, so a
-          # bare push loses the race. Rebase onto whatever landed first, retry.
+
+          # Same pattern as the wire: these files are regenerated whole, so on a
+          # rejected push we reset to the remote and re-harvest rather than
+          # trying to rebase a wholesale rewrite.
           for i in 1 2 3; do
+            python3 harvest/cfia_approvals.py
+            python3 harvest/aphis_releases.py
+            python3 harvest/build_overlays.py
+            git add projects.json harvest/cfia_records.json overlays/trials.geojson overlays/regime.geojson
+            git diff --staged --quiet && { echo "no change"; exit 0; }
+            git commit -m "releases: refresh $(date -u +%Y-%m-%d)"
             git push && exit 0
-            echo "push rejected (attempt $i) - rebasing onto origin/main"
-            git pull --rebase origin main || exit 1
+            echo "push rejected (attempt $i) - resetting to origin/main and re-harvesting"
+            git fetch origin main
+            git reset --hard origin/main
           done
           echo "push failed after 3 attempts"; exit 1
