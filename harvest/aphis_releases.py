@@ -33,6 +33,7 @@ from urllib.request import Request, urlopen
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "projects.json"
 CURATED = ROOT / "harvest" / "projects_curated.json"
+CFIA = ROOT / "harvest" / "cfia_records.json"
 
 EFILE = "https://www.aphis.usda.gov/sites/default/files/efile-data.csv"
 LEGACY = "https://www.aphis.usda.gov/sites/default/files/brs-public-apps.csv"
@@ -289,6 +290,15 @@ def main():
     records.sort(key=lambda x: x.get("date", ""), reverse=True)
     records = records[:keep]
 
+    # Canadian approvals, if cfia_approvals.py has been run
+    extra = []
+    if CFIA.exists():
+        try:
+            extra = json.loads(CFIA.read_text(encoding="utf-8")).get("projects", [])
+            print("  merging %d CFIA records" % len(extra))
+        except Exception as e:
+            print("  ! %s could not be read: %s" % (CFIA.name, e), file=sys.stderr)
+
     # keep the hand-written OGTR records alongside, if they were preserved
     curated = []
     if CURATED.exists():
@@ -308,11 +318,13 @@ def main():
                  "registers. Only records with a release component are included \u2014 import "
                  "and interstate movement are not releases. Every position is a state "
                  "centroid: APHIS publishes release states, never coordinates, so every "
-                 "record is precise:false and draws as a dashed ring. This is US-only; "
-                 "the rest of the world is not yet harvested."),
+                 "record is precise:false and draws as a dashed ring. Canadian records come "
+                 "from the CFIA PNT dataset and sit at the national centroid, because that "
+                 "register records a national approval rather than a planting location. "
+                 "Everywhere else is not yet harvested."),
         "generated": date.today().isoformat(),
         "source": "APHIS BRS public data files, " + date.today().isoformat(),
-        "projects": curated + records,
+        "projects": curated + extra + records,
     }
 
     pre = sum(1 for r in records if r["phase"] == "pre")

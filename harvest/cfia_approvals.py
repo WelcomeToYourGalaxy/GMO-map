@@ -55,6 +55,11 @@ NOT_APPROVED = ("not grown in canada", "no application received",
                 "not assessed", "under review", "withdrawn")
 
 DATE_RX = re.compile(r"([A-Z][a-z]+)\s+(\d{1,2})(?:st|nd|rd|th)?,?\s+(\d{4})")
+# An OECD unique identifier is applicant code - event code - check digit, e.g.
+# MON-00179-5 or BCS-GH\u00d8\u00d824-7 (the register uses \u00d8 for zero, as the
+# standard does). Free text and repeated product names also appear in that
+# column, so match the shape instead of testing for non-empty.
+OECD_RX = re.compile(r"\b[A-Z][A-Z0-9]{1,3}-[A-Z0-9\u00d8]{4,7}-\d\b")
 DD_RX = re.compile(r"(DD\d{2,4}-\d+)")
 
 
@@ -114,11 +119,13 @@ def build(rows):
         dd = DD_RX.search(approval)
         transgenic = lmo.strip().lower() == "lmo"
 
-        ident = (" OECD unique identifier %s \u2014 the string that links this same event "
-                 "to every other country that has ruled on it." % oecd) if oecd and \
-                oecd.lower() not in ("n/a", "not assigned") else \
-                (" No OECD identifier assigned, which is usual for products of "
-                 "mutagenesis and gene editing.")
+        ids = OECD_RX.findall(oecd or "")
+        ident = ((" OECD unique identifier%s %s \u2014 the string that links this same event "
+                  "to every other country that has ruled on it."
+                  % ("s" if len(ids) > 1 else "", ", ".join(ids))) if ids else
+                 (" No OECD unique identifier. Those are assigned to transgenic events; "
+                  "an organism made by mutagenesis or gene editing has no transgene to "
+                  "identify, so it cannot be tracked across borders by that route at all."))
 
         technique = ("Transgenic (recorded as an LMO)." if transgenic else
                      "Recorded as Non-LMO \u2014 a product of mutagenesis or gene editing. "
@@ -147,6 +154,9 @@ def build(rows):
             "status": "Approved for unconfined release" + ((" " + dd.group(1)) if dd else ""),
             "phase": "post",
             "date": when,
+            "oecd": ids,              # list, possibly empty - never inferred from prose
+            "oecd_raw": oecd,         # the cell as published, for auditing misses
+            "transgenic": transgenic,
             "url": "https://inspection.canada.ca/en/plant-varieties/plants-novel-traits/approved-under-review",
             "desc": desc,
         })
@@ -163,10 +173,39 @@ def main():
     recs = build(rows)
     print("  cfia      %6d rows \u2192 %5d approved for unconfined release" % (len(rows), len(recs)))
 
-    lmo = sum(1 for r in recs if "Transgenic" in r["desc"])
-    with_id = sum(1 for r in recs if "OECD unique identifier" in r["desc"])
+    # Cross-tab rather than two separate counts, because the interesting question
+    # is whether the identifier tracks the technique - and if it does, the class
+    # being deregulated worldwide is also the class that cannot be followed
+    # across borders. Measured, not assumed.
+    # Cross-tab on the record's own fields. An earlier version tested for the
+    # phrase "OECD unique identifier" inside the description - which also appears
+    # in the sentence "No OECD unique identifier", so every record counted as
+    # having one and the table was meaningless. Never measure prose.
+    tab = {(True, True): 0, (True, False): 0, (False, True): 0, (False, False): 0}
+    for r in recs:
+        tab[(bool(r["transgenic"]), bool(r["oecd"]))] += 1
+    lmo = tab[(True, True)] + tab[(True, False)]
     print("    %d transgenic, %d products of mutagenesis or gene editing" % (lmo, len(recs) - lmo))
-    print("    %d carry an OECD identifier" % with_id)
+    print("    identifier by technique:")
+    print("      transgenic  with id %3d   without %3d" % (tab[(True, True)], tab[(True, False)]))
+    print("      non-LMO     with id %3d   without %3d" % (tab[(False, True)], tab[(False, False)]))
+    if tab[(False, True)] == 0 and tab[(True, False)] == 0:
+        print("      \u2192 the identifier tracks the technique exactly in this register:")
+        print("        every transgenic event has one, no gene-edited or mutagenesis")
+        print("        product does.")
+    else:
+        print("      \u2192 the identifier does NOT track the technique cleanly here.")
+        if tab[(False, True)]:
+            print("        %d non-LMO products carry one." % tab[(False, True)])
+        if tab[(True, False)]:
+            print("        %d transgenic events lack one:" % tab[(True, False)])
+            # Print them. A transgenic event with no identifier is either genuinely
+            # unassigned or a formatting quirk in the source cell, and those mean
+            # different things - so show the cell rather than characterising it.
+            for r in recs:
+                if r["transgenic"] and not r["oecd"]:
+                    print("          %-42s OECD cell: %s"
+                          % (r["name"][:42], repr(r["oecd_raw"]) if r["oecd_raw"] else "(empty)"))
     crops = {}
     for r in recs:
         crops[r["type"].split(",")[0]] = crops.get(r["type"].split(",")[0], 0) + 1
