@@ -1,0 +1,1660 @@
+[
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Bayer Crop Science",
+  "url": "https://www.bayer.com/en/agriculture/crop-science",
+  "desc": "WHAT. The largest seed and agricultural-trait business in the world, formed when Bayer bought Monsanto in 2018 for around $63 billion and retired the Monsanto name. It sells maize, soybean, cotton, vegetable and canola seed under the Dekalb, Asgrow and Seminis brands, licenses its traits to competitors, and sells the glyphosate herbicide those traits are engineered to survive. WHERE IT SITS. At the top. Its traits appear in seed sold by firms that compete with it, so its reach is wider than its market share suggests, and the same company supplies the seed and the chemical the seed is designed for. WHY IT MATTERS. Selling a herbicide-tolerant seed and the herbicide together means the trait creates the market for the chemical. That is a closed loop by design, and it is the single arrangement that shaped modern row-crop agriculture more than any other. The glyphosate litigation Bayer inherited runs to tens of thousands of claims and provisions in the billions — which is the company's own accounting of what the loop cost.",
+  "tags": [
+   "seed:majors",
+   "seed:traits",
+   "editing:agtech"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Corteva Agriscience",
+  "url": "https://www.corteva.com/",
+  "desc": "WHAT. The agricultural company spun out of the DowDuPont merger in 2019, carrying Pioneer — the oldest and one of the largest seed brands in the world — together with the Dow and DuPont trait portfolios and crop-protection lines. WHERE IT SITS. Second in seed globally, and a major licensor: its traits are grown by farmers who never bought a Corteva bag, and it in turn licenses in from Bayer. The four majors trade traits with each other constantly, which is why they are competitors in name and a shared platform in practice. WHY IT MATTERS. Cross-licensing between the majors means a farmer choosing between brands is often choosing between packages of the same underlying traits. It looks like a market and functions closer to a cartel of technology, without anyone having to agree to anything illegal.",
+  "tags": [
+   "seed:majors",
+   "seed:traits",
+   "seed:licensees"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Bayer — investor filings",
+  "url": "https://www.bayer.com/en/investors/annual-reports",
+  "desc": "WHAT. Bayer's own annual and quarterly reporting, including segment revenue and the litigation provisions. WHERE IT SITS. The company's account of itself, written for people who have money at stake rather than for the public. WHY IT MATTERS. The risk-factor section is the most candid document any of these companies produces. A company will tell shareholders what it will not tell a regulator, because misleading the former is a securities offence. Read it before reading anything the same company publishes about safety.",
+  "tags": [
+   "seed:majors",
+   "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Corteva — CRISPR licensing framework",
+  "url": "https://www.corteva.com/who-we-are/open-innovation.html",
+  "desc": "WHAT. Corteva holds or controls a large share of the agricultural CRISPR patent estate, partly through an exclusive arrangement with the Broad Institute, and licenses it out. WHERE IT SITS. Between the academic institutions that hold the foundational patents and every agricultural company that wants to use the technique. WHY IT MATTERS. The technique was developed largely with public research funding, and the right to use it in crops is now controlled commercially. A university spin-out or a national breeding programme in a low-income country wanting to edit a local crop must negotiate with a company that competes with it. That is the enclosure of a method, not of a product.",
+  "tags": [
+   "editing:patents",
+   "editing:agtech",
+   "money:public"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Ginkgo Bioworks",
+  "url": "https://www.ginkgobioworks.com/",
+  "desc": "WHAT. A synthetic biology company selling organism engineering as a service — clients specify what they want a microbe to produce and Ginkgo designs, builds and tests strains at scale. WHERE IT SITS. A foundry model: it does not own most of the products, it owns the capability to make them, and it sells that capability by the project. WHY IT MATTERS. Selling engineering as a service means capability accumulates in one place while responsibility spreads across dozens of clients. When something goes wrong the client holds the permit and the foundry holds the know-how, and no regulator has a view of the whole pipeline.",
+  "tags": [
+   "editing:synbio",
+   "editing:platform",
+   "cro:cro"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Inari Agriculture",
+  "url": "https://inari.com/",
+  "desc": "WHAT. A crop-editing company using computational design and multiplex editing to alter yield and resource-use traits in soy, maize and wheat. WHERE IT SITS. In the space opened by editing being treated as outside GMO registration in several jurisdictions — designed for a regulatory route the older technology does not have. WHY IT MATTERS. Companies of this kind exist because of a regulatory decision, not despite one. Where editing has been ruled equivalent to conventional breeding there is no application, no assessment and no register entry, which means no public record that the product exists at all.",
+  "tags": [
+   "editing:agtech",
+   "editing:platform",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Twist Bioscience",
+  "url": "https://www.twistbioscience.com/",
+  "desc": "WHAT. A DNA synthesis company using a silicon-chip platform to write genes and oligonucleotide libraries at high volume and low cost. WHERE IT SITS. Upstream of everything. Almost every engineered organism on this map began as a sequence ordered from a company like this one. WHY IT MATTERS. This is where capability is actually gated, and the gate is commercial rather than legal. Synthesis firms screen orders against sequences of concern voluntarily; no government requires it, and a meaningful share of global capacity sits outside the industry's own screening consortium. The most consequential control point in the whole industry is a company policy.",
+  "tags": [
+   "synthesis:synth",
+   "synthesis:reagents"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Integrated DNA Technologies (Danaher)",
+  "url": "https://www.idtdna.com/",
+  "desc": "WHAT. One of the largest suppliers of custom oligonucleotides, gene fragments and CRISPR guide RNAs, owned by the Danaher conglomerate. WHERE IT SITS. The everyday supply line for laboratories worldwide — the routine orders rather than the headline projects. WHY IT MATTERS. Ownership by a diversified industrial conglomerate is worth noticing. Decisions about who may buy synthesised DNA are taken inside a company whose main business is something else entirely, and which faces no biosafety regulator at group level.",
+  "tags": [
+   "synthesis:synth",
+   "synthesis:reagents"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Illumina",
+  "url": "https://www.illumina.com/",
+  "desc": "WHAT. The dominant supplier of high-throughput DNA sequencing instruments and the consumables they require. WHERE IT SITS. Effectively the infrastructure of genomics. Most large sequencing datasets in existence were generated on its machines. WHY IT MATTERS. The instruments are sold cheaply relative to the consumables they consume, which locks buyers into a proprietary supply chain for the life of the machine. A national genomics programme, an agricultural breeding institute and a hospital all end up dependent on one company's pricing, and that dependency is a design choice rather than an accident.",
+  "tags": [
+   "synthesis:seq",
+   "synthesis:reagents"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Addgene",
+  "url": "https://www.addgene.org/",
+  "desc": "WHAT. A non-profit plasmid repository that stores and distributes the genetic constructs behind published research, at low cost, to laboratories worldwide. WHERE IT SITS. The circulation layer. When a method is published, the construct that makes it usable generally moves through here. WHY IT MATTERS. Access requires a verified institutional account. That single requirement — repeated across plasmid repositories, cell-line banks and most reagent suppliers — is the largest practical barrier between the public and this technology, and it is rarely mentioned in writing about biotechnology being democratised. The knowledge is open; the materials are not.",
+  "tags": [
+   "synthesis:repos",
+   "synthesis:reagents"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Charles River Laboratories",
+  "url": "https://www.criver.com/",
+  "desc": "WHAT. A contract research organisation supplying laboratory animals, running preclinical safety studies, and providing the animal models used across pharmaceutical and biotechnology research. WHERE IT SITS. Both a supplier and a testing house — it breeds and sells the animals and also runs the studies performed on them. WHY IT MATTERS. The safety studies regulators read are commissioned and paid for by the company seeking approval and executed by a contractor that depends on repeat business from that industry. Nobody in that chain is paid by the public. It is a structural conflict rather than an allegation about any particular study.",
+  "tags": [
+   "cro:cro",
+   "animals:breeders",
+   "animals:services"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Labcorp Drug Development (formerly Covance)",
+  "url": "https://drugdevelopment.labcorp.com/",
+  "desc": "WHAT. One of the largest contract research organisations, running preclinical and clinical studies for pharmaceutical and biotechnology clients worldwide. WHERE IT SITS. The middle of the pipeline. Much of the evidence base a regulator assesses was generated here rather than by the company named on the application. WHY IT MATTERS. Following the contractor rather than the client shows an industry far more concentrated than its company list suggests. Dozens of sponsors, a handful of laboratories actually doing the work.",
+  "tags": [
+   "cro:cro",
+   "clinical:trials"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Syngenta Group",
+  "url": "https://www.syngentagroup.com/",
+  "desc": "WHAT. Seed and crop-protection company headquartered in Basel, acquired by ChemChina in 2017 for around $43 billion and now inside the Chinese state-owned Sinochem Holdings. Sells maize, soy, vegetable and cereal seed and one of the largest pesticide portfolios in the world. WHERE IT SITS. One of the four, and the only one that is an arm of a state. It combines a European research base, a Chinese owner and a global sales network. WHY IT MATTERS. State ownership removes the levers that work on the others. There is no shareholder resolution to file, no securities regulator to petition, and no proxy vote. Pressure on Syngenta has to run through trade policy or through the countries where it sells — a materially different problem from pressuring a listed company, and one most campaigning is not set up for.",
+  "tags": [
+   "seed:majors",
+   "seed:traits",
+   "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Syngenta — seedcare & seeds portfolio",
+  "url": "https://www.syngenta.com/en/seeds",
+  "desc": "WHAT. The company's own product catalogue across field crops and vegetables. WHERE IT SITS. The commercial face of the trait pipeline — what has left the laboratory and reached a bag. WHY IT MATTERS. Catalogues are more informative than press releases. The treatments and traits listed against each variety show what the seed is designed to be used with, which is the practical shape of the input package a farmer is buying into.",
+  "tags": [
+   "seed:distribution",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "BASF Agricultural Solutions",
+  "url": "https://agriculture.basf.com/global/en.html",
+  "desc": "WHAT. The agricultural arm of the German chemical group, holding seed and trait assets it bought when competition regulators forced Bayer to divest during the Monsanto acquisition. Runs vegetable seed under Nunhems and field crops including canola and cotton. WHERE IT SITS. Fourth of the four, with a portfolio assembled from what a merger review required someone else to sell. WHY IT MATTERS. The existence of these holdings is the clearest admission on record that competition authorities already regard this as a concentrated market. The remedy — moving assets from the first-largest firm to the fourth-largest — kept the count at four rather than reducing concentration in any meaningful sense.",
+  "tags": [
+   "seed:majors",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Rijk Zwaan",
+  "url": "https://www.rijkzwaan.com/",
+  "desc": "WHAT. A large family-owned Dutch vegetable-breeding company, independent of the four majors, operating worldwide. WHERE IT SITS. Vegetable seed is a separate and highly concentrated market from row crops, dominated by a handful of Dutch and Japanese breeders. WHY IT MATTERS. The vegetable sector shows the same concentration as row crops with almost none of the public attention, and it reaches every kitchen. Most of what is eaten fresh worldwide descends from varieties bred by fewer than ten companies.",
+  "tags": [
+   "seed:licensees",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Limagrain / Vilmorin",
+  "url": "https://www.limagrain.com/en",
+  "desc": "WHAT. A French agricultural cooperative that owns one of the largest seed businesses in the world, spanning field crops, vegetables and garden seed. WHERE IT SITS. Outside the four majors and comparable in size to them in some segments — evidence that the industry is not quite the four-firm story it is usually told as. WHY IT MATTERS. A cooperative structure means farmer-members own the business, which is often presented as a softer alternative. It has not produced a different position on seed ownership or plant variety rights, which suggests the ownership model matters less than the commercial logic acting on it.",
+  "tags": [
+   "seed:licensees",
+   "seed:germplasm",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Oxford Nanopore Technologies",
+  "url": "https://nanoporetech.com/",
+  "desc": "WHAT. Maker of portable real-time DNA and RNA sequencers, including a device the size of a phone that costs roughly what a laptop costs. WHERE IT SITS. At the reading end of the supply chain, and the reason reading a genome is now cheap and mobile. WHY IT MATTERS. This is the one part of the industry whose spread genuinely cuts both ways. The same device that lets a company verify its own product lets a community group verify what is in a field. Reading has been democratised. Writing has not, and the asymmetry between those two facts describes the public's actual position better than any argument about biotechnology in general.",
+  "tags": [
+   "synthesis:seq",
+   "synthesis:reagents"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "BGI Group",
+  "url": "https://www.bgi.com/global",
+  "desc": "WHAT. One of the world's largest genomics organisations, running sequencing at enormous scale and manufacturing its own instruments after acquiring Complete Genomics. WHERE IT SITS. The main non-Western pole of the sequencing industry, and a direct competitor to Illumina on instruments as well as services. WHY IT MATTERS. It breaks the assumption that this industry is Western and therefore governed by Western rules. Sequencing capacity at this scale, under a different regulatory and political system, means any framework that only reaches North America and Europe reaches a shrinking share of the field.",
+  "tags": [
+   "synthesis:seq",
+   "synthesis:synth"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "The Jackson Laboratory",
+  "url": "https://www.jax.org/",
+  "desc": "WHAT. A non-profit that breeds and distributes genetically defined mice, holding thousands of mutant and transgenic strains and shipping worldwide. WHERE IT SITS. The reference source for mouse models. A large share of published mouse research uses strains that originate here, which makes it infrastructure rather than a supplier. WHY IT MATTERS. Standardising the animal standardises the science, and thousands of strains exist because someone needed a specific disease phenotype bred into a living creature and kept alive as a line. The catalogue is the clearest available statement of what the industry does to animals at volume: it is a product list, and every entry is a lineage bred to be ill in a particular way.",
+  "tags": [
+   "animals:models",
+   "animals:breeders"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Taconic Biosciences",
+  "url": "https://www.taconic.com/",
+  "desc": "WHAT. A commercial supplier of genetically modified rodent models, including custom model generation to a client's specification. WHERE IT SITS. The made-to-order end of the animal trade — a company will engineer and breed a line that does not yet exist. WHY IT MATTERS. Custom model generation is genetic engineering sold as a routine service, with the resulting animals treated as a deliverable. There is no register of these organisms comparable to a crop release register, because they are contained — which means the largest volume of engineered vertebrates in the world is also the least publicly recorded.",
+  "tags": [
+   "animals:services",
+   "animals:breeders"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Envigo / Inotiv",
+  "url": "https://www.inotiv.com/",
+  "desc": "WHAT. A supplier of research animals and preclinical services, following the acquisition of Envigo's animal business by Inotiv. WHERE IT SITS. Alongside Charles River in the small group of firms supplying most of the world's laboratory animals. WHY IT MATTERS. Consolidation in animal supply means welfare standards across an entire research sector depend on the practices of very few companies, and enforcement actions against those companies have direct consequences for tens of thousands of animals at a time.",
+  "tags": [
+   "animals:breeders",
+   "cro:cro"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Acceligen (Recombinetics)",
+  "url": "https://acceligen.com/",
+  "desc": "WHAT. A company gene-editing cattle and other livestock for traits including heat tolerance and hornlessness, marketed as welfare and productivity improvements. WHERE IT SITS. At the front of the argument that edited livestock should not count as regulated articles, and a beneficiary wherever that argument has won. WHY IT MATTERS. Its hornless cattle line was found to contain unintended bacterial plasmid DNA that the developers had not detected and regulators found later. The animals were presented as a clean, precise edit. That episode is the strongest available evidence that precision claims in this field are claims rather than findings, and it came from the regulator, not from critics.",
+  "tags": [
+   "livestock:livestock",
+   "editing:agtech"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "AquaBounty Technologies",
+  "url": "https://aquabounty.com/",
+  "desc": "WHAT. Developer of AquAdvantage salmon, an Atlantic salmon engineered with a Chinook growth-hormone gene to reach market weight faster. The first engineered animal approved for human consumption anywhere. WHERE IT SITS. The precedent case for engineered food animals, cited in every subsequent argument in every jurisdiction. WHY IT MATTERS. Approval took roughly two decades, and the commercial result has been repeated retrenchment and facility closures. The lesson the industry drew was not that the product was wrong but that the regulatory route was too slow — which is why the effort since has gone into getting animals classified as unregulated rather than into getting them approved.",
+  "tags": [
+   "livestock:aqua",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "ViaGen Pets & Equine",
+  "url": "https://www.viagenpets.com/",
+  "desc": "WHAT. A commercial cloning service that will clone a customer's dog, cat or horse from a tissue sample, for a published fee. WHERE IT SITS. Entirely outside biosafety regulation — a cloned animal contains no foreign DNA, so most frameworks have nothing to say about it. WHY IT MATTERS. This is the industry operating with no oversight at all, on companion animals, as a consumer purchase. Cloning requires many surrogate pregnancies and produces losses that do not appear in any published figure, because no one is required to publish one. The absence of a register here is not an oversight; it is the design.",
+  "tags": [
+   "livestock:cloning",
+   "livestock:pets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Target Malaria",
+  "url": "https://targetmalaria.org/",
+  "desc": "WHAT. A non-profit research consortium developing gene-drive mosquitoes intended to suppress malaria-transmitting Anopheles populations across sub-Saharan Africa. WHERE IT SITS. The furthest-advanced gene-drive programme in the world, working through partner institutions in Burkina Faso, Uganda and Ghana. WHY IT MATTERS. A gene drive is designed to spread through a wild population and cannot be recalled or confined to a country that consented to it. In August 2025 Burkina Faso sealed the programme's facilities and suspended its activities, days after a non-drive trial release. Whatever the merits of eliminating malaria, the governance question the programme raises is whether any single national approval can be sufficient for an organism engineered to cross borders.",
+  "tags": [
+   "wild:drives",
+   "wild:insects"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Pivot Bio",
+  "url": "https://www.pivotbio.com/",
+  "desc": "WHAT. A company selling engineered soil microbes that fix nitrogen for cereal crops, applied at field scale as a replacement for part of a farmer's synthetic fertiliser. WHERE IT SITS. Agricultural biologicals — a fast-growing sector applying engineered organisms across millions of acres with far less public attention than engineered seed. WHY IT MATTERS. These are living organisms broadcast into soil in enormous quantity, and soil microbial communities are the least understood ecosystem being altered at that scale. The environmental case made for the product — less synthetic fertiliser — is real. It is also the reason the release is happening faster than the monitoring.",
+  "tags": [
+   "wild:microbes",
+   "editing:synbio"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Colossal Biosciences",
+  "url": "https://colossal.com/",
+  "desc": "WHAT. The best-funded de-extinction venture, working on engineered proxies for the woolly mammoth, thylacine and dodo, and on genetic rescue for living endangered species. WHERE IT SITS. At the intersection of venture capital and conservation, holding the resulting intellectual property. WHY IT MATTERS. What is produced is a modified living species engineered to resemble an extinct one, not a restoration. The deeper effect is rhetorical: if extinction can be presented as reversible, the argued cost of causing it falls. That reframing is already doing work in policy debate, years before any such animal exists, and it is doing it on behalf of a company that would own the result.",
+  "tags": [
+   "deextinct:ventures",
+   "deextinct:rescue"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Living Carbon",
+  "url": "https://www.livingcarbon.com/",
+  "desc": "WHAT. A company engineering poplar and other trees for faster growth and greater carbon accumulation, and planting them on reclaimed and private land. WHERE IT SITS. Where engineered organisms meet carbon markets — the tree is the product and the carbon credit is the revenue. WHY IT MATTERS. Trees are perennial, wind-pollinated, long-lived and frequently planted within their native range, which is the worst possible risk profile for containment. Attaching a carbon-credit revenue stream to planting them creates a financial reason to plant more, faster, and to argue against restrictions — a structural incentive that did not exist when engineered trees were only a research question.",
+  "tags": [
+   "deextinct:trees",
+   "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Vertex / CRISPR Therapeutics — Casgevy",
+  "url": "https://www.crisprtx.com/",
+  "desc": "WHAT. The first approved CRISPR-based therapy, for sickle cell disease and beta thalassaemia, launched at roughly $2.2 million per patient. WHERE IT SITS. The proof that genome editing works as medicine, and the template for what such medicine costs. WHY IT MATTERS. Sickle cell disease is most prevalent in sub-Saharan Africa and among people of African descent. The first cure for it is priced at a level almost none of the affected population can access, and requires transplant-grade hospital infrastructure. The therapy is real and it works; who it reaches was decided commercially, not scientifically.",
+  "tags": [
+   "clinical:therapy",
+   "editing:platform"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "ClinicalTrials.gov",
+  "url": "https://clinicaltrials.gov/",
+  "desc": "WHAT. The public registry of clinical trials, including gene transfer, gene editing and engineered cell products, with sponsor, phase and site. WHERE IT SITS. The only systematic public record of genetic engineering applied to human beings. WHY IT MATTERS. It records what is being trialled, on whom and where, which makes visible a pattern the industry does not advertise: trial sites and eventual markets are frequently not the same countries. It is also the only place the germline and embryo research boundary can be observed rather than assumed.",
+  "tags": [
+   "clinical:trials",
+   "clinical:germline"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Orchid Health",
+  "url": "https://www.orchidhealth.com/",
+  "desc": "WHAT. A company offering whole-genome sequencing of embryos before implantation, reporting risk scores across a range of conditions and traits. WHERE IT SITS. The furthest commercial edge of embryo selection — beyond screening for specific disorders and into ranking embryos on probabilistic scores. WHY IT MATTERS. Polygenic scores are weak predictors at the individual level and are derived largely from populations of European ancestry, so they perform worse for everyone else. Selling them as a basis for choosing which embryo becomes a person applies a statistical tool well outside what it can support, to a decision that cannot be revisited. This is where the eugenic question stops being theoretical and becomes a purchase.",
+  "tags": [
+   "repro:screening",
+   "clinical:germline"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "CDC ART clinic data",
+  "url": "https://www.cdc.gov/art/",
+  "desc": "WHAT. Federally mandated annual reporting of assisted reproductive technology outcomes by clinic in the United States. WHERE IT SITS. Statistics without a statutory clinic regulator behind them. WHY IT MATTERS. The United States has clinic-level numbers and no clinic-level regulator, which is an unusual combination. Reporting exists; enforcement does not. That gap is the shape of the American fertility industry.",
+  "tags": [
+   "repro:clinics",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Gates Foundation — committed grants database",
+  "url": "https://www.gatesfoundation.org/about/committed-grants",
+  "desc": "WHAT. A searchable record of every grant the foundation has made, with recipient, amount and purpose, including its agricultural development programme. WHERE IT SITS. Among the largest funders of agricultural biotechnology deployment in Africa and South Asia, and a major funder of the institutions that regulate and evaluate it. WHY IT MATTERS. Private philanthropy setting agricultural research priorities for whole regions is governance without an electorate. The foundation publishes its grants, which is more than most funders do — and the published record is what makes the scale of that influence checkable rather than arguable.",
+  "tags": [
+   "money:philanthropy",
+   "money:public"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "DARPA — Biological Technologies Office",
+  "url": "https://www.darpa.mil/research/offices/biological-technologies",
+  "desc": "WHAT. The US defence research agency's biology programme, which has funded gene drives, engineered organisms, and human performance and resilience work. WHERE IT SITS. Outside civilian biosafety oversight, in every country that runs an equivalent. WHY IT MATTERS. Military biotechnology is the facet with the least public visibility and the fewest constraints. DARPA at least publishes programme names and funds academic work that appears in the literature, which makes it the most legible example of the least legible part of the industry — and a reminder that equivalents in other states publish nothing at all.",
+  "tags": [
+   "money:defence",
+   "wild:drives"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "BIO — Biotechnology Innovation Organization",
+  "url": "https://www.bio.org/",
+  "desc": "WHAT. The largest biotechnology trade association, representing over 1,100 companies across more than 30 countries, lobbying on regulation, patents and pricing. WHERE IT SITS. The industry's collective voice, filing on members' behalf so individual firms need not appear. WHY IT MATTERS. Trade associations exist partly so that positions no single company wants attributed to it can still be advanced. Reading BIO's filings on a rule tells you which provisions the industry wants removed, in plainer language than any member company would use in its own name.",
+  "tags": [
+   "rules:associations",
+   "rules:influence"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "ISAAA — GM approval database",
+  "url": "https://www.isaaa.org/gmapprovaldatabase/",
+  "desc": "WHAT. The most complete event-level record of GM crop approvals by country, maintained by an industry-supported organisation, together with the annual global adoption figures quoted on all sides of the argument. WHERE IT SITS. An advocacy organisation that happens to keep the best register in the field. WHY IT MATTERS. The database is genuinely useful and the organisation exists to promote adoption. Both are true. Citing an industry source for an industry figure is stronger than citing a critic for one — but the framing around the numbers is written to persuade, and the two should be read differently.",
+  "tags": [
+   "rules:influence",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "CLEA Japan / Japan SLC",
+  "url": "https://www.clea-japan.com/en/",
+  "desc": "WHAT. Japanese breeders and suppliers of laboratory animals including transgenic and immunodeficient strains. WHERE IT SITS. The regional supply for one of the largest biomedical research bases in the world. WHY IT MATTERS. The animal trade is regional in a way the rest of the industry is not, and each region's practices are governed by its own welfare law. A model developed under one standard is used in publications read everywhere.",
+  "tags": [
+   "animals:breeders",
+   "animals:models"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Sooam Biotech",
+  "url": "https://en.sooam.com/",
+  "desc": "WHAT. A South Korean laboratory offering commercial dog cloning and associated research services. WHERE IT SITS. The other pole of the commercial pet-cloning trade alongside the US operation. WHY IT MATTERS. Pet cloning is the clearest case of engineering-adjacent biotechnology sold direct to consumers with no biosafety framework engaged at any point. It also normalises the practice: an industry that can clone a pet for a paying customer has already answered, commercially, questions that are still being debated formally elsewhere.",
+  "tags": [
+   "livestock:cloning",
+   "livestock:pets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Oxitec",
+  "url": "https://www.oxitec.com/",
+  "desc": "WHAT. Developer of self-limiting engineered insects, principally Aedes aegypti mosquitoes carrying a gene intended to prevent female offspring reaching adulthood. Released in Brazil, the Cayman Islands, Panama, the United States and elsewhere. WHERE IT SITS. The most advanced commercial open-release programme for engineered animals anywhere. WHY IT MATTERS. In Jacobina, Brazil, genotyping after 27 months of weekly releases found DNA from the release strain had entered the wild population. What moved was the strain's background genome rather than the self-limiting transgene, and the company disputes the paper's framing — but the design premise had been that lethality was complete and the population's genetics would be unaffected. Self-limiting was a design claim, and the field tested it.",
+  "tags": [
+   "wild:insects",
+   "wild:drives"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "HFEA — licensed clinic register",
+  "url": "https://www.hfea.gov.uk/choose-a-clinic/clinic-search/",
+  "desc": "WHAT. The UK regulator's searchable register of every licensed fertility clinic, with inspection findings, licence conditions and outcome data by clinic. WHERE IT SITS. The only clinic-level public accounting of the fertility industry anywhere in the world. WHY IT MATTERS. It demonstrates that clinic-level transparency is achievable, which removes the industry's usual answer that it is not. Everywhere else, a patient choosing a clinic is choosing on marketing. Here they can read the inspection report.",
+  "tags": [
+   "repro:clinics",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Suzano / FuturaGene",
+  "url": "https://www.suzano.com.br/en/",
+  "desc": "WHAT. The world's largest pulp producer, whose FuturaGene subsidiary developed the first genetically modified eucalyptus approved anywhere, cleared by Brazil's CTNBio in 2015, followed by a glyphosate-tolerant version in 2021. WHERE IT SITS. The only commercial-scale engineered forestry programme approved in the world. WHY IT MATTERS. Post-release monitoring for the approved eucalyptus was compiled from questionnaires filled in by field technicians, in reports authored by the company's own employees and contractors. Self-reported surveillance by the party with the commercial interest is the norm in this industry rather than the exception, and this is the best-documented example of it.",
+  "tags": [
+   "deextinct:trees",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Novartis — gene therapy",
+  "url": "https://www.novartis.com/",
+  "desc": "WHAT. Manufacturer of Zolgensma, a one-time gene therapy for spinal muscular atrophy launched at around $2.1 million per dose, and of the CAR-T therapy Kymriah. WHERE IT SITS. The commercial leading edge of genetic medicine, and the origin of the pricing model the rest of the field follows. WHY IT MATTERS. The science behind these therapies rests heavily on decades of publicly funded research. The pricing puts them beyond every health system outside a handful of wealthy countries. A technology developed with public money, priced so that most of the world cannot reach it, is not a distribution failure at the margin — it is the business model working as intended.",
+  "tags": [
+   "clinical:therapy",
+   "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "IVIRMA Global",
+  "url": "https://ivirma.com/",
+  "desc": "WHAT. One of the largest fertility clinic networks in the world, formed from the merger of Spain's IVI and the US RMA network, operating across Europe, the Americas and the Middle East. WHERE IT SITS. The consolidated end of assisted reproduction — the chain, not the clinic, is now the decision-making unit. WHY IT MATTERS. Spain is a major destination for cross-border reproductive care because its donor rules and legal framework differ from its neighbours'. Consolidation plus regulatory difference means a chain can route patients to whichever jurisdiction permits what they are buying, which is regulatory arbitrage operating on human reproduction.",
+  "tags": [
+   "repro:clinics",
+   "repro:surrogacy"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "CropLife International",
+  "url": "https://croplife.org/",
+  "desc": "WHAT. The global federation of the pesticide and agricultural biotechnology industry, with national affiliates in most countries. WHERE IT SITS. Brussels, next to the institutions it lobbies, coordinating national bodies that lobby their own governments. WHY IT MATTERS. The national affiliate structure means the same positions arrive in dozens of consultations as though they were locally arrived at. Identifying the affiliate operating in a given country is the fastest way to see who is arguing the industry's case there.",
+  "tags": [
+   "rules:associations",
+   "rules:influence"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "OECD BioTrack",
+  "url": "https://biotrackproductdatabase.oecd.org/",
+  "desc": "WHAT. The intergovernmental product database recording approved transgenic products by country, keyed on the OECD unique identifier. WHERE IT SITS. The identifier system the whole industry uses to refer to a specific engineered event. WHY IT MATTERS. Identifiers are assigned to transgenic events. An organism made by mutagenesis or gene editing carries no transgene to name, and generally receives no identifier — so the fastest-growing and least-regulated class of product is also the one this system cannot follow across borders.",
+  "tags": [
+   "rules:standards",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Bayer — Climate FieldView & digital farming",
+  "url": "https://climate.com/",
+  "desc": "WHAT. Bayer's digital agriculture platform, collecting field-level data from equipment and satellites and returning planting and input recommendations. WHERE IT SITS. Layered on top of the seed and chemical business, using the same sales channel. WHY IT MATTERS. The recommendations come from the company selling the inputs being recommended. Farm data also accumulates on the platform rather than with the farmer, which turns agronomic knowledge — historically held in common and passed between neighbours — into a proprietary asset held by the largest input supplier in the world.",
+  "tags": [
+   "seed:majors",
+   "seed:distribution",
+   "editing:platform"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Benson Hill",
+  "url": "https://bensonhill.com/",
+  "desc": "WHAT. A crop-improvement company combining machine learning with breeding and editing, focused on soy protein and oil composition. WHERE IT SITS. The mid-size tier that either licenses to the majors or is acquired by them. WHY IT MATTERS. The pattern is the point: independent trait developers rarely reach market independently. They raise venture money, develop a trait, and exit into one of four companies. Consolidation is not a phase this industry passed through — it is the exit strategy the funding model assumes.",
+  "tags": [
+   "seed:traits",
+   "editing:agtech",
+   "money:vc"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Pairwise",
+  "url": "https://www.pairwise.com/",
+  "desc": "WHAT. A gene-editing company working on consumer produce traits — seedless blackberries, less bitter greens — in partnership with Bayer. WHERE IT SITS. Editing applied to fresh produce rather than row crops, aimed at the supermarket rather than the farm. WHY IT MATTERS. Consumer traits are the industry's answer to the criticism that engineering has only ever benefited the seller. They are also the route by which edited food reaches a plate without a label, in jurisdictions that decided edited plants are not regulated articles.",
+  "tags": [
+   "editing:agtech",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Broad Institute — CRISPR patent estate",
+  "url": "https://www.broadinstitute.org/",
+  "desc": "WHAT. A research institute holding, with its partners, a large share of the foundational CRISPR patents for use in eukaryotic cells, licensed out commercially. WHERE IT SITS. The origin of the licensing chain that agricultural and therapeutic companies pay into. WHY IT MATTERS. The underlying research was substantially publicly funded. The resulting patents are licensed on commercial terms, exclusively in agriculture. A public institution converting public research into an exclusive private licence is the ordinary arrangement in this industry rather than an aberration, and it is the mechanism by which a method becomes property.",
+  "tags": [
+   "editing:patents",
+   "money:public",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Synthego",
+  "url": "https://www.synthego.com/",
+  "desc": "WHAT. A supplier of synthetic guide RNAs and engineered cell lines, selling CRISPR components as a catalogue product. WHERE IT SITS. Between the synthesis companies and the laboratories doing the editing. WHY IT MATTERS. Editing has become a purchasing decision rather than a technical achievement. When the hard part is buying the right reagent, the number of organisations able to make an engineered organism grows far faster than the number of regulators able to keep track of them.",
+  "tags": [
+   "editing:platform",
+   "synthesis:reagents"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Amyris",
+  "url": "https://amyris.com/",
+  "desc": "WHAT. A synthetic biology company engineering yeast to produce molecules otherwise extracted from plants — flavours, fragrances, cosmetic ingredients, squalane. WHERE IT SITS. Substitution rather than agriculture: fermentation replacing a crop that someone currently grows. WHY IT MATTERS. Fermented substitutes displace agricultural livelihoods without appearing in any agricultural policy debate. When a compound previously harvested from a plant in one country starts being brewed in a tank in another, the farmers who grew it have no forum in which to raise it.",
+  "tags": [
+   "editing:synbio",
+   "cro:cdmo"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Thermo Fisher Scientific",
+  "url": "https://www.thermofisher.com/",
+  "desc": "WHAT. The largest life-sciences supplier in the world, selling reagents, instruments, cell-culture media, plasmids and contract manufacturing across essentially every part of this industry. WHERE IT SITS. Underneath everything. Almost no laboratory on this map operates without buying from it. WHY IT MATTERS. A single supplier spanning reagents, instruments and manufacturing has visibility across the whole field that no regulator has, and commercial leverage over customers who cannot easily switch. Decisions about who may buy what are taken as commercial policy, by a company answerable to shareholders rather than to any biosafety authority.",
+  "tags": [
+   "synthesis:reagents",
+   "synthesis:seq",
+   "cro:cdmo"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "GenScript",
+  "url": "https://www.genscript.com/",
+  "desc": "WHAT. A large gene synthesis and biological research services company, with operations in the United States, China and Europe, and a substantial cell-therapy manufacturing arm. WHERE IT SITS. Synthesis and contract services in one company, spanning jurisdictions with different rules. WHY IT MATTERS. A synthesis order placed in one country, manufactured in another and used in a third passes through three regulatory regimes and is fully overseen by none. Cross-border service companies are where the gaps between national frameworks are widest.",
+  "tags": [
+   "synthesis:synth",
+   "cro:cdmo",
+   "clinical:vectors"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "ATCC",
+  "url": "https://www.atcc.org/",
+  "desc": "WHAT. A non-profit biological resource centre distributing cell lines, microbial strains and other reference materials worldwide. WHERE IT SITS. The reference collection the field is built on — published work depends on strains and lines being obtainable and identical everywhere. WHY IT MATTERS. Like the plasmid repositories, access runs through institutional verification. The material base of biology is available to institutions and closed to everyone else, and that boundary is drawn by supplier policy rather than by law.",
+  "tags": [
+   "synthesis:repos",
+   "animals:models"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Mutant Mouse Resource & Research Centers",
+  "url": "https://www.mmrrc.org/",
+  "desc": "WHAT. A publicly funded network of repositories archiving and distributing genetically engineered mouse strains produced by federally funded research. WHERE IT SITS. The public infrastructure holding what public grants produced. WHY IT MATTERS. The catalogue is a public record of what has been engineered into a mammal and kept as a line, and it is far more complete than anything covering plants. Reading it as an inventory rather than a supply list gives the clearest available picture of the scale of vertebrate engineering, which no biosafety register captures.",
+  "tags": [
+   "animals:models",
+   "money:public"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Agragene",
+  "url": "https://agragene.com/",
+  "desc": "WHAT. A company developing engineered sterile insects for agricultural pest control, including spotted wing drosophila. WHERE IT SITS. Among the most frequent applicants for US environmental release authorisations by record count, despite being small. WHY IT MATTERS. Release authorisation counts are not a proxy for company size. A small firm running many small trials generates more records than a major running few large ones, which is worth knowing before reading any concentration figure off a permit register — including the ones this map produces.",
+  "tags": [
+   "wild:insects",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Indigo Ag",
+  "url": "https://www.indigoag.com/",
+  "desc": "WHAT. A company applying engineered and selected microbial seed treatments at commercial scale, alongside a carbon-credit programme. WHERE IT SITS. Agricultural biologicals sold through the same channels as seed and chemistry. WHY IT MATTERS. Microbial treatments are applied to seed rather than released as an organism, which places them outside most release registers. Millions of acres receive living engineered or selected microbes each season with no entry in any biosafety record.",
+  "tags": [
+   "wild:microbes",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Bluebird bio",
+  "url": "https://www.bluebirdbio.com/",
+  "desc": "WHAT. A gene therapy company with approved treatments for beta thalassaemia and cerebral adrenoleukodystrophy, priced in the millions per patient. WHERE IT SITS. An early mover, and a cautionary case: it withdrew from the European market after failing to agree reimbursement. WHY IT MATTERS. A company withdrawing an approved cure from an entire continent over price is the clearest demonstration that access in this field is a commercial decision. The therapy still exists, still works, and is no longer available to the patients it was approved for.",
+  "tags": [
+   "clinical:therapy",
+   "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Cooper Surgical — fertility",
+  "url": "https://www.coopersurgical.com/fertility/",
+  "desc": "WHAT. A major supplier of the media, instruments and consumables used in IVF laboratories worldwide, and of genetic testing services. WHERE IT SITS. The supply layer beneath the clinics — the equivalent of the reagent companies in the research facets. WHY IT MATTERS. The consumables layer is where a defect propagates fastest: a single faulty batch of culture media affects embryos in hundreds of clinics simultaneously, and that has happened. Clinic-level regulation does not reach a supplier selling into every clinic.",
+  "tags": [
+   "repro:clinics",
+   "repro:banks",
+   "synthesis:reagents"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "California Cryobank / Generate Life Sciences",
+  "url": "https://www.cryobank.com/",
+  "desc": "WHAT. One of the largest sperm and egg banks in the world, distributing gametes internationally with donor profiles. WHERE IT SITS. The gamete supply layer, operating across borders where donor anonymity and limits differ. WHY IT MATTERS. A single donor's gametes can produce very large numbers of children across multiple countries, because family limits are set per clinic or per country rather than globally and nobody is counting across them. The consequences fall on people who had no part in the transaction.",
+  "tags": [
+   "repro:banks",
+   "repro:surrogacy"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "ARCH Venture Partners",
+  "url": "https://www.archventure.com/",
+  "desc": "WHAT. A venture firm specialising in early-stage biotechnology, and a founding investor in many of the largest gene-editing and synthetic-biology companies. WHERE IT SITS. At the beginning. Companies on this map exist because a fund like this decided they should. WHY IT MATTERS. A venture fund has a defined life and must return capital, which sets a timetable a biological question does not respect. The pressure to reach an exit rewards speed, scale and regulatory routes that avoid delay — and that pressure is applied years before any product exists.",
+  "tags": [
+   "money:vc",
+   "editing:platform"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Wellcome Trust",
+  "url": "https://wellcome.org/",
+  "desc": "WHAT. One of the world's largest medical research charities, funding genomics, gene therapy and infectious disease work at scale. WHERE IT SITS. Among the handful of funders whose priorities shape what gets researched globally. WHY IT MATTERS. Charitable funding at this scale sets research agendas with no electoral accountability, and its endowment is invested in markets that include the industry it funds. Neither fact is hidden; both are structural features of how this science is paid for.",
+  "tags": [
+   "money:philanthropy",
+   "clinical:trials"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "KeyGene",
+  "url": "https://www.keygene.com/",
+  "desc": "WHAT. A Dutch crop-innovation company doing trait discovery and editing under contract for breeders worldwide. WHERE IT SITS. Upstream of the vegetable seed sector, supplying capability to companies that do not have it in-house. WHY IT MATTERS. Contracted trait discovery means the same underlying technology reaches dozens of nominally competing breeders. The vegetable sector's apparent diversity of companies rests on a much narrower base of technical capability than the company count suggests.",
+  "tags": [
+   "editing:agtech",
+   "cro:cro",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Groupe Roullier / seed & input distribution",
+  "url": "https://www.roullier.com/",
+  "desc": "WHAT. A large French agricultural inputs group operating across nutrition, seed treatment and distribution in over a hundred countries. WHERE IT SITS. The distribution layer — how seed and treatments physically reach farms, particularly outside the largest markets. WHY IT MATTERS. Distribution decides what a farmer can actually buy. In regions where a few distributors serve a whole country, the range on offer is set by commercial agreements rather than by what exists, and a farmer's apparent choice narrows long before it reaches them.",
+  "tags": [
+   "seed:distribution",
+   "seed:licensees"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Janvier Labs",
+  "url": "https://janvier-labs.com/",
+  "desc": "WHAT. A European breeder and supplier of laboratory rodents, including genetically modified strains, shipping across the continent. WHERE IT SITS. The European counterpart to the large American suppliers. WHY IT MATTERS. Animal supply is regional because live animals do not travel well, so each region's welfare standards apply to its own supply. The published research using those animals travels everywhere, which means results generated under one standard become part of a shared evidence base without the standard travelling with them.",
+  "tags": [
+   "animals:breeders",
+   "animals:models"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Oxford Biomedica",
+  "url": "https://www.oxb.com/",
+  "desc": "WHAT. A contract manufacturer of viral vectors — the delivery vehicles gene therapies depend on — for pharmaceutical clients worldwide. WHERE IT SITS. A bottleneck. Vector manufacturing capacity, not scientific difficulty, is what limits how many gene therapies exist. WHY IT MATTERS. Capacity concentrated in a few facilities means the price of gene therapy is set partly by manufacturing scarcity. It also means a therapy's availability depends on commercial allocation decisions taken years in advance, in a handful of buildings.",
+  "tags": [
+   "cro:cdmo",
+   "clinical:vectors"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Genus / PIC",
+  "url": "https://www.genusplc.com/",
+  "desc": "WHAT. A global animal genetics company supplying pig and cattle breeding stock, and developer of gene-edited pigs resistant to porcine reproductive and respiratory syndrome. WHERE IT SITS. Upstream of most commercial pig and dairy production worldwide — breeding stock rather than finished animals. WHY IT MATTERS. Editing at the breeding-stock level propagates through entire national herds without any individual farmer making a decision about it. The animal a farm buys is already the product of choices made several generations back by a company most farmers have never dealt with directly.",
+  "tags": [
+   "livestock:livestock",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Lonza",
+  "url": "https://www.lonza.com/",
+  "desc": "WHAT. One of the world's largest contract development and manufacturing organisations, making biologics, cell and gene therapies and their components for other companies. WHERE IT SITS. The manufacturing layer for much of the industry, including firms whose names appear on the product. WHY IT MATTERS. The company on the label frequently did not make the product. Manufacturing concentration means a supply failure or a policy decision at one contractor propagates across dozens of nominally independent products, and no public register maps that dependency.",
+  "tags": [
+   "cro:cdmo",
+   "clinical:vectors",
+   "cro:cro"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "AquaGen",
+  "url": "https://aquagen.no/en/",
+  "desc": "WHAT. A Norwegian salmon and trout breeding company supplying genetic material to aquaculture operations internationally. WHERE IT SITS. The breeding layer beneath farmed fish production, using genomic selection rather than transgenesis. WHY IT MATTERS. Farmed salmon escape routinely and interbreed with wild populations, and the genetics being introduced are the product of intensive selection for farm conditions. This is genetic alteration reaching wild populations without any engineered organism being involved, which is why a map of this industry cannot stop at what the biosafety statutes happen to cover.",
+  "tags": [
+   "livestock:aqua",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "National Medical Products Administration — gene therapy",
+  "url": "https://www.nmpa.gov.cn/",
+  "desc": "WHAT. China's medical products regulator, which authorises cell and gene therapy trials and products. WHERE IT SITS. The approval authority for one of the largest and fastest-growing clinical gene-editing programmes in the world. WHY IT MATTERS. A very large share of registered gene-editing clinical trials run in China, under a framework that developed separately from the American and European ones. Any account of where human genetic engineering is heading that reads only Western registers is describing a minority of the activity.",
+  "tags": [
+   "clinical:trials",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Mahyco / Maharashtra Hybrid Seeds",
+  "url": "https://www.mahyco.com/",
+  "desc": "WHAT. India's largest private seed company and the licensee that brought Bt cotton to the country through a joint venture with Monsanto. WHERE IT SITS. The bridge between a multinational trait owner and a national market of over a hundred million farming households. WHY IT MATTERS. The royalty arrangement behind that licence became one of the longest-running commercial disputes in Indian agriculture, fought through price controls, litigation and legislation. It is the clearest case anywhere of what happens when a trait fee meets a smallholder economy: the technology spread, and the argument over who is owed what for it has never ended.",
+  "tags": [
+   "seed:licensees",
+   "seed:traits",
+   "rules:ip"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Department of Biotechnology",
+  "url": "https://dbtindia.gov.in/",
+  "desc": "WHAT. India's central funder and coordinator of biotechnology research, financing crop, health and industrial programmes. WHERE IT SITS. The public money underneath a large national research base. WHY IT MATTERS. India funds engineering research heavily while approving very few releases, which puts the country in an unusual position: substantial capability, minimal commercial deployment, and a permanent internal argument about why. The funding record is where that tension is visible in figures rather than rhetoric.",
+  "tags": [
+   "money:public",
+   "editing:agtech"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Syngenta Group China",
+  "url": "https://www.syngentagroup.cn/",
+  "desc": "WHAT. The Chinese arm of the Syngenta Group, inside state-owned Sinochem, running seed, crop protection and agricultural services domestically. WHERE IT SITS. Where a global agricultural-biotechnology major and a state industrial policy are the same organisation. WHY IT MATTERS. China's approvals of domestic GM maize and soy have moved quickly since 2023, and the largest beneficiary is a company the state owns. Industrial policy, regulatory approval and commercial gain sit inside one structure, which is a different arrangement from anywhere else on this map and is rarely examined in those terms.",
+  "tags": [
+   "seed:majors",
+   "money:markets",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Chinese Academy of Agricultural Sciences",
+  "url": "https://www.caas.cn/en/",
+  "desc": "WHAT. The national agricultural research academy, developing engineered and edited crop varieties and holding a large germplasm collection. WHERE IT SITS. Public research feeding directly into state-directed commercialisation. WHY IT MATTERS. Where Western public research becomes private property through licensing, here it stays inside a state system that also owns the commercial channel. Same enclosure of a public good, different owner — which is worth stating plainly rather than treating one arrangement as the norm and the other as an aberration.",
+  "tags": [
+   "editing:agtech",
+   "seed:germplasm",
+   "money:public"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Embrapa",
+  "url": "https://www.embrapa.br/",
+  "desc": "WHAT. Brazil's state agricultural research corporation, which develops engineered crop varieties and also runs reference laboratories used for GM detection. WHERE IT SITS. Both a developer and part of the verification apparatus. WHY IT MATTERS. When the same public body develops the events and validates the tests for them, that is a structural feature of the Brazilian system rather than an accusation about anyone in it. Brazil is one of three countries holding most of the world's GM crop land, so how its verification is arranged matters well beyond its borders.",
+  "tags": [
+   "editing:agtech",
+   "cro:cro",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "CTNBio — national biosafety commission",
+  "url": "https://ctnbio.mctic.gov.br/",
+  "desc": "WHAT. The technical commission that issues Brazil's release and commercial approvals, publishing its opinions and the dissents recorded within them. WHERE IT SITS. The approval gate for the second-largest GM cultivation area in the world. WHY IT MATTERS. A CTNBio opinion carries the minority positions of commission members who disagreed. Those dissents are the most substantive public criticism of specific approvals that exists anywhere in the Americas, written by the people who read the full dossier.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Bioceres Crop Solutions",
+  "url": "https://bioceres.com.ar/",
+  "desc": "WHAT. An Argentine agricultural biotechnology company and developer of HB4 drought-tolerant wheat, the first engineered wheat approved for cultivation anywhere. WHERE IT SITS. A rare non-multinational trait owner that reached commercial approval on its own account. WHY IT MATTERS. Wheat had been the crop the industry left alone, because it is eaten directly and the export market resisted it. HB4 broke that, approved first in Argentina and then in the countries that buy from it. It shows how a single national approval in an exporting country becomes a fact the importing ones then have to accommodate.",
+  "tags": [
+   "seed:traits",
+   "seed:licensees",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "BioNTech",
+  "url": "https://www.biontech.com/",
+  "desc": "WHAT. A German company built on messenger RNA technology, now applying the same platform to cancer immunotherapy and infectious disease beyond its COVID-19 vaccine. WHERE IT SITS. Genetic technology at population scale, delivered faster and more widely than anything else on this map. WHY IT MATTERS. It is the clearest evidence that this industry can move at extraordinary speed when money and regulatory attention align, and the clearest test of the map's own framing: the same acceleration that delivered a vaccine in a year is the acceleration applied everywhere else, usually without the same scrutiny.",
+  "tags": [
+   "clinical:therapy",
+   "clinical:vectors",
+   "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Evotec",
+  "url": "https://www.evotec.com/",
+  "desc": "WHAT. A large drug discovery and development contract organisation, running early-stage research for pharmaceutical clients across Europe and the United States. WHERE IT SITS. The research end of the contract layer — where a molecule is found before anyone decides to develop it. WHY IT MATTERS. Discovery outsourcing means the earliest decisions about what gets pursued are made inside contractors, shaped by what is technically tractable and commercially fundable rather than by what is most needed.",
+  "tags": [
+   "cro:cro",
+   "clinical:trials"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Sanatech Seed",
+  "url": "https://sanatech-seed.com/en/",
+  "desc": "WHAT. The company behind the GABA tomato, a gene-edited food crop sold directly to Japanese consumers after being notified rather than approved. WHERE IT SITS. The first gene-edited food to reach a retail market through a notification route rather than a full authorisation. WHY IT MATTERS. Japan decided that certain edited organisms need only be notified, not assessed. The tomato went on sale, including through free seedling distribution to home gardeners. It is the working demonstration of what a carve-out produces: a product in domestic gardens with no risk assessment on file anywhere.",
+  "tags": [
+   "editing:agtech",
+   "livestock:pets",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Regional Fish Institute",
+  "url": "https://regional.fish/en/",
+  "desc": "WHAT. A Japanese company selling gene-edited red sea bream and tiger puffer, edited for increased muscle mass and growth rate, marketed directly to consumers. WHERE IT SITS. The first gene-edited animals sold as food anywhere, under the same notification route as the tomato. WHY IT MATTERS. Engineered fish reached Japanese plates without the two-decade approval fight AquAdvantage salmon went through in the United States, because the technique used placed them outside the scheme. Same category of product, opposite regulatory outcome, decided entirely by how the change was made rather than what it does.",
+  "tags": [
+   "livestock:aqua",
+   "editing:agtech"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Evogene",
+  "url": "https://www.evogene.com/",
+  "desc": "WHAT. A computational biology company designing crop traits, microbial products and human therapeutics from the same predictive platform. WHERE IT SITS. Upstream of several facets at once — the same design engine pointed at agriculture, biologicals and medicine. WHY IT MATTERS. Platform companies blur the boundaries this map is drawn along. A firm that designs a crop trait and a drug candidate with one system is regulated by two separate regimes that do not talk to each other, and neither sees the whole capability.",
+  "tags": [
+   "editing:platform",
+   "editing:agtech",
+   "clinical:therapy"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Toolgen",
+  "url": "https://www.toolgen.com/",
+  "desc": "WHAT. A Korean gene-editing company holding CRISPR patents contested against the major Western claimants, working in crops and therapeutics. WHERE IT SITS. A third pole in the foundational patent fight, outside the American institutions usually described as holding it. WHY IT MATTERS. The account of CRISPR ownership as a two-way American dispute is incomplete. Competing claims from Korea and elsewhere mean the licensing landscape any company must navigate is more fragmented than the popular story suggests, and the fragmentation itself is a barrier to anyone without a legal department.",
+  "tags": [
+   "editing:patents",
+   "editing:platform"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Singapore Food Agency — novel food approvals",
+  "url": "https://www.sfa.gov.sg/",
+  "desc": "WHAT. The regulator that approved cultivated meat for sale before any other country, and continues to assess novel foods including precision-fermented proteins. WHERE IT SITS. First mover on a category the rest of the world is still deciding how to treat. WHY IT MATTERS. A small import-dependent state can move faster than large agricultural producers because it has no domestic farm lobby to satisfy. That makes Singapore the place where novel products get their first approval and their first market, and the precedent everyone else then argues about.",
+  "tags": [
+   "rules:regulators",
+   "editing:synbio",
+   "livestock:livestock"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Corbion",
+  "url": "https://www.corbion.com/",
+  "desc": "WHAT. A Dutch ingredients company using fermentation, including engineered organisms, to produce food preservatives, lactic acid and algae-based oils. WHERE IT SITS. Industrial fermentation — engineered microbes producing bulk ingredients rather than a visible product. WHY IT MATTERS. Most people encountering the output of this industry do so through ingredients rather than whole foods, and ingredient-level products carry no label indicating how they were made. It is the least visible route by which engineered organisms reach a household.",
+  "tags": [
+   "editing:synbio",
+   "cro:cdmo"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Novonesis (Novozymes / Chr. Hansen)",
+  "url": "https://www.novonesis.com/",
+  "desc": "WHAT. The world's largest industrial enzyme and microbial culture company, formed from the merger of Novozymes and Chr. Hansen, supplying enzymes produced by engineered microorganisms across food, detergent and biofuel manufacturing. WHERE IT SITS. Underneath the food system rather than in it. Enzymes from engineered organisms are used in the production of a very large share of processed food worldwide. WHY IT MATTERS. Processing aids are generally not labelled, because the enzyme does not remain in the finished product. So the single largest everyday contact between the public and engineered organisms happens invisibly by regulatory design, and almost nobody in the GM debate is arguing about it.",
+  "tags": [
+   "editing:synbio",
+   "cro:cdmo",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Office of the Gene Technology Regulator — GMO Record",
+  "url": "https://www.ogtr.gov.au/what-weve-approved/gmo-record",
+  "desc": "WHAT. The searchable record of every licensed dealing in Australia, with the risk assessment and management plan for each, and published locations for active crop field-trial sites. WHERE IT SITS. The most detailed release register in the world, in a mid-sized agricultural economy. WHY IT MATTERS. It proves that publishing site locations, full assessments and licence conditions is possible without the industry collapsing, which removes the usual argument against doing so everywhere else. Note also what the statute puts out of scope: trade, marketing, food safety and claimed benefits are not matters the Regulator may consider.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Nufarm",
+  "url": "https://nufarm.com/",
+  "desc": "WHAT. An Australian crop-protection and seed-technology company operating internationally, including in omega-3 canola developed with public research partners. WHERE IT SITS. A mid-tier player outside the four majors, and a licensee of publicly developed traits. WHY IT MATTERS. Omega-3 canola exists to replace fish oil in aquaculture feed — an engineered land crop substituting for a marine input. It is a good example of how this industry's products increasingly answer problems created by other industrial systems rather than by agriculture itself.",
+  "tags": [
+   "seed:licensees",
+   "livestock:aqua",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Canadian Food Inspection Agency — PNT decisions",
+  "url": "https://inspection.canada.ca/en/plant-varieties/plants-novel-traits",
+  "desc": "WHAT. The register of plants with novel traits authorised for unconfined release in Canada, with the decision documents behind each. WHERE IT SITS. The trait-based regulator — the one major jurisdiction that regulates by what an organism is rather than how it was made. WHY IT MATTERS. Because novelty rather than technique triggers regulation, transgenic events and products of mutagenesis and gene editing appear in the same register. It is the one harvestable place in the world where the class being deregulated everywhere else stays visible and countable.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards",
+   "editing:agtech"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Revive & Restore",
+  "url": "https://reviverestore.org/",
+  "desc": "WHAT. A non-profit applying biotechnology to conservation — passenger pigeon and black-footed ferret work, biobanking, and the coining of 'genetic rescue' as a conservation category. WHERE IT SITS. Upstream of the commercial ventures, doing the framing work that makes them fundable. It also runs the cloning programme that produced viable black-footed ferrets from decades-old cell lines. WHY IT MATTERS. This is where the argument gets built rather than the animals. Establishing genetic rescue as a recognised conservation tool creates the policy space every de-extinction venture then operates in, and a non-profit doing that work is far more persuasive to regulators than a venture-funded company would be.",
+  "tags": [
+   "deextinct:rescue",
+   "deextinct:biobank",
+   "deextinct:ventures"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "San Diego Zoo Wildlife Alliance — Frozen Zoo",
+  "url": "https://science.sandiegozoo.org/",
+  "desc": "WHAT. The largest wildlife cell and tissue bank in the world, holding living cell cultures from thousands of species accumulated since the 1970s. WHERE IT SITS. The material basis for every cloning and genetic-rescue project involving a vertebrate. Without banked living cells there is nothing to clone from. WHY IT MATTERS. The bank was built for research and became the raw material for a commercial field that did not exist when the sampling started. Nobody consented to that on behalf of the species, and there is no framework governing who may use the collection for what — an institutional archive quietly turned into a supply chain.",
+  "tags": [
+   "deextinct:biobank",
+   "deextinct:rescue",
+   "livestock:cloning"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "American Chestnut Foundation — Darling 58",
+  "url": "https://acf.org/",
+  "desc": "WHAT. The organisation behind the engineered blight-resistant American chestnut, developed with SUNY-ESF and submitted for deregulation as a restoration measure. The foundation later withdrew support after performance problems with the line emerged. WHERE IT SITS. The clearest case of engineering proposed for deliberate, permanent release into wild forest, with no recall mechanism by design. WHY IT MATTERS. It inverts the usual politics — the applicant was a conservation charity and the goal was restoring a lost tree. It also shows what independent scrutiny is worth: the line's problems were identified and the sponsoring organisation reversed its own position, which is rarer than either supporters or critics of this technology usually admit.",
+  "tags": [
+   "deextinct:trees",
+   "deextinct:rescue",
+   "wild:drives"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Colossal — Form Bio spin-out",
+  "url": "https://www.formbio.com/",
+  "desc": "WHAT. A computational biology platform spun out of Colossal Biosciences, selling genome analysis and cell engineering software to other companies. WHERE IT SITS. The commercial by-product of a de-extinction venture: the software built to reconstruct a mammoth genome sold as a service to anyone. WHY IT MATTERS. It shows what de-extinction ventures are actually monetising. The animal may never exist; the platform, the intellectual property and the spin-out do, and they return capital regardless. That is worth understanding before treating the stated goal as the business.",
+  "tags": [
+   "deextinct:ventures",
+   "editing:platform",
+   "money:vc"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "MosquitoMate",
+  "url": "https://mosquitomate.com/",
+  "desc": "WHAT. A company releasing male mosquitoes infected with Wolbachia bacteria to suppress local Aedes populations, registered as a biopesticide rather than as an engineered organism. WHERE IT SITS. The regulatory boundary case — the mosquitoes are not genetically modified, so a different agency and a different framework apply. WHY IT MATTERS. Two companies releasing modified mosquitoes into the same neighbourhoods can face entirely different oversight depending on whether the modification is genetic. The organism's behaviour in the field does not follow that distinction; the paperwork does.",
+  "tags": [
+   "wild:insects",
+   "wild:microbes",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Ginkgo Bioworks — agricultural biologicals",
+  "url": "https://www.ginkgobioworks.com/agriculture/",
+  "desc": "WHAT. The agricultural arm of the foundry, engineering nitrogen-fixing and soil microbes for field application, including work acquired from Bayer's biologicals programme. WHERE IT SITS. Where synthetic biology capability meets broadcast environmental release at agricultural scale. WHY IT MATTERS. Soil microbial communities are the least understood ecosystem being deliberately altered, and the products are applied by the tonne across millions of acres. The environmental case made for them — less synthetic fertiliser — is real, and it is also why deployment is running ahead of any monitoring.",
+  "tags": [
+   "wild:microbes",
+   "editing:synbio",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Elemental Enzymes / biologicals sector",
+  "url": "https://elementalenzymes.com/",
+  "desc": "WHAT. A company producing enzyme and microbial crop treatments, part of a rapidly consolidating agricultural biologicals sector. WHERE IT SITS. The mid-tier of a market the majors are buying into rather than building. WHY IT MATTERS. Biologicals are following the seed sector's trajectory a generation later: many small companies, rapid acquisition, and eventual concentration in the same four hands. The pattern is visible early enough to be worth naming now rather than after it completes.",
+  "tags": [
+   "wild:microbes",
+   "seed:licensees",
+   "money:vc"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Genus — PRRS-resistant pig approval",
+  "url": "https://www.genusplc.com/investors/",
+  "desc": "WHAT. Investor reporting for the gene-edited pig resistant to porcine reproductive and respiratory syndrome, which reached US regulatory approval and is moving toward commercial rollout. WHERE IT SITS. The first gene-edited food animal to clear the US approval process, in a species where the disease costs the industry billions annually. WHY IT MATTERS. The commercial case is disease that intensive confinement itself makes possible. PRRS spreads as it does because of how pigs are housed, so the edit treats a symptom of the production system rather than the system. That is the pattern across this facet: engineering used to make an intensive method survivable rather than to change it.",
+  "tags": [
+   "livestock:livestock",
+   "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "GloFish",
+  "url": "https://www.glofish.com/",
+  "desc": "WHAT. Fluorescent transgenic ornamental fish, sold in pet shops across the United States since 2003, now in several species and colours. WHERE IT SITS. The first genetically engineered animal sold to the public anywhere, and still the most numerous by units sold. WHY IT MATTERS. Millions of engineered vertebrates have been in domestic aquariums for two decades, purchased as decoration, with escapes into Brazilian streams documented. It is the quietest large-scale release of engineered animals that has ever happened, and it happened through pet shops.",
+  "tags": [
+   "livestock:pets",
+   "livestock:aqua",
+   "wild:insects"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Trans Ova Genetics",
+  "url": "https://transova.com/",
+  "desc": "WHAT. A large bovine reproductive services company offering embryo transfer, in-vitro fertilisation and cloning for cattle breeders. WHERE IT SITS. The reproductive technology layer of the livestock industry — the same techniques as human assisted reproduction, applied at commercial scale to animals. WHY IT MATTERS. IVF and cloning are routine in cattle breeding and have been for years, at volumes that dwarf the human sector, with no equivalent public debate. The techniques the assisted-reproduction facet argues about were normalised on animals first.",
+  "tags": [
+   "livestock:cloning",
+   "repro:clinics",
+   "livestock:livestock"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Progyny",
+  "url": "https://progyny.com/",
+  "desc": "WHAT. A fertility benefits manager, selling employers a managed fertility benefit and directing covered employees to a contracted clinic network. WHERE IT SITS. Between the employer, the patient and the clinic — a payer layer that did not exist a decade ago. WHY IT MATTERS. When fertility care is an employment benefit, access is tied to the job, the network is chosen by the employer's contract, and treatment decisions run through a company whose margin depends on utilisation. It is a distinctive American arrangement and it is spreading.",
+  "tags": [
+   "repro:clinics",
+   "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Genomic Prediction / LifeView",
+  "url": "https://www.lifeview.com/",
+  "desc": "WHAT. A company offering polygenic risk scoring of embryos, reporting relative risk across conditions and, in some offerings, non-disease traits. WHERE IT SITS. Alongside Orchid at the furthest commercial edge of embryo selection. WHY IT MATTERS. Major genetics professional bodies have stated that polygenic embryo screening is not supported by current evidence for clinical use. It is sold anyway, directly to patients, because embryo selection sits outside the approval requirements that a drug or device would face. The gap between what the science supports and what may lawfully be sold is the whole story here.",
+  "tags": [
+   "repro:screening",
+   "clinical:germline"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "Society for Assisted Reproductive Technology",
+  "url": "https://www.sart.org/",
+  "desc": "WHAT. The professional membership body for US fertility clinics, which collects and publishes the outcome data underlying the national reporting. WHERE IT SITS. Professional self-organisation standing where a regulator would be in most other countries. WHY IT MATTERS. Membership is voluntary and the standards are the profession's own. The United States therefore has detailed clinic outcome statistics produced by the industry about itself, and no statutory clinic regulator — which is a different thing from having oversight, and worth naming precisely.",
+  "tags": [
+   "repro:clinics",
+   "rules:associations"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Wolbachia — World Mosquito Program",
+  "url": "https://www.worldmosquitoprogram.org/",
+  "desc": "WHAT. A non-profit releasing Wolbachia-carrying mosquitoes to block dengue transmission, operating in more than a dozen countries with established programmes in Brazil, Indonesia, Colombia and Vietnam. WHERE IT SITS. The largest deliberate release of modified insects in the world by area covered, and the most successful by published outcome. WHY IT MATTERS. It is the strongest counter-case to a blanket position against open release: a self-sustaining modification, released at city scale, with randomised-trial evidence of reduced dengue. Any account of this industry that cannot accommodate it is not describing the field accurately — and the governance question it raises, about a modification designed to persist indefinitely, remains open regardless of the outcome.",
+  "tags": [
+   "wild:insects",
+   "wild:microbes"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Baillie Gifford / growth capital in biotech",
+  "url": "https://www.bailliegifford.com/",
+  "desc": "WHAT. A large investment manager holding significant positions across listed biotechnology, including gene editing and synthesis companies. WHERE IT SITS. The public-markets end of the money, where pension and institutional capital reaches this industry. WHY IT MATTERS. Most people with a pension are invested in this industry without knowing it, through funds they never chose stock by stock. That is the ownership structure the shareholder-pressure route depends on, and the reason it is available at all.",
+  "tags": [
+   "money:markets",
+   "money:vc"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Livestock Improvement Corporation",
+  "url": "https://www.lic.co.nz/",
+  "desc": "WHAT. A New Zealand farmer-owned cooperative supplying dairy genetics, semen and herd data across the national herd and internationally. WHERE IT SITS. Cooperative ownership of a national livestock gene pool — the counter-example to corporate breeding-stock control. WHY IT MATTERS. Farmer ownership has not produced a different technological direction: the cooperative pursues genomic selection and reproductive technology like its corporate equivalents. Which suggests the commercial logic driving this industry acts on ownership models rather than being produced by them.",
+  "tags": [
+   "livestock:livestock",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Eugin Group",
+  "url": "https://www.eugin.co.uk/",
+  "desc": "WHAT. An international fertility clinic network operating across Spain, Italy, the UK, Latin America and the United States, with a substantial donor programme. WHERE IT SITS. Cross-border reproductive care, moving patients toward jurisdictions whose donor and treatment rules suit what they are buying. WHY IT MATTERS. Different countries set different limits on donor anonymity, age, and the number of families per donor. A network spanning several of them can route a patient to whichever rule set permits the treatment, which makes national limits advisory in practice for anyone able to travel.",
+  "tags": [
+   "repro:clinics",
+   "repro:banks",
+   "repro:surrogacy"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Cryos International",
+  "url": "https://www.cryosinternational.com/",
+  "desc": "WHAT. One of the world's largest sperm banks, shipping donor gametes to clinics and private customers in more than a hundred countries. WHERE IT SITS. The international gamete supply layer, operating from a jurisdiction whose rules permit wide export. WHY IT MATTERS. Family limits are set per country, and no mechanism counts across borders. A single donor can therefore have offspring numbers far beyond what any one country's limit contemplates, and the people affected — donor-conceived children — had no part in the transaction and no way to find out.",
+  "tags": [
+   "repro:banks",
+   "repro:surrogacy"
+  ],
+  "checked": "2026-07-31"
+ }
+]

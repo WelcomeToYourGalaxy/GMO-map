@@ -1,0 +1,156 @@
+{
+ "note": "Documented escapes, unauthorised releases and contamination incidents, past and present, as map points. This is a hand-compiled record: the GM Contamination Register logged 396 incidents across 63 countries between 1997 and 2013 and then stopped, and nothing has replaced it, so there is no feed to harvest. Each entry below is an incident that was found and reported. Coordinates are the place the material was found, at region or district level, so every record is precise:false. Dates are the year the incident became public, which is usually later than the year it happened.",
+ "generated": "2026-07-31",
+ "projects": [
+  {
+   "name": "Glyphosate-resistant creeping bentgrass \u2014 escape into wild Agrostis",
+   "source": "escape:crop", "type": "Grass, transgene escape into wild relatives",
+   "lat": 44.6, "lng": -121.1, "state": "Jefferson County, Oregon, USA",
+   "precise": false, "impact": 5, "company": "Scotts / Monsanto",
+   "status": "Escaped, eradication abandoned", "phase": "post", "date": "2004-01-01",
+   "size": "Established in wild populations across multiple counties",
+   "url": "https://www.epa.gov/",
+   "desc": "WHAT. Creeping bentgrass engineered to survive glyphosate, grown in trials for the golf-course market, moved out of its test plots into resident populations of wild Agrostis species. WHERE IT SITS. The strongest documented case of transgene escape into wild plant communities anywhere \u2014 from a crop that was never commercialised. WHY IT MATTERS. The source fields were taken out of production and a mitigation programme was run. Three years later surveyors pulled 585 plants and 62 in every hundred were still resistant; the published conclusion was that eradication was not realistic. The grass is outcrossing, wind-pollinated and perennial, a risk profile most assessment work had not been done on."
+  },
+  {
+   "name": "GloFish \u2014 fluorescent transgenic fish established in Brazilian streams",
+   "source": "escape:animal", "type": "Ornamental fish, escape into wild waters",
+   "lat": -21.13, "lng": -42.37, "state": "Muria\u00e9 region, Minas Gerais, Brazil",
+   "precise": false, "impact": 4, "company": "Ornamental fish farms",
+   "status": "Established in the wild", "phase": "post", "date": "2022-01-01",
+   "size": "Multiple streams in the Atlantic Forest region",
+   "url": "https://www.glofish.com/",
+   "desc": "WHAT. Fluorescent transgenic zebrafish, sold as aquarium pets since 2003, escaped from ornamental fish farms and established breeding populations in Atlantic Forest streams. WHERE IT SITS. The pet trade as a release pathway \u2014 no biosafety application, no assessment, no monitoring. WHY IT MATTERS. This is the quietest large-scale release of engineered animals that has happened. Millions have been sold as decoration for two decades, and the escape route was a fish farm rather than a laboratory. The organisms are now reproducing in a biodiversity hotspot, and no regulator anywhere treated the ornamental trade as a release pathway before it happened."
+  },
+  {
+   "name": "StarLink maize \u2014 unapproved variety in the human food supply",
+   "source": "escape:crop", "type": "Maize, unapproved variety in food",
+   "lat": 41.9, "lng": -93.6, "state": "United States (nationwide recall)",
+   "precise": false, "impact": 5, "company": "Aventis CropScience",
+   "status": "Recalled; residues persisted for years", "phase": "post", "date": "2000-01-01",
+   "size": "Estimated 300+ recalled food products",
+   "url": "https://www.epa.gov/",
+   "desc": "WHAT. A maize variety approved only for animal feed, on allergenicity concerns, was found in taco shells and hundreds of other human foods. WHERE IT SITS. The first mass recall caused by segregation failure between an approved and an unapproved use of the same crop. WHY IT MATTERS. It established that split approvals do not survive contact with a commodity grain system: once a crop enters bulk handling, feed and food are the same stream. Residues turned up in testing for years after the variety was withdrawn, and the episode is why almost no regulator grants feed-only approvals for a bulk commodity any more."
+  },
+  {
+   "name": "LLRICE 601 \u2014 unapproved rice in the US commercial supply",
+   "source": "escape:crop", "type": "Rice, unapproved variety in commerce",
+   "lat": 34.7, "lng": -92.3, "state": "Arkansas and the US rice belt",
+   "precise": false, "impact": 5, "company": "Bayer CropScience",
+   "status": "Withdrawn; markets closed", "phase": "post", "date": "2006-01-01",
+   "size": "US rice exports; EU and Japan import suspensions",
+   "url": "https://www.aphis.usda.gov/biotechnology",
+   "desc": "WHAT. A herbicide-tolerant rice line that had never been commercialised was found in the US long-grain commercial supply and in exports. WHERE IT SITS. Rice accounted for roughly a third of all incidents in the GM Contamination Register despite no GM rice being grown commercially anywhere. WHY IT MATTERS. The line had last been field-tested years earlier. Trial material persisted, moved into commercial seed stocks, and closed export markets; US farmers won substantial settlements. It is the clearest demonstration that a field trial is not a contained event, and that the containment period assumed by an assessment is not the period over which material actually persists."
+  },
+  {
+   "name": "Triffid flax \u2014 deregistered line found in exports a decade later",
+   "source": "escape:crop", "type": "Flax, deregistered variety in exports",
+   "lat": 52.1, "lng": -106.6, "state": "Saskatchewan, Canada",
+   "precise": false, "impact": 4, "company": "University of Saskatchewan",
+   "status": "Deregistered 2001; found in exports 2009", "phase": "post", "date": "2009-01-01",
+   "size": "Canadian flax exports to the EU",
+   "url": "https://inspection.canada.ca/en/plant-varieties/plants-novel-traits",
+   "desc": "WHAT. A herbicide-tolerant flax deregistered and supposedly removed from the seed system in 2001 turned up in Canadian exports to Europe in 2009. WHERE IT SITS. A case where the withdrawal was voluntary, thorough on paper, and insufficient. WHY IT MATTERS. Eight years after a line was pulled and its seed stocks destroyed, it was still in the commercial system. Deregistration is not removal. Canada's flax export market to Europe took years to rebuild, and the cost fell on farmers who had never grown the variety."
+  },
+  {
+   "name": "Transgenes in Mexican maize landraces",
+   "source": "escape:crop", "type": "Maize, transgene presence in landraces",
+   "lat": 17.07, "lng": -96.72, "state": "Oaxaca and southern Mexico",
+   "precise": false, "impact": 5, "company": "Origin disputed",
+   "status": "Confirmed by later independent surveys", "phase": "post", "date": "2001-01-01",
+   "size": "Multiple communities across several states",
+   "url": "https://www.biodiversidad.gob.mx/",
+   "desc": "WHAT. Transgenic sequences were found in native maize landraces in Oaxaca, in a country where GM maize planting was prohibited. The first 2001 paper was heavily contested and partly repudiated; later independent surveys confirmed transgene presence. WHERE IT SITS. Inside the centre of origin and diversity for maize \u2014 the reservoir every commercial maize variety on Earth was ultimately bred from. WHY IT MATTERS. This is not contamination of a crop but of the source of the crop, held for generations by communities who licensed nothing and were asked nothing. There is no procedure for taking it back out and no agency anywhere with a mandate to try. It is the reason Mexico moved its prohibition into the Constitution in 2025."
+  },
+  {
+   "name": "Feral herbicide-tolerant canola with stacked traits, roadsides",
+   "source": "escape:crop", "type": "Canola, feral populations with stacked traits",
+   "lat": 47.5, "lng": -100.5, "state": "North Dakota, USA",
+   "precise": false, "impact": 4, "company": "Multiple",
+   "status": "Established; self-sustaining", "phase": "post", "date": "2010-01-01",
+   "size": "Roadside populations across the state",
+   "url": "https://www.aphis.usda.gov/biotechnology",
+   "desc": "WHAT. Surveys along North Dakota roadsides found feral canola carrying herbicide-tolerance traits, including plants with traits from two separate commercial events stacked together. WHERE IT SITS. Outside any field, outside any permit, reproducing on its own. WHY IT MATTERS. The stacked plants had not been bred by anyone. Feral populations were crossing with each other in the ditches, which means the escaped material was not merely persisting but recombining. Comparable feral populations have been documented along transport routes in Japan around ports that import canola but do not grow it."
+  },
+  {
+   "name": "Jacobina \u2014 engineered mosquito genome entering the wild population",
+   "source": "escape:animal", "type": "Mosquito, introgression from release strain",
+   "lat": -11.18, "lng": -40.51, "state": "Jacobina, Bahia, Brazil",
+   "precise": false, "impact": 4, "company": "Oxitec",
+   "status": "Introgression documented", "phase": "post", "date": "2019-01-01",
+   "size": "27 months of weekly releases, ~450,000 males per week",
+   "url": "https://www.oxitec.com/",
+   "desc": "WHAT. After 27 months of weekly releases of self-limiting engineered male Aedes aegypti, genotyping across more than 21,000 markers found DNA from the release strain in the wild population. WHERE IT SITS. The most advanced commercial open-release programme for engineered animals in the world. WHY IT MATTERS. What moved was the release strain's background genome rather than the self-limiting transgene, and the company disputes the paper's framing. But the design premise had been that lethality was complete and the target population's genetics would be unaffected. Laboratory work had already shown a few per cent of offspring surviving. Self-limiting was a design claim, and the field tested it."
+  },
+  {
+   "name": "Bt10 maize \u2014 wrong unapproved line shipped for four years",
+   "source": "escape:crop", "type": "Maize, unapproved line distributed in error",
+   "lat": 40.0, "lng": -89.2, "state": "United States (exports to EU and Japan)",
+   "precise": false, "impact": 4, "company": "Syngenta",
+   "status": "Disclosed after four years", "phase": "post", "date": "2005-01-01",
+   "size": "Estimated tens of thousands of tonnes",
+   "url": "https://www.aphis.usda.gov/biotechnology",
+   "desc": "WHAT. An unapproved maize line was distributed and exported for four years in the belief that it was a different, approved line. The error was disclosed only after it had been found. WHERE IT SITS. A failure of internal identification rather than of containment. WHY IT MATTERS. The company could not tell its own lines apart for four years, across commercial distribution and international export. Every argument about traceability, identity preservation and event-specific detection assumes the developer knows which event it is shipping."
+  },
+  {
+   "name": "Unapproved herbicide-tolerant cotton planted at scale",
+   "source": "escape:crop", "type": "Cotton, unapproved trait planted commercially",
+   "lat": 19.75, "lng": 75.71, "state": "Maharashtra and Gujarat, India",
+   "precise": false, "impact": 5, "company": "Unlicensed seed trade",
+   "status": "Ongoing; enforcement limited", "phase": "post", "date": "2017-01-01",
+   "size": "Estimated millions of hectares",
+   "url": "https://moef.gov.in/",
+   "desc": "WHAT. Herbicide-tolerant cotton that has never been approved in India has been planted across large areas for years, supplied through an unlicensed seed trade. WHERE IT SITS. The world's largest cotton-growing country, with an approval system the planting simply bypassed. WHY IT MATTERS. India's first Bt cotton was likewise found growing in Gujarat before any approval existed, and the pattern has repeated with every trait since. Where a trait is commercially attractive and enforcement is thin, approval becomes optional \u2014 which makes a register a record of what was asked for rather than of what is in the ground."
+  },
+  {
+   "name": "Bt63 rice \u2014 unapproved GM rice in food products and exports",
+   "source": "escape:crop", "type": "Rice, unapproved variety in food chain",
+   "lat": 30.6, "lng": 114.3, "state": "Hubei and central China",
+   "precise": false, "impact": 4, "company": "Unlicensed seed supply",
+   "status": "Recurrent detections", "phase": "post", "date": "2005-01-01",
+   "size": "Detected in exports to Europe over many years",
+   "url": "http://www.moa.gov.cn/",
+   "desc": "WHAT. An insect-resistant rice line approved only for research was found being grown commercially and turning up in rice products exported to Europe, with detections recurring over more than a decade. WHERE IT SITS. The world's largest rice producer, and a crop eaten directly rather than processed. WHY IT MATTERS. The line escaped from research plots into commercial cultivation through informal seed exchange, which is how most seed moves in most of the world. Detections continued long after the authorities acted, and Europe imposed testing requirements on Chinese rice imports that lasted years."
+  },
+  {
+   "name": "GM petunias \u2014 engineered ornamentals found in worldwide commerce",
+   "source": "escape:crop", "type": "Ornamental plant, unapproved variety in trade",
+   "lat": 52.37, "lng": 4.90, "state": "Netherlands and worldwide horticultural trade",
+   "precise": false, "impact": 3, "company": "Multiple breeders",
+   "status": "Withdrawn and destroyed", "phase": "post", "date": "2017-01-01",
+   "size": "Dozens of varieties across many countries",
+   "url": "https://www.aphis.usda.gov/biotechnology",
+   "desc": "WHAT. Orange petunias sold in garden centres worldwide were found to contain a maize gene introduced in research decades earlier. Nobody had applied for approval anywhere, and no breeder appeared to know. WHERE IT SITS. The ornamental horticulture trade, which sits outside almost every biosafety monitoring system. WHY IT MATTERS. Engineered plants had been propagated, bred into new varieties and sold internationally for years without anyone noticing, because nobody was looking at flowers. It was found by accident, by a researcher who happened to be curious about the colour. That is the detection system this industry actually has for anything outside a monitored crop."
+  },
+  {
+   "name": "Roundup Ready wheat \u2014 unapproved wheat in an Oregon field",
+   "source": "escape:crop", "type": "Wheat, unapproved line found volunteering",
+   "lat": 45.5, "lng": -118.4, "state": "Eastern Oregon, USA",
+   "precise": false, "impact": 4, "company": "Monsanto",
+   "status": "Investigated; origin never established", "phase": "post", "date": "2013-01-01",
+   "size": "Export suspensions by Japan and South Korea",
+   "url": "https://www.aphis.usda.gov/biotechnology",
+   "desc": "WHAT. Glyphosate-tolerant wheat, field-tested years earlier and never commercialised, was found growing as volunteers in an Oregon field. Japan and South Korea suspended US wheat imports. WHERE IT SITS. A crop the industry had deliberately left alone because it is eaten directly and export markets resisted it. WHY IT MATTERS. The investigation never established how the wheat got there. Trial material from a programme that had been discontinued turned up in a commercial field years later, closed export markets within days, and the cause remains unexplained. Similar unexplained finds followed in Montana and Washington."
+  },
+  {
+   "name": "GM papaya \u2014 unapproved virus-resistant plants in commercial orchards",
+   "source": "escape:crop", "type": "Papaya, unapproved variety in cultivation",
+   "lat": 16.44, "lng": 102.83, "state": "Khon Kaen, Thailand",
+   "precise": false, "impact": 3, "company": "Government research station",
+   "status": "Confirmed; plants destroyed", "phase": "post", "date": "2004-01-01",
+   "size": "Orchards across multiple provinces",
+   "url": "https://www.doa.go.th/",
+   "desc": "WHAT. Virus-resistant papaya from a government research station was found growing in commercial orchards in a country that prohibited open cultivation of GM crops. WHERE IT SITS. Escape from a public research programme rather than a company trial. WHY IT MATTERS. Seed was distributed from the station to farmers, apparently informally, and spread from there. It is a reminder that the containment question is not only about corporate applicants: a public institution with a research permit is subject to the same failure modes, and in this case the state was both the source of the escape and the authority investigating it."
+  },
+  {
+   "name": "Herbicide-tolerant bentgrass \u2014 second escape via seed movement",
+   "source": "escape:crop", "type": "Grass, secondary spread beyond control area",
+   "lat": 43.6, "lng": -116.2, "state": "Malheur County, Oregon and into Idaho",
+   "precise": false, "impact": 4, "company": "Scotts",
+   "status": "Spread beyond the designated control area", "phase": "post", "date": "2010-01-01",
+   "size": "Irrigation canals and adjacent land in two states",
+   "url": "https://www.aphis.usda.gov/biotechnology",
+   "desc": "WHAT. Resistant creeping bentgrass spread beyond the state-designated control area, moving along irrigation canals into neighbouring counties and across a state line. WHERE IT SITS. The same escape as the Jefferson County case, years later and further out. WHY IT MATTERS. Water moved it. Containment plans written around pollen distance and buffer zones did not account for a stoloniferous perennial travelling along irrigation infrastructure, and by the time it was found the affected area was no longer the one being managed. The regulator eventually deregulated the crop rather than continuing to pursue eradication."
+  }
+ ]
+}
