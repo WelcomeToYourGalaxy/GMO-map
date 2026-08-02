@@ -29,12 +29,21 @@ jobs:
           # Same pattern as the wire: these files are regenerated whole, so on a
           # rejected push we reset to the remote and re-harvest rather than
           # trying to rebase a wholesale rewrite.
+          # Each harvester is allowed to fail without taking the step down. This
+          # step runs under `bash -e`, so an unhandled non-zero status from the
+          # first script skips every one after it — which is exactly what a CFIA
+          # timeout did, and APHIS never ran at all. A source being unreachable
+          # is a normal condition, not a build failure.
           for i in 1 2 3; do
-            python3 harvest/cfia_approvals.py
-            python3 harvest/build_industry_points.py
-            python3 harvest/aphis_releases.py
-            python3 harvest/build_overlays.py
-            git add projects.json harvest/cfia_records.json harvest/industry_points.json overlays/trials.geojson overlays/regime.geojson
+            python3 harvest/cfia_approvals.py       || echo "!! cfia harvester failed - continuing"
+            python3 harvest/build_industry_points.py || echo "!! industry points failed - continuing"
+            python3 harvest/aphis_releases.py       || echo "!! aphis harvester failed - continuing"
+            python3 harvest/build_overlays.py       || echo "!! overlay builder failed - continuing"
+            # --ignore-errors so a file a failed harvester never wrote does not
+            # abort the step under bash -e on the first run.
+            git add --ignore-errors projects.json harvest/cfia_records.json \
+                    harvest/industry_points.json overlays/trials.geojson \
+                    overlays/regime.geojson 2>/dev/null || true
             git diff --staged --quiet && { echo "no change"; exit 0; }
             git commit -m "releases: refresh $(date -u +%Y-%m-%d)"
             git push && exit 0

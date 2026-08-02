@@ -33,7 +33,9 @@ jobs:
           # against it (it merges a 120-day archive, so nothing is lost), and
           # commit fresh. Retry three times.
           for i in 1 2 3; do
-            python3 harvest/wire_harvest.py
+            # Same reason as the releases workflow: bash -e would abort the whole
+            # step on a transient feed failure.
+            python3 harvest/wire_harvest.py || echo "!! wire harvester failed - continuing"
             git add wire.json
             git diff --staged --quiet && { echo "no change"; exit 0; }
             git commit -m "wire: refresh $(date -u +%Y-%m-%dT%H:%MZ)"
