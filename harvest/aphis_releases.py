@@ -34,6 +34,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "projects.json"
 CURATED = ROOT / "harvest" / "projects_curated.json"
 CFIA = ROOT / "harvest" / "cfia_records.json"
+INDUSTRY = ROOT / "harvest" / "industry_points.json"
+ESCAPES = ROOT / "harvest" / "escape_records.json"
 
 EFILE = "https://www.aphis.usda.gov/sites/default/files/efile-data.csv"
 LEGACY = "https://www.aphis.usda.gov/sites/default/files/brs-public-apps.csv"
@@ -298,6 +300,18 @@ def main():
             print("  merging %d CFIA records" % len(extra))
         except Exception as e:
             print("  ! %s could not be read: %s" % (CFIA.name, e), file=sys.stderr)
+
+    # industry organisations and documented escapes are points on the same layer
+    for path, label in ((INDUSTRY, "industry"), (ESCAPES, "escape")):
+        if path.exists():
+            try:
+                got = json.loads(path.read_text(encoding="utf-8")).get("projects", [])
+                extra.extend(got)
+                print("  merging %d %s points" % (len(got), label))
+            except Exception as e:
+                print("  ! %s could not be read: %s" % (path.name, e), file=sys.stderr)
+        else:
+            print("  ! %s not found" % path.name, file=sys.stderr)
 
     # keep the hand-written OGTR records alongside, if they were preserved
     curated = []
