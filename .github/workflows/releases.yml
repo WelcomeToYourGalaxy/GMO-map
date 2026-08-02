@@ -31,9 +31,10 @@ jobs:
           # trying to rebase a wholesale rewrite.
           for i in 1 2 3; do
             python3 harvest/cfia_approvals.py
+            python3 harvest/build_industry_points.py
             python3 harvest/aphis_releases.py
             python3 harvest/build_overlays.py
-            git add projects.json harvest/cfia_records.json overlays/trials.geojson overlays/regime.geojson
+            git add projects.json harvest/cfia_records.json harvest/industry_points.json overlays/trials.geojson overlays/regime.geojson
             git diff --staged --quiet && { echo "no change"; exit 0; }
             git commit -m "releases: refresh $(date -u +%Y-%m-%d)"
             git push && exit 0
