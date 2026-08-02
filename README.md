@@ -25,6 +25,9 @@ GMO-map/
 ├─ wire.json                   news wire archive
 ├─ wire_climate.json           optional second wire stream (absent = ignored)
 ├─ legmap_sub.json             optional subnational resources
+├─ guides/
+│   ├─ how-to-stop-a-release.pdf      linked from the wire panel
+│   └─ how-to-change-the-industry.pdf linked from the wire panel
 ├─ overlays/                   context overlay polygons — see overlays/README.md
 ├─ harvest/
 │   ├─ wire_harvest.py         RSS harvester → wire.json
@@ -192,3 +195,23 @@ when the amber turns up.
   in the lenses and the index.
 - No coverage percentage is claimed anywhere. No dataset holds the true global
   count, so any figure would be invented.
+
+---
+
+## Which file to update when
+
+**`index.html` carries the hand-built points.** All industry organisations and the
+whole escape record are embedded in it as `PJ_SEED`. Adding, editing or removing
+one of those changes `index.html` and nothing else.
+
+**`projects.json` is machine-maintained.** It holds only what the harvesters
+produce, plus the curated records in `harvest/projects_curated.json`. The
+workflow overwrites it; don't hand-edit it.
+
+At load time the map **unions the two, keyed on url**, so nothing appears twice
+and the whole map still works if the fetch fails or the file is served from
+somewhere else entirely.
+
+Practical consequence: a session spent adding entries produces **one file to
+upload**. Only reach for the others when a harvester, a workflow or an overlay
+changes.
