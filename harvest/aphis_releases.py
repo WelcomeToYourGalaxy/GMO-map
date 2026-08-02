@@ -301,17 +301,10 @@ def main():
         except Exception as e:
             print("  ! %s could not be read: %s" % (CFIA.name, e), file=sys.stderr)
 
-    # industry organisations and documented escapes are points on the same layer
-    for path, label in ((INDUSTRY, "industry"), (ESCAPES, "escape")):
-        if path.exists():
-            try:
-                got = json.loads(path.read_text(encoding="utf-8")).get("projects", [])
-                extra.extend(got)
-                print("  merging %d %s points" % (len(got), label))
-            except Exception as e:
-                print("  ! %s could not be read: %s" % (path.name, e), file=sys.stderr)
-        else:
-            print("  ! %s not found" % path.name, file=sys.stderr)
+    # Industry organisations and the escape record are embedded in index.html
+    # instead, so this file stays machine-maintained. The map unions the two at
+    # load time, keyed on url, so nothing appears twice.
+    extra = []
 
     # keep the hand-written OGTR records alongside, if they were preserved
     curated = []
