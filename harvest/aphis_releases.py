@@ -82,10 +82,25 @@ TRAITS = {
 }
 
 
+_RETRIES = 4
+
 def fetch(url):
-    req = Request(url, headers={"User-Agent": UA})
-    with urlopen(req, timeout=120) as r:
-        return r.read().decode("utf-8-sig", "replace")
+    """Retry with backoff. A transient timeout on one CSV should not lose the run."""
+    import time
+    last = None
+    for attempt in range(1, _RETRIES + 1):
+        try:
+            req = Request(url, headers={"User-Agent": UA})
+            with urlopen(req, timeout=180) as r:
+                return r.read().decode("utf-8-sig", "replace")
+        except Exception as exc:
+            last = exc
+            if attempt < _RETRIES:
+                wait = 5 * attempt
+                print("  fetch attempt %d failed (%s) \u2014 retrying in %ds"
+                      % (attempt, exc, wait), file=sys.stderr)
+                time.sleep(wait)
+    raise last
 
 
 def parse_date(s):
@@ -286,8 +301,10 @@ def main():
         records.extend(got)
 
     if not records:
+        # Exit 0: the workflow step stops on any non-zero status, and an
+        # unreachable source must not block the rest of the run.
         print("nothing harvested; leaving projects.json alone", file=sys.stderr)
-        sys.exit(1)
+        return
 
     records.sort(key=lambda x: x.get("date", ""), reverse=True)
     records = records[:keep]
