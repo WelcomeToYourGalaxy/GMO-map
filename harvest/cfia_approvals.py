@@ -63,10 +63,26 @@ OECD_RX = re.compile(r"\b[A-Z][A-Z0-9]{1,3}-[A-Z0-9\u00d8]{4,7}-\d\b")
 DD_RX = re.compile(r"(DD\d{2,4}-\d+)")
 
 
-def fetch():
-    req = Request(URL, headers={"User-Agent": UA})
-    with urlopen(req, timeout=120) as r:
-        return r.read().decode("utf-8-sig", "replace")
+_RETRIES = 4
+
+def fetch(url=None):
+    """Government endpoints time out. Retry with backoff rather than failing the
+    whole run \u2014 one source being slow should not stop the others."""
+    import time
+    last = None
+    for attempt in range(1, _RETRIES + 1):
+        try:
+            req = Request(url or URL, headers={"User-Agent": UA})
+            with urlopen(req, timeout=180) as r:
+                return r.read().decode("utf-8-sig", "replace")
+        except Exception as exc:
+            last = exc
+            if attempt < _RETRIES:
+                wait = 5 * attempt
+                print("  fetch attempt %d failed (%s) \u2014 retrying in %ds"
+                      % (attempt, exc, wait), file=sys.stderr)
+                time.sleep(wait)
+    raise last
 
 
 def col(row, *names):
@@ -167,8 +183,14 @@ def main():
     try:
         text = fetch()
     except Exception as e:
-        print("could not fetch CFIA dataset: %s" % e, file=sys.stderr)
-        sys.exit(1)
+        # Exit 0, not 1. This runs in a workflow step that stops on any non-zero
+        # status, and one source being unreachable must not prevent the others
+        # from harvesting. The previous cfia_records.json stays in place.
+        print("could not fetch CFIA dataset after %d attempts: %s" % (_RETRIES, e),
+              file=sys.stderr)
+        print("leaving the existing %s untouched and continuing" % OUT.name,
+              file=sys.stderr)
+        return
     rows = list(csv.DictReader(io.StringIO(text)))
     recs = build(rows)
     print("  cfia      %6d rows \u2192 %5d approved for unconfined release" % (len(rows), len(recs)))
