@@ -1656,5 +1656,560 @@
    "repro:surrogacy"
   ],
   "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "CIBIOGEM",
+  "url": "https://www.conahcyt.mx/cibiogem/",
+  "desc": "WHAT. Mexico's inter-ministerial biosafety commission, holding the national register of permits for experimental, pilot and commercial release. WHERE IT SITS. The approval gate inside the centre of origin and diversity for maize. WHY IT MATTERS. In March 2025 Mexico moved its prohibition on planting genetically modified maize into Articles 4 and 27 of its Constitution, after a USMCA dispute panel ruled against the earlier decree. That makes Mexico the clearest live test anywhere of a constitutional prohibition set against a trade-agreement ruling, and the commission is where the two collide in practice.",
+  "tags": [
+   "rules:regulators",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Grupo Bimbo",
+  "url": "https://www.grupobimbo.com/en",
+  "desc": "WHAT. The largest bakery company in the world, buying wheat and maize flour at enormous scale across the Americas and Europe. WHERE IT SITS. The buyer end. Nothing on this map reaches a household without passing through companies like this one. WHY IT MATTERS. Procurement decisions by a handful of very large buyers determine which traits are commercially viable, and they are taken privately with no consultation, no register and no appeal. A buyer specification does more to shape what gets planted than most approval decisions do, and none of it is public.",
+  "tags": [
+   "seed:distribution",
+   "rules:influence"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Executive Council for GMOs — Department of Agriculture",
+  "url": "https://www.dalrrd.gov.za/",
+  "desc": "WHAT. South Africa's decision body under its GMO Act, issuing permits for trial and commercial release, with a statutory public objection process attached. WHERE IT SITS. The approval authority for the largest GM cultivator on the African continent. WHY IT MATTERS. South Africa grows GM white maize as a staple food crop rather than as animal feed, which is close to unique globally. Most countries growing engineered maize feed it to livestock; here it is what people eat directly, which changes the exposure question entirely and is rarely reflected in arguments imported from elsewhere.",
+  "tags": [
+   "rules:regulators",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Pannar Seed (Corteva)",
+  "url": "https://www.pannar.com/",
+  "desc": "WHAT. Africa's largest indigenous seed company, acquired by Pioneer after a lengthy competition review that initially blocked the deal. WHERE IT SITS. The route by which a multinational reached African smallholder markets — through an established local brand rather than its own. WHY IT MATTERS. Competition authorities blocked the acquisition on the grounds that it would concentrate the African seed market, then allowed it on appeal with conditions. The pattern is the same one visible worldwide: national regulators identify the concentration risk correctly and then permit the transaction anyway.",
+  "tags": [
+   "seed:licensees",
+   "seed:distribution",
+   "seed:majors"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "National Biosafety Management Agency",
+  "url": "https://nbma.gov.ng/",
+  "desc": "WHAT. Nigeria's permit authority for contained use, confined trials and commercial release, publishing notices of applications received. WHERE IT SITS. The fastest-moving approval body in West Africa, in the region's largest economy. WHY IT MATTERS. Nigeria approved Bt cowpea for commercial cultivation — the first engineered food crop released in the region — in a country that also holds, at IITA in Ibadan, the world's principal cowpea germplasm collection. Approval and the global genetic reservoir for the same crop sit a few hundred kilometres apart.",
+  "tags": [
+   "rules:regulators",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Kenya National Biosafety Authority",
+  "url": "https://www.biosafetykenya.go.ke/",
+  "desc": "WHAT. Kenya's permit authority for contained use, confined field trials and environmental release, publishing the public-participation notices its law requires. WHERE IT SITS. A bellwether for East Africa — what is approved here tends to shape neighbouring frameworks. WHY IT MATTERS. Kenya's position on GM imports has been decided and re-decided in court as much as in cabinet, with petitions repeatedly halting and restarting the policy. It is the clearest African case of biosafety policy being made by litigation rather than by regulator.",
+  "tags": [
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Illumina Italy / Ferrara sequencing hub",
+  "url": "https://www.illumina.com/company/about-us/global-locations.html",
+  "desc": "WHAT. Illumina's European manufacturing and distribution footprint, including sites supplying sequencing consumables across the continent. WHERE IT SITS. The physical supply line for European genomics — instruments are shipped, but consumables are the recurring dependency. WHY IT MATTERS. European national genomics programmes, agricultural breeding institutes and hospitals all depend on a consumables supply chain controlled by a single American company. That dependency is rarely discussed as a sovereignty question, and it is one.",
+  "tags": [
+   "synthesis:seq",
+   "synthesis:reagents"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Selvita",
+  "url": "https://selvita.com/",
+  "desc": "WHAT. A Central European contract research organisation running drug discovery and preclinical work for pharmaceutical and biotechnology clients. WHERE IT SITS. The lower-cost end of the contract research layer, where a growing share of European preclinical work is actually done. WHY IT MATTERS. Contract research migrates toward lower costs like any other outsourced function. The studies a European regulator reads are increasingly produced in jurisdictions with different laboratory oversight from the one making the decision, and nothing in the dossier flags where the work happened.",
+  "tags": [
+   "cro:cro",
+   "animals:services"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Syngene International",
+  "url": "https://www.syngeneintl.com/",
+  "desc": "WHAT. A large Indian contract research and manufacturing organisation, subsidiary of Biocon, running discovery, development and biologics manufacture for global clients. WHERE IT SITS. One of the largest CROs outside the United States and Europe, with substantial animal facilities. WHY IT MATTERS. A very large share of the world's preclinical work now happens in India and China. The regulator reading the study is usually in a third country, applying its own standards to work it did not observe, under animal welfare law that does not apply where the work was done.",
+  "tags": [
+   "cro:cro",
+   "cro:cdmo",
+   "animals:services"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Bharat Biotech",
+  "url": "https://www.bharatbiotech.com/",
+  "desc": "WHAT. An Indian vaccine manufacturer producing recombinant and viral-vector vaccines at very large volume for domestic and export markets. WHERE IT SITS. Manufacturing capacity for engineered biologicals outside the usual Western centres. WHY IT MATTERS. A substantial share of the world's vaccine doses are made by a handful of manufacturers in India, using engineered organisms, for populations that will never see the regulatory file. Capacity concentration in this facet is as marked as in seed, and considerably less examined.",
+  "tags": [
+   "clinical:vectors",
+   "cro:cdmo"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "WuXi AppTec",
+  "url": "https://www.wuxiapptec.com/",
+  "desc": "WHAT. One of the largest contract research and manufacturing organisations in the world, spanning discovery, testing, biologics and cell and gene therapy manufacture. WHERE IT SITS. The single largest concentration of outsourced pharmaceutical capability anywhere, and a supplier to most major Western drug developers. WHY IT MATTERS. Western legislative attempts to restrict reliance on it have made explicit how deep the dependency runs: a great deal of the drug pipeline of countries that regulate this industry is developed and made by a company those countries do not regulate. The contract layer is where national oversight quietly stops.",
+  "tags": [
+   "cro:cro",
+   "cro:cdmo",
+   "clinical:vectors"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Dabeinong Biotechnology",
+  "url": "https://www.dbn.com.cn/",
+  "desc": "WHAT. A Chinese agricultural company holding approved GM maize and soybean traits, now being planted commercially as China expands domestic cultivation. WHERE IT SITS. The domestic trait developer benefiting from a policy shift that moved China from importing GM commodities to growing them. WHY IT MATTERS. China's approvals since 2023 have created a fifth centre of trait ownership outside the four Western majors, developed with state support and deployed at scale by state decision. The industry's structure is changing, and the account of it as four Western firms is going out of date.",
+  "tags": [
+   "seed:traits",
+   "seed:majors",
+   "money:public"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Charoen Pokphand Group",
+  "url": "https://www.cpgroupglobal.com/",
+  "desc": "WHAT. One of the world's largest agri-food conglomerates, spanning animal feed, livestock production, aquaculture and retail across Asia and beyond. WHERE IT SITS. The demand side. Feed operations at this scale are among the largest single buyers of engineered soy and maize on Earth. WHY IT MATTERS. Most engineered crop volume is not eaten by people; it becomes animal feed. The companies deciding what goes into feed therefore determine most of the actual demand for engineered traits, and they are almost entirely absent from public argument about GMOs, which stays fixed on the supermarket shelf.",
+  "tags": [
+   "seed:distribution",
+   "livestock:livestock"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Nutreco / Skretting",
+  "url": "https://www.nutreco.com/",
+  "desc": "WHAT. A global animal nutrition and aquaculture feed company, and a major buyer of engineered soy and novel feed ingredients including algal oils and insect protein. WHERE IT SITS. Between the crop and the animal — the point at which most engineered plant material actually gets consumed. WHY IT MATTERS. Feed formulation is where engineered crops meet the food system in practice, and where the industry's newer products — fermented oils, engineered microbes, insect protein — are being introduced first, because feed carries no consumer labelling expectation and no retail argument.",
+  "tags": [
+   "seed:distribution",
+   "livestock:aqua",
+   "editing:synbio"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "JBS",
+  "url": "https://jbs.com.br/en/",
+  "desc": "WHAT. The largest meat processing company in the world, operating across beef, poultry and pork on several continents. WHERE IT SITS. The end of the chain that consumes most engineered crop output, and a direct driver of soy demand in Brazil. WHY IT MATTERS. Engineered soy expansion and cattle expansion in Brazil are the same land pressure viewed from two ends. Treating the seed trait as the object of concern while the demand structure goes unexamined misses where the decisions that matter are actually taken.",
+  "tags": [
+   "seed:distribution",
+   "livestock:livestock"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Colossal — thylacine programme partners",
+  "url": "https://tigrrlab.science.unimelb.edu.au/",
+  "desc": "WHAT. The University of Melbourne laboratory partnered with Colossal Biosciences on the thylacine, funded substantially by the company. WHERE IT SITS. Where a venture-funded de-extinction programme meets a public university, which supplies the scientific credibility. WHY IT MATTERS. Company money in a university laboratory produces publications and press that a company alone could not. Whatever the science, the arrangement is what converts a commercial project into an apparently disinterested scientific one, and the funding relationship is usually a footnote.",
+  "tags": [
+   "deextinct:ventures",
+   "money:vc",
+   "deextinct:rescue"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Australian Frozen Zoo / CryoDiversity",
+  "url": "https://www.zoo.org.au/",
+  "desc": "WHAT. Australian zoo-based cryobanking of gametes and tissue from threatened native species, supporting assisted reproduction in conservation programmes. WHERE IT SITS. The regional counterpart to the San Diego collection — wildlife genetic material banked before it is needed. WHY IT MATTERS. Biobanking is the least controversial part of this facet and the most consequential, because it determines what is technically possible decades later. What gets sampled now decides which species a future genetic-rescue or de-extinction programme can even attempt, and those sampling choices are made by individual institutions with no coordinating framework.",
+  "tags": [
+   "deextinct:biobank",
+   "deextinct:rescue"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "Understanding Animal Research",
+  "url": "https://www.understandinganimalresearch.org.uk/",
+  "desc": "WHAT. The UK organisation representing and communicating on behalf of institutions that use animals in research, publishing the annual statistics and the concordat on openness. WHERE IT SITS. The sector's own voice, and — unusually — the main public source of numbers on how many animals are used and for what. WHY IT MATTERS. The UK publishes more detail on animal use than almost anywhere: species, procedure severity, purpose, and the share that are genetically altered. The figures come from the sector rather than an independent body, which is worth stating; they are also the best figures in existence, which is worth stating too.",
+  "tags": [
+   "animals:models",
+   "rules:associations"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Home Office — animals in science statistics",
+  "url": "https://www.gov.uk/government/collections/statistics-of-scientific-procedures-on-living-animals",
+  "desc": "WHAT. The UK government's annual statistics on scientific procedures on living animals, including the number involving genetically altered animals and the severity of each procedure. WHERE IT SITS. The statutory counterpart to the sector's own reporting, published by the licensing authority. WHY IT MATTERS. A large share of procedures are for the breeding and maintenance of genetically altered animals rather than for experiments on them — animals created and killed to sustain a line. That distinction appears in these statistics and almost nowhere else, and it is the clearest available measure of what the model-organism trade actually costs.",
+  "tags": [
+   "animals:models",
+   "animals:breeders",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Federal Research Center for Animal Husbandry",
+  "url": "https://www.vij.ru/",
+  "desc": "WHAT. Russia's principal livestock research institute, working on gene-edited cattle and the national livestock gene pool. WHERE IT SITS. Inside a country that banned GM crop cultivation in 2016 while continuing state-funded genetic research. WHY IT MATTERS. Prohibition on cultivation and heavy investment in the underlying science are not contradictory positions; they are a state deciding it wants the capability without the imports. Any account of this industry that treats a cultivation ban as the end of the story misses where the research actually continues.",
+  "tags": [
+   "livestock:livestock",
+   "editing:agtech",
+   "money:public"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Ministry of Agriculture and Forestry — biosafety board",
+  "url": "https://www.tarimorman.gov.tr/",
+  "desc": "WHAT. Turkey's competent authority, which permits GM feed imports under an approved-event list while prohibiting GM cultivation entirely, with criminal penalties attached. WHERE IT SITS. A large importer with a hard cultivation ban — an uncommon combination. WHY IT MATTERS. Turkey demonstrates that a country can refuse to grow engineered crops while importing them at volume, which is the arrangement most cultivation bans actually amount to. The ban is real, the exposure continues, and the difference between those two facts is where most public argument about bans goes wrong.",
+  "tags": [
+   "rules:regulators",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Ministry of Agrarian Policy and Food",
+  "url": "https://minagro.gov.ua/",
+  "desc": "WHAT. Ukraine's agriculture ministry, overseeing one of the world's largest grain and oilseed export sectors. WHERE IT SITS. A major exporter whose crop moves into markets with sharply different GM rules. WHY IT MATTERS. Ukrainian grain reaches importers that require GM-free certification and importers that do not care, which makes its own domestic position commercially consequential well beyond its borders. Unapproved GM soy has been documented growing in Ukraine for years despite cultivation not being authorised, which puts it alongside India and Brazil in the pattern of adoption preceding approval.",
+  "tags": [
+   "rules:regulators",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "PT Perkebunan Nusantara / sugarcane biotechnology",
+  "url": "https://ptpn.co.id/",
+  "desc": "WHAT. Indonesia's state plantation group, involved in the deployment of domestically developed drought-tolerant engineered sugarcane. WHERE IT SITS. State-owned plantation agriculture using nationally developed traits rather than licensed multinational ones. WHY IT MATTERS. Indonesia approved engineered sugarcane developed by its own institutions, which is an unusual route: most countries either import traits or import the argument. A domestically owned trait deployed through a state plantation company answers to a different set of pressures than a licensed one, and produces a different politics.",
+  "tags": [
+   "seed:traits",
+   "seed:distribution",
+   "money:public"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Ministry of Agriculture and Environment — biosafety",
+  "url": "https://monre.gov.vn/",
+  "desc": "WHAT. Viet Nam's competent authority, which has authorised GM maize for cultivation and imports feed grain at large volume. WHERE IT SITS. One of the few Southeast Asian countries to approve cultivation rather than import only. WHY IT MATTERS. Mekong-region seed moves across borders informally at scale, so an approval in one country becomes a practical fact in several. National frameworks in this region are partly notional for that reason, and understanding them as such is more useful than reading them as boundaries.",
+  "tags": [
+   "rules:regulators",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "ICA — Instituto Colombiano Agropecuario",
+  "url": "https://www.ica.gov.co/",
+  "desc": "WHAT. Colombia's agricultural authority, handling GM crop authorisations and the seed registration rules that go with them. WHERE IT SITS. At the southern edge of maize diversity, in a country whose seed-certification rules triggered mass farmer protest. WHY IT MATTERS. Colombia's attempt to restrict the sale of uncertified seed produced nationwide strikes and was suspended. It is the clearest case in the Americas of seed law — not biosafety law — being the thing that mobilised people, which is worth noting because seed law is where most of this industry's control actually sits.",
+  "tags": [
+   "rules:regulators",
+   "rules:ip"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "SLU — Swedish University of Agricultural Sciences",
+  "url": "https://www.slu.se/en/",
+  "desc": "WHAT. Sweden's agricultural university, running gene-editing research on crops and forest trees and advising on regulatory classification. WHERE IT SITS. Where public research meets the European argument about whether edited organisms should be regulated at all. WHY IT MATTERS. Public universities have been among the most active advocates for treating edited crops as conventional, on the grounds that the alternative locks small public breeders out. That is a real argument and it is also the argument the largest companies benefit from most, which is worth holding both halves of.",
+  "tags": [
+   "editing:agtech",
+   "deextinct:trees",
+   "money:public"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Solar Foods",
+  "url": "https://solarfoods.com/",
+  "desc": "WHAT. A Finnish company producing a protein from a microbe grown on carbon dioxide, hydrogen and electricity rather than on agricultural feedstock. WHERE IT SITS. The far edge of fermentation — food production decoupled from farmland altogether. WHY IT MATTERS. If protein can be made from air and electricity, the land argument that underpins most defences of engineered agriculture weakens considerably. It also concentrates food production into industrial facilities owned by whoever built them, which is a different distribution of control from farming, not obviously a better one.",
+  "tags": [
+   "editing:synbio",
+   "cro:cdmo"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Teagasc",
+  "url": "https://www.teagasc.ie/",
+  "desc": "WHAT. Ireland's agriculture and food development authority, running research on crops, dairy genetics and livestock breeding. WHERE IT SITS. A public body combining research, extension and advisory work in a country positioning its agriculture as GM-free for market reasons. WHY IT MATTERS. Ireland's dairy and beef export brand depends on a pasture-fed image, which makes GM feed a commercial question before it is an environmental one. That is the same reasoning Tasmania uses, and it works: a market-access argument is harder for the industry to answer than a safety one.",
+  "tags": [
+   "livestock:livestock",
+   "money:public"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Cyagen",
+  "url": "https://www.cyagen.com/",
+  "desc": "WHAT. A contract company generating custom transgenic and knockout animal models to client specification, operating across the United States and China. WHERE IT SITS. Custom model generation — the made-to-order end of the animal trade. WHY IT MATTERS. A researcher can now commission an animal that does not yet exist, engineered to a written specification, delivered as a product with a lead time. The organism is the deliverable. There is no register of these animals because contained use rarely generates one, so the largest volume of vertebrate engineering in the world is also the least recorded.",
+  "tags": [
+   "animals:services",
+   "animals:models",
+   "cro:cro"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "National Primate Research Centers",
+  "url": "https://www.nprcresearch.org/",
+  "desc": "WHAT. The federally supported network of primate research centres in the United States, breeding and supplying non-human primates including genetically modified lines. WHERE IT SITS. The most ethically contested corner of the animal facet, and one of the least visible. WHY IT MATTERS. Primate supply is a chronic constraint on this kind of research, and demand has driven both domestic breeding expansion and international trade in wild-caught animals, with associated smuggling prosecutions. The scarcity is what makes the trade lucrative and the enforcement problems predictable.",
+  "tags": [
+   "animals:primates",
+   "animals:breeders",
+   "money:public"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Bachem",
+  "url": "https://www.bachem.com/",
+  "desc": "WHAT. A Swiss manufacturer of peptides and oligonucleotides at commercial scale, supplying pharmaceutical companies worldwide. WHERE IT SITS. The manufacturing bottleneck for oligonucleotide therapeutics, a class of medicine that depends entirely on synthesis capacity. WHY IT MATTERS. Oligonucleotide drugs are designed on a computer and made in a factory, which sounds like it should make them cheap. They are not, because a handful of plants can make them at the required purity. Manufacturing scarcity, not science, sets the price for a growing share of genetic medicine.",
+  "tags": [
+   "cro:cdmo",
+   "synthesis:synth",
+   "clinical:vectors"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Samsung Biologics",
+  "url": "https://samsungbiologics.com/",
+  "desc": "WHAT. One of the world's largest contract manufacturers of biologics, with very large-scale capacity in Songdo. WHERE IT SITS. The manufacturing layer for antibodies and engineered proteins, serving clients who own the products. WHY IT MATTERS. Biologics manufacturing capacity is concentrated in a handful of sites globally, and a single company's allocation decisions determine which therapies reach market and when. That is commercial scheduling deciding a clinical outcome, and it happens entirely outside any regulator's view.",
+  "tags": [
+   "cro:cdmo",
+   "clinical:vectors"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Virtus Health",
+  "url": "https://www.virtushealth.com.au/",
+  "desc": "WHAT. A large fertility clinic group operating across Australia, Ireland, Denmark, Singapore and the UK, taken private by an investment firm. WHERE IT SITS. The consolidation pattern arriving in a country with strong clinic regulation. WHY IT MATTERS. Australia regulates fertility clinics comparatively well, and the ownership still consolidated into private equity hands operating across five countries. Clinic-level regulation does not reach the ownership layer, which is where pricing, add-on services and expansion decisions are actually taken.",
+  "tags": [
+   "repro:clinics",
+   "money:vc"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Israeli fertility system — Ministry of Health",
+  "url": "https://www.gov.il/en/departments/ministry_of_health",
+  "desc": "WHAT. The regulator of a fertility system with the highest per-capita IVF utilisation in the world, largely state-funded and effectively unlimited for eligible patients. WHERE IT SITS. The opposite pole from the American arrangement: publicly funded, heavily used, closely regulated. WHY IT MATTERS. It shows what happens when cost is removed as a constraint on assisted reproduction — utilisation rises very high, and the ethical questions about selection and embryo disposition arrive at population scale rather than for the wealthy few. Neither the American nor the Israeli arrangement resolves those questions; they just meet them from opposite directions.",
+  "tags": [
+   "repro:clinics",
+   "rules:regulators",
+   "repro:screening"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Predator Free 2050 — genetic tools debate",
+  "url": "https://pf2050.co.nz/",
+  "desc": "WHAT. New Zealand's national programme to eradicate introduced predators, within which the use of gene drives and other genetic tools has been formally debated and, so far, not adopted. WHERE IT SITS. The most advanced national conversation anywhere about whether to use a gene drive on a conservation problem. WHY IT MATTERS. New Zealand has a strong case for genetic predator control, a capable research base, and has still not authorised it — partly because Māori consultation raised questions the programme could not answer about who decides for a species. That is a country taking the consent question seriously enough to slow itself down, which is rare enough to be worth marking.",
+  "tags": [
+   "deextinct:rescue",
+   "wild:drives",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Sovereign wealth investment in agrifood technology",
+  "url": "https://www.mubadala.com/",
+  "desc": "WHAT. Gulf sovereign wealth funds investing heavily in agricultural technology, vertical farming, cultivated protein and seed businesses. WHERE IT SITS. State capital from food-importing countries buying into the technology that might reduce their import dependence. WHY IT MATTERS. Sovereign funds have no exit deadline, which removes the pressure that shapes venture-backed companies, and no electorate in the countries where they invest. It is a materially different kind of money entering this industry, and it is growing while the venture cycle contracts.",
+  "tags": [
+   "money:vc",
+   "money:public",
+   "editing:synbio"
+  ],
+  "checked": "2026-07-31"
  }
 ]
