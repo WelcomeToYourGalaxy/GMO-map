@@ -1,7 +1,7 @@
 {
  "note": "US environmental-release authorisations harvested from the APHIS BRS public data files (public domain), plus hand-curated records from other registers. Only records with a release component are included — import and interstate movement are not releases. Every position is a state centroid: APHIS publishes release states, never coordinates, so every record is precise:false and draws as a dashed ring. Canadian records come from the CFIA PNT dataset and sit at the national centroid, because that register records a national approval rather than a planting location. Everywhere else is not yet harvested.",
- "generated": "2026-08-02",
- "source": "APHIS BRS public data files, 2026-08-02",
+ "generated": "2026-08-03",
+ "source": "APHIS BRS public data files, 2026-08-03",
  "projects": [
   {
    "name": "DIR 201 — GM wheat & barley field trial (yield enhancement)",
