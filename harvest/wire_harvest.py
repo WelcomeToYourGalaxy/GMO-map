@@ -260,14 +260,126 @@ def geotag(item):
                 item["iso"] = iso2
                 break
     iso = item.get("iso")
-    if iso and not item.get("region") and iso in _SUBS:
+    if iso and not item.get("region"):
         full = " " + slug((item.get("title") or "") + " " + (item.get("snippet") or "")) + " "
-        for name, canon in _SUBS[iso]:
+        for name, canon in _SUBS.get(iso, ()):
             if _has_name(full, name):
                 item["region"] = canon.title()
                 break
+        if not item.get("region"):
+            # Fall back to the map's own admin-1 names, which are the exact keys
+            # the panel lists. Canon is used verbatim: a near-miss on spelling
+            # produces a row that can never match.
+            for name, canon in _load_map_subregions().get(iso, ()):
+                if _has_name(full, name):
+                    item["region"] = canon
+                    break
     return item
 
+
+
+# --- the map's own admin-1 taxonomy ------------------------------------------
+# The hand-written subregion tables cover 16 countries. The map itself carries
+# admin-1 geometry for 46, embedded in index.html as SUBGEO, and the panel lists
+# a row for every one of those regions. A region the harvester cannot name can
+# never be tagged, so every row it does not know about reads 0 forever. Read the
+# panel's own taxonomy instead of duplicating a subset of it by hand.
+_MAP_SUBS_CACHE = None
+
+
+def _load_map_subregions():
+    global _MAP_SUBS_CACHE
+    if _MAP_SUBS_CACHE is not None:
+        return _MAP_SUBS_CACHE
+    out = {}
+    try:
+        src = (ROOT / "index.html").read_text(encoding="utf-8")
+        m = re.search(r"^const SUBGEO = (\{.*\});$", src, re.M)
+        if m:
+            for iso, fc in json.loads(m.group(1)).items():
+                terms = []
+                for f in (fc.get("features") or []):
+                    nm = ((f.get("properties") or {}).get("name") or "").strip()
+                    if len(nm) < 3:
+                        continue
+                    # Match on the region name and on its bare form without the
+                    # administrative suffix, because a headline says "Bavaria",
+                    # not "Freistaat Bayern".
+                    terms.append((slug(nm), nm))
+                    bare = re.sub(r"^(state|province|region|prefecture|department|governorate)\s+of\s+",
+                                  "", nm, flags=re.I)
+                    bare = re.sub(r"\s+(state|province|region|prefecture|oblast|department|governorate|county)$",
+                                  "", bare, flags=re.I)
+                    if bare and bare != nm and len(bare) >= 4:
+                        terms.append((slug(bare), nm))
+                if terms:
+                    out[iso] = sorted(set(terms), key=lambda x: -len(x[0]))
+    except Exception as e:
+        print("  ! could not read SUBGEO from index.html: %s" % e, file=sys.stderr)
+    _MAP_SUBS_CACHE = out
+    return out
+
+
+# --- GDELT ---------------------------------------------------------------------
+# Google News RSS throttles hard when queried a few hundred times in one run,
+# which is why per-region queries came back empty while a handful of large regions
+# succeeded. GDELT is built for programmatic access, indexes non-English media,
+# and needs no key. It is the per-region source; the RSS feeds stay as the global
+# layer.
+_GDELT = "https://api.gdeltproject.org/api/v2/doc/doc"
+_GD_TERMS = ("gmo OR transgenic OR \"genetically modified\" OR \"gene edited\" OR "
+             "biotechnology OR seed OR pesticide OR herbicide")
+_GD_STATS = {"ok": 0, "fail": 0, "items": 0}
+
+
+def gdelt(name, days=90, maxrec=12):
+    """Articles naming one place, or [] on failure. Never raises."""
+    import urllib.parse
+    q = '"%s" (%s)' % (name, _GD_TERMS)
+    url = _GDELT + "?" + urllib.parse.urlencode(
+        {"query": q, "mode": "ArtList", "maxrecords": maxrec,
+         "format": "json", "timespan": "%dd" % days, "sort": "DateDesc"})
+    try:
+        # GDELT rejects some generic agents; a contactable one is what its own
+        # guidance asks for. Verified working in CI, not from a sandbox whose
+        # egress allowlist blocks the host.
+        req = Request(url, headers={"User-Agent":
+                      "GMO-map-wire/1.0 (+https://github.com/WelcomeToYourGalaxy/GMO-map)"})
+        with urlopen(req, timeout=45) as r:
+            arts = (json.loads(r.read().decode("utf-8", "replace")) or {}).get("articles") or []
+        _GD_STATS["ok"] += 1
+        return arts
+    except Exception as e:
+        _GD_STATS["fail"] += 1
+        if _GD_STATS["fail"] <= 4:
+            print("  gdelt %-22s failed: %s" % (name[:22], str(e)[:60]), file=sys.stderr)
+        return []
+
+
+def _gd_date(sd):
+    try:
+        return datetime.strptime(str(sd)[:15], "%Y%m%dT%H%M%S").replace(tzinfo=timezone.utc)
+    except Exception:
+        return datetime.now(timezone.utc)
+
+
+def gdelt_items(place, iso, region=""):
+    out = []
+    for a in gdelt(place):
+        t = (a.get("title") or "").strip()
+        u = (a.get("url") or "").strip()
+        if not t or not u:
+            continue
+        out.append({
+            "name": "GDELT \u00b7 " + place, "title": t[:400], "link": u,
+            "date": _gd_date(a.get("seendate")).isoformat(),
+            "snippet": (a.get("domain") or "")[:500],
+            "iso": iso, "region": region,
+            "lang": (a.get("language") or "").strip().lower()[:2] or "en",
+            "sig": 0,
+        })
+    _GD_STATS["items"] += len(out)
+    return out
 
 # ------------------------------------------------------------------- fetch ----
 def feeds_from_index():
@@ -375,6 +487,19 @@ def selftest():
     print("country name forms %d | subregion tables %d" % (len(_NAMES), len(_SUBS)))
 
 
+
+def _iso_names():
+    """One searchable name per country, taken from the first entry in the table
+    the tagger already uses, so a query and its tag can never disagree."""
+    out = {}
+    for iso, names in COUNTRIES.items():
+        for n in names:
+            if n and n.isascii() and len(n) > 3:
+                out[iso] = n if n[:1].isupper() else n.title()
+                break
+    return out
+
+
 def main():
     if "--selftest" in sys.argv:
         selftest(); return
@@ -385,6 +510,42 @@ def main():
         for got in ex.map(one, feeds):
             items.extend(got)
     print("  fetched %d items" % len(items))
+
+    # --- per-region pass ------------------------------------------------------
+    # The global feeds only tag a region when a headline happens to name it, so
+    # most of the panel's rows stayed at zero no matter how many feeds were added.
+    # Ask for each place by name instead. GDELT is queried rather than Google News
+    # because this is hundreds of requests in one run and RSS throttles.
+    if "--no-regions" not in sys.argv:
+        cap = 400
+        if "--regions" in sys.argv:
+            cap = int(sys.argv[sys.argv.index("--regions") + 1])
+        targets = []
+        names = _iso_names()
+        subs = _load_map_subregions()
+        for iso in sorted(names):
+            targets.append((names[iso], iso, ""))
+        for iso in sorted(subs):
+            for _term, canon in subs[iso]:
+                targets.append((canon, iso, canon))
+        # Dedupe on the place name; a region and a country can share one.
+        seen_t, uniq = set(), []
+        for nm, iso, reg in targets:
+            k = (nm.lower(), iso)
+            if k in seen_t:
+                continue
+            seen_t.add(k); uniq.append((nm, iso, reg))
+        uniq = uniq[:cap]
+        print("  per-region pass: %d places (cap %d)" % (len(uniq), cap))
+        with ThreadPoolExecutor(max_workers=6) as ex:
+            for got in ex.map(lambda t: gdelt_items(*t), uniq):
+                items.extend(got)
+        print("  gdelt: %d ok, %d failed, %d items"
+              % (_GD_STATS["ok"], _GD_STATS["fail"], _GD_STATS["items"]))
+        if _GD_STATS["ok"] == 0 and _GD_STATS["fail"]:
+            print("  WARNING: every GDELT request failed. The region and subregion "
+                  "counts will stay near zero, because the global feeds only tag a "
+                  "region when a headline happens to name it.", file=sys.stderr)
 
     if OUT.exists():
         try:
