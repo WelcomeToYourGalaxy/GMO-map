@@ -13,7 +13,7 @@ data, and the output can be checked before it is committed.
 
 Standard library only.
 """
-import json, re, sys, html, hashlib, pathlib, unicodedata
+import json, re, sys, html, hashlib, pathlib, unicodedata, time
 from datetime import datetime, timezone, timedelta
 from concurrent.futures import ThreadPoolExecutor
 from urllib.request import Request, urlopen
@@ -331,11 +331,26 @@ _GD_TERMS = ("gmo OR transgenic OR \"genetically modified\" OR \"gene edited\" O
              "biotechnology OR seed OR pesticide OR herbicide")
 _GD_STATS = {"ok": 0, "fail": 0, "items": 0}
 
+# Widening tiers for the per-region pass, tried in order until one returns
+# something. A place with no matching story in 90 days is not necessarily a place
+# with nothing to report; it may just be a quiet quarter in a small region.
+# The last tier keeps topic terms rather than dropping them - a bare place-name
+# query returns whatever merely mentions the place, which is how a region filter
+# fills up with irrelevant stories and becomes worse than empty.
+_GD_WIDE = ("gmo OR transgenic OR \"genetically modified\" OR \"gene edited\" OR "
+            "biotechnology OR seed OR pesticide OR herbicide OR agriculture OR "
+            "biosafety OR patent OR crop OR livestock OR fishery OR contamination")
+_REGION_TIERS = (
+    (90,  _GD_TERMS),
+    (365, _GD_TERMS),
+    (365, _GD_WIDE),
+)
 
-def gdelt(name, days=90, maxrec=12):
+
+def gdelt(name, days=90, maxrec=12, terms=None):
     """Articles naming one place, or [] on failure. Never raises."""
     import urllib.parse
-    q = '"%s" (%s)' % (name, _GD_TERMS)
+    q = '"%s" (%s)' % (name, terms or _GD_TERMS)
     url = _GDELT + "?" + urllib.parse.urlencode(
         {"query": q, "mode": "ArtList", "maxrecords": maxrec,
          "format": "json", "timespan": "%dd" % days, "sort": "DateDesc"})
@@ -356,6 +371,46 @@ def gdelt(name, days=90, maxrec=12):
         return []
 
 
+
+# GDELT reports a language NAME ("Spanish"), not a code. Truncating it to two
+# characters produced 'sp', 'ch', 'po', 'ge' alongside the proper es/zh/pt/de
+# from the RSS feeds, so the dropdown listed several languages twice under
+# codes that are not ISO codes at all - and 'po' collided Portuguese with
+# Polish. Map the names.
+_GD_LANG = {
+ "english": "en", "spanish": "es", "portuguese": "pt", "french": "fr",
+ "german": "de", "italian": "it", "dutch": "nl", "russian": "ru",
+ "ukrainian": "uk", "polish": "pl", "czech": "cs", "slovak": "sk",
+ "romanian": "ro", "hungarian": "hu", "greek": "el", "bulgarian": "bg",
+ "serbian": "sr", "croatian": "hr", "slovenian": "sl", "swedish": "sv",
+ "norwegian": "no", "danish": "da", "finnish": "fi", "estonian": "et",
+ "latvian": "lv", "lithuanian": "lt", "turkish": "tr", "arabic": "ar",
+ "hebrew": "he", "persian": "fa", "chinese": "zh", "japanese": "ja",
+ "korean": "ko", "vietnamese": "vi", "thai": "th", "indonesian": "id",
+ "malay": "ms", "hindi": "hi", "bengali": "bn", "urdu": "ur", "tamil": "ta",
+ "telugu": "te", "marathi": "mr", "gujarati": "gu", "punjabi": "pa",
+ "swahili": "sw", "amharic": "am", "afrikaans": "af", "catalan": "ca",
+ "galician": "gl", "basque": "eu", "albanian": "sq", "macedonian": "mk",
+ "georgian": "ka", "armenian": "hy", "azerbaijani": "az", "kazakh": "kk",
+ "uzbek": "uz", "mongolian": "mn", "nepali": "ne", "sinhala": "si",
+ "burmese": "my", "khmer": "km", "lao": "lo", "filipino": "tl",
+ "tagalog": "tl", "icelandic": "is", "irish": "ga", "welsh": "cy",
+ "maltese": "mt", "belarusian": "be", "bosnian": "bs",
+}
+
+
+def _gd_lang(v):
+    v = str(v or "").strip().lower()
+    if not v:
+        return "en"
+    if v in _GD_LANG:
+        return _GD_LANG[v]
+    # already a code
+    if len(v) == 2 and v.isalpha():
+        return v
+    return v[:2]
+
+
 def _gd_date(sd):
     try:
         return datetime.strptime(str(sd)[:15], "%Y%m%dT%H%M%S").replace(tzinfo=timezone.utc)
@@ -363,9 +418,9 @@ def _gd_date(sd):
         return datetime.now(timezone.utc)
 
 
-def gdelt_items(place, iso, region=""):
+def gdelt_items(place, iso, region="", days=90, terms=None):
     out = []
-    for a in gdelt(place):
+    for a in gdelt(place, days=days, terms=terms):
         t = (a.get("title") or "").strip()
         u = (a.get("url") or "").strip()
         if not t or not u:
@@ -375,7 +430,7 @@ def gdelt_items(place, iso, region=""):
             "date": _gd_date(a.get("seendate")).isoformat(),
             "snippet": (a.get("domain") or "")[:500],
             "iso": iso, "region": region,
-            "lang": (a.get("language") or "").strip().lower()[:2] or "en",
+            "lang": _gd_lang(a.get("language")),
             "sig": 0,
         })
     _GD_STATS["items"] += len(out)
@@ -513,35 +568,76 @@ def main():
 
     # --- per-region pass ------------------------------------------------------
     # The global feeds only tag a region when a headline happens to name it, so
-    # most of the panel's rows stayed at zero no matter how many feeds were added.
-    # Ask for each place by name instead. GDELT is queried rather than Google News
-    # because this is hundreds of requests in one run and RSS throttles.
+    # the panel's rows stayed at zero no matter how many feeds were added. Ask
+    # for each place by name instead, against GDELT rather than Google News,
+    # because this is hundreds of requests per run and RSS throttles.
+    #
+    # Three things decide whether a row ever fills:
+    #
+    #   ORDER.    Subregions go first. Countries already pick up coverage from
+    #             the global feeds; subregions almost never do, and they are the
+    #             ~1,060 rows that read zero.
+    #   ROTATION. The cap used to slice the same alphabetically-early places
+    #             every run, so everything past roughly "D" was never queried at
+    #             all. The window now advances each run, so a full sweep
+    #             completes in a few runs and wire.json's 120-day archive
+    #             accumulates the results.
+    #   WIDENING. A place with no matching story in 90 days returns nothing. If
+    #             a tier comes back empty the next one widens the window and then
+    #             the topic terms, rather than writing the row off.
     if "--no-regions" not in sys.argv:
         cap = 400
         if "--regions" in sys.argv:
             cap = int(sys.argv[sys.argv.index("--regions") + 1])
-        targets = []
+
         names = _iso_names()
         subs = _load_map_subregions()
-        for iso in sorted(names):
-            targets.append((names[iso], iso, ""))
-        for iso in sorted(subs):
-            for _term, canon in subs[iso]:
-                targets.append((canon, iso, canon))
-        # Dedupe on the place name; a region and a country can share one.
-        seen_t, uniq = set(), []
-        for nm, iso, reg in targets:
+        targets, seen_t = [], set()
+
+        def _add(nm, iso, reg):
             k = (nm.lower(), iso)
-            if k in seen_t:
-                continue
-            seen_t.add(k); uniq.append((nm, iso, reg))
-        uniq = uniq[:cap]
-        print("  per-region pass: %d places (cap %d)" % (len(uniq), cap))
+            if k not in seen_t:
+                seen_t.add(k); targets.append((nm, iso, reg))
+
+        for iso in sorted(subs):                      # subregions first
+            for _term, canon in subs[iso]:
+                _add(canon, iso, canon)
+        for iso in sorted(names):                     # then countries
+            _add(names[iso], iso, "")
+
+        total = len(targets)
+        # Advance the window every six hours, which is the wire's cron interval.
+        # Stateless and deterministic, so two runs in the same slot agree and
+        # consecutive runs do not repeat.
+        slot = int(time.time() // (6 * 3600))
+        start = (slot * cap) % total if total else 0
+        batch = [targets[(start + i) % total] for i in range(min(cap, total))]
+        print("  per-region pass: %d of %d places this run (window starts at %d)"
+              % (len(batch), total, start))
+
+        # Three tiers across 400 places is up to 1,200 requests, so the run
+        # carries a budget. Tier 1 is always tried for every place; the widening
+        # tiers draw on what is left. Without this a quiet week - when almost
+        # everything escalates - would triple the request count and the runtime.
+        budget = [int(cap * 2.2)]
+
+        def _one_place(t):
+            nm, iso, reg = t
+            for i, (days, terms) in enumerate(_REGION_TIERS):
+                if i and budget[0] <= 0:
+                    break
+                if i:
+                    budget[0] -= 1
+                got = gdelt_items(nm, iso, reg, days=days, terms=terms)
+                if got:
+                    return got
+            return []
+
         with ThreadPoolExecutor(max_workers=6) as ex:
-            for got in ex.map(lambda t: gdelt_items(*t), uniq):
+            for got in ex.map(_one_place, batch):
                 items.extend(got)
-        print("  gdelt: %d ok, %d failed, %d items"
-              % (_GD_STATS["ok"], _GD_STATS["fail"], _GD_STATS["items"]))
+        print("  gdelt: %d ok, %d failed, %d items | widening budget left %d"
+              % (_GD_STATS["ok"], _GD_STATS["fail"], _GD_STATS["items"], max(0, budget[0])))
         if _GD_STATS["ok"] == 0 and _GD_STATS["fail"]:
             print("  WARNING: every GDELT request failed. The region and subregion "
                   "counts will stay near zero, because the global feeds only tag a "
