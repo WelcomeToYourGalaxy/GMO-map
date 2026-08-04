@@ -375,7 +375,7 @@ PLACES = {
  "Center for Food Safety \u2014 animal biotechnology litigation": (38.9072, -77.0369, "Washington DC"),
  "Genus \u2014 PRRS pig commercialisation record": (52.4862, -1.8904, "Basingstoke"),
  "AquaChile / Agrosuper": (-41.4693, -72.9424, "Puerto Montt"),
- "Norwegian Institute of Marine Research \u2014 escape monitoring": (60.3913, 5.3221, "Bergen"),
+ "Norwegian Institute of Marine Research \u2014 spread monitoring": (60.3913, 5.3221, "Bergen"),
  "Novartis \u2014 Zolgensma outcomes-based agreements": (47.5596, 7.5886, "Basel"),
  "Cure Rare Disease and the 2022 trial death": (39.0349, -76.9822, "Silver Spring"),
  "Alliance for Regenerative Medicine \u2014 sector data": (38.9072, -77.0369, "Washington DC"),
@@ -485,6 +485,24 @@ PLACES = {
  "Swiss GMO moratorium \u2014 Federal Office for the Environment": (46.9480, 7.4474, "Bern"),
  "Global 2000 / Friends of the Earth Austria": (48.2082, 16.3738, "Vienna"),
  "Wageningen University & Research": (51.9692, 5.6654, "Wageningen"),
+ # --- round 83 ---
+ "Anastasia / RNAi biopesticide sector": (38.8944, -77.0227, "Washington DC"),
+ "Verily / Debug \u2014 automated rearing systems": (37.4419, -122.1430, "South San Francisco"),
+ "GBIRd \u2014 Genetic Biocontrol of Invasive Rodents": (35.9940, -78.8986, "Raleigh"),
+ "Ceres Nanosciences / environmental RNA monitoring": (38.8816, -77.1109, "Manassas"),
+ "Wisconsin Cryobank / amphibian biobanking": (43.0731, -89.4012, "Madison"),
+ "Rewilding and genetic rescue \u2014 Florida panther precedent": (26.1224, -81.3009, "Naples, Florida"),
+ "Royal Botanic Gardens Kew \u2014 Millennium Seed Bank": (51.1000, -0.0900, "Wakehurst"),
+ "Medpace": (39.1031, -84.5120, "Cincinnati"),
+ "Emulate / organ-on-chip": (42.3601, -71.0589, "Boston"),
+ "Certara / in-silico trial simulation": (40.2206, -74.7597, "Princeton"),
+ "Lonza \u2014 capacity allocation and Moderna": (46.2044, 7.8722, "Visp"),
+ "Select Sires / bovine genetics cooperatives": (40.2338, -83.3491, "Plain City, Ohio"),
+ "Sexing Technologies / STgenetics": (30.6280, -96.3344, "Navasota, Texas"),
+ "VikingGenetics": (56.1629, 10.2039, "Randers"),
+ "Legal & General / institutional stewardship": (51.5194, -0.1270, "London"),
+ "Testbiotech": (48.1351, 11.5820, "Munich"),
+ "Corporate Europe Observatory": (50.8467, 4.3525, "Brussels"),
 }
 
 

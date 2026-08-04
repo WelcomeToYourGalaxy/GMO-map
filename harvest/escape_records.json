@@ -1,9 +1,9 @@
 {
- "note": "Documented escapes, unauthorised releases and contamination incidents, past and present, as map points. This is a hand-compiled record: the GM Contamination Register logged 396 incidents across 63 countries between 1997 and 2013 and then stopped, and nothing has replaced it, so there is no feed to harvest. Twenty-five incidents. Each entry below is an incident that was found and reported. Coordinates are the place the material was found, at region or district level, so every record is precise:false. Dates are the year the incident became public, which is usually later than the year it happened.",
+ "note": "Documented spread, unauthorised releases and contamination incidents, past and present, as map points. This is a hand-compiled record: the GM Contamination Register logged 396 incidents across 63 countries between 1997 and 2013 and then stopped, and nothing has replaced it, so there is no feed to harvest. Twenty-five incidents. Each entry below is an incident that was found and reported. Coordinates are the place the material was found, at region or district level, so every record is precise:false. Dates are the year the incident became public, which is usually later than the year it happened.",
  "generated": "2026-07-31",
  "projects": [
   {
-   "name": "Glyphosate-resistant creeping bentgrass — escape into wild Agrostis",
+   "name": "Glyphosate-resistant creeping bentgrass — spread into wild Agrostis",
    "source": "escape:crop",
    "type": "Grass, transgene escape into wild relatives",
    "lat": 44.6,
@@ -12,12 +12,12 @@
    "precise": false,
    "impact": 5,
    "company": "Scotts / Monsanto",
-   "status": "Escaped, eradication abandoned",
+   "status": "Spread; eradication abandoned",
    "phase": "post",
    "date": "2004-01-01",
    "size": "Established in wild populations across multiple counties",
    "url": "https://www.epa.gov/",
-   "desc": "WHAT. Creeping bentgrass engineered to survive glyphosate, grown in trials for the golf-course market, moved out of its test plots into resident populations of wild Agrostis species. WHERE IT SITS. The strongest documented case of transgene escape into wild plant communities anywhere — from a crop that was never commercialised. WHY IT MATTERS. The source fields were taken out of production and a mitigation programme was run. Three years later surveyors pulled 585 plants and 62 in every hundred were still resistant; the published conclusion was that eradication was not realistic. The grass is outcrossing, wind-pollinated and perennial, a risk profile most assessment work had not been done on."
+   "desc": "WHAT. Creeping bentgrass engineered to survive glyphosate, grown in trials for the golf-course market, moved out of its test plots into resident populations of wild Agrostis species. WHERE IT SITS. The strongest documented case of transgene spread into wild plant communities anywhere — from a crop that was never commercialised. WHY IT MATTERS. The source fields were taken out of production and a mitigation programme was run. Three years later surveyors pulled 585 plants and 62 in every hundred were still resistant; the published conclusion was that eradication was not realistic. The grass is outcrossing, wind-pollinated and perennial, a risk profile most assessment work had not been done on."
   },
   {
    "name": "GloFish — fluorescent transgenic fish established in Brazilian streams",
@@ -34,7 +34,7 @@
    "date": "2022-01-01",
    "size": "Multiple streams in the Atlantic Forest region",
    "url": "https://www.glofish.com/",
-   "desc": "WHAT. Fluorescent transgenic zebrafish, sold as aquarium pets since 2003, escaped from ornamental fish farms and established breeding populations in Atlantic Forest streams. WHERE IT SITS. The pet trade as a release pathway — no biosafety application, no assessment, no monitoring. WHY IT MATTERS. This is the quietest large-scale release of engineered animals that has happened. Millions have been sold as decoration for two decades, and the escape route was a fish farm rather than a laboratory. The organisms are now reproducing in a biodiversity hotspot, and no regulator anywhere treated the ornamental trade as a release pathway before it happened."
+   "desc": "WHAT. Fluorescent transgenic zebrafish, sold as aquarium pets since 2003, spread from ornamental fish farms and established breeding populations in Atlantic Forest streams. WHERE IT SITS. The pet trade as a release pathway — no biosafety application, no assessment, no monitoring. WHY IT MATTERS. This is the quietest large-scale release of engineered animals that has happened. Millions have been sold as decoration for two decades, and the spread route was a fish farm rather than a laboratory. The organisms are now reproducing in a biodiversity hotspot, and no regulator anywhere treated the ornamental trade as a release pathway before it happened."
   },
   {
    "name": "StarLink maize — unapproved variety in the human food supply",
@@ -119,7 +119,7 @@
    "date": "2010-01-01",
    "size": "Roadside populations across the state",
    "url": "https://www.aphis.usda.gov/biotechnology",
-   "desc": "WHAT. Surveys along North Dakota roadsides found feral canola carrying herbicide-tolerance traits, including plants with traits from two separate commercial events stacked together. WHERE IT SITS. Outside any field, outside any permit, reproducing on its own. WHY IT MATTERS. The stacked plants had not been bred by anyone. Feral populations were crossing with each other in the ditches, which means the escaped material was not merely persisting but recombining. Comparable feral populations have been documented along transport routes in Japan around ports that import canola but do not grow it."
+   "desc": "WHAT. Surveys along North Dakota roadsides found feral canola carrying herbicide-tolerance traits, including plants with traits from two separate commercial events stacked together. WHERE IT SITS. Outside any field, outside any permit, reproducing on its own. WHY IT MATTERS. The stacked plants had not been bred by anyone. Feral populations were crossing with each other in the ditches, which means the material that spread was not merely persisting but recombining. Comparable feral populations have been documented along transport routes in Japan around ports that import canola but do not grow it."
   },
   {
    "name": "Jacobina — engineered mosquito genome entering the wild population",
@@ -187,7 +187,7 @@
    "date": "2005-01-01",
    "size": "Detected in exports to Europe over many years",
    "url": "http://www.moa.gov.cn/",
-   "desc": "WHAT. An insect-resistant rice line approved only for research was found being grown commercially and turning up in rice products exported to Europe, with detections recurring over more than a decade. WHERE IT SITS. The world's largest rice producer, and a crop eaten directly rather than processed. WHY IT MATTERS. The line escaped from research plots into commercial cultivation through informal seed exchange, which is how most seed moves in most of the world. Detections continued long after the authorities acted, and Europe imposed testing requirements on Chinese rice imports that lasted years."
+   "desc": "WHAT. An insect-resistant rice line approved only for research was found being grown commercially and turning up in rice products exported to Europe, with detections recurring over more than a decade. WHERE IT SITS. The world's largest rice producer, and a crop eaten directly rather than processed. WHY IT MATTERS. The line spread from research plots into commercial cultivation through informal seed exchange, which is how most seed moves in most of the world. Detections continued long after the authorities acted, and Europe imposed testing requirements on Chinese rice imports that lasted years."
   },
   {
    "name": "GM petunias — engineered ornamentals found in worldwide commerce",
@@ -238,10 +238,10 @@
    "date": "2004-01-01",
    "size": "Orchards across multiple provinces",
    "url": "https://www.doa.go.th/",
-   "desc": "WHAT. Virus-resistant papaya from a government research station was found growing in commercial orchards in a country that prohibited open cultivation of GM crops. WHERE IT SITS. Escape from a public research programme rather than a company trial. WHY IT MATTERS. Seed was distributed from the station to farmers, apparently informally, and spread from there. It is a reminder that the containment question is not only about corporate applicants: a public institution with a research permit is subject to the same failure modes, and in this case the state was both the source of the escape and the authority investigating it."
+   "desc": "WHAT. Virus-resistant papaya from a government research station was found growing in commercial orchards in a country that prohibited open cultivation of GM crops. WHERE IT SITS. Drift from a public research programme rather than a company trial. WHY IT MATTERS. Seed was distributed from the station to farmers, apparently informally, and spread from there. It is a reminder that the containment question is not only about corporate applicants: a public institution with a research permit is subject to the same failure modes, and in this case the state was both the source of the spread and the authority investigating it."
   },
   {
-   "name": "Herbicide-tolerant bentgrass — second escape via seed movement",
+   "name": "Herbicide-tolerant bentgrass — second spread via seed movement",
    "source": "escape:crop",
    "type": "Grass, secondary spread beyond control area",
    "lat": 43.6,
@@ -255,7 +255,7 @@
    "date": "2010-01-01",
    "size": "Irrigation canals and adjacent land in two states",
    "url": "https://www.aphis.usda.gov/biotechnology",
-   "desc": "WHAT. Resistant creeping bentgrass spread beyond the state-designated control area, moving along irrigation canals into neighbouring counties and across a state line. WHERE IT SITS. The same escape as the Jefferson County case, years later and further out. WHY IT MATTERS. Water moved it. Containment plans written around pollen distance and buffer zones did not account for a stoloniferous perennial travelling along irrigation infrastructure, and by the time it was found the affected area was no longer the one being managed. The regulator eventually deregulated the crop rather than continuing to pursue eradication."
+   "desc": "WHAT. Resistant creeping bentgrass spread beyond the state-designated control area, moving along irrigation canals into neighbouring counties and across a state line. WHERE IT SITS. The same spread as the Jefferson County case, years later and further out. WHY IT MATTERS. Water moved it. Containment plans written around pollen distance and buffer zones did not account for a stoloniferous perennial travelling along irrigation infrastructure, and by the time it was found the affected area was no longer the one being managed. The regulator eventually deregulated the crop rather than continuing to pursue eradication."
   },
   {
    "name": "Bt cotton found growing before any approval existed",
@@ -289,7 +289,7 @@
    "date": "2005-01-01",
    "size": "Roadsides between ports and crushing plants",
    "url": "https://www.biodic.go.jp/bch/english/e_index.html",
-   "desc": "WHAT. Herbicide-tolerant oilseed rape has established feral populations along the roads between Japanese ports and the plants that crush imported seed, in a country that does not grow the crop commercially. WHERE IT SITS. Escape through transport rather than through cultivation. WHY IT MATTERS. Japan imports engineered canola and grows none, so every one of these plants arrived by falling off a truck. Biosafety assessment concerns itself with what happens in and around a field; it has almost nothing to say about spillage along a haulage route, which is how these populations began and how they continue."
+   "desc": "WHAT. Herbicide-tolerant oilseed rape has established feral populations along the roads between Japanese ports and the plants that crush imported seed, in a country that does not grow the crop commercially. WHERE IT SITS. Drift through transport rather than through cultivation. WHY IT MATTERS. Japan imports engineered canola and grows none, so every one of these plants arrived by falling off a truck. Biosafety assessment concerns itself with what happens in and around a field; it has almost nothing to say about spillage along a haulage route, which is how these populations began and how they continue."
   },
   {
    "name": "Engineered petunias — second wave found after the first recall",
@@ -357,12 +357,12 @@
    "date": "2017-01-01",
    "size": "Assessed across ~200 wild populations",
    "url": "https://www.hi.no/en",
-   "desc": "WHAT. Long-term genetic monitoring has found farmed salmon ancestry in a large majority of assessed wild Norwegian salmon populations, in many of them at levels classed as substantial. WHERE IT SITS. The only systematic river-by-river record of genetic introgression from farmed animals into wild ones anywhere in the world. WHY IT MATTERS. Nothing here was genetically engineered. The genetics are the product of intensive selection for farm conditions, and they entered wild populations through routine escapes over decades. It is the clearest measured example of the process this map argues about for crops, and it exists only because one country chose to fund the monitoring."
+   "desc": "WHAT. Long-term genetic monitoring has found farmed salmon ancestry in a large majority of assessed wild Norwegian salmon populations, in many of them at levels classed as substantial. WHERE IT SITS. The only systematic river-by-river record of genetic introgression from farmed animals into wild ones anywhere in the world. WHY IT MATTERS. Nothing here was genetically engineered. The genetics are the product of intensive selection for farm conditions, and they entered wild populations through routine spread out of pens over decades. It is the clearest measured example of the process this map argues about for crops, and it exists only because one country chose to fund the monitoring."
   },
   {
-   "name": "Atlantic salmon established in Patagonian rivers after farm escapes",
+   "name": "Atlantic salmon established in Patagonian rivers after farm spread",
    "source": "escape:animal",
-   "type": "Salmon, introduced species established after escape",
+   "type": "Salmon, introduced species established after spread",
    "lat": -41.47,
    "lng": -72.94,
    "state": "Los Lagos and Aysén, Chile",
@@ -372,9 +372,9 @@
    "status": "Naturalised",
    "phase": "post",
    "date": "2018-01-01",
-   "size": "Multiple river systems; single escapes of hundreds of thousands of fish",
+   "size": "Multiple river systems; single spread of hundreds of thousands of fish",
    "url": "https://www.sernapesca.cl/",
-   "desc": "WHAT. Atlantic salmon, not native to the southern hemisphere, have escaped from Chilean farms in very large numbers — individual incidents have released hundreds of thousands of fish — and now occur in Patagonian rivers. WHERE IT SITS. The world's second-largest salmon farming industry, in a country with no native salmon at all. WHY IT MATTERS. An introduced predatory fish established itself through escape from containment nobody was required to design for permanence. No biosafety framework was engaged at any point, because nothing was engineered — which is why the containment argument on this map cannot be confined to organisms a statute happens to define."
+   "desc": "WHAT. Atlantic salmon, not native to the southern hemisphere, have spread out of Chilean farms in very large numbers — individual incidents have released hundreds of thousands of fish — and now occur in Patagonian rivers. WHERE IT SITS. The world's second-largest salmon farming industry, in a country with no native salmon at all. WHY IT MATTERS. An introduced predatory fish established itself through spread out of pens nobody was required to design for permanence. No biosafety framework was engaged at any point, because nothing was engineered — which is why the containment argument on this map cannot be confined to organisms a statute happens to define."
   },
   {
    "name": "Engineered petunias in a third wave, years after two recalls",
