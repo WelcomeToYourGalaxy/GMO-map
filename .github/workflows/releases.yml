@@ -18,6 +18,10 @@ concurrency:
 jobs:
   harvest:
     runs-on: ubuntu-latest
+    # A ceiling on the whole job. Five harvesters were added without one and the
+    # run went past two hours: nothing here is worth an unbounded wait, and a
+    # job that never finishes also never commits what the earlier steps did get.
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -38,16 +42,16 @@ jobs:
           # timeout did, and APHIS never ran at all. A source being unreachable
           # is a normal condition, not a build failure.
           for i in 1 2 3; do
-            python3 harvest/cfia_approvals.py       || echo "!! cfia harvester failed - continuing"
-            python3 harvest/build_industry_points.py || echo "!! industry points failed - continuing"
-            python3 harvest/contamination_register.py || echo "!! contamination register failed - continuing"
-            python3 harvest/animal_facilities.py    || echo "!! animal facilities failed - continuing"
-            python3 harvest/ogtr_trials.py          || echo "!! ogtr trials failed - continuing"
-            python3 harvest/gmofree_zones.py        || echo "!! gmo-free zones failed - continuing"
-            python3 harvest/fas_biotech.py          || echo "!! fas biotech failed - continuing"
-            python3 harvest/clinical_sponsors.py    || echo "!! clinical sponsors failed - continuing"
-            python3 harvest/aphis_releases.py       || echo "!! aphis harvester failed - continuing"
-            python3 harvest/build_overlays.py       || echo "!! overlay builder failed - continuing"
+            timeout 5m python3 harvest/cfia_approvals.py || echo "!! cfia harvester failed - continuing"
+            timeout 2m python3 harvest/build_industry_points.py || echo "!! industry points failed - continuing"
+            timeout 4m python3 harvest/contamination_register.py || echo "!! contamination register failed - continuing"
+            timeout 5m python3 harvest/animal_facilities.py || echo "!! animal facilities failed - continuing"
+            timeout 4m python3 harvest/ogtr_trials.py || echo "!! ogtr trials failed - continuing"
+            timeout 6m python3 harvest/gmofree_zones.py || echo "!! gmo-free zones failed - continuing"
+            timeout 6m python3 harvest/fas_biotech.py || echo "!! fas biotech failed - continuing"
+            timeout 8m python3 harvest/clinical_sponsors.py || echo "!! clinical sponsors failed - continuing"
+            timeout 8m python3 harvest/aphis_releases.py || echo "!! aphis harvester failed - continuing"
+            timeout 2m python3 harvest/build_overlays.py || echo "!! overlay builder failed - continuing"
             # --ignore-errors so a file a failed harvester never wrote does not
             # abort the step under bash -e on the first run.
             git add --ignore-errors projects.json harvest/cfia_records.json \

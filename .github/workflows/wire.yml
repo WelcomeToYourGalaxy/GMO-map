@@ -10,8 +10,17 @@ permissions:
 
 # Both workflows commit to main. Sharing one concurrency group makes them queue
 # instead of racing, which removes most conflicts before they happen.
+# Own group. These two used to share `commit-main` so they would queue rather
+# than race, but GitHub only lets ONE run wait per group - a newer queued run
+# cancels the waiting one. That meant a scheduled wire run could be dropped
+# entirely whenever the releases job queued behind it.
+#
+# The push race the shared group was guarding against is already handled better
+# below: on a rejected push the job resets to origin/main and re-harvests. That
+# is robust to collisions, so serialising the two jobs bought nothing and cost
+# scheduled runs.
 concurrency:
-  group: commit-main
+  group: wire
   cancel-in-progress: false
 
 jobs:
