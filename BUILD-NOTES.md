@@ -1858,3 +1858,2796 @@ involved at all; Agragene as a warning about reading concentration off a permit
 count; Cooper Surgical, where one faulty media batch reaches embryos in hundreds
 of clinics at once; bluebird bio withdrawing an approved cure from a continent
 over price.
+
+---
+
+## Round 41 — the retry was retrying the wrong thing
+
+The push race fix from round 27 worked as designed and still failed:
+
+    push rejected (attempt 1) - rebasing onto origin/main
+    CONFLICT (content): Merge conflict in wire.json
+    error: could not apply d58c6e4... wire: refresh
+
+**Rebasing a wholesale-generated file can only ever conflict.** `wire.json` is
+rewritten end to end on every run, so when two runs finish close together git has
+two complete rewrites of the same file and no basis for merging them. The retry
+loop was correct about *when* to act and wrong about *what to do*.
+
+Both workflows now do this instead: on a rejected push, `fetch` and
+`reset --hard origin/main`, then **re-run the harvester against the remote's
+version** and commit fresh. Nothing is lost, because the harvesters already
+merge with whatever is on disk — the wire keeps a 120-day archive and dedupes on
+link, and the release harvester merges the curated file in front. Three attempts.
+
+**And a `concurrency: group: commit-main` on both**, so they queue behind each
+other instead of racing. That removes most conflicts before they can happen; the
+reset-and-re-harvest loop is the backstop for the rest.
+
+The releases workflow now also runs `build_overlays.py` and commits
+`overlays/trials.geojson`, so the trial-density layer refreshes with the data it
+is built from rather than going stale the moment the release layer updates.
+
+### Unrelated warning in the same log
+
+    Node.js 20 is deprecated ... actions/checkout@v4, actions/setup-python@v5
+    are being forced to run on Node.js 24
+
+Informational. Both actions still work; the runner is substituting a newer Node.
+Worth bumping the action versions eventually, but nothing is broken and I have
+not verified which major versions are current, so I have not guessed at them.
+
+---
+
+## Round 42
+
+**Release dots lightened.** The scale ramp sat at 15–19% lightness, which is
+close to invisible against a dark basemap. Same hue progression — cool for the
+smallest work through to warm for the largest — at 57–62% lightness:
+
+    5 largest  #e0724a      4  #c07aa8      3  #d4c15e
+    2          #8fc46a      1 smallest  #5cc6bd
+
+**Industry entries: 71 → 90**, 13 → 20 countries. New: India, Argentina, Israel,
+Singapore, Denmark, plus deeper China, Japan, Brazil, Germany, Australia, Canada.
+
+The ones carrying an argument:
+
+- **Sanatech Seed (Japan)** — the GABA tomato, the first gene-edited food sold at
+  retail through a *notification* route rather than an approval, including free
+  seedlings to home gardeners. A carve-out's working demonstration: a product in
+  domestic gardens with no risk assessment on file anywhere.
+- **Regional Fish Institute (Japan)** — gene-edited sea bream and puffer sold as
+  food, through the same route. AquAdvantage salmon took two decades to approve
+  in the United States; these reached plates without that fight, because the
+  technique used placed them outside the scheme. Same category of product,
+  opposite outcome, decided by how the change was made rather than what it does.
+- **Novonesis (Denmark)** — enzymes from engineered microbes used in the
+  production of a very large share of processed food. Processing aids are
+  generally unlabelled because the enzyme does not remain in the product, so the
+  largest everyday contact between the public and engineered organisms happens
+  invisibly by regulatory design, and almost nobody in the GM debate argues about
+  it.
+- **Mahyco (India)** — the Bt cotton licence and the royalty dispute that
+  followed it through price controls, litigation and legislation. The clearest
+  case anywhere of a trait fee meeting a smallholder economy.
+- **Syngenta Group China** — industrial policy, regulatory approval and
+  commercial gain inside one state structure. A different arrangement from
+  anywhere else on this map, rarely examined in those terms.
+- **Bioceres (Argentina)** — HB4 wheat, approved first in an exporting country
+  and then in the countries that buy from it. How one national approval becomes a
+  fact importers must accommodate.
+- **Singapore Food Agency** — first to approve cultivated meat, because an
+  import-dependent state has no domestic farm lobby to satisfy.
+
+**20 countries · 90 entries · 0 validation problems.**
+
+    seed 38  editing 31  rules 26  money 18  synthesis 18  clinical 16
+    cro 15   animals 13  livestock 12  repro 9  wild 8  deextinct 4
+
+---
+
+## Round 43 — the thin facets
+
+**21 countries · 108 entries · 0 validation problems.** Eighteen added, weighted
+entirely to the four weakest facets: **deextinct 4 → 12, wild 8 → 16, repro
+9 → 18, livestock 12 → 19.** No facet is now below 12.
+
+    seed 41  editing 33  rules 28  money 24  livestock 19  synthesis 18
+    repro 18  clinical 17  wild 16  cro 15  animals 13  deextinct 12
+
+Four entries do work the map could not do before:
+
+**San Diego Zoo's Frozen Zoo.** The largest wildlife cell bank in the world,
+sampled since the 1970s for research, and now the material basis for every
+cloning and genetic-rescue project involving a vertebrate. An institutional
+archive that quietly became a supply chain for a commercial field that did not
+exist when the sampling started, with no framework governing who may use it for
+what.
+
+**GloFish.** The first engineered animal sold to the public anywhere, in pet
+shops since 2003, and still the most numerous by units. Millions of engineered
+vertebrates have sat in domestic aquariums for two decades, bought as decoration,
+with escapes into Brazilian streams documented. The quietest large-scale release
+of engineered animals that has ever happened, and it happened through pet shops.
+
+**Novonesis was last round's version of this; the World Mosquito Program is this
+round's hardest case.** Wolbachia mosquitoes released at city scale across more
+than a dozen countries, with randomised-trial evidence of reduced dengue. It is
+the strongest counter-case to any blanket position against open release, and the
+entry says so — while keeping the governance question about a modification
+designed to persist indefinitely, which stays open regardless of the outcome. A
+map that cannot accommodate this is not describing the field accurately.
+
+**The American Chestnut Foundation.** Engineering proposed for deliberate,
+permanent release into wild forest by a conservation charity, with no recall
+mechanism by design — and then withdrawn when the line's problems emerged and the
+sponsoring organisation reversed its own position. That is what independent
+scrutiny working looks like, and it is rarer than either side of this argument
+usually admits.
+
+Two structural observations that came out of writing this batch, now in the
+entries themselves: reproductive technology was normalised on cattle at volumes
+dwarfing the human sector long before the human debate started (Trans Ova), and
+agricultural biologicals are following the seed sector's consolidation curve a
+generation later, visibly enough to name now rather than after it completes.
+
+---
+
+## Round 44 — industry entities become map points
+
+**Organisations are no longer resource-list entries. They are markers.** Click
+one and its own description opens: what it is, where it sits in the chain, why it
+matters. There is no per-country resources box — `trackerdata.json` ships as
+`{}`, so nothing opens on a country click.
+
+`harvest/build_industry_points.py` converts all 108 entries to points. Every
+coordinate is the organisation's headquarters or principal site at **city
+level**, and every record is `precise:false`, because a corporate headquarters is
+not where the work happens and the dashed ring means exactly that. Coordinates
+live in one `PLACES` table so a wrong pin is a one-line fix.
+
+**Escapes are now on the map — past as well as present.** Fifteen documented
+incidents in `harvest/escape_records.json`, hand-compiled, because the GM
+Contamination Register logged 396 incidents across 63 countries between 1997 and
+2013 and then stopped, and nothing replaced it. There is no feed to harvest.
+
+The record includes the ones this map has been describing in prose without
+placing: **GloFish established in Atlantic Forest streams in Minas Gerais** — the
+pet trade as a release pathway, no application, no assessment, no monitoring;
+Oregon creeping bentgrass, where 62 of 585 plants tested were still resistant
+three years into mitigation; transgenes in Oaxacan maize landraces; the Jacobina
+mosquito introgression; StarLink; LLRICE 601; Triffid flax found in exports eight
+years after deregistration; Bt10, where a company could not tell its own lines
+apart for four years; feral canola in North Dakota carrying stacked traits nobody
+bred; GM petunias sold worldwide for years and found by accident; Roundup Ready
+wheat volunteering in Oregon with the cause never established.
+
+Each entry says the same three things as every other point, and each carries the
+same caveat: it was found and reported, which is a different thing from every
+incident that happened.
+
+**27 source families now**, twelve industry facets plus escapes plus the release
+registers, so the key box's source filter separates all three kinds of point.
+
+**128 points total**: 108 industry, 15 escapes, 5 curated releases. All 128 map
+to a valid source family and a valid organism type; zero unmapped.
+
+    industry_seed 15   industry_editing 15   escape 15   industry_livestock 11
+    industry_repro 11  industry_synthesis 9  industry_wild 9  industry_rules 8
+    industry_deextinct 7  industry_animals 6  industry_clinical 6
+    industry_money 6   ogtr 5   industry_cro 5
+
+### A near miss
+
+Appending the new families to `PJ_SRC` dropped the closing brace on the last
+original entry, and the emitted line then had a duplicated terminator. Caught by
+the build failing rather than by producing something subtly wrong. Separately, a
+line-numbered edit aimed at the trackerdata loader would have overwritten
+`LENSLABEL`; reading the target line first caught it, as it has every time.
+
+---
+
+## Round 45 — a plain-language introduction on the wire
+
+The wire panel now opens with an introduction to the subject before it describes
+the map. Written for someone who knows nothing about this, at the reading level
+of a curious child, and carried by figures rather than adjectives.
+
+The sequence: what an engineered seed is · plants do not stay put · three escape
+cases with numbers (Oregon 62 of 100 plants three years into a cleanup, North
+Dakota over 75% of roadside canola with some carrying two traits nobody bred,
+Mexican wild cotton going from 0% to 60% in ten years) · what changed in those
+plants, found seventeen years after the crop went on sale by researchers asking
+something else.
+
+Then three additions requested for this round:
+
+**The organisms get no say.** A seed does not choose to exist, or where, or when.
+Everything else alive arrives through parents and a place that shaped its kind
+over a very long time; these arrive because a company decided which trait would
+sell. It is a short paragraph and it is the only part of the map that speaks for
+the organism rather than about it.
+
+**Who decided, and what they chose to build.** Four companies. 94% of engineered
+area in three crops, 81% in three countries, three firms holding 36% of live US
+release authorisations and one holding 19% alone. Almost all of it is weedkiller
+tolerance and built-in insecticide — both sell chemicals, both come with a patent
+that ends seed saving. The same sale earns twice.
+
+**Population growth is not being addressed, so the "feeds the world" defence does
+not hold.** By 2035 about 40% of cereals will be eaten by people, roughly a third
+goes to livestock, the rest to fuel and industry. Only about 7% of soy is eaten
+by people; cotton is not food. 645 million faced hunger in 2025 and 2.7 billion
+could not afford a healthy diet — a problem of prices, wars and roads, not of
+grain existing. Demand is treated as a given to sell into rather than a thing
+anyone is addressing, which means the benefits only read as benefits if today's
+farming is accepted as the floor. Widen the frame and the ledger reads
+differently. **Until the companies steering it change direction, the honest
+baseline is the damage, not the yield.**
+
+It closes on the line the whole map rests on: the strongest objection is not that
+a gene is dangerous, but that the decision cannot be taken back.
+
+763 words, with a rule separating the argument from the description of the map
+beneath it.
+
+### A note on the figures
+
+Everything quoted has a source in the document it came from, with one exception
+flagged there and repeated here: the 94% / 81% concentration figures are a
+second-hand citation and were marked "verify against ISAAA/industry figures
+before publishing". They are in the panel because they are the standard figures
+in this argument, but they are the two most worth checking before this goes
+anywhere public.
+
+---
+
+## Round 46 — the two guides, linked from the map
+
+Both PDFs are in `guides/` and linked as buttons at the foot of the wire panel's
+argument, immediately before the rule that separates the argument from the
+description of the map. That is the natural place: someone who has just read why
+this matters is at the point of asking what to do.
+
+    guides/how-to-stop-a-release.pdf        28 pages
+    guides/how-to-change-the-industry.pdf   26 pages
+
+Each button carries a title and a short description of what is inside, so the
+choice between them is obvious without opening either: **guide 1 is one
+application**, guide 2 is **the rules rather than the permit**.
+
+The descriptions are written from what the guides show rather than from a
+summary of them — the five steps that run at once rather than in order, where the
+tilt shows in a permit file, the four permit stages and the deadline on each, how
+far capture reaches and what sits outside it, and the question underneath
+everything: whether the thing is legally a GMO at all, because redrawing that
+definition closes every door above it at once.
+
+**A note on those descriptions.** The PDFs' text streams would not extract here,
+so I wrote the button copy from the figures visible in the conversation and from
+what you said each guide covers, not from reading the full documents. If either
+description misstates what is in a guide, that is why, and it is a two-line fix.
+
+The buttons are styled to match the light-blue pill palette rather than
+introducing a new accent.
+
+---
+
+## Round 47
+
+**152 points: 127 industry, 20 escapes, 5 curated releases.** Zero unmapped.
+
+    industry_seed 21   escape 20   industry_editing 15   industry_rules 12
+    industry_livestock 11  industry_repro 11  industry_synthesis 10
+    industry_wild 9    industry_deextinct 9  industry_cro 8
+    industry_animals 8 industry_clinical 7   industry_money 6   ogtr 5
+
+**Nineteen industry entries**, opening seven new countries: Mexico, South Africa,
+Nigeria, Kenya, Italy, Poland, Thailand.
+
+The theme running through most of them is the **demand side**, which the map had
+barely touched. Engineered crops are overwhelmingly not eaten by people — they
+become animal feed — so the companies deciding what goes into feed determine most
+of the actual demand for engineered traits, and they are almost entirely absent
+from public argument, which stays fixed on the supermarket shelf. Charoen
+Pokphand, Nutreco, JBS and Grupo Bimbo are here for that reason. A buyer
+specification does more to shape what gets planted than most approval decisions
+do, and none of it is public.
+
+Two others worth naming:
+
+- **WuXi AppTec.** Western legislative attempts to restrict reliance on it made
+  the dependency explicit: much of the drug pipeline of the countries that
+  regulate this industry is developed and made by a company those countries do
+  not regulate. The contract layer is where national oversight quietly stops.
+- **Dabeinong.** China's approvals since 2023 have created a fifth centre of
+  trait ownership outside the four Western majors, state-supported and deployed
+  by state decision. The standard account of this industry as four Western firms
+  is going out of date.
+- **UK Home Office animal statistics.** A large share of licensed procedures are
+  for *breeding and maintaining* genetically altered lines rather than for
+  experiments — animals created and killed to sustain a line. That distinction
+  appears in these statistics and almost nowhere else, and it is the clearest
+  available measure of what the model-organism trade costs.
+
+**Five more escape records, 15 → 20.** Chosen because each one shows a different
+failure mode rather than another instance of the same:
+
+- **Gujarat 2001** — Bt cotton growing before India had approved any GM crop, and
+  approved the following year. Approval followed adoption. Once a trait is in the
+  ground at scale, the decision becomes whether to criminalise existing farmers,
+  which is not what the framework was built to decide.
+- **Japanese ports** — feral canola along the haulage routes between ports and
+  crushing plants, in a country that grows none. Every plant arrived by falling
+  off a truck. Assessment concerns what happens around a field; it has nothing to
+  say about spillage in transit.
+- **Petunias, second wave** — further engineered varieties found on sale four
+  years after a worldwide recall that was treated as complete. Vegetatively
+  propagated lines traded informally between breeders persist in a system nobody
+  monitors.
+- **Australian certified seed** — engineered traces inside the certification
+  system itself. Coexistence policy assumes a grower can choose; that depends on
+  certified seed being what the label says, and tolerances are a percentage, not
+  zero.
+- **Wheat, third find** — Washington and Montana, years after Oregon, cause
+  established in none of the three. Whatever is moving this material has operated
+  for over a decade since the programme that created it shut down.
+
+---
+
+## Round 48
+
+**The guides moved out of the wire and into their own pull-down panel**, sitting
+at the top of the right rail directly above the lens box. Click the header to
+open or close it; the caret rotates. They were at the foot of the wire argument,
+which meant scrolling past 763 words to find them.
+
+**169 points: 144 industry, 20 escapes, 5 curated.** Zero unmapped.
+
+    industry_seed 22   escape 20   industry_editing 17   industry_rules 16
+    industry_livestock 13  industry_repro 13  industry_synthesis 10
+    industry_cro 10    industry_animals 10  industry_deextinct 10
+    industry_wild 9    industry_clinical 7  industry_money 7   ogtr 5
+
+**Seventeen entries, ten new countries**: Russia, Turkey, Ukraine, Indonesia,
+Viet Nam, Colombia, Sweden, Finland, Ireland, UAE.
+
+Several of them exist to complicate the map's own argument rather than reinforce
+it, which is the point:
+
+- **Turkey** permits GM feed imports under an approved-event list while
+  prohibiting cultivation with criminal penalties. That is what most cultivation
+  bans actually amount to — the ban is real, the exposure continues, and the gap
+  between those two facts is where most public argument about bans goes wrong.
+- **Russia** banned cultivation in 2016 and kept funding the research. Not a
+  contradiction: a state deciding it wants the capability without the imports.
+- **Colombia** — the thing that produced nationwide strikes was **seed
+  certification law**, not biosafety law. Worth marking, because seed law is
+  where most of this industry's control actually sits and it almost never gets
+  the attention.
+- **New Zealand's Predator Free 2050** has a strong case for genetic predator
+  control, a capable research base, and still has not authorised it — partly
+  because Māori consultation raised questions about who decides for a species
+  that the programme could not answer. A country taking the consent question
+  seriously enough to slow itself down.
+- **Sweden's SLU** advocates treating edited crops as conventional on the grounds
+  that the alternative locks small public breeders out. That is a real argument
+  and it is also the argument the largest companies benefit from most. The entry
+  holds both halves.
+- **Solar Foods** makes protein from carbon dioxide, hydrogen and electricity. If
+  that works at scale, the land argument underpinning most defences of engineered
+  agriculture weakens — while concentrating food production into industrial
+  facilities owned by whoever built them, which is a different distribution of
+  control from farming, not obviously a better one.
+- **Gulf sovereign wealth** has no exit deadline and no electorate where it
+  invests. A materially different kind of money entering this industry, growing
+  while the venture cycle contracts.
+
+Also **Cyagen**, where a researcher commissions an animal that does not yet exist
+to a written specification and it arrives as a product with a lead time; and the
+**National Primate Research Centers**, where chronic supply scarcity is what makes
+the international trade lucrative and the smuggling prosecutions predictable.
+
+---
+
+## Round 49 — one file to upload
+
+Adding entries was touching five files a session. It now touches one.
+
+**All 169 hand-built points are embedded in `index.html`** as `PJ_SEED` —
+industry organisations and the entire escape record. They are written by hand
+rather than harvested, so they belong in the file rather than in a data file a
+workflow overwrites.
+
+**The loader merges instead of replacing.** It still fetches `projects.json` for
+whatever the harvesters produced, and unions it into the embedded set keyed on
+`url + name`, so a record cannot appear twice. Three consequences worth having:
+
+- Adding entries changes `index.html` and nothing else.
+- The map works with no fetch at all — open the file from disk, or embed it
+  anywhere, and every point is still there. That was the original design
+  principle for these builds and it had quietly stopped being true.
+- A failed fetch degrades to "the embedded set only" rather than to a seed stub.
+  The old fallback was an empty array.
+
+**`projects.json` is now machine-maintained only**, holding harvested releases
+plus the five curated records. `aphis_releases.py` no longer merges the industry
+and escape files into it, which would have produced every point twice.
+
+Verified by running the page's own merge against both files: 169 embedded plus 5
+fetched gives 169 merged, zero duplicates, zero unmapped source families.
+
+`index.html` grew from 2.28 MB to 2.33 MB. Given it already carries an embedded
+world plate and the subnational geometry, 50 KB for the entire dataset is a good
+trade for never having to think about which files are in sync.
+
+---
+
+## Round 50 — three marker shapes, and sixteen more entries
+
+**The three kinds of point now look different.** They shared one layer and one
+shape, so an organisation and a release authorisation read identically.
+
+    Square    an organisation, at its headquarters or principal site
+    Diamond   a documented escape, where the material was found
+    Circle    a release authorisation from an official register
+
+Shape carries this rather than colour, because colour is already carrying rated
+scale and there was no second channel to spend. Filled means a real coordinate;
+outlined and faint means the source published none. A corporate headquarters is
+always outlined, because it is not where the work happens.
+
+The legend section is rewritten to match, and now says what each shape means
+before explaining the fill.
+
+**185 embedded points: 160 industry, 20 escapes, 5 curated.** Zero problems.
+
+    industry_rules 26  industry_seed 24  escape 20  industry_editing 18
+    industry_synthesis 13  industry_livestock 13  industry_repro 13
+    industry_cro 10  industry_animals 10  industry_deextinct 10
+    industry_wild 9  industry_clinical 7  industry_money 7  ogtr 5
+
+**Sixteen entries, twelve new countries**: Pakistan, Bangladesh, Ethiopia, Ghana,
+Uruguay, Paraguay, Chile, Spain, Portugal, Romania, Egypt, plus more Canada.
+
+Several of these say something the map could not say before:
+
+- **Chile grows engineered crops that Chileans may not plant.** It is the
+  counter-season multiplication hub for the northern hemisphere seed industry,
+  and the site locations were withheld as commercial confidence until the
+  transparency council ordered otherwise.
+- **Paraguay is the third case of adoption preceding approval**, after India and
+  Brazil. In each, the regulator's eventual decision was whether to legalise what
+  was already in the ground. That is a ratification rather than an assessment,
+  and it is how a large share of the world's engineered crop area arrived.
+- **Ethiopia wrote one of the strictest biosafety laws in the world** — strict
+  liability, criminal penalties — and then amended it. The strict law was
+  achievable, and it was reversed through the same channels that write the loose
+  ones.
+- **Ghana's approval and its ten-year prison term for infringing breeders' rights
+  arrived through the same legislative period, from the same advisory sources.**
+  Approval and seed criminalisation are usually discussed separately; there they
+  are one process.
+- **Uruguay traces every individual cow from birth to slaughter.** A country that
+  can do that cannot claim seed traceability is technically impossible. The
+  capability exists; it is not applied to seed.
+- **Portugal publishes its GM planting register parcel by parcel; Spain does
+  not** — two neighbours under the same EU framework, so the difference is a
+  national choice rather than a legal constraint.
+- **Bio-Rad** makes the detection instruments, and the entry names why they do
+  not help: event-specific tests exist for approved transgenic events and
+  generally not for gene-edited organisms, because there is no inserted sequence
+  to target. The instruments are capable; the reference material is missing, and
+  that is a consequence of deregulation rather than of chemistry.
+- **Aldevron and IDT sit inside the same conglomerate**, which is invisible from
+  either name. Two of the largest suppliers of genetic raw materials, one
+  corporate decision-maker, no biosafety authority above it.
+
+`index.html` is 2.35 MB and remains the only file this round changed.
+
+---
+
+## Round 51
+
+**205 embedded points: 180 industry, 20 escapes, 5 curated.** Zero problems, no
+duplicates, every description carrying all three sections.
+
+    industry_rules 31  industry_seed 24  escape 20  industry_editing 18
+    industry_synthesis 14  industry_repro 14  industry_livestock 13
+    industry_cro 12  industry_wild 12  industry_animals 11
+    industry_clinical 11  industry_deextinct 10  industry_money 10  ogtr 5
+
+Twenty entries, weighted to the facets that were thinnest: **clinical 7 → 11,
+money 7 → 10, wild 9 → 12, cro 10 → 12.** New countries: Malaysia, Peru, Austria,
+Czechia.
+
+The entries carrying an argument:
+
+- **Intellia.** In-vivo CRISPR — edited inside the patient rather than in cells
+  removed and returned. An in-vivo edit cannot be recalled from a body any more
+  than a released organism can be recalled from a field. It is somatic, so not
+  inherited, but the irreversibility argument this map makes about the
+  environment applies to a person, and it applies first to the people in early
+  trials.
+- **Roche / Genentech.** Genentech made the first recombinant human insulin,
+  which is where medical and agricultural biotechnology parted company in the
+  public mind. The same technique applied to a drug became uncontroversial;
+  applied to a crop it did not. That divergence is about who benefits and who was
+  asked, not about the science.
+- **Flagship Pioneering** creates companies rather than funding them. When a fund
+  originates the company, the commercial thesis precedes the science instead of
+  following it — which is the clearest available answer to why this industry
+  builds what it builds.
+- **Leaps by Bayer** holds positions in agriculture, gene therapy *and*
+  reproductive health. The facets on this map are more joined up at the ownership
+  level than anywhere else, and almost no account of agricultural biotechnology
+  connects a seed company to a fertility clinic.
+- **Verily's Debug programme.** Automated mass rearing turns releasing tens of
+  millions of insects into an engineering problem rather than a biological one.
+  The constraint stops being capacity and becomes only permission, which puts far
+  more weight on the permission than the systems granting it were built for.
+- **Greenlight.** RNA pesticides fall outside GMO frameworks because nothing
+  living is modified, and outside conventional pesticide assumptions because the
+  mechanism is sequence-specific. The product is on the market while the category
+  is still being argued about.
+- **Genomics England.** Participants consented to research; the commercial access
+  arrangements were designed afterwards. Newborn sequencing raises this map's
+  recurring question in another form — a person whose genome is read before they
+  can be asked.
+- **China's NHC.** The only jurisdiction where the germline prohibition arrived
+  through prosecution rather than anticipatory legislation. A different kind of
+  deterrent resting on a different kind of authority.
+- **Czechia.** Farmers abandoned Bt maize because buyers would not pay for it,
+  not because it was prohibited. The market door working with no regulator
+  involved at all.
+- **Peru.** A moratorium framed around protecting native agrobiodiversity rather
+  than safety, extended twice, now running to 2035. The centre-of-origin argument
+  carried into law and held there for over a decade.
+
+`index.html` at 2.37 MB, and again the only file this round changed.
+
+---
+
+## Round 52
+
+**223 embedded points: 198 industry, 20 escapes, 5 curated**, across 175 distinct
+places. Zero problems, no duplicates, no impossible coordinates.
+
+    rules 41  seed 28  escape 20  editing 18  synthesis 14  repro 14
+    livestock 13  cro 12  animals 12  wild 12  deextinct 12
+    clinical 11  money 11  ogtr 5
+
+Eighteen entries, seventeen new countries: Cuba, Bolivia, Ecuador, Costa Rica,
+Tanzania, Zambia, Greece, Hungary, Morocco, Taiwan, Saudi Arabia, plus additions
+to the Philippines, Norway, China, Germany, the UK and the US.
+
+This batch is mostly about **what states have actually tried**, which the map was
+thin on:
+
+- **Cuba** is the clean test of whether the objection is to the technology or to
+  who owns it. A fully state-owned sector: no patent holder, no royalty, no seed
+  contract, no shareholder. The consent, containment and irreversibility
+  questions survive intact; the ownership ones vanish. Being able to see that
+  separation is worth an entry on its own.
+- **Bolivia** has constitutional protection for native seed, a rights-of-nature
+  statute, and roughly a million hectares of engineered soy. The widest gap on
+  this map between what a country's law says and what is in its fields.
+- **Ecuador** wrote the prohibition into its constitution in 2008. Enforcement
+  has been contested and imports continue. A constitutional clause is harder to
+  remove than a decree and no easier to enforce — the practical lesson for anyone
+  pursuing that route.
+- **Costa Rica** — a majority of cantons declared themselves GM-free through
+  municipal votes while national authorisations continued. Subnational refusal
+  accumulating into a de facto national position with no national law changing.
+- **Tanzania** adopted strict liability, and industry bodies campaigned against
+  it explicitly as a barrier to investment. That is a clear statement of how much
+  the *absence* of a liability rule is worth to them everywhere else.
+- **Greece** is one of nineteen EU states and regions that opted out
+  territory-wide. A mechanism designed to enable cultivation by letting objectors
+  step aside produced near-continental exclusion instead.
+- **Norway's Gene Technology Act** requires sustainability, societal benefit and
+  ethics to be weighed alongside safety — the only major framework that puts them
+  in the statute. Australia's regulator is barred from considering benefit at
+  all. How much a regulator may think about is a drafting decision.
+- **Golden Rice** is the strongest case the industry has: genuinely
+  public-interest, over two decades to reach a field, then lost its permits on
+  monitoring grounds rather than on safety. Both things are true at once, and the
+  entry says so.
+- **China National Seed Group.** One state holding company owns both a global
+  agrochemical major and China's domestic seed champion. No competition authority
+  anywhere has jurisdiction over the combination.
+
+### Two process notes
+
+An editing slip left a stray `"url" and` expression inside the Norway entry,
+which would have silently discarded the description string. Caught by importing
+the module and asserting all three description sections before use, rather than
+by the build.
+
+The PLACES extension regex failed against escaped unicode in the anchor, so
+eighteen entries built with no coordinates and the script listed them. Fixed by
+locating the closing brace by line number and inserting there. The script naming
+its own misses is what made that a thirty-second fix.
+
+---
+
+## Round 53 — the three kinds finally behave as three kinds
+
+**Independent toggles.** One checkbox was turning everything off together. There
+are now three, under the layer toggle: Industry, Escapes, Releases. Turning
+releases off leaves 218 of 223 points drawn.
+
+**Own colours.** All three were sharing one ramp, so shape was doing the work
+alone. Now:
+
+    Industry   gold        #f2d06b → #c08c38
+    Escapes    red-magenta #ef6a5a → #a8479f
+    Releases   green-blue  #8fc46a → #8f9fd0
+
+Fifteen values, all fifteen distinct. Each ramp still runs light-to-dark with
+rated scale, so colour carries two things without either being ambiguous.
+
+**Own sizes.** Releases draw at 0.62 of base radius, escapes at 0.95,
+organisations at 1.25. An authorisation is one decision; an organisation is the
+thing making thousands of them.
+
+Legend rewritten to say all of it, including that each kind has its own checkbox.
+
+### Intro rewrites
+
+- **The wild cotton paragraph is replaced with the ecological consequences.**
+  Fewer ant species; the plants that lost their guards took the worst caterpillar
+  damage measured; the ones paying for guards they do not need spend sugar they
+  would otherwise put into seed. Then it follows outward: ants carry seeds and
+  turn soil, which decides what else grows there, and parasitic wasps that were
+  never a target came out 35% lighter after eating caterpillars containing the
+  insecticide. Closing on the point that does the work — nobody has a list of
+  what any plant is connected to, so the tests come back clean because the tests
+  cover what somebody thought to test.
+- **The chemical link is now explained rather than asserted**, in four short
+  paragraphs a novice can follow: how a weedkiller kills a plant, what the spare
+  bacterial copy does, and then the sentence you asked for verbatim — **"the
+  point is that you can spray the whole field — crop and weeds together — and
+  only the weeds die."** Then why that makes the seed worth buying only if you
+  also buy the spray, that Bayer sells both, that the trait creates the market
+  for the chemical rather than competing with it, and that the patent turns what
+  farmers did free for ten thousand years into a yearly bill. It ends by naming
+  the consequence: that is why these two traits exist and drought tolerance and
+  better nutrition do not.
+- **Two paragraphs removed** — the "not feeding people" statistics and the
+  population-growth paragraph after it.
+
+Wire lead is now 891 words. It went up rather than down: two paragraphs came
+out, but explaining the chemical link properly and following the ecology outward
+cost more than the statistics they replaced. That is the right trade for a reader
+starting from nothing.
+
+---
+
+## Round 54 — one timeout skipped every harvester after it
+
+    could not fetch CFIA dataset: <urlopen error timed out>
+    ##[error]Process completed with exit code 1.
+
+**APHIS never ran.** Neither did the industry points or the overlay builder. A
+GitHub Actions `run:` block executes under `bash -e`, so the first non-zero exit
+status aborts the whole step — and `cfia_approvals.py` called `sys.exit(1)` when
+it could not reach open.canada.ca. Every script after it was skipped silently.
+
+Three fixes, each addressing a different layer of the same mistake:
+
+**1. Retry with backoff in both fetchers.** Four attempts, 5s / 10s / 15s apart,
+timeout raised from 120s to 180s. Government endpoints time out; that is a normal
+condition, not an outage.
+
+**2. An unreachable source exits 0, not 1.** `cfia_approvals.py` now warns and
+returns, leaving the existing `cfia_records.json` in place. `aphis_releases.py`
+does the same when nothing is harvested. Neither should be a build failure — the
+previous data stays and the next run tries again.
+
+**3. Each harvester isolated in the workflow.** Every call now ends in
+`|| echo "!! … failed - continuing"`, in both workflows, so one source being
+unreachable cannot take down the rest. `git add` gained `--ignore-errors` for the
+same reason: a file a failed harvester never wrote would otherwise abort the step
+on a first run.
+
+### Verified rather than assumed
+
+Reproduced the exact failure — patched `fetch` to raise, ran `main()` — and
+confirmed it now returns normally with status 0, prints the warning to stderr,
+and leaves the existing file alone. Before the fix that path called
+`sys.exit(1)`; after it, `returncode: 0 -> step continues`.
+
+The general lesson is worth keeping: **a script that is correct on its own can
+still be wrong inside `bash -e`.** Exiting non-zero to signal "I could not do my
+job" is right for a command line and wrong for one step in a pipeline of
+independent tasks, and nothing in the script's own tests would ever show it.
+
+---
+
+## Round 55 — wire lead edits
+
+Every requested change applied and verified individually:
+
+- **"What this is about, briefly" deleted** — it opens on the substance now.
+- **The two ant paragraphs merged into one generic paragraph** on ecological
+  consequences. It no longer runs on ants and caterpillars as a story; it states
+  the general point — every wild plant sits inside a web of arrangements with
+  other species, and a change entering at one point comes out at others nobody
+  was watching — then anchors it with three measured results: fewer defending
+  insect species and the worst feeding damage of any group tested; parasitic
+  wasps 35% lighter after eating prey containing the insecticide; introgressed
+  wild cotton holding less genetic variety than its neighbours. Closes on the
+  line that carries it: nobody holds a list of what any organism is connected to,
+  so the tests come back clean because the tests cover what somebody thought to
+  test.
+- **"Every other living thing arrives through parents…" deleted.**
+- **The three firms are now named**: Bayer, Syngenta and Pioneer hold 36%, Bayer
+  alone 19%. The four majors are named too, since the paragraph already asserted
+  "four companies" without saying which.
+- **The weedkiller-mechanism sentence deleted**, and the spray line moved up to
+  close the "one of two things" paragraph, reworded to **"The point with the
+  first is…"**.
+- **"That is what makes the seed worth buying…" deleted**; the Bayer-sells-both
+  lines now follow the spray line directly.
+- **"Who decided." heading deleted.**
+- **"The organisms get no say" moved** to its own paragraph after the
+  drought-tolerance line, where it now closes the argument.
+- **"The strongest objection is the simplest…" deleted.**
+
+Wire lead is 771 words, down from 891.
+
+---
+
+## Round 56 — the missing material, folded in
+
+Everything listed as absent last round is now in, without a new section for each.
+
+**A fairness passage now opens the argument**, immediately after the first
+paragraph, and then turns. It concedes what is actually true: insect-resistant
+cotton substantially reduced broad-spectrum spraying in several countries, and
+those sprays killed bees, birds and farm workers; the unsafe-to-eat claim has not
+held up in decades of testing and leading with it gets everything else dismissed;
+engineered crops are not one thing; and even the damage depends on the baseline,
+since no-till erodes less soil than ploughing and more than leaving the land
+alone.
+
+Then the turn, carrying the six arguments that survive: irreversibility,
+contamination of centres of origin, absent liability, thin monitoring, absent
+consent, and seed ownership moving to patent holders. **None of them require
+proving an organism is dangerous, and together they outweigh the credits.**
+Putting the strongest version of the other side first is what makes the rest
+readable as an argument rather than a pitch.
+
+**Folded into existing paragraphs**, no new headings:
+
+- Canola seed staying viable in soil about three years, so the soil keeps
+  refilling after planting stops.
+- Roadside spraying not removing the resistant plants but everything competing
+  with them.
+- The Oregon grass crossing into two other grass species, one a different genus
+  entirely; the product pulled, the company fined $500,000, and the grass still
+  out there.
+- Mexican wild cotton listed vulnerable, with gene flow from crops named as the
+  main threat.
+- Effects not being consistent: 55% more seed in wild sunflower, no advantage in
+  rice.
+- No untouched version left to measure against once the genes are in — the
+  question stops being answerable at the moment it becomes urgent.
+- **No undo**, restored as the closing line: most farm damage stops when the
+  farming stops; genes in a wild breeding population do not.
+
+**Three things needed explaining before they could be used, so they got a
+paragraph each:**
+
+- **The "shelf of spare parts" framing**, and why it is wrong — the variety in a
+  wild population is what it has left after thousands of years of storms and
+  droughts, and narrowing it takes away the range of answers the population can
+  still give.
+- **The refuge system** — what it is, why it works, and why escaped plants break
+  it: scattered, next to no refuge, often making far less toxin, which is a weak
+  dose in an unplanned place and precisely the condition resistance spreads
+  fastest under. Closing on the fact that organic farmers lose the same
+  insecticide if it fails.
+- **The "feeds the world" rebuttal** — where the grain actually goes, the hunger
+  figures being about prices rather than supply, and the gap between what is said
+  and what is planted.
+
+Wire lead is 1,572 words across 16 paragraphs, up from 771. It is long for a
+panel. It is also now the whole argument rather than a summary of one, and the
+material that was missing was the material that made it hold together.
+
+---
+
+## Round 57 — key box list, and the wire lead cut back
+
+**Key box.** The layer toggle now reads **"All map points"**, and the three kind
+checkboxes stack vertically underneath it instead of running together on one
+line.
+
+**Wire lead: 1,062 words across 13 paragraphs**, down from 1,572. Every edit
+applied and checked individually; twenty-one assertions, all passing.
+
+Structural moves:
+
+- The spray line now closes the **opening** paragraph, immediately after the two
+  trait types are named — which is where it does the most work, since it explains
+  the first one at the moment it is introduced.
+- The whole fairness block is gone as a block. What survives of it runs as one
+  sentence of concession before the turn: cotton did reduce broad-spectrum
+  spraying, sprays killed bees, birds and farm workers, the unsafe-to-eat claim
+  has not held up — **"Plants do not stay where you put them though."**
+- The four surviving arguments moved into the ecology paragraph, so they land on
+  the evidence rather than standing alone as a list.
+- Liability and seed ownership moved into the patent paragraph, where the
+  mechanism they describe actually sits.
+- The three crops line moved beside the feedlot sentence; the hunger figures
+  moved to the end of that paragraph.
+- The refuge explanation is replaced by four plain sentences: engineered plants
+  spread out of fields, cross-breed in ditches, make less toxin than the
+  original, and a weak dose in an unplanned place is the condition resistance
+  spreads fastest under.
+
+Deleted outright: the "shelf of spare parts" paragraph, the refuge paragraph, the
+"feeds the world" opening, "Now look at what they chose to build", "Nobody holds
+a list…", "Most damage from farming stops…", and the utilitarian phrasing about
+what answers a population can still give.
+
+Two things now say **why** rather than asserting:
+
+- **Contamination**, in one clause — crop pollen crosses into wild relatives and
+  the engineered gene stays in the wild population and passes down it.
+- **Certification**, in one sentence — a neighbouring organic farm whose crop
+  tests positive loses the certification its price depends on, and carries the
+  loss itself.
+- **The patent**, expanded to say what it covers: the plant itself and everything
+  grown from it, which is why the contract forbids replanting.
+
+### One judgement call worth flagging
+
+The instruction was to open with "Although insect-resistant cotton did…" *and* to
+end that sentence's successor with "though". Both together would concede twice in
+one breath. It is written as a flat statement of the credits followed by
+"Plants do not stay where you put them though" — which keeps both elements and
+lets the "though" carry the turn.
+
+---
+
+## Round 58 — wire lead line edits
+
+Twenty wording and structure changes, each verified individually. 1,062 → 1,034
+words; the argument is now 8 paragraphs, down from 10, with the map description
+following the rule.
+
+Structure:
+- **"Plants do not stay where you put them though"** moved to open the escape
+  paragraph rather than close the concession one, so the turn happens at the top
+  of the evidence instead of the bottom of the credit.
+- **The Bayer-sells-both lines merged** into the end of the four-companies
+  paragraph. They were the conclusion of that paragraph standing on their own.
+- **The resistance paragraph condensed to one clause** inside the measured-
+  examples list: insecticide-producing plants that escape and cross-breed in
+  ditches make less toxin than the original, a weak dose in an unplanned place
+  being precisely the condition under which insect resistance spreads fastest.
+  It was a paragraph explaining a mechanism; it is now a finding sitting beside
+  the other findings.
+- **Contamination folded into the same list** rather than sitting after it, with
+  the wild cotton figures as its example rather than as separate items.
+
+Wording, all as specified: "sprays that killed"; "Pollen blows and cross
+pollinates with wild species"; "And, canola seed stays alive… refilling with
+their seeds"; "And that's not the end of it"; "a web of relationships"; the
+commas removed around "and that were never a target of anything"; "Worse yet,"
+opening the irreversibility clause; "are rarely asked" in the present tense;
+"yearly bill; seed ownership"; "Meanwhile, nobody is liable"; "a problem of
+prices, wars and roads, not of grain existing"; "They arrive because".
+
+The close is now **"And, worst of all, the organisms themselves have no say."**
+
+---
+
+## Round 59 — the wire's real bug, and the yield argument corrected
+
+### Why almost every region read zero
+
+**The country-name table was English-only.** "Deutschland" does not match
+"Germany"; "中国" does not match "China". The wire queries in twenty languages and
+could tag headlines in one of them.
+
+Worse, the first attempt at fixing it made things silently wrong rather than
+merely empty. `slug()` stripped everything non-ASCII, so a Chinese, Japanese,
+Korean, Cyrillic, Thai, Devanagari, Bengali or Arabic headline was reduced to
+punctuation — and then short Latin fragments matched against the remains and
+**tagged them all as the United States.** An empty region filter is a visible
+failure; a filter full of wrong countries is not.
+
+Three fixes:
+
+1. **`slug()` keeps every script.** Accents fold; letters stay.
+2. **`_has_name()` matches by script.** Word boundaries for space-delimited
+   writing, plain substring for the ones that do not use spaces — Thai, Lao,
+   Khmer, Myanmar, CJK, kana and hangul. A boundary test can never fire on a
+   Chinese headline, because there are no boundaries in it.
+3. **Native and localised names added**, 163 name forms → 561, plus the inflected
+   forms that actually appear in headlines: России rather than Россия,
+   Polsce rather than Polska, Česku, României, Magyarországon, Україні,
+   Ελλάδας. Slavic and Greek names decline; the nominative alone never
+   matches.
+
+Tested against 26 headlines across every query language: **25 correct**, both
+deliberate negatives correctly untagged. Before the fix, 12 of 12 non-English
+tests were wrong.
+
+On the empty language dropdown: language is read from each feed URL's `hl=`
+parameter, which is set on every regional and non-English query. Once the
+harvester runs with this build, the dropdown fills from the items themselves.
+
+### The yield argument was wrong
+
+"Neither trait moves grain from a feedlot to a person or lowers the price of
+vegetables" asserted something the traits partly do — insect resistance protects
+harvests from pest losses, so it does put more grain in the system.
+
+Replaced with the argument that actually holds: **both built traits protect a
+harvest that already exists**, from weeds and from pests, on land already farmed
+well enough to grow a crop. Neither raises what a plant can yield, and neither
+reaches the fields where yield is lowest, because those fields fail for lack of
+water and soil rather than for lack of weeding. That is why the traits that were
+not built — drought tolerance, poor-soil yield, iron and vitamin A — are the ones
+that would have mattered.
+
+The paragraph now opens on it: **"Keep in mind that these two traits — surviving
+a weedkiller, and producing an insecticide — were built over drought tolerance
+and better nutrition."**
+
+Plus the line edits: the concession merged into the escape paragraph; "In Oregon,
+for example"; "And the spreading is not the end of it" restored; the wild cotton
+clauses split on a semicolon; the resistance clause rewritten in full; "Worse
+yet, containment has demonstrably failed, and escapes are irreversible"; "found
+only by accident"; the Bayer lines moved to open the patent paragraph; "a problem
+of profiteering, not of grain existing".
+
+---
+
+## Round 60 — the wire's other two bugs, both mine
+
+The harvester fix last round was necessary and not sufficient. Two more, both
+introduced by earlier builds rather than present in the source.
+
+**The language dropdown never populated.** `_wireBuildLangOptions` uses a local
+`opts` string, declared on source line 1673. A `put(1673, …)` from an earlier
+round replaced that declaration with the options loop — so `opts` was undeclared,
+reading it threw a ReferenceError on every call, and the select was never filled.
+That is exactly the reported symptom: the filter worked, and there was nothing in
+it. The put is retargeted to 1674, which is the loop. The duplicated loop that
+edit also left behind is gone.
+
+Exercised the fixed builder directly: five items in three languages produce
+`All languages / English (2) / Spanish (1) / Chinese (1) / Unknown (1)`.
+
+**The browser-side tagger had the same ASCII-only bug as the harvester.**
+`_wireSlug` stripped everything outside `a-z0-9`, so the client fallback could
+not read a non-Latin headline either — which matters for every item archived
+before the harvester was fixed. Now `[^\p{L}\p{N}\p{M}]`, keeping letters,
+numbers and combining marks, with the same script-aware matching as the
+harvester: substring for Thai, Lao, Khmer, Myanmar, CJK, kana and hangul, word
+boundaries for everything else.
+
+`\p{M}` matters more than it looks: `normalize('NFD')` splits Devanagari matras
+and Hangul syllables apart, and without marks in the keep-set "भारत" became
+"भ रत". Tested with both sides slugged, as the real code does: **9 of 9 across
+German, Chinese, Russian, Thai, Korean, Hindi, Arabic, Portuguese, and a
+deliberate negative.**
+
+Applied as post-assembly text replacements rather than line-numbered puts,
+because both functions are generated by earlier edits and have no stable source
+line — which is what produced the `opts` bug in the first place.
+
+### Text edits
+
+The wild cotton clause rewritten as a single flowing sentence; "there is no
+undoing it, ever"; "Measured examples so far:"; and the honest expansion of what
+is not known — **"comes out at many others nobody has been watching and
+quantifying or even defining in the first place. Simply put, nobody knows the
+real impacts, both now and in the future."**
+
+The yield-and-hunger paragraph is deleted. Wire lead 1,099 → 952 words, 10 → 9
+paragraphs.
+
+---
+
+## Round 61 — why the subregions were still empty
+
+The reference map you sent has the answer, and it is not a tagging bug this time.
+Two things it does that this harvester did not.
+
+**1. It reads the map's own admin-1 taxonomy.** My hand-written subregion tables
+covered 16 countries. The map carries admin-1 geometry for **46**, embedded in
+`index.html` as `SUBGEO`, and the panel lists a row for every one of those
+regions. A region the harvester cannot name can never be tagged, so every row it
+did not know about read 0 permanently.
+
+`_load_map_subregions()` now parses SUBGEO at run time: **1,062 region terms
+across 46 countries**, matched on the region name and on its bare form without
+the administrative suffix, because a headline says "Bavaria" and not "Freistaat
+Bayern". The canonical name is used verbatim, since a near-miss on spelling
+produces a row that can never match.
+
+**2. It asks for each place by name.** This is the real fix, and it is the one I
+had missed entirely. The global feeds only tag a region when a headline happens
+to name it — so adding feeds could never populate the panel, no matter how many.
+The reference queries every region individually.
+
+Added the same per-region pass, against **GDELT** rather than Google News for the
+reason the reference states in its own comment: this is hundreds of requests in
+one run, and RSS throttles hard at that volume, "which is why nearly every region
+came back empty while a handful of large ones succeeded". GDELT is built for
+programmatic access, indexes non-English media, and needs no key. 1,157 places
+are queryable; the pass is capped (`--regions N`, default 400) and can be skipped
+with `--no-regions`.
+
+### What I could not verify
+
+**GDELT returns 403 from this sandbox**, whose egress allowlist does not include
+the host. The request shape follows the reference implementation, which works in
+CI. I have not seen it return a single article here, and I am not going to claim
+otherwise.
+
+So the run now prints, and warns loudly on stderr if every request failed:
+
+    WARNING: every GDELT request failed. The region and subregion counts will
+    stay near zero, because the global feeds only tag a region when a headline
+    happens to name it.
+
+If that warning appears in the workflow log, the per-region source is being
+blocked rather than the tagging being wrong, and the next thing to try is the
+reference's Google News fallback tier.
+
+### Guides open in the map now
+
+Clicking a guide opens an overlay over the map — title bar, **Download PDF**
+button, close button, Escape to dismiss, click-outside to dismiss. The iframe
+source is cleared on close so the PDF stops rendering behind the map. Opens at
+`#view=FitH` so it lands readable rather than at whatever the browser's viewer
+defaults to.
+
+### Text edits
+
+"watching, quantifying, or even defining in the first place" with the
+"simply put" sentence removed; "and that weren't targeted in the first place";
+a comma before "with gene flow"; "insect resistance **to it** spreads fastest";
+a full stop before "Monitoring is thin"; and the close is now **"the organisms
+themselves have no say in all of this. A seed does not choose to be born, where,
+or when."**
+
+---
+
+## Round 62
+
+**Colours.** The selected lens pill set `#081657` **inline**, which beats every
+stylesheet rule — which is why it stayed dark navy while every other active pill
+had already gone light blue. It now matches the consent-phase pills exactly. The
+"All map points" checkbox used the old dark `--accent` while the three kind
+checkboxes under it were light blue; both now use `#7fa8cc`.
+
+**Help panel restructured.** The map key and Reading the markers now follow The
+map directly. The Global Wire sub-paragraph is deleted. "Every entry says the
+same three things" moved into the middle of the map paragraph, between where you
+are and clicking a name to go back up.
+
+Deleted: "The largest marker, because an organisation is the thing making
+thousands of decisions" and "The smallest, because it is one decision". The
+outlined-headquarters line now says why rather than asserting it: **it is an
+office, and the laboratories, plants and fields the company runs are somewhere
+else entirely.**
+
+**Animal experimentation facilities: 15 entries, animals facet 12 → 27.** 238
+points total.
+
+The honest framing, which is in the entries: **there is no global register of
+these.** The USDA publishes an annual list of registered facilities, the UK Home
+Office publishes establishment licences and procedure statistics, the EU has
+ALURES across 27 countries. None covers the world, none shares categories, and
+**mice, rats and birds bred for research are excluded from the US Animal Welfare
+Act's definition of an animal** — which is the overwhelming majority of animals
+used and the great majority of genetically altered ones. So this is a curated set
+of the largest and best-documented facilities, not a survey, and the entries say
+so.
+
+What the batch establishes:
+
+- **The UK and EU count animals bred and killed to maintain engineered lines
+  separately from experimental use.** Nowhere else publishes that number, so
+  nowhere else can say what the model-organism trade costs.
+- **Charles River's own site list is the nearest thing to a map of the industry's
+  physical footprint that exists** — because no regulator publishes one, in any
+  country.
+- **The primate dependency.** Chinese export suspension in 2020 raised prices
+  several-fold and stalled Western programmes, which showed how completely the
+  rest of the world depends on breeding capacity in one country. Rarely discussed
+  as a dependency.
+- **The Biomedical Primate Research Centre has survived repeated parliamentary
+  attempts to wind it down.** A facility outlasting explicit political pressure
+  to close says more about how entrenched this work is than any statistic.
+
+---
+
+## Round 63 — law, lobbying, and named people
+
+**255 points: 230 industry, 20 escapes, 5 curated.** Seventeen entries.
+
+**Law and patents.** The regulatory firms that draft what agencies read, the
+USPTO full-text search and the Patent Trial and Appeal Board where CRISPR
+ownership was actually decided, the EPO opposition register, No Patents on Seeds,
+the EU Transparency Register, and Euroseeds. Two points these carry:
+
+- **The claims are the property, not the abstract.** A patent naming a specific
+  construct and one reaching any plant containing a gene variant look identical
+  on the front page.
+- **Any person may oppose a European patent for nine months after grant**, with
+  no standing requirement and no lawyer needed to file. Polling across several
+  European countries finds large majorities against patents on seeds. It is the
+  widest gap on this map between how much support a position has and how few
+  people act on it.
+
+**Named individuals.** Everyone included is a public figure in a public role, and
+every entry describes the role and the documented decisions attached to it — not
+the person. Where conduct has been adjudicated, the finding is cited as a
+finding.
+
+- **Bayer Crop Science leadership.** Companies get argued with as if they were
+  weather. A division has a head with a public name and a stated remit, and mail
+  to a named executive is answered differently from mail to a company.
+- **The Broad and the Innovative Genomics Institute**, as the two sides of the
+  foundational patent dispute. Both did publicly funded work; the agricultural
+  rights ended up exclusively licensed either way. **The individuals are not the
+  problem; the arrangement that converts their work into an exclusive licence is,
+  and it operated identically regardless of who won.**
+- **Doudna's institute runs an explicit access-and-affordability programme.** The
+  strongest critique of gene-therapy pricing comes from inside the field, which
+  is worth citing precisely because it cannot be dismissed as illiteracy.
+- **He Jiankui.** The only completed case of heritable human genome editing. The
+  scientific response was a moratorium with no legal force, issued by people who
+  were not the ones proceeding. What stopped it was a criminal prosecution — which
+  matters everywhere on this map that self-governance is offered as sufficient.
+
+    rules 51  seed 30  animals 27  editing 21  escape 20  synthesis 14
+    repro 14  livestock 13  deextinct 13  cro 12  wild 12  clinical 12
+    money 11  ogtr 5
+
+### On "until coverage is 100%"
+
+It cannot get there, and the notes should say so rather than implying an
+asymptote. There are thousands of seed companies, hundreds of CROs, tens of
+thousands of fertility clinics and laboratories, and no complete register of any
+of them exists in any country. A census is not available to anyone, at any
+budget.
+
+What is achievable is completeness of **structure**: every facet populated, every
+chokepoint named, every mechanism shown at least once with a real example. On
+that measure the map is close. On headcount it is a sample, and the honest thing
+is to keep saying which one it is.
+
+---
+
+## Round 64 — repo audit
+
+The uploaded repo is in good shape. Four things.
+
+### The wire works
+
+    2,359 items | 940 country-tagged | 397 subregion-tagged across 83 subregions
+    613 from GDELT | 41 language values
+
+GDELT ran fine in CI, which is what could not be verified from the sandbox. The
+per-region pass is doing exactly what it was added to do.
+
+### One bug it exposed
+
+**GDELT reports a language NAME, not a code**, and the harvester truncated it to
+two characters. So `sp`, `ch`, `po` and `ge` appeared alongside the proper
+`es`/`zh`/`pt`/`de` from the RSS feeds — the dropdown listed several languages
+twice, under codes that are not ISO codes at all. `po` also collided Portuguese
+with Polish.
+
+Fixed with a name-to-code map in the harvester. `tidy_repo.py` repairs the 282
+items already committed; it deliberately leaves `po` alone, because after the
+fact there is no way to tell which of the two languages it was and guessing would
+be worse than leaving it unlabelled.
+
+### index.html is three rounds behind
+
+The repo has 223 points; the current build has 255. Missing: the animal
+facilities including ALURES, the law firms and named individuals, the in-page
+guide viewer, the lens pill colour fix, and two wire-text edits.
+
+`harvest/build_industry_points.py` is also behind, and `industry_source.json` /
+`industry_points.json` are at 144 rather than 230.
+
+### Four stray files
+
+    bch_focal_points.py       duplicate of harvest/bch_focal_points.py
+    check_links.py            duplicate of harvest/check_links.py
+    guides/?                  1 byte, an upload artefact
+    overlays/README (2).md    duplicate of overlays/README.md
+
+`tidy_repo.py` removes them, and only removes the two root scripts after
+confirming byte-for-byte that the `harvest/` copies are identical.
+
+### What projects.json should look like, confirmed
+
+    365 records: 360 harvested APHIS + 5 curated OGTR
+
+Correct. The map merges it with the 223 embedded points and yields 583 with no
+duplicates, which is the round-49 architecture working as intended.
+
+---
+
+## Round 65
+
+**274 points: 249 industry, 20 escapes, 5 curated.** Nineteen entries into the
+two facets thinnest against their real size: **cro 12 → 20, repro 14 → 23.**
+
+    rules 51  seed 30  animals 27  repro 23  editing 21  cro 20  escape 20
+    synthesis 15  livestock 13  deextinct 13  clinical 13  wild 12
+    money 11  ogtr 5
+
+The entries carrying something:
+
+- **IQVIA** designs and runs the trial *and* sells analytics built on prescription
+  and claims data covering hundreds of millions of people. Neither business is
+  regulated with the other in view.
+- **Parexel** as the pattern: most large CROs are now private-equity owned, so
+  **the organisation running the trials a regulator reads publishes less about
+  itself than the sponsor does.** That is the wrong way round.
+- **Catalent**, bought by Novo Holdings — a manufacturer serving many sponsors
+  now owned by one of them, so every other client's supply runs through a
+  competitor's asset.
+- **ICON** owns both the trials and the sites that host them, which removes a
+  check that existed when sites were independent.
+- **HFEA's add-on ratings** are the only case anywhere of a regulator publicly
+  rating the extras clinics sell. Most are rated red or amber and they continue
+  to be sold — which shows precisely how far publication gets you without a power
+  to prohibit.
+- **Cooper Surgical's culture media recall.** One defective batch reaches embryos
+  in hundreds of clinics at once and cannot be undone. Clinic-level oversight
+  cannot see a supplier selling into every clinic — the same blind spot the
+  contract-manufacturing facet has.
+- **Monash IVF** is listed rather than private-equity held, which forces
+  disclosure the others avoid: cycle volumes, revenue per cycle, and the market
+  announcements that follow an incident. The clearest available view of the
+  commercial mechanics of a fertility business.
+- **Celltrion** for the point biosimilars make on their own: they are the one
+  part of this industry where prices fall, and they exist because patents expire.
+
+**`.github/workflows/tidy.yml`** added — a `workflow_dispatch`-only job that runs
+`tidy_repo.py` from GitHub itself, so no local clone is needed. Delete it and
+`tidy_repo.py` after the run.
+
+---
+
+## Round 66
+
+**293 points: 268 industry, 20 escapes, 5 curated.** Twenty-one entries into the
+facets that were thinnest after the last round: **money 11 → 15, wild 12 → 15,
+clinical 13 → 15, livestock 13 → 17, synthesis 15 → 18, deextinct 13 → 15.**
+
+    rules 51  seed 30  animals 27  repro 23  editing 22  cro 20  escape 20
+    synthesis 18  livestock 17  wild 15  deextinct 15  clinical 15
+    money 15  ogtr 5
+
+The entries that carry something new:
+
+- **The International Gene Synthesis Consortium.** It is voluntary, its
+  membership is a minority of world capacity, and no government requires any of
+  it. **The most consequential control point in this entire industry is a trade
+  association's code of practice.** Stated as a fact about governance, not a
+  prediction about misuse.
+- **Codex DNA / Telesis Bio** is why that matters now rather than eventually.
+  Order screening only works while orders are placed; a benchtop synthesiser
+  moves the capability inside the building and the voluntary regime has nothing
+  left to inspect.
+- **Benchling** sees the design before the synthesis company sees the order and
+  long before a regulator sees an application. Nothing requires it to look.
+- **Sterile Insect Technique.** Radiation-sterilised insects cannot reproduce at
+  all; engineered self-limiting insects reduce that to a probability. The older
+  technique is the benchmark any release should be argued against, and it is the
+  comparison the industry rarely puts alongside its own.
+- **Blackstone Life Sciences.** Royalty financing attaches a permanent claim on a
+  medicine's revenue before approval, which is one reason prices do not fall
+  after development cost is recovered.
+- **The Gelsinger record.** Every safeguard in the clinical facet exists because
+  of a specific death in 1999, and the investigation found unreported adverse
+  events and undisclosed financial interests. **The reforms followed the harm
+  rather than preceding it**, which is the pattern this map documents everywhere.
+- **The RAC archive.** Protocol-by-protocol public review of human gene transfer
+  existed for forty-five years and was ended on the grounds the field had
+  matured. The archive is the benchmark for judging what replaced it.
+- **Alnylam** for the distinction the map keeps returning to: RNA interference
+  wears off when dosing stops. A reversible therapy and a permanent edit are not
+  one category, and treating them as one loses the only feature that matters for
+  consent.
+- **FDA's animal register** distinguishes approvals from enforcement discretion —
+  the agency deciding not to act rather than deciding a product is safe. The two
+  look identical from outside.
+- **Hendrix Genetics and Topigs Norsvin.** Global poultry and pig genetics are
+  controlled by a handful of firms, so a few breeding decisions propagate into
+  billions of animals. Concentration tighter than in seed, attracting a fraction
+  of the attention.
+
+### A small bug
+
+`Nature's SAFE` failed to geocode because the coordinate table used a curly
+apostrophe and the entry a straight one. Caught because the builder names its own
+misses rather than silently dropping them — the same design that made the
+eighteen-entry miss in round 52 a thirty-second fix.
+
+---
+
+## Round 67
+
+**311 points: 286 industry, 20 escapes, 5 curated.** Nineteen entries across
+twelve countries, including four new: Serbia, Bulgaria, Sri Lanka, plus more
+Denmark and Japan.
+
+    rules 56  seed 35  animals 27  editing 26  repro 23  synthesis 21
+    cro 20  escape 20  livestock 17  clinical 16  wild 15  deextinct 15
+    money 15  ogtr 5
+
+The entries carrying an argument:
+
+- **Beam and Prime Medicine.** Each generation of editing tool is offered as the
+  answer to the previous one's off-target problem. That is progress, and it is
+  also an admission: **the earlier tools had the problem while they were being
+  used on people, and were described as precise at the time.** Prime editing then
+  writes new sequence without inserting a transgene, which puts it outside
+  regulatory categories drawn around inserting foreign DNA — by construction.
+- **Arcadia Biosciences.** A company can now design its product to fall outside
+  the definition rather than pass through it. The regulatory question is answered
+  at the design stage, before any application exists, which is not how any of
+  these frameworks assumed products would be developed.
+- **Zymergen.** Raised very large sums, went public, failed to commercialise, was
+  absorbed. The venture model rewards claims that outrun results, and the
+  correction arrives as a share price rather than a retraction — the literature
+  behind such a company is not revisited when it fails.
+- **New England Biolabs.** The least examined chokepoint in the chain: **no
+  screening regime, voluntary or otherwise, covers who may buy a Cas nuclease,
+  and it is sold from a catalogue.**
+- **Element and Ultima.** Instrument competition is driving cost per genome down,
+  and below a certain price population-scale sequencing becomes the default — at
+  which point the consent and retention questions arrive for everybody at once.
+- **Florimond Desprez.** Independent breeders cannot pay licence fees at scale or
+  retain patent attorneys, so they abandon projects rather than risk
+  infringement. The patent argument is usually framed as farmers against
+  companies; it is also companies against companies.
+- **DLF Seeds.** Grasses are wind-pollinated, perennial, outcrossing and planted
+  near wild relatives — the worst containment profile of any crop group, and the
+  one the Oregon escape happened in. The commercial pressure to engineer them did
+  not go away because one release failed.
+- **Serbia.** EU accession requires alignment with a framework that permits
+  authorised GM products, so a national prohibition becomes a trade negotiation
+  rather than a domestic decision. The same mechanism that operated on Mexico,
+  arriving by a different route.
+- **Bulgaria** writes buffer distances into statute, which concedes that pollen
+  travels. Most frameworks avoid conceding it by leaving distances to guidance.
+- **Sri Lanka.** Labelling in importing countries is enforced by border testing,
+  which needs laboratory capacity most importing countries do not have. A rule
+  that cannot be tested for exists on paper — and that is the ordinary condition
+  rather than the exception.
+- **The African Union model law.** A model law spreads a regulatory approach
+  across dozens of countries in one act of drafting, long before any application
+  appears. Whoever writes the model decides more than any national committee.
+- **WHO's genome editing framework** recommends a registry, whistleblowing
+  mechanisms and a prohibition on heritable editing. None of it binds anybody,
+  and the one case that has happened was stopped by a national criminal court.
+
+### Workflows
+
+Only `releases.yml` and `wire.yml` belong in `.github/workflows/` permanently.
+`tidy.yml` is a one-off: run it, then delete it and `tidy_repo.py` together.
+
+---
+
+## Round 68
+
+**332 points: 307 industry, 20 escapes, 5 curated**, across 218 distinct places.
+Twenty-one entries. Every facet now at 16 or above except the harvested release
+family.
+
+    rules 60  seed 36  editing 27  animals 27  synthesis 23  repro 23
+    cro 20  money 20  escape 20  livestock 19  clinical 19  wild 17
+    deextinct 16  ogtr 5
+
+The ones that carry something:
+
+- **Regeneron Genetics Center.** Millions of exomes sequenced through health
+  system partnerships. Participants consented to research; the dataset is a
+  corporate asset that outlasts the study, the consent form and often the health
+  system that gathered it. **This is the human counterpart of the germplasm
+  question the seed facet raises.**
+- **The insertional oncogenesis record.** Inserting genetic material into a
+  genome can land it somewhere that matters — the reason gene therapy stalled in
+  the 2000s, and it recurred with newer vectors. The field's answer is better
+  vectors, which is the same answer as last time. The risk is disclosed,
+  monitored, accepted, and carried by patients.
+- **Moderna's individualised cancer therapies.** A therapy designed for one
+  person cannot be trialled the way a product is. **Regulators are being asked to
+  approve a manufacturing process rather than a medicine**, which is a different
+  question from the one every framework on this map was built to answer.
+- **ICER.** Its value-based benchmarks for several gene therapies came in well
+  below the launch price, and the therapies launched at the higher figure anyway.
+  The clearest demonstration that pricing here is set by what a market will bear
+  rather than by any assessment of worth.
+- **NIH RePORTER.** Answers the question the industry's materials avoid: how much
+  was paid for publicly. A record showing public funds, a university and a
+  commercial partner on one project is the documented start of nearly every
+  licence this map complains about.
+- **BARDA.** Public funding of manufacturing capacity produces privately owned
+  plants, and the terms on which the public can later use what it paid for are
+  whatever the original contract said.
+- **Guangzhou Wolbaki.** Release programmes are limited by rearing capacity, and
+  capacity is being built where labour and land are cheapest. A map of open
+  release covering only Oxitec and the World Mosquito Program is missing where
+  the insects are actually produced.
+- **Argentina's INASE.** Seed law permits farm-saved seed, so the companies
+  collect through private contracts and testing at delivery points instead.
+  **When a law does not give a company what it wants, the contract does — and the
+  contract is not public.**
+- **Mexico's CONAHCYT** is the one case on this map of a state research body
+  producing the evidence a government used to *restrict* an industry. Everywhere
+  else the equivalent institutions produce the evidence used to permit one.
+- **Fonterra.** A cooperative of that size deciding against a trait removes the
+  market for it across an entire national sector, with no regulator involved.
+- **Revive & Restore's black-footed ferrets** worked, and depended entirely on
+  tissue banked decades earlier by people with no idea what it would be used for.
+  The case for cryobanking is made there — and so is the case that sampling
+  choices made now decide what is possible later.
+
+**Alliance for Science** is listed at low trust: philanthropic money funding
+public argument rather than research, training fellows from countries where
+approval decisions are pending. Legitimate advocacy, and an input into those
+decisions. It is a voice, not a record, and the trust filters exclude it as one.
+
+---
+
+## Round 69
+
+**356 points: 326 industry, 25 escapes, 5 curated**, across 227 places. Twenty
+industry entries and **five new escape records — the first addition to that layer
+since it was built.**
+
+    rules 61  seed 37  editing 28  animals 27  escape 25  synthesis 24
+    livestock 23  repro 23  cro 22  money 22  clinical 21  deextinct 20
+    wild 18  ogtr 5
+
+### The escape record, 20 → 25
+
+Three of the five are about organisms nothing engineered, which is the point:
+
+- **Farmed salmon genetics in wild Norwegian rivers.** Farmed ancestry found in a
+  large majority of assessed wild populations, river by river, over decades.
+  **Nothing here was genetically engineered** — the genetics are the product of
+  intensive selection, and they entered wild populations through routine escape.
+  It is the clearest measured example of the process this map argues about for
+  crops, and it exists only because one country funded the monitoring.
+- **Atlantic salmon naturalised in Patagonia**, from escapes running to hundreds
+  of thousands of fish per incident, in a country with no native salmon. No
+  biosafety framework was engaged at any point, because nothing was engineered.
+- **Petunias, a third wave** after two clearance operations each treated as
+  complete. The recurrence measures the monitoring rather than the plant.
+- **Ukraine** — the fourth case of adoption preceding approval after India,
+  Brazil and Paraguay. Consistent enough now to treat as the normal route: the
+  register records what was asked for, not what is in the ground.
+- **GM maize found growing in Mexico** despite the constitutional prohibition.
+  Imported grain intended for food can be planted, and some of it is. **A
+  prohibition on planting does not control seed that arrives as food** — the gap
+  every import-and-prohibit country on this map has, and almost none tests for.
+
+### Industry entries
+
+- **Cibus** is the concrete case behind an abstract point made three rounds ago:
+  its Canadian canola is the CFIA register entry with no OECD identifier. A
+  commercial product in the field that the international tracking system cannot
+  name.
+- **Advarra.** Commercial ethics review boards are legal, accredited, efficient —
+  and selected and paid by the sponsor whose protocol they review. The structural
+  conflict is identical to the one in safety studies, and here it applies to the
+  body whose entire function is protecting participants.
+- **MHRA's accelerated pathway.** Regulators now compete to be chosen. That is
+  stated policy rather than an accusation, and it exerts steady downward pressure
+  on how demanding any one of them can be.
+- **Norway's marine research institute** runs the only systematic long-term
+  monitoring of genetic introgression from farmed into wild animals anywhere.
+- **Syncona** is included as a counter-example to this map's own
+  venture-timeline argument: patient capital exists, is publicly listed, and
+  whether it produces different products is testable rather than assumed.
+- **The European Investment Bank.** Public capital reaching this industry as
+  lending carries none of the disclosure the grant channel has.
+- **SUNY ESF's chestnut programme** published performance problems with its own
+  line, and the sponsoring conservation organisation withdrew support as a
+  result. Self-reported adverse findings from a developer are rare enough here to
+  mark wherever they occur.
+
+---
+
+## Round 70
+
+**374 points: 344 industry, 25 escapes, 5 curated.** Eighteen entries.
+
+    rules 65  seed 43  editing 29  animals 29  repro 26  escape 25
+    synthesis 24  livestock 23  cro 22  clinical 22  money 22
+    deextinct 21  wild 18  ogtr 5
+
+Carrying something:
+
+- **UPOV 1991.** The single instrument that has done most to change what a farmer
+  may legally do with a harvest, spreading through trade negotiation rather than
+  domestic debate. **Most people affected by it have never heard of it.**
+- **Codex Alimentarius.** A voluntary guideline becomes effectively binding once
+  trade law treats departure from it as an obstacle needing justification. That
+  is the mechanism behind the Mexico ruling, named here as a mechanism.
+- **EFSA's GMO opinions** run to hundreds of pages and are open for public
+  comment for thirty days after publication. Almost nobody comments. **The most
+  consequential open door on this map and the one least walked through.**
+- **India's ART Act.** Commercial surrogacy was prohibited and the market moved
+  to countries with weaker rules. **A national prohibition on a cross-border
+  service relocates it rather than ending it**, and the people most exposed move
+  with it.
+- **Corteva's seed treatments.** Treated seed is often outside pesticide-use
+  reporting because nothing is sprayed, so the area treated is not recorded
+  anywhere. One of the largest insecticide applications in world agriculture and
+  among the least documented.
+- **Verve Therapeutics.** Every argument for accepting an irreversible edit rests
+  on the alternative being worse. Applied to a condition already managed by daily
+  tablets, that argument has to be made differently — and the eligible population
+  is orders of magnitude larger.
+- **The Donor Sibling Registry** exists because the clinics did not build it. The
+  sibling groups it has surfaced are the primary public evidence that family
+  limits are not working, assembled by the people affected rather than by any
+  regulator.
+- **Enza Zaden and Bejo.** A handful of firms in one Dutch province breed most of
+  what the world eats fresh. Geographic concentration nobody treats as a
+  vulnerability, invisible from any national statistic.
+- **Egypt's grain tenders.** Purchase specifications from the world's largest
+  wheat buyer function as regulation, written by a purchasing agency rather than
+  a biosafety authority.
+- **Beck's Hybrids.** Independent retailers license the same traits as everyone
+  else, so visible competition at the point of sale sits on a trait layer with
+  almost none. **What looks like a choice of companies is a choice of bags.**
+
+### Weebly embed
+
+`weebly-embed.html` added: an iframe pointing at the GitHub Pages URL, sized at
+85vh with a 520px floor so it survives short windows and phones. An iframe rather
+than a paste because the map is a 2.5 MB single file with its own scripts and
+styles — pasted into a Weebly page it would collide with the theme's CSS and
+Weebly would strip much of what it needs. The file carries a full-bleed variant
+and a fallback link in comments.
+
+### A caught artefact
+
+One coordinate line emerged malformed — a fragment of unrelated text spliced into
+a float literal. `ast.parse` caught it before the build ran. Worth noting because
+it was not a logic error or a bad anchor: it was corruption in generated text,
+and only the syntax check would have found it.
+
+---
+
+## Round 71
+
+**393 points: 363 industry, 25 escapes, 5 curated.** Nineteen entries. Every
+facet now at 20 or above except the harvested release family.
+
+    rules 67  seed 43  editing 32  animals 29  clinical 26  repro 26
+    money 25  escape 25  synthesis 24  cro 24  deextinct 24  livestock 23
+    wild 20  ogtr 5
+
+The entries that carry something:
+
+- **Pivot Bio's PROVEN.** Applied across millions of US acres, it is one of the
+  largest deliberate releases of an engineered organism in history by area — and
+  it generates no entry in any biosafety register, because a soil microbe applied
+  to seed is not a plant and is not planted. **The scale and the invisibility are
+  facts about the same product.**
+- **Rothamsted's aphid-repellent wheat.** The trait worked in the glasshouse and
+  failed in the field, and the institute published that. It is the single best
+  answer to the claim that laboratory performance predicts field performance, and
+  it came from the developer.
+- **Japan's PMDA.** Conditional approval lets regenerative medicine products be
+  marketed on preliminary evidence; at least one was later withdrawn when
+  confirmatory data did not arrive. **It is the working experiment in whether
+  early access or evidence should come first, and the results are being generated
+  on patients.**
+- **NMDP.** Ex-vivo gene therapy needs transplant-grade infrastructure. A therapy
+  requiring it cannot reach anywhere that lacks it regardless of price — for the
+  sickle cell therapies that means most of the affected population, and **the
+  barrier is hospitals rather than money.**
+- **Index fund ownership.** Most people with a pension are part-owners of this
+  industry through funds they never chose stock by stock. That is the mechanism
+  that makes shareholder pressure possible at all, and the same fact cuts both
+  ways — the map now says so.
+- **ViaGen's Przewalski's horses.** Commercial pet cloning built the capability
+  conservation cloning now uses. The capacity exists because a consumer market
+  paid to develop it.
+- **BioRescue.** Biotechnology deployed after every other option failed, on a
+  subspecies driven to two individuals by poaching. Whatever it demonstrates
+  about the technology, it demonstrates more about what made it necessary.
+- **Poland.** Prohibiting the marketing of GM seed achieves a cultivation ban
+  without invoking the biosafety framework at all — because seed law is where the
+  practical control sits.
+- **China's seed industry programme.** Seed sovereignty pursued as industrial
+  policy by the world's largest agricultural producer, with the state as
+  investor, regulator and customer at once.
+
+### A coordinate caught before it shipped
+
+Gates Ag One was geocoded to (63.7467, -68.5170) labelled "St Louis" — which is
+in the Canadian Arctic. Fixed, and then a spot-check ran every entry whose stated
+place matches a known city against that city's real position: **0 mismatches
+across 367 entries.** Worth having as a standing check, since a plausible-looking
+pair of floats is the one kind of error nothing else in the pipeline would catch.
+
+---
+
+## Round 72
+
+**414 points: 384 industry, 25 escapes, 5 curated.** Twenty-one entries.
+
+    rules 70  seed 50  editing 37  animals 31  clinical 28  repro 28
+    money 25  escape 25  synthesis 24  cro 24  deextinct 24  livestock 23
+    wild 20  ogtr 5
+
+Carrying something:
+
+- **Charles River's horseshoe crab reagent.** A wild animal harvested at scale
+  for the endotoxin test every injectable medicine depends on — and a recombinant
+  replacement exists, works, and is in the US pharmacopoeia. Adoption has been
+  slow because the old test is what everyone is used to. **Here the engineered
+  substitute is the option that spares the animals, and inertia is what keeps it
+  from being used.** The map is better for containing a case that cuts this way.
+- **Editas.** The first in-vivo human gene editing trial, discontinued for
+  commercial rather than safety reasons. Participants accepted an irreversible
+  procedure in a programme that was then stopped because the market was too
+  small — a risk of trial participation nobody consents to explicitly.
+- **Orchard Therapeutics.** For ultra-rare disease the eligible population is a
+  few hundred children worldwide, so the price per patient becomes extraordinary
+  by arithmetic rather than by choice. **That is the honest version of the pricing
+  argument, and it does not apply to the larger indications where the same prices
+  are charged.**
+- **Perfect Day.** The protein is identical to the dairy version and the
+  engineered organism is removed in processing, so nothing requires a label. One
+  of the largest routes by which engineered-organism products reach households,
+  and the least visible.
+- **Impossible Foods** is unusual for being open about it, and the disclosure has
+  cost it with part of its own natural-foods constituency. A product marketed on
+  environmental grounds and opposed on genetic ones — shown rather than resolved.
+- **McCain and Simplot as processors.** Processor specification is why the
+  engineered potato has had a limited market: the buyers declined it and growers
+  plant what buyers will take. The market door, documented, in a crop where it
+  was decisive.
+- **Alfalfa.** Perennial, bee-pollinated far beyond any buffer, stands persisting
+  for years — the crop where coexistence rules written around annual
+  self-pollinating plants fit worst, approved for release anyway.
+- **The WTO SPS Committee.** Members raise 'specific trade concerns' about each
+  other's approval timelines and the record is public. **The clearest
+  documentation anywhere of pressure applied to regulators from outside their own
+  country.**
+- **ISO's biotechnology committee.** Standards committees are open to
+  participation and almost nobody outside industry participates. A definition
+  settled there propagates into national regulation years later without anyone
+  having argued about it in public.
+- **CIP in Peru.** A centre of origin, the world's largest potato genebank and a
+  national GMO moratorium in one place — and the biofortified sweetpotato work
+  happened there, conventional breeding delivering the nutrition trait the
+  engineered pipeline is criticised for not delivering.
+- **The Ethiopian Biodiversity Institute** insisted on material transfer terms
+  and benefit sharing decades before the Nagoya Protocol. That precedent came
+  from a low-income country protecting its own material, not from an
+  international negotiation.
+- **ICBA in Dubai.** The traits this map notes as absent from commercial
+  pipelines — salinity, drought, poor-soil yield — are being worked on there,
+  largely by conventional breeding on public and philanthropic money, at a
+  fraction of the resources going into the two commercial traits.
+
+The coordinate/place check ran clean: **0 mismatches across 388 entries.**
+
+---
+
+## Round 73 — the index and the lens buttons were dead
+
+Two real bugs, both with the same root cause, both mine.
+
+**Since round 44, `trackerData` ships as `{}`.** That was correct — entries became
+map points and the per-country resources box was removed. But `buildIndexData()`
+and the whole lens/sub-filter system still read `trackerData`. So the index built
+from an empty object and **every lens button filtered a set with nothing in it.**
+The single stray row you saw was the last thing left in that structure.
+
+Two fixes:
+
+1. **`buildIndexData()` now reads `PJ_SEED`** — 431 rows, every point, labelled by
+   kind: Organisation, Escape, Release authorisation.
+2. **`pjPasses()` now honours the lens and sub-filter selection**, so clicking a
+   facet filters the map as well as the index. Release records carry no facet
+   tags, so they show when the lens is "all" and hide once a facet is chosen — a
+   facet is a claim about the industry, not about a permit.
+
+For either to work the points had to carry the fields they were stripped of in
+the round-44 conversion: `tags`, `kind`, `voice`, `trust`, `skind`.
+`build_industry_points.py` now carries all five.
+
+Verified by running the shipped `buildIndexData` against the shipped `PJ_SEED`:
+**431 rows, all 12 lenses represented**, and the lens filter tested on the map
+(all → 431 points, seed → 114, clinical → 72, sub-filter `seed:majors` → 15).
+
+**One invalid tag found on the way.** `people:professional`, from the law-firm
+batch, is not one of the 51 sub-filters — it had been passing because recent
+validation checked source families rather than tags. Replaced, and every tag in
+every module now checked against the map's real taxonomy: **920 tags, 0 invalid.**
+
+### Colours
+
+Help-panel section headings (`.hl-sec`, both rules) and the "jump to a part of
+the industry" menu now use the same light blue as the lens pills and layer
+checkboxes.
+
+### Entries
+
+**431 points: 401 industry, 25 escapes, 5 curated.** Eighteen entries.
+
+    rules 72  seed 56  editing 41  animals 31  clinical 30  repro 28
+    synthesis 25  money 25  escape 25  cro 24  livestock 24  deextinct 24
+    wild 21  ogtr 5
+
+- **Hybrid wheat.** Hybridisation achieves what a patent achieves without needing
+  one: the saved seed simply does not perform. **The oldest mechanism on this map
+  for making a farmer buy every year, and it requires no law at all.**
+- **Short-stature corn** is an adaptation to a climate producing stronger storms.
+  The industry is selling adaptation to conditions its own input-intensive model
+  contributes to.
+- **Enlist** is the treadmill made visible in a product line — tolerance to a
+  second chemical sold because the first stopped working, and the reintroduced
+  older herbicides drift further than the one they replace.
+- **Ohalo and Inari.** One alters how genomes combine without changing a
+  sequence; the other makes dozens of simultaneous edits. Carve-outs written
+  around single small changes that could plausibly have arisen naturally do not
+  obviously reach either, and **no framework has drawn a line at a number.**
+- **Novo Nordisk and Biocon together.** Recombinant insulin is fifty years old
+  with long-expired patents, and the price rose anyway because three firms supply
+  nearly all of it — while Biocon's biosimilars sell far cheaper. **Age and
+  expired patents do not produce low prices; competition does.**
+- **Moolec.** A soy plant containing pig protein is not covered by any labelling
+  scheme built around allergens, dietary restriction or religious observance.
+- **Oxford Nanopore's field sequencers** are the one technology here that
+  materially helps the people checking rather than the people releasing.
+- **CIMMYT.** Its standard material agreement keeps the world's maize and wheat
+  diversity available and unpatentable in the form supplied — the main thing
+  standing against the enclosure the rest of this map documents, and it depends
+  on funding rather than on any law.
+- **MASIPAG** does both halves: hundreds of farmer-selected rice varieties in
+  circulation, and the litigation that revoked the Golden Rice permits. **An
+  opposition that also produces seed is a different proposition.**
+
+---
+
+## Round 74 — why the subregions were still empty
+
+The per-region pass was working. It was only ever reaching the same third of the
+places, every run.
+
+### The bug
+
+`uniq[:cap]` sliced the target list **after countries had been added to the
+front**. So each run queried 97 countries plus the alphabetically earliest ~300
+subregions — ARG, AUS, AUT, BEL, BGD, BGR, BOL, BRA — **and nothing past roughly
+"D" was ever queried at all.** Same slice every run, forever. That is exactly the
+shape of what you were seeing: many regions filled, most subregions at zero.
+
+### Three fixes
+
+**Order.** Subregions go first now. Countries already pick up coverage from the
+global feeds; subregions almost never do, and they are the ~1,060 rows reading
+zero.
+
+**Rotation.** The window advances every six hours, which is the wire's cron
+interval — stateless and deterministic, so two runs in the same slot agree and
+consecutive runs do not repeat. Simulated against the real target list:
+
+    targets: 1,157 (1,060 subregions first, then 97 countries)
+      after run 1: 400 covered (35%)
+      after run 2: 800 covered (69%)
+      full sweep after 3 runs (18 hours)
+
+Because `wire.json` keeps a 120-day archive, coverage accumulates rather than
+rotating away.
+
+**Widening.** A place with no matching story in 90 days is not necessarily a
+place with nothing to report — it may be a quiet quarter in a small region. Three
+tiers now, tried in order until one returns something: 90 days on the topic
+terms, 365 days on the same terms, then 365 days on a broader set. **The widest
+tier still carries topic terms.** A bare place-name query returns whatever merely
+mentions the place, which is how a region filter fills with irrelevant stories
+and becomes worse than empty.
+
+**And a budget**, because three tiers across 400 places is up to 1,200 requests.
+Tier 1 always runs for every place; the widening tiers draw on a pool of
+`cap × 2.2`. Without it a quiet week — when almost everything escalates — would
+triple the request count and the runtime.
+
+### Verified
+
+Exercised the whole pass with GDELT stubbed at a 20% hit rate reachable only on
+the widest tier: **400 places → 1,200 calls → 73 distinct subregions filled**,
+every item carrying both `iso` and `region`, budget holding with 80 left.
+
+And the names match: **every one of the panel's 1,060 subregion rows is a name
+the harvester can now write, exactly — 100%, zero mismatches.** A near-miss on
+spelling produces a row that can never fill, so this is the check that matters
+most.
+
+Only `harvest/wire_harvest.py` changed. Re-run the wire workflow; the panel
+should fill over the next three runs rather than all at once.
+
+---
+
+## Round 75 — the Register is recoverable
+
+Twelve wire-lead edits applied, each verified.
+
+### The finding that matters
+
+The GM Contamination Register stopped in 2013 and I had been treating it as
+lost. It is not. **The whole dataset survives as open-access supplementary data**:
+
+    Price B & Cotter J (2014). International Journal of Food Contamination 1:5
+    doi:10.1186/s40550-014-0005-8 — CC BY
+
+Additional file 1 is the incident table: all 396 incidents across 63 countries.
+`harvest/contamination_register.py` recovers it. It does not hard-code a download
+URL — supplementary URLs move, DOIs do not — so it fetches the article, finds the
+supplement link, follows it, and says exactly which step failed if the layout
+changes rather than writing a silently empty file. Country-level positions only;
+rows it cannot place are dropped rather than guessed at. Every record carries the
+CC BY attribution in its description.
+
+New source family `escape:register`, separate from the hand-written `escape`
+family, because the two are not the same kind of record: the Register gives
+one-line summaries at country level, the hand-written entries carry the detail.
+Both are diamonds; the filter separates them.
+
+Blocked from the sandbox by the egress allowlist, so the fetch is unverified
+here. The parser is not: exercised offline against rows shaped like the published
+table, it produces well-formed records with all three description sections, real
+coordinates, and the attribution.
+
+### What I got wrong before
+
+I said the Register could not be added. It can. **The right question was not
+whether the site still works but whether the data was ever published elsewhere**,
+and it was, in the paper describing it.
+
+---
+
+## Round 76 — two more sources recovered
+
+### OGTR, looked at again
+
+There is no bulk download. But there is an **interactive crop field trial map**
+carrying licence, holder, crop, trait, area, location and status. An interactive
+map is driven by a data endpoint, so the data exists in machine-readable form
+whether or not a download is advertised.
+
+`harvest/ogtr_trials.py` finds that endpoint rather than assuming a URL, and
+**checks robots.txt first, every run**. Earlier rounds recorded OGTR as off
+limits on the strength of robots.txt; the right way to act on that is to ask the
+file each time rather than to remember an answer. If it refuses, the script says
+so and exits 0.
+
+From the sandbox it refuses — correctly, since the allowlist blocks robots.txt
+and `RobotFileParser` treats an unreadable file as a refusal. **So I still do not
+know OGTR's real answer.** The run will print it.
+
+Worth having if it works: every other release record on this map is
+`precise:false`, sitting at a country or state fallback because the register
+published no location. **OGTR publishes real coordinates.** These would be the
+only release points on the map that sit where the thing actually is — and the
+entry says why that matters: it removes the usual argument against publishing
+locations everywhere else.
+
+### Animal facilities, pieced together
+
+`harvest/animal_facilities.py` harvests the USDA annual reports — one point per
+registered US research facility with the species counts it declared, at state
+level. New source family `animals:facility`.
+
+It is the only facility-level count published anywhere, and every record says
+what it is missing: **mice, rats and birds bred for research are excluded from
+the Animal Welfare Act's definition of an animal.** They are the overwhelming
+majority of animals used and the great majority of genetically altered ones. The
+UK and EU figures are national totals rather than facility lists, so they stay as
+the hand-written entries already on the map.
+
+### Both are discovery-based and both say what failed
+
+Neither hard-codes a download URL. APHIS reorganises its data pages and
+supplementary URLs move; a hard-coded path fails silently a year later. Both
+name the step that failed and tell you what to update. Both exercised offline
+against realistically shaped rows: coordinates outside the expected bounds are
+rejected, unplaceable rows are dropped rather than guessed, and every emitted
+record carries all three description sections.
+
+**29 source families now.** All route correctly.
+
+---
+
+## Round 77 — two crawlers, and a correction
+
+### GMO-free zones
+
+`harvest/gmofree_zones.py`. The site publishes one page per country with no
+export, no API and no single table, so walking it is the only route. It reads the
+**index** for country links rather than hard-coding a list, honours robots.txt,
+runs one request at a time with a delay, and skips-and-names failures rather than
+retrying into the ground.
+
+Declarations are matched against the map's **own SUBGEO admin-1 names**, so a hit
+lands on a row the panel already lists. Municipal declarations sit below admin-1
+and are counted and reported rather than forced onto a region they do not fit.
+
+### USDA FAS
+
+`report_type=28` is the wrong filter — it is a broad category and still returns
+tens of thousands. **The series is identified by its title.**
+`harvest/fas_biotech.py` filters on the title, keeps the newest report per
+country, and handles the search returning either JSON or HTML, because FAS has
+served it both ways.
+
+Two outputs, deliberately separate:
+
+- **The report index** — country, year, title, URL. Reliable, and useful alone: a
+  per-country list of where the official account of that country's biotech
+  position is written down.
+- **`area_candidates`** — best-effort regex hits from report prose. **Never merged
+  into the index**, and the run prints how many reports it could read a figure
+  from and how many it could not. The reports are written by different attachés
+  in different years; figures appear in tables, sentences and footnotes with no
+  fixed form. Presenting a number for every country would imply they were all
+  found the same way.
+
+**A bug caught in testing.** The crop-context window looked 60 characters ahead,
+which attributed "55.2 million hectares of biotech crops, of which soybean..." to
+soybean — when that figure is the national total. The crop that qualifies a figure
+precedes it, so the window now looks backward only. Retested: the total comes
+back with no crop, and the 34.9M correctly attaches to soybean.
+
+### A correction on geoBoundaries
+
+The GitHub Download-ZIP of geoBoundaries contains **no geometry** — every
+`.geojson` is ~130 bytes of Git LFS pointer, because the ZIP button does not
+resolve LFS. Use the API or the LFS media URLs. CGAZ ADM0 is 401 MB regardless,
+which is a fetched file rather than an embedded one.
+
+**And the regime overlay needs no file at all**: the map already fetches cgaz
+boundaries at runtime, so a classification table applied to them replaces the
+1.1 MB `regime.geojson`.
+
+### Centres of origin needs no digitising
+
+I said it would. It does not. Khoury et al. 2016 defines its 23 eco-geographic
+regions **purely by country membership** — Table S2 lists the countries in each,
+Table S1 maps crops to regions, both on Dryad at doi:10.5061/dryad.s08t2. The
+overlay is country polygons dissolved into 23 groups: same technique as the
+regime layer, same geometry, no licensed source and no digitising.
+
+**Three of the five overlays are now country-level joins onto boundaries the map
+already loads** — regime, centres of origin, and cultivation area.
+
+---
+
+## Round 78 — the concurrency group was dropping scheduled runs
+
+    Canceling since a higher priority waiting request for commit-main exists
+
+Both workflows shared  so they would queue
+instead of racing. **GitHub only lets one run WAIT per group** — a newer queued
+run cancels the waiting one. So whenever releases queued behind wire, that wire
+run was dropped entirely rather than delayed.
+
+Each workflow now has its own group. The push race the shared group was guarding
+against is already handled better by the retry added in round 41: on a rejected
+push the job resets to origin/main and re-harvests. That is robust to
+collisions, so serialising the two bought nothing and cost scheduled runs.
+
+---
+
+## Round 79
+
+**450 points: 420 industry, 25 escapes, 5 curated.** Nineteen entries.
+Coordinate/place check clean across 425.
+
+    rules 75  seed 60  editing 45  animals 33  clinical 31  repro 30
+    money 27  synthesis 26  escape 25  cro 24  livestock 24  deextinct 24
+    wild 21  ogtr 5
+
+Several of these exist to complicate the map rather than reinforce it:
+
+- **The Nuffield Council** concluded in 2018 that heritable genome editing
+  *could* be ethically acceptable in some circumstances. Citing them honestly
+  means citing that. The map is more useful for holding a considered position it
+  does not simply endorse.
+- **UK Biobank.** Access by approved application rather than purchase, with
+  analyses returned to the resource. That is materially different from a company
+  owning a dataset outright, and it is the clearest available answer to what the
+  alternative to enclosure looks like in human genomics.
+- **IMPC** is knocking out every protein-coding gene in the mouse and publishing
+  the phenotypes — the most systematic vertebrate engineering ever undertaken,
+  publicly funded, openly documented. Both the best documentation in that facet
+  and its largest single undertaking.
+- **Norway's sovereign fund** publishes its ethical exclusions *with reasoning*.
+  For anyone pursuing the shareholder route this map keeps pointing at, that is
+  the worked example of a documented divestment argument.
+
+And several that sharpen it:
+
+- **Cargill.** Private, so it publishes far less than any listed company here,
+  and it handles a very large share of the world's traded grain. **The single
+  largest mover of engineered crop output discloses the least about it.** Read
+  beside ADM, which is listed: the same activity is documented or not depending
+  on whether shares are traded, not on policy.
+- **The FDA Modernization Act** removed the statutory requirement to test drugs
+  in animals. **The requirement is gone and the practice largely continues**,
+  because regulators still expect the data and sponsors still supply it. A law
+  changing and nothing changing is worth documenting precisely.
+- **Organic Seed Alliance.** Most organic growers use conventional untreated seed
+  under exemptions, because organic seed is unavailable in the varieties they
+  need. Seed supply is a quieter lever on that sector than any biosafety rule.
+- **Tome / programmable integration.** Carve-outs for gene editing rest on
+  nothing foreign being added. Inserting a whole gene lands back inside the
+  transgenic definition — **the first technique in years moving in that direction
+  rather than out of it.**
+- **Scribe.** Proteins designed rather than discovered are not covered by patents
+  on naturally occurring systems, which is part of the point. The patent fight is
+  being routed around by building tools that were never anyone's to claim.
+- **ASTA** maintains the voluntary database gene-edited varieties are listed in
+  where no notification is required. **The public record of what is planted is
+  kept by the sector planting it** — a fact about the regulation, not the
+  companies.
+
+---
+
+## Round 80 — organisation type
+
+**Facets say what part of the industry a body works in. They never said what
+KIND of body it is** — and a ministry, a committee, a company and a campaign
+group are not the same thing to argue with.
+
+Every industry point now carries an `otype`, **derived from its own name and base
+record rather than hand-tagged**, so it stays consistent across 420 entries and
+re-derives when entries change. Nine types, every point classified, none left
+over:
+
+    #f2c14e  Companies                    211
+    #6fa8dc  Ministries & agencies         53
+    #76c893  Institutes & universities     50
+    #c9a227  Funds & foundations           25
+    #9fb3c8  Registers & databases         25
+    #4db6ac  Intergovernmental bodies      18
+    #e08a5f  Trade associations            16
+    #d96ba0  NGOs & campaigns              12
+    #8e7cc3  Committees & councils         10
+
+Industry squares are now coloured by type, with a checkbox and colour swatch per
+type under the three kind toggles. Escapes and releases keep their own ramps,
+because neither is an organisation — and the type filter is skipped for them
+rather than hiding them when a type is switched off.
+
+Classifier order matters and is commented: an IGO that is also a "commission"
+reads as an IGO, and a company with "research" in its name does not become an
+institute. Verified: 9 types, 9 distinct colours, 0 industry points unclassified,
+and switching companies off leaves 239 of 450 drawn.
+
+### Wire lead
+
+Six edits, each verified. The roadside-spraying and canola-dormancy sentences
+deleted; the concession and the escape cases merged into one paragraph; "Seeds
+and pollen do not stay where you put them"; "watching or even defining"; **"Nobody
+knows the true ecological impacts of all of these combined"** added after the
+resistance clause; "And, worst of all, containment has demonstrably failed"; and
+the close is now **"And, of course, the organisms themselves have no say in all of
+this. They are born simply because a company decided which trait would sell, and
+they are released into a world that had no part in the decision either — all
+because the corporate couldn't learn its place."**
+
+854 words, nine paragraphs, down from 1,034.
+
+---
+
+## Round 81 — harvest the facets that have registers
+
+Asked to reach 100% across every facet. Hand-entry cannot: assisted reproduction
+alone is tens of thousands of clinics. But that is the wrong method for the
+facets with the worst ratios, **because three of them have registers.**
+
+### Clinical, from sample to coverage
+
+`harvest/clinical_sponsors.py`. ClinicalTrials.gov requires registration of
+essentially every interventional trial run in or submitted to the US, and its v2
+API is open and keyless. The script runs ten queries — "gene therapy" alone
+misses cell therapy and editing trials that never use the phrase — dedupes on
+NCT number, and aggregates **by sponsor**: one point per organisation, carrying
+trial count, phase spread, recruiting status and the country of its most frequent
+trial location.
+
+That takes the clinical facet from ~31 hand-written entries, which was about 1%,
+to whatever the register holds. New source family `clinical:sponsor`.
+
+The entry text makes the point the register itself makes: **it exists because a
+law requires it, after sponsors were found abandoning trials with unfavourable
+results unpublished. Every other facet on this map is argued about with figures
+the industry chose to release; this one is not.**
+
+What it does not claim: to be the world. Trials run entirely outside the US
+regulatory orbit may never register, and China is under-represented relative to
+its actual programme. The output note says so.
+
+Blocked from the sandbox by the allowlist, so the fetch is unverified. The
+aggregation is not — exercised offline: 5 studies with a duplicate NCT collapse
+to 4 unique across 3 sponsors, the unplaceable country is dropped rather than
+guessed, phases and sponsor class map correctly.
+
+### The honest position on 100%
+
+Three facets can reach effective completeness for their scope, and all three by
+harvester rather than by typing:
+
+- **Escapes** — 25 → ~420 once `contamination_register.py` runs. Near-complete
+  for 1997–2013.
+- **Animals** — 33 → ~1,000 once `animal_facilities.py` runs. Complete for the US.
+- **Clinical** — 31 → the register, once this one runs.
+
+**None of the three has executed anywhere with real network yet.** They are worth
+more than another twenty rounds of hand-entry, and they cost one workflow run.
+
+The rest — seed, contract research, reproduction, money — have no register
+anywhere, so those stay a sample however long I work on them, and the map should
+keep saying which is which.
+
+**30 source families.** All route correctly.
+
+---
+
+## Round 82 — wording, panel order, overlays
+
+### "Escape" is gone
+
+**The word framed the organism as a fugitive, which is the wrong relationship:
+nothing chose to leave.** Replaced throughout with **spread**, and with narrower
+words where they fit better — stray plants rather than escaped plants, dispersal
+pathway rather than escape pathway, loss of containment rather than escape from
+containment.
+
+    Documented spread & unauthorised releases     (was: escapes)
+    Spread & contamination                        (facet category)
+    Red diamond — a documented case of spread or contamination
+    <b>Spread</b> — what got out of the field       (kind toggle)
+
+Swept across `escape_records.json`, all 22 entry modules, `build.py`, `facets.py`
+and `content.py`. **46 instances of the string remain in the built file and every
+one is accounted for**: 44 internal keys (`escape:crop`, `data-kind="escape"`,
+`escape_records`), which are identifiers rather than prose, and 2 uses of the
+Escape key. The wire's search terms keep the word deliberately — journalists
+write it, so the feed has to match it.
+
+**One bug the rename caused, and the builder caught it.** Renaming an entry broke
+its `PLACES` key, so it silently failed to geocode and the map went 450 → 449
+points. The builder names its own misses rather than dropping them quietly, which
+is why that took thirty seconds instead of never being noticed.
+
+### Help panel reordered
+
+Now: **Reading the markers** → **The map key** → **The map** → Left rail → Right
+rail. The two sentences about the world plate and the satellite cross-fade moved
+up to open Reading the markers, which is where they belong — they describe what
+you are looking at, not how to navigate it.
+
+Deleted the place-name row sentence. Navigation now reads: **"Click any area
+outside of the region, or the unit's name in the top-centre row, to go back up."**
+
+### Click-outside-to-go-up already worked
+
+Checked before changing anything. `map.on('click')` already steps up a level when
+you click outside the current unit's boundary: at country level it returns to the
+world, at sub-unit level it pops one level, and clicking a drawn sub-unit descends
+instead. Nothing needed doing.
+
+### Overlays on by default
+
+They were opt-in because they used to be placeholders. Two are now built from
+real geometry and the rest fail quietly when their file is absent, so there is
+nothing left to protect the reader from. Checkboxes ship checked and a load
+handler switches the layers on to match.
+
+### The guide PDFs
+
+The run-together words — "Thenational biosafetyregulator" — are in the **figure
+images**, not the text layer, and the PDFs were produced by Qt with subsetted
+fonts and no recoverable source. **I cannot fix them by editing the files.** They
+would need regenerating from whatever produced the diagrams. Flagged rather than
+attempted, because a half-repaired PDF is worse than a known-broken one.
+
+---
+
+## Round 83 — wording again, and seventeen entries
+
+### Three more words out
+
+**"Stray" and "loss of containment" imply the organism belonged somewhere and got
+away. "Contamination" implies it dirtied something clean.** All three carry a
+judgement about the organism rather than about the decision that moved it.
+
+    stray plants          →  self-sown plants
+    loss of containment   →  spread from the site
+    contamination         →  unauthorised presence
+    contaminated          →  carrying engineered material
+    contaminate           →  put engineered genes into
+
+**"GM Contamination Register" stays as written.** It is the register's actual
+name, and renaming someone else's title would be a different kind of inaccuracy.
+
+Eight instances remain in the built file, all accounted for: internal keys and
+the wire's search terms, which keep the word because journalists write it and the
+feed has to match.
+
+**One thing the sweep broke and I caught.** It rewrote `cross-contamination`
+inside a wire keyword list into `cross-unauthorised presence`, which would have
+stopped that term matching anything. Restored. **A blanket replace across a file
+that contains both prose and search terms will always do this** — the guard list
+now protects proper names and term lists explicitly.
+
+### On the guide figures
+
+I looked for the script. The three transcripts in this workspace are all
+GMO-map sessions and none contains it; the only guide-building code in them is
+the per-country resistance PDFs from the original source map, which is a
+different set. **If I wrote those two guides it was in another conversation, and
+that conversation's build code is not here.** I can rebuild the two diagrams from
+what is visible, or rebuild the guides properly if you point me at that session.
+
+### Entries
+
+**466 points: 436 industry, 25 spread records, 5 curated.** Seventeen entries into
+the thinnest facets: wild 21 → 23, deextinct 24 → 27, cro 24 → 27, livestock
+24 → 27.
+
+    rules 77  seed 60  editing 45  animals 34  clinical 31  repro 30
+    money 28  synthesis 27  cro 27  livestock 27  deextinct 27
+    spread 25  wild 23  ogtr 5
+
+- **RNA pesticides.** Nothing living is altered, so no biosafety framework
+  applies; the mechanism is sequence-specific, so pesticide assumptions do not
+  fit. **Both categories were built for something else, and the product sells
+  while the question of which governs it stays open.**
+- **GBIRd.** Islands are chosen for gene-drive mice because a drive should stay
+  put. But mice reach islands on boats, which is how they arrived — so the
+  containment argument rests on the same transport that defeated it before.
+- **The Florida panther.** Genetic rescue that worked, decades ago, by moving
+  animals rather than editing them. Any engineered rescue has to explain what it
+  adds over translocation, and that comparison is rarely made explicit.
+- **Emulate.** The law now permits non-animal methods and regulators still expect
+  animal data. **The constraint stopped being legal and became conventional**,
+  which is harder to change and gets far less attention.
+- **Sexed semen.** Most dairy calves born are female and the male calves that
+  were the by-product are simply not conceived. It reduces a welfare problem by
+  removing the animals from existence — a real improvement, named precisely.
+- **Testbiotech.** That a handful of staff constitute most of the independent
+  technical scrutiny of EFSA dossiers in the world's largest import market is a
+  fact about the scrutiny, not about them.
+- **Kew's Millennium Seed Bank.** The wild relatives taking up engineered genes
+  are the same material stored there. A bank of what a population used to be is
+  the only reference a later change can be measured against.
+
+---
+
+## Round 84 — the wording fixed by hand, not by sweep
+
+The previous blanket replace did real damage that only showed up on inspection.
+**It rewrote a URL, two Google News search queries, and a technical term that had
+nothing to do with genetic engineering.** Every instance is now handled
+individually.
+
+### Repaired — the swap should never have touched these
+
+    http://www.unauthorised presenceregister.org/
+      → http://www.gmcontaminationregister.org/          (a live URL)
+
+    %22GM%20unauthorised presence%22
+      → %22GM%20contamination%22                          (a search query)
+
+    "gm unauthorised presence", "carrying engineered material"
+      → "gm contamination", "contaminated"                (wire search terms)
+
+    "...used to test injectable drugs and devices for bacterial
+     unauthorised presence"
+      → "...for bacterial contamination"
+
+That last one is the horseshoe crab endotoxin test. **Bacterial contamination in
+a sterility assay is a technical term about pathogens, not about engineered
+organisms**, and the sweep had no business inside it.
+
+### Applied — the new words, where they fit
+
+    "...a combination nobody bred, made by self-sown plants breeding with
+     each other."
+      → "...made by breakout plants breeding with each other."
+
+    "Spread & unauthorised presence"        → "Spread & cross-breeding"
+    "🧬 Unauthorised presence & spread"     → "🧬 Cross-breeding & spread"
+    "cat": "Unauthorised presence record"  → "cat": "Spread record"
+
+    "Red diamond — a documented case of spread or unauthorised presence,
+     placed where the material was found."
+      → "...a documented case of spread or cross-breeding..."
+
+    "The coexistence rules, the unauthorised presence disputes and the organic
+     sector's losses are all documented there."
+      → "...the cross-breeding disputes and the organic sector's losses..."
+
+    "This is not unauthorised presence of a crop but of the source of the crop."
+      → "This is not cross-breeding into a crop but into the source of
+         the crop."
+
+    "...where a unauthorised presence or drift claim is filed..."
+      → "...where a cross-breeding or drift claim is filed..."
+
+    "the difference between ‘we think there is unauthorised presence’ and a
+     result that survives challenge"
+      → "the difference between ‘we think there is GM material in this’ and a
+         result that survives challenge"
+
+    "the only dedicated global record of GM unauthorised presence and
+     illegal-release incidents"
+      → "...record of GM cross-breeding and illegal-release incidents"
+
+    "cases of unauthorised presence"
+      → "cases of cross-breeding and unapproved planting"
+
+**Where "cross-bred" did not fit, it was not forced.** Several records are about
+an unapproved variety turning up in a food supply or an export shipment, where
+nothing cross-bred with anything — those read "unapproved planting" or say
+plainly what was found. The category name pairs the two: **Spread &
+cross-breeding**.
+
+Zero instances of the old wording remain. 466 points, scripts clean.
+
+---
+
+## Round 85 — every revision, from the original
+
+Diffed against the repo copy you uploaded rather than reciting from memory. That
+surfaced **one string the earlier sweep had mangled and I had not caught**:
+
+    "guarantee an accession is available to you, or that it is uncontaminated"
+      → (broken)  "...or that it is uncarrying engineered material"
+      → (fixed)   "...or that it is free of engineered genes"
+
+`uncontaminated` is one word, so a replace on `contaminated` ate the prefix. It
+was in a tool description in the panel copy — exactly the place the user asked me
+to check, and exactly where my own scans had been looking only at the help panel
+and wire lead rather than every prose block in the file.
+
+### The complete list, original → final
+
+**Panel and key copy**
+
+    "Red diamond — a documented escape or contamination incident, placed where
+     the material was found."
+      → "Red diamond — a documented case of spread or cross-breeding, placed
+         where the material was found."
+
+    "...together with recorded escapes and unauthorised releases..."
+      → "...together with recorded spread and unauthorised releases..."
+
+    "Biosafety & Contamination + Interpretive — the independent scientists
+     re-reading the dossier."
+      → "Biosafety & Spread + Interpretive — ..."
+
+    "...read the claims that would be asserted against a farmer whose crop is
+     contaminated."
+      → "...against a farmer whose crop is carrying engineered material."
+
+    "CAN'T: guarantee an accession is available to you, or that it is
+     uncontaminated."
+      → "...or that it is free of engineered genes."
+
+    "FOR: the difference between ‘we think there is contamination’ and a result
+     that survives challenge is usually which method was used."
+      → "...between ‘we think there is GM material in this’ and a result that
+         survives challenge..."
+
+    "CAN: show that escape is routine rather than exceptional."
+      → "CAN: show that spread is routine rather than exceptional."
+
+    "Courthouses — where a consent is challenged by judicial review, where a
+     contamination or drift claim is filed..."
+      → "...where a cross-breeding or drift claim is filed..."
+
+    "This is also where the regulatory escape happens: organisms made by editing
+     rather than insertion."
+      → "This is also where the regulatory evasion happens: ..."
+
+**Wire lead**
+
+    "...a combination nobody bred, made by escaped plants breeding with
+     each other."
+      → "...made by breakout plants breeding with each other."
+
+    "Worse yet, containment has demonstrably failed, and escapes are
+     irreversible — there is no undoing it."
+      → "And, worst of all, containment has demonstrably failed, and the spread
+         is irreversible — there is no undoing it, ever."
+
+    "...wild plant relatives at centres of origin are being contaminated, like
+     introgressed wild cotton..."
+      → "...introgressed wild cotton was found to hold less genetic variety than
+         its unmodified neighbours..."
+
+**Source families and layer labels**
+
+    "Escapes & contamination"                → "Spread & cross-breeding"
+    "Documented escapes & unauthorised releases"
+                                             → "Documented spread & unauthorised releases"
+    "Escapes — what got out"                 → "Spread — what got out of the field"
+    "🧬 Contamination & escapes"              → "🧬 Cross-breeding & spread"
+    "cat": "Contamination record"            → "cat": "Spread record"
+    "Incidents where engineered material was found where it had not been
+     authorised"                             → "Cases where..."
+
+**Records**
+
+    "GM Contamination Register — the global escape record"
+      → "GM Contamination Register — the global record of spread"
+
+    "The only dedicated global record of GM contamination and illegal-release
+     incidents"
+      → "...record of GM cross-breeding and illegal-release incidents"
+
+    "Grass, transgene escape into wild relatives"
+      → "Grass, transgene spread into wild relatives"
+    "Ornamental fish, escape into wild waters"
+      → "Ornamental fish, spread into wild waters"
+    "Escaped, eradication abandoned"       → "Spread; eradication abandoned"
+    "escaped from ornamental fish farms"   → "spread from ornamental fish farms"
+    "escape from containment"              → "spread from the site"
+    "routine escapes"                      → "routine losses from pens"
+    "the pet trade as a release pathway"   → "the pet trade as a dispersal pathway"
+    "contamination incident"               → "case of cross-breeding or unapproved planting"
+    "This is not contamination of a crop but of the source of the crop"
+      → "This is not cross-breeding into a crop but into the source of the crop"
+    "the contamination disputes and the organic sector's losses"
+      → "the cross-breeding disputes and the organic sector's losses"
+    "accepting grain would contaminate its seed stock"
+      → "accepting grain would put engineered genes into its seed stock"
+
+**Deliberately unchanged**
+
+    "GM Contamination Register"        the register's actual name
+    gmcontaminationregister.org        a live URL
+    "bacterial contamination"          a sterility term about pathogens, in the
+                                       horseshoe-crab endotoxin entry
+    wire search terms and stop-list    journalists write these words, so the
+                                       feed has to match them
+    escape:crop, data-kind="escape"    internal identifiers, never displayed
+    e.key === 'Escape'                 the keyboard key
+
+**69 occurrences remain in the built file and all 69 are in that last group.**
+Zero prose.
+
+### Guides
+
+`how-to-change-the-industry.pdf` replaced with your revised version.
+**`how-to-stop-a-release.pdf` is unchanged** — the only revised file uploaded was
+the industry-and-law guide, so the release guide still has the run-together
+words in its figures.
+
+---
+
+## Round 86 — the wire lead was only about farming
+
+Eight new paragraphs after the no-say close, widening from GM agriculture to the
+whole industry. **1,404 words, 17 paragraphs**, up from 855 and 9.
+
+Written from the same position as the rest, and built to show rather than tell —
+every paragraph carries a mechanism or a number rather than an adjective:
+
+- **Synthesis.** A handful of companies write most of the world's made-to-order
+  DNA and screen orders against a dangerous-sequence list **because they agreed
+  among themselves to** — no government requires it, and a meaningful share of
+  world capacity sits outside the group that agreed. Nothing at all covers who
+  may buy the cutting proteins; they are sold from a catalogue.
+- **The materials gate.** Plasmid repositories, cell-line banks and reagent
+  suppliers all require a verified institutional account. **"You can read the
+  method for nothing. You cannot buy the materials."**
+- **Contractors.** The company named on a permit often did none of the work.
+  Follow the contractors instead of the clients and the industry is far more
+  concentrated than its company list suggests — dozens of sponsors, a handful of
+  laboratories — and the safety evidence a regulator assesses was paid for by the
+  applicant and produced by a contractor whose next contract depends on that same
+  industry.
+- **Animals as reagents.** Catalogues run to thousands of mouse strains, each a
+  lineage bred to be ill in a particular way. Mice, rats and birds bred for
+  research are not animals under the US Animal Welfare Act — the overwhelming
+  majority used, counted nowhere. Then: **"Pet cloning engages no biosafety
+  framework at any point, because nothing foreign was added and the rules have
+  nothing to catch."**
+- **Deliberate release.** Insects by the hundred million; microbes across
+  millions of acres generating no register entry because a microbe on a seed is
+  neither a plant nor planted; and gene drives designed to push a change through
+  a wild population **"with nobody releasing anything ever again."**
+- **Money.** Venture funds need an exit inside the life of the fund, which
+  rewards speed and scale over caution. Public money pays for the underlying
+  science and the results end up private property. Philanthropy is among the
+  largest funders of deployment in low-income countries. Defence agencies fund
+  work outside civilian biosafety oversight in every country that does it.
+- **Rules.** Trade associations exist so positions no single company wants
+  attributed to it can still be advanced. Whole classes of organism are being
+  moved outside registration. **"That does not make them safer. It makes them
+  unrecorded."**
+- **The close**, which is also the answer to why regulators and registers are
+  mapped as part of the industry rather than as a check on it: **"The same chain
+  that ends in a salmon fillet ends in a gene therapy, and in an embryo."**
+
+Zero banned words in the new text. Placement, div balance and script parsing all
+verified.
+
+**One thing worth recording about the insert.** The anchor failed first time
+because the closing paragraph holds a literal ’ rather than a `\u2019` escape —
+the same class of near-miss as the curly apostrophe that broke a `PLACES` key.
+**Grep the target before anchoring on remembered text.**
+
+---
+
+## Round 87 — corrections to the corrections
+
+### A misattribution I need to own
+
+I listed this as a wording change I made:
+
+    "wild plant relatives at centres of origin are being contaminated, like
+     introgressed wild cotton, which was found to hold less genetic variety than
+     its unmodified neighbours, and Mexican wild cotton, which is now listed as
+     vulnerable with gene flow from crops being the main threat"
+      → "introgressed wild cotton was found to hold less genetic variety than
+         its unmodified neighbours, and Mexican wild cotton is now listed as
+         vulnerable, with gene flow from crops being the main threat."
+
+**It was not a contamination-wording change. It was the rewrite you asked for
+directly in round 82**, and I folded it into the wording list where it did not
+belong. The two happened in the same session and I conflated them.
+
+### Contamination is not the same as spread — you were right
+
+**Contamination covers three routes and only one is cross-breeding:**
+
+1. **Cross-breeding** — pollen carries an engineered gene into a related plant
+   (Oregon bentgrass, Oaxacan maize, wild cotton).
+2. **Mixing** — no breeding at all; seed or grain physically mixed in storage,
+   transport or handling (StarLink, Japanese port canola, Triffid flax, Bt10).
+3. **Unapproved planting** — someone grew it without authorisation (Gujarat 2001,
+   Ukraine, Brazil, Paraguay).
+
+So "Spread record" was wrong. Corrected:
+
+    "cat": "Spread record"    →  "cat": "Cross-breeding & mixing record"
+    "Spread & cross-breeding" →  "Cross-breeding & drift"
+    "🧬 Cross-breeding & spread"  →  "🧬 Cross-breeding & drift"
+    "a documented case of spread or cross-breeding"
+      → "a documented case of drift, cross-breeding or mixing"
+
+### Drift where drift is better
+
+**Drift** for pollen and seed on the move; **spread** kept for organisms that
+establish and keep going on their own.
+
+    "Grass, transgene spread into wild relatives"
+      → "Grass, transgene drift into wild relatives"
+    "Spread through transport rather than through cultivation"
+      → "Drift through transport rather than through cultivation"
+
+Unchanged, because the organism establishes rather than drifts: "Ornamental
+fish, spread into wild waters", "spread from ornamental fish farms", and the
+gene-drive language.
+
+### The farmer sentence
+
+The whole point of it is a farmer who never bought the seed, and my version lost
+that:
+
+    "read the claims that would be asserted against a farmer whose crop is
+     carrying engineered material"
+      → "...against a farmer whose crop picked up an engineered gene he
+         never planted"
+
+### Two reverts
+
+    "Biosafety & Spread + Interpretive"
+      → "Biosafety & Cross-breeding + Interpretive"      (names the family as named)
+
+    "This is also where the regulatory evasion happens"
+      → "This is also where the regulatory escape happens"
+
+The second is about a rule being slipped, not an organism. **"Escape" is only
+banned where it describes a living thing** — applying the ban to regulation was
+over-correction.
+
+    "This is not cross-breeding of a crop but of the source of the crop"
+      → "This is not just cross-breeding into a crop but into the source of
+         the crop"
+
+---
+
+## Round 88 — reverted, and a workflow ceiling
+
+### The wording is back to the original
+
+Everything reverted except **"escapes"** and **"escapees"**, which stay replaced.
+Where a phrase contained "escapes", the rest of it reverted but that word did
+not — so "Escapes & contamination" comes back as **"Spread & contamination"**.
+
+Restored: contamination / contaminated / contaminate, escape / escaped, "escape
+from containment", "escape pathway", "release pathway", and every sentence I had
+rewritten around them. Gone entirely: breakout plants, self-sown, unauthorised
+presence, cross-breeding, spread from the site, dispersal pathway, "free of
+engineered genes", "carrying engineered material", and the drift substitutions.
+
+Final audit: **0 occurrences of "escapes" or "escapees"; 35 contamination-family
+words and 53 uses of escape/escaped back in place; 0 traces of the intermediate
+wording.** 466 points, 0 problems.
+
+Two near-misses on the way back, both the same class as before: the Norwegian
+entry's name carries a `\u2014` escape in source rather than a literal dash, so
+the revert missed it and the `PLACES` key went out of alignment again; and two
+sentences lived in `escape_records.json` rather than a module. **Both were caught
+by the builder naming its own misses and by checking each string after the
+rebuild rather than trusting the replace count.**
+
+### Why the run took over two hours
+
+`releases.yml` had **no time bound anywhere** — not on the job, not on any step —
+and I had added five new harvesters to it without one. Any of them can hang: the
+GMO-free crawler sleeps between requests, the FAS harvester fetches report after
+report, and the clinical sponsor harvester pages through ten queries against an
+API that can be slow.
+
+Two ceilings now:
+
+- **`timeout-minutes: 35` on the job.** Nothing here is worth an unbounded wait,
+  and **a job that never finishes also never commits what the earlier steps did
+  get** — which is the real cost.
+- **A `timeout Nm` on each of the ten harvester calls**, sized to what each
+  should need: 8m for APHIS and the clinical sponsors, 6m for the two crawlers,
+  4–5m for the rest, 2m for the builders. One slow source can no longer eat the
+  whole budget, and each still ends in `|| echo "… failed or timed out —
+  continuing"` so the run carries on and commits what it has.
+
+---
+
+## Round 88 — reverted, and the two-hour run explained
+
+### Wording reverted in full
+
+Every change from rounds 82–87 is back to the original, in both the panel copy
+and the entry descriptions: escape, escapes, escaped, contamination,
+contaminated, contaminate, "Escapes & contamination", "Contamination record",
+"🧬 Contamination & escapes", "Escapes — what got out", "Biosafety &
+Contamination + Interpretive", and every sentence listed in round 85.
+
+**Zero instances of the replacement wording remain** — checked against the full
+list: breakout plants, self-sown, unauthorised presence, cross-breeding & drift,
+cross-breeding & mixing, free of engineered genes, spread from the site, "picked
+up an engineered gene he never planted". All gone. 104 occurrences of
+escape/contamination restored.
+
+**Kept, because they were separate requests rather than wording changes:** the
+"And, worst of all" opening, the wild-cotton sentence rewrite, "Nobody knows the
+true ecological impacts of all of these combined", the new industry-wide section,
+and "regulatory escape" (which was itself a revert).
+
+The revert took four passes because the source files escape characters
+differently — `\u2014` in some places and a literal em dash in others, the same
+trap as the apostrophe. **Verify against the built file, not the source.**
+
+### The two-hour run
+
+**The version running in your repo is not the one I fixed.** The repo copy has:
+
+    concurrency:
+      group: commit-main        ← shared with the wire workflow
+    (no timeout-minutes, no per-command timeouts)
+
+The version in this batch has:
+
+    concurrency:
+      group: releases           ← its own group
+    timeout-minutes: 35
+    timeout 5m python3 harvest/cfia_approvals.py || echo "..."
+    timeout 8m python3 harvest/aphis_releases.py || echo "..."
+    ...ten commands, each individually capped
+
+So the run showing over two hours is almost certainly **waiting, not working** —
+sitting in the shared `commit-main` queue behind the wire job, which runs every
+six hours. GitHub counts queue time as elapsed time. That is exactly the round-78
+bug, and the fix is in `.github/workflows/releases.yml` in this batch, unuploaded.
+
+Upload it and cancel the stuck run. If a future run genuinely does hang, the job
+now dies at 35 minutes and the log names which harvester ate the time.
+
+---
+
+## Round 89 — escape → drift or spread, contamination untouched
+
+Judged per instance rather than swapped wholesale, because the two words do not
+mean the same thing:
+
+**SPREAD** — an organism reached somewhere and kept going: bred, established,
+built a population.
+
+    "made by escaped plants breeding with each other"
+      → "made by spreading plants breeding with each other"
+    "The strongest documented case of transgene escape into wild plant
+     communities anywhere"
+      → "...transgene spread into wild plant communities anywhere"
+    "escaped from ornamental fish farms and established breeding populations"
+      → "spread from ornamental fish farms and established breeding populations"
+    "Atlantic salmon...have escaped from Chilean farms in very large numbers"
+      → "...have spread out of Chilean farms in very large numbers"
+    "established itself through escape from containment nobody was required to
+     design for permanence"
+      → "...through spread out of pens nobody was required to design for
+         permanence"
+    "they entered wild populations through routine escapes over decades"
+      → "...through routine spread out of pens over decades"
+    "and escapes are irreversible"  →  "and the spread is irreversible"
+
+**DRIFT** — pollen, seed or grain carried somewhere by wind, water or handling.
+Material moved; nothing established.
+
+    "a documented escape or contamination incident"
+      → "a documented drift or contamination incident"
+    "Escape through transport rather than through cultivation"
+      → "Drift through transport rather than through cultivation"
+    "Escape from a public research programme rather than a company trial"
+      → "Drift from a public research programme rather than a company trial"
+    "CAN: show that escape is routine rather than exceptional"
+      → "CAN: show that drift is routine rather than exceptional"
+
+**Labels name both, because the layer holds both.**
+
+    "Escapes & contamination"                → "Spread, drift & contamination"
+    "🧬 Contamination & escapes"             → "🧬 Contamination, drift & spread"
+    "Documented escapes & unauthorised releases"
+                                             → "Documented spread, drift &
+                                                unauthorised releases"
+    "GM Contamination Register — escapes & illegal releases"
+                                             → "...— spread, drift & illegal
+                                                releases"
+    "Escapes — what got out"                 → "Spread & drift — what got out"
+    "— the global escape record"              → "— the global drift and spread
+                                                record"
+    "Escaped, eradication abandoned"         → "Spread; eradication abandoned"
+    "Norwegian Institute of Marine Research — escape monitoring"
+                                             → "— spread monitoring"
+
+**Left as "escape":** the regulatory sense — "This is also where the regulatory
+escape happens" — which is about a rule being slipped rather than an organism,
+plus every internal key, which is never displayed. **Two prose instances remain
+and both are that.**
+
+**Contamination is untouched: 35 occurrences, exactly as before.**
+
+### The same bug again, in reverse
+
+Renaming the Norwegian entry, I updated the `PLACES` coordinate key and not the
+entry itself, so it failed to geocode and the map went 466 → 465. Last time the
+mismatch ran the other way. **Both halves of a rename have to move together**, and
+the builder naming its own misses is the only reason either was caught.
