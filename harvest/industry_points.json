@@ -1,6 +1,6 @@
 {
  "note": "Industry organisations as map points, one marker each. Coordinates are headquarters or principal site at city level, so every record is precise:false — a corporate headquarters is not where the work happens.",
- "generated": "2026-08-03",
+ "generated": "2026-08-04",
  "projects": [
   {
    "name": "Bayer Crop Science",
@@ -27,7 +27,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Corteva Agriscience",
@@ -54,7 +55,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Bayer — investor filings",
@@ -80,7 +82,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Corteva — CRISPR licensing framework",
@@ -107,7 +110,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Ginkgo Bioworks",
@@ -134,7 +138,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Inari Agriculture",
@@ -161,7 +166,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Twist Bioscience",
@@ -187,7 +193,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Integrated DNA Technologies (Danaher)",
@@ -213,7 +220,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Illumina",
@@ -239,7 +247,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Addgene",
@@ -265,7 +274,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "company"
   },
   {
    "name": "Charles River Laboratories",
@@ -292,7 +302,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Labcorp Drug Development (formerly Covance)",
@@ -318,7 +329,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Syngenta Group",
@@ -345,7 +357,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Syngenta — seedcare & seeds portfolio",
@@ -371,7 +384,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "BASF Agricultural Solutions",
@@ -397,7 +411,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Rijk Zwaan",
@@ -423,7 +438,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Limagrain / Vilmorin",
@@ -450,7 +466,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Oxford Nanopore Technologies",
@@ -476,7 +493,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "BGI Group",
@@ -502,7 +520,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "The Jackson Laboratory",
@@ -528,7 +547,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Taconic Biosciences",
@@ -554,7 +574,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Envigo / Inotiv",
@@ -580,7 +601,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Acceligen (Recombinetics)",
@@ -606,7 +628,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "AquaBounty Technologies",
@@ -632,7 +655,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "ViaGen Pets & Equine",
@@ -658,7 +682,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Target Malaria",
@@ -684,7 +709,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "company"
   },
   {
    "name": "Pivot Bio",
@@ -710,7 +736,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Colossal Biosciences",
@@ -736,7 +763,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Living Carbon",
@@ -762,7 +790,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Vertex / CRISPR Therapeutics — Casgevy",
@@ -788,7 +817,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "ClinicalTrials.gov",
@@ -814,7 +844,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Orchid Health",
@@ -840,7 +871,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "CDC ART clinic data",
@@ -866,7 +898,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Gates Foundation — committed grants database",
@@ -892,7 +925,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "fund"
   },
   {
    "name": "DARPA — Biological Technologies Office",
@@ -918,7 +952,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "BIO — Biotechnology Innovation Organization",
@@ -944,7 +979,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "low",
-   "skind": "ngo"
+   "skind": "ngo",
+   "otype": "association"
   },
   {
    "name": "ISAAA — GM approval database",
@@ -970,7 +1006,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "low",
-   "skind": "ngo"
+   "skind": "ngo",
+   "otype": "association"
   },
   {
    "name": "CLEA Japan / Japan SLC",
@@ -996,7 +1033,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Sooam Biotech",
@@ -1022,7 +1060,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Oxitec",
@@ -1048,7 +1087,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "HFEA — licensed clinic register",
@@ -1074,7 +1114,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Suzano / FuturaGene",
@@ -1100,7 +1141,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Novartis — gene therapy",
@@ -1126,7 +1168,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "IVIRMA Global",
@@ -1152,7 +1195,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "CropLife International",
@@ -1178,7 +1222,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "low",
-   "skind": "ngo"
+   "skind": "ngo",
+   "otype": "association"
   },
   {
    "name": "OECD BioTrack",
@@ -1204,7 +1249,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "igo"
   },
   {
    "name": "Bayer — Climate FieldView & digital farming",
@@ -1231,7 +1277,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Benson Hill",
@@ -1258,7 +1305,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Pairwise",
@@ -1284,7 +1332,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Broad Institute — CRISPR patent estate",
@@ -1311,7 +1360,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Synthego",
@@ -1337,7 +1387,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Amyris",
@@ -1363,7 +1414,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Thermo Fisher Scientific",
@@ -1390,7 +1442,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "GenScript",
@@ -1417,7 +1470,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "ATCC",
@@ -1443,7 +1497,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "company"
   },
   {
    "name": "Mutant Mouse Resource & Research Centers",
@@ -1469,7 +1524,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "institute"
   },
   {
    "name": "Agragene",
@@ -1495,7 +1551,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Indigo Ag",
@@ -1521,7 +1578,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Bluebird bio",
@@ -1547,7 +1605,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Cooper Surgical — fertility",
@@ -1574,7 +1633,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "California Cryobank / Generate Life Sciences",
@@ -1600,7 +1660,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "ARCH Venture Partners",
@@ -1626,7 +1687,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "fund"
   },
   {
    "name": "Wellcome Trust",
@@ -1652,7 +1714,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "fund"
   },
   {
    "name": "KeyGene",
@@ -1679,7 +1742,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Groupe Roullier / seed & input distribution",
@@ -1705,7 +1769,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Janvier Labs",
@@ -1731,7 +1796,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Oxford Biomedica",
@@ -1757,7 +1823,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Genus / PIC",
@@ -1783,7 +1850,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Lonza",
@@ -1810,7 +1878,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "AquaGen",
@@ -1836,7 +1905,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "National Medical Products Administration — gene therapy",
@@ -1862,7 +1932,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Mahyco / Maharashtra Hybrid Seeds",
@@ -1889,7 +1960,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Department of Biotechnology",
@@ -1915,7 +1987,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Syngenta Group China",
@@ -1942,7 +2015,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Chinese Academy of Agricultural Sciences",
@@ -1969,7 +2043,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Embrapa",
@@ -1996,7 +2071,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "institute"
   },
   {
    "name": "CTNBio — national biosafety commission",
@@ -2022,7 +2098,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Bioceres Crop Solutions",
@@ -2049,7 +2126,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "BioNTech",
@@ -2076,7 +2154,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Evotec",
@@ -2102,7 +2181,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Sanatech Seed",
@@ -2129,7 +2209,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Regional Fish Institute",
@@ -2155,7 +2236,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "institute"
   },
   {
    "name": "Evogene",
@@ -2182,7 +2264,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Toolgen",
@@ -2208,7 +2291,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Singapore Food Agency — novel food approvals",
@@ -2235,7 +2319,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Corbion",
@@ -2261,7 +2346,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Novonesis (Novozymes / Chr. Hansen)",
@@ -2288,7 +2374,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Office of the Gene Technology Regulator — GMO Record",
@@ -2314,7 +2401,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Nufarm",
@@ -2341,7 +2429,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Canadian Food Inspection Agency — PNT decisions",
@@ -2368,7 +2457,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Revive & Restore",
@@ -2395,7 +2485,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "ngo"
   },
   {
    "name": "San Diego Zoo Wildlife Alliance — Frozen Zoo",
@@ -2422,7 +2513,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "American Chestnut Foundation — Darling 58",
@@ -2449,7 +2541,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "fund"
   },
   {
    "name": "Colossal — Form Bio spin-out",
@@ -2476,7 +2569,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "MosquitoMate",
@@ -2503,7 +2597,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Ginkgo Bioworks — agricultural biologicals",
@@ -2530,7 +2625,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Elemental Enzymes / biologicals sector",
@@ -2557,7 +2653,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Genus — PRRS-resistant pig approval",
@@ -2583,7 +2680,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "GloFish",
@@ -2610,7 +2708,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Trans Ova Genetics",
@@ -2637,7 +2736,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Progyny",
@@ -2663,7 +2763,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Genomic Prediction / LifeView",
@@ -2689,7 +2790,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Society for Assisted Reproductive Technology",
@@ -2715,7 +2817,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "low",
-   "skind": "ngo"
+   "skind": "ngo",
+   "otype": "association"
   },
   {
    "name": "Wolbachia — World Mosquito Program",
@@ -2741,7 +2844,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "company"
   },
   {
    "name": "Baillie Gifford / growth capital in biotech",
@@ -2767,7 +2871,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "fund"
   },
   {
    "name": "Livestock Improvement Corporation",
@@ -2793,7 +2898,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Eugin Group",
@@ -2820,7 +2926,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Cryos International",
@@ -2846,7 +2953,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "CIBIOGEM",
@@ -2872,7 +2980,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Grupo Bimbo",
@@ -2898,7 +3007,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Executive Council for GMOs — Department of Agriculture",
@@ -2924,7 +3034,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Pannar Seed (Corteva)",
@@ -2951,7 +3062,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "National Biosafety Management Agency",
@@ -2977,7 +3089,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Kenya National Biosafety Authority",
@@ -3002,7 +3115,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Illumina Italy / Ferrara sequencing hub",
@@ -3028,7 +3142,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Selvita",
@@ -3054,7 +3169,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Syngene International",
@@ -3081,7 +3197,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Bharat Biotech",
@@ -3107,7 +3224,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "WuXi AppTec",
@@ -3134,7 +3252,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Dabeinong Biotechnology",
@@ -3161,7 +3280,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Charoen Pokphand Group",
@@ -3187,7 +3307,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Nutreco / Skretting",
@@ -3214,7 +3335,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "JBS",
@@ -3240,7 +3362,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Colossal — thylacine programme partners",
@@ -3267,7 +3390,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "fund"
   },
   {
    "name": "Australian Frozen Zoo / CryoDiversity",
@@ -3293,7 +3417,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Understanding Animal Research",
@@ -3319,7 +3444,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "low",
-   "skind": "ngo"
+   "skind": "ngo",
+   "otype": "institute"
   },
   {
    "name": "Home Office — animals in science statistics",
@@ -3346,7 +3472,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Federal Research Center for Animal Husbandry",
@@ -3373,7 +3500,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "ministry"
   },
   {
    "name": "Ministry of Agriculture and Forestry — biosafety board",
@@ -3399,7 +3527,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Ministry of Agrarian Policy and Food",
@@ -3425,7 +3554,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "PT Perkebunan Nusantara / sugarcane biotechnology",
@@ -3452,7 +3582,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Ministry of Agriculture and Environment — biosafety",
@@ -3478,7 +3609,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "ICA — Instituto Colombiano Agropecuario",
@@ -3504,7 +3636,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "SLU — Swedish University of Agricultural Sciences",
@@ -3531,7 +3664,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Solar Foods",
@@ -3557,7 +3691,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Teagasc",
@@ -3583,7 +3718,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "ministry"
   },
   {
    "name": "Cyagen",
@@ -3610,7 +3746,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "National Primate Research Centers",
@@ -3637,7 +3774,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Bachem",
@@ -3664,7 +3802,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Samsung Biologics",
@@ -3690,7 +3829,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Virtus Health",
@@ -3716,7 +3856,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Israeli fertility system — Ministry of Health",
@@ -3743,7 +3884,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Predator Free 2050 — genetic tools debate",
@@ -3770,7 +3912,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "company"
   },
   {
    "name": "Sovereign wealth investment in agrifood technology",
@@ -3797,7 +3940,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "fund"
   },
   {
    "name": "National Biosafety Centre — Ministry of Climate Change",
@@ -3824,7 +3968,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Bangladesh Agricultural Research Institute — Bt brinjal",
@@ -3851,7 +3996,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Ethiopian Environment Protection Authority — biosafety",
@@ -3877,7 +4023,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "National Biosafety Authority Ghana",
@@ -3904,7 +4051,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Gabinete Nacional de Bioseguridad",
@@ -3931,7 +4079,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "SENAVE — seed and plant health service",
@@ -3957,7 +4106,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "SAG — Servicio Agrícola y Ganadero",
@@ -3984,7 +4134,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Ministerio de Agricultura — GM cultivation register",
@@ -4010,7 +4161,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Direção-Geral de Alimentação e Veterinária",
@@ -4036,7 +4188,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Ministry of Agriculture — biotechnology",
@@ -4062,7 +4215,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Agricultural Genetic Engineering Research Institute",
@@ -4088,7 +4242,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Nuseed / Nufarm omega-3 canola",
@@ -4114,7 +4269,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Health Canada — novel food decisions",
@@ -4140,7 +4296,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Aldevron (Danaher)",
@@ -4167,7 +4324,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Pacific Biosciences",
@@ -4192,7 +4350,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Bio-Rad Laboratories",
@@ -4218,7 +4377,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Intellia Therapeutics",
@@ -4244,7 +4404,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Sarepta Therapeutics",
@@ -4270,7 +4431,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "FDA — cellular & gene therapy approvals",
@@ -4296,7 +4458,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Alliance for Regenerative Medicine",
@@ -4322,7 +4485,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "low",
-   "skind": "ngo"
+   "skind": "ngo",
+   "otype": "association"
   },
   {
    "name": "Flagship Pioneering",
@@ -4349,7 +4513,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "fund"
   },
   {
    "name": "USDA NIFA — grant database",
@@ -4375,7 +4540,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Verily — Debug programme",
@@ -4401,7 +4567,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Greenlight Biosciences",
@@ -4428,7 +4595,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Genomics England",
@@ -4455,7 +4623,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "company"
   },
   {
    "name": "Roche / Genentech",
@@ -4481,7 +4650,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Leaps by Bayer",
@@ -4508,7 +4678,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "fund"
   },
   {
    "name": "Oxitec do Brasil",
@@ -4534,7 +4705,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "WuXi Biologics Ireland",
@@ -4560,7 +4732,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Lonza Singapore / biologics cluster",
@@ -4586,7 +4759,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "company"
   },
   {
    "name": "Shanghai Model Organisms Center",
@@ -4612,7 +4786,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "institute"
   },
   {
    "name": "Chinese assisted reproduction sector — NHC licensing",
@@ -4639,7 +4814,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "National Biosafety Board Malaysia",
@@ -4665,7 +4841,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Ministerio del Ambiente — moratoria GMO",
@@ -4691,7 +4868,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "AGES — Austrian Agency for Health and Food Safety",
@@ -4717,7 +4895,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Ministry of the Environment — GMO register",
@@ -4743,7 +4922,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Centro de Ingeniería Genética y Biotecnología",
@@ -4770,7 +4950,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "company"
   },
   {
    "name": "Comité Nacional de Bioseguridad",
@@ -4796,7 +4977,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Ministerio del Ambiente — bioseguridad",
@@ -4822,7 +5004,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Comisión Técnica Nacional de Bioseguridad",
@@ -4848,7 +5031,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "National Environment Management Council",
@@ -4873,7 +5057,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "committee"
   },
   {
    "name": "National Biosafety Authority Zambia",
@@ -4899,7 +5084,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Ministry of Rural Development and Food",
@@ -4924,7 +5110,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Ministry of Agriculture — GMO-free constitutional provision",
@@ -4950,7 +5137,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Office National de Sécurité Sanitaire des Produits Alimentaires",
@@ -4976,7 +5164,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Food and Drug Administration — GM food registration",
@@ -5002,7 +5191,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Saudi Food and Drug Authority — GM food rules",
@@ -5028,7 +5218,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "International Rice Research Institute — Golden Rice",
@@ -5055,7 +5246,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Norwegian Biotechnology Advisory Board",
@@ -5082,7 +5274,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "committee"
   },
   {
    "name": "Rewriting Extinction / genetic biocontrol programmes",
@@ -5109,7 +5302,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "company"
   },
   {
    "name": "Nature Conservancy — biotechnology in conservation",
@@ -5135,7 +5329,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "ngo"
   },
   {
    "name": "Wellcome Leap",
@@ -5162,7 +5357,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "fund"
   },
   {
    "name": "China National Seed Group (Syngenta / Sinochem)",
@@ -5189,7 +5385,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "European Bioinformatics Institute — model organism databases",
@@ -5215,7 +5412,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "USDA APHIS — annual research facility reports",
@@ -5242,7 +5440,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Charles River — global site network",
@@ -5269,7 +5468,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Jackson Laboratory — Bar Harbor",
@@ -5295,7 +5495,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Wisconsin National Primate Research Center",
@@ -5322,7 +5523,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Inotiv — facility network",
@@ -5348,7 +5550,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Home Office — licensed establishments",
@@ -5375,7 +5578,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "The Francis Crick Institute — animal research",
@@ -5401,7 +5605,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "German Primate Center (DPZ)",
@@ -5427,7 +5632,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Biomedical Primate Research Centre",
@@ -5453,7 +5659,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Charles River / Janvier — European breeding sites",
@@ -5479,7 +5686,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Guangdong / Hainan primate breeding sector",
@@ -5505,7 +5713,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Cyagen — Suzhou and Santa Clara facilities",
@@ -5531,7 +5740,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "RIKEN BioResource Research Center",
@@ -5557,7 +5767,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Committee for Control and Supervision of Experiments on Animals",
@@ -5584,7 +5795,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "committee"
   },
   {
    "name": "European Commission — ALURES animal use database",
@@ -5611,7 +5823,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "igo"
   },
   {
    "name": "Arnold & Porter — agricultural biotechnology practice",
@@ -5638,7 +5851,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Covington & Burling — food and drug regulatory",
@@ -5665,7 +5879,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "US Patent and Trademark Office — patent full-text search",
@@ -5691,7 +5906,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "fund"
   },
   {
    "name": "Patent Trial and Appeal Board",
@@ -5717,7 +5933,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "committee"
   },
   {
    "name": "Bayer Crop Science — divisional leadership",
@@ -5743,7 +5960,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Broad Institute — CRISPR inventors and the patent record",
@@ -5769,7 +5987,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Innovative Genomics Institute — Jennifer Doudna",
@@ -5796,7 +6015,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Colossal Biosciences — founders and scientific advisers",
@@ -5823,7 +6043,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "European Patent Office — opposition register",
@@ -5849,7 +6070,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "igo"
   },
   {
    "name": "No Patents on Seeds",
@@ -5875,7 +6097,8 @@
    "kind": "advocacy",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "ngo"
+   "skind": "ngo",
+   "otype": "ngo"
   },
   {
    "name": "EU Transparency Register — biotechnology lobbying",
@@ -5902,7 +6125,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Euroseeds",
@@ -5929,7 +6153,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "low",
-   "skind": "ngo"
+   "skind": "ngo",
+   "otype": "association"
   },
   {
    "name": "He Jiankui — the germline case and its aftermath",
@@ -5956,7 +6181,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "company"
   },
   {
    "name": "Rothamsted Research",
@@ -5982,7 +6208,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Syngenta — sustainability and regulatory reporting",
@@ -6008,7 +6235,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "OECD — Working Party on Biotechnology",
@@ -6034,7 +6262,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "igo"
   },
   {
    "name": "FAO — biotechnology and biosafety",
@@ -6060,7 +6289,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "igo"
   },
   {
    "name": "IQVIA",
@@ -6087,7 +6317,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Parexel",
@@ -6114,7 +6345,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Catalent",
@@ -6141,7 +6373,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "ICON plc — site and patient networks",
@@ -6167,7 +6400,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Fujifilm Diosynth Biotechnologies",
@@ -6193,7 +6427,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "ClinicalTrials.gov — sponsor and site search",
@@ -6219,7 +6454,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "fund"
   },
   {
    "name": "US Fertility",
@@ -6245,7 +6481,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Kindbody",
@@ -6271,7 +6508,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Cooper Surgical — culture media recall",
@@ -6297,7 +6535,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Society for Reproductive Endocrinology and Infertility",
@@ -6323,7 +6562,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "low",
-   "skind": "ngo"
+   "skind": "ngo",
+   "otype": "association"
   },
   {
    "name": "Pharmaron",
@@ -6350,7 +6590,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "BGI Genomics — clinical and prenatal testing",
@@ -6377,7 +6618,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Celltrion",
@@ -6403,7 +6645,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Serum Institute of India",
@@ -6429,7 +6672,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "institute"
   },
   {
    "name": "HFEA — treatment add-ons ratings",
@@ -6456,7 +6700,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Care Fertility",
@@ -6482,7 +6727,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Spanish Fertility Society — national registry",
@@ -6508,7 +6754,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Cross-border surrogacy and gamete brokerage",
@@ -6535,7 +6782,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Monash IVF",
@@ -6561,7 +6809,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Blackstone Life Sciences",
@@ -6588,7 +6837,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "fund"
   },
   {
    "name": "Novo Holdings",
@@ -6615,7 +6865,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "fund"
   },
   {
    "name": "SEC EDGAR — full-text search",
@@ -6641,7 +6892,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "fund"
   },
   {
    "name": "Open Philanthropy — biosecurity and science funding",
@@ -6667,7 +6919,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "fund"
   },
   {
    "name": "Sterile Insect Technique programmes — IAEA and national partners",
@@ -6693,7 +6946,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "igo"
   },
   {
    "name": "EPA — biopesticide and plant-incorporated protectant registrations",
@@ -6720,7 +6974,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Recombinant DNA Advisory Committee — archive",
@@ -6746,7 +7001,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "committee"
   },
   {
    "name": "Alnylam Pharmaceuticals",
@@ -6772,7 +7028,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "FDA — intentional genomic alterations in animals",
@@ -6798,7 +7055,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Hendrix Genetics",
@@ -6825,7 +7083,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "International Gene Synthesis Consortium",
@@ -6852,7 +7111,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "low",
-   "skind": "ngo"
+   "skind": "ngo",
+   "otype": "association"
   },
   {
    "name": "Benchling",
@@ -6878,7 +7138,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Codex DNA / Telesis Bio",
@@ -6904,7 +7165,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "igo"
   },
   {
    "name": "Wellcome Sanger Institute",
@@ -6931,7 +7193,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Nature's SAFE",
@@ -6957,7 +7220,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "ngo"
   },
   {
    "name": "Moscamed Brasil",
@@ -6983,7 +7247,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Topigs Norsvin",
@@ -7009,7 +7274,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Mowi",
@@ -7035,7 +7301,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Australian Frozen Zoo — threatened species cryobanking",
@@ -7061,7 +7328,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "KWS SAAT",
@@ -7088,7 +7356,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "DLF Seeds",
@@ -7114,7 +7383,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Groupe Florimond Desprez",
@@ -7141,7 +7411,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Sakata Seed",
@@ -7167,7 +7438,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Bucher / agricultural machinery and data",
@@ -7193,7 +7465,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "WHO — human genome editing governance framework",
@@ -7220,7 +7493,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "igo"
   },
   {
    "name": "Beam Therapeutics",
@@ -7246,7 +7520,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Prime Medicine",
@@ -7273,7 +7548,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Arcadia Biosciences",
@@ -7299,7 +7575,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Element Biosciences",
@@ -7324,7 +7601,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Ultima Genomics",
@@ -7350,7 +7628,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "New England Biolabs",
@@ -7376,7 +7655,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Tropic Biosciences",
@@ -7402,7 +7682,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "African Union — continental biosafety and biotechnology policy",
@@ -7428,7 +7709,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "igo"
   },
   {
    "name": "Ministry of Agriculture — GMO prohibition",
@@ -7454,7 +7736,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Ministry of Environment and Water — GMO register",
@@ -7480,7 +7763,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Sri Lanka — food labelling and import control",
@@ -7506,7 +7790,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "SEARCA — regional biotechnology information",
@@ -7532,7 +7817,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "medium",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "igo"
   },
   {
    "name": "Regeneron Genetics Center",
@@ -7559,7 +7845,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "institute"
   },
   {
    "name": "bluebird bio — the insertional oncogenesis cases",
@@ -7586,7 +7873,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "association"
   },
   {
    "name": "Moderna",
@@ -7613,7 +7901,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Institute for Clinical and Economic Review",
@@ -7639,7 +7928,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "a16z Bio + Health",
@@ -7665,7 +7955,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "fund"
   },
   {
    "name": "NIH RePORTER",
@@ -7692,7 +7983,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "fund"
   },
   {
    "name": "BARDA — Biomedical Advanced Research and Development Authority",
@@ -7719,7 +8011,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Alliance for Science / Cornell — agricultural biotechnology communications",
@@ -7745,7 +8038,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "low",
-   "skind": "ngo"
+   "skind": "ngo",
+   "otype": "company"
   },
   {
    "name": "Zoetis",
@@ -7771,7 +8065,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Neogen",
@@ -7798,7 +8093,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Revive & Restore — black-footed ferret cloning",
@@ -7825,7 +8121,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "ngo"
   },
   {
    "name": "Oxitec — US releases and EPA experimental use permits",
@@ -7851,7 +8148,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "CRISPR Therapeutics",
@@ -7878,7 +8176,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Temasek — agri-food and life sciences",
@@ -7905,7 +8204,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "fund"
   },
   {
    "name": "Fonterra",
@@ -7931,7 +8231,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Guangzhou Wolbaki — mosquito production",
@@ -7958,7 +8259,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "African Centre for Biodiversity — corporate research",
@@ -7984,7 +8286,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Grain SA and the commercial maize sector",
@@ -8010,7 +8313,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "low",
-   "skind": "ngo"
+   "skind": "ngo",
+   "otype": "association"
   },
   {
    "name": "INASE — seed royalties and farm-saved seed",
@@ -8037,7 +8341,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Federation of Seed Industry of India",
@@ -8064,7 +8369,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "low",
-   "skind": "ngo"
+   "skind": "ngo",
+   "otype": "association"
   },
   {
    "name": "CONAHCYT — native maize and public research",
@@ -8091,7 +8397,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "ministry"
   },
   {
    "name": "IUCN — synthetic biology and biodiversity conservation",
@@ -8118,7 +8425,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "igo"
   },
   {
    "name": "American Chestnut Research and Restoration Project — SUNY ESF",
@@ -8145,7 +8453,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Colossal Foundation",
@@ -8172,7 +8481,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "fund"
   },
   {
    "name": "Frozen Ark Project",
@@ -8198,7 +8508,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "ngo"
   },
   {
    "name": "Target Malaria — Imperial College programme record",
@@ -8224,7 +8535,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Cibus",
@@ -8251,7 +8563,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Bayer — Crop Science product safety summaries",
@@ -8278,7 +8591,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Center for Food Safety — animal biotechnology litigation",
@@ -8304,7 +8618,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Genus — PRRS pig commercialisation record",
@@ -8330,7 +8645,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "registry"
   },
   {
    "name": "Novartis — Zolgensma outcomes-based agreements",
@@ -8356,7 +8672,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Alliance for Regenerative Medicine — sector data",
@@ -8382,7 +8699,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "low",
-   "skind": "ngo"
+   "skind": "ngo",
+   "otype": "association"
   },
   {
    "name": "Thermo Fisher — Patheon and clinical services",
@@ -8409,7 +8727,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "ministry"
   },
   {
    "name": "Advarra",
@@ -8436,7 +8755,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "AquaChile / Agrosuper",
@@ -8462,7 +8782,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Norwegian Institute of Marine Research — escape monitoring",
@@ -8488,7 +8809,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "institute"
   },
   {
    "name": "MHRA — Innovative Licensing and Access Pathway",
@@ -8514,7 +8836,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Syncona",
@@ -8541,7 +8864,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "fund"
   },
   {
    "name": "BGI — MGI Tech instruments",
@@ -8567,7 +8891,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "European Investment Bank — life sciences lending",
@@ -8593,7 +8918,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "igo"
   },
   {
    "name": "Enza Zaden",
@@ -8619,7 +8945,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Bejo Zaden",
@@ -8645,7 +8972,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Beck's Hybrids",
@@ -8671,7 +8999,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Corteva — seed applied technologies",
@@ -8697,7 +9026,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Verve Therapeutics",
@@ -8723,7 +9053,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Mammoth Biosciences",
@@ -8749,7 +9080,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Colossal — Breaking spin-out and IP licensing",
@@ -8776,7 +9108,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Alpha Genesis",
@@ -8802,7 +9135,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Ace Animals / laboratory dog and cat supply",
@@ -8828,7 +9162,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "institute"
   },
   {
    "name": "Fairfax Cryobank / California Cryobank — donor limits",
@@ -8854,7 +9189,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Donor Sibling Registry",
@@ -8880,7 +9216,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "ngo"
   },
   {
    "name": "Indian Council of Medical Research — ART regulation",
@@ -8907,7 +9244,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "committee"
   },
   {
    "name": "UPOV — International Union for the Protection of New Varieties of Plants",
@@ -8934,7 +9272,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "igo"
   },
   {
    "name": "Codex Alimentarius — foods derived from biotechnology",
@@ -8960,7 +9299,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "igo"
   },
   {
    "name": "European Food Safety Authority — GMO panel opinions",
@@ -8986,7 +9326,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "igo"
   },
   {
    "name": "Vietnam — GM maize cultivation and feed imports",
@@ -9013,7 +9354,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Institute for Agricultural Research, Zaria — Bt cowpea",
@@ -9040,7 +9382,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Egypt — wheat import tenders and GM specification",
@@ -9066,7 +9409,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Pivot Bio — PROVEN product record",
@@ -9092,7 +9436,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "association"
   },
   {
    "name": "Marrone / Pro Farm Group",
@@ -9119,7 +9464,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "USDA APHIS — biotechnology regulatory notices",
@@ -9145,7 +9491,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "ViaGen — Przewalski's horse and endangered species cloning",
@@ -9172,7 +9519,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Wildlife Conservation Society — biotechnology position",
@@ -9198,7 +9546,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "ngo"
   },
   {
    "name": "Vertex Pharmaceuticals",
@@ -9225,7 +9574,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "National Marrow Donor Program / NMDP — cell therapy infrastructure",
@@ -9251,7 +9601,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "company"
   },
   {
    "name": "Sickle Cell Disease Association of America",
@@ -9277,7 +9628,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "low",
-   "skind": "ngo"
+   "skind": "ngo",
+   "otype": "association"
   },
   {
    "name": "Fidelity and index funds — passive ownership of the sector",
@@ -9303,7 +9655,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "fund"
   },
   {
    "name": "Bill & Melinda Gates Agricultural Innovations (Gates Ag One)",
@@ -9330,7 +9683,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "fund"
   },
   {
    "name": "Rothamsted — GM aphid-repellent wheat trial",
@@ -9357,7 +9711,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "CSIRO — agricultural biotechnology",
@@ -9384,7 +9739,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Rhino and wildlife biobanking — BioRescue partners",
@@ -9411,7 +9767,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "PMDA — regenerative medicine conditional approval",
@@ -9437,7 +9794,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "Chinese state agricultural investment — seed industry revitalisation",
@@ -9464,7 +9822,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "fund"
   },
   {
    "name": "Aurigene / Dr Reddy's discovery services",
@@ -9490,7 +9849,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "ministry"
   },
   {
    "name": "SK pharmteco",
@@ -9516,7 +9876,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Ministry of Agriculture — GMO cultivation prohibition",
@@ -9542,7 +9903,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "Malaysian Palm Oil Board — genome programme",
@@ -9569,7 +9931,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "committee"
   },
   {
    "name": "S&W Seed Company",
@@ -9596,7 +9959,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Simplot — Innate potatoes",
@@ -9622,7 +9986,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "J.R. Simplot / McCain — processor specification",
@@ -9648,7 +10013,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Perfect Day",
@@ -9675,7 +10041,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Impossible Foods — soy leghemoglobin",
@@ -9701,7 +10068,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Conagen",
@@ -9727,7 +10095,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Charles River — horseshoe crab and LAL supply",
@@ -9754,7 +10123,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Institutional Animal Care and Use Committees — OLAW",
@@ -9780,7 +10150,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "committee"
   },
   {
    "name": "Editas Medicine",
@@ -9807,7 +10178,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Orchard Therapeutics",
@@ -9833,7 +10205,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Euralis / Lidea",
@@ -9859,7 +10232,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "TMG — Tropical Melhoramento & Genética",
@@ -9885,7 +10259,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "European Sperm Bank",
@@ -9911,7 +10286,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Greek cross-border fertility sector",
@@ -9938,7 +10314,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "registry"
   },
   {
    "name": "WTO — SPS Committee and biotechnology notifications",
@@ -9965,7 +10342,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "igo"
   },
   {
    "name": "ISO — biotechnology standards committee",
@@ -9991,7 +10369,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "igo"
   },
   {
    "name": "COMESA — regional biosafety policy",
@@ -10017,7 +10396,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "igo"
   },
   {
    "name": "Volcani Center — Agricultural Research Organization",
@@ -10044,7 +10424,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "International Center for Biosaline Agriculture",
@@ -10071,7 +10452,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "International Potato Center (CIP)",
@@ -10098,7 +10480,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Ethiopian Biodiversity Institute",
@@ -10125,7 +10508,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Corteva — hybrid wheat programme",
@@ -10152,7 +10536,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Bayer — short-stature corn",
@@ -10179,7 +10564,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Corteva — Enlist herbicide system",
@@ -10206,7 +10592,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Ohalo Genetics",
@@ -10233,7 +10620,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Syngenta — biologicals and Valagro",
@@ -10260,7 +10648,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "BASF — enzymes and industrial biotechnology",
@@ -10287,7 +10676,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "dsm-firmenich",
@@ -10314,7 +10704,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Novo Nordisk — recombinant insulin manufacture",
@@ -10341,7 +10732,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Biocon — biosimilar insulin",
@@ -10367,7 +10759,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Oxford Nanopore — field sequencing",
@@ -10393,7 +10786,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Roslin Institute",
@@ -10420,7 +10814,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "Yuan Longping High-Tech Agriculture",
@@ -10447,7 +10842,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "Bioceres / Moolec — molecular farming",
@@ -10474,7 +10870,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "medium",
-   "skind": "other"
+   "skind": "other",
+   "otype": "company"
   },
   {
    "name": "ISAAA AfriCenter",
@@ -10500,7 +10897,8 @@
    "kind": "institution",
    "voice": "commentary",
    "trust": "low",
-   "skind": "ngo"
+   "skind": "ngo",
+   "otype": "institute"
   },
   {
    "name": "Kenya Plant Health Inspectorate Service",
@@ -10526,7 +10924,8 @@
    "kind": "structured",
    "voice": "official",
    "trust": "record",
-   "skind": "database"
+   "skind": "database",
+   "otype": "ministry"
   },
   {
    "name": "CIMMYT — maize and wheat genebank",
@@ -10553,7 +10952,8 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "institute"
   },
   {
    "name": "MASIPAG",
@@ -10579,7 +10979,533 @@
    "kind": "institution",
    "voice": "official",
    "trust": "high",
-   "skind": "igo"
+   "skind": "igo",
+   "otype": "ngo"
+  },
+  {
+   "name": "American Seed Trade Association",
+   "source": "industry:rules",
+   "type": "Regulator, register or trade body",
+   "lat": 38.8816,
+   "lng": -77.1109,
+   "state": "Alexandria VA",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://www.betterseed.org/",
+   "desc": "WHAT. The US seed industry's trade association, active on plant variety protection, seed treatment rules and the regulatory treatment of gene editing. WHERE IT SITS. The domestic counterpart to CropLife, working seed law rather than pesticide law. WHY IT MATTERS. It maintains the voluntary transparency database that gene-edited varieties are listed in where no notification is required. **The public record of what is being planted is kept by the sector planting it**, which is a fact about the regulation rather than about the companies.",
+   "checked": "2026-07-31",
+   "tags": [
+    "rules:associations",
+    "seed:distribution",
+    "rules:ip"
+   ],
+   "kind": "institution",
+   "voice": "commentary",
+   "trust": "low",
+   "skind": "ngo",
+   "otype": "association"
+  },
+  {
+   "name": "Seed Savers Exchange",
+   "source": "industry:seed",
+   "type": "Seed & trait company",
+   "lat": 43.3045,
+   "lng": -91.796,
+   "state": "Decorah",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://seedsavers.org/",
+   "desc": "WHAT. A US non-profit maintaining and distributing thousands of heirloom and open-pollinated varieties through a member seed exchange and its own collection. WHERE IT SITS. The living counterweight to the genebank: varieties kept in circulation rather than in cold storage. WHY IT MATTERS. A variety in a freezer survives; a variety being grown adapts. The distinction matters because the material this map documents being enclosed is only useful to anyone if someone is still planting it.",
+   "checked": "2026-07-31",
+   "tags": [
+    "seed:germplasm",
+    "rules:ip"
+   ],
+   "kind": "institution",
+   "voice": "official",
+   "trust": "high",
+   "skind": "igo",
+   "otype": "ngo"
+  },
+  {
+   "name": "Organic Seed Alliance",
+   "source": "industry:seed",
+   "type": "Seed & trait company",
+   "lat": 48.1171,
+   "lng": -123.4307,
+   "state": "Port Townsend",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://seedalliance.org/",
+   "desc": "WHAT. An organisation breeding and advocating for organic seed, publishing the periodic State of Organic Seed assessment of supply and demand. WHERE IT SITS. The supply constraint under organic certification — organic growers need organic seed, and there is not enough of it. WHY IT MATTERS. Its own surveys find most organic growers using conventional untreated seed under allowed exemptions, because organic seed is unavailable in the varieties they need. **Seed supply is a quieter lever on the organic sector than any biosafety rule**, and it is being pulled by market structure rather than by policy.",
+   "checked": "2026-07-31",
+   "tags": [
+    "seed:germplasm",
+    "seed:distribution"
+   ],
+   "kind": "institution",
+   "voice": "official",
+   "trust": "high",
+   "skind": "igo",
+   "otype": "ngo"
+  },
+  {
+   "name": "Scribe Therapeutics",
+   "source": "industry:editing",
+   "type": "Gene editing company",
+   "lat": 37.8716,
+   "lng": -122.2727,
+   "state": "Alameda",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://scribetx.com/",
+   "desc": "WHAT. A company engineering CRISPR proteins from scratch rather than adapting bacterial ones, aiming at improved specificity and delivery. WHERE IT SITS. Editors as designed molecules rather than borrowed ones. WHY IT MATTERS. A protein designed rather than discovered is not covered by patents on naturally occurring systems, which is part of the point. The patent fight this map documents is being routed around by building tools that were never anyone's to claim.",
+   "checked": "2026-07-31",
+   "tags": [
+    "editing:platform",
+    "editing:patents",
+    "clinical:therapy"
+   ],
+   "kind": "institution",
+   "voice": "commentary",
+   "trust": "medium",
+   "skind": "other",
+   "otype": "company"
+  },
+  {
+   "name": "Tome Biosciences / large-payload integration",
+   "source": "industry:editing",
+   "type": "Gene editing company",
+   "lat": 42.3601,
+   "lng": -71.0589,
+   "state": "Watertown MA",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://tome.bio/",
+   "desc": "WHAT. Companies developing programmable integration of whole genes rather than edits to existing sequence, using engineered recombinases. WHERE IT SITS. The step past editing: inserting a complete functional gene at a chosen site. WHY IT MATTERS. Regulatory carve-outs for gene editing rest on nothing foreign being added. Programmable integration adds a whole gene, so it lands back inside the transgenic definition — which is the first technique in years to move in that direction rather than out of it.",
+   "checked": "2026-07-31",
+   "tags": [
+    "editing:platform",
+    "rules:regulators",
+    "clinical:therapy"
+   ],
+   "kind": "institution",
+   "voice": "commentary",
+   "trust": "medium",
+   "skind": "other",
+   "otype": "company"
+  },
+  {
+   "name": "iGEM Foundation",
+   "source": "industry:editing",
+   "type": "Gene editing company",
+   "lat": 42.3601,
+   "lng": -71.0589,
+   "state": "Paris / Boston",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://igem.org/",
+   "desc": "WHAT. The international student synthetic biology competition, with hundreds of teams a year building engineered organisms and depositing standardised parts. WHERE IT SITS. Where the next generation of this industry is trained, and where its parts registry lives. WHY IT MATTERS. It runs its own biosafety and security review for student projects, which is more scrutiny than several national frameworks apply to commercial work. The competition also normalises building organisms as an ordinary undergraduate exercise, and both of those are true at once.",
+   "checked": "2026-07-31",
+   "tags": [
+    "editing:synbio",
+    "synthesis:repos",
+    "rules:standards"
+   ],
+   "kind": "institution",
+   "voice": "official",
+   "trust": "high",
+   "skind": "igo",
+   "otype": "fund"
+  },
+  {
+   "name": "Cyagen / knockout mouse repositories — IMPC",
+   "source": "industry:animals",
+   "type": "Laboratory animal supplier",
+   "lat": 52.0798,
+   "lng": 0.1846,
+   "state": "Hinxton",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://www.mousephenotype.org/",
+   "desc": "WHAT. The International Mouse Phenotyping Consortium, systematically knocking out every protein-coding gene in the mouse and publishing the resulting phenotypes. WHERE IT SITS. The most systematic programme of vertebrate engineering ever undertaken, publicly funded across several countries. WHY IT MATTERS. The stated goal is a knockout line for all ~20,000 mouse genes. That is a complete catalogue of what breaking each gene does to a mammal, and it is being assembled openly, which makes it both the best documentation in this facet and its largest single undertaking.",
+   "checked": "2026-07-31",
+   "tags": [
+    "animals:models",
+    "money:public",
+    "synthesis:repos"
+   ],
+   "kind": "institution",
+   "voice": "official",
+   "trust": "high",
+   "skind": "igo",
+   "otype": "company"
+  },
+  {
+   "name": "Physicians Committee / animal testing policy",
+   "source": "industry:animals",
+   "type": "Laboratory animal supplier",
+   "lat": 38.9072,
+   "lng": -77.0369,
+   "state": "Washington DC",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://www.pcrm.org/",
+   "desc": "WHAT. A medical advocacy organisation campaigning to replace animal testing with non-animal methods, active on the US legislation that removed the animal-testing requirement for drug approval. WHERE IT SITS. The organised pressure against the laboratory animal facet, from inside medicine. WHY IT MATTERS. The FDA Modernization Act removed the statutory requirement that drugs be tested in animals before human trials. **The requirement is gone and the practice largely continues**, because regulators still expect the data and sponsors still supply it. A law changing and nothing changing is worth documenting precisely.",
+   "checked": "2026-07-31",
+   "tags": [
+    "animals:models",
+    "rules:regulators",
+    "rules:associations"
+   ],
+   "kind": "institution",
+   "voice": "commentary",
+   "trust": "low",
+   "skind": "ngo",
+   "otype": "committee"
+  },
+  {
+   "name": "Cargill",
+   "source": "industry:seed",
+   "type": "Seed & trait company",
+   "lat": 44.9778,
+   "lng": -93.265,
+   "state": "Minnetonka",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://www.cargill.com/",
+   "desc": "WHAT. One of the largest privately held companies in the world, trading grain, crushing oilseed, producing animal feed and processing meat across every continent. WHERE IT SITS. The middle of the commodity chain — between the farm and everything downstream. WHY IT MATTERS. It is private, so it publishes far less than any listed company on this map, and it handles a very large share of the world's traded grain. **The single largest mover of engineered crop output discloses the least about it**, and no rule requires otherwise.",
+   "checked": "2026-07-31",
+   "tags": [
+    "seed:distribution",
+    "livestock:livestock",
+    "money:markets"
+   ],
+   "kind": "institution",
+   "voice": "commentary",
+   "trust": "medium",
+   "skind": "other",
+   "otype": "company"
+  },
+  {
+   "name": "Archer Daniels Midland",
+   "source": "industry:seed",
+   "type": "Seed & trait company",
+   "lat": 41.8781,
+   "lng": -87.6298,
+   "state": "Chicago",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://www.adm.com/",
+   "desc": "WHAT. A major grain processor and ingredient producer, including fermentation-derived ingredients and animal feed. WHERE IT SITS. Alongside Cargill in the handling layer, but listed, so its filings are public. WHY IT MATTERS. Reading ADM's disclosures alongside Cargill's silence shows how much of this industry's visibility is an accident of corporate form rather than of policy. The same activity is documented or not depending on whether shares are traded.",
+   "checked": "2026-07-31",
+   "tags": [
+    "seed:distribution",
+    "editing:synbio",
+    "money:markets"
+   ],
+   "kind": "institution",
+   "voice": "commentary",
+   "trust": "medium",
+   "skind": "other",
+   "otype": "company"
+  },
+  {
+   "name": "Nucleus Genomics",
+   "source": "industry:repro",
+   "type": "Assisted reproduction",
+   "lat": 40.7128,
+   "lng": -74.006,
+   "state": "New York",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://www.mynucleus.com/",
+   "desc": "WHAT. A company selling consumer genomic analysis including polygenic scoring, and marketing embryo screening on traits beyond disease risk. WHERE IT SITS. The furthest commercial edge of embryo selection, sold directly. WHY IT MATTERS. Professional genetics bodies have stated that polygenic embryo screening is not supported for clinical use. It is sold anyway, because embryo selection faces none of the approval requirements a drug or device would. **The gap between what the science supports and what may lawfully be sold is the whole of this**, and it is widening rather than closing.",
+   "checked": "2026-07-31",
+   "tags": [
+    "repro:screening",
+    "clinical:germline"
+   ],
+   "kind": "institution",
+   "voice": "commentary",
+   "trust": "medium",
+   "skind": "other",
+   "otype": "company"
+  },
+  {
+   "name": "Society for Assisted Reproductive Technology — clinic outcome reports",
+   "source": "industry:repro",
+   "type": "Assisted reproduction",
+   "lat": 34.0489,
+   "lng": -84.24,
+   "state": "Birmingham AL",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://www.sartcorsonline.com/",
+   "desc": "WHAT. The searchable clinic-by-clinic outcome data underlying US national ART reporting, showing cycles, transfers and live births per clinic. WHERE IT SITS. The one place a prospective patient can compare clinics on outcomes. WHY IT MATTERS. Success rates depend heavily on which patients a clinic accepts, so a clinic can raise its published figures by declining harder cases. The data is real and the comparison it invites is not straightforward, which is worth saying wherever it is cited.",
+   "checked": "2026-07-31",
+   "tags": [
+    "repro:clinics",
+    "rules:associations"
+   ],
+   "kind": "institution",
+   "voice": "commentary",
+   "trust": "low",
+   "skind": "ngo",
+   "otype": "association"
+  },
+  {
+   "name": "Foundation for Food & Agriculture Research",
+   "source": "industry:money",
+   "type": "Funder",
+   "lat": 38.9072,
+   "lng": -77.0369,
+   "state": "Washington DC",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://foundationfar.org/",
+   "desc": "WHAT. A US non-profit created by Congress in the 2014 Farm Bill to fund agricultural research, required to match every federal dollar with private money. WHERE IT SITS. Public research funding structurally bound to private co-funding. WHY IT MATTERS. The matching requirement means no project is funded unless a private partner also wants it. That is a design choice written into statute, and it decides which agricultural questions can be asked with public money at all.",
+   "checked": "2026-07-31",
+   "tags": [
+    "money:public",
+    "money:philanthropy",
+    "editing:agtech"
+   ],
+   "kind": "structured",
+   "voice": "official",
+   "trust": "record",
+   "skind": "database",
+   "otype": "institute"
+  },
+  {
+   "name": "Nuffield Council on Bioethics",
+   "source": "industry:clinical",
+   "type": "Clinical & therapeutic company",
+   "lat": 51.5194,
+   "lng": -0.127,
+   "state": "London",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://www.nuffieldbioethics.org/",
+   "desc": "WHAT. An independent body that examines ethical questions in biology and medicine, whose reports on genome editing in human reproduction and in farmed animals are widely cited. WHERE IT SITS. Deliberative work with no statutory power, in a country whose regulators do have it. WHY IT MATTERS. Its 2018 report concluded heritable genome editing could be ethically acceptable in some circumstances, which surprised people expecting a prohibition. Citing it honestly means citing that conclusion, and the map is more useful for including a considered position it does not simply endorse.",
+   "checked": "2026-07-31",
+   "tags": [
+    "clinical:germline",
+    "repro:screening",
+    "rules:standards"
+   ],
+   "kind": "institution",
+   "voice": "official",
+   "trust": "high",
+   "skind": "igo",
+   "otype": "committee"
+  },
+  {
+   "name": "UK Biobank",
+   "source": "industry:synthesis",
+   "type": "DNA synthesis & sequencing",
+   "lat": 53.4808,
+   "lng": -2.2426,
+   "state": "Stockport",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://www.ukbiobank.ac.uk/",
+   "desc": "WHAT. A cohort of half a million volunteers with genomic, imaging and health-record data, accessible to approved researchers worldwide including commercial ones. WHERE IT SITS. The model most national genomic programmes have copied. WHY IT MATTERS. Access is by approved application rather than by purchase, and the resulting analyses must be returned to the resource. That is a materially different arrangement from a company owning the dataset outright, and it is the clearest available answer to what the alternative to enclosure looks like in human genomics.",
+   "checked": "2026-07-31",
+   "tags": [
+    "synthesis:seq",
+    "clinical:trials",
+    "money:philanthropy"
+   ],
+   "kind": "institution",
+   "voice": "official",
+   "trust": "high",
+   "skind": "igo",
+   "otype": "institute"
+  },
+  {
+   "name": "Norwegian Government Pension Fund Global — ethics exclusions",
+   "source": "industry:money",
+   "type": "Funder",
+   "lat": 59.9139,
+   "lng": 10.7522,
+   "state": "Oslo",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://www.nbim.no/en/responsible-investment/ethical-exclusions/",
+   "desc": "WHAT. The world's largest sovereign wealth fund, which publishes the companies it has excluded on ethical grounds and the reasoning for each. WHERE IT SITS. The one large investor that states publicly why it will not hold something. WHY IT MATTERS. Exclusion decisions are published with their reasoning, which makes them citable and comparable in a way no other institutional investor's are. For anyone pursuing the shareholder route this map keeps pointing at, it is the worked example of what a documented divestment argument looks like.",
+   "checked": "2026-07-31",
+   "tags": [
+    "money:markets",
+    "rules:influence"
+   ],
+   "kind": "structured",
+   "voice": "official",
+   "trust": "record",
+   "skind": "database",
+   "otype": "ministry"
+  },
+  {
+   "name": "Swiss GMO moratorium — Federal Office for the Environment",
+   "source": "industry:rules",
+   "type": "Regulator, register or trade body",
+   "lat": 46.948,
+   "lng": 7.4474,
+   "state": "Bern",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://www.bafu.admin.ch/bafu/en/home/topics/biotechnology.html",
+   "desc": "WHAT. Switzerland's environment office, administering a moratorium on the commercial cultivation of GM crops that parliament has extended repeatedly since 2005. WHERE IT SITS. Twenty years of a temporary measure, renewed each time it approached expiry. WHY IT MATTERS. A moratorium extended five times is a permanent policy that never had to be argued as one. Whether that is democratic caution or avoidance depends on the reader, and the map is better for stating the mechanism rather than the verdict.",
+   "checked": "2026-07-31",
+   "tags": [
+    "rules:regulators",
+    "seed:distribution"
+   ],
+   "kind": "structured",
+   "voice": "official",
+   "trust": "record",
+   "skind": "database",
+   "otype": "ministry"
+  },
+  {
+   "name": "Global 2000 / Friends of the Earth Austria",
+   "source": "industry:rules",
+   "type": "Regulator, register or trade body",
+   "lat": 48.2082,
+   "lng": 16.3738,
+   "state": "Vienna",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://www.global2000.at/",
+   "desc": "WHAT. The Austrian environmental organisation that commissions independent testing of food and feed for GM content and publishes the results. WHERE IT SITS. Independent testing capacity outside both government and industry. WHY IT MATTERS. Almost nobody outside a regulator or a company runs their own detection. Where an organisation does, its results are the only figures in the argument that neither side commissioned — which is why they get cited by both.",
+   "checked": "2026-07-31",
+   "tags": [
+    "rules:standards",
+    "rules:influence"
+   ],
+   "kind": "institution",
+   "voice": "official",
+   "trust": "high",
+   "skind": "igo",
+   "otype": "ngo"
+  },
+  {
+   "name": "Wageningen University & Research",
+   "source": "industry:editing",
+   "type": "Gene editing company",
+   "lat": 51.9692,
+   "lng": 5.6654,
+   "state": "Wageningen",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "",
+   "status": "Industry organisation",
+   "phase": "post",
+   "date": "",
+   "url": "https://www.wur.nl/en.htm",
+   "desc": "WHAT. The world's leading agricultural university, running crop genetics, editing and food systems research, with substantial industry partnership funding. WHERE IT SITS. Where a very large share of the field's researchers are trained and much of its published evidence is produced. WHY IT MATTERS. Its funding mix of public money and industry partnership is disclosed and is also the ordinary condition of agricultural science. The evidence base this whole argument runs on is produced substantially inside that arrangement, which is worth knowing whichever conclusion you reach from it.",
+   "checked": "2026-07-31",
+   "tags": [
+    "editing:agtech",
+    "money:public",
+    "money:vc"
+   ],
+   "kind": "institution",
+   "voice": "official",
+   "trust": "high",
+   "skind": "igo",
+   "otype": "institute"
   }
  ]
 }

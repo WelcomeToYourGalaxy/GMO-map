@@ -465,7 +465,83 @@ PLACES = {
  "Kenya Plant Health Inspectorate Service": (-1.2921, 36.8219, "Nairobi"),
  "CIMMYT \u2014 maize and wheat genebank": (19.5304, -98.8464, "Texcoco"),
  "MASIPAG": (14.1699, 121.2422, "Los Ba\u00f1os"),
+ # --- round 79 ---
+ "American Seed Trade Association": (38.8816, -77.1109, "Alexandria VA"),
+ "Seed Savers Exchange": (43.3045, -91.7960, "Decorah"),
+ "Organic Seed Alliance": (48.1171, -123.4307, "Port Townsend"),
+ "Scribe Therapeutics": (37.8716, -122.2727, "Alameda"),
+ "Tome Biosciences / large-payload integration": (42.3601, -71.0589, "Watertown MA"),
+ "iGEM Foundation": (42.3601, -71.0589, "Paris / Boston"),
+ "Cyagen / knockout mouse repositories \u2014 IMPC": (52.0798, 0.1846, "Hinxton"),
+ "Physicians Committee / animal testing policy": (38.9072, -77.0369, "Washington DC"),
+ "Cargill": (44.9778, -93.2650, "Minnetonka"),
+ "Archer Daniels Midland": (41.8781, -87.6298, "Chicago"),
+ "Nuffield Council on Bioethics": (51.5194, -0.1270, "London"),
+ "UK Biobank": (53.4808, -2.2426, "Stockport"),
+ "Nucleus Genomics": (40.7128, -74.0060, "New York"),
+ "Society for Assisted Reproductive Technology \u2014 clinic outcome reports": (34.0489, -84.2400, "Birmingham AL"),
+ "Foundation for Food & Agriculture Research": (38.9072, -77.0369, "Washington DC"),
+ "Norwegian Government Pension Fund Global \u2014 ethics exclusions": (59.9139, 10.7522, "Oslo"),
+ "Swiss GMO moratorium \u2014 Federal Office for the Environment": (46.9480, 7.4474, "Bern"),
+ "Global 2000 / Friends of the Earth Austria": (48.2082, 16.3738, "Vienna"),
+ "Wageningen University & Research": (51.9692, 5.6654, "Wageningen"),
 }
+
+
+# --- organisation type -------------------------------------------------------
+# The facets say what part of the industry something works in. They do not say
+# what KIND of body it is, and a ministry, a committee, a company and a campaign
+# group are not the same thing to argue with. Type is derived from the entry's
+# own name and its base record rather than hand-tagged, so it stays consistent
+# across 420 entries and can be re-derived when entries change.
+_TYPE_WORDS = (
+ ("igo",       ("united nations", "oecd", "fao", "who ", "wto", "unep", "cbd",
+                "european commission", "european food safety", "european patent",
+                "european investment", "codex", "iaea", "upov", "world bank",
+                "african union", "comesa", "iucn", "cgiar", "searca", "iso ")),
+ ("ministry",  ("ministry", "ministerio", "minist\u00e8re", "department of",
+                "administration", "authority", "agency", "inspectorate",
+                "service", "office of", "usda", "aphis", "fda ", "epa ",
+                "government", "federal", "national biosafety", "customs",
+                "home office", "secretariat", "gasc", "kephis", "inase",
+                "senave", "conahcyt", "cibiogem", "ages", "onssa", "sag ")),
+ ("committee", ("committee", "commission", "council", "board", "panel",
+                "ctnbio", "geac", "conabia", "advisory")),
+ ("institute", ("institute", "university", "college", "academy", "centre",
+                "center", "laboratory", "research", "cimmyt", "embrapa",
+                "riken", "csiro", "rothamsted", "roslin", "sanger", "broad",
+                "volcani", "iita", "irri", "zoo", "genebank", "biobank")),
+ ("association",("association", "federation", "croplife", "euroseeds", "bio \u2014",
+                "society for", "alliance for regenerative", "isaaa",
+                "consortium", "grain sa", "seed trade")),
+ ("ngo",       ("no patents on seeds", "greenpeace", "genewatch", "friends of the earth",
+                "global 2000", "revive & restore", "nature conservancy",
+                "wildlife conservation", "center for food safety", "masipag",
+                "african centre for biodiversity", "seed savers", "organic seed",
+                "donor sibling", "physicians committee", "sickle cell",
+                "nature\u2019s safe", "nature's safe", "frozen ark", "understanding animal")),
+ ("fund",      ("foundation", "trust", "capital", "ventures", "venture",
+                "partners", "holdings", "investment", "philanthrop", "wellcome",
+                "gates", "blackstone", "temasek", "syncona", "a16z", "flagship",
+                "arch ", "pension fund", "leaps by", "reporter", "barda",
+                "nifa", "index funds")),
+ ("registry",  ("register", "registry", "database", "clinicaltrials", "edgar",
+                "reporter", "search", "record", "statistics", "alures",
+                "patentscope", "espacenet", "wiews", "genesys")),
+)
+
+
+def org_type(name, base_kind, skind):
+    """One of nine types. Order matters: an igo that is also a 'commission'
+    should read as an igo, and a company with 'research' in its name should not
+    become an institute, so the company test runs on the base record first."""
+    low = " " + name.lower() + " "
+    for t, words in _TYPE_WORDS:
+        if any(w in low for w in words):
+            return t
+    if base_kind == "structured" or skind == "database":
+        return "registry"
+    return "company"
 
 # Facet key -> the organism-type bucket the map's own classifier understands, so
 # the release layer's type filter keeps working across both kinds of point.
@@ -517,6 +593,7 @@ def main():
             "trust": x.get("trust", "high"),
             "skind": x.get("skind", "other"),
             "company": x.get("company") or "",
+            "otype": org_type(x["name"], x.get("kind", ""), x.get("skind", "")),
         })
 
     print("industry points: %d" % len(points))
