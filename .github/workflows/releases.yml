@@ -49,13 +49,14 @@ jobs:
             timeout 4m python3 harvest/ogtr_trials.py || echo "!! ogtr trials failed - continuing"
             timeout 6m python3 harvest/gmofree_zones.py || echo "!! gmo-free zones failed - continuing"
             timeout 6m python3 harvest/fas_biotech.py || echo "!! fas biotech failed - continuing"
+            timeout 6m python3 harvest/bch_decisions.py    || echo "!! bch decisions failed - continuing"
             timeout 8m python3 harvest/clinical_sponsors.py || echo "!! clinical sponsors failed - continuing"
             timeout 8m python3 harvest/aphis_releases.py || echo "!! aphis harvester failed - continuing"
             timeout 2m python3 harvest/build_overlays.py || echo "!! overlay builder failed - continuing"
             # --ignore-errors so a file a failed harvester never wrote does not
             # abort the step under bash -e on the first run.
             git add --ignore-errors projects.json harvest/cfia_records.json \
-                    harvest/industry_points.json harvest/register_records.json harvest/animal_facilities.json harvest/ogtr_trials.json harvest/gmofree_zones.json harvest/fas_biotech.json harvest/clinical_sponsors.json overlays/trials.geojson \
+                    harvest/industry_points.json harvest/register_records.json harvest/animal_facilities.json harvest/ogtr_trials.json harvest/gmofree_zones.json harvest/fas_biotech.json harvest/bch_decisions.json harvest/clinical_sponsors.json overlays/trials.geojson \
                     overlays/regime.geojson 2>/dev/null || true
             git diff --staged --quiet && { echo "no change"; exit 0; }
             git commit -m "releases: refresh $(date -u +%Y-%m-%d)"
