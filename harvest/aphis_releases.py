@@ -47,6 +47,8 @@ DEFAULT_KEEP = 600
 # fail-safe gate: a withdrawn or denied application is not a release.
 LIVE = {"issued", "acknowledged", "submitted", "state review", "in review",
         "waiting on customer", "pending"}
+NEVER_GRANTED = {"withdrawn", "denied", "void", "voided", "returned",
+                 "incomplete", "cancelled", "canceled"}
 DEAD = {"withdrawn", "denied", "superceded", "superseded", "expired",
         "cancelled", "canceled", "voided", "terminated"}
 
@@ -216,16 +218,27 @@ def build(rows, source_label):
     for r in rows:
         status = (r.get("Status") or "").strip()
         sl = status.lower()
-        if sl in DEAD or sl not in LIVE:
+        # A withdrawn or denied application was never an authorisation, so it is
+        # not a release and never appears. Everything that WAS granted stays -
+        # including permits that have since lapsed. This map is a record of the
+        # industry since it began, not a list of what is live this morning, and
+        # a trial that ran in 1994 happened whether or not the paperwork is
+        # still in date.
+        if sl in NEVER_GRANTED:
             continue
         states = release_states(get(r, "Location(s)", legacy))
         if not states:
             continue                      # no environmental release component
         eff = parse_date(get(r, "Effective Date", legacy))
         exp = parse_date(get(r, "Expiration Date", legacy))
-        if exp and exp < date.today():
-            continue                      # lapsed authorisation is not a live release
+        lapsed = bool(exp and exp < date.today())
         if legacy and not exp:
+            # ePermits stopped accepting applications on 30 September 2022, so a
+            # legacy record with no expiry date cannot be shown to be current.
+            # It is still a real authorisation that was granted, so it is kept
+            # and marked past rather than discarded.
+            lapsed = True
+        if False:
             # ePermits stopped accepting applications on 30 September 2022 and its
             # permits expire on their own terms. A legacy record with no expiry
             # date cannot be shown to be current, so it is not a live release.
@@ -276,6 +289,10 @@ def build(rows, source_label):
                         (", " + acres) if acres else "")),
             "status": status,
             "phase": "post" if sl in CONSENTED else "pre",
+            # `lapsed` marks an authorisation that was granted and has since
+            # run out. The map's "Show dormant / defunct" switch reads it.
+            "lapsed": lapsed,
+            "status": (status + (" \u2014 expired" if lapsed else "")).strip(),
             "date": eff.isoformat() if eff else "",
             "url": "https://www.aphis.usda.gov/biotechnology-permits/releases",
             "desc": desc,
@@ -351,6 +368,8 @@ def main():
         "projects": curated + extra + records,
     }
 
+    lap = sum(1 for r in records if r.get("lapsed"))
+    print("  live: %d | granted and since expired: %d" % (len(records) - lap, lap))
     pre = sum(1 for r in records if r["phase"] == "pre")
     print("\n%d release records (%d under assessment, %d consented) + %d curated"
           % (len(records), pre, len(records) - pre, len(curated)))
