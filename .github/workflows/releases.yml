@@ -55,9 +55,21 @@ jobs:
             timeout 2m python3 harvest/build_overlays.py || echo "!! overlay builder failed - continuing"
             # --ignore-errors so a file a failed harvester never wrote does not
             # abort the step under bash -e on the first run.
-            git add --ignore-errors projects.json harvest/cfia_records.json \
-                    harvest/industry_points.json harvest/register_records.json harvest/animal_facilities.json harvest/ogtr_trials.json harvest/gmofree_zones.json harvest/fas_biotech.json harvest/bch_decisions.json harvest/clinical_sponsors.json overlays/trials.geojson \
-                    overlays/regime.geojson 2>/dev/null || true
+            # `git add a.json b.json` ABORTS AND STAGES NOTHING if any one pathspec
+            # matches no file, and --ignore-errors does not cover that case. Five of
+            # these files do not exist until their harvester first succeeds, so every
+            # run so far staged nothing and reported "no change" - after writing
+            # 24,241 records. Add them one at a time, skipping what is absent.
+            for f in projects.json wire.json \
+                     harvest/cfia_records.json harvest/industry_points.json \
+                     harvest/register_records.json harvest/animal_facilities.json \
+                     harvest/ogtr_trials.json harvest/gmofree_zones.json \
+                     harvest/fas_biotech.json harvest/bch_decisions.json \
+                     harvest/clinical_sponsors.json \
+                     overlays/trials.geojson overlays/regime.geojson \
+                     overlays/incidents.geojson; do
+              [ -e "$f" ] && git add "$f"
+            done
             git diff --staged --quiet && { echo "no change"; exit 0; }
             git commit -m "releases: refresh $(date -u +%Y-%m-%d)"
             git push && exit 0
