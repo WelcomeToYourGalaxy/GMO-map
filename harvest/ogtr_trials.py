@@ -62,7 +62,7 @@ def allowed(url):
 def fetch(url):
     req = Request(url, headers={"User-Agent": UA,
                                 "Accept": "application/json, text/html;q=0.8"})
-    with urlopen(req, timeout=90) as r:
+    with urlopen(req, timeout=45) as r:
         return r.read().decode("utf-8", "replace")
 
 
@@ -176,9 +176,20 @@ def main():
         print("could not fetch the map page: %s" % e, file=sys.stderr); return
 
     cands = find_endpoints(page)
-    print("  %d candidate data endpoints on the page" % len(cands))
+    # Two runs timed out at 4 minutes probing endpoints in page order. The map
+    # data is a geojson or an api route; a stylesheet or an analytics beacon is
+    # not, and each dead probe costs a full timeout. Sort so the likely ones go
+    # first and cap the number tried.
+    def likely(u):
+        u = u.lower()
+        return (0 if "geojson" in u else 1 if "/api/" in u or "jsonapi" in u
+                else 2 if "views/ajax" in u or "export" in u else 3)
+    cands = sorted(set(cands), key=likely)[:8]
+    print("  %d candidate data endpoints, most likely first" % len(cands))
+    for u in cands[:3]:
+        print("     %s" % u[:100])
     rows = []
-    for u in cands[:12]:
+    for u in cands:
         allowed_u, _ = allowed(u)
         if not allowed_u:
             continue
