@@ -182,11 +182,54 @@ def main():
     rows = []
     for u in endpoints():
         try:
-            got = rows_from(get(u))
+            first = get(u)
         except Exception as e:
-            print("  %-58s %s" % (u[len(BASE):], str(e)[:34]), file=sys.stderr); continue
-        if got:
-            print("  %d rows from %s" % (len(got), u)); rows = got; break
+            print("  %-58s %s" % (u[:58], str(e)[:34]), file=sys.stderr); continue
+        got = rows_from(first)
+        if not got:
+            continue
+        # PAGINATE. The first version asked once for 2,000 rows and stopped,
+        # which is why an earlier run reported 460 decisions and I wrongly read
+        # that as the total. Solr reports numFound; walk it.
+        total = None
+        try:
+            total = json.loads(first).get("response", {}).get("numFound")
+        except Exception:
+            pass
+        print("  %d rows from %s%s" % (len(got), u[:70],
+              (" of %s" % total) if total else ""))
+        if total and total > len(got) and "start=" not in u:
+            # Page until numFound is reached. There is no record cap: the point
+            # of this layer is every decision, and a cap on the count is how the
+            # APHIS harvest quietly lost 21,500 records for months.
+            #
+            # The guard is a wall-clock budget instead, and if it is ever hit the
+            # run SAYS SO in the loudest terms available. A truncation nobody is
+            # told about is the failure mode worth engineering against.
+            budget_s = 900.0
+            started, page = time.time(), len(got)
+            while page < total:
+                if time.time() - started > budget_s:
+                    print("    !! STOPPED EARLY at %d of %s after %d minutes. THIS LAYER IS "
+                          "INCOMPLETE. Raise budget_s or run with --resume."
+                          % (len(got), total, budget_s // 60), file=sys.stderr)
+                    break
+                sep = "&" if "?" in u else "?"
+                try:
+                    more = rows_from(get(u + sep + "start=" + str(page)))
+                except Exception as e:
+                    print("    !! page at %d failed (%s) - LAYER INCOMPLETE"
+                          % (page, str(e)[:40]), file=sys.stderr); break
+                if not more:
+                    break
+                got.extend(more); page += len(more)
+                if page % 20000 < len(more):
+                    print("    %d of %s" % (page, total))
+                time.sleep(0.3)
+            if len(got) >= total:
+                print("    paged to %d of %s - complete" % (len(got), total))
+        rows = got
+        break
 
     if not rows:
         print("no BCH route returned records. The portal is a JavaScript application and "
