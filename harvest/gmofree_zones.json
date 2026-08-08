@@ -1,0 +1,4 @@
+{
+ "note": "Regions and municipalities declared GMO-free, crawled from gmo-free-regions.org, one page per country. Matched to the map's own admin-1 names; municipal declarations below admin-1 are counted but not placed.",
+ "zones": []
+}
