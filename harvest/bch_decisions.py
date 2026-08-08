@@ -247,7 +247,52 @@ def main():
         if k in seen: continue
         seen.add(k); out.append(rec)
 
-    from collections import Counter
+    # A national decision has no site - it applies to a whole country - so every
+    # record in a country lands on the same centroid. Several hundred markers
+    # stacked on one point is not a map; you cannot click past the top one.
+    #
+    # So they are aggregated: ONE marker per country carrying the count, the
+    # date range, and the most recent decisions by name. The detail is in the
+    # entry rather than in hundreds of dots that cannot be separated, because
+    # spreading them into a ring would invent geography the source does not have.
+    from collections import Counter, defaultdict
+    grouped = defaultdict(list)
+    for r in out:
+        grouped[r["state"]].append(r)
+
+    agg = []
+    for cc, rs in grouped.items():
+        rs.sort(key=lambda x: x.get("date", ""), reverse=True)
+        dates = [x["date"][:4] for x in rs if x.get("date")]
+        span = ("%s\u2013%s" % (min(dates), max(dates))) if dates else ""
+        recent = "; ".join(x["name"][:90] for x in rs[:6])
+        agg.append({
+            "name": "%s \u2014 %d biosafety decision%s filed" % (cc, len(rs), "" if len(rs) == 1 else "s"),
+            "source": "bch:decision",
+            "type": "National biosafety decisions",
+            "lat": rs[0]["lat"], "lng": rs[0]["lng"], "state": cc,
+            "precise": False, "impact": 3 if len(rs) > 20 else 2,
+            "company": "", "size": "%d decisions" % len(rs),
+            "status": ("Filed %s" % span) if span else "Filed to the Biosafety Clearing-House",
+            "phase": "post", "date": rs[0].get("date", ""), "lapsed": False,
+            "url": rs[0]["url"],
+            "desc": ("WHAT. %d decision%s on living modified organisms filed by this country "
+                     "to the Biosafety Clearing-House%s. Most recent: %s. "
+                     "WHERE IT SITS. Under Article 20 of the Cartagena Protocol every party files "
+                     "its release and market decisions here within fifteen days. 173 parties do; "
+                     "**the United States is not one of them.** "
+                     "WHY IT MATTERS. These are national instruments, so there is no site to place "
+                     "and the marker sits at the country centroid. They are grouped into one point "
+                     "rather than stacked as hundreds, because spreading them apart would invent a "
+                     "geography the source does not have. A country with no records here has not "
+                     "necessarily approved nothing \u2014 it may simply not have filed."
+                     % (len(rs), "" if len(rs) == 1 else "s",
+                        (", %s" % span) if span else "", recent or "not stated")),
+            "checked": "",
+        })
+    print("  grouped %d decisions into %d country markers" % (len(out), len(agg)))
+    out = agg
+
     by = Counter(r["state"] for r in out)
     print("  usable: %d decisions across %d countries" % (len(out), len(by)))
     print("  most-filed: %s" % ", ".join("%s %d" % kv for kv in by.most_common(6)))

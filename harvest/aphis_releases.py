@@ -27,6 +27,7 @@ for reuse. Take the register that invites you in.
 Standard library only.
 """
 import csv, io, json, sys, pathlib, re
+import hashlib, math
 from datetime import datetime, date
 from urllib.request import Request, urlopen
 
@@ -217,6 +218,25 @@ def impact_for(n_locs, states):
     return 1
 
 
+
+def scatter(lat, lng, key, spread=1.35):
+    """Spread records deterministically inside the state they name.
+
+    APHIS publishes a state, not a site. Every record for a state therefore
+    lands on one centroid - 24,241 records across ~50 points, six hundred deep,
+    and only the top one is clickable. That is not a map.
+
+    So each record is offset inside a disc roughly the size of a state, using a
+    hash of its own permit number. Deterministic, so a record does not move
+    between runs and the index can fly to what is drawn. `precise` stays false
+    and the entry says plainly that the position is a scatter within the state
+    rather than a location - inventing a site would be worse than stacking.
+    """
+    h = hashlib.md5(key.encode("utf-8")).digest()
+    a = (h[0] << 8 | h[1]) / 65535.0 * 6.283185
+    r = ((h[2] << 8 | h[3]) / 65535.0) ** 0.5 * spread
+    return round(lat + math.sin(a) * r * 0.62, 4), round(lng + math.cos(a) * r, 4)
+
 def build(rows, source_label):
     legacy = (source_label == "epermits")
     out = []
@@ -277,13 +297,18 @@ def build(rows, source_label):
                 % (kind, organism.lower(), n_locs, "" if n_locs == 1 else "s",
                    ", ".join(states), org, status,
                    (" Declared traits: " + ", ".join(tr) + ".") if tr else "",
-                   redaction))
+                   redaction + " The dot is scattered inside the state, not placed at a site: APHIS "
+                   "publishes the state and the number of release locations, never the "
+                   "locations themselves. Australia is the only regulator in the world "
+                   "that publishes field trial sites."))
 
+        # scattered inside the state, not placed at a site - see scatter()
+        _slat, _slng = scatter(lat, lng, auth or (organism + str(len(out))))
         out.append({
             "name": "%s \u2014 %s (%s)" % (auth, organism, org),
             "source": "aphis:" + source_label,
             "type": "%s, environmental release" % organism,
-            "lat": lat, "lng": lng,
+            "lat": _slat, "lng": _slng,
             "state": ", ".join(states),
             "precise": False,
             "impact": impact_for(n_locs, states),
