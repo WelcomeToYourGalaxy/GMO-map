@@ -33,6 +33,12 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "harvest" / "bch_decisions.json"
 
 BASE = "https://bch.cbd.int"
+# The BCH front end does not serve its own data. It reads a Solr index behind
+# the Secretariat's shared API at api.cbd.int, documented in scbd/scbd.github.io
+# as "GET /api/v2013/index - Load information from solr index". The earlier
+# attempts here failed because they asked bch.cbd.int for records it does not
+# hold: 401 on one path, 404 on another, timeout on a third.
+API = "https://api.cbd.int/api/v2013/index"
 UA = "GMO-map-harvest/1.0 (+https://github.com/WelcomeToYourGalaxy/GMO-map)"
 
 # The record types that describe a release or a placing on the market.
@@ -72,15 +78,19 @@ def get(url, tries=3):
 
 
 def endpoints():
-    """Candidate machine-readable routes, most specific first. Tried in order
-    because BCH has changed its export route more than once and a hard-coded
-    path would fail silently a year from now."""
-    return [
+    """Solr queries against the shared CBD index, then the old guesses as a
+    fallback. `schema_s` names the record type; the BCH decision schemas differ
+    slightly by era, so several are tried."""
+    q = []
+    for schema in ("biosafetyDecision", "decision", "nationalDecision"):
+        q.append(API + "?" + urlencode({
+            "q": "*:*", "fq": "schema_s:" + schema, "rows": 2000,
+            "wt": "json", "sort": "createdDate_dt desc"}))
+    q.append(API + "?" + urlencode({
+        "q": "biosafety decision release", "rows": 2000, "wt": "json"}))
+    return q + [
         BASE + "/api/v2013/documents?schema=decision&format=json",
-        BASE + "/api/documents?schema=decision",
-        BASE + "/database/attributes/?schema=decision&format=json",
         BASE + "/rss/decisions.aspx",
-        BASE + "/rss.aspx?schema=decision",
     ]
 
 
@@ -88,7 +98,11 @@ def rows_from(payload):
     """JSON or RSS, whichever came back."""
     try:
         d = json.loads(payload)
-        for k in ("data", "documents", "records", "results", "items"):
+        # Solr puts the rows under response.docs
+        r = d.get("response") if isinstance(d, dict) else None
+        if isinstance(r, dict) and isinstance(r.get("docs"), list):
+            return r["docs"]
+        for k in ("data", "documents", "records", "results", "items", "docs"):
             v = d.get(k) if isinstance(d, dict) else None
             if isinstance(v, list):
                 return v
