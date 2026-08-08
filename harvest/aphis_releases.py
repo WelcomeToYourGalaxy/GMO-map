@@ -31,6 +31,7 @@ from datetime import datetime, date
 from urllib.request import Request, urlopen
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+HERE = ROOT / "harvest"
 OUT = ROOT / "projects.json"
 CURATED = ROOT / "harvest" / "projects_curated.json"
 CFIA = ROOT / "harvest" / "cfia_records.json"
@@ -41,7 +42,11 @@ EFILE = "https://www.aphis.usda.gov/sites/default/files/efile-data.csv"
 LEGACY = "https://www.aphis.usda.gov/sites/default/files/brs-public-apps.csv"
 UA = "Mozilla/5.0 (compatible; GMO-map APHIS harvester; +https://github.com/WelcomeToYourGalaxy/GMO-map)"
 
-DEFAULT_KEEP = 600
+# The whole history, not a recent slice. This was 600, which silently threw
+# away ~21,500 authorisations - the map is a record of the industry since it
+# began, so the cap is now a guard against a runaway source, not an editorial
+# decision. Override with --keep if projects.json gets unwieldy.
+DEFAULT_KEEP = 40000
 
 # Statuses that mean a release is live or pending. Anything else is dropped by a
 # fail-safe gate: a withdrawn or denied application is not a release.
@@ -325,6 +330,24 @@ def main():
 
     records.sort(key=lambda x: x.get("date", ""), reverse=True)
     records = records[:keep]
+
+    # Anything else the run produced. These used to be build inputs, embedded
+    # into index.html at build time - which meant a harvester could succeed and
+    # its 2,210 records would still never reach the map without a rebuild.
+    # They are merged into projects.json instead, which the map fetches.
+    for extra_file in ("clinical_sponsors.json", "register_records.json",
+                       "animal_facilities.json", "ogtr_trials.json",
+                       "bch_decisions.json"):
+        fp = HERE / extra_file
+        if not fp.exists():
+            continue
+        try:
+            got = json.loads(fp.read_text(encoding="utf-8")).get("projects", [])
+        except Exception as e:
+            print("  ! %s unreadable (%s)" % (extra_file, e), file=sys.stderr); continue
+        if got:
+            records.extend(got)
+            print("  merging %5d records from %s" % (len(got), extra_file))
 
     # Canadian approvals, if cfia_approvals.py has been run
     extra = []
