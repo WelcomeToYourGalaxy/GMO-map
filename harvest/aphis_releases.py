@@ -302,13 +302,11 @@ def build(rows, source_label):
                    "locations themselves. Australia is the only regulator in the world "
                    "that publishes field trial sites."))
 
-        # scattered inside the state, not placed at a site - see scatter()
-        _slat, _slng = scatter(lat, lng, auth or (organism + str(len(out))))
         out.append({
             "name": "%s \u2014 %s (%s)" % (auth, organism, org),
             "source": "aphis:" + source_label,
             "type": "%s, environmental release" % organism,
-            "lat": _slat, "lng": _slng,
+            "lat": lat, "lng": lng,
             "state": ", ".join(states),
             "precise": False,
             "impact": impact_for(n_locs, states),
@@ -355,6 +353,7 @@ def main():
 
     records.sort(key=lambda x: x.get("date", ""), reverse=True)
     records = records[:keep]
+
 
     # Anything else the run produced. These used to be build inputs, embedded
     # into index.html at build time - which meant a harvester could succeed and
@@ -425,6 +424,68 @@ def main():
     for r in records:
         k = norm_org(r["company"])
         orgs[k] = orgs.get(k, 0) + 1
+    # GROUP EVERY RELEASE RECORD BY PLACE, WHATEVER THE SOURCE.
+    # Grouping each source separately left three markers stacked on one centroid
+    # - one from APHIS, one from the Cartagena filing, one from CFIA - which is
+    # the same unclickable pile, just wearing three hats. A reader does not care
+    # which register a permit came from until after they have found the place.
+    #
+    # So: one marker per coordinate. The popup then breaks down BY SOURCE, each
+    # with its own count and its own expandable list, because that is the point
+    # at which provenance starts to matter.
+    from collections import defaultdict, OrderedDict
+    SRCNAME = {"aphis": "US APHIS permits and notifications",
+               "bch": "National decisions filed to the Cartagena Protocol",
+               "cfia": "Canadian approvals (CFIA)",
+               "ogtr": "Australian licences (OGTR)"}
+    at = defaultdict(list)
+    for r in records:
+        at[(round(r["lat"], 3), round(r["lng"], 3))].append(r)
+
+    merged = []
+    for (la, ln), rs in at.items():
+        if len(rs) == 1:
+            merged.append(rs[0]); continue
+        by_src = OrderedDict()
+        for r in sorted(rs, key=lambda x: x.get("date", ""), reverse=True):
+            k = str(r.get("source", "")).split(":")[0]
+            by_src.setdefault(k, []).append(r)
+        place = rs[0].get("state") or "Unstated"
+        yrs = [x["date"][:4] for x in rs if x.get("date")]
+        span = ("%s\u2013%s" % (min(yrs), max(yrs))) if yrs else ""
+        merged.append({
+            "name": "%s \u2014 %d release records" % (place, len(rs)),
+            "source": rs[0]["source"],
+            "type": "Release records, all sources",
+            "lat": la, "lng": ln, "state": place, "precise": False,
+            "impact": 3 if len(rs) > 200 else 2, "company": "",
+            "size": "%d records" % len(rs),
+            "status": ("%s, %d source%s" % (span or "date not stated", len(by_src),
+                                            "" if len(by_src) == 1 else "s")),
+            "phase": "post", "date": rs[0].get("date", ""),
+            "lapsed": all(x.get("lapsed") for x in rs),
+            "level": rs[0].get("level", ""), "parent": rs[0].get("parent", ""),
+            "records_total": len(rs),
+            "sources": [{"k": k, "label": SRCNAME.get(k, k), "n": len(v),
+                         "records": [{"n": x["name"][:110], "d": x.get("date", ""),
+                                      "s": x.get("status", ""), "u": x.get("url", ""),
+                                      "c": x.get("company", "")} for x in v]}
+                        for k, v in by_src.items()],
+            "url": rs[0]["url"],
+            "desc": ("WHAT. %d release records at this point%s, from %s. "
+                     "WHERE IT SITS. Registers publish a state or a country, almost never a site, "
+                     "so every record for a place shares one coordinate. "
+                     "WHY IT MATTERS. They are one marker rather than a stack because a pile of "
+                     "pins on one centroid cannot be clicked past. Open it and each register is "
+                     "listed separately with its own count. **Australia is the only regulator in "
+                     "the world that publishes field trial sites.**"
+                     % (len(rs), (", %s" % span) if span else "",
+                        ", ".join(SRCNAME.get(k, k) for k in by_src))),
+            "checked": "",
+        })
+    print("  %d records \u2192 %d place markers (all sources merged)" % (len(records), len(merged)))
+    records = merged
+
     ranked = sorted(orgs.items(), key=lambda x: -x[1])
     print("top applicants (%d distinct, corporate groups merged):" % len(orgs))
     for o, c in ranked[:10]:
@@ -436,6 +497,7 @@ def main():
     if "--dry-run" in sys.argv:
         print("\ndry run \u2014 nothing written")
         return
+
     OUT.write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")
     print("\nwrote %s" % OUT.name)
 

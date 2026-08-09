@@ -129,15 +129,33 @@ def pick(row, *names):
     return ""
 
 
+COUNTRY_FIELDS = ("government_s", "government", "country_s", "countries_ss",
+                  "government_en_s", "owner_s", "jurisdiction_s")
+
+
 def iso2(row):
-    t = " ".join(str(v) for v in row.values())
-    m = re.search(r"\b([A-Z]{2})\b(?=\s*[-\u2014|:])", t)
-    if m and m.group(1) in C:
-        return m.group(1)
-    for code in C:
-        if re.search(r"\b" + code + r"\b", t):
-            return code
-    return ""
+    """The country that filed the decision, read from the field that states it.
+
+    The first version scanned the whole record for any two-letter code. Spanish
+    and French decision text is full of two-letter fragments, so records like
+    "Documento de Decision de la solicitud de liberacion al ambiente" were being
+    filed under Germany. **Never infer a country from free text when the record
+    has a field for it** - and if the field is missing, drop the record rather
+    than guess, because a decision placed in the wrong country is worse than a
+    decision that is absent.
+    """
+    for f in COUNTRY_FIELDS:
+        for k, v in row.items():
+            if str(k).lower() != f:
+                continue
+            for cand in (v if isinstance(v, list) else [v]):
+                c = str(cand).strip().upper()[:2]
+                if c in C:
+                    return c
+    # last resort: an explicit code at the very start, e.g. "BR - Decision on..."
+    title = str(row.get("title_s") or row.get("title") or "")
+    m = re.match(r"\s*([A-Z]{2})\s*[-\u2014|:]", title)
+    return m.group(1) if m and m.group(1) in C else ""
 
 
 def to_record(row):
@@ -151,7 +169,16 @@ def to_record(row):
     else:
         m = re.search(r"(19|20)\d{2}", " ".join(str(v) for v in row.values()))
         if m: date = m.group(0) + "-01-01"
-    link = pick(row, "link", "url", "href") or (BASE + "/database/decisions")
+    # BCH record pages are /en/database/{recordId}. The generic list URL was
+    # being emitted for every record, so no link went anywhere useful.
+    rid = ""
+    for f in ("id", "identifier_s", "recordid", "record_id", "uid"):
+        v = pick(row, f)
+        if v and len(v) > 4:
+            rid = v.split("/")[-1]; break
+    link = (BASE + "/en/database/" + rid) if rid else pick(row, "url", "link", "href")
+    if not link or not link.startswith("http"):
+        link = BASE + "/en/database/?currentid=" + rid if rid else BASE + "/database/decisions"
     lat, lng = C[cc]
     return {
         "name": title[:180],
@@ -237,12 +264,17 @@ def main():
               "network tab, and add the URL to endpoints()." % BASE, file=sys.stderr)
         return
 
-    out, noplace = [], 0
+    # A record whose country field is missing is still a real decision. Dropping
+    # it hides a gap in the source; putting it in a plausible country would be a
+    # lie. So it goes to a marked spot in the mid-Atlantic, where no reader can
+    # mistake it for a place, and the entry says why it is there.
+    UNPLACED = (14.5, -38.0)
+    out, unplaced_rows = [], []
     seen = set()
     for r in rows:
         rec = to_record(r)
         if rec is None:
-            noplace += 1; continue
+            unplaced_rows.append(r); continue
         k = rec["name"].lower() + rec["state"]
         if k in seen: continue
         seen.add(k); out.append(rec)
@@ -290,14 +322,40 @@ def main():
                         (", %s" % span) if span else "", recent or "not stated")),
             "checked": "",
         })
+    # NOTE: these country markers are merged again by aphis_releases.py, which
+    # groups every release record by coordinate regardless of which register it
+    # came from. That is the merge the map actually shows. This grouping only
+    # stops a country's decisions arriving as hundreds of identical points.
     print("  grouped %d decisions into %d country markers" % (len(out), len(agg)))
     out = agg
 
     by = Counter(r["state"] for r in out)
+    if unplaced_rows:
+        agg.append({
+            "name": "%d decisions with no country stated" % len(unplaced_rows),
+            "source": "bch:decision", "type": "Filed without a country field",
+            "lat": UNPLACED[0], "lng": UNPLACED[1], "state": "\u2014",
+            "precise": False, "impact": 2, "company": "",
+            "size": "%d decisions" % len(unplaced_rows),
+            "status": "Country not stated in the record", "phase": "post",
+            "date": "", "lapsed": False, "url": BASE + "/database/decisions",
+            "desc": ("WHAT. %d decisions filed to the Biosafety Clearing-House whose record "
+                     "carries no country field. "
+                     "WHERE IT SITS. **Nowhere. This marker is in the middle of the Atlantic "
+                     "because there is no ocean release and no country to place these in** \u2014 it "
+                     "is a visible parking space, not a location. "
+                     "WHY IT MATTERS. Dropping them would hide a gap in the source; putting them "
+                     "in a plausible country would be a fabrication. They are counted here so the "
+                     "total stays honest and the missing field stays visible."
+                     % len(unplaced_rows)),
+            "checked": "",
+        })
+        out = agg
+        by = Counter(r["state"] for r in out)
     print("  usable: %d decisions across %d countries" % (len(out), len(by)))
     print("  most-filed: %s" % ", ".join("%s %d" % kv for kv in by.most_common(6)))
-    if noplace:
-        print("  dropped for no identifiable country: %d" % noplace)
+    if unplaced_rows:
+        print("  no country field, parked in the Atlantic: %d" % len(unplaced_rows))
 
     if "--dry-run" in sys.argv:
         print("\ndry run \u2014 nothing written"); return
