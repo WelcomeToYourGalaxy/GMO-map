@@ -47,8 +47,8 @@ jobs:
             timeout 4m python3 harvest/contamination_register.py || echo "!! contamination register failed - continuing"
             timeout 5m python3 harvest/animal_facilities.py || echo "!! animal facilities failed - continuing"
             timeout 12m python3 harvest/ogtr_trials.py || echo "!! ogtr trials failed - continuing"
-            timeout 6m python3 harvest/gmofree_zones.py || echo "!! gmo-free zones failed - continuing"
-            timeout 6m python3 harvest/fas_biotech.py || echo "!! fas biotech failed - continuing"
+            timeout 8m python3 harvest/gmofree_zones.py     || echo "!! gmo-free zones failed - continuing"
+            timeout 8m python3 harvest/fas_biotech.py       || echo "!! fas biotech failed - continuing"
             timeout 18m python3 harvest/bch_decisions.py    || echo "!! bch decisions failed - continuing"
             timeout 8m python3 harvest/clinical_sponsors.py || echo "!! clinical sponsors failed - continuing"
             timeout 8m python3 harvest/aphis_releases.py || echo "!! aphis harvester failed - continuing"
@@ -63,8 +63,8 @@ jobs:
             for f in projects.json wire.json \
                      harvest/cfia_records.json harvest/industry_points.json \
                      harvest/register_records.json harvest/animal_facilities.json \
-                     harvest/ogtr_trials.json harvest/gmofree_zones.json \
-                     harvest/fas_biotech.json harvest/bch_decisions.json \
+                     harvest/ogtr_trials.json \
+                     harvest/bch_decisions.json harvest/gmofree_zones.json harvest/fas_biotech.json \
                      harvest/clinical_sponsors.json \
                      overlays/trials.geojson overlays/regime.geojson \
                      overlays/incidents.geojson; do
