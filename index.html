@@ -2422,6 +2422,17 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
         if(o.ap === false) g.ap = false;
         continue;
       }
+      // Coordinate clustering exists to collapse a register's records onto the
+      // place they were filed under - a state, a country. It has no business
+      // acting on an organisation, which is a single named thing at a single
+      // address: two firms in one town were becoming an anonymous pile titled
+      // after the town. Organisations and spread records draw one dot each.
+      if(o.kd !== 'release'){
+        g = cells['solo:' + i] = {la: o.la, lo: o.lo, n: 1, m: [o], kd: {}, i: o.i,
+                                  ap: o.ap, total: 1, solo: true};
+        g.kd[o.kd] = 1; out.push(g);
+        continue;
+      }
       var _sla = (o.p && typeof o.p.lat === 'number') ? o.p.lat : o.la;
       var _slo = (o.p && typeof o.p.lng === 'number') ? o.p.lng : o.lo;
       var k  = _sla.toFixed(2) + '|' + _slo.toFixed(2);
@@ -2544,7 +2555,10 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     var where = keys.length ? keys[0] : 'This area';
     // Industry markers carry a town rather than a state, so a mixed pile is
     // named after its largest member and counted, not listed.
-    if(keys.length > 1) where += ' and ' + (keys.length - 1) + ' other place' + (keys.length > 2 ? 's' : '');
+    // "Nairobi and 1 other place" withholds the one thing it could have said.
+    // Two places are both named; beyond that the list stops being a title.
+    if(keys.length === 2) where += ' and ' + keys[1];
+    else if(keys.length > 2) where += ' and ' + (keys.length - 1) + ' other places';
     return where + ' \u2014 ' + g.total.toLocaleString() + ' record' + (g.total === 1 ? '' : 's');
   }
   function pjPopupHtml(q){
@@ -2738,9 +2752,14 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
           return; }
         var hit=(g&&g.m&&g.m.length)?g.m[0]:self._nearest(cp);
         if(hit){ ev.stopPropagation(); gbClickTime=Date.now();
+          // A country marker is a container, not a record. It was opening the
+          // records panel AND a pin popup describing the container itself, so
+          // every click on the United States produced two boxes, one of which
+          // was a permit nobody had asked for. The drill owns the click.
+          try{ if(window.pjDrill && window.pjDrill(hit.p)){ if(_pjPopup) map.closePopup(_pjPopup); return; } }catch(_e){}
           if(!_pjPopup)_pjPopup=L.popup({maxWidth:320,autoPan:true});
           _pjPopup.setLatLng([hit.la,hit.lo]).setContent(pjPopupHtml(hit.p)).openOn(map); pjEnrich(hit.p);
-          try{ if(window.pjDrill && window.pjDrill(hit.p)){} else if(window.pjShowRecords) window.pjShowRecords(hit.p); }catch(_e){} } };
+          try{ if(window.pjShowRecords) window.pjShowRecords(hit.p); }catch(_e){} } };
       map.getContainer().addEventListener("click",this._onClick,true);
       this._draw(); },
     onRemove:function(map){ L.DomUtil.remove(this._cv); map.off("moveend zoomend viewreset resize",this._draw,this);
@@ -3360,7 +3379,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     if(box) return box;
     box=document.createElement('div'); box.id='recList';
     box.innerHTML='<div id="recHead"><span id="recTitle"></span>'
-      +'<div class="rec-note" id="recNote"><b>No dot on this map is a field.</b> No government publishes where an engineered release actually happens. In the United States, APHIS names the states a permit covers and counts the sites in each, but never says where those sites are \u2014 and one permit often covers several states at once, so a record can be counted in one state while naming others. Decisions filed under the Cartagena Protocol, the international biosafety treaty, apply to a whole country and have no site at all. Every dot therefore sits at the middle of a state or a country, not at a place anything was planted.<br><br><b>Why the United States has a national dot and state dots.</b> Two different kinds of record. Permits to plant or release name the states they cover, so they show up as state dots. Records that belong to the country as a whole \u2014 national biosafety decisions, gene therapy trial sponsors \u2014 name no state, so they gather on a single national dot in the middle of the country. Clicking it opens those national records and puts the states on the map beside it. Clicking it again puts them away.<br><br><b>One exception.</b> Australia\u2019s regulator, the OGTR, publishes the actual locations of field trials. It is the only one in the world that does.</div>'
+      +'<div class="rec-note" id="recNote"><b>No government publishes where an engineered release actually happens.</b> In the United States, APHIS names the states a permit covers and counts the sites in each, but never says where those sites are \u2014 and one permit often covers several states at once, so a record can be counted in one state while naming others. Decisions filed under the Cartagena Protocol, the international biosafety treaty, apply to a whole country and have no site at all. Every dot therefore sits at the middle of a state or a country, not at a place anything was planted.<br><br><b>Why the United States has a national dot and state dots.</b> Two different kinds of record. Permits to plant or release name the states they cover, so they show up as state dots. Records that belong to the country as a whole \u2014 national biosafety decisions, gene therapy trial sponsors \u2014 name no state, so they gather on a single national dot in the middle of the country. Clicking it opens those national records and puts the states on the map beside it. Clicking it again puts them away.<br><br><b>One exception.</b> Australia\u2019s regulator, the OGTR, publishes the actual locations of field trials. It is the only one in the world that does.</div>'
       +'<span id="recClose" title="close">&times;</span></div>'
       +'<div id="recFilt"></div><div id="recSort"></div><div id="recBody"></div>';
     document.body.appendChild(box);
@@ -3829,8 +3848,23 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     return out;
   }
 
+  // "<organism>, <category>" is an APHIS release type and splits on the comma.
+  // "Regulator, register or trade body" is an English list and is one type - but
+  // it has a comma, so it was being split into a category "Register or trade
+  // body" holding a leaf "Regulator": the same words twice, and a category
+  // nobody wrote. A tail is only a category if it ends like one.
+  var _TAIL_NOUNS = {'release':1, 'trial':1, 'permit':1, 'notification':1,
+                     'decision':1, 'authorisation':1, 'authorization':1,
+                     'approval':1, 'movement':1, 'import':1, 'export':1,
+                     'registration':1, 'licence':1, 'license':1, 'use':1,
+                     'breakdown':1, 'total':1, 'application':1};
+  function _isCategoryTail(tail){
+    var w = _key(tail).split(' ');
+    return !!_TAIL_NOUNS[w[w.length - 1]];
+  }
+
   // Head nouns that make two differently-worded categories the same thing.
-  var _HEADS = {'releas':1, 'trial':1, 'permit':1, 'notification':1, 'decision':1,
+  var _HEADS = {'release':1, 'trial':1, 'permit':1, 'notification':1, 'decision':1,
                 'authorisation':1, 'authorization':1, 'approval':1, 'use':1,
                 'movement':1, 'import':1, 'export':1, 'application':1, 'licence':1,
                 'license':1, 'company':1, 'organisation':1, 'organization':1,
@@ -3878,7 +3912,9 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
       // already a category in its own right, so it becomes one, with its records
       // directly under it.
       var ix = t.lastIndexOf(','), cat, leaf;
-      if(ix > 0){ cat = t.slice(ix + 1).trim(); leaf = t.slice(0, ix).trim(); }
+      if(ix > 0 && _isCategoryTail(t.slice(ix + 1))){
+        cat = t.slice(ix + 1).trim(); leaf = t.slice(0, ix).trim();
+      }
       else { cat = t; leaf = ''; }
       if(!cat){ cat = 'Type not stated'; leaf = ''; }
       cat = cat.charAt(0).toUpperCase() + cat.slice(1);
@@ -3996,7 +4032,13 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     var h = '';
     tree.order.forEach(function(cat){
       var leaves = tree.cats[cat];
-      var lk = Object.keys(leaves).sort(function(a,b){ return leaves[b].length - leaves[a].length; });
+      var lk = Object.keys(leaves).sort(function(a,b){
+        // "Other" is the leftovers wherever it appears - category or leaf - so
+        // it sorts last on name rather than on size.
+        if(a === 'Other') return 1;
+        if(b === 'Other') return -1;
+        return leaves[b].length - leaves[a].length;
+      });
       var tot = 0; lk.forEach(function(k){ tot += leaves[k].length; });
       var oc = !!open['c:'+cat];
       // Sorting belongs to the category you are reading, not to the whole panel.
@@ -4040,8 +4082,40 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     return h || '<div class="rec-meta">No records match.</div>';
   };
 
+  // The clinical register files its detail column as a tally: "NA\u00d78, Phase 2\u00d76,
+  // Phase 1\u00d74, EARLY_Phase 1\u00d71". That is a machine's shorthand - a count on the
+  // wrong side of the label, an underscore where a space belongs, and "NA" for
+  // the fact that no phase was recorded at all. Same numbers, said in English.
+  var _PHASE_ORDER = ['early phase 1','phase 1','phase 1/phase 2','phase 2',
+                      'phase 2/phase 3','phase 3','phase 4','not applicable'];
+  function _phaseWords(v){
+    var t = String(v == null ? '' : v).trim();
+    if(!t || t.indexOf('\u00d7') < 0) return t;
+    var parts = t.split(','), out = [], ok = true;
+    parts.forEach(function(seg){
+      var m = /^\s*(.+?)\s*\u00d7\s*(\d+)\s*$/.exec(seg);
+      if(!m){ ok = false; return; }
+      var label = m[1].replace(/_/g, ' ').trim().toLowerCase();
+      if(label === 'na' || label === 'n/a') label = 'not applicable';
+      out.push({l: label, n: +m[2]});
+    });
+    if(!ok || !out.length) return t;
+    out.sort(function(a, b){
+      var ia = _PHASE_ORDER.indexOf(a.l), ib = _PHASE_ORDER.indexOf(b.l);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+    });
+    var total = 0; out.forEach(function(x){ total += x.n; });
+    var bits = out.map(function(x){
+      if(x.l === 'not applicable') return x.n + ' with no phase recorded';
+      return x.n + ' in ' + x.l;
+    });
+    return total + ' trial' + (total === 1 ? '' : 's') + ': ' + bits.join(', ');
+  }
+
+  window.pjPhaseWords = _phaseWords;   // exposed for checking
+
   function recLine(o, typeLabel){
-    var meta = [typeLabel || o._leaf, o.d, o.c, o.s].filter(Boolean).join(' \u00b7 ');
+    var meta = [typeLabel || o._leaf, o.d, _phaseWords(o.c), o.s].filter(Boolean).join(' \u00b7 ');
     return (o.u ? ('<a href="'+o.u+'" target="_blank" rel="noopener">'+o.n+'</a>')
                 : ('<span>'+o.n+'</span>'))
          + (meta ? '<div class="rec-meta">'+meta+'</div>' : '');
