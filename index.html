@@ -2367,17 +2367,21 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   // cluster does not jump around while you pan - it only re-forms on zoom.
   // Points sharing a coordinate (every state-centroid release record does) always
   // land in the same cell at every zoom, so a centroid is always one icon.
-  var PJ_CLUSTER_MAXZ = 9;   // above this zoom, draw individual points again
+  var PJ_CLUSTER_MAXZ = 99;  // never: a place is one icon at every zoom
   var PJ_CELL         = 46;  // cell edge in screen px
   var _pjClu = null, _pjCluZ = null;
 
   function pjClusters(z){
-    if(_pjClu && _pjCluZ === z) return _pjClu;
+    if(_pjClu) return _pjClu;   // zoom-invariant: built once per filter change
     var cells = {}, out = [], pts = _pjPts || [], i, g;
     for(i = 0; i < pts.length; i++){
       var o  = pts[i];
-      var pp = map.project([o.la, o.lo], z);
-      var k  = Math.floor(pp.x / PJ_CELL) + '|' + Math.floor(pp.y / PJ_CELL);
+      // Group by the coordinate itself, not by a zoom-dependent screen cell.
+      // A pixel grid re-cuts the same pile at every zoom, so one icon becomes
+      // three as you zoom in and the reader watches a place split into pieces
+      // that are not places. Everything sharing a coordinate is one icon at
+      // every zoom, and it stays that icon.
+      var k  = o.la.toFixed(2) + '|' + o.lo.toFixed(2);
       g = cells[k];
       if(!g){ g = cells[k] = {la:0, lo:0, n:0, m:[], kd:{}, i:0, ap:true}; out.push(g); }
       g.la += o.la; g.lo += o.lo; g.n++; g.m.push(o);
@@ -2647,7 +2651,6 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       var tl=m.containerPointToLayerPoint([0,0]); L.DomUtil.setPosition(cv,tl); cv.width=s.x; cv.height=s.y;
       var ctx=cv.getContext("2d"); ctx.clearRect(0,0,s.x,s.y); if(!pjOn||!_pjGrid)return;
       var z=m.getZoom();
-      if(z>PJ_CLUSTER_MAXZ){ this._drawSingles(ctx,s,z); return; }
       var cl=pjClusters(z), pad=40;
       for(var k=0;k<cl.length;k++){ var g=cl[k];
         var pt=m.latLngToContainerPoint([g.la,g.lo]);
@@ -2690,8 +2693,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
             if(r>=2.2){ ctx.lineWidth=1; ctx.strokeStyle="#0a1020"; ctx.stroke(); } }
         } },
     _nearestClu:function(cp){ var m=this._map,z=m.getZoom();
-      if(z>PJ_CLUSTER_MAXZ) return null;
-      var cl=pjClusters(z), best=null, bd=1e9;
+            var cl=pjClusters(z), best=null, bd=1e9;
       for(var i=0;i<cl.length;i++){ var g=cl[i];
         var pt=m.latLngToContainerPoint([g.la,g.lo]);
         var d=Math.hypot(pt.x-cp.x,pt.y-cp.y), rr=pjCluRad(z,g)+5;
@@ -3209,8 +3211,11 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
       +'<span id="recClose" title="close">&times;</span></div>'
       +'<div id="recFilt"></div><div id="recSort"></div><div id="recBody"></div>';
     document.body.appendChild(box);
-    box.querySelector('#recClose').addEventListener('click',function(){ box.style.display='none'; });
-    document.addEventListener('keydown',function(e){ if(e.key==='Escape') box.style.display='none'; });
+    var bk=document.createElement('div'); bk.id='recBack';
+    document.body.appendChild(bk);
+    bk.addEventListener('click',function(){ box.style.display='none'; bk.style.display='none'; });
+    box.querySelector('#recClose').addEventListener('click',function(){ box.style.display='none'; var b2=document.getElementById('recBack'); if(b2)b2.style.display='none'; });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ box.style.display='none'; var b3=document.getElementById('recBack'); if(b3)b3.style.display='none'; } });
     return box;
   }
     var state={rows:[],by:'d',dir:-1,title:'',q:'',type:'',kind:'',yrs:0,cap:500};
@@ -3244,9 +3249,34 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     var h='<input id="recQ" placeholder="filter these entries\u2026" value="'+(state.q||'').replace(/"/g,'&quot;')+'">';
     if(tk.length>1){
       h+='<select id="recType"><option value="">All types ('+state.rows.length+')</option>';
+      // Group the options rather than listing every organism flat. A release type
+      // reads "<organism>, environmental release", so the words after the comma
+      // are the category and the words before it are the thing. Real headings
+      // instead of an alphabet, and the biggest category first.
+      var groups={}, order=[];
       tk.forEach(function(t){
-        h+='<option value="'+t.replace(/"/g,'&quot;')+'"'+(state.type===t?' selected':'')+'>'
-          +t.slice(0,44)+' ('+types[t]+')</option>';
+        var ix=t.indexOf(','), cat, leaf;
+        if(ix>0){ cat=t.slice(ix+1).trim(); leaf=t.slice(0,ix).trim(); }
+        else { cat='Other'; leaf=t; }
+        cat=cat.charAt(0).toUpperCase()+cat.slice(1);
+        if(!groups[cat]){ groups[cat]=[]; order.push(cat); }
+        groups[cat].push({v:t, l:leaf, n:types[t]});
+      });
+      order.sort(function(a,b){
+        var sa=0, sb=0;
+        groups[a].forEach(function(x){ sa+=x.n; });
+        groups[b].forEach(function(x){ sb+=x.n; });
+        return sb-sa;
+      });
+      order.forEach(function(cat){
+        var rows=groups[cat], tot=0;
+        rows.forEach(function(x){ tot+=x.n; });
+        if(order.length>1) h+='<optgroup label="'+cat.replace(/"/g,'&quot;').slice(0,46)+' ('+tot+')">';
+        rows.sort(function(a,b){ return b.n-a.n; }).forEach(function(x){
+          h+='<option value="'+x.v.replace(/"/g,'&quot;')+'"'+(state.type===x.v?' selected':'')+'>'
+            +x.l.slice(0,42)+' ('+x.n+')</option>';
+        });
+        if(order.length>1) h+='</optgroup>';
       });
       h+='</select>';
     }
@@ -3329,7 +3359,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     var b=ensure();
     var fb=b.querySelector('#recFilt'); if(fb) fb.dataset.live='';
     b.querySelector('#recTitle').textContent=title;
-    b.style.display='flex';
+    b.style.display='flex'; var b4=document.getElementById('recBack'); if(b4)b4.style.display='block';
     draw();
     return true;
   };
@@ -3337,7 +3367,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
   // Provenance only starts to matter once you have found the place, so it is one
   // click in rather than three markers stacked on top of each other.
   function drawSources(p){
-    var b=ensure(); b.style.display='flex';
+    var b=ensure(); b.style.display='flex'; var b4=document.getElementById('recBack'); if(b4)b4.style.display='block';
     b.querySelector('#recTitle').textContent=(p.name||'Records');
     b.querySelector('#recSort').innerHTML='';
     var h='';
@@ -3372,16 +3402,14 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     var extra=(p.records_total&&p.records_total>p.records.length)
       ? (' \u2014 showing '+p.records.length+' of '+p.records_total) : (p.records.length>1?(' \u2014 '+p.records.length+' records'):'');
     b.querySelector('#recTitle').textContent=(p.name||'Records')+extra;
-    b.style.display='flex';
+    b.style.display='flex'; var b4=document.getElementById('recBack'); if(b4)b4.style.display='block';
     draw();
     return true;
   };
 })();
 </script>
 <style>
-#recList{display:none;position:absolute;right:12px;bottom:12px;z-index:660;width:330px;
-  max-height:64vh;background:rgba(8,14,32,0.96);border:1px solid rgba(127,168,204,0.4);
-  border-radius:9px;color:#c3cee0;font-size:10.5px;flex-direction:column;overflow:hidden;}
+#recList{display:none;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1200;width:min(560px,92vw);max-height:78vh;background:rgba(8,14,32,0.975);border:1px solid rgba(127,168,204,0.45);border-radius:11px;color:#c3cee0;font-size:11px;flex-direction:column;overflow:hidden;box-shadow:0 18px 60px rgba(0,0,0,0.6);}
 #recHead{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;
   padding:8px 10px;border-bottom:1px solid rgba(127,168,204,0.22);color:#eaf1ff;
   font-weight:600;line-height:1.35;flex:0 0 auto;}
@@ -3410,6 +3438,9 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
 .rec-src{display:flex;align-items:center;gap:6px;padding:7px 0;cursor:pointer;border-bottom:1px solid rgba(127,168,204,0.12);line-height:1.35;}
 .rec-src:hover{color:#eaf1ff;}
 .rec-open{margin-left:auto;color:#7fa8cc;font-size:9.5px;}
+#recList optgroup{color:#7fa8cc;font-weight:700;font-size:9.5px;text-transform:uppercase;letter-spacing:.4px;}
+#recList optgroup option{color:#c3cee0;font-weight:400;text-transform:none;letter-spacing:0;}
+#recBack{display:none;position:fixed;inset:0;z-index:1190;background:rgba(4,8,20,0.45);}
 .rec-back{color:#7fa8cc;cursor:pointer;padding:4px 0 7px;font-size:9.5px;}
 @media (max-width:820px){#recList{display:none!important;}}
 </style>
