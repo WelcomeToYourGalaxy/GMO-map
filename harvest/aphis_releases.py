@@ -499,6 +499,16 @@ def main():
         return
 
     OUT.write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")
+    # The map fetches projects.json.gz FIRST - the raw JSON is past GitHub's
+    # file-size limit, so the gzipped copy is the one it actually reads. Nothing
+    # was writing it, so a stale .gz from an old run has been served on every
+    # visit while every fresh harvest sat unread in projects.json. Write both.
+    import gzip
+    gzp = pathlib.Path(str(OUT) + ".gz")
+    with gzip.open(str(gzp), "wb", compresslevel=9) as gz:
+        gz.write(json.dumps(doc, ensure_ascii=False).encode("utf-8"))
+    print("wrote %s (%d KB) - THIS is the file the map loads"
+          % (gzp.name, gzp.stat().st_size // 1024))
     print("\nwrote %s" % OUT.name)
 
 
