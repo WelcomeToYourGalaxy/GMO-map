@@ -134,8 +134,14 @@ def main():
             rec = spon.setdefault(name.strip(), {
                 "name": name.strip(),
                 "sclass": dig(ps, "sponsorCollaboratorsModule", "leadSponsor", "class") or "",
-                "trials": 0, "phases": {}, "status": {}, "countries": {}})
+                "trials": 0, "phases": {}, "status": {}, "countries": {},
+                "years": [], "conds": {}})
             rec["trials"] += 1
+            _st = dig(ps, "statusModule", "startDateStruct", "date") or ""
+            if _st[:4].isdigit():
+                rec.setdefault("years", []).append(_st[:4])
+            for _c in (dig(ps, "conditionsModule", "conditions") or [])[:3]:
+                rec.setdefault("conds", {})[_c] = rec.setdefault("conds", {}).get(_c, 0) + 1
             for ph in (dig(ps, "designModule", "phases") or ["NA"]):
                 rec["phases"][ph] = rec["phases"].get(ph, 0) + 1
             stt = dig(ps, "statusModule", "overallStatus") or ""
@@ -167,11 +173,20 @@ def main():
         out.append({
             "name": rec["name"][:150],
             "source": "clinical:sponsor",
-            "type": "Gene or cell therapy trial sponsor",
+            "type": ((sorted(rec.get("conds", {}), key=lambda k: -rec["conds"][k])[0][:38]
+                      + ", gene or cell therapy") if rec.get("conds")
+                     else "Gene or cell therapy trial sponsor"),
             "lat": pos[0], "lng": pos[1], "state": country,
             "precise": False, "impact": 2 if rec["trials"] < 10 else 3,
             "company": "", "size": "%d trials" % rec["trials"],
-            "status": "%d recruiting" % recruiting if recruiting else "No trial recruiting",
+            # These records reached the map carrying a name and a recruiting
+            # count and nothing else - no date, no phase, no condition - so a
+            # list of 822 of them was 822 identical-looking lines. Everything
+            # already gathered per sponsor now goes onto the record.
+            "status": ("%d of %d recruiting" % (recruiting, rec["trials"])) if recruiting
+                      else ("%d trials, none recruiting" % rec["trials"]),
+            "date": (max(rec["years"]) + "-01-01") if rec.get("years") else "",
+            "company": ph or "",
             "phase": "post", "date": "", "otype": kind,
             "url": "https://clinicaltrials.gov/search?term=" +
                    rec["name"].replace(" ", "+")[:80],
