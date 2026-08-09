@@ -2457,12 +2457,29 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   }
 
   function pjCluTitle(g){
-    var seen = {}, names = [];
-    g.m.forEach(function(o){ var s = o.p.state || ''; if(s && !seen[s]){ seen[s] = 1; names.push(s); } });
-    var where = names.length === 1 ? names[0]
-              : names.length > 1  ? (names.slice(0,2).join(', ') + ' +' + (names.length-2) + ' more')
-              : 'This area';
-    return where + ' \u2014 ' + g.total.toLocaleString() + ' entr' + (g.total===1?'y':'ies');
+    // A cluster sits at ONE coordinate. Members can name several states each,
+    // because an APHIS permit covers every state it authorises and the record's
+    // `state` field is the whole list - "CO, MN, NE, ID". Listing those verbatim
+    // produced titles like "CO, CO, MN, NE, ID +93 more", which is a list of
+    // lists and tells the reader nothing about where they clicked.
+    //
+    // The place is the FIRST state on each record, because that is the one the
+    // centroid belongs to. The rest are counted, not named.
+    var first = {}, extra = {}, n = 0;
+    g.m.forEach(function(o){
+      var raw = String((o.p && o.p.state) || '').trim();
+      if(!raw) return;
+      var parts = raw.split(',').map(function(x){ return x.trim(); }).filter(Boolean);
+      if(parts.length){ first[parts[0]] = (first[parts[0]]||0) + 1; n++; }
+      parts.slice(1).forEach(function(x){ extra[x] = 1; });
+    });
+    var keys = Object.keys(first).sort(function(a,b){ return first[b]-first[a]; });
+    var where = keys.length ? keys[0] : 'This area';
+    if(keys.length > 1) where += ' and ' + (keys.length-1) + ' other' + (keys.length>2?' places':' place');
+    var also = Object.keys(extra).filter(function(x){ return !first[x]; }).length;
+    var t = where + ' \u2014 ' + g.total.toLocaleString() + ' record' + (g.total===1?'':'s');
+    if(also) t += ' \u00b7 also naming ' + also + ' other state' + (also===1?'':'s');
+    return t;
   }
   function pjPopupHtml(q){
     var dl="";
@@ -3271,9 +3288,16 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
       // instead of an alphabet, and the biggest category first.
       var groups={}, order=[];
       tk.forEach(function(t){
-        var ix=t.indexOf(','), cat, leaf;
+        // Split on the LAST comma, not the first. A type reads
+        // "<organism>, <category>", but the organism itself often contains a
+        // comma - "Citrus, orange" or "Orange, C-22" - and splitting on the
+        // first comma made the category "orange, environmental release" and the
+        // leaf "Citrus", which is how "Citrus citrus" and
+        // "Environmental release (including any citrus fruits)" appeared.
+        var ix=t.lastIndexOf(','), cat, leaf;
         if(ix>0){ cat=t.slice(ix+1).trim(); leaf=t.slice(0,ix).trim(); }
         else { cat='Other'; leaf=t; }
+        if(!leaf){ leaf=cat; cat='Other'; }
         cat=cat.charAt(0).toUpperCase()+cat.slice(1);
         if(!groups[cat]){ groups[cat]=[]; order.push(cat); }
         groups[cat].push({v:t, l:leaf, n:types[t]});
@@ -3315,56 +3339,33 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
   }
 
   function draw(){
-    var box=ensure();
-    var all=state.rows, r=[];
-    for(var i=0;i<all.length;i++) if(recPass(all[i])) r.push(all[i]);
-    var shown=r.length;
-    r.sort(function(a,b){
-      var x=(a[state.by]||''), y=(b[state.by]||'');
-      return x<y?-state.dir:x>y?state.dir:0;
-    });
-    var truncated = r.length > state.cap;
-    if(truncated) r = r.slice(0, state.cap);
-    var h='';
-    r.forEach(function(o){
-      h+='<div class="rec-row">'
-        +(o.u?('<a href="'+o.u+'" target="_blank" rel="noopener">'+o.n+'</a>'):('<span>'+o.n+'</span>'))
-        +'<div class="rec-meta">'+[o.d,o.c,o.t,o.s].filter(Boolean).join(' \u00b7 ')+'</div></div>';
-    });
-    if(truncated) h+='<div class="rec-meta" style="padding:7px 0">Showing the first '
-      +state.cap+' of '+shown+'. Narrow the filters above to see the rest.</div>';
-    box.querySelector('#recBody').innerHTML=h||'<div class="rec-meta">Nothing matches these filters.</div>';
-
-    var fb=box.querySelector('#recFilt');
-    if(fb && !fb.dataset.live){
-      fb.innerHTML=recFilterBar(); fb.dataset.live='1';
-      fb.addEventListener('input',function(e){
-        if(e.target.id==='recQ'){ state.q=e.target.value.trim().toLowerCase(); draw(); }
-      });
-      fb.addEventListener('change',function(e){
-        if(e.target.id==='recType'){ state.type=e.target.value; draw(); }
-      });
-      fb.addEventListener('click',function(e){
-        var p=e.target.closest('.rec-pill'); if(!p)return;
-        if(p.hasAttribute('data-k')) state.kind=p.getAttribute('data-k');
-        else state.yrs=+p.getAttribute('data-y');
-        fb.querySelectorAll('.rec-pill').forEach(function(x){
-          var on = x.hasAttribute('data-k') ? (x.getAttribute('data-k')===state.kind)
-                                            : (+x.getAttribute('data-y')===state.yrs);
-          x.classList.toggle('on',on);
-        });
-        draw();
+    var r = state.rows.slice();
+    if(state.q){
+      var q = state.q.toLowerCase();
+      r = r.filter(function(o){
+        return ((o.n||'')+' '+(o.c||'')+' '+(o.s||'')+' '+(o.t||'')).toLowerCase().indexOf(q) >= 0;
       });
     }
-
-    var sb=box.querySelector('#recSort');
-    sb.innerHTML='<span class="rec-n">'+shown.toLocaleString()+' of '+all.length.toLocaleString()+'</span>'
-      +[['d','Date'],['n','Name'],['c','Holder'],['t','Type'],['s','Status']].map(function(p){
-        return '<span class="rec-sort'+(state.by===p[0]?' on':'')+'" data-by="'+p[0]+'">'+p[1]
-          +(state.by===p[0]?(state.dir<0?' \u25be':' \u25b4'):'')+'</span>';}).join('');
-    sb.onclick=function(e){
-      var b=e.target.dataset&&e.target.dataset.by; if(!b)return;
-      if(state.by===b) state.dir=-state.dir; else { state.by=b; state.dir=-1; }
+    // The categories are the filter now, so the <select> is gone. Same grouping,
+    // drawn in the list where you can see the counts without opening anything.
+    var tree = window.pjTreeRows(r);
+    var fb = ensure().querySelector('#recFilt');
+    if(fb){
+      fb.innerHTML = '<input id="recQ" placeholder="filter these records\u2026" value="'
+        + (state.q||'').replace(/"/g,'&quot;') + '">'
+        + '<span class="rec-count">' + r.length + ' of ' + state.rows.length + '</span>'
+        + '<div class="rec-note">No register on this map publishes where a release actually happened. APHIS gives the states a permit covers and the number of sites in each, never the coordinates; decisions filed under the Cartagena Protocol are national instruments with no site at all. So a marker is a state or a country, never a field. Click a country to break it into states \u2014 you cannot go further, because the record does not. <b>Australia\u2019s OGTR is the only regulator in the world that publishes field trial sites.</b></div>';
+      var q = fb.querySelector('#recQ');
+      q.oninput = function(){ state.q = this.value; var pos = this.selectionStart; draw();
+        var q2 = ensure().querySelector('#recQ'); if(q2){ q2.focus(); try{ q2.setSelectionRange(pos,pos); }catch(e){} } };
+    }
+    var body = ensure().querySelector('#recBody');
+    body.innerHTML = window.pjTreeHtml(tree, state.open || (state.open = {}));
+    body.onclick = function(e){
+      var node = e.target.closest('.tr-cat, .tr-leaf');
+      if(!node) return;
+      var k = node.dataset.k;
+      if(state.open[k]) delete state.open[k]; else state.open[k] = 1;
       draw();
     };
   }
@@ -3470,8 +3471,13 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
 
   window.pjLevelPasses = function(p){
     if(!p || !p.level) return true;
-    if(p.level === 'country') return true;
-    if(p.level === 'state')  return window.pjExpanded.has(p.parent || 'USA');
+    // A country marker and its state markers were drawn side by side, reading as
+    // peers when one contains the others. The country is shown alone until it is
+    // opened; opening it swaps in the states. Never both, so the sizes on screen
+    // are always comparable to each other.
+    var k = p.state || p.parent || 'USA';
+    if(p.level === 'country') return !window.pjExpanded.has(k);
+    if(p.level === 'state')   return window.pjExpanded.has(p.parent || 'USA');
     return true;
   };
 
@@ -3496,5 +3502,84 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
   };
 })();
 </script>
+<script>
+(function(){
+  // The type filter was a <select>. A dropdown is the wrong shape for this: it
+  // hides the structure it just created, and you cannot see how many records sit
+  // under a category without opening it and reading one line at a time.
+  //
+  // Same data, drawn as a tree in the list itself. Categories collapsed, counts
+  // on every node, click to open. Where a leaf holds more than one record the
+  // records nest under it; where it holds one, the leaf IS the record.
+  window.pjTreeRows = function(rows){
+    var cats = {}, order = [];
+    rows.forEach(function(r){
+      var t = String(r.t || r.type || '').trim();
+      var ix = t.lastIndexOf(','), cat, leaf;
+      if(ix > 0){ cat = t.slice(ix+1).trim(); leaf = t.slice(0, ix).trim(); }
+      else if(t){ cat = 'Other'; leaf = t; }
+      else { cat = 'Other'; leaf = 'Not stated'; }
+      if(!leaf){ leaf = cat; cat = 'Other'; }
+      cat = cat.charAt(0).toUpperCase() + cat.slice(1);
+      if(!cats[cat]){ cats[cat] = {}; order.push(cat); }
+      (cats[cat][leaf] || (cats[cat][leaf] = [])).push(r);
+    });
+    order.sort(function(a,b){
+      var sa=0, sb=0;
+      Object.keys(cats[a]).forEach(function(k){ sa += cats[a][k].length; });
+      Object.keys(cats[b]).forEach(function(k){ sb += cats[b][k].length; });
+      return sb - sa;
+    });
+    return {cats:cats, order:order};
+  };
+
+  window.pjTreeHtml = function(tree, open){
+    var h = '';
+    tree.order.forEach(function(cat){
+      var leaves = tree.cats[cat];
+      var lk = Object.keys(leaves).sort(function(a,b){ return leaves[b].length - leaves[a].length; });
+      var tot = 0; lk.forEach(function(k){ tot += leaves[k].length; });
+      var oc = !!open['c:'+cat];
+      h += '<div class="tr-cat" data-k="c:'+cat.replace(/"/g,'&quot;')+'">'
+         + '<span class="tr-tw">'+(oc?'\u25be':'\u25b8')+'</span>'+cat
+         + '<span class="kcount"> ('+tot+')</span></div>';
+      if(!oc) return;
+      lk.forEach(function(leaf){
+        var rs = leaves[leaf];
+        var lo = !!open['l:'+cat+'|'+leaf];
+        if(rs.length === 1){
+          h += '<div class="tr-rec tr-l1">'+recLine(rs[0])+'</div>';
+          return;
+        }
+        h += '<div class="tr-leaf" data-k="l:'+(cat+'|'+leaf).replace(/"/g,'&quot;')+'">'
+           + '<span class="tr-tw">'+(lo?'\u25be':'\u25b8')+'</span>'+leaf
+           + '<span class="kcount"> ('+rs.length+')</span></div>';
+        if(!lo) return;
+        rs.forEach(function(r){ h += '<div class="tr-rec tr-l2">'+recLine(r)+'</div>'; });
+      });
+    });
+    return h || '<div class="rec-meta">No records match.</div>';
+  };
+
+  function recLine(o){
+    var meta = [o.d, o.c, o.s].filter(Boolean).join(' \u00b7 ');
+    return (o.u ? ('<a href="'+o.u+'" target="_blank" rel="noopener">'+o.n+'</a>')
+                : ('<span>'+o.n+'</span>'))
+         + (meta ? '<div class="rec-meta">'+meta+'</div>' : '');
+  }
+})();
+</script>
+<style>
+.rec-note{font-size:9.5px;color:#7d8ba1;line-height:1.5;margin:6px 0 2px;flex:1 0 100%;}
+.rec-count{color:#7d8ba1;font-size:9.5px;margin-left:auto;}
+.tr-cat,.tr-leaf{display:flex;align-items:center;gap:5px;cursor:pointer;line-height:1.4;}
+.tr-cat{padding:7px 0 6px;border-bottom:1px solid rgba(127,168,204,0.14);
+  color:#eaf1ff;font-weight:600;}
+.tr-leaf{padding:5px 0 5px 15px;color:#c3cee0;}
+.tr-cat:hover,.tr-leaf:hover{color:#7fa8cc;}
+.tr-tw{color:#7fa8cc;font-size:9px;width:9px;flex:0 0 auto;}
+.tr-rec{padding:4px 0;border-bottom:1px solid rgba(127,168,204,0.08);line-height:1.35;}
+.tr-l1{padding-left:15px;} .tr-l2{padding-left:30px;}
+</style>
 </body>
 </html>
