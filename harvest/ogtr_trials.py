@@ -29,7 +29,7 @@ release points on the map that sit where the thing actually is.
 
 Writes harvest/ogtr_trials.json, merged into projects.json by aphis_releases.py.
 """
-import io, json, re, sys, pathlib
+import io, json, re, sys, time, pathlib
 from urllib.request import Request, urlopen
 from urllib.robotparser import RobotFileParser
 
@@ -48,11 +48,18 @@ def allowed(url):
     """Ask robots.txt. Returns (bool, explanation)."""
     rp = RobotFileParser()
     rp.set_url(BASE + "/robots.txt")
-    try:
-        rp.read()
-    except Exception as e:
-        return False, ("could not read robots.txt (%s). Treating that as a refusal "
-                       "rather than a licence." % e)
+    # One dropped connection is not a refusal. The last run failed on "Remote end
+    # closed connection without response" and treated it as a no, which is the
+    # right default but the wrong conclusion from a single attempt. Three tries.
+    last = None
+    for attempt in range(3):
+        try:
+            rp.read(); last = None; break
+        except Exception as e:
+            last = e; time.sleep(2 * (attempt + 1))
+    if last is not None:
+        return False, ("could not read robots.txt after 3 tries (%s). Treating that "
+                       "as a refusal rather than a licence." % last)
     ok = rp.can_fetch(UA, url)
     return ok, ("robots.txt permits %s" % url if ok else
                 "robots.txt DISALLOWS %s for this agent. Stopping. The GMO Record "

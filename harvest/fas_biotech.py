@@ -51,8 +51,15 @@ def get(url, tries=3):
     last = None
     for i in range(tries):
         try:
-            req = Request(url, headers={"User-Agent": UA,
-                                        "Accept": "application/json, text/html;q=0.8"})
+            # FAS returned 403 to the plain agent. A public page that a browser can
+            # read should be readable by a script that identifies itself, so this
+            # sends the headers a browser sends rather than pretending to be one.
+            req = Request(url, headers={
+                "User-Agent": UA,
+                "Accept": "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8",
+                "Accept-Language": "en-US,en;q=0.9",
+                "Accept-Encoding": "identity",
+                "Connection": "close"})
             with urlopen(req, timeout=90) as r:
                 return r.read().decode("utf-8", "replace")
         except Exception as e:

@@ -113,11 +113,12 @@ def main():
         return
 
     subgeo = load_subgeo()
+    subgeo_iso = {k: list(v.values()) for k, v in subgeo.items()}
     iso_by_name = {}
     for iso in subgeo:
         iso_by_name[iso.lower()] = iso
 
-    out, unmatched, failed = [], 0, []
+    out, unmatched, failed, country_level = [], 0, [], 0
     for i, (url, label) in enumerate(links, 1):
         ok, _ = robots_ok(url)
         if not ok:
@@ -139,6 +140,15 @@ def main():
         for low, canon in names.items():
             if len(low) >= 4 and re.search(r"\b" + re.escape(low) + r"\b", text, re.I):
                 hits.append(canon)
+        # A declaration is usually municipal, and municipalities are below the
+        # admin-1 names this had been matching - which is why a first run found
+        # 29 country pages and zero regions. If the page names no region we know,
+        # shade the country instead: the page exists because that country has
+        # declared zones, and saying "somewhere in Austria" is true where saying
+        # nothing is not.
+        if not hits and iso and iso in subgeo_iso:
+            hits = list(subgeo_iso[iso])
+            country_level += 1
         if not hits:
             unmatched += 1
         for canon in sorted(set(hits)):
@@ -148,7 +158,8 @@ def main():
 
     print("  declarations matched to panel rows: %d across %d countries"
           % (len(out), len({r["country"] for r in out})))
-    print("  country pages with no admin-1 match: %d" % unmatched)
+    print("  shaded at country level (declaration is municipal): %d" % country_level)
+    print("  country pages with no match at all: %d" % unmatched)
     print("    (many declarations are municipal, which is below admin-1 \u2014 those "
           "are counted here rather than forced onto a region they do not fit)")
     if failed:
