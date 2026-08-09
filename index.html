@@ -2497,30 +2497,55 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     return rows;
   }
 
+  // Two-letter codes are what the registers file. "FL" is not a place name to
+  // anyone who has not memorised them, and the panel title is the one line that
+  // tells a reader where they just clicked.
+  var PJ_PLACE = {
+    AL:'Alabama', AK:'Alaska', AZ:'Arizona', AR:'Arkansas', CA:'California',
+    CO:'Colorado', CT:'Connecticut', DE:'Delaware', FL:'Florida', GA:'Georgia',
+    HI:'Hawaii', ID:'Idaho', IL:'Illinois', IN:'Indiana', IA:'Iowa',
+    KS:'Kansas', KY:'Kentucky', LA:'Louisiana', ME:'Maine', MD:'Maryland',
+    MA:'Massachusetts', MI:'Michigan', MN:'Minnesota', MS:'Mississippi',
+    MO:'Missouri', MT:'Montana', NE:'Nebraska', NV:'Nevada', NH:'New Hampshire',
+    NJ:'New Jersey', NM:'New Mexico', NY:'New York', NC:'North Carolina',
+    ND:'North Dakota', OH:'Ohio', OK:'Oklahoma', OR:'Oregon', PA:'Pennsylvania',
+    RI:'Rhode Island', SC:'South Carolina', SD:'South Dakota', TN:'Tennessee',
+    TX:'Texas', UT:'Utah', VT:'Vermont', VA:'Virginia', WA:'Washington',
+    WV:'West Virginia', WI:'Wisconsin', WY:'Wyoming',
+    DC:'District of Columbia', PR:'Puerto Rico', VI:'US Virgin Islands',
+    GU:'Guam', AS:'American Samoa', MP:'Northern Mariana Islands'
+  };
+  function pjPlaceName(x){
+    var t = String(x || '').trim();
+    return (t.length === 2 && PJ_PLACE[t.toUpperCase()]) ? PJ_PLACE[t.toUpperCase()] : t;
+  }
+
   function pjCluTitle(g){
     // A cluster sits at ONE coordinate. Members can name several states each,
     // because an APHIS permit covers every state it authorises and the record's
-    // `state` field is the whole list - "CO, MN, NE, ID". Listing those verbatim
-    // produced titles like "CO, CO, MN, NE, ID +93 more", which is a list of
-    // lists and tells the reader nothing about where they clicked.
+    // `state` field is the whole list - "CO, MN, NE, ID". The place is the FIRST
+    // one, because that is the state the coordinate belongs to.
     //
-    // The place is the FIRST state on each record, because that is the one the
-    // centroid belongs to. The rest are counted, not named.
-    var first = {}, extra = {}, n = 0;
+    // The title used to carry a tail counting every other state named anywhere
+    // in the pile - "FL - 1,016 records, also naming 34 other states". That is a
+    // fact about permits, not about the place clicked, and it read as though the
+    // reader had somehow landed on 35 states at once. It belongs in the standing
+    // note, and that is where it now is.
+    var first = {}, n = 0;
     g.m.forEach(function(o){
       var raw = String((o.p && o.p.state) || '').trim();
       if(!raw) return;
-      var parts = raw.split(',').map(function(x){ return x.trim(); }).filter(Boolean);
-      if(parts.length){ first[parts[0]] = (first[parts[0]]||0) + 1; n++; }
-      parts.slice(1).forEach(function(x){ extra[x] = 1; });
+      var head = (raw.split(',')[0] || '').trim();
+      if(!head) return;
+      head = pjPlaceName(head);
+      first[head] = (first[head] || 0) + 1; n++;
     });
-    var keys = Object.keys(first).sort(function(a,b){ return first[b]-first[a]; });
+    var keys = Object.keys(first).sort(function(a, b){ return first[b] - first[a]; });
     var where = keys.length ? keys[0] : 'This area';
-    if(keys.length > 1) where += ' and ' + (keys.length-1) + ' other' + (keys.length>2?' places':' place');
-    var also = Object.keys(extra).filter(function(x){ return !first[x]; }).length;
-    var t = where + ' \u2014 ' + g.total.toLocaleString() + ' record' + (g.total===1?'':'s');
-    if(also) t += ' \u00b7 also naming ' + also + ' other state' + (also===1?'':'s');
-    return t;
+    // Industry markers carry a town rather than a state, so a mixed pile is
+    // named after its largest member and counted, not listed.
+    if(keys.length > 1) where += ' and ' + (keys.length - 1) + ' other place' + (keys.length > 2 ? 's' : '');
+    return where + ' \u2014 ' + g.total.toLocaleString() + ' record' + (g.total === 1 ? '' : 's');
   }
   function pjPopupHtml(q){
     var dl="";
@@ -3335,7 +3360,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     if(box) return box;
     box=document.createElement('div'); box.id='recList';
     box.innerHTML='<div id="recHead"><span id="recTitle"></span>'
-      +'<div class="rec-note" id="recNote">No register on this map publishes where a release actually happened. APHIS gives the states a permit covers and the number of sites in each, never the coordinates; decisions filed under the Cartagena Protocol are national instruments with no site at all. So a marker is a state or a country, never a field. Click a country to open its national records and break it into states. <b>Australia\u2019s OGTR is the only regulator in the world that publishes field trial sites.</b></div>'
+      +'<div class="rec-note" id="recNote"><b>No dot on this map is a field.</b> No government publishes where an engineered release actually happens. In the United States, APHIS names the states a permit covers and counts the sites in each, but never says where those sites are \u2014 and one permit often covers several states at once, so a record can be counted in one state while naming others. Decisions filed under the Cartagena Protocol, the international biosafety treaty, apply to a whole country and have no site at all. Every dot therefore sits at the middle of a state or a country, not at a place anything was planted.<br><br><b>Why the United States has a national dot and state dots.</b> Two different kinds of record. Permits to plant or release name the states they cover, so they show up as state dots. Records that belong to the country as a whole \u2014 national biosafety decisions, gene therapy trial sponsors \u2014 name no state, so they gather on a single national dot in the middle of the country. Clicking it opens those national records and puts the states on the map beside it. Clicking it again puts them away.<br><br><b>One exception.</b> Australia\u2019s regulator, the OGTR, publishes the actual locations of field trials. It is the only one in the world that does.</div>'
       +'<span id="recClose" title="close">&times;</span></div>'
       +'<div id="recFilt"></div><div id="recSort"></div><div id="recBody"></div>';
     document.body.appendChild(box);
@@ -4026,7 +4051,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
 <style>
 .rec-sorts{font-size:9.5px;color:#7d8ba1;display:flex;gap:7px;align-items:center;}
 .rec-s{cursor:pointer;} .rec-s:hover{color:#9dc0dd;} .rec-s.on{color:#7fa8cc;font-weight:700;}
-.rec-note{font-size:9.5px;font-weight:400;color:#7d8ba1;line-height:1.5;margin:0;flex:1 1 auto;min-width:0;align-self:stretch;border-left:1px solid rgba(127,168,204,0.16);padding-left:10px;max-height:104px;overflow-y:auto;}
+.rec-note{font-size:9.5px;font-weight:400;color:#7d8ba1;line-height:1.5;margin:0;flex:1 1 auto;min-width:0;align-self:stretch;border-left:1px solid rgba(127,168,204,0.16);padding-left:10px;max-height:132px;overflow-y:auto;padding-right:4px;}
 .rec-count{color:#7d8ba1;font-size:9.5px;margin-left:auto;white-space:nowrap;flex:0 0 auto;}
 .tr-cat,.tr-leaf{display:flex;align-items:center;gap:5px;cursor:pointer;line-height:1.4;}
 .tr-cat{padding:7px 0 6px;border-bottom:1px solid rgba(127,168,204,0.14);
