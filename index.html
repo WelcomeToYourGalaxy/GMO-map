@@ -2395,6 +2395,21 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       // centroid - keying on those gives one cluster per point, which is
       // exactly the pile this is meant to collapse. The pixel grid used to
       // hide that by rounding the ring back together.
+      // A hierarchy marker never joins a cluster. The US country marker sits at
+      // the national centroid, and so do 822 clinical-trial sponsors - identical
+      // coordinates, so the cluster absorbed the country marker, showed its
+      // members instead, and the drill-down never ran. Levels are structure, not
+      // data points; they are drawn on their own.
+      if(o.p && (o.p.level === 'country' || o.p.level === 'state')){
+        // `continue`, not `return` - this is a for loop, and returning here
+        // would abandon every point after the first hierarchy marker.
+        var lk = 'lvl:' + (o.p.name || i);
+        g = cells[lk];
+        if(!g){ g = cells[lk] = {la:0, lo:0, n:0, m:[], total:0}; out.push(g); }
+        g.n++; g.la += o.la; g.lo += o.lo; g.m.push(o);
+        g.total += (o.p.records_total || (o.p.records && o.p.records.length) || 1);
+        continue;
+      }
       var _sla = (o.p && typeof o.p.lat === 'number') ? o.p.lat : o.la;
       var _slo = (o.p && typeof o.p.lng === 'number') ? o.p.lng : o.lo;
       var k  = _sla.toFixed(2) + '|' + _slo.toFixed(2);
@@ -3348,13 +3363,31 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     }
     // The categories are the filter now, so the <select> is gone. Same grouping,
     // drawn in the list where you can see the counts without opening anything.
+    // Sorting happens before grouping, so every leaf in the tree comes out in
+    // the chosen order rather than only the flat list being sorted.
+    var by = state.by || 'd', dir = state.dir || -1;
+    r.sort(function(a, b){
+      var x = String(a[by] || ''), y = String(b[by] || '');
+      return x < y ? -dir : x > y ? dir : 0;
+    });
     var tree = window.pjTreeRows(r);
     var fb = ensure().querySelector('#recFilt');
     if(fb){
       fb.innerHTML = '<input id="recQ" placeholder="filter these records\u2026" value="'
         + (state.q||'').replace(/"/g,'&quot;') + '">'
+        + '<span class="rec-sorts">sort '
+        + [['d','date'],['n','name'],['t','type'],['c','holder'],['s','status']].map(function(o){
+            return '<span class="rec-s'+(state.by===o[0]?' on':'')+'" data-by="'+o[0]+'">'+o[1]
+                 + (state.by===o[0]?(state.dir<0?' \u25be':' \u25b4'):'')+'</span>';
+          }).join('') + '</span>'
         + '<span class="rec-count">' + r.length + ' of ' + state.rows.length + '</span>'
         + '<div class="rec-note">No register on this map publishes where a release actually happened. APHIS gives the states a permit covers and the number of sites in each, never the coordinates; decisions filed under the Cartagena Protocol are national instruments with no site at all. So a marker is a state or a country, never a field. Click a country to break it into states. <b>Australia\u2019s OGTR is the only regulator in the world that publishes field trial sites.</b></div>';
+      fb.onclick = function(e){
+        var b = e.target.dataset && e.target.dataset.by;
+        if(!b) return;
+        if(state.by === b) state.dir = -state.dir; else { state.by = b; state.dir = -1; }
+        draw();
+      };
       var q = fb.querySelector('#recQ');
       q.oninput = function(){ state.q = this.value; var pos = this.selectionStart; draw();
         var q2 = ensure().querySelector('#recQ'); if(q2){ q2.focus(); try{ q2.setSelectionRange(pos,pos); }catch(e){} } };
@@ -3521,6 +3554,13 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     var cats = {}, order = [];
     rows.forEach(function(r){
       var t = String(r.t || r.type || '').trim();
+      // Wrapper types belong to the marker, not to a record. They were leaking
+      // into the tree as categories called "All sources" and "Grouped by state",
+      // which describe the container rather than anything in it.
+      if(/^Release (records|authorisations),/i.test(t)) t = '';
+      // Older APHIS rows carry no type at all. That is a gap in the source, so
+      // it gets a name rather than a silent bucket at the bottom of the list.
+      if(!t) t = 'Type not recorded by the register';
       // "<organism>, <category>" splits into a category and a leaf. A type with
       // no comma - "Seed & trait company", "National biosafety decision" - is
       // already a category in its own right, so it becomes one, with its records
@@ -3585,6 +3625,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
 })();
 </script>
 <style>
+.rec-sorts{font-size:9.5px;color:#7d8ba1;display:flex;gap:7px;align-items:center;}
+.rec-s{cursor:pointer;} .rec-s:hover{color:#9dc0dd;} .rec-s.on{color:#7fa8cc;font-weight:700;}
 .rec-note{font-size:9.5px;color:#7d8ba1;line-height:1.5;margin:6px 0 2px;flex:1 0 100%;}
 .rec-count{color:#7d8ba1;font-size:9.5px;margin-left:auto;}
 .tr-cat,.tr-leaf{display:flex;align-items:center;gap:5px;cursor:pointer;line-height:1.4;}
