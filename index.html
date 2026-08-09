@@ -2785,6 +2785,59 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       t=setTimeout(function(){ pjQ=v; pjRender(); }, 220);
     });
   })();
+  // The map drew a US national icon - the 822 gene and cell therapy sponsors
+  // filed at national level - and 51 US state icons, the APHIS permits scattered
+  // inside each state. They were peers on screen when one contains the other.
+  // Nothing in the harvested file says so: there is no country field and no
+  // hierarchy anywhere in the 24,000 rows, so it is built here, once, at load.
+  // The country marker carries the combined count; opening it shows the national
+  // records and puts the states on the map.
+  var PJ_US_NATIONAL = {'united states':1, 'usa':1, 'us':1};
+  function pjBuildHierarchy(rows){
+    if(!rows || !rows.length) return rows;
+    var nat = [], kids = {}, ktot = 0, i, p;
+    for(i = 0; i < rows.length; i++){
+      p = rows[i];
+      if(p.level) continue;                       // already placed, or a re-run
+      var st = String(p.state || '').trim();
+      if(PJ_US_NATIONAL[st.toLowerCase()] && pjKind(p) === 'release'){
+        // Rolled into the country marker, so it is no longer its own icon.
+        p.level = 'rolled';
+        nat.push({n: p.name || '', d: p.date || '', c: p.company || '',
+                  s: p.status || '', u: p.url || '', t: p.type || ''});
+        continue;
+      }
+      if(String(p.source || '').indexOf('aphis:') === 0){
+        p.level = 'state'; p.parent = 'United States';
+        // A permit names every state it authorises. The first is the one the
+        // marker's coordinate belongs to, so that is the one it counts under.
+        var firstState = (st.split(',')[0] || '').trim() || 'State not stated';
+        kids[firstState] = (kids[firstState] || 0) + 1; ktot++;
+      }
+    }
+    if(!nat.length && !ktot) return rows;
+    var children = Object.keys(kids)
+      .sort(function(a, b){ return kids[b] - kids[a]; })
+      .map(function(k){ return {n: k, c: kids[k]}; });
+    rows.push({
+      name: 'United States', source: 'aphis:national', level: 'country',
+      type: 'Release records, grouped by state',
+      lat: 39.83, lng: -98.58, state: 'United States',
+      precise: false, impact: 5, company: '', size: '',
+      status: children.length + ' states \u00b7 ' + nat.length + ' national records',
+      phase: 'post', date: '', lapsed: false,
+      url: 'https://www.aphis.usda.gov/biotechnology-permits/releases',
+      desc: 'Every US release record on this map, national and state, under one marker. '
+          + 'The count is the whole country: ' + nat.length + ' records filed at national '
+          + 'level plus ' + ktot + ' state-level authorisations. Opening it lists the '
+          + 'national records and puts the states on the map as their own markers. '
+          + 'No coordinate here is a site - APHIS publishes the states a permit covers '
+          + 'and the number of locations in each, never the locations themselves.',
+      records: nat, records_total: nat.length, children: children
+    });
+    return rows;
+  }
+
   function pjLoad(){
     var bust='?_='+Date.now();
     // Data is committed gzipped (projects.json.gz) because the raw JSON exceeds
@@ -2824,7 +2877,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       out.forEach(function(r){ seen[r.url + '|' + r.name] = 1; });
       ((fetched && fetched.projects) || []).forEach(function(r){
         var k = r.url + '|' + r.name; if(!seen[k]){ seen[k] = 1; out.push(r); } });
-      return { note: (fetched && fetched.note) || '', projects: out };
+      return { note: (fetched && fetched.note) || '', projects: pjBuildHierarchy(out) };
     }
     fromGz()
       .catch(function(err){ if(window&&window.console)console.warn('projects.json.gz load failed, trying plain:',err); return fromPlain(); })
@@ -3543,6 +3596,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     // The country is always on the map. It is the combined marker, and it is
     // also the control that closes the states again - hiding it on open left
     // no way back except reloading.
+    if(p.level === 'rolled')  return false;   // folded into the country marker
     if(p.level === 'country') return true;
     if(p.level === 'state')   return window.pjExpanded.has(window.pjHierKey(p));
     return true;
@@ -3640,6 +3694,104 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     return t;
   }
 
+  // Latin binomials and register shorthand for organisms that already appear on
+  // the map under their common name. This is not a botanical authority - it is
+  // the set of collisions the harvested registers actually produce.
+  var _LEAF_ALIAS_RAW = {
+    'zea mays':'Corn', 'maize':'Corn', 'corn sweet':'Corn',
+    'gossypium hirsutum':'Cotton', 'gossypium barbadense':'Cotton',
+    'glycine max':'Soybean', 'soybeans':'Soybean',
+    'brassica napus':'Rapeseed', 'canola':'Rapeseed', 'osr-canola':'Rapeseed',
+    'oilseed rape':'Rapeseed', 'osr':'Rapeseed',
+    'oryza sativa':'Rice', 'triticum aestivum':'Wheat',
+    'solanum lycopersicum':'Tomato', 'lycopersicon esculentum':'Tomato',
+    'medicago sativa':'Alfalfa', 'lucerne':'Alfalfa',
+    'arabidopsis thaliana':'Arabidopsis', 'mouse-ear cress':'Arabidopsis',
+    'thale cress':'Arabidopsis',
+    'nicotiana tabacum':'Tobacco', 'saccharum officinarum':'Sugarcane',
+    'beta vulgaris':'Sugar beet', 'solanum tuberosum':'Potato',
+    'helianthus annuus':'Sunflower', 'sorghum bicolor':'Sorghum',
+    'carthamus tinctorius':'Safflower', 'vigna unguiculata':'Cowpea',
+    'arachis hypogaea':'Peanut', 'groundnut':'Peanut',
+    'lactuca sativa':'Lettuce', 'camelina sativa':'Camelina',
+    'falseflax':'Camelina', 'false flax':'Camelina',
+    'cicer arietinum':'Chickpea', 'populus':'Poplar',
+    // Not an organism. The register withheld the organism, which is worth saying
+    // out loud rather than filing under a three-letter code nobody can read.
+    'cbi':'Withheld by the applicant as confidential'
+  };
+  var _LEAF_ALIAS = null;
+  function _leafAlias(){
+    if(_LEAF_ALIAS) return _LEAF_ALIAS;
+    _LEAF_ALIAS = {};
+    Object.keys(_LEAF_ALIAS_RAW).forEach(function(k){ _LEAF_ALIAS[_key(k)] = _LEAF_ALIAS_RAW[k]; });
+    return _LEAF_ALIAS;
+  }
+
+  // How few records make a leaf a standalone. Exposed rather than buried so the
+  // threshold can be moved without going back into the grouping code.
+  if(window.PJ_MIN_LEAF == null) window.PJ_MIN_LEAF = 3;
+
+  function _leafName(leaf){
+    var a = _leafAlias(), t = String(leaf || '').trim();
+    if(!t) return '';
+    if(a[_key(t)]) return a[_key(t)];
+    // A varietal list is not a category. "Thompson Seedless, Chardonnay,
+    // Cabernet Sauvignon, Merlot, Pinot Noir ... and Freedom" is one permit
+    // naming its rootstocks; the first name is the thing, the rest is the
+    // paperwork, and it belongs on the record rather than in the tree.
+    if(t.length > 44 || t.indexOf(';') >= 0){
+      var head = t.split(/[;,]/)[0].trim();
+      if(head && a[_key(head)]) return a[_key(head)];
+      if(head && head.length <= 44) return head;
+    }
+    return t;
+  }
+
+  function _foldLeaves(leaves){
+    var lk = Object.keys(leaves);
+    if(lk.length < 2) return leaves;
+
+    // 1. rename, merging anything that lands on the same name
+    var byName = {};
+    lk.forEach(function(lf){
+      var nm = _leafName(lf);
+      (byName[nm] || (byName[nm] = [])).push.apply(byName[nm], leaves[lf]);
+    });
+
+    // 2. a small leaf whose words contain a big leaf's words is that big leaf:
+    //    "Corn, Field" is corn. Largest wins, so nothing is folded upward.
+    var names = Object.keys(byName);
+    var big = names.filter(function(n){ return byName[n].length >= window.PJ_MIN_LEAF; });
+    names.forEach(function(n){
+      if(byName[n].length >= window.PJ_MIN_LEAF) return;
+      var nw = _key(n).split(' '), home = null;
+      big.forEach(function(b){
+        if(b === n) return;
+        var bw = _key(b).split(' ');
+        if(bw.length && bw.every(function(x){ return nw.indexOf(x) >= 0; })){
+          if(!home || byName[b].length > byName[home].length) home = b;
+        }
+      });
+      if(home){ byName[home] = byName[home].concat(byName[n]); delete byName[n]; }
+    });
+
+    // 3. whatever is still alone goes to one "Other", carrying its own name on
+    //    each record so the organism the register named is never lost.
+    var out = {}, other = [];
+    Object.keys(byName).forEach(function(n){
+      if(byName[n].length >= window.PJ_MIN_LEAF || n === ''){ out[n] = byName[n]; return; }
+      byName[n].forEach(function(r){
+        var copy = {}; for(var f in r) copy[f] = r[f];
+        copy._leaf = n; other.push(copy);
+      });
+    });
+    // One lonely leaf is not a category of leftovers - leave it named.
+    if(other.length === 1){ out[other[0]._leaf] = [other[0]]; other = []; }
+    if(other.length) out['Other'] = other;
+    return out;
+  }
+
   // Head nouns that make two differently-worded categories the same thing.
   var _HEADS = {'releas':1, 'trial':1, 'permit':1, 'notification':1, 'decision':1,
                 'authorisation':1, 'authorization':1, 'approval':1, 'use':1,
@@ -3732,7 +3884,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     // or a one-off nobody will ever look for by name. Each is either folded into
     // the category it actually belongs to, or into "Other". Nothing is dropped
     // and the counts still add up.
-    var MIN = 3, keys = Object.keys(cats);
+    if(window.PJ_MIN_CAT == null) window.PJ_MIN_CAT = 3;
+    var MIN = window.PJ_MIN_CAT, keys = Object.keys(cats);
     var strong = keys.filter(function(k){ return cats[k].total >= MIN && k !== 'other'; });
     var weak   = keys.filter(function(k){ return cats[k].total <  MIN || k === 'other'; });
 
@@ -3770,6 +3923,16 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
         delete cats[wk];
       });
     }
+
+    // ---- leaves -------------------------------------------------------------
+    // The categories were never the problem. Inside "Environmental release" the
+    // leaf is the organism, and that is where the standalones are: California
+    // carries 71 leaves of which 16 hold a single record, including "Gossypium
+    // Hirsutum" sitting beside "Cotton" - the same plant under its Latin name -
+    // and a varietal string 180 characters long. Each leaf is renamed to the
+    // name the rest of the register uses, merged where that produces a
+    // duplicate, and anything still alone is collected under one "Other".
+    Object.keys(cats).forEach(function(k){ cats[k].leaves = _foldLeaves(cats[k].leaves); });
 
     // ---- output -------------------------------------------------------------
     var out = {}, order = [];
@@ -3841,7 +4004,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
   };
 
   function recLine(o, typeLabel){
-    var meta = [typeLabel, o.d, o.c, o.s].filter(Boolean).join(' \u00b7 ');
+    var meta = [typeLabel || o._leaf, o.d, o.c, o.s].filter(Boolean).join(' \u00b7 ');
     return (o.u ? ('<a href="'+o.u+'" target="_blank" rel="noopener">'+o.n+'</a>')
                 : ('<span>'+o.n+'</span>'))
          + (meta ? '<div class="rec-meta">'+meta+'</div>' : '');
