@@ -2405,9 +2405,16 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
         // would abandon every point after the first hierarchy marker.
         var lk = 'lvl:' + (o.p.name || i);
         g = cells[lk];
-        if(!g){ g = cells[lk] = {la:0, lo:0, n:0, m:[], total:0}; out.push(g); }
+        // Same shape as an ordinary group. It was created without kd/i/ap, and
+        // the second pass below runs over EVERY group including this one, where
+        // Object.keys(g.kd) on an undefined kd throws and takes the whole canvas
+        // paint with it. A hierarchy group is drawn differently, not built
+        // differently.
+        if(!g){ g = cells[lk] = {la:0, lo:0, n:0, m:[], kd:{}, i:0, ap:true, total:0, hier:true}; out.push(g); }
         g.n++; g.la += o.la; g.lo += o.lo; g.m.push(o);
-        g.total += (o.p.records_total || (o.p.records && o.p.records.length) || 1);
+        g.kd[o.kd] = (g.kd[o.kd] || 0) + 1;
+        if(o.i > g.i) g.i = o.i;
+        if(o.ap === false) g.ap = false;
         continue;
       }
       var _sla = (o.p && typeof o.p.lat === 'number') ? o.p.lat : o.la;
@@ -2433,7 +2440,12 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       var t = 0;
       for(q = 0; q < g.m.length; q++){
         var pr = g.m[q].p;
-        t += (pr.records_total || (pr.records && pr.records.length) || 1);
+        // A country marker stands for its own national records AND every state
+        // underneath it, so the one icon on a world view carries the country's
+        // whole count rather than the national remainder. Once it is opened the
+        // states are on the map in their own right and it drops back to its own.
+        t += (window.pjHierTotal ? window.pjHierTotal(pr)
+                                 : (pr.records_total || (pr.records && pr.records.length) || 1));
       }
       g.total = t;
     }
@@ -2445,7 +2457,10 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   // looking ten times a single one rather than a hundred times.
   function pjCluRad(z, g){
     var base = pjRad(z, g.i);
-    if(g.n <= 1) return base * (g.dk === 'release' ? 0.62 : g.dk === 'escape' ? 0.95 : 1.25);
+    // A hierarchy marker is one marker holding thousands of records. Sizing it
+    // as a single dot made the United States smaller than a two-permit cluster
+    // beside it, which is the opposite of what the reader should see.
+    if(g.n <= 1 && !g.hier) return base * (g.dk === 'release' ? 0.62 : g.dk === 'escape' ? 0.95 : 1.25);
     return Math.min(base * 1.15 + Math.sqrt(g.total) * 1.7, 27);
   }
 
@@ -2682,10 +2697,10 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
         if(!pjOn||map.getZoom()<PJ_CLICK_MINZ)return;
         var cp=map.mouseEventToContainerPoint(ev);
         var g=self._nearestClu(cp);
-        if(g && g.n>1){ ev.stopPropagation(); gbClickTime=Date.now();
+        if(g && g.n>1 && !g.hier){ ev.stopPropagation(); gbClickTime=Date.now();
           if(window.pjShowCluster) window.pjShowCluster(pjCluTitle(g), pjCluRows(g));
           return; }
-        var hit=(g&&g.n===1)?g.m[0]:self._nearest(cp);
+        var hit=(g&&g.m&&g.m.length)?g.m[0]:self._nearest(cp);
         if(hit){ ev.stopPropagation(); gbClickTime=Date.now();
           if(!_pjPopup)_pjPopup=L.popup({maxWidth:320,autoPan:true});
           _pjPopup.setLatLng([hit.la,hit.lo]).setContent(pjPopupHtml(hit.p)).openOn(map); pjEnrich(hit.p);
@@ -2703,7 +2718,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       for(var k=0;k<cl.length;k++){ var g=cl[k];
         var pt=m.latLngToContainerPoint([g.la,g.lo]);
         if(pt.x<-pad||pt.y<-pad||pt.x>s.x+pad||pt.y>s.y+pad) continue;
-        if(g.n===1){ this._glyph(ctx,pt,g.m[0],pjCluRad(z,g)); continue; }
+        if(g.n===1 && !g.hier){ this._glyph(ctx,pt,g.m[0],pjCluRad(z,g)); continue; }
         var r=pjCluRad(z,g);
         ctx.globalAlpha=0.22; ctx.beginPath(); ctx.arc(pt.x,pt.y,r+3.5,0,6.2832);
         ctx.fillStyle=g.c; ctx.fill(); ctx.globalAlpha=1;
@@ -3272,8 +3287,11 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     if(state.type && (o.t||'')!==state.type) return false;
     if(state.kind && (o.k||'')!==state.kind) return false;
     if(state.q){
+      // The box hands back whatever was typed. draw() used to lowercase it on
+      // the way in; recPass is the only filter now, so it does it here - without
+      // this a capital letter in the search box matches nothing at all.
       var s=((o.n||'')+' '+(o.c||'')+' '+(o.s||'')+' '+(o.pl||'')+' '+(o.t||'')).toLowerCase();
-      if(s.indexOf(state.q)<0) return false;
+      if(s.indexOf(String(state.q).toLowerCase())<0) return false;
     }
     if(state.yrs){
       if(!o.d) return false;
@@ -3283,84 +3301,50 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     return true;
   }
 
-  // The filter bar is rebuilt per open because the type list is whatever this
-  // region actually contains - a fixed list would offer types with nothing behind
-  // them, and hide types the harvester added since.
-  function recFilterBar(){
-    var types={}, kinds={}, i;
-    for(i=0;i<state.rows.length;i++){
-      var t=state.rows[i].t||''; if(t) types[t]=(types[t]||0)+1;
-      var k=state.rows[i].k||''; if(k) kinds[k]=(kinds[k]||0)+1;
+  // The pill bar is rebuilt per open because the kinds present are whatever this
+  // region actually contains - a fixed list would offer pills with nothing
+  // behind them, and hide kinds the harvester added since. The type filter is
+  // no longer here: the tree in the body below IS the type filter, with counts
+  // visible on every node instead of hidden inside a dropdown.
+  function recPillBar(){
+    var kinds = {}, dated = 0, i;
+    for(i = 0; i < state.rows.length; i++){
+      var k = state.rows[i].k || '';
+      if(k) kinds[k] = (kinds[k] || 0) + 1;
+      if(state.rows[i].d && !isNaN(Date.parse(state.rows[i].d))) dated++;
     }
-    var tk=Object.keys(types).sort(function(a,b){return types[b]-types[a];});
-    var KL={industry:'Organisations',escape:'Spread',release:'Release authorisations'};
-    var h='<input id="recQ" placeholder="filter these entries\u2026" value="'+(state.q||'').replace(/"/g,'&quot;')+'">';
-    if(tk.length>1){
-      h+='<select id="recType"><option value="">All types ('+state.rows.length+')</option>';
-      // Group the options rather than listing every organism flat. A release type
-      // reads "<organism>, environmental release", so the words after the comma
-      // are the category and the words before it are the thing. Real headings
-      // instead of an alphabet, and the biggest category first.
-      var groups={}, order=[];
-      tk.forEach(function(t){
-        // Split on the LAST comma, not the first. A type reads
-        // "<organism>, <category>", but the organism itself often contains a
-        // comma - "Citrus, orange" or "Orange, C-22" - and splitting on the
-        // first comma made the category "orange, environmental release" and the
-        // leaf "Citrus", which is how "Citrus citrus" and
-        // "Environmental release (including any citrus fruits)" appeared.
-        var ix=t.lastIndexOf(','), cat, leaf;
-        if(ix>0){ cat=t.slice(ix+1).trim(); leaf=t.slice(0,ix).trim(); }
-        else { cat='Other'; leaf=t; }
-        if(!leaf){ leaf=cat; cat='Other'; }
-        cat=cat.charAt(0).toUpperCase()+cat.slice(1);
-        if(!groups[cat]){ groups[cat]=[]; order.push(cat); }
-        groups[cat].push({v:t, l:leaf, n:types[t]});
-      });
-      order.sort(function(a,b){
-        var sa=0, sb=0;
-        groups[a].forEach(function(x){ sa+=x.n; });
-        groups[b].forEach(function(x){ sb+=x.n; });
-        return sb-sa;
-      });
-      order.forEach(function(cat){
-        var rows=groups[cat], tot=0;
-        rows.forEach(function(x){ tot+=x.n; });
-        if(order.length>1) h+='<optgroup label="'+cat.replace(/"/g,'&quot;').slice(0,46)+' ('+tot+')">';
-        rows.sort(function(a,b){ return b.n-a.n; }).forEach(function(x){
-          h+='<option value="'+x.v.replace(/"/g,'&quot;')+'"'+(state.type===x.v?' selected':'')+'>'
-            +x.l.slice(0,42)+' ('+x.n+')</option>';
-        });
-        if(order.length>1) h+='</optgroup>';
-      });
-      h+='</select>';
-    }
-    var kk=Object.keys(kinds);
-    if(kk.length>1){
-      h+='<div class="rec-pills">';
-      h+='<span class="rec-pill'+(state.kind===''?' on':'')+'" data-k="">All</span>';
+    var KL = {industry:'Organisations', escape:'Spread', release:'Release authorisations'};
+    var kk = Object.keys(kinds).sort(function(a,b){ return kinds[b]-kinds[a]; });
+    var h = '';
+    if(kk.length > 1){
+      h += '<div class="rec-pills">';
+      h += '<span class="rec-pill'+(state.kind===''?' on':'')+'" data-k="">All '+state.rows.length+'</span>';
       kk.forEach(function(k){
-        h+='<span class="rec-pill'+(state.kind===k?' on':'')+'" data-k="'+k+'">'
-          +(KL[k]||k)+' '+kinds[k]+'</span>';
+        h += '<span class="rec-pill'+(state.kind===k?' on':'')+'" data-k="'+k+'">'
+           + (KL[k]||k) + ' ' + kinds[k] + '</span>';
       });
-      h+='</div>';
+      h += '</div>';
     }
-    h+='<div class="rec-pills">';
-    [[0,'Any date'],[1,'12 months'],[5,'5 years'],[10,'10 years']].forEach(function(p){
-      h+='<span class="rec-pill'+(state.yrs===p[0]?' on':'')+'" data-y="'+p[0]+'">'+p[1]+'</span>';
-    });
-    h+='</div>';
+    // A date window is only offered where dates exist. Half these registers
+    // publish no date at all, and a control that silently empties the list is
+    // worse than no control.
+    if(dated > 1){
+      h += '<div class="rec-pills">';
+      [[0,'Any date'],[1,'12 months'],[5,'5 years'],[10,'10 years']].forEach(function(o){
+        h += '<span class="rec-pill'+(state.yrs===o[0]?' on':'')+'" data-y="'+o[0]+'">'+o[1]+'</span>';
+      });
+      h += '</div>';
+    }
     return h;
   }
 
   function draw(){
-    var r = state.rows.slice();
-    if(state.q){
-      var q = state.q.toLowerCase();
-      r = r.filter(function(o){
-        return ((o.n||'')+' '+(o.c||'')+' '+(o.s||'')+' '+(o.t||'')).toLowerCase().indexOf(q) >= 0;
-      });
-    }
+    // One pass, one predicate. recPass() already knew how to test the search
+    // box, the kind and the date window; draw() was re-implementing the search
+    // half inline and ignoring the other two, which is why the kind and date
+    // pills did nothing wherever they appeared.
+    var r = state.rows.filter(recPass);
+
     // The categories are the filter now, so the <select> is gone. Same grouping,
     // drawn in the list where you can see the counts without opening anything.
     // Sorting happens before grouping, so every leaf in the tree comes out in
@@ -3374,12 +3358,24 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     var tree = window.pjTreeRows(r);
     var fb = ensure().querySelector('#recFilt');
     if(fb){
-      fb.innerHTML = '<input id="recQ" placeholder="filter these records\u2026" value="'
-        + (state.q||'').replace(/"/g,'&quot;') + '">'
-        + '<span class="rec-count">' + r.length + ' of ' + state.rows.length + '</span>'
-        + '<div class="rec-note">No register on this map publishes where a release actually happened. APHIS gives the states a permit covers and the number of sites in each, never the coordinates; decisions filed under the Cartagena Protocol are national instruments with no site at all. So a marker is a state or a country, never a field. Click a country to break it into states. <b>Australia\u2019s OGTR is the only regulator in the world that publishes field trial sites.</b></div>';
+      // Controls on the left, the standing caveat on the right. It used to run
+      // the full width underneath, which put five lines of text between the
+      // reader and the records every single time the panel opened.
+      fb.innerHTML =
+          '<div class="rec-filt-main">'
+        +   '<div class="rec-filt-row">'
+        +     '<input id="recQ" placeholder="filter these records\u2026" value="'
+        +     (state.q||'').replace(/"/g,'&quot;') + '">'
+        +     '<span class="rec-count">' + r.length + ' of ' + state.rows.length + '</span>'
+        +   '</div>'
+        +   recPillBar()
+        + '</div>'
+        + '<div class="rec-note">No register on this map publishes where a release actually happened. APHIS gives the states a permit covers and the number of sites in each, never the coordinates; decisions filed under the Cartagena Protocol are national instruments with no site at all. So a marker is a state or a country, never a field. Click a country to open its national records and break it into states. <b>Australia\u2019s OGTR is the only regulator in the world that publishes field trial sites.</b></div>';
       fb.onclick = function(e){
-        var b = e.target.dataset && e.target.dataset.by;
+        var el = e.target, ds = el.dataset || {};
+        if(ds.k !== undefined){ state.kind = ds.k; draw(); return; }
+        if(ds.y !== undefined){ state.yrs = +ds.y; draw(); return; }
+        var b = ds.by;
         if(!b) return;
         if(state.by === b) state.dir = -state.dir; else { state.by = b; state.dir = -1; }
         draw();
@@ -3462,7 +3458,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
 })();
 </script>
 <style>
-#recList{display:none;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1200;width:min(560px,92vw);max-height:78vh;background:rgba(8,14,32,0.975);border:1px solid rgba(127,168,204,0.45);border-radius:11px;color:#c3cee0;font-size:11px;flex-direction:column;overflow:hidden;box-shadow:0 18px 60px rgba(0,0,0,0.6);}
+#recList{display:none;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1200;width:min(700px,94vw);max-height:78vh;background:rgba(8,14,32,0.975);border:1px solid rgba(127,168,204,0.45);border-radius:11px;color:#c3cee0;font-size:11px;flex-direction:column;overflow:hidden;box-shadow:0 18px 60px rgba(0,0,0,0.6);}
 #recHead{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;
   padding:8px 10px;border-bottom:1px solid rgba(127,168,204,0.22);color:#eaf1ff;
   font-weight:600;line-height:1.35;flex:0 0 auto;}
@@ -3474,8 +3470,10 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
 .rec-row{padding:5px 0;border-bottom:1px solid rgba(127,168,204,0.10);line-height:1.35;}
 .rec-row a{color:#9dc0dd;text-decoration:none;} .rec-row a:hover{text-decoration:underline;}
 .rec-meta{color:#7d8ba1;font-size:9.5px;margin-top:2px;}
-#recFilt{display:flex;flex-direction:column;gap:6px;padding:7px 10px;
+#recFilt{display:flex;flex-direction:row;align-items:flex-start;gap:11px;padding:7px 10px;
   border-bottom:1px solid rgba(127,168,204,0.16);flex:0 0 auto;}
+.rec-filt-main{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:6px;}
+.rec-filt-row{display:flex;align-items:center;gap:8px;}
 #recFilt input,#recFilt select{width:100%;background:rgba(127,168,204,0.08);
   border:1px solid rgba(127,168,204,0.32);border-radius:6px;color:#dce6f5;
   font-size:10.5px;padding:5px 7px;outline:none;font-family:inherit;}
@@ -3499,44 +3497,87 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
 </style>
 <script>
 (function(){
-  // Three levels. At world zoom you see one marker per country. Click it and its
-  // state markers appear; click a state and its records open in the panel.
-  // Nothing is hidden permanently and nothing is truncated - the counts on each
-  // level always add up to the level above.
+  // Two levels drawn as one. At world zoom a country is a single marker whose
+  // count is everything filed under it - the national records plus every state's
+  // - so the reader is never asked to add a national dot to fifty state dots to
+  // find out what a country holds. Opening it does two things at once: the
+  // national box opens in the panel, and the states scatter onto the map.
   window.pjExpanded = window.pjExpanded || new Set();
+
+  // The country marker's key was p.state ("United States") while its state
+  // markers looked for p.parent ("USA"). Different strings, so opening the
+  // country hid the country and never revealed the states. One key for both.
+  window.pjHierKey = function(q){
+    if(!q) return '';
+    return String((q.level === 'country' ? (q.state || q.parent) : (q.parent || q.state)) || 'USA')
+           .trim().toLowerCase();
+  };
+
+  // Records filed at this marker itself, ignoring anything below it.
+  window.pjOwnTotal = function(p){
+    if(!p) return 0;
+    if(typeof p.records_total === 'number' && p.records_total > 0) return p.records_total;
+    if(p.records && p.records.length) return p.records.length;
+    var n = 0;
+    (p.sources || []).forEach(function(s){
+      n += (typeof s.n === 'number' ? s.n : ((s.records && s.records.length) || 0));
+    });
+    return n;
+  };
+
+  // What the icon should say. Collapsed, a country carries its states with it;
+  // opened, the states are separate markers and it drops back to its own count,
+  // so the numbers on screen never double up.
+  window.pjHierTotal = function(p){
+    if(!p) return 1;
+    var own = window.pjOwnTotal(p);
+    if(p.level !== 'country') return own || 1;
+    if(window.pjExpanded.has(window.pjHierKey(p))) return own || 1;
+    var kids = 0;
+    (p.children || []).forEach(function(c){ kids += (+c.c || 0); });
+    return (own + kids) || 1;
+  };
 
   window.pjLevelPasses = function(p){
     if(!p || !p.level) return true;
-    // A country marker and its state markers were drawn side by side, reading as
-    // peers when one contains the others. The country is shown alone until it is
-    // opened; opening it swaps in the states. Never both, so the sizes on screen
-    // are always comparable to each other.
-    // The country marker's key was p.state ("United States") while its state
-    // markers looked for p.parent ("USA"). Different strings, so opening the
-    // country hid the country and never revealed the states. One key for both.
-    var key = function(q){
-      return String((q.level === 'country' ? (q.state || q.parent) : (q.parent || q.state)) || 'USA')
-             .trim().toLowerCase();
-    };
-    if(p.level === 'country') return !window.pjExpanded.has(key(p));
-    if(p.level === 'state')   return window.pjExpanded.has(key(p));
+    // The country is always on the map. It is the combined marker, and it is
+    // also the control that closes the states again - hiding it on open left
+    // no way back except reloading.
+    if(p.level === 'country') return true;
+    if(p.level === 'state')   return window.pjExpanded.has(window.pjHierKey(p));
     return true;
   };
 
-  // clicking a country marker toggles its states rather than opening a panel
+  // Clicking a country opens the national box and scatters the states.
   window.pjDrill = function(p){
     if(!p || p.level !== 'country') return false;
-    var k = String((p.state || p.parent || 'USA')).trim().toLowerCase();
-    if(window.pjExpanded.has(k)) window.pjExpanded.delete(k);
-    else window.pjExpanded.add(k);
+    var k = window.pjHierKey(p);
+    var opening = !window.pjExpanded.has(k);
+    if(opening) window.pjExpanded.add(k); else window.pjExpanded.delete(k);
     try{ if(window.pjRefresh) window.pjRefresh(); }catch(e){}
-    // and list the states, so the breakdown is readable as well as visible
-    if(p.children && p.children.length && window.pjShowRecords){
+    if(!opening) return true;              // closing is a map action, not a panel one
+
+    if(!window.pjShowRecords) return true;
+    var own = window.pjOwnTotal(p);
+    if(own){
+      // The national box itself - the records filed at national level, run
+      // through the same tree and the same filters as everything else.
       window.pjShowRecords({
-        name: p.name + (window.pjExpanded.has(k) ? ' \u2014 states shown on the map' : ''),
+        name: p.name + ' \u2014 national records',
+        url: p.url || '',
+        sources: p.sources || null,
+        records: p.records || null,
+        records_total: p.records_total || own
+      });
+    } else if(p.children && p.children.length){
+      // Nothing is filed nationally, so the breakdown is the only thing there
+      // is to show. Typed, so it groups rather than arriving as a bare list.
+      window.pjShowRecords({
+        name: p.name + ' \u2014 by state',
         records_total: p.children.length,
         records: p.children.map(function(c){
-          return {n: c.n, d: '', c: String(c.c) + ' authorisations', s: '', u: ''};
+          return {n: c.n, d: '', c: String(c.c) + ' authorisations', s: '',
+                  u: '', t: 'State totals, breakdown'};
         })
       });
     }
@@ -3553,10 +3594,88 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
   // Same data, drawn as a tree in the list itself. Categories collapsed, counts
   // on every node, click to open. Where a leaf holds more than one record the
   // records nest under it; where it holds one, the leaf IS the record.
+  // ---- categorisation -------------------------------------------------------
+  // A category has to come from somewhere. APHIS records carry a type; the
+  // Cartagena registers and most national ones do not, and every record from
+  // them was landing in one undifferentiated heap - a raw list with a heading
+  // on it. So: use the type where there is one, and where there is not, find a
+  // field in THIS set of records that behaves like a category and use that.
+  function _norm(x){
+    return String(x == null ? '' : x).toLowerCase()
+      .replace(/[\u2010-\u2015\u2212]/g, '-')
+      .replace(/[^a-z0-9]+/g, ' ').trim();
+  }
+  function _sing(w){
+    if(/ies$/.test(w) && w.length > 4) return w.slice(0, -3) + 'y';
+    if(/ss$/.test(w)) return w;
+    if(/s$/.test(w) && w.length > 3) return w.slice(0, -1);
+    return w;
+  }
+  function _key(x){ var n = _norm(x); return n ? n.split(' ').map(_sing).join(' ') : ''; }
+
+  // A field is a category if it repeats. An applicant name is unique per record
+  // and would give one category per record, which is the raw list again with
+  // more clicks. A decision type repeats a few dozen times and is what we want.
+  function _categorical(rows, f){
+    var seen = {}, n = 0, d = 0;
+    for(var i = 0; i < rows.length; i++){
+      var v = String(rows[i][f] == null ? '' : rows[i][f]).trim();
+      if(!v || v.length > 64) continue;
+      if(!isNaN(Date.parse(v)) && /\d/.test(v)) continue;   // a date is not a category
+      n++; if(!seen[v]){ seen[v] = 1; d++; }
+    }
+    return n >= 4 && d <= 14 && (d / n) <= 0.5;
+  }
+
+  // The categorical core of a free-text status. Registers write the count into
+  // the status string, which turns one status into two hundred. The count is
+  // already on the record; what is wanted here is the state it describes.
+  function _statusCore(v){
+    var t = String(v == null ? '' : v).trim();
+    if(!t || t.length > 64) return '';
+    t = t.replace(/^\s*\d+\s+of\s+\d+\s*/i, '')                       // "1 of 2 recruiting"
+         .replace(/^\s*\d[\d,]*\s+[a-z]+s?,\s*/i, '')                 // "2 trials, none recruiting"
+         .replace(/\s*\d{4}\s*[\u2012-\u2015-]\s*\d{4}\s*$/, '')      // "Filed 1998-2025"
+         .replace(/\s+/g, ' ').trim();
+    return t;
+  }
+
+  // Head nouns that make two differently-worded categories the same thing.
+  var _HEADS = {'releas':1, 'trial':1, 'permit':1, 'notification':1, 'decision':1,
+                'authorisation':1, 'authorization':1, 'approval':1, 'use':1,
+                'movement':1, 'import':1, 'export':1, 'application':1, 'licence':1,
+                'license':1, 'company':1, 'organisation':1, 'organization':1,
+                'supplier':1, 'programme':1, 'program':1, 'facility':1, 'registration':1};
+
   window.pjTreeRows = function(rows){
-    var cats = {}, order = [];
-    rows.forEach(function(r){
+    rows = rows || [];
+
+    // Which field carries the category for this particular set of records.
+    var fb = null;
+    var hasType = rows.some(function(r){ return String(r.t || r.type || '').trim(); });
+    if(!hasType){
+      ['s', 'c', 'k'].some(function(f){ if(_categorical(rows, f)){ fb = f; return true; } return false; });
+    }
+    function typeOf(r){
       var t = String(r.t || r.type || '').trim();
+      if(!t && fb) t = String(r[fb] == null ? '' : r[fb]).trim();
+      return t;
+    }
+
+    var cats = {};            // key -> {label, leaves:{}, total}
+    function bucket(k, label, leaf, r){
+      var c = cats[k] || (cats[k] = {label: label, leaves: {}, total: 0, votes: {}});
+      (c.leaves[leaf] || (c.leaves[leaf] = [])).push(r);
+      c.total++;
+      // Keep the spelling that occurs most often rather than whichever arrived
+      // first, so "Environmental Release" does not label 400 records because it
+      // happened to sort earliest.
+      c.votes[label] = (c.votes[label] || 0) + 1;
+      if(c.votes[label] > (c.votes[c.label] || 0)) c.label = label;
+    }
+
+    rows.forEach(function(r){
+      var t = typeOf(r);
       // Wrapper types belong to the marker, not to a record. They were leaking
       // into the tree as categories called "All sources" and "Grouped by state",
       // which describe the container rather than anything in it.
@@ -3564,27 +3683,113 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
       // Older APHIS rows carry no type at all. That is a gap in the source, so
       // it gets a name rather than a silent bucket at the bottom of the list.
       if(!t) t = 'Type not recorded by the register';
+
       // "<organism>, <category>" splits into a category and a leaf. A type with
       // no comma - "Seed & trait company", "National biosafety decision" - is
       // already a category in its own right, so it becomes one, with its records
-      // directly under it. Dumping those into "Other" is what left a handful of
-      // uncategorised entries at the bottom of every list.
+      // directly under it.
       var ix = t.lastIndexOf(','), cat, leaf;
-      if(ix > 0){ cat = t.slice(ix+1).trim(); leaf = t.slice(0, ix).trim(); }
-      else if(t){ cat = t; leaf = ''; }
-      else { cat = 'Type not stated'; leaf = ''; }
+      if(ix > 0){ cat = t.slice(ix + 1).trim(); leaf = t.slice(0, ix).trim(); }
+      else { cat = t; leaf = ''; }
       if(!cat){ cat = 'Type not stated'; leaf = ''; }
       cat = cat.charAt(0).toUpperCase() + cat.slice(1);
-      if(!cats[cat]){ cats[cat] = {}; order.push(cat); }
-      (cats[cat][leaf] || (cats[cat][leaf] = [])).push(r);
+      bucket(_key(cat) || 'other', cat, leaf, r);
     });
-    order.sort(function(a,b){
-      var sa=0, sb=0;
-      Object.keys(cats[a]).forEach(function(k){ sa += cats[a][k].length; });
-      Object.keys(cats[b]).forEach(function(k){ sb += cats[b][k].length; });
-      return sb - sa;
+
+    // ---- give flat categories a second axis ---------------------------------
+    // A type like "Gene or cell therapy trial sponsor" is carried by every
+    // record in the set, so the tree came out as one heading with 822 lines
+    // under it - a raw list wearing a category's hat. Where a category has no
+    // leaf of its own, split it on whatever field in THIS set discriminates.
+    // Status usually does, once the counts baked into it are stripped off:
+    // "2 trials, none recruiting" and "3 trials, none recruiting" are the same
+    // status wearing two different numbers.
+    Object.keys(cats).forEach(function(k){
+      var c = cats[k], lk = Object.keys(c.leaves);
+      if(lk.length !== 1 || lk[0] !== '' || c.leaves[''].length < 8) return;
+      var flat = c.leaves[''];
+      ['s', 'c'].some(function(f){
+        var by = {}, d = 0, n = 0;
+        flat.forEach(function(r){
+          var v = _statusCore(r[f]);
+          if(!v) return;
+          n++; if(!by[v]){ by[v] = []; d++; } by[v].push(r);
+        });
+        // Two or forty groups is structure; one is no better than none, and
+        // one-per-record is the raw list again with an extra click in front.
+        if(n < flat.length * 0.8 || d < 2 || d > 40 || (d / n) > 0.6) return false;
+        c.leaves = {};
+        Object.keys(by).forEach(function(v){
+          c.leaves[v.charAt(0).toUpperCase() + v.slice(1)] = by[v];
+        });
+        return true;
+      });
     });
-    return {cats:cats, order:order};
+
+    // ---- consolidation ------------------------------------------------------
+    // Splitting on the type string alone left a tail of categories holding one
+    // or two records each - a wording variant of a category that already exists,
+    // or a one-off nobody will ever look for by name. Each is either folded into
+    // the category it actually belongs to, or into "Other". Nothing is dropped
+    // and the counts still add up.
+    var MIN = 3, keys = Object.keys(cats);
+    var strong = keys.filter(function(k){ return cats[k].total >= MIN && k !== 'other'; });
+    var weak   = keys.filter(function(k){ return cats[k].total <  MIN || k === 'other'; });
+
+    if(strong.length && weak.length){
+      weak.forEach(function(wk){
+        var w = cats[wk], ww = wk.split(' '), whead = ww[ww.length - 1];
+        var best = null, bestScore = 0;
+        strong.forEach(function(sk){
+          var sw = sk.split(' '), shead = sw[sw.length - 1], score = 0;
+          // One name inside the other: "Environmental release (interstate
+          // movement)" is an environmental release.
+          var inside = sw.every(function(x){ return ww.indexOf(x) >= 0; }) ||
+                       ww.every(function(x){ return sw.indexOf(x) >= 0; });
+          if(inside) score += 10;
+          // Same head noun from a known list: "confined field trial" and
+          // "field trial" are the same kind of thing.
+          if(shead === whead && _HEADS[whead]) score += 4;
+          // Shared words break ties between two plausible homes.
+          var shared = ww.filter(function(x){ return sw.indexOf(x) >= 0; }).length;
+          if(score) score += shared;
+          if(score > bestScore || (score && score === bestScore && best && cats[sk].total > cats[best].total)){
+            bestScore = score; best = sk;
+          }
+        });
+        var into = best || 'other';
+        if(into === wk) return;
+        var dst = cats[into] || (cats[into] = {label: 'Other', leaves: {}, total: 0, votes: {}});
+        Object.keys(w.leaves).forEach(function(lf){
+          // Folding into "Other" keeps the original wording as the leaf, so a
+          // record is still findable by the name its register gave it.
+          var name = best ? (lf || w.label) : (lf ? (w.label + ' \u2014 ' + lf) : w.label);
+          dst.leaves[name] = (dst.leaves[name] || []).concat(w.leaves[lf]);
+        });
+        dst.total += w.total;
+        delete cats[wk];
+      });
+    }
+
+    // ---- output -------------------------------------------------------------
+    var out = {}, order = [];
+    Object.keys(cats).forEach(function(k){
+      var c = cats[k], label = (k === 'other') ? 'Other' : c.label;
+      // Two keys can still collide on a label after folding; merge rather than
+      // overwrite, because an overwrite silently loses records.
+      if(!out[label]){ out[label] = c.leaves; order.push(label); }
+      else Object.keys(c.leaves).forEach(function(lf){
+        out[label][lf] = (out[label][lf] || []).concat(c.leaves[lf]);
+      });
+    });
+    function tot(label){ var n = 0; Object.keys(out[label]).forEach(function(k){ n += out[label][k].length; }); return n; }
+    order.sort(function(a, b){
+      // "Other" is the leftovers, so it sits at the bottom whatever its size.
+      if(a === 'Other') return 1;
+      if(b === 'Other') return -1;
+      return tot(b) - tot(a);
+    });
+    return {cats: out, order: order};
   };
 
   window.pjTreeHtml = function(tree, open){
@@ -3617,7 +3822,12 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
           return;
         }
         if(rs.length === 1){
-          h += '<div class="tr-rec tr-l1">'+recLine(rs[0])+'</div>';
+          // A leaf holding one record IS that record, so no twisty is drawn -
+          // but the leaf name is the record's type, and dropping it silently
+          // threw the type away. It goes on the meta line instead. This matters
+          // most in "Other", where the leaf name is the only surviving trace of
+          // the category the register actually gave it.
+          h += '<div class="tr-rec tr-l1">'+recLine(rs[0], leaf)+'</div>';
           return;
         }
         h += '<div class="tr-leaf" data-k="l:'+(cat+'|'+leaf).replace(/"/g,'&quot;')+'">'
@@ -3630,8 +3840,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     return h || '<div class="rec-meta">No records match.</div>';
   };
 
-  function recLine(o){
-    var meta = [o.d, o.c, o.s].filter(Boolean).join(' \u00b7 ');
+  function recLine(o, typeLabel){
+    var meta = [typeLabel, o.d, o.c, o.s].filter(Boolean).join(' \u00b7 ');
     return (o.u ? ('<a href="'+o.u+'" target="_blank" rel="noopener">'+o.n+'</a>')
                 : ('<span>'+o.n+'</span>'))
          + (meta ? '<div class="rec-meta">'+meta+'</div>' : '');
@@ -3641,8 +3851,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
 <style>
 .rec-sorts{font-size:9.5px;color:#7d8ba1;display:flex;gap:7px;align-items:center;}
 .rec-s{cursor:pointer;} .rec-s:hover{color:#9dc0dd;} .rec-s.on{color:#7fa8cc;font-weight:700;}
-.rec-note{font-size:9.5px;color:#7d8ba1;line-height:1.5;margin:6px 0 2px;flex:1 0 100%;}
-.rec-count{color:#7d8ba1;font-size:9.5px;margin-left:auto;}
+.rec-note{font-size:9.5px;color:#7d8ba1;line-height:1.5;margin:0;flex:0 0 41%;max-width:41%;align-self:stretch;border-left:1px solid rgba(127,168,204,0.16);padding-left:10px;max-height:120px;overflow-y:auto;}
+.rec-count{color:#7d8ba1;font-size:9.5px;margin-left:auto;white-space:nowrap;flex:0 0 auto;}
 .tr-cat,.tr-leaf{display:flex;align-items:center;gap:5px;cursor:pointer;line-height:1.4;}
 .tr-cat{padding:7px 0 6px;border-bottom:1px solid rgba(127,168,204,0.14);
   color:#eaf1ff;font-weight:600;}
