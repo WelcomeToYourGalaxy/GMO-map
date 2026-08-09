@@ -60,7 +60,7 @@ jobs:
             # these files do not exist until their harvester first succeeds, so every
             # run so far staged nothing and reported "no change" - after writing
             # 24,241 records. Add them one at a time, skipping what is absent.
-            for f in projects.json wire.json \
+            for f in projects.json projects.json.gz wire.json \
                      harvest/cfia_records.json harvest/industry_points.json \
                      harvest/register_records.json harvest/animal_facilities.json \
                      harvest/ogtr_trials.json \
