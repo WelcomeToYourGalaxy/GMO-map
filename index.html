@@ -2347,7 +2347,15 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     else { if(!pjInclUndated) return false; }
     return true;
   }
-  function pjBuildIndex(){ if(!_pjFan && pjData && pjData.projects) _pjFan=pjFanOffsets(pjData.projects);
+  function pjBuildIndex(){
+    /* pjFanOffsets is off. It spread coincident points into a ring so the top
+       one was not the only clickable pin. Clustering does that job properly
+       now, and the offsets actively broke it: the cluster key saw a ring of
+       slightly-different coordinates instead of one shared centroid, giving
+       462 clusters where there should be 260. The function stays in the file
+       as the honest fallback if clustering is ever switched off. */
+    if(!_pjFan && pjData && pjData.projects)
+      _pjFan = pjData.projects.map(function(){ return [0,0]; });
     var pts=[],grid={},arr=(pjData&&pjData.projects)||[];
     for(var k=0;k<arr.length;k++){ var p=arr[k]; if(!pjPasses(p)) continue;
       var i=p.impact||1, kd=pjKind(p), o={la:p.lat+((_pjFan&&_pjFan[k]&&_pjFan[k][1])||0),lo:p.lng+((_pjFan&&_pjFan[k]&&_pjFan[k][0])||0),i:i,c:(kd==="industry"?(OTC[p.otype]||INDC[i]):kd==="escape"?ESCC[i]:PC[i])||"#8fa0b8",ot:(p.otype||"company"),ap:(p.precise===false),kd:kd,p:p};
@@ -2381,7 +2389,15 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       // three as you zoom in and the reader watches a place split into pieces
       // that are not places. Everything sharing a coordinate is one icon at
       // every zoom, and it stays that icon.
-      var k  = o.la.toFixed(2) + '|' + o.lo.toFixed(2);
+      // Key on the SOURCE coordinate, not the drawn one. pjFanOffsets has
+      // already spread coincident points into a ring by this stage, so
+      // o.la/o.lo differ by up to ~0.16 deg for points that share a
+      // centroid - keying on those gives one cluster per point, which is
+      // exactly the pile this is meant to collapse. The pixel grid used to
+      // hide that by rounding the ring back together.
+      var _sla = (o.p && typeof o.p.lat === 'number') ? o.p.lat : o.la;
+      var _slo = (o.p && typeof o.p.lng === 'number') ? o.p.lng : o.lo;
+      var k  = _sla.toFixed(2) + '|' + _slo.toFixed(2);
       g = cells[k];
       if(!g){ g = cells[k] = {la:0, lo:0, n:0, m:[], kd:{}, i:0, ap:true}; out.push(g); }
       g.la += o.la; g.lo += o.lo; g.n++; g.m.push(o);
