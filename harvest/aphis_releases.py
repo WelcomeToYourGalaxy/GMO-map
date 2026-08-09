@@ -486,6 +486,45 @@ def main():
                         ", ".join(SRCNAME.get(k, k) for k in by_src))),
             "checked": "",
         })
+    # A country marker above the US state markers. This was written in an
+    # earlier round and lost when the grouping was rewritten to merge across
+    # sources - so the map had state markers with no parent to collapse into,
+    # which is why both levels appeared at once.
+    #
+    # `parent` must equal the country marker's own key exactly, or the map hides
+    # the country and never reveals its states.
+    US_KEY = "United States"
+    kids = [g for g in merged
+            if str(g.get("source", "")).startswith("aphis") and len(str(g.get("state", ""))) <= 24]
+    for g in kids:
+        g["level"] = "state"
+        g["parent"] = US_KEY
+    if kids:
+        tot = sum(g.get("records_total", 1) for g in kids)
+        merged.append({
+            "name": "United States \u2014 %s release records" % format(tot, ","),
+            "source": kids[0]["source"], "type": "Release records, by state",
+            "lat": 39.8, "lng": -98.6, "state": US_KEY, "precise": False,
+            "impact": 3, "company": "", "size": "%s records across %d states" % (format(tot, ","), len(kids)),
+            "status": "Click to break into states", "phase": "post", "date": "",
+            "lapsed": False, "level": "country", "parent": US_KEY,
+            "children": [{"n": g.get("state", ""), "c": g.get("records_total", 1),
+                          "la": g["lat"], "lo": g["lng"]}
+                         for g in sorted(kids, key=lambda x: -x.get("records_total", 1))],
+            "records_total": tot,
+            "url": kids[0]["url"],
+            "desc": ("WHAT. Every US release record on this map, %s of them across %d states. "
+                     "WHERE IT SITS. Above the state markers, which appear when this is clicked "
+                     "and replace it \u2014 the two never draw together, because one contains the "
+                     "others and side by side they would read as peers. "
+                     "WHY IT MATTERS. There is no level below state. APHIS publishes the states a "
+                     "permit covers and how many sites are in each, never the coordinates, so a "
+                     "marker is a state or a country and never a field. **Australia\u2019s OGTR is "
+                     "the only regulator in the world that publishes field trial sites.**"
+                     % (format(tot, ","), len(kids))),
+            "checked": "",
+        })
+        print("  + 1 country marker over %d US state markers" % len(kids))
     print("  %d records \u2192 %d place markers (all sources merged)" % (len(records), len(merged)))
     records = merged
 
