@@ -469,7 +469,10 @@ def main():
             "sources": [{"k": k, "label": SRCNAME.get(k, k), "n": len(v),
                          "records": [{"n": x["name"][:110], "d": x.get("date", ""),
                                       "s": x.get("status", ""), "u": x.get("url", ""),
-                                      "c": x.get("company", "")} for x in v]}
+                                      "c": x.get("company", ""),
+                                      # type is "<organism>, environmental release",
+                                      # so the panel's type filter becomes an organism filter
+                                      "t": x.get("type", "")} for x in v]}
                         for k, v in by_src.items()],
             "url": rs[0]["url"],
             "desc": ("WHAT. %d release records at this point%s, from %s. "
