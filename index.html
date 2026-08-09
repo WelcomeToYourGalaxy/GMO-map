@@ -3113,7 +3113,35 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
       draw();
     };
   }
+  // A marker holding several registers lists each one with its count, collapsed.
+  // Provenance only starts to matter once you have found the place, so it is one
+  // click in rather than three markers stacked on top of each other.
+  function drawSources(p){
+    var b=ensure(); b.style.display='flex';
+    b.querySelector('#recTitle').textContent=(p.name||'Records');
+    b.querySelector('#recSort').innerHTML='';
+    var h='';
+    p.sources.forEach(function(src,ix){
+      h+='<div class="rec-src" data-ix="'+ix+'"><b>'+src.label+'</b>'
+        +'<span class="kcount"> ('+src.n+')</span><span class="rec-open">show</span></div>';
+    });
+    b.querySelector('#recBody').innerHTML=h;
+    b.querySelector('#recBody').onclick=function(e){
+      var row=e.target.closest('.rec-src'); if(!row)return;
+      var src=p.sources[+row.dataset.ix];
+      state.rows=src.records; state.by='d'; state.dir=-1;
+      b.querySelector('#recTitle').textContent=(p.name||'Records')+' \u2014 '+src.label+' ('+src.n+')';
+      b.querySelector('#recBody').onclick=null;
+      draw();
+      var back=document.createElement('div');
+      back.className='rec-back'; back.textContent='\u2039 all sources at this point';
+      back.onclick=function(){ drawSources(p); };
+      b.querySelector('#recBody').insertBefore(back, b.querySelector('#recBody').firstChild);
+    };
+  }
+
   window.pjShowRecords=function(p){
+    if(p&&p.sources&&p.sources.length){ drawSources(p); return true; }
     if(!p||!p.records||!p.records.length) return false;
     state.rows=p.records; state.by='d'; state.dir=-1;
     var b=ensure();
@@ -3141,6 +3169,10 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
 .rec-row{padding:5px 0;border-bottom:1px solid rgba(127,168,204,0.10);line-height:1.35;}
 .rec-row a{color:#9dc0dd;text-decoration:none;} .rec-row a:hover{text-decoration:underline;}
 .rec-meta{color:#7d8ba1;font-size:9.5px;margin-top:2px;}
+.rec-src{display:flex;align-items:center;gap:6px;padding:7px 0;cursor:pointer;border-bottom:1px solid rgba(127,168,204,0.12);line-height:1.35;}
+.rec-src:hover{color:#eaf1ff;}
+.rec-open{margin-left:auto;color:#7fa8cc;font-size:9.5px;}
+.rec-back{color:#7fa8cc;cursor:pointer;padding:4px 0 7px;font-size:9.5px;}
 @media (max-width:820px){#recList{display:none!important;}}
 </style>
 <script>
