@@ -289,6 +289,21 @@ body.info-open.wire-up #indexPanel{top:122px !important;}
 .pj-dl.shut{color:#959eb3;background:rgba(154,168,189,0.10);border:1px solid rgba(154,168,189,0.3);}
 .pj-date{color:#98a2c1;}
 .approx-badge{font-size:10px;color:#305488;background:rgba(230,192,121,0.12);border:1px dashed rgba(230,192,121,0.5);border-radius:4px;padding:2px 5px;margin:0 0 5px;display:inline-block;}</style>
+<script>
+// Says which file the map actually read and whether it holds grouped markers.
+// Five rounds passed with a correct harvest sitting in a file the map never
+// opened, and nothing on screen or in the console said so.
+function pjReport(which, data){
+  try{
+    var rows=(data&&data.projects)||[];
+    var grouped=rows.filter(function(x){ return x && (x.sources || x.records_total); }).length;
+    console.log('[map] loaded '+which+': '+rows.length+' records, '+grouped+' grouped place markers'
+      +(grouped?'':'   <-- NOT GROUPED: this file predates the grouping change'));
+    window.pjLoadedFrom={file:which, rows:rows.length, grouped:grouped};
+  }catch(e){}
+  return data;
+}
+</script>
 </head>
 <body>
 <div id="sidebar">
@@ -300,12 +315,15 @@ body.info-open.wire-up #indexPanel{top:122px !important;}
     Zoomed out you are looking at a painted world plate. Past about zoom 5 it cross-fades to live satellite imagery underneath. Three kinds of point, each with its own shape, colour and size:<br>
     &bull; <b>Square</b> — an organisation, at its headquarters or principal site. Coloured by what kind of body it is: company, ministry, committee, institute, intergovernmental body, trade association, campaign group, fund, or register.<br>
     &bull; <b>Red diamond</b> — a documented drift or contamination incident, placed where the material was found.<br>
-    &bull; <b>Green-to-blue circle</b> — a release authorisation from an official register.<br><br>
+    &bull; <b>Green-to-blue circle</b> — a release authorisation from an official register.<br>
+    &bull; <b>Numbered circle</b> — several records in one area, sized by how many sit under it. Click it for the list. Below zoom 9 this is what you mostly see; above it, the individual records draw again.<br><br>
     <b>Filled</b> means a real coordinate. <b>Outlined and faint</b> means the source published none — most do not — so the marker sits at a fallback point for that country, state or city. A dense cluster of outlined markers is missing data in the source, not a failed pull. A corporate headquarters is always outlined: it is an office, and the laboratories, plants and fields the company runs are somewhere else entirely.<br><br>
     <b class="hl-sec">The map key</b><br>
     <b>All map points</b> toggles the whole layer; the three checkboxes under it turn each kind on and off separately, and the swatches below those do the same for each kind of organisation. Below: search, release scale, consent phase and filing recency, then filters by data source and by organism type, and context overlays.<br><br>
     <b class="hl-sec">The map</b><br>
     Countries carrying entries are outlined in gold; click one to open it, and click again inside to descend a level. Every entry says the same three things: <b>what</b> the organisation is and does, <b>where it sits</b> in the chain, and <b>why it matters</b>. Click any area outside of the region, or the unit's name in the top-centre row, to go back up.<br><br>
+    <b class="hl-sec">The two guides</b><br>
+    If you have found something specific you want to stop, or you want to work on the industry itself, both guides open from the left rail. They are plain language, free, and describe lawful methods only: reading public paperwork, filing comments before a deadline, requesting documents, and getting the people affected to put their names next to yours.<br><br>
     <b class="hl-sec">Left rail</b><br>
     <b>Index</b> — every entry as a searchable list. The dropdowns group by country, facet, source type and so on; the filter box searches names and countries. Each row: click the name to read the entry, and the crosshair to fly the map there. Drag its header to move it; click to collapse.<br><br>
     <b class="hl-sec">Right rail</b><br>
@@ -450,8 +468,8 @@ body.info-open.wire-up #indexPanel{top:122px !important;}
   <div class="proj-time"><span class="ps-lab">Filing recency — dated registers</span><span class="pt-pill on" data-tw="0">All ages</span><span class="pt-pill" data-tw="30">≤30d</span><span class="pt-pill" data-tw="90">≤90d</span><span class="pt-pill" data-tw="180">≤6mo</span><span class="pt-pill" data-tw="365">≤1yr</span><label class="pt-und"><input type="checkbox" id="pjUndated" checked> Include undated</label></div><div class="lp-detail collapsed"><div class="lp-detail-head" onclick="this.parentNode.classList.toggle('collapsed')"><span class="lp-car">&#9662;</span> Where this data comes from &amp; what's not (yet) in it</div><div class="lp-detail-body">
 <b class="hl-sec">Where the live-releases data comes from</b><br>
     <b>Right now this layer is the United States only.</b> That is not the intention and it is not hidden here: it is what has actually been harvested. Every dot comes from the two public data files that APHIS Biotechnology Regulatory Services publishes and updates each business day, in the public domain. Nothing else currently feeds it.<br><br>
-    <b>What is kept, and what is thrown away.</b> Only records with a release component survive — an import permit or an interstate movement permit is not an environmental release, and most rows in the source are one of those. Withdrawn, denied, superseded, cancelled and expired records are dropped, along with anything past its expiration date, because a lapsed authorisation is not a live release. Roughly nine in ten rows in the source are removed by those two gates.<br><br>
-    <b>Every dot is a state centroid, and that is deliberate.</b> APHIS publishes the states a release is authorised in. It does not publish coordinates. So every record is marked imprecise and drawn as a dashed ring, and a cluster of rings over a state capital means <i>the register gave states, not sites</i>. Do not read a ring as a location. To find the actual ground, take the authorisation number to the land-and-sites lens.<br><br>
+    <b>What is kept, and what is thrown away.</b> Only records with a release component survive — an import permit or an interstate movement permit is not an environmental release, and most rows in the source are one of those. Only records that were never authorised are dropped — withdrawn, denied, void, returned, cancelled. Everything that was granted stays, including permits that have since lapsed, because a trial that ran in 1994 happened whether or not the paperwork is still in date. Lapsed ones are marked and the “Show dormant / defunct” switch controls them.<br><br>
+    <b>One circle per area, numbered.</b> Below zoom 9 the map draws a single circle for each area rather than one dot per record, sized by how many records sit under it — area tracks the count, so a hundred records reads as ten times one, not a hundred times. Click it for the list. Above that zoom the individual records draw again.<br><br><b>Almost none of them is a site.</b> APHIS publishes the states a release is authorised in and never the coordinates, so every record sits at a state centroid and is marked imprecise. A circle over a state capital means <i>the register gave states, not sites</i>. To find the actual ground, take the authorisation number to the agency. **Australia's OGTR is the only regulator in the world that publishes field trial sites**, and those are the only release points here drawn where the thing actually is.<br><br>
     <b>Scale is a sorting aid, not a measurement.</b> The current system publishes a count of declared release locations and nothing about area. Its predecessor published acreage, which is carried through where a record has it — so some older entries can say &ldquo;20 acres&rdquo; and newer ones cannot. The newer system publishes less about scale than the one it replaced.<br><br>
     <b>Confidential business information.</b> Where an applicant claimed CBI, the trait description in the source arrives partly redacted as [CBI]. Those records say so in their own description rather than presenting a redacted list as if it were complete.<br><br>
     <b class="hl-sec">Why the rest of the world is not here yet</b><br>
@@ -2075,7 +2093,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   }
   var PC={5:"#8fc46a",4:"#7fc0a8",3:"#6fb8c4",2:"#7aa8cc",1:"#8f9fd0"}, INDC={5:"#f2d06b",4:"#e8bf5c",3:"#dcae4e",2:"#cf9d42",1:"#c08c38"}, ESCC={5:"#ef6a5a",4:"#e35b70",3:"#d45086",2:"#c04a97",1:"#a8479f"}, PR={5:15,4:12,3:9,2:7,1:5};
   try{ if(typeof map!=='undefined' && map.createPane && !map.getPane('projPane')){ map.createPane('projPane'); map.getPane('projPane').style.zIndex=620; } }catch(_e){}
-  window.PJ_CLICK_MINZ=6;
+  window.PJ_CLICK_MINZ=2 /* was 6: right when a world-zoom dot was a two-pixel speck, wrong now that clustering draws a large numbered circle over a country at zoom 3 */;
   try{ if(typeof map!=='undefined' && map.on){ map.on('zoomend', function(){ var _pn=map.getPane&&map.getPane('projPane'); if(_pn) _pn.style.pointerEvents=(map.getZoom()>=PJ_CLICK_MINZ?'auto':'none'); }); } }catch(_e){}
   var _projRenderer=(typeof map!=='undefined' && L && L.svg)?L.svg({pane:'projPane'}):null;
   function stars(n){return Array(n+1).join("\u2605")+Array(6-n).join("\u2606");}
@@ -2335,7 +2353,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       var i=p.impact||1, kd=pjKind(p), o={la:p.lat+((_pjFan&&_pjFan[k]&&_pjFan[k][1])||0),lo:p.lng+((_pjFan&&_pjFan[k]&&_pjFan[k][0])||0),i:i,c:(kd==="industry"?(OTC[p.otype]||INDC[i]):kd==="escape"?ESCC[i]:PC[i])||"#8fa0b8",ot:(p.otype||"company"),ap:(p.precise===false),kd:kd,p:p};
       pts.push(o); var gk=Math.floor(o.la)+"|"+Math.floor(o.lo); (grid[gk]||(grid[gk]=[])).push(o);
     }
-    _pjPts=pts; _pjGrid=grid; _pjShown=pts.length; return pts.length;
+    _pjPts=pts; _pjGrid=grid; _pjShown=pts.length; _pjClu=null; _pjCluZ=null; return pts.length;
   }
   function pjInView(S,N,W,E){ if(!_pjGrid)return []; var out=[],la0=Math.floor(S),la1=Math.floor(N),lo0=Math.floor(W),lo1=Math.floor(E);
     if((la1-la0)*(lo1-lo0)>200000) return _pjPts||[];   // extreme world view: skip grid walk
@@ -2343,6 +2361,89 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       for(var m=0;m<c.length;m++){ var o=c[m]; if(o.la>=S&&o.la<=N&&o.lo>=W&&o.lo<=E) out.push(o); } }
     return out; }
   function pjRad(z,i){ var b=(z<=3?1.5:z<=5?2.1:z<=7?2.9:z<=9?3.7:4.5)*0.72; return b*(i>=5?1.7:i>=4?1.45:i>=3?1.25:i>=2?1.08:1); }
+  // ===== REGION CLUSTERING =====================================================
+  // One glyph per region instead of one per record. The grid is anchored in WORLD
+  // pixel space (map.project at the current zoom), not container space, so a
+  // cluster does not jump around while you pan - it only re-forms on zoom.
+  // Points sharing a coordinate (every state-centroid release record does) always
+  // land in the same cell at every zoom, so a centroid is always one icon.
+  var PJ_CLUSTER_MAXZ = 9;   // above this zoom, draw individual points again
+  var PJ_CELL         = 46;  // cell edge in screen px
+  var _pjClu = null, _pjCluZ = null;
+
+  function pjClusters(z){
+    if(_pjClu && _pjCluZ === z) return _pjClu;
+    var cells = {}, out = [], pts = _pjPts || [], i, g;
+    for(i = 0; i < pts.length; i++){
+      var o  = pts[i];
+      var pp = map.project([o.la, o.lo], z);
+      var k  = Math.floor(pp.x / PJ_CELL) + '|' + Math.floor(pp.y / PJ_CELL);
+      g = cells[k];
+      if(!g){ g = cells[k] = {la:0, lo:0, n:0, m:[], kd:{}, i:0, ap:true}; out.push(g); }
+      g.la += o.la; g.lo += o.lo; g.n++; g.m.push(o);
+      g.kd[o.kd] = (g.kd[o.kd] || 0) + 1;
+      if(o.i > g.i) g.i = o.i;
+      if(o.ap === false) g.ap = false;          // any exact coordinate -> filled
+    }
+    for(i = 0; i < out.length; i++){
+      g = out[i]; g.la /= g.n; g.lo /= g.n;
+      var best = 'release', bn = -1, kk;
+      for(kk in g.kd){ if(g.kd[kk] > bn){ bn = g.kd[kk]; best = kk; } }
+      g.dk = best;                                // dominant kind -> glyph shape
+      g.mixed = Object.keys(g.kd).length > 1;
+      var lead = g.m[0];
+      for(var q = 1; q < g.m.length; q++) if(g.m[q].i > lead.i) lead = g.m[q];
+      g.lead = lead; g.c = lead.c;
+      // how many underlying records, not how many markers
+      var t = 0;
+      for(q = 0; q < g.m.length; q++){
+        var pr = g.m[q].p;
+        t += (pr.records_total || (pr.records && pr.records.length) || 1);
+      }
+      g.total = t;
+    }
+    _pjClu = out; _pjCluZ = z;
+    return out;
+  }
+
+  // Area, not radius, tracks the count: sqrt on the radius keeps 100 records
+  // looking ten times a single one rather than a hundred times.
+  function pjCluRad(z, g){
+    var base = pjRad(z, g.i);
+    if(g.n <= 1) return base * (g.dk === 'release' ? 0.62 : g.dk === 'escape' ? 0.95 : 1.25);
+    return Math.min(base * 1.15 + Math.sqrt(g.total) * 1.7, 27);
+  }
+
+  // Flatten a cluster to one row per underlying record for the panel.
+  function pjCluRows(g){
+    var rows = [];
+    g.m.forEach(function(o){
+      var p = o.p, kids = null;
+      if(p.sources && p.sources.length){
+        kids = [];
+        p.sources.forEach(function(s){ kids = kids.concat(s.records || []); });
+      } else if(p.records && p.records.length){ kids = p.records; }
+      if(kids && kids.length){
+        kids.forEach(function(x){
+          rows.push({ n:x.n||'', d:x.d||'', c:x.c||'', s:x.s||'',
+                      u:x.u||p.url||'', t:x.t||p.type||'', k:o.kd, pl:p.state||'' });
+        });
+      } else {
+        rows.push({ n:p.name||'', d:p.date||'', c:p.company||'', s:p.status||'',
+                    u:p.url||'', t:p.type||'', k:o.kd, pl:p.state||'' });
+      }
+    });
+    return rows;
+  }
+
+  function pjCluTitle(g){
+    var seen = {}, names = [];
+    g.m.forEach(function(o){ var s = o.p.state || ''; if(s && !seen[s]){ seen[s] = 1; names.push(s); } });
+    var where = names.length === 1 ? names[0]
+              : names.length > 1  ? (names.slice(0,2).join(', ') + ' +' + (names.length-2) + ' more')
+              : 'This area';
+    return where + ' \u2014 ' + g.total.toLocaleString() + ' entr' + (g.total===1?'y':'ies');
+  }
   function pjPopupHtml(q){
     var dl="";
     if(q.deadline){ var dd=Math.ceil((new Date(q.deadline)-new Date())/86400000);
@@ -2525,24 +2626,50 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       map.getPane("projPane").appendChild(cv);
       map.on("moveend zoomend viewreset resize",this._draw,this);
       var self=this;
-      this._onClick=function(ev){ if(ev&&ev.target&&ev.target.closest&&ev.target.closest('.leaflet-control'))return;   /* zoom / home buttons sit inside the map container */ if(!pjOn||map.getZoom()<PJ_CLICK_MINZ)return; var cp=map.mouseEventToContainerPoint(ev); var hit=self._nearest(cp);
+      this._onClick=function(ev){ if(ev&&ev.target&&ev.target.closest&&ev.target.closest('.leaflet-control'))return;
+        if(!pjOn||map.getZoom()<PJ_CLICK_MINZ)return;
+        var cp=map.mouseEventToContainerPoint(ev);
+        var g=self._nearestClu(cp);
+        if(g && g.n>1){ ev.stopPropagation(); gbClickTime=Date.now();
+          if(window.pjShowCluster) window.pjShowCluster(pjCluTitle(g), pjCluRows(g));
+          return; }
+        var hit=(g&&g.n===1)?g.m[0]:self._nearest(cp);
         if(hit){ ev.stopPropagation(); gbClickTime=Date.now();
           if(!_pjPopup)_pjPopup=L.popup({maxWidth:320,autoPan:true});
-          _pjPopup.setLatLng([hit.la,hit.lo]).setContent(pjPopupHtml(hit.p)).openOn(map); pjEnrich(hit.p); try{ if(window.pjDrill && window.pjDrill(hit.p)){} else if(window.pjShowRecords) window.pjShowRecords(hit.p); }catch(_e){} } };
+          _pjPopup.setLatLng([hit.la,hit.lo]).setContent(pjPopupHtml(hit.p)).openOn(map); pjEnrich(hit.p);
+          try{ if(window.pjDrill && window.pjDrill(hit.p)){} else if(window.pjShowRecords) window.pjShowRecords(hit.p); }catch(_e){} } };
       map.getContainer().addEventListener("click",this._onClick,true);
       this._draw(); },
     onRemove:function(map){ L.DomUtil.remove(this._cv); map.off("moveend zoomend viewreset resize",this._draw,this);
       if(this._onClick)map.getContainer().removeEventListener("click",this._onClick,true); },
     redraw:function(){ this._draw(); return this; },
-    _draw:function(){ var m=this._map; if(!m)return; var cv=this._cv,s=m.getSize();
+        _draw:function(){ var m=this._map; if(!m)return; var cv=this._cv,s=m.getSize();
       var tl=m.containerPointToLayerPoint([0,0]); L.DomUtil.setPosition(cv,tl); cv.width=s.x; cv.height=s.y;
       var ctx=cv.getContext("2d"); ctx.clearRect(0,0,s.x,s.y); if(!pjOn||!_pjGrid)return;
-      var b=m.getBounds(),z=m.getZoom(),N=b.getNorth(),S=b.getSouth(),W=b.getWest(),E=b.getEast();
-      var vis=pjInView(S,N,W,E);
-      for(var k=0;k<vis.length;k++){ var o=vis[k]; var pt=m.latLngToContainerPoint([o.la,o.lo]);
-        // Releases draw smaller than organisations: an authorisation is one decision,
-        // an organisation is the thing making thousands of them.
-        var r=pjRad(z,o.i)*(o.kd==="release"?0.62:o.kd==="escape"?0.95:1.25);
+      var z=m.getZoom();
+      if(z>PJ_CLUSTER_MAXZ){ this._drawSingles(ctx,s,z); return; }
+      var cl=pjClusters(z), pad=40;
+      for(var k=0;k<cl.length;k++){ var g=cl[k];
+        var pt=m.latLngToContainerPoint([g.la,g.lo]);
+        if(pt.x<-pad||pt.y<-pad||pt.x>s.x+pad||pt.y>s.y+pad) continue;
+        if(g.n===1){ this._glyph(ctx,pt,g.m[0],pjCluRad(z,g)); continue; }
+        var r=pjCluRad(z,g);
+        ctx.globalAlpha=0.22; ctx.beginPath(); ctx.arc(pt.x,pt.y,r+3.5,0,6.2832);
+        ctx.fillStyle=g.c; ctx.fill(); ctx.globalAlpha=1;
+        ctx.beginPath(); ctx.arc(pt.x,pt.y,r,0,6.2832);
+        ctx.fillStyle=g.c; ctx.fill();
+        ctx.lineWidth=g.mixed?2:1.2; ctx.strokeStyle=g.mixed?"#eaf1ff":"#0a1020"; ctx.stroke();
+        if(r>=9){ var lab=g.total>999?(Math.round(g.total/100)/10)+"k":String(g.total);
+          ctx.font="700 "+Math.max(9,Math.min(13,Math.round(r*0.82)))+"px system-ui,sans-serif";
+          ctx.textAlign="center"; ctx.textBaseline="middle";
+          ctx.fillStyle="#0a1020"; ctx.fillText(lab,pt.x,pt.y+0.5); }
+      } },
+    _drawSingles:function(ctx,s,z){ var m=this._map;
+      var b=m.getBounds(), vis=pjInView(b.getSouth(),b.getNorth(),b.getWest(),b.getEast());
+      for(var k=0;k<vis.length;k++){ var o=vis[k];
+        this._glyph(ctx,m.latLngToContainerPoint([o.la,o.lo]),o,
+          pjRad(z,o.i)*(o.kd==="release"?0.62:o.kd==="escape"?0.95:1.25)); } },
+    _glyph:function(ctx,pt,o,r){
         if(o.kd==="industry"){
           var d=r*1.7;
           if(o.ap){ ctx.globalAlpha=0.20; ctx.fillStyle=o.c; ctx.fillRect(pt.x-d/2,pt.y-d/2,d,d); ctx.globalAlpha=1;
@@ -2561,8 +2688,15 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
             ctx.beginPath(); ctx.arc(pt.x,pt.y,r+1,0,6.2832); ctx.lineWidth=1.3; ctx.strokeStyle=o.c; ctx.stroke(); }
           else { ctx.beginPath(); ctx.arc(pt.x,pt.y,r,0,6.2832); ctx.fillStyle=o.c; ctx.fill();
             if(r>=2.2){ ctx.lineWidth=1; ctx.strokeStyle="#0a1020"; ctx.stroke(); } }
-        }
-      } },
+        } },
+    _nearestClu:function(cp){ var m=this._map,z=m.getZoom();
+      if(z>PJ_CLUSTER_MAXZ) return null;
+      var cl=pjClusters(z), best=null, bd=1e9;
+      for(var i=0;i<cl.length;i++){ var g=cl[i];
+        var pt=m.latLngToContainerPoint([g.la,g.lo]);
+        var d=Math.hypot(pt.x-cp.x,pt.y-cp.y), rr=pjCluRad(z,g)+5;
+        if(d<=rr&&d<bd){ bd=d; best=g; } }
+      return best; },
     _nearest:function(cp){ var m=this._map,z=m.getZoom();
       var ll=m.containerPointToLatLng(cp), ll2=m.containerPointToLatLng([cp.x+16,cp.y+16]);
       var dla=Math.abs(ll2.lat-ll.lat)+0.02, dlo=Math.abs(ll2.lng-ll.lng)+0.02;
@@ -2613,10 +2747,10 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       });
     }
     function fromGz(){
-      return fetch('projects.json.gz'+bust,{cache:'no-store'}).then(parseGzResponse);
+      return fetch('projects.json.gz'+bust,{cache:'no-store'}).then(parseGzResponse).then(function(d){return pjReport('projects.json.gz',d);});
     }
     function fromPlain(){
-      return fetch('projects.json'+bust,{cache:'no-store'}).then(function(r){return r.ok?r.json():Promise.reject('http '+r.status);});
+      return fetch('projects.json'+bust,{cache:'no-store'}).then(function(r){return r.ok?r.json():Promise.reject('http '+r.status);}).then(function(d){return pjReport('projects.json',d);});
     }
     function mergeIn(fetched){
       // The embedded set is the hand-built points; the fetched file is whatever the
@@ -3060,19 +3194,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
   setTimeout(function(){ clearInterval(t); },30000);
 })();
 </script>
-<div id="guideNote">
-  <b>Two guides</b>
-  If you have found something specific you want to stop, or you want to work on the
-  industry itself, both guides are in the left rail. They are plain language, free,
-  and describe lawful methods only.
-</div>
 <style>
-#guideNote{position:absolute;top:12px;right:12px;z-index:640;max-width:214px;
-  background:rgba(8,14,32,0.93);border:1px solid rgba(127,168,204,0.35);border-radius:9px;
-  padding:9px 11px;font-size:10.5px;line-height:1.5;color:#c3cee0;}
-#guideNote b{color:#7fa8cc;display:block;font-size:9px;letter-spacing:.5px;
-  text-transform:uppercase;margin-bottom:4px;}
-@media (max-width:820px){#guideNote{display:none;}}
+@media (max-width:820px){}
 </style>
 <script>
 (function(){
@@ -3084,36 +3207,132 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     box=document.createElement('div'); box.id='recList';
     box.innerHTML='<div id="recHead"><span id="recTitle"></span>'
       +'<span id="recClose" title="close">&times;</span></div>'
-      +'<div id="recSort"></div><div id="recBody"></div>';
+      +'<div id="recFilt"></div><div id="recSort"></div><div id="recBody"></div>';
     document.body.appendChild(box);
     box.querySelector('#recClose').addEventListener('click',function(){ box.style.display='none'; });
     document.addEventListener('keydown',function(e){ if(e.key==='Escape') box.style.display='none'; });
     return box;
   }
-  var state={rows:[],by:'d',dir:-1,title:''};
+    var state={rows:[],by:'d',dir:-1,title:'',q:'',type:'',kind:'',yrs:0,cap:500};
+
+  function recPass(o){
+    if(state.type && (o.t||'')!==state.type) return false;
+    if(state.kind && (o.k||'')!==state.kind) return false;
+    if(state.q){
+      var s=((o.n||'')+' '+(o.c||'')+' '+(o.s||'')+' '+(o.pl||'')+' '+(o.t||'')).toLowerCase();
+      if(s.indexOf(state.q)<0) return false;
+    }
+    if(state.yrs){
+      if(!o.d) return false;
+      var t=Date.parse(o.d); if(isNaN(t)) return false;
+      if((Date.now()-t)/31557600000 > state.yrs) return false;
+    }
+    return true;
+  }
+
+  // The filter bar is rebuilt per open because the type list is whatever this
+  // region actually contains - a fixed list would offer types with nothing behind
+  // them, and hide types the harvester added since.
+  function recFilterBar(){
+    var types={}, kinds={}, i;
+    for(i=0;i<state.rows.length;i++){
+      var t=state.rows[i].t||''; if(t) types[t]=(types[t]||0)+1;
+      var k=state.rows[i].k||''; if(k) kinds[k]=(kinds[k]||0)+1;
+    }
+    var tk=Object.keys(types).sort(function(a,b){return types[b]-types[a];});
+    var KL={industry:'Organisations',escape:'Spread',release:'Release authorisations'};
+    var h='<input id="recQ" placeholder="filter these entries\u2026" value="'+(state.q||'').replace(/"/g,'&quot;')+'">';
+    if(tk.length>1){
+      h+='<select id="recType"><option value="">All types ('+state.rows.length+')</option>';
+      tk.forEach(function(t){
+        h+='<option value="'+t.replace(/"/g,'&quot;')+'"'+(state.type===t?' selected':'')+'>'
+          +t.slice(0,44)+' ('+types[t]+')</option>';
+      });
+      h+='</select>';
+    }
+    var kk=Object.keys(kinds);
+    if(kk.length>1){
+      h+='<div class="rec-pills">';
+      h+='<span class="rec-pill'+(state.kind===''?' on':'')+'" data-k="">All</span>';
+      kk.forEach(function(k){
+        h+='<span class="rec-pill'+(state.kind===k?' on':'')+'" data-k="'+k+'">'
+          +(KL[k]||k)+' '+kinds[k]+'</span>';
+      });
+      h+='</div>';
+    }
+    h+='<div class="rec-pills">';
+    [[0,'Any date'],[1,'12 months'],[5,'5 years'],[10,'10 years']].forEach(function(p){
+      h+='<span class="rec-pill'+(state.yrs===p[0]?' on':'')+'" data-y="'+p[0]+'">'+p[1]+'</span>';
+    });
+    h+='</div>';
+    return h;
+  }
+
   function draw(){
-    var r=state.rows.slice();
+    var box=ensure();
+    var all=state.rows, r=[];
+    for(var i=0;i<all.length;i++) if(recPass(all[i])) r.push(all[i]);
+    var shown=r.length;
     r.sort(function(a,b){
       var x=(a[state.by]||''), y=(b[state.by]||'');
       return x<y?-state.dir:x>y?state.dir:0;
     });
+    var truncated = r.length > state.cap;
+    if(truncated) r = r.slice(0, state.cap);
     var h='';
     r.forEach(function(o){
       h+='<div class="rec-row">'
         +(o.u?('<a href="'+o.u+'" target="_blank" rel="noopener">'+o.n+'</a>'):('<span>'+o.n+'</span>'))
-        +'<div class="rec-meta">'+[o.d,o.c,o.s].filter(Boolean).join(' \u00b7 ')+'</div></div>';
+        +'<div class="rec-meta">'+[o.d,o.c,o.t,o.s].filter(Boolean).join(' \u00b7 ')+'</div></div>';
     });
-    ensure().querySelector('#recBody').innerHTML=h||'<div class="rec-meta">No records.</div>';
-    var sb=ensure().querySelector('#recSort');
-    sb.innerHTML=[['d','Date'],['n','Name'],['c','Holder'],['s','Status']].map(function(p){
-      return '<span class="rec-sort'+(state.by===p[0]?' on':'')+'" data-by="'+p[0]+'">'+p[1]
-        +(state.by===p[0]?(state.dir<0?' \u25be':' \u25b4'):'')+'</span>';}).join('');
+    if(truncated) h+='<div class="rec-meta" style="padding:7px 0">Showing the first '
+      +state.cap+' of '+shown+'. Narrow the filters above to see the rest.</div>';
+    box.querySelector('#recBody').innerHTML=h||'<div class="rec-meta">Nothing matches these filters.</div>';
+
+    var fb=box.querySelector('#recFilt');
+    if(fb && !fb.dataset.live){
+      fb.innerHTML=recFilterBar(); fb.dataset.live='1';
+      fb.addEventListener('input',function(e){
+        if(e.target.id==='recQ'){ state.q=e.target.value.trim().toLowerCase(); draw(); }
+      });
+      fb.addEventListener('change',function(e){
+        if(e.target.id==='recType'){ state.type=e.target.value; draw(); }
+      });
+      fb.addEventListener('click',function(e){
+        var p=e.target.closest('.rec-pill'); if(!p)return;
+        if(p.hasAttribute('data-k')) state.kind=p.getAttribute('data-k');
+        else state.yrs=+p.getAttribute('data-y');
+        fb.querySelectorAll('.rec-pill').forEach(function(x){
+          var on = x.hasAttribute('data-k') ? (x.getAttribute('data-k')===state.kind)
+                                            : (+x.getAttribute('data-y')===state.yrs);
+          x.classList.toggle('on',on);
+        });
+        draw();
+      });
+    }
+
+    var sb=box.querySelector('#recSort');
+    sb.innerHTML='<span class="rec-n">'+shown.toLocaleString()+' of '+all.length.toLocaleString()+'</span>'
+      +[['d','Date'],['n','Name'],['c','Holder'],['t','Type'],['s','Status']].map(function(p){
+        return '<span class="rec-sort'+(state.by===p[0]?' on':'')+'" data-by="'+p[0]+'">'+p[1]
+          +(state.by===p[0]?(state.dir<0?' \u25be':' \u25b4'):'')+'</span>';}).join('');
     sb.onclick=function(e){
       var b=e.target.dataset&&e.target.dataset.by; if(!b)return;
       if(state.by===b) state.dir=-state.dir; else { state.by=b; state.dir=-1; }
       draw();
     };
   }
+
+  window.pjShowCluster=function(title,rows){
+    state.rows=rows; state.by='d'; state.dir=-1;
+    state.q=''; state.type=''; state.kind=''; state.yrs=0;
+    var b=ensure();
+    var fb=b.querySelector('#recFilt'); if(fb) fb.dataset.live='';
+    b.querySelector('#recTitle').textContent=title;
+    b.style.display='flex';
+    draw();
+    return true;
+  };
   // A marker holding several registers lists each one with its count, collapsed.
   // Provenance only starts to matter once you have found the place, so it is one
   // click in rather than three markers stacked on top of each other.
@@ -3131,6 +3350,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
       var row=e.target.closest('.rec-src'); if(!row)return;
       var src=p.sources[+row.dataset.ix];
       state.rows=src.records; state.by='d'; state.dir=-1;
+    state.q=''; state.type=''; state.kind=''; state.yrs=0;
+    var _fb=ensure().querySelector('#recFilt'); if(_fb) _fb.dataset.live='';
       b.querySelector('#recTitle').textContent=(p.name||'Records')+' \u2014 '+src.label+' ('+src.n+')';
       b.querySelector('#recBody').onclick=null;
       draw();
@@ -3145,6 +3366,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     if(p&&p.sources&&p.sources.length){ drawSources(p); return true; }
     if(!p||!p.records||!p.records.length) return false;
     state.rows=p.records; state.by='d'; state.dir=-1;
+    state.q=''; state.type=''; state.kind=''; state.yrs=0;
+    var _fb=ensure().querySelector('#recFilt'); if(_fb) _fb.dataset.live='';
     var b=ensure();
     var extra=(p.records_total&&p.records_total>p.records.length)
       ? (' \u2014 showing '+p.records.length+' of '+p.records_total) : (p.records.length>1?(' \u2014 '+p.records.length+' records'):'');
@@ -3170,6 +3393,20 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
 .rec-row{padding:5px 0;border-bottom:1px solid rgba(127,168,204,0.10);line-height:1.35;}
 .rec-row a{color:#9dc0dd;text-decoration:none;} .rec-row a:hover{text-decoration:underline;}
 .rec-meta{color:#7d8ba1;font-size:9.5px;margin-top:2px;}
+#recFilt{display:flex;flex-direction:column;gap:6px;padding:7px 10px;
+  border-bottom:1px solid rgba(127,168,204,0.16);flex:0 0 auto;}
+#recFilt input,#recFilt select{width:100%;background:rgba(127,168,204,0.08);
+  border:1px solid rgba(127,168,204,0.32);border-radius:6px;color:#dce6f5;
+  font-size:10.5px;padding:5px 7px;outline:none;font-family:inherit;}
+#recFilt input:focus,#recFilt select:focus{border-color:#9dc0dd;}
+#recFilt option{background:#0a1020;color:#dce6f5;}
+.rec-pills{display:flex;flex-wrap:wrap;gap:4px;}
+.rec-pill{cursor:pointer;font-size:9px;padding:3px 7px;border-radius:9px;
+  border:1px solid rgba(127,168,204,0.30);color:#8fa0b8;white-space:nowrap;user-select:none;}
+.rec-pill:hover{border-color:#9dc0dd;color:#c8d4e8;}
+.rec-pill.on{background:rgba(127,168,204,0.20);border-color:#9dc0dd;color:#eaf1ff;font-weight:700;}
+#recSort .rec-n{color:#6f7f96;margin-right:auto;}
+#recSort{align-items:center;}
 .rec-src{display:flex;align-items:center;gap:6px;padding:7px 0;cursor:pointer;border-bottom:1px solid rgba(127,168,204,0.12);line-height:1.35;}
 .rec-src:hover{color:#eaf1ff;}
 .rec-open{margin-left:auto;color:#7fa8cc;font-size:9.5px;}
