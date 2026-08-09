@@ -3365,7 +3365,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     // drawn in the list where you can see the counts without opening anything.
     // Sorting happens before grouping, so every leaf in the tree comes out in
     // the chosen order rather than only the flat list being sorted.
-    var by = state.by || 'd', dir = state.dir || -1;
+    if(!window.pjSortBy){ window.pjSortBy = 'd'; window.pjSortDir = -1; }
+    var by = state.by || window.pjSortBy, dir = state.dir || window.pjSortDir;
     r.sort(function(a, b){
       var x = String(a[by] || ''), y = String(b[by] || '');
       return x < y ? -dir : x > y ? dir : 0;
@@ -3375,11 +3376,6 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     if(fb){
       fb.innerHTML = '<input id="recQ" placeholder="filter these records\u2026" value="'
         + (state.q||'').replace(/"/g,'&quot;') + '">'
-        + '<span class="rec-sorts">sort '
-        + [['d','date'],['n','name'],['t','type'],['c','holder'],['s','status']].map(function(o){
-            return '<span class="rec-s'+(state.by===o[0]?' on':'')+'" data-by="'+o[0]+'">'+o[1]
-                 + (state.by===o[0]?(state.dir<0?' \u25be':' \u25b4'):'')+'</span>';
-          }).join('') + '</span>'
         + '<span class="rec-count">' + r.length + ' of ' + state.rows.length + '</span>'
         + '<div class="rec-note">No register on this map publishes where a release actually happened. APHIS gives the states a permit covers and the number of sites in each, never the coordinates; decisions filed under the Cartagena Protocol are national instruments with no site at all. So a marker is a state or a country, never a field. Click a country to break it into states. <b>Australia\u2019s OGTR is the only regulator in the world that publishes field trial sites.</b></div>';
       fb.onclick = function(e){
@@ -3395,6 +3391,13 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     var body = ensure().querySelector('#recBody');
     body.innerHTML = window.pjTreeHtml(tree, state.open || (state.open = {}));
     body.onclick = function(e){
+      var sb = e.target.dataset && e.target.dataset.by;
+      if(sb){                       // a sort control, not the heading itself
+        if(window.pjSortBy === sb) window.pjSortDir = -window.pjSortDir;
+        else { window.pjSortBy = sb; window.pjSortDir = -1; }
+        state.by = window.pjSortBy; state.dir = window.pjSortDir;
+        draw(); return;
+      }
       var node = e.target.closest('.tr-cat, .tr-leaf');
       if(!node) return;
       var k = node.dataset.k;
@@ -3591,9 +3594,20 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
       var lk = Object.keys(leaves).sort(function(a,b){ return leaves[b].length - leaves[a].length; });
       var tot = 0; lk.forEach(function(k){ tot += leaves[k].length; });
       var oc = !!open['c:'+cat];
+      // Sorting belongs to the category you are reading, not to the whole panel.
+      // At the top it applied to everything and was visible even when nothing was
+      // open; here it appears only on an expanded heading, beside what it sorts.
+      var sorts = '';
+      if(oc){
+        sorts = '<span class="rec-sorts">'
+          + [['d','date'],['n','name'],['t','type'],['c','detail'],['s','status']].map(function(o){
+              return '<span class="rec-s'+(window.pjSortBy===o[0]?' on':'')+'" data-by="'+o[0]+'">'+o[1]
+                   + (window.pjSortBy===o[0]?(window.pjSortDir<0?' \u25be':' \u25b4'):'')+'</span>';
+            }).join('') + '</span>';
+      }
       h += '<div class="tr-cat" data-k="c:'+cat.replace(/"/g,'&quot;')+'">'
          + '<span class="tr-tw">'+(oc?'\u25be':'\u25b8')+'</span>'+cat
-         + '<span class="kcount"> ('+tot+')</span></div>';
+         + '<span class="kcount"> ('+tot+')</span>' + sorts + '</div>';
       if(!oc) return;
       lk.forEach(function(leaf){
         var rs = leaves[leaf];
