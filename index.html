@@ -2789,7 +2789,17 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
           try{ if(window.pjDrill && window.pjDrill(hit.p)){ if(_pjPopup) map.closePopup(_pjPopup); return; } }catch(_e){}
           if(!_pjPopup)_pjPopup=L.popup({maxWidth:320,autoPan:true});
           _pjPopup.setLatLng([hit.la,hit.lo]).setContent(pjPopupHtml(hit.p)).openOn(map); pjEnrich(hit.p);
-          try{ if(window.pjShowRecords) window.pjShowRecords(hit.p); }catch(_e){} } };
+          try{ if(window.pjShowRecords) window.pjShowRecords(hit.p); }catch(_e){} return; }
+        // Nothing under the click. If a country is open, that is the way back:
+        // click the empty map and the states fold up into the national icon
+        // again. Hunting for a marker you have just buried under fifty others is
+        // not a way out of a view.
+        try{
+          if(window.pjExpanded && window.pjExpanded.size){
+            window.pjExpanded.clear();
+            if(window.pjRefresh) window.pjRefresh();
+          }
+        }catch(_e){} };
       map.getContainer().addEventListener("click",this._onClick,true);
       this._draw(); },
     onRemove:function(map){ L.DomUtil.remove(this._cv); map.off("moveend zoomend viewreset resize",this._draw,this);
@@ -3409,7 +3419,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     if(box) return box;
     box=document.createElement('div'); box.id='recList';
     box.innerHTML='<div id="recHead"><span id="recTitle"></span>'
-      +'<div class="rec-note" id="recNote"><b>No government publishes where an engineered release actually happens.</b> In the United States, APHIS names the states a permit covers and counts the sites in each, but never says where those sites are \u2014 and one permit often covers several states at once, so a record can be counted in one state while naming others. Decisions filed under the Cartagena Protocol, the international biosafety treaty, apply to a whole country and have no site at all. Every dot therefore sits at the middle of a state or a country, not at a place anything was planted.<br><br><b>Why the United States has a national dot and state dots.</b> Two different kinds of record. Permits to plant or release name the states they cover, so they show up as state dots. Records that belong to the country as a whole \u2014 national biosafety decisions, gene therapy trial sponsors \u2014 name no state, so they gather on a single national dot in the middle of the country. Clicking it opens those national records and puts the states on the map beside it. Clicking it again puts them away.<br><br><b>One exception.</b> Australia\u2019s regulator, the OGTR, publishes the actual locations of field trials. It is the only one in the world that does.</div>'
+      +'<div class="rec-note" id="recNote"><b>No government publishes where an engineered release actually happens.</b> In the United States, APHIS names the states a permit covers and counts the sites in each, but never says where those sites are \u2014 and one permit often covers several states at once, so a record can be counted in one state while naming others. Decisions filed under the Cartagena Protocol, the international biosafety treaty, apply to a whole country and have no site at all. Every dot therefore sits at the middle of a state or a country, not at a place anything was planted.<br><br><b>Why the United States has a national dot and state dots.</b> Two different kinds of record. Permits to plant or release name the states they cover, so they show up as state dots. Records that belong to the country as a whole \u2014 national biosafety decisions, gene therapy trial sponsors \u2014 name no state, so they gather on a single national dot in the middle of the country. Clicking it opens those national records and puts the states on the map beside it. To put them away again, click the national dot a second time \u2014 or click any empty part of the map.<br><br><b>One exception.</b> Australia\u2019s regulator, the OGTR, publishes the actual locations of field trials. It is the only one in the world that does.</div>'
       +'<span id="recClose" title="close">&times;</span></div>'
       +'<div id="recFilt"></div><div id="recSort"></div><div id="recBody"></div>';
     document.body.appendChild(box);
