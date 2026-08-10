@@ -2270,7 +2270,12 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     if(statusEl) statusEl.textContent=" loading\u2026";
     fetch('overlays/'+k+'.geojson').then(function(r){ if(!r.ok) throw 0; return r.json(); })
       .then(function(gj){
-        var lyr=L.geoJSON(gj,{style:function(f){ var p=(f&&f.properties)||{}; if(k==='regime'){ var rc=REGIMEC[p.regime]||'#8e7cc3'; if(!REGIMEON.has(p.regime)) return {opacity:0,fillOpacity:0,weight:0,interactive:false}; return {color:rc,weight:2.2,opacity:0.95,fillColor:rc,fillOpacity:0.06}; }
+        var lyr=L.geoJSON(gj,{style:function(f){ var p=(f&&f.properties)||{}; if(k==='regime'){ var rc=REGIMEC[p.regime]||'#8e7cc3'; if(!REGIMEON.has(p.regime)) return {opacity:0,fillOpacity:0,weight:0,interactive:false}; /* Boundary only. A fill puts a wash over the whole country and everything
+                    drawn inside it - the dots, the drilled subregions - reads as though it
+                    were shaded too. The regime is a fact about the country, so it is drawn
+                    on the country's edge. fillOpacity stays barely above zero so the shape
+                    is still clickable for its popup. */
+                 return {color:rc,weight:2.8,opacity:0.95,fillColor:rc,fillOpacity:0.012}; }
                  var c=((meta&&meta.color)||'#c98a2a'); return _ovStyle(c); },
           onEachFeature:function(f,l){ var p=(f&&f.properties)||{}; var nm=p.name||p.NAME||p.title||k;
             var sub=(k==='regime'&&REGIMEL[p.regime])?('<br><span style="color:#7fa8cc;font-weight:600">'+REGIMEL[p.regime]+'</span><span style="font-size:10.5px;line-height:1.55;display:block;margin-top:6px;max-width:340px;color:#c3cee0">'+(REGIMED[p.regime]||'')+'</span>'):''; l.bindPopup('<b>'+String(nm)+'</b>'+sub+'<br><span style="font-size:10px;opacity:.8">'+((meta&&meta.label)||k)+' \u2014 area, not a project point</span>'); }});
@@ -2526,9 +2531,34 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     DC:'District of Columbia', PR:'Puerto Rico', VI:'US Virgin Islands',
     GU:'Guam', AS:'American Samoa', MP:'Northern Mariana Islands'
   };
-  function pjPlaceName(x){
+  // Country codes cannot share a table with state codes: CA is California and
+  // Canada, CO is Colorado and Colombia, ID is Idaho and Indonesia, DE is
+  // Delaware and Germany. Which table applies is decided by the register the
+  // record came from - APHIS files states, everyone else files countries.
+  var PJ_COUNTRY = {
+    AR:'Argentina', AT:'Austria', AU:'Australia', BD:'Bangladesh', BE:'Belgium',
+    BF:'Burkina Faso', BG:'Bulgaria', BO:'Bolivia', BR:'Brazil', CA:'Canada',
+    CH:'Switzerland', CL:'Chile', CN:'China', CO:'Colombia', CR:'Costa Rica',
+    CU:'Cuba', CZ:'Czechia', DE:'Germany', DK:'Denmark', EG:'Egypt',
+    ES:'Spain', ET:'Ethiopia', EU:'European Union', FI:'Finland', FR:'France',
+    GB:'United Kingdom', GH:'Ghana', GR:'Greece', HU:'Hungary', ID:'Indonesia',
+    IE:'Ireland', IL:'Israel', IN:'India', IR:'Iran', IT:'Italy', JP:'Japan',
+    KE:'Kenya', KR:'South Korea', MA:'Morocco', MX:'Mexico', MY:'Malaysia',
+    NG:'Nigeria', NL:'Netherlands', NO:'Norway', NZ:'New Zealand', PE:'Peru',
+    PH:'Philippines', PK:'Pakistan', PL:'Poland', PT:'Portugal', PY:'Paraguay',
+    RO:'Romania', RU:'Russia', SD:'Sudan', SE:'Sweden', SG:'Singapore',
+    SK:'Slovakia', SZ:'Eswatini', TH:'Thailand', TR:'T\u00fcrkiye', TW:'Taiwan',
+    TZ:'Tanzania', UA:'Ukraine', UY:'Uruguay', VN:'Viet Nam', ZA:'South Africa',
+    ZM:'Zambia'
+  };
+  try{ window.PJ_COUNTRY = PJ_COUNTRY; }catch(e){}
+
+  function pjPlaceName(x, source){
     var t = String(x || '').trim();
-    return (t.length === 2 && PJ_PLACE[t.toUpperCase()]) ? PJ_PLACE[t.toUpperCase()] : t;
+    if(t.length !== 2) return t;
+    var u = t.toUpperCase();
+    if(String(source || '').indexOf('aphis') === 0) return PJ_PLACE[u] || u;
+    return PJ_COUNTRY[u] || PJ_PLACE[u] || u;
   }
 
   function pjCluTitle(g){
@@ -2548,7 +2578,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       if(!raw) return;
       var head = (raw.split(',')[0] || '').trim();
       if(!head) return;
-      head = pjPlaceName(head);
+      head = pjPlaceName(head, o.p && o.p.source);
       first[head] = (first[head] || 0) + 1; n++;
     });
     var keys = Object.keys(first).sort(function(a, b){ return first[b] - first[a]; });
@@ -4032,11 +4062,28 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     var h = '';
     tree.order.forEach(function(cat){
       var leaves = tree.cats[cat];
+      // Leaves follow the chosen sort. They were always ordered by size, so
+      // clicking "name" or "date" reordered records that were still hidden
+      // inside collapsed leaves and the panel appeared not to respond at all.
+      var _sb = window.pjSortBy || 'd', _sd = window.pjSortDir || -1;
+      function _leafRank(k){
+        var rs = leaves[k];
+        if(_sb === 'd'){
+          var newest = '';
+          for(var q = 0; q < rs.length; q++){ var dv = String(rs[q].d || ''); if(dv > newest) newest = dv; }
+          return newest;
+        }
+        return String(k || '').toLowerCase();
+      }
       var lk = Object.keys(leaves).sort(function(a,b){
         // "Other" is the leftovers wherever it appears - category or leaf - so
-        // it sorts last on name rather than on size.
+        // it sorts last by name rather than by size or date.
         if(a === 'Other') return 1;
         if(b === 'Other') return -1;
+        if(_sb === 'n' || _sb === 't' || _sb === 'd'){
+          var x = _leafRank(a), y = _leafRank(b);
+          if(x !== y) return x < y ? -_sd : _sd;
+        }
         return leaves[b].length - leaves[a].length;
       });
       var tot = 0; lk.forEach(function(k){ tot += leaves[k].length; });
@@ -4112,12 +4159,26 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     return total + ' trial' + (total === 1 ? '' : 's') + ': ' + bits.join(', ');
   }
 
+  // Registers title their own summary rows with the country code they file
+  // under - "IT \u2014 1 biosafety decision filed". The code is the register's
+  // shorthand, not a name, and it is the first thing a reader sees on the row.
+  function _expandName(n){
+    var t = String(n == null ? '' : n);
+    var m = /^([A-Za-z]{2})(\s*[\u2012-\u2015-]\s+)/.exec(t);
+    if(!m) return t;
+    var map = window.PJ_COUNTRY || {};
+    var full = map[m[1].toUpperCase()];
+    return full ? (full + m[2] + t.slice(m[0].length)) : t;
+  }
+
   window.pjPhaseWords = _phaseWords;   // exposed for checking
+  window.pjExpandName = _expandName;
 
   function recLine(o, typeLabel){
     var meta = [typeLabel || o._leaf, o.d, _phaseWords(o.c), o.s].filter(Boolean).join(' \u00b7 ');
-    return (o.u ? ('<a href="'+o.u+'" target="_blank" rel="noopener">'+o.n+'</a>')
-                : ('<span>'+o.n+'</span>'))
+    var nm = _expandName(o.n);
+    return (o.u ? ('<a href="'+o.u+'" target="_blank" rel="noopener">'+nm+'</a>')
+                : ('<span>'+nm+'</span>'))
          + (meta ? '<div class="rec-meta">'+meta+'</div>' : '');
   }
 })();
