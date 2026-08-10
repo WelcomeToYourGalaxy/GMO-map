@@ -71,6 +71,13 @@
   .subrow { display:flex; align-items:flex-start; gap:8px; margin:6px 0; }
   .chip { flex:0 0 auto; display:inline-block; font-size:10px; font-weight:700; padding:3px 9px; border-radius:11px; cursor:pointer; border:1px solid var(--accent-soft); color:#969eb1; user-select:none; transition:all .15s; white-space:nowrap; }
   .chip.on { background:#7fa8cc; color:#0b1220; border-color:#9dc0dd; }
+/* Selected state is set inline at render for the default-on pills, which beats
+   any class rule and left everything toggled afterwards a dimmer shade. One
+   declaration for every selected filter, whichever way it got selected. */
+.chip.on, .dpill.on, .ps-pill.on, .pt-pill.on, .psrc-row input:checked + .psrc-l{
+  background:#7fa8cc !important; color:#0b1220 !important; border-color:#9dc0dd !important; }
+.psrc-row input:checked + .psrc-l{ background:transparent !important; color:#eaf1ff !important; }
+
   .chip:hover { border-color:var(--accent-hi); }
   .sd { font-size:10px; color:#858d9f; line-height:1.4; padding-top:3px; }
   .f-status { margin-top:11px; padding-top:9px; border-top:1px solid rgba(255,255,255,0.08); display:flex; align-items:center; gap:7px; font-size:11px; color:#969eb1; cursor:pointer; }
