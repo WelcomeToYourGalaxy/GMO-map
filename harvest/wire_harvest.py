@@ -245,6 +245,23 @@ _SUB2ISO = sorted(((k, v) for k, v in _seen_sub.items()
                    if k not in _AMBIG and len(k) >= 5), key=lambda x: -len(x[0]))
 
 
+
+# A last gate before anything is kept. Whatever a feed or a query returned, an
+# item has to mention genetic engineering somewhere in its headline to belong on
+# this map. Without this the region pass - which asks by place name - pulls in
+# whatever that place was in the news for.
+_GE_RE = re.compile(
+    r"\b(gmo|gmos|transgenic|genetically\s+modified|gene[- ]edit|gene[- ]editing|"
+    r"crispr|genetic\s+engineering|biosafety|living\s+modified|cisgenic|"
+    r"gene\s+drive|glyphosate|bt\s+(?:cotton|corn|maize|brinjal|eggplant)|"
+    r"golden\s+rice|biotech\s+crop|ogm|transg\u00e9nico|transgenico|"
+    r"gentechnik|\u8f6c\u57fa\u56e0|\u9057\u4f1d\u5b50\u7d44\u63db\u3048)", re.I)
+
+
+def is_ge(item):
+    t = " ".join(str(item.get(k) or "") for k in ("title", "summary", "desc"))
+    return bool(_GE_RE.search(t))
+
 def geotag(item):
     """Set iso and region from the headline. Title only for the country, because
     body text name-drops far too many countries to tag on."""
@@ -327,8 +344,12 @@ def _load_map_subregions():
 # and needs no key. It is the per-region source; the RSS feeds stay as the global
 # layer.
 _GDELT = "https://api.gdeltproject.org/api/v2/doc/doc"
+# Every term here must be specific to genetic engineering. The widening tier
+# used to OR in bare "crop", "agriculture", "livestock", "fishery" and
+# "contamination", which is a food-recall query - a salmonella recall on lettuce
+# matches all five and has nothing to do with this map.
 _GD_TERMS = ("gmo OR transgenic OR \"genetically modified\" OR \"gene edited\" OR "
-             "biotechnology OR seed OR pesticide OR herbicide")
+             "\"gene editing\" OR crispr OR \"genetic engineering\"")
 _GD_STATS = {"ok": 0, "fail": 0, "items": 0}
 
 # Widening tiers for the per-region pass, tried in order until one returns
@@ -338,8 +359,8 @@ _GD_STATS = {"ok": 0, "fail": 0, "items": 0}
 # query returns whatever merely mentions the place, which is how a region filter
 # fills up with irrelevant stories and becomes worse than empty.
 _GD_WIDE = ("gmo OR transgenic OR \"genetically modified\" OR \"gene edited\" OR "
-            "biotechnology OR seed OR pesticide OR herbicide OR agriculture OR "
-            "biosafety OR patent OR crop OR livestock OR fishery OR contamination")
+            "\"gene editing\" OR crispr OR \"genetic engineering\" OR biosafety OR "
+            "\"living modified\" OR cisgenic OR \"gene drive\"")
 _REGION_TIERS = (
     (90,  _GD_TERMS),
     (365, _GD_TERMS),
@@ -635,7 +656,7 @@ def main():
 
         with ThreadPoolExecutor(max_workers=6) as ex:
             for got in ex.map(_one_place, batch):
-                items.extend(got)
+                items.extend([g for g in got if is_ge(g)])
         print("  gdelt: %d ok, %d failed, %d items | widening budget left %d"
               % (_GD_STATS["ok"], _GD_STATS["fail"], _GD_STATS["items"], max(0, budget[0])))
         if _GD_STATS["ok"] == 0 and _GD_STATS["fail"]:
@@ -660,6 +681,15 @@ def main():
             continue
         seen.add(key)
         merged.append(it)
+
+    # One gate over everything that survived, feeds included. The region pass
+    # asks by place name, so without this it returns whatever that place was in
+    # the news for - which is how food recalls reached a genetic engineering map.
+    _before = len(merged)
+    merged = [x for x in merged if is_ge(x)]
+    if _before:
+        print("  relevance gate: kept %d of %d (dropped %d off-topic)"
+              % (len(merged), _before, _before - len(merged)))
 
     merged.sort(key=lambda x: x.get("date", ""), reverse=True)
     merged = merged[:MAX_ITEMS]
