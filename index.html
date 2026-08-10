@@ -3631,6 +3631,12 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
 #recList optgroup{color:#7fa8cc;font-weight:700;font-size:9.5px;text-transform:uppercase;letter-spacing:.4px;}
 #recList optgroup option{color:#c3cee0;font-weight:400;text-transform:none;letter-spacing:0;}
 #recBack{display:none;position:fixed;inset:0;z-index:1190;background:rgba(4,8,20,0.45);}
+/* The backdrop is there so a click on the map dismisses the records panel. It
+   covered the control panels too, at a z-index above them, so with a panel open
+   the first click on a Lens pill was swallowed by the backdrop and the pill
+   never saw it. The controls sit above the backdrop; the map still sits below
+   it, which is the only thing the backdrop was ever for. */
+#sidebar,#rightbar{z-index:1195;}
 .rec-back{color:#7fa8cc;cursor:pointer;padding:4px 0 7px;font-size:9.5px;}
 @media (max-width:820px){#recList{display:none!important;}}
 </style>
@@ -4102,6 +4108,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
       h += '<div class="tr-cat" data-k="c:'+cat.replace(/"/g,'&quot;')+'">'
          + '<span class="tr-tw">'+(oc?'\u25be':'\u25b8')+'</span>'+cat
          + '<span class="kcount"> ('+tot+')</span>' + sorts + '</div>';
+      var gloss = _catNote(cat);
+      if(gloss) h += '<div class="tr-note">'+gloss+'</div>';
       if(!oc) return;
       lk.forEach(function(leaf){
         var rs = leaves[leaf];
@@ -4174,6 +4182,73 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
   window.pjPhaseWords = _phaseWords;   // exposed for checking
   window.pjExpandName = _expandName;
 
+  // A category heading is a term of art from a register. "Environmental release"
+  // and "carve-out" mean nothing to someone arriving cold, and the heading is
+  // the point where they decide whether to open it. One plain line each.
+  var _CAT_NOTE_RAW = {
+    'environmental release':
+      'Permission to grow or release an engineered organism outdoors, outside a laboratory.',
+    'confined field trial':
+      'A trial grown outdoors but fenced about with conditions meant to stop it spreading or being eaten.',
+    'interstate movement':
+      'Permission to move an engineered organism between states, not to plant it.',
+    'national biosafety decisions':
+      'A decision a government filed with the UN biosafety treaty. It covers the whole country, so there is no site attached.',
+    'gene or cell therapy trial sponsor':
+      'An organisation running clinical trials that alter genes inside people.',
+    'regulator, register or trade body':
+      'A body that writes the rules, keeps the public records, or lobbies governments on the industry\u2019s behalf.',
+    'seed & trait company':
+      'A company selling engineered seed, or owning the engineered traits inside seed other firms sell.',
+    'gene editing company':
+      'A company that alters the DNA of living things, usually as a service to others.',
+    'dna synthesis & sequencing':
+      'Companies that read DNA or write it to order. Almost every engineered organism starts as a sequence bought from one of these.',
+    'contract research & manufacturing':
+      'Firms paid to run the studies and make the products that appear under someone else\u2019s name.',
+    'laboratory animal supplier':
+      'Companies and institutes that breed engineered animals for research and sell them.',
+    'livestock & aquaculture company':
+      'Firms engineering farm animals and fish, or the breeding stock behind them.',
+    'assisted reproduction':
+      'Fertility clinics, gamete banks and embryo-screening companies \u2014 genetic selection applied to people.',
+    'clinical & therapeutic company':
+      'Companies developing genetic medicine for patients.',
+    'de-extinction & conservation biotech':
+      'Projects using engineering on wildlife \u2014 reviving lost species, or altering living ones to save them.',
+    'open release programme':
+      'Programmes deliberately releasing engineered organisms into the wild, rather than into a field.',
+    'funder':
+      'Where the money comes from: venture funds, foundations, governments and defence agencies.',
+    'state totals':
+      'How many authorisations each state holds. A count, not a record.',
+    'type not recorded by the register':
+      'The register published no type for these. The gap is the register\u2019s, not the map\u2019s.',
+    'other':
+      'Types that appear only once or twice here. Kept together rather than each sitting alone; every record still carries its own name.'
+  };
+  var _CAT_NOTE = null;
+  function _catNote(label){
+    if(!_CAT_NOTE){
+      _CAT_NOTE = {};
+      Object.keys(_CAT_NOTE_RAW).forEach(function(k){ _CAT_NOTE[_key(k)] = _CAT_NOTE_RAW[k]; });
+    }
+    var k = _key(label);
+    if(_CAT_NOTE[k]) return _CAT_NOTE[k];
+    // Unknown headings still get something, taken from the noun they end on,
+    // so a category the harvesters add tomorrow is not left bare.
+    var w = k.split(' '), last = w[w.length - 1];
+    if(last === 'release')  return 'Permission to put an engineered organism outdoors.';
+    if(last === 'trial')    return 'A supervised test carried out before anything is approved for sale.';
+    if(last === 'permit' || last === 'licence' || last === 'license')
+      return 'A written permission issued by a regulator.';
+    if(last === 'decision' || last === 'approval')
+      return 'A regulator\u2019s ruling on an application.';
+    if(last === 'company' || last === 'supplier')
+      return 'A commercial organisation working in this part of the industry.';
+    return '';
+  }
+
   function recLine(o, typeLabel){
     var meta = [typeLabel || o._leaf, o.d, _phaseWords(o.c), o.s].filter(Boolean).join(' \u00b7 ');
     var nm = _expandName(o.n);
@@ -4194,6 +4269,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
 .tr-leaf{padding:5px 0 5px 15px;color:#c3cee0;}
 .tr-cat:hover,.tr-leaf:hover{color:#7fa8cc;}
 .tr-tw{color:#7fa8cc;font-size:9px;width:9px;flex:0 0 auto;}
+.tr-note{font-size:9px;color:#7d8ba1;line-height:1.45;margin:1px 0 6px 14px;max-width:94%;}
 .tr-rec{padding:4px 0;border-bottom:1px solid rgba(127,168,204,0.08);line-height:1.35;}
 .tr-l1{padding-left:15px;} .tr-l2{padding-left:30px;}
 </style>
