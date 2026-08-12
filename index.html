@@ -470,7 +470,7 @@ function pjReport(which, data){
   <div id="legHead"><span>Map key</span><span id="legTog" onclick="document.getElementById('legend').classList.toggle('collapsed')" title="Show / hide the map key">&#9662;</span></div>
   <div id="legBody">
   
-  <label class="f-status"><input type="checkbox" id="projChk" checked> All map points</label><div class="pj-kinds"><label><input type="checkbox" class="pj-kind" data-kind="industry" checked> <b>Industry</b> — organisations</label><label><input type="checkbox" class="pj-kind" data-kind="escape" checked> <b>Spread &amp; drift</b> — what got out</label><label><input type="checkbox" class="pj-kind" data-kind="release" checked> <b>Releases</b> — authorisations</label></div><div class="ot-head">Release records</div><div class="pj-otypes" id="relBox"></div><div class="ot-head">What they work on</div><div class="pj-otypes" id="subjBox"></div><div class="ot-head">Organisation type</div><div class="pj-otypes" id="otBox"></div><div class="ot-head">Shaded areas &mdash; regulatory regime</div><div class="pj-otypes" id="regBox"></div><div class="ot-head">Shaded areas &mdash; context</div><div class="pj-otypes" id="ovBox"></div>
+  <label class="f-status"><input type="checkbox" id="projChk" checked> All map points</label><div class="pj-kinds"><label><input type="checkbox" class="pj-kind" data-kind="industry" checked> <b>Industry</b> — organisations</label><label><input type="checkbox" class="pj-kind" data-kind="escape" checked> <b>Spread &amp; drift</b> — what got out</label><label><input type="checkbox" class="pj-kind" data-kind="release" checked> <b>Releases</b> — authorisations</label></div><div class="ot-head">Release records</div><div class="pj-otypes" id="relBox"></div><div class="ot-head">What they work on</div><div class="pj-otypes" id="subjBox"></div><div class="ot-head">Organisation type</div><div class="pj-otypes" id="otBox"></div><div class="ot-head">Shaded areas</div><div class="pj-otypes" id="regBox"></div><div class="ot-head">GM zones</div><div class="pj-otypes" id="ovBox"></div>
   <div class="proj-size"><span class="ps-lab">Release scale &mdash; select any</span><span class="ps-pill on" data-ms="all">All</span><span class="ps-pill" data-ms="3">Medium <i>multi-site trial</i></span><span class="ps-pill" data-ms="4">Large <i>regional / multi-season</i></span><span class="ps-pill" data-ms="5">Largest <i>commercial cultivation</i></span></div><div class="proj-size proj-phase"><span class="ps-lab">Consent phase &mdash; select any</span><span class="ps-pill on" data-ph="pre">In review <i>pre-consent &middot; applied / notified / under assessment</i></span><span class="ps-pill on" data-ph="post">Consented <i>post-consent &middot; approved / planted / marketed</i></span></div>
   <div class="proj-search"><input id="projQ" type="search" placeholder="Search releases by organism, trait or applicant…" autocomplete="off"><span id="projQn"></span></div>
   <div class="proj-time"><span class="ps-lab">Filing recency — dated registers</span><span class="pt-pill on" data-tw="0">All ages</span><span class="pt-pill" data-tw="30">≤30d</span><span class="pt-pill" data-tw="90">≤90d</span><span class="pt-pill" data-tw="180">≤6mo</span><span class="pt-pill" data-tw="365">≤1yr</span><label class="pt-und"><input type="checkbox" id="pjUndated" checked> Include undated</label></div><div class="lp-detail collapsed"><div class="lp-detail-head" onclick="this.parentNode.classList.toggle('collapsed')"><span class="lp-car">&#9662;</span> Where this data comes from &amp; what's not (yet) in it</div><div class="lp-detail-body">
@@ -2365,7 +2365,23 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     }catch(e){}
     if(!activeProjSrc.has(pjSrcGroup(p.source))) return false;
     if(!activeProjType.has(pjTypeCat(p))) return false;
-    if(pjQ && (((p.name||"")+" "+(p.type||"")+" "+(p.state||"")).toLowerCase().indexOf(pjQ)<0)) return false;
+    if(pjQ){
+      // A grouped marker is named "Iowa - 2,044 release records" and typed
+      // "Release records, all sources". The crop is inside its records, so
+      // searching only the top-level fields found nothing for "corn" - the
+      // commonest word in the whole dataset. Search the contents too, and
+      // cache the haystack because this runs per point per render.
+      if(p._hay === undefined){
+        var hay = ((p.name||"")+" "+(p.type||"")+" "+(p.state||"")+" "+(p.company||""));
+        if(p.sources) p.sources.forEach(function(sr){
+          (sr.records||[]).forEach(function(r){ hay += " "+(r.n||"")+" "+(r.t||"")+" "+(r.c||""); });
+        });
+        else if(p.records) p.records.forEach(function(r){ hay += " "+(r.n||"")+" "+(r.t||"")+" "+(r.c||""); });
+        try{ Object.defineProperty(p,'_hay',{value:hay.toLowerCase(),enumerable:false}); }
+        catch(e){ p._hay = hay.toLowerCase(); }
+      }
+      if(p._hay.indexOf(pjQ) < 0) return false;
+    }
     if(pjSizes.size && !pjSizes.has(p.impact||1)) return false;
     if(pjPhases.size<2 && !pjPhases.has(pjPhase(p))) return false;
     if(pjHasDate(p)){ if(pjWindow>0 && pjAgeDays(p)>pjWindow) return false; }
@@ -3278,7 +3294,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
   // regime rows: read-only colour key, since the whole overlay has one toggle
   var rb=document.getElementById('regBox');
   if(rb && window.REGIMEC && window.REGIMEL && window.REGIMEON){
-    var h='';
+    var h='<label class="ot-all"><input type="checkbox" id="regAll" checked> <span>All regimes</span></label>';
     ['technique','trait','carveout'].forEach(function(k){
       h+='<label title="'+REGIMEL[k].replace(/"/g,'&quot;')+'">'
         +'<input type="checkbox" data-reg="'+k+'" checked>'
@@ -3288,6 +3304,13 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     h+='<div class="ot-note">Drawn as the country outline, so a context overlay can fill the same country and both stay readable. Unshaded is a gap in this map, not a country without rules \u2014 most have a biosafety law of some kind.</div>';
     rb.innerHTML=h;
     rb.addEventListener('change',function(e){
+      if(e.target.id==='regAll'){
+        var on=e.target.checked;
+        rb.querySelectorAll('input[data-reg]').forEach(function(cb){ cb.checked=on;
+          on?REGIMEON.add(cb.dataset.reg):REGIMEON.delete(cb.dataset.reg); });
+        try{ if(window.pjRestyleOverlays) window.pjRestyleOverlays('regime'); }catch(_e){}
+        return;
+      }
       var k=e.target&&e.target.dataset&&e.target.dataset.reg; if(!k)return;
       if(e.target.checked) REGIMEON.add(k); else REGIMEON.delete(k);
       try{ if(window.pjRestyleOverlays) window.pjRestyleOverlays('regime'); }catch(_e){}
@@ -3439,7 +3462,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     if(box) return box;
     box=document.createElement('div'); box.id='recList';
     box.innerHTML='<div id="recHead"><span id="recTitle"></span>'
-      +'<div class="rec-note" id="recNote"><b>No government publishes where an engineered release actually happens.</b> In the United States, APHIS names the states a permit covers and counts the sites in each, but never says where those sites are \u2014 and one permit often covers several states at once, so a record can be counted in one state while naming others. Decisions filed under the Cartagena Protocol, the international biosafety treaty, apply to a whole country and have no site at all. Every dot therefore sits at the middle of a state or a country, not at a place anything was planted.<br><br><b>Why the United States has a national dot and state dots.</b> Two different kinds of record. Permits to plant or release name the states they cover, so they show up as state dots. Records that belong to the country as a whole \u2014 national biosafety decisions, gene therapy trial sponsors \u2014 name no state, so they gather on a single national dot in the middle of the country. Clicking it opens those national records and puts the states on the map beside it. To put them away again, click the national dot a second time \u2014 or click any empty part of the map.<br><br><b>One exception.</b> Australia\u2019s regulator, the OGTR, publishes the actual locations of field trials. It is the only one in the world that does.</div>'
+      +'<div class="rec-note" id="recNote"></div>'
       +'<span id="recClose" title="close">&times;</span></div>'
       +'<div id="recFilt"></div><div id="recSort"></div><div id="recBody"></div>';
     document.body.appendChild(box);
@@ -3588,6 +3611,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
   // click in rather than three markers stacked on top of each other.
   function drawSources(p){
     var b=ensure(); b.style.display='flex'; var b4=document.getElementById('recBack'); if(b4)b4.style.display='block';
+    try{ var _nn=b.querySelector('#recNote'); if(_nn&&window.pjPlaceNote) _nn.innerHTML=window.pjPlaceNote(p); }catch(_e){}
     b.querySelector('#recTitle').textContent=(p.name||'Records');
     b.querySelector('#recSort').innerHTML='';
     var h='';
@@ -3602,7 +3626,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
       state.rows=src.records; state.by='d'; state.dir=-1;
     state.q=''; state.type=''; state.kind=''; state.yrs=0;
     var _fb=ensure().querySelector('#recFilt'); if(_fb) _fb.dataset.live='';
-      b.querySelector('#recTitle').textContent=(p.name||'Records')+' \u2014 '+src.label+' ('+src.n+')';
+      try{ var _nn=b.querySelector('#recNote'); if(_nn&&window.pjPlaceNote) _nn.innerHTML=window.pjPlaceNote(p); }catch(_e){}
+    b.querySelector('#recTitle').textContent=(p.name||'Records')+' \u2014 '+src.label+' ('+src.n+')';
       b.querySelector('#recBody').onclick=null;
       draw();
       var back=document.createElement('div');
@@ -3621,6 +3646,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     var b=ensure();
     var extra=(p.records_total&&p.records_total>p.records.length)
       ? (' \u2014 showing '+p.records.length+' of '+p.records_total) : (p.records.length>1?(' \u2014 '+p.records.length+' records'):'');
+    try{ var _nn=b.querySelector('#recNote'); if(_nn&&window.pjPlaceNote) _nn.innerHTML=window.pjPlaceNote(p); }catch(_e){}
     b.querySelector('#recTitle').textContent=(p.name||'Records')+extra;
     b.style.display='flex'; var b4=document.getElementById('recBack'); if(b4)b4.style.display='block';
     draw();
@@ -4263,7 +4289,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     'type not recorded by the register':
       'The register published no type for these. The gap is the register\u2019s, not the map\u2019s.',
     'other':
-      'Types that appear only once or twice here. Kept together rather than each sitting alone; every record still carries its own name.'
+      'Types that appear only once or twice here \u2014 most often <b>national biosafety decisions</b>, a country\u2019s formal ruling on whether an engineered organism may be grown, imported or sold, filed to the international treaty register. Kept together rather than each sitting alone; every record still carries its own name.'
   };
   var _CAT_NOTE = null;
   function _catNote(label){
@@ -4417,5 +4443,94 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
   setTimeout(function(){ clearInterval(t); },30000);
 })();
 </script>
+<script>
+(function(){
+  // The standing note was one block of US-specific text shown over every
+  // country. Mexico has no state breakdown and no APHIS permits, so two of its
+  // three paragraphs described something that does not exist there.
+  //
+  // Built per panel instead, from what the records actually are. Short: a reader
+  // opening a list wants the caveat, not an essay.
+  window.pjPlaceNote = function(p){
+    var srcs = {}, hier = p && (p.level === 'country' || p.level === 'state');
+    ((p && p.sources) || []).forEach(function(x){ srcs[x.k] = 1; });
+    if(p && p.source) srcs[String(p.source).split(':')[0]] = 1;
+    var bits = [];
+    if(srcs.aphis){
+      bits.push('<b>APHIS names the states a permit covers, never the sites.</b> '
+        + 'One permit can cover several states, so a record counted here may name others.');
+    }
+    if(srcs.bch){
+      bits.push('<b>Decisions filed under the Cartagena Protocol apply to a whole country</b> '
+        + 'and carry no location at all.');
+    }
+    if(srcs.clinical){
+      bits.push('<b>Trial sponsors are placed at their country</b>, not at the hospitals running the trials.');
+    }
+    if(srcs.ogtr){
+      bits.push('<b>These are real sites.</b> Australia\u2019s OGTR is the only regulator in the world that publishes them.');
+    }
+    if(!bits.length){
+      bits.push('<b>This dot is a country or a state centroid, not a place anything was planted.</b>');
+    }
+    if(hier){
+      bits.push('Click the national dot again \u2014 or any empty part of the map \u2014 to put the states away.');
+    }
+    return bits.join(' ');
+  };
+})();
+</script>
+<script>
+(function(){
+  // The key box grew flat: eight sibling headings, several of which only qualify
+  // one of the three kind toggles above them. Release scale belongs under
+  // Releases; organisation type belongs under Industry. Nesting them says which
+  // toggle each one narrows, and lets a whole branch collapse.
+  function moveUnder(kindValue, nodes, indentClass){
+    var cb = document.querySelector('.pj-kind[data-kind="'+kindValue+'"]');
+    if(!cb) return;
+    var anchor = cb.closest('label');
+    if(!anchor || !anchor.parentNode) return;
+    var host = document.createElement('div');
+    host.className = 'kind-sub ' + (indentClass||'');
+    anchor.parentNode.insertBefore(host, anchor.nextSibling);
+    nodes.forEach(function(n){ if(n) host.appendChild(n); });
+    // the kind toggle now owns its subtree
+    cb.addEventListener('change', function(){
+      host.style.display = cb.checked ? '' : 'none';
+    });
+  }
+  function headAndBox(match){
+    var heads = [].slice.call(document.querySelectorAll('.ot-head'));
+    for(var i=0;i<heads.length;i++){
+      if(match.test(heads[i].textContent)){
+        var out=[heads[i]], n=heads[i].nextSibling;
+        while(n && !(n.classList && n.classList.contains('ot-head'))){
+          var nx=n.nextSibling; out.push(n); n=nx;
+        }
+        return out;
+      }
+    }
+    return [];
+  }
+  function go(){
+    if(document.querySelector('.kind-sub')) return;
+    var relScale = headAndBox(/release scale/i);
+    var relRecs  = headAndBox(/release records/i);
+    var orgType  = headAndBox(/organisation type/i);
+    var subj     = headAndBox(/work on/i);
+    if(!relRecs.length && !orgType.length) return;
+    moveUnder('release',  relRecs.concat(relScale));
+    moveUnder('industry', subj.concat(orgType));
+  }
+  var t=setInterval(function(){ go(); }, 800);
+  setTimeout(function(){ clearInterval(t); }, 25000);
+})();
+</script>
+<style>
+.kind-sub{margin:2px 0 6px 17px;padding-left:9px;border-left:1px solid rgba(127,168,204,0.22);}
+.kind-sub .ot-head{margin-top:6px;}
+.kind-sub .pj-otypes{margin-left:0;}
+</style>
 </body>
 </html>
