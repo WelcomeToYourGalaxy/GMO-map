@@ -105,6 +105,37 @@ def load_subgeo():
         return {}
 
 
+
+# Sentences worth keeping: the ones that say what kind of measure it is, when it
+# came in, or how much land it covers. Everything else on these pages is
+# navigation and boilerplate.
+_KEEP = re.compile(
+    r"\b(ban|banned|prohibit|moratorium|declar|resolution|law|act\b|decree|"
+    r"referend|vote[dsn]?|adopt|region|province|municipalit|commune|canton|"
+    r"hectare|since\s+\d{4}|in\s+(?:19|20)\d{2}|cultivation|free\s+zone)", re.I)
+
+
+def _summarise(text, limit=3, chars=520):
+    """A few sentences of the page, chosen for content rather than position."""
+    body = re.sub(r"\s+", " ", text)
+    sents = re.split(r"(?<=[.!?])\s+", body)
+    good = []
+    for sn in sents:
+        sn = sn.strip()
+        if not (40 <= len(sn) <= 300):
+            continue
+        if not _KEEP.search(sn):
+            continue
+        if sn.lower().startswith(("home", "menu", "search", "cookie", "click here")):
+            continue
+        if sn in good:
+            continue
+        good.append(sn)
+        if len(good) >= limit:
+            break
+    out = " ".join(good)
+    return out[:chars].rsplit(" ", 1)[0] + ("\u2026" if len(out) > chars else "")
+
 def main():
     delay = 2.0
     if "--delay" in sys.argv:
@@ -173,8 +204,14 @@ def main():
             country_level += 1
         if not hits:
             unmatched += 1
+        # The crawler already has the page. Keep a few sentences of it, so a
+        # shaded country can say what its ban actually is - "GMO-free" covers a
+        # binding regional law, a voluntary declaration by farmers, and a
+        # constitutional prohibition, and those are not the same thing.
+        note = _summarise(text)
         for canon in sorted(set(hits)):
-            out.append({"iso": iso, "region": canon, "country": label, "url": url})
+            out.append({"iso": iso, "region": canon, "country": label,
+                        "url": url, "note": note})
         if i % 10 == 0:
             print("    %d/%d pages" % (i, len(links)))
 

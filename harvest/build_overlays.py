@@ -249,7 +249,9 @@ def main():
                 if kk not in placed:
                     placed.add(kk)
                     feats.append({"type": "Feature", "geometry": f["geometry"],
-                                  "properties": {"name": k, "iso": iso, "value": val}})
+                                  "properties": {"name": k, "iso": iso, "value": val,
+                                                 "note": r.get("note", ""),
+                                                 "src": r.get("url", "")}})
                 continue
             iso = ISO3.get(k.lower()) or (k.upper() if k.upper() in by_iso else None)
             if iso and iso in by_iso:
@@ -260,7 +262,9 @@ def main():
                         continue
                     placed.add(kk)
                     feats.append({"type": "Feature", "geometry": f["geometry"],
-                                  "properties": {"name": nm, "iso": iso, "value": val}})
+                                  "properties": {"name": nm, "iso": iso, "value": val,
+                                                 "note": r.get("note", ""),
+                                                 "src": r.get("url", "")}})
             else:
                 missed += 1
         if not feats:
