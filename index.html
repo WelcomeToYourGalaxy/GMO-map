@@ -2099,7 +2099,12 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     });
     return off;
   }
-  var PC={5:"#7f9a52",4:"#7fc0a8",3:"#6fb8c4",2:"#7aa8cc",1:"#77836b"}, INDC={5:"#f2d06b",4:"#e8bf5c",3:"#dcae4e",2:"#cf9d42",1:"#c08c38"}, ESCC={5:"#a8523c",4:"#e35b70",3:"#d45086",2:"#c04a97",1:"#7a5a72"}, PR={5:15,4:12,3:9,2:7,1:5};
+  /* Releases in one olive ramp, dark to pale by scale. The old ramp ran
+     green-teal-blue-grey, which read as four unrelated categories. */
+  var PC={5:"#4f6b2c",4:"#63813a",3:"#7f9a52",2:"#9aae74",1:"#b3c199"}, INDC={5:"#f2d06b",4:"#e8bf5c",3:"#dcae4e",2:"#cf9d42",1:"#c08c38"}, /* Spread records: one rust ramp, dark to pale. It was running
+     rust-pink-magenta-plum, four hues for one category. Rust rather than
+     olive so an incident stays distinguishable from a release. */
+  ESCC={5:"#8a3f2c",4:"#a8523c",3:"#bd6a4f",2:"#cd8670",1:"#dba694"}, PR={5:15,4:12,3:9,2:7,1:5};
   try{ if(typeof map!=='undefined' && map.createPane && !map.getPane('projPane')){ map.createPane('projPane'); map.getPane('projPane').style.zIndex=620; } }catch(_e){}
   window.PJ_CLICK_MINZ=2 /* was 6: right when a world-zoom dot was a two-pixel speck, wrong now that clustering draws a large numbered circle over a country at zoom 3 */;
   try{ if(typeof map!=='undefined' && map.on){ map.on('zoomend', function(){ var _pn=map.getPane&&map.getPane('projPane'); if(_pn) _pn.style.pointerEvents=(map.getZoom()>=PJ_CLICK_MINZ?'auto':'none'); }); } }catch(_e){}
@@ -2280,7 +2285,11 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   var _ovLayers={};
   function _ovStyle(c){ /* fill only — a stroke here would sit on top of the regime
      outline and hide it, and these areas are about extent, not boundary */
-  return {color:c, weight:0, opacity:0, fillColor:c, fillOpacity:0.34}; }
+  return {color:c, weight:1.4, opacity:0.85, fillColor:c, fillOpacity:0.30,
+          /* An outline as well as the fill. Dropping the stroke to stop it
+             covering the regime edge removed every shaded-area boundary on
+             the map; the regime layer is drawn above these instead. */
+          dashArray:null}; }
   function pjToggleOverlay(k, on, statusEl){
     var meta=null; for(var i=0;i<PJ_OVERLAYS.length;i++){ if(PJ_OVERLAYS[i].k===k) meta=PJ_OVERLAYS[i]; }
     if(!on){ if(_ovLayers[k]) map.removeLayer(_ovLayers[k]); if(statusEl) statusEl.textContent=""; return; }
@@ -2297,7 +2306,12 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
                  var c=((meta&&meta.color)||'#c98a2a'); return _ovStyle(c); },
           onEachFeature:function(f,l){ var p=(f&&f.properties)||{}; var nm=p.name||p.NAME||p.title||k;
             var sub=(k==='regime'&&REGIMEL[p.regime])?('<br><span style="color:#7fa8cc;font-weight:600">'+REGIMES[p.regime]+'</span><span style="font-size:10.5px;line-height:1.55;display:block;margin-top:6px;max-width:340px;color:#c3cee0">'+(REGIMED[p.regime]||'')+'</span>'):''; l.bindPopup('<b>'+String(nm)+'</b>'+sub+'<br><span style="font-size:10px;opacity:.8">'+((meta&&meta.label)||k)+' \u2014 area, not a project point</span>'+(p.note?('<div style="font-size:10.5px;line-height:1.5;margin-top:6px;max-width:330px;color:#c3cee0">'+String(p.note)+(p.src?(' <a href="'+p.src+'" target="_blank" rel="noopener" style="color:#9dc0dd">source</a>'):'')+'</div>'):'')); }});
-        _ovLayers[k]=lyr; lyr.addTo(map); if(statusEl) statusEl.textContent="";
+        _ovLayers[k]=lyr; lyr.addTo(map);
+        // The regime layer is an outline over the fills, so it has to be
+        // drawn last. Without this its edge sits under whichever context
+        // layer loaded after it and disappears.
+        try{ if(k==='regime') lyr.bringToFront();
+             else if(_ovLayers['regime']) _ovLayers['regime'].bringToFront(); }catch(_e){} if(statusEl) statusEl.textContent="";
       })
       .catch(function(){
         if(statusEl) statusEl.textContent=" \u2014 no data yet";
@@ -4481,10 +4495,11 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     }
     if(srcs.bch){
       bits.push('<b>Decisions filed under the Cartagena Protocol apply to a whole country</b> '
-        + 'and carry no location at all.');
+        + 'and carry no location at all. No register in this dataset publishes coordinates, '
+        + 'so there is no point data to place \u2014 only the country.');
     }
     if(srcs.clinical){
-      bits.push('<b>Trial sponsors are placed at their country</b>, not at the hospitals running the trials.');
+      bits.push('<b>Trial sponsors are placed at their country</b>, not at the hospitals running the trials. No register in this dataset publishes coordinates, so there is no point data to place \u2014 only the country.');
     }
     if(srcs.ogtr){
       bits.push('<b>These are real sites.</b> Australia\u2019s OGTR is the only regulator in the world that publishes them.');
