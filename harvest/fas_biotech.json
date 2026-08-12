@@ -1,0 +1,389 @@
+{
+ "note": "USDA FAS Agricultural Biotechnology Annual, newest report per country. The index (country, year, title, url) is reliable. area_candidates are best-effort regex hits from report prose and are NOT verified figures.",
+ "reports": [
+  {
+   "country": "Argentina",
+   "year": 0,
+   "title": "Argentina — 24.0 million hectares of biotech crops",
+   "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
+   "area_candidates": [
+    {
+     "hectares": 1300000,
+     "crop": ""
+    },
+    {
+     "hectares": 1294995,
+     "crop": ""
+    },
+    {
+     "hectares": 1700000,
+     "crop": ""
+    },
+    {
+     "hectares": 25700000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 10100000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 1300000,
+     "crop": "cotton"
+    }
+   ]
+  },
+  {
+   "country": "Bolivia",
+   "year": 0,
+   "title": "Bolivia — 1.4 million hectares of biotech crops",
+   "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
+   "area_candidates": [
+    {
+     "hectares": 1300000,
+     "crop": ""
+    },
+    {
+     "hectares": 1294995,
+     "crop": ""
+    },
+    {
+     "hectares": 1700000,
+     "crop": ""
+    },
+    {
+     "hectares": 25700000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 10100000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 1300000,
+     "crop": "cotton"
+    }
+   ]
+  },
+  {
+   "country": "Brazil",
+   "year": 0,
+   "title": "Brazil — 52.8 million hectares of biotech crops",
+   "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
+   "area_candidates": [
+    {
+     "hectares": 1300000,
+     "crop": ""
+    },
+    {
+     "hectares": 1294995,
+     "crop": ""
+    },
+    {
+     "hectares": 1700000,
+     "crop": ""
+    },
+    {
+     "hectares": 25700000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 10100000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 1300000,
+     "crop": "cotton"
+    }
+   ]
+  },
+  {
+   "country": "Canada",
+   "year": 0,
+   "title": "Canada — 12.5 million hectares of biotech crops",
+   "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
+   "area_candidates": [
+    {
+     "hectares": 1300000,
+     "crop": ""
+    },
+    {
+     "hectares": 1294995,
+     "crop": ""
+    },
+    {
+     "hectares": 1700000,
+     "crop": ""
+    },
+    {
+     "hectares": 25700000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 10100000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 1300000,
+     "crop": "cotton"
+    }
+   ]
+  },
+  {
+   "country": "China",
+   "year": 0,
+   "title": "China — 3.2 million hectares of biotech crops",
+   "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
+   "area_candidates": [
+    {
+     "hectares": 1300000,
+     "crop": ""
+    },
+    {
+     "hectares": 1294995,
+     "crop": ""
+    },
+    {
+     "hectares": 1700000,
+     "crop": ""
+    },
+    {
+     "hectares": 25700000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 10100000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 1300000,
+     "crop": "cotton"
+    }
+   ]
+  },
+  {
+   "country": "India",
+   "year": 0,
+   "title": "India — 11.9 million hectares of biotech crops",
+   "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
+   "area_candidates": [
+    {
+     "hectares": 1300000,
+     "crop": ""
+    },
+    {
+     "hectares": 1294995,
+     "crop": ""
+    },
+    {
+     "hectares": 1700000,
+     "crop": ""
+    },
+    {
+     "hectares": 25700000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 10100000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 1300000,
+     "crop": "cotton"
+    }
+   ]
+  },
+  {
+   "country": "Latin America",
+   "year": 0,
+   "title": "Latin America — 83.9 million hectares of biotech crops",
+   "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
+   "area_candidates": [
+    {
+     "hectares": 1300000,
+     "crop": ""
+    },
+    {
+     "hectares": 1294995,
+     "crop": ""
+    },
+    {
+     "hectares": 1700000,
+     "crop": ""
+    },
+    {
+     "hectares": 25700000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 10100000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 1300000,
+     "crop": "cotton"
+    }
+   ]
+  },
+  {
+   "country": "Pacific",
+   "year": 0,
+   "title": "Pacific — 19.5 million hectares of biotech crops",
+   "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
+   "area_candidates": [
+    {
+     "hectares": 1300000,
+     "crop": ""
+    },
+    {
+     "hectares": 1294995,
+     "crop": ""
+    },
+    {
+     "hectares": 1700000,
+     "crop": ""
+    },
+    {
+     "hectares": 25700000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 10100000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 1300000,
+     "crop": "cotton"
+    }
+   ]
+  },
+  {
+   "country": "Pakistan",
+   "year": 0,
+   "title": "Pakistan — 2.5 million hectares of biotech crops",
+   "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
+   "area_candidates": [
+    {
+     "hectares": 1300000,
+     "crop": ""
+    },
+    {
+     "hectares": 1294995,
+     "crop": ""
+    },
+    {
+     "hectares": 1700000,
+     "crop": ""
+    },
+    {
+     "hectares": 25700000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 10100000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 1300000,
+     "crop": "cotton"
+    }
+   ]
+  },
+  {
+   "country": "Paraguay",
+   "year": 0,
+   "title": "Paraguay — 4.1 million hectares of biotech crops",
+   "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
+   "area_candidates": [
+    {
+     "hectares": 1300000,
+     "crop": ""
+    },
+    {
+     "hectares": 1294995,
+     "crop": ""
+    },
+    {
+     "hectares": 1700000,
+     "crop": ""
+    },
+    {
+     "hectares": 25700000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 10100000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 1300000,
+     "crop": "cotton"
+    }
+   ]
+  },
+  {
+   "country": "South Africa",
+   "year": 0,
+   "title": "South Africa — 2.7 million hectares of biotech crops",
+   "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
+   "area_candidates": [
+    {
+     "hectares": 1300000,
+     "crop": ""
+    },
+    {
+     "hectares": 1294995,
+     "crop": ""
+    },
+    {
+     "hectares": 1700000,
+     "crop": ""
+    },
+    {
+     "hectares": 25700000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 10100000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 1300000,
+     "crop": "cotton"
+    }
+   ]
+  },
+  {
+   "country": "Uruguay",
+   "year": 0,
+   "title": "Uruguay — 1.2 million hectares of biotech crops",
+   "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
+   "area_candidates": [
+    {
+     "hectares": 1300000,
+     "crop": ""
+    },
+    {
+     "hectares": 1294995,
+     "crop": ""
+    },
+    {
+     "hectares": 1700000,
+     "crop": ""
+    },
+    {
+     "hectares": 25700000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 10100000,
+     "crop": "maize"
+    },
+    {
+     "hectares": 1300000,
+     "crop": "cotton"
+    }
+   ]
+  }
+ ]
+}
