@@ -458,14 +458,26 @@ def main():
             "source": rs[0]["source"],
             "type": "Release records, all sources",
             "lat": la, "lng": ln, "state": place, "precise": False,
-            "impact": 3 if len(rs) > 200 else 2, "company": "",
+            # The 1-5 scale impact_for() computes per record was being replaced
+            # with a flat 2-or-3 here, so every grouped marker drew as medium or
+            # largest and the Small and Large steps of the scale filter had
+            # nothing in them. A place is as big as its biggest release.
+            "impact": max([r.get("impact", 1) for r in rs] or [1]),
+            "company": "",
             "size": "%d records" % len(rs),
             "status": ("%s, %d source%s" % (span or "date not stated", len(by_src),
                                             "" if len(by_src) == 1 else "s")),
-            "phase": "post", "date": rs[0].get("date", ""),
+            # Same for consent phase: forcing "post" hid every under-assessment
+            # record inside a consented marker. A place with anything still in
+            # review is a place in review.
+            "phase": ("pre" if any(r.get("phase") == "pre" for r in rs) else "post"),
+            "date": rs[0].get("date", ""),
             "lapsed": all(x.get("lapsed") for x in rs),
             "level": rs[0].get("level", ""), "parent": rs[0].get("parent", ""),
             "records_total": len(rs),
+            # Every date under this marker, so the recency filter can ask whether
+            # ANY record here is recent rather than only the newest one.
+            "dates": sorted({r.get("date", "")[:10] for r in rs if r.get("date")}),
             "sources": [{"k": k, "label": SRCNAME.get(k, k), "n": len(v),
                          "records": [{"n": x["name"][:110], "d": x.get("date", ""),
                                       "s": x.get("status", ""), "u": x.get("url", ""),
