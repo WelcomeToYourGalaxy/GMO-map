@@ -66,7 +66,7 @@ jobs:
                      harvest/ogtr_trials.json \
                      harvest/bch_decisions.json harvest/gmofree_zones.json harvest/fas_biotech.json \
                      harvest/clinical_sponsors.json \
-                     overlays/trials.geojson overlays/regime.geojson \
+                     overlays/trials.geojson overlays/regime.geojson overlays/cultivation.geojson overlays/gmofree.geojson \
                      overlays/incidents.geojson; do
               [ -e "$f" ] && git add "$f"
             done
