@@ -4179,7 +4179,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
         var rs = leaves[leaf];
         var lo = !!open['l:'+cat+'|'+leaf];
         if(leaf === ''){   // the category IS the type; records sit straight under it
-          rs.forEach(function(r){ h += '<div class="tr-rec tr-l1">'+recLine(r)+'</div>'; });
+          rs.forEach(function(r){ h += '<div class="tr-rec tr-l1">'+recLine(r, (leaf==='Other'? null : leaf))+'</div>'; });
           return;
         }
         if(rs.length === 1){
@@ -4192,10 +4192,11 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
           return;
         }
         h += '<div class="tr-leaf" data-k="l:'+(cat+'|'+leaf).replace(/"/g,'&quot;')+'">'
-           + '<span class="tr-tw">'+(lo?'\u25be':'\u25b8')+'</span>'+leaf
+           + '<span class="tr-tw">'+(lo?'\u25be':'\u25b8')+'</span>'
+           + (leaf==='Other' ? 'Other species \u2014 one or two records each' : leaf)
            + '<span class="kcount"> ('+rs.length+')</span></div>';
         if(!lo) return;
-        rs.forEach(function(r){ h += '<div class="tr-rec tr-l2">'+recLine(r)+'</div>'; });
+        rs.forEach(function(r){ h += '<div class="tr-rec tr-l2">'+recLine(r, (leaf==='Other'? null : leaf))+'</div>'; });
       });
     });
     return h || '<div class="rec-meta">No records match.</div>';
@@ -4457,8 +4458,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     if(p && p.source) srcs[String(p.source).split(':')[0]] = 1;
     var bits = [];
     if(srcs.aphis){
-      bits.push('<b>APHIS names the states a permit covers, never the sites.</b> '
-        + 'One permit can cover several states, so a record counted here may name others.');
+      bits.push('<b>APHIS names the states a permit covers, never the sites</b> \u2014 there is no point data to place, only a state. One permit can cover several states, so a record counted here may name others.');
     }
     if(srcs.bch){
       bits.push('<b>Decisions filed under the Cartagena Protocol apply to a whole country</b> '
@@ -4471,10 +4471,10 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
       bits.push('<b>These are real sites.</b> Australia\u2019s OGTR is the only regulator in the world that publishes them.');
     }
     if(!bits.length){
-      bits.push('<b>This dot is a country or a state centroid, not a place anything was planted.</b>');
+      bits.push('<b>This dot is a centroid, not a place anything was planted.</b> No register in this dataset publishes coordinates, so there is no point data to place \u2014 only the country, and sometimes the state.');
     }
     if(hier){
-      bits.push('Click the national dot again \u2014 or any empty part of the map \u2014 to put the states away.');
+      bits.push('<b>The national dot and the state dots are different records, not the same ones counted twice.</b> Permits name the states they cover and become state dots. Records that belong to the country as a whole \u2014 national decisions, trial sponsors \u2014 name no state and sit on the national dot. Click it again, or any empty part of the map, to put the states away.');
     }
     return bits.join(' ');
   };
@@ -4532,5 +4532,125 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
 .kind-sub .ot-head{margin-top:6px;}
 .kind-sub .pj-otypes{margin-left:0;}
 </style>
+<script>
+(function(){
+  // Finish the key-box nesting: everything that only qualifies one kind sits
+  // under that kind and folds with it, the two shaded-area groups sit under one
+  // heading, and the collapsed state is a caret you can click rather than a side
+  // effect of unticking the layer.
+  function headBlock(match){
+    var heads=[].slice.call(document.querySelectorAll('.ot-head'));
+    for(var i=0;i<heads.length;i++){
+      if(match.test(heads[i].textContent)){
+        var out=[heads[i]], n=heads[i].nextSibling;
+        while(n && !(n.classList && n.classList.contains('ot-head'))){
+          var nx=n.nextSibling; out.push(n); n=nx;
+        }
+        return out;
+      }
+    }
+    return [];
+  }
+  function nest(kind, blocks){
+    var cb=document.querySelector('.pj-kind[data-kind="'+kind+'"]');
+    if(!cb) return null;
+    var lab=cb.closest('label'); if(!lab||!lab.parentNode) return null;
+    var host=lab.parentNode.querySelector('.kind-sub[data-for="'+kind+'"]');
+    if(!host){
+      host=document.createElement('div');
+      host.className='kind-sub'; host.dataset.for=kind;
+      lab.parentNode.insertBefore(host, lab.nextSibling);
+    }
+    blocks.forEach(function(b){ b.forEach(function(n){ if(n) host.appendChild(n); }); });
+    if(!lab.querySelector('.kind-car')){
+      var car=document.createElement('span');
+      car.className='kind-car'; car.textContent='\u25be';
+      car.title='show or hide these filters';
+      car.onclick=function(e){
+        e.preventDefault(); e.stopPropagation();
+        var hid=host.style.display==='none';
+        host.style.display=hid?'':'none';
+        car.textContent=hid?'\u25be':'\u25b8';
+      };
+      lab.appendChild(car);
+    }
+    return host;
+  }
+  function go(){
+    if(document.body.dataset.keyNested) return;
+    var relRecs=headBlock(/release records/i);
+    var relScale=headBlock(/release scale/i);
+    var relRec2=headBlock(/filing recency/i);
+    var orgType=headBlock(/organisation type/i);
+    var subj=headBlock(/work on/i);
+    var zones=headBlock(/gm zones/i);
+    if(!relRecs.length && !orgType.length) return;
+    nest('release', [relRecs, relScale, relRec2]);
+    nest('industry', [subj, orgType]);
+    // GM zones joins the regime block under one Shaded areas heading
+    var shaded=headBlock(/^\s*Shaded areas\s*$/i);
+    if(shaded.length && zones.length){
+      var last=shaded[shaded.length-1];
+      zones.forEach(function(n){ if(n && n!==zones[0]) last.parentNode.insertBefore(n, last.nextSibling); });
+      if(zones[0] && zones[0].classList) zones[0].className='ot-sub';
+      last.parentNode.insertBefore(zones[0], last.nextSibling);
+    }
+    document.body.dataset.keyNested='1';
+  }
+  var t=setInterval(go, 700);
+  setTimeout(function(){ clearInterval(t); }, 25000);
+})();
+</script>
+<style>
+.kind-car{margin-left:auto;color:#7fa8cc;font-size:9px;cursor:pointer;padding:0 3px;}
+.ot-sub{font-size:9px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;
+  color:#8394ab;margin:6px 0 3px 6px;}
+</style>
+<script>
+(function(){
+  // The two dropdowns at the foot of the key box - project type and context
+  // overlay - list the same things as the toggles above them. Before removing
+  // them, take what they had that the toggles did not: the one-line description
+  // under each option. Those explanations move up onto the toggle labels as
+  // tooltips, so nothing is lost with the control.
+  function go(){
+    if(document.body.dataset.dedup) return;
+    var moved = 0;
+    // overlay notes -> the GM zones and regime checkboxes
+    if(window.PJ_OVERLAYS){
+      PJ_OVERLAYS.forEach(function(o){
+        var cb = document.querySelector('input[data-ovkey="'+o.k+'"]');
+        if(cb && cb.parentNode && o.note && !cb.parentNode.title){
+          cb.parentNode.title = o.note; moved++;
+        }
+      });
+    }
+    // source-family descriptions -> the organisation-type checkboxes
+    if(window.PJ_SRC){
+      var byCat = {};
+      PJ_SRC.forEach(function(x){ if(x.desc) byCat[(x.label||'').toLowerCase()] = x.desc; });
+      document.querySelectorAll('input[data-ot], input[data-subj]').forEach(function(cb){
+        var lab = cb.parentNode; if(!lab || lab.title) return;
+        var txt = (lab.textContent || '').toLowerCase();
+        for(var k in byCat){ if(k && txt.indexOf(k.slice(0, 14)) >= 0){ lab.title = byCat[k]; moved++; break; } }
+      });
+    }
+    // now retire the duplicates
+    ['projTypeSel', 'ovSel', 'overlaySel', 'projTypeBox'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el){ var row = el.closest('.psrc-row, .ot-head, div'); (row || el).remove(); }
+    });
+    [].slice.call(document.querySelectorAll('select')).forEach(function(sel){
+      var t = (sel.previousSibling && sel.previousSibling.textContent) || sel.id || '';
+      if(/project type|context overlay/i.test(t + ' ' + (sel.className||''))){
+        var wrap = sel.closest('div'); (wrap || sel).remove();
+      }
+    });
+    if(moved) document.body.dataset.dedup = '1';
+  }
+  var t = setInterval(go, 800);
+  setTimeout(function(){ clearInterval(t); }, 25000);
+})();
+</script>
 </body>
 </html>
