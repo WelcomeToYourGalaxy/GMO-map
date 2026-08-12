@@ -61,7 +61,14 @@ CROPS = ("maize", "corn", "soybean", "soya", "cotton", "canola", "rapeseed",
          "alfalfa", "sugar beet", "papaya", "eggplant", "brinjal", "rice", "wheat")
 
 
-def get(url, tries=3):
+def get(url, tries=3, timeout=90):
+    """One slow route must not eat the whole step.
+
+    The last run spent 8 minutes on the first GAIN route - `urlopen error timed
+    out`, three tries at 90 seconds each plus backoff - and the step was killed
+    before the other three were attempted. A route that has not answered in 20
+    seconds is not going to; try the next one instead.
+    """
     last = None
     for i in range(tries):
         try:
@@ -74,7 +81,7 @@ def get(url, tries=3):
                 "Accept-Language": "en-US,en;q=0.9",
                 "Accept-Encoding": "identity",
                 "Connection": "close"})
-            with urlopen(req, timeout=90) as r:
+            with urlopen(req, timeout=timeout) as r:
                 return r.read().decode("utf-8", "replace")
         except Exception as e:
             last = e; time.sleep(3 * (i + 1))
@@ -188,6 +195,63 @@ def read_area(text):
     return hits
 
 
+
+ISAAA_BRIEFS = [
+    "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
+    "https://www.isaaa.org/resources/publications/briefs/54/executivesummary/default.asp",
+    "https://www.isaaa.org/gmapprovaldatabase/",
+]
+
+# "Brazil 52.8 million hectares", "India (11.9 million hectares)", "USA at 71.5"
+_HA = re.compile(
+    r"\b([A-Z][A-Za-z'\-]+(?:\s+[A-Z][A-Za-z'\-]+){0,2})"
+    r"[\s,(]+(?:at\s+|with\s+|grew\s+|planted\s+)?"
+    r"([\d.]+)\s*million\s+hectares")
+
+# Words that look like a country because they are capitalised at the start of a
+# sentence, or that trail a list. Without this "and India" and "countries. USA"
+# arrive as country names.
+_NOT_COUNTRY = {"the", "and", "in", "total", "global", "countries", "with", "at",
+                "an", "a", "of", "or", "for", "from", "these", "this", "it",
+                "developing", "industrial", "biotech", "crops", "adoption",
+                "worldwide", "accumulated", "additional", "led", "top", "up"}
+
+
+def isaaa_area():
+    """Country hectarage from the ISAAA Global Status brief."""
+    out = []
+    for u in ISAAA_BRIEFS:
+        try:
+            page = get(u, tries=1, timeout=25)
+        except Exception as e:
+            print("  %-58s %s" % (u[:58], str(e)[:28]), file=sys.stderr); continue
+        text = re.sub(r"<[^>]+>", " ", page)
+        text = re.sub(r"\s+", " ", html.unescape(text))
+        seen = {}
+        for m in _HA.finditer(text):
+            name = m.group(1).strip().strip(",.")
+            # strip leading noise words the sentence put in front of the country
+            parts = [w for w in name.split() if w.lower() not in _NOT_COUNTRY]
+            name = " ".join(parts).strip()
+            if len(name) < 3 or name.lower() in _NOT_COUNTRY:
+                continue
+            try:
+                ha = float(m.group(2)) * 1e6
+            except Exception:
+                continue
+            if not (1000 <= ha <= 100e6):
+                continue
+            seen.setdefault(name, ha)
+        if seen:
+            print("  ISAAA: %d countries with a hectarage from %s" % (len(seen), u[:58]))
+            for name, ha in seen.items():
+                out.append({"title": "%s \u2014 %s million hectares of biotech crops"
+                                     % (name, format(ha / 1e6, ".1f")),
+                            "country": name, "url": u, "date": "",
+                            "area_candidates": [{"hectares": int(ha), "crop": ""}]})
+            break
+    return out
+
 def main():
     years = 3
     if "--years" in sys.argv:
@@ -197,7 +261,9 @@ def main():
     recs = []
     for route in GAIN_ROUTES:
         try:
-            got = find_rows(get(route))
+            # One attempt, 20 seconds. Probing four routes must cost seconds, not
+            # the whole step budget - the previous run never reached routes 2-4.
+            got = find_rows(get(route, tries=1, timeout=20))
         except Exception as e:
             print("  %-64s %s" % (route[:64], str(e)[:30]), file=sys.stderr); continue
         hits = [r for r in got if TITLE in str(field(r, "title", "name", "reporttitle")).lower()]
@@ -210,6 +276,18 @@ def main():
             break
     if not recs:
         recs = collect()
+    if not recs:
+        # FAS has refused on four consecutive runs - 403, then a timeout that ate
+        # the whole step. ISAAA publishes the same figure by country in its annual
+        # Global Status brief, and does not sit behind the same protection. It is
+        # an industry body and its framing is promotional, but the hectarage is
+        # the number everyone including its critics cites, and the entry says
+        # whose number it is.
+        try:
+            recs = isaaa_area()
+        except Exception as e:
+            print("  ISAAA fallback failed: %s" % str(e)[:60], file=sys.stderr)
+
     if not recs:
         # Every route refused. Say so plainly rather than writing an empty file
         # that looks like "this country grows nothing" once it reaches the map.

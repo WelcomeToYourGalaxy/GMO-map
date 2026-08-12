@@ -274,9 +274,11 @@ def main():
         print("  %-22s %d polygons, %d rows unplaced" % (key, len(feats), missed))
 
     area_layer("fas_biotech.json", "cultivation",
-               "Countries with an approved GM cultivation area, from the USDA FAS Agricultural "
-               "Biotechnology Annual. Shaded at country level: the reports give national hectares, "
-               "never a field.",
+               "Hectares of engineered crops by country. Source is the USDA FAS Agricultural "
+               "Biotechnology Annual where it can be reached, and the ISAAA Global Status brief "
+               "otherwise - ISAAA is an industry body and its framing is promotional, but the "
+               "hectarage is the figure everyone including its critics cites, and each record "
+               "names which source it came from. Country level: neither source gives a field.",
                lambda r: (r.get("country"), r.get("area_candidates")))
     area_layer("gmofree_zones.json", "gmofree",
                "Regions and municipalities that have declared themselves GMO-free, from the GMO "
