@@ -25,6 +25,7 @@ from datetime import date
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 INDEX = ROOT / "index.html"
 PROJECTS = ROOT / "projects.json"
+HERE = ROOT / "harvest"
 OUT = ROOT / "overlays"
 
 # ---------------------------------------------------------------------------
@@ -184,6 +185,9 @@ def build_regime(subgeo):
             "features": feats}, missing
 
 
+ISO3 = {"austria":"AUT","france":"FRA","italy":"ITA","germany":"DEU","greece":"GRC","poland":"POL","spain":"ESP","switzerland":"CHE","belgium":"BEL","united kingdom":"GBR","croatia":"HRV","hungary":"HUN","bulgaria":"BGR","brazil":"BRA","argentina":"ARG","india":"IND","china":"CHN","japan":"JPN","united states":"USA","canada":"CAN","australia":"AUS","south africa":"ZAF","philippines":"PHL","vietnam":"VNM","mexico":"MEX","nigeria":"NGA","kenya":"KEN"}
+
+
 def main():
     subgeo = load_subgeo()
     print("SUBGEO carries admin-1 geometry for %d countries" % len(subgeo))
@@ -206,6 +210,76 @@ def main():
     if trials:
         (OUT / "trials.geojson").write_text(json.dumps(trials), encoding="utf-8")
     (OUT / "regime.geojson").write_text(json.dumps(regime), encoding="utf-8")
+
+    # --- cultivation and gmo-free -------------------------------------------
+    # These two were registered in the map for weeks with no file behind them,
+    # because their harvesters write records and nothing turned records into
+    # geometry. Both are area claims about whole countries or regions, so they
+    # use the same admin-1 polygons the rest of this script does.
+    sub = load_subgeo()
+    by_iso = {}
+    by_name = {}
+    for iso, fc in sub.items():
+        for f in fc.get("features", []):
+            nm = ((f.get("properties") or {}).get("name") or "").strip()
+            by_iso.setdefault(iso, []).append(f)
+            if nm:
+                by_name[nm.lower()] = (iso, f)
+
+    def area_layer(src_file, key, note, pick):
+        fp = HERE / src_file
+        if not fp.exists():
+            print("  %-22s no harvest yet (%s)" % (key, src_file))
+            return
+        try:
+            rows = json.loads(fp.read_text(encoding="utf-8"))
+        except Exception as e:
+            print("  %-22s unreadable: %s" % (key, e)); return
+        rows = rows.get("reports") or rows.get("zones") or rows.get("projects") or []
+        feats, placed, missed = [], set(), 0
+        for r in rows:
+            where, val = pick(r)
+            if not where:
+                missed += 1; continue
+            k = str(where).strip()
+            hit = by_name.get(k.lower())
+            if hit:
+                iso, f = hit
+                kk = iso + "|" + k.lower()
+                if kk not in placed:
+                    placed.add(kk)
+                    feats.append({"type": "Feature", "geometry": f["geometry"],
+                                  "properties": {"name": k, "iso": iso, "value": val}})
+                continue
+            iso = ISO3.get(k.lower()) or (k.upper() if k.upper() in by_iso else None)
+            if iso and iso in by_iso:
+                for f in by_iso[iso]:
+                    nm = ((f.get("properties") or {}).get("name") or iso)
+                    kk = iso + "|" + nm.lower()
+                    if kk in placed:
+                        continue
+                    placed.add(kk)
+                    feats.append({"type": "Feature", "geometry": f["geometry"],
+                                  "properties": {"name": nm, "iso": iso, "value": val}})
+            else:
+                missed += 1
+        if not feats:
+            print("  %-22s harvest present but nothing placeable" % key); return
+        (OUT / (key + ".geojson")).write_text(json.dumps(
+            {"type": "FeatureCollection", "note": note, "features": feats}), encoding="utf-8")
+        print("  %-22s %d polygons, %d rows unplaced" % (key, len(feats), missed))
+
+    area_layer("fas_biotech.json", "cultivation",
+               "Countries with an approved GM cultivation area, from the USDA FAS Agricultural "
+               "Biotechnology Annual. Shaded at country level: the reports give national hectares, "
+               "never a field.",
+               lambda r: (r.get("country"), r.get("area_candidates")))
+    area_layer("gmofree_zones.json", "gmofree",
+               "Regions and municipalities that have declared themselves GMO-free, from the GMO "
+               "Free Regions network. Where the declaration is municipal the whole country is "
+               "shaded, because the source names no region this map holds geometry for.",
+               lambda r: (r.get("region") or r.get("country"), r.get("country")))
+
     print("\nwrote overlays/, %s" % date.today().isoformat())
     print("The other six overlays need geometry this repo does not hold. "
           "See overlays/README.md for a source and route for each.")
