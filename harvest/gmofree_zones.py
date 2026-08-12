@@ -37,6 +37,21 @@ BASE = "https://www.gmo-free-regions.org"
 UA = "GMO-map-harvest/1.0 (+https://github.com/WelcomeToYourGalaxy/GMO-map)"
 
 
+COUNTRY_ISO = {
+ "austria":"AUT","belgium":"BEL","bulgaria":"BGR","croatia":"HRV","cyprus":"CYP",
+ "czech republic":"CZE","czechia":"CZE","denmark":"DNK","estonia":"EST","finland":"FIN",
+ "france":"FRA","germany":"DEU","greece":"GRC","hungary":"HUN","ireland":"IRL",
+ "italy":"ITA","latvia":"LVA","lithuania":"LTU","luxembourg":"LUX","malta":"MLT",
+ "netherlands":"NLD","poland":"POL","portugal":"PRT","romania":"ROU","slovakia":"SVK",
+ "slovenia":"SVN","spain":"ESP","sweden":"SWE","switzerland":"CHE","norway":"NOR",
+ "united kingdom":"GBR","great britain":"GBR","england":"GBR","scotland":"GBR",
+ "wales":"GBR","serbia":"SRB","bosnia":"BIH","bosnia and herzegovina":"BIH",
+ "north macedonia":"MKD","macedonia":"MKD","albania":"ALB","moldova":"MDA",
+ "ukraine":"UKR","turkey":"TUR","russia":"RUS","brazil":"BRA","argentina":"ARG",
+ "india":"IND","japan":"JPN","australia":"AUS","new zealand":"NZL","canada":"CAN",
+ "united states":"USA","usa":"USA","mexico":"MEX","south africa":"ZAF",
+}
+
 def robots_ok(url):
     rp = RobotFileParser(); rp.set_url(BASE + "/robots.txt")
     try:
@@ -130,10 +145,17 @@ def main():
         time.sleep(delay)                       # one at a time, politely
 
         text = strip(page)
+        # `iso_by_name` was built from SUBGEO's keys, which are ISO3 CODES - so
+        # this compared the page label "Austria" against "AUT" and never matched.
+        # With iso empty the country fallback below could never fire either,
+        # which is the whole reason 29 pages produced 0 zones.
         iso = None
-        for cand, code in iso_by_name.items():
-            if cand == label.lower():
+        lab = label.strip().lower()
+        for cand, code in COUNTRY_ISO.items():
+            if cand == lab or lab.startswith(cand):
                 iso = code; break
+        if not iso and lab.upper() in subgeo:
+            iso = lab.upper()
         names = subgeo.get(iso or "", {})
 
         hits = []

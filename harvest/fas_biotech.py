@@ -37,6 +37,20 @@ OUT = ROOT / "harvest" / "fas_biotech.json"
 
 BASE = "https://fas.usda.gov"
 SEARCH = BASE + "/data/search"
+
+# fas.usda.gov/data/search returned 403 to a script even with browser headers,
+# and the one page that did load matched no reports. GAIN has its own host with a
+# query interface that predates the site redesign and is not behind the same
+# protection: apps.fas.usda.gov. Tried in order, so if one route is closed the
+# next is attempted rather than the whole layer failing.
+GAIN_ROUTES = [
+    "https://apps.fas.usda.gov/gainfiles/api/reports?query=Agricultural+Biotechnology+Annual",
+    "https://gain.fas.usda.gov/api/reports?keyword=Agricultural%20Biotechnology%20Annual",
+    "https://apps.fas.usda.gov/newgainapi/api/report/ReportList?"
+    "reportTitle=Agricultural%20Biotechnology%20Annual",
+    "https://apps.fas.usda.gov/scriptsw/AttacheRep/default.aspx?"
+    "subject=Agricultural+Biotechnology+Annual",
+]
 TITLE = "agricultural biotechnology annual"
 UA = "GMO-map-harvest/1.0 (+https://github.com/WelcomeToYourGalaxy/GMO-map)"
 
@@ -180,7 +194,31 @@ def main():
         years = int(sys.argv[sys.argv.index("--years") + 1])
 
     print("searching FAS for the Agricultural Biotechnology Annual series")
-    recs = collect()
+    recs = []
+    for route in GAIN_ROUTES:
+        try:
+            got = find_rows(get(route))
+        except Exception as e:
+            print("  %-64s %s" % (route[:64], str(e)[:30]), file=sys.stderr); continue
+        hits = [r for r in got if TITLE in str(field(r, "title", "name", "reporttitle")).lower()]
+        if hits:
+            print("  %d reports from %s" % (len(hits), route[:70]))
+            recs = [{"title": field(r, "title", "name", "reporttitle"),
+                     "url": field(r, "url", "link", "filename", "path") or route,
+                     "country": field(r, "country", "post"),
+                     "date": field(r, "date", "released", "reportdate")} for r in hits]
+            break
+    if not recs:
+        recs = collect()
+    if not recs:
+        # Every route refused. Say so plainly rather than writing an empty file
+        # that looks like "this country grows nothing" once it reaches the map.
+        print("ALL FAS ROUTES REFUSED. No cultivation file written - the layer will "
+              "stay empty, which is correct: an empty overlay is honest, a fabricated "
+              "one is not. Routes tried:", file=sys.stderr)
+        for r in GAIN_ROUTES + [SEARCH]:
+            print("    %s" % r, file=sys.stderr)
+        return
     if not recs:
         print("no reports matched. The search may have changed shape; open %s?"
               "keyword=%s and update find_rows()." % (SEARCH, TITLE.replace(" ", "+")),
