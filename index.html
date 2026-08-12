@@ -469,7 +469,7 @@ function pjReport(which, data){
   <div id="legHead"><span>Map key</span><span id="legTog" onclick="document.getElementById('legend').classList.toggle('collapsed')" title="Show / hide the map key">&#9662;</span></div>
   <div id="legBody">
   
-  <label class="f-status"><input type="checkbox" id="projChk" checked> All map points</label><div class="pj-kinds"><label><input type="checkbox" class="pj-kind" data-kind="industry" checked> <b>Industry</b> — organisations</label><label><input type="checkbox" class="pj-kind" data-kind="escape" checked> <b>Spread &amp; drift</b> — what got out</label><label><input type="checkbox" class="pj-kind" data-kind="release" checked> <b>Releases</b> — authorisations</label></div><div class="ot-head">Release records</div><div class="pj-otypes" id="relBox"></div><div class="ot-head">Organisation type</div><div class="pj-otypes" id="otBox"></div><div class="ot-head">Shaded areas &mdash; regulatory regime</div><div class="pj-otypes" id="regBox"></div><div class="ot-head">Shaded areas &mdash; context</div><div class="pj-otypes" id="ovBox"></div>
+  <label class="f-status"><input type="checkbox" id="projChk" checked> All map points</label><div class="pj-kinds"><label><input type="checkbox" class="pj-kind" data-kind="industry" checked> <b>Industry</b> — organisations</label><label><input type="checkbox" class="pj-kind" data-kind="escape" checked> <b>Spread &amp; drift</b> — what got out</label><label><input type="checkbox" class="pj-kind" data-kind="release" checked> <b>Releases</b> — authorisations</label></div><div class="ot-head">Release records</div><div class="pj-otypes" id="relBox"></div><div class="ot-head">What they work on</div><div class="pj-otypes" id="subjBox"></div><div class="ot-head">Organisation type</div><div class="pj-otypes" id="otBox"></div><div class="ot-head">Shaded areas &mdash; regulatory regime</div><div class="pj-otypes" id="regBox"></div><div class="ot-head">Shaded areas &mdash; context</div><div class="pj-otypes" id="ovBox"></div>
   <div class="proj-size"><span class="ps-lab">Release scale &mdash; select any</span><span class="ps-pill on" data-ms="all">All</span><span class="ps-pill" data-ms="3">Medium <i>multi-site trial</i></span><span class="ps-pill" data-ms="4">Large <i>regional / multi-season</i></span><span class="ps-pill" data-ms="5">Largest <i>commercial cultivation</i></span></div><div class="proj-size proj-phase"><span class="ps-lab">Consent phase &mdash; select any</span><span class="ps-pill on" data-ph="pre">In review <i>pre-consent &middot; applied / notified / under assessment</i></span><span class="ps-pill on" data-ph="post">Consented <i>post-consent &middot; approved / planted / marketed</i></span></div>
   <div class="proj-search"><input id="projQ" type="search" placeholder="Search releases by organism, trait or applicant…" autocomplete="off"><span id="projQn"></span></div>
   <div class="proj-time"><span class="ps-lab">Filing recency — dated registers</span><span class="pt-pill on" data-tw="0">All ages</span><span class="pt-pill" data-tw="30">≤30d</span><span class="pt-pill" data-tw="90">≤90d</span><span class="pt-pill" data-tw="180">≤6mo</span><span class="pt-pill" data-tw="365">≤1yr</span><label class="pt-und"><input type="checkbox" id="pjUndated" checked> Include undated</label></div><div class="lp-detail collapsed"><div class="lp-detail-head" onclick="this.parentNode.classList.toggle('collapsed')"><span class="lp-car">&#9662;</span> Where this data comes from &amp; what's not (yet) in it</div><div class="lp-detail-body">
@@ -2331,6 +2331,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     if(!pjKinds.has(pjKind(p))) return false;
     if(typeof window!=='undefined' && window.pjRelPasses && !window.pjRelPasses(p)) return false;
     if(typeof window!=='undefined' && window.pjLevelPasses && !window.pjLevelPasses(p)) return false;
+    if(typeof window!=='undefined' && window.pjSubjPasses && !window.pjSubjPasses(p)) return false;
     // Type applies to organisations only; spread and releases are not bodies.
     if(String(p.source||'').indexOf('industry')===0 &&
        typeof pjTypes!=='undefined' && !pjTypes.has(p.otype||'company')) return false;
@@ -3505,7 +3506,10 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
     // drawn in the list where you can see the counts without opening anything.
     // Sorting happens before grouping, so every leaf in the tree comes out in
     // the chosen order rather than only the flat list being sorted.
-    if(!window.pjSortBy){ window.pjSortBy = 'd'; window.pjSortDir = -1; }
+    // Count is the default: the first question a list of categories answers is
+    // which ones are big. Date was the default and it ordered nothing visible,
+    // because categories are not dated - only the records inside them are.
+    if(!window.pjSortBy){ window.pjSortBy = '#'; window.pjSortDir = -1; }
     var by = state.by || window.pjSortBy, dir = state.dir || window.pjSortDir;
     r.sort(function(a, b){
       var x = String(a[by] || ''), y = String(b[by] || '');
@@ -4076,7 +4080,12 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
       // "Other" is the leftovers, so it sits at the bottom whatever its size.
       if(a === 'Other') return 1;
       if(b === 'Other') return -1;
-      return tot(b) - tot(a);
+      // Categories follow the chosen sort. Only count and name mean anything to
+      // a heading - a category has no date or status of its own - so any other
+      // choice orders the records inside and leaves the headings by count.
+      var by = window.pjSortBy || '#', dir = window.pjSortDir || -1;
+      if(by === 'n') return a < b ? -dir : a > b ? dir : 0;
+      return (tot(b) - tot(a)) * (dir < 0 ? 1 : -1);
     });
     return {cats: out, order: order};
   };
@@ -4117,7 +4126,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
       var sorts = '';
       if(oc){
         sorts = '<span class="rec-sorts">'
-          + [['d','date'],['n','name'],['t','type'],['c','detail'],['s','status']].map(function(o){
+          + [['#','count'],['d','date'],['n','name'],['t','type'],['c','detail'],['s','status']].map(function(o){
               return '<span class="rec-s'+(window.pjSortBy===o[0]?' on':'')+'" data-by="'+o[0]+'">'+o[1]
                    + (window.pjSortBy===o[0]?(window.pjSortDir<0?' \u25be':' \u25b4'):'')+'</span>';
             }).join('') + '</span>';
@@ -4290,5 +4299,111 @@ document.addEventListener('keydown',function(e){ if(e.key==='Spread')closeGuide(
 .tr-rec{padding:4px 0;border-bottom:1px solid rgba(127,168,204,0.08);line-height:1.35;}
 .tr-l1{padding-left:15px;} .tr-l2{padding-left:30px;}
 </style>
+<script>
+(function(){
+  // Organisation type says what kind of body something is. It says nothing about
+  // what the body works ON, and "what does this company do to what" is the
+  // question most readers arrive with. The facet tags already carry it - 49
+  // sub-tags across 436 organisations - so this is a second reading of data that
+  // is already there, not a new field.
+  //
+  // Subjects are deliberately coarser than the tags and finer than the facets.
+  // An entry can hold several: a company breeding disease-resistant pigs works on
+  // animals AND on livestock production, and hiding it under one loses the point.
+  window.PJ_SUBJ = {
+    plants:    {label:'Plants & crops',       colour:'#76c893',
+                tags:['seed:traits','seed:germplasm','seed:majors','seed:licensees',
+                      'seed:distribution','editing:agtech']},
+    animals:   {label:'Animals',              colour:'#e08a5f',
+                tags:['animals:models','animals:breeders','animals:primates','animals:services',
+                      'livestock:livestock','livestock:cloning','deextinct:rescue',
+                      'deextinct:biobank','deextinct:ventures']},
+    humans:    {label:'Human medicine & reproduction', colour:'#d96ba0',
+                tags:['clinical:therapy','clinical:trials','clinical:vectors','clinical:germline',
+                      'repro:clinics','repro:banks','repro:surrogacy','repro:screening']},
+    wild:      {label:'Wild release',         colour:'#4db6ac',
+                tags:['wild:insects','wild:microbes','wild:drives']},
+    microbes:  {label:'Microbes & fermentation', colour:'#c9a227',
+                tags:['editing:synbio','synthesis:synth','synthesis:seq','synthesis:reagents',
+                      'synthesis:repos','cro:cdmo']},
+    tools:     {label:'Tools, patents & platforms', colour:'#8e7cc3',
+                tags:['editing:platform','editing:patents','rules:ip','cro:cro','clinical:cro']},
+    money:     {label:'Money',                colour:'#f2c14e',
+                tags:['money:vc','money:markets','money:public','money:philanthropy','money:defence']},
+    rules:     {label:'Rules & influence',    colour:'#6fa8dc',
+                tags:['rules:regulators','rules:standards','rules:associations','rules:influence']}
+  };
+
+  var TAG2SUBJ = {};
+  Object.keys(PJ_SUBJ).forEach(function(k){
+    PJ_SUBJ[k].tags.forEach(function(t){ (TAG2SUBJ[t] || (TAG2SUBJ[t] = [])).push(k); });
+  });
+
+  window.pjSubjOf = function(p){
+    var out = {}, tags = (p && p.tags) || [];
+    tags.forEach(function(t){
+      (TAG2SUBJ[t] || []).forEach(function(k){ out[k] = 1; });
+      // a tag nobody mapped still belongs to its facet, so nothing is orphaned
+      if(!TAG2SUBJ[t]){
+        var f = String(t).split(':')[0];
+        if(f === 'seed' || f === 'editing') out.plants = 1;
+        else if(f === 'animals' || f === 'livestock' || f === 'deextinct') out.animals = 1;
+        else if(f === 'clinical' || f === 'repro') out.humans = 1;
+        else if(f === 'wild') out.wild = 1;
+        else if(f === 'synthesis' || f === 'cro') out.microbes = 1;
+        else if(f === 'money') out.money = 1;
+        else if(f === 'rules') out.rules = 1;
+      }
+    });
+    return Object.keys(out);
+  };
+
+  window.pjSubjOn = new Set(Object.keys(PJ_SUBJ));
+
+  window.pjSubjPasses = function(p){
+    if(String((p && p.source) || '').indexOf('industry') !== 0) return true;   // organisations only
+    var s = window.pjSubjOf(p);
+    if(!s.length) return true;            // untagged: never hidden by a filter it is not in
+    for(var i = 0; i < s.length; i++){ if(window.pjSubjOn.has(s[i])) return true; }
+    return false;
+  };
+})();
+</script>
+<script>
+(function(){
+  function build(){
+    var box=document.getElementById('subjBox');
+    if(!box || box.dataset.built || !window.PJ_SUBJ) return;
+    box.dataset.built='1';
+    var h='';
+    Object.keys(window.PJ_SUBJ).forEach(function(k){
+      h+='<label><input type="checkbox" data-subj="'+k+'" checked>'
+        +'<span class="ot-dot" style="background:'+window.PJ_SUBJ[k].colour+'"></span>'
+        +window.PJ_SUBJ[k].label+'<span class="kcount" data-sc="'+k+'"></span></label>';
+    });
+    box.innerHTML=h;
+    box.addEventListener('change',function(e){
+      var k=e.target.dataset&&e.target.dataset.subj; if(!k)return;
+      e.target.checked?window.pjSubjOn.add(k):window.pjSubjOn.delete(k);
+      try{ if(window.pjRefresh) window.pjRefresh(); }catch(_e){}
+    });
+    count();
+  }
+  function count(){
+    try{
+      var rows=(window.pjDataRef&&window.pjDataRef.projects)||[];
+      var n={};
+      rows.forEach(function(p){
+        if(String(p.source||'').indexOf('industry')!==0) return;
+        window.pjSubjOf(p).forEach(function(k){ n[k]=(n[k]||0)+1; });
+      });
+      document.querySelectorAll('[data-sc]').forEach(function(el){
+        el.textContent=' ('+(n[el.dataset.sc]||0)+')'; });
+    }catch(e){}
+  }
+  var t=setInterval(function(){ build(); if(window.pjDataRef) count(); },700);
+  setTimeout(function(){ clearInterval(t); },30000);
+})();
+</script>
 </body>
 </html>
