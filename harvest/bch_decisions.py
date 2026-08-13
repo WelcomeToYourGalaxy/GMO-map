@@ -191,15 +191,14 @@ def to_record(row):
         "phase": "post", "date": date,
         "lapsed": False,
         "url": link,
-        "desc": ("WHAT. A national decision on a living modified organism, filed by the "
-                 "country itself to the Biosafety Clearing-House. "
-                 "WHERE IT SITS. Under Article 20 of the Cartagena Protocol every party "
-                 "files its release and market decisions here within fifteen days. 173 "
-                 "parties do; **the United States is not one of them.** "
-                 "WHY IT MATTERS. This is the only place national release decisions from "
-                 "that many countries sit together. A country with no records here has not "
-                 "necessarily approved nothing \u2014 it may simply not have filed, and the gap "
-                 "between those two is invisible from the outside."),
+        "desc": ("A decision on a living modified organism, filed by the country itself "
+                 "to the Biosafety Clearing-House. Article 20 of the Cartagena Protocol "
+                 "requires every party to file its release and market decisions there "
+                 "within fifteen days, and 173 parties are bound by it. The United States "
+                 "is not among them. Nowhere else holds national release decisions from "
+                 "this many countries in one place. A country with no records here has not "
+                 "necessarily approved nothing \u2014 it may not have filed, and from the "
+                 "outside those two look the same."),
         "checked": "",
     }
 
@@ -308,16 +307,19 @@ def main():
             "status": ("Filed %s" % span) if span else "Filed to the Biosafety Clearing-House",
             "phase": "post", "date": rs[0].get("date", ""), "lapsed": False,
             "url": rs[0]["url"],
-            "desc": ("WHAT. %d decision%s on living modified organisms filed by this country "
-                     "to the Biosafety Clearing-House%s. Most recent: %s. "
-                     "WHERE IT SITS. Under Article 20 of the Cartagena Protocol every party files "
-                     "its release and market decisions here within fifteen days. 173 parties do; "
-                     "**the United States is not one of them.** "
-                     "WHY IT MATTERS. These are national instruments, so there is no site to place "
-                     "and the marker sits at the country centroid. They are grouped into one point "
-                     "rather than stacked as hundreds, because spreading them apart would invent a "
-                     "geography the source does not have. A country with no records here has not "
-                     "necessarily approved nothing \u2014 it may simply not have filed."
+            # The three labelled sections said the same thing about every country
+            # with two numbers changed. Written as prose the country's own
+            # figures carry the paragraph instead.
+            "desc": ("%d decision%s on living modified organisms, filed by this country "
+                     "to the Biosafety Clearing-House%s. The most recent are %s. "
+                     "Article 20 of the Cartagena Protocol requires every party to file "
+                     "its release and market decisions there within fifteen days, and 173 "
+                     "parties are bound by it; the United States is not among them. "
+                     "A decision is a national instrument with no site to place, so this "
+                     "marker sits at the country centroid and holds all of them together "
+                     "rather than scattering them into a geography the source does not "
+                     "have. A country with no records here has not necessarily approved "
+                     "nothing \u2014 it may not have filed."
                      % (len(rs), "" if len(rs) == 1 else "s",
                         (", %s" % span) if span else "", recent or "not stated")),
             "checked": "",

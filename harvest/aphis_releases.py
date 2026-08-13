@@ -366,15 +366,22 @@ def main():
     # "facilities") rather than "projects", and their rows carry lat/lng as
     # strings with no source field, so they need converting rather than
     # appending.
-    EXTRAS = (("clinical_sponsors.json", "projects", None),
-              ("register_records.json", "projects", None),
-              ("animal_facilities.json", "projects", None),
-              ("ogtr_trials.json", "projects", None),
-              ("bch_decisions.json", "projects", None),
-              ("fertility_clinics.json", "clinics", "industry:repro"),
-              ("animal_testing_facilities.json", "facilities", "industry:animals"))
+    # A tag and an organism as well as a source. An industry record with no tags
+    # is not hidden by default, but it disappears the moment a reader picks a
+    # lens - so an untagged record is one that works until somebody uses the
+    # filters. These are clinic registers and laboratory-animal registers, and
+    # they belong in the facets of those names.
+    EXTRAS = (("clinical_sponsors.json", "projects", None, None, None),
+              ("register_records.json", "projects", None, None, None),
+              ("animal_facilities.json", "projects", None, None, None),
+              ("ogtr_trials.json", "projects", None, None, None),
+              ("bch_decisions.json", "projects", None, None, None),
+              ("fertility_clinics.json", "clinics", "industry:repro",
+               ["repro:clinics"], ["human"]),
+              ("animal_testing_facilities.json", "facilities", "industry:animals",
+               ["animals:services"], ["lab_animals"]))
 
-    def _as_record(row, source):
+    def _as_record(row, source, tags=None, species=None):
         """One register pointer, in the shape the map reads."""
         try:
             lat, lng = float(row["lat"]), float(row["lng"])
@@ -390,6 +397,7 @@ def main():
                 "precise": False, "impact": 2,
                 "company": "", "size": "", "status": "Register",
                 "phase": "post", "date": "", "otype": "registry",
+                "tags": list(tags or []), "species": list(species or []),
                 "url": row.get("url", ""), "desc": row.get("desc", ""),
                 "checked": ""}
 
@@ -399,7 +407,7 @@ def main():
     # dropped, and the count is printed rather than swallowed.
     seen_urls = {str(r.get("url", "")) for r in records if r.get("url")}
 
-    for extra_file, key, source in EXTRAS:
+    for extra_file, key, source, tags, species in EXTRAS:
         fp = HERE / extra_file
         if not fp.exists():
             continue
@@ -410,7 +418,7 @@ def main():
         if source:
             conv, dup, bad = [], 0, 0
             for row in got:
-                rec = _as_record(row, source)
+                rec = _as_record(row, source, tags, species)
                 if not rec:
                     bad += 1; continue
                 if rec["url"] and rec["url"] in seen_urls:
