@@ -40,6 +40,7 @@ UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
 SOURCES = [
     {"k": "hfea", "country": "United Kingdom", "iso": "GBR",
      "url": "https://www.hfea.gov.uk/choose-a-clinic/clinic-search/results/",
+     "lat": 51.51, "lng": -0.13,
      "label": "HFEA licensed clinic register",
      "note": ("The UK regulator licenses every clinic and publishes its inspection "
               "history and its ratings of the optional add-on treatments clinics "
@@ -47,6 +48,7 @@ SOURCES = [
               "work - and they continue to be sold.")},
     {"k": "cdc", "country": "United States", "iso": "USA",
      "url": "https://www.cdc.gov/art/artdata/index.html",
+     "lat": 33.80, "lng": -84.32,
      "label": "CDC ART clinic reporting",
      "note": ("US clinics performing IVF must report cycles and outcomes. Success "
               "rates depend heavily on which patients a clinic accepts, so a clinic "
@@ -54,6 +56,7 @@ SOURCES = [
               "data cannot show you that.")},
     {"k": "anzard", "country": "Australia", "iso": "AUS",
      "url": "https://npesu.unsw.edu.au/data-collection/australian-new-zealand-assisted-reproduction-database-anzard",
+     "lat": -33.92, "lng": 151.23,
      "label": "ANZARD accredited units",
      "note": ("Australia and New Zealand report through a shared database, with "
               "accreditation required to operate.")},
@@ -123,7 +126,11 @@ def main():
             "name": "%s \u2014 %s" % (src["country"], src["label"]),
             "url": src["url"], "type": "Fertility clinic register",
             "country": src["country"], "iso": src["iso"],
+            "lat": src["lat"], "lng": src["lng"],
             "desc": src["note"], "precise": False, "kind": "register",
+            "source": "industry:fertility", "impact": 2, "phase": "post",
+            "otype": "register", "tags": ["repro:clinics"],
+            "company": "", "status": "", "date": "", "size": "",
         })
 
     for name, iso, la, ln, why in NO_REGISTER:
@@ -132,6 +139,9 @@ def main():
             "url": "", "type": "Fertility sector, unregistered",
             "country": name, "iso": iso, "lat": la, "lng": ln,
             "desc": why, "precise": False, "kind": "gap",
+            "source": "industry:fertility-gap", "impact": 1, "phase": "post",
+            "otype": "register", "tags": ["repro:clinics"],
+            "company": "", "status": "No public register", "date": "", "size": "",
         })
 
     OUT.write_text(json.dumps({"generated": time.strftime("%Y-%m-%d"),

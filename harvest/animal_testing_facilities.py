@@ -131,6 +131,9 @@ def main():
             "country": r["country"], "iso": r["iso"],
             "lat": r["lat"], "lng": r["lng"],
             "desc": r["desc"], "precise": False, "kind": "register",
+            "source": "industry:animal-testing", "impact": 2, "phase": "post",
+            "otype": "register", "tags": ["animals:services"],
+            "company": "", "status": "", "date": "", "size": "",
         })
 
     for name, iso, la, ln, why in NO_REGISTER:
@@ -139,6 +142,9 @@ def main():
             "url": "", "type": "Animal research, unregistered",
             "country": name, "iso": iso, "lat": la, "lng": ln,
             "desc": why, "precise": False, "kind": "gap",
+            "source": "industry:animal-testing-gap", "impact": 1, "phase": "post",
+            "otype": "register", "tags": ["animals:services"],
+            "company": "", "status": "No public register", "date": "", "size": "",
         })
 
     OUT.write_text(json.dumps({"generated": time.strftime("%Y-%m-%d"),
