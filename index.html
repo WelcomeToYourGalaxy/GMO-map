@@ -2466,6 +2466,11 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   function pjPasses(p){
     if(p.lat==null||p.lng==null) return false;
     if(!pjKinds.has(pjKind(p))) return false;
+    // The source checkboxes updated activeProjSrc and repainted the canvas, and
+    // nothing ever read the set - so unticking a register changed the count in
+    // the box and left every one of its markers on the map.
+    if(typeof activeProjSrc !== 'undefined' && activeProjSrc.size
+       && !activeProjSrc.has(pjSrcGroup(String(p.source||'')))) return false;
     if(typeof window!=='undefined' && window.pjRelPasses && !window.pjRelPasses(p)) return false;
     if(typeof window!=='undefined' && window.pjLevelPasses && !window.pjLevelPasses(p)) return false;
     if(typeof window!=='undefined' && window.pjSubjPasses && !window.pjSubjPasses(p)) return false;
@@ -4519,11 +4524,12 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   window.PJ_SUBJ = {
     plants:    {label:'Plants & crops',       colour:'#7d9b5a',
                 tags:['seed:traits','seed:germplasm','seed:majors','seed:licensees',
-                      'seed:distribution','editing:agtech']},
+                      'seed:distribution','editing:agtech','deextinct:trees']},
     animals:   {label:'Animals',              colour:'#a4713c',
                 tags:['animals:models','animals:breeders','animals:primates','animals:services',
-                      'livestock:livestock','livestock:cloning','deextinct:rescue',
-                      'deextinct:biobank','deextinct:ventures']},
+                      'livestock:livestock','livestock:cloning','livestock:aqua',
+                      'livestock:pets','deextinct:rescue','deextinct:biobank',
+                      'deextinct:ventures']},
     humans:    {label:'Human medicine & reproduction', colour:'#96637a',
                 tags:['clinical:therapy','clinical:trials','clinical:vectors','clinical:germline',
                       'repro:clinics','repro:banks','repro:surrogacy','repro:screening']},
@@ -4537,7 +4543,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     money:     {label:'Money',                colour:'#b8912f',
                 tags:['money:vc','money:markets','money:public','money:philanthropy','money:defence']},
     rules:     {label:'Rules & influence',    colour:'#5f7a53',
-                tags:['rules:regulators','rules:standards','rules:associations','rules:influence']}
+                tags:['rules:regulators','rules:standards','rules:associations','rules:influence',
+                      'cro:regulatory']}
   };
 
   var TAG2SUBJ = {};
@@ -5201,17 +5208,37 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     host.dataset.orgList='1';
     var tot=0; keys.forEach(function(k){ tot+=n[k]; });
     keys.sort(function(a,b){ return n[b]-n[a] || (a<b?-1:1); });
-    var rows=keys.map(function(k){
-      var pc=tot?(n[k]/tot*100):0;
-      var t=pc>=10?Math.round(pc):(pc>=1?pc.toFixed(1):'<1');
-      return '<div class="org-row"><span>'+k.replace(/</g,'&lt;')+'</span>'
-           + '<span class="kcount">'+n[k].toLocaleString()+' \u00b7 '+t+'%</span></div>';
+    // grouped, not one alphabetical run of 200 names
+    var byGroup={};
+    keys.forEach(function(k){
+      var g=window.pjOrgGroup?window.pjOrgGroup(k):'Other / unclassified';
+      (byGroup[g]||(byGroup[g]=[])).push(k);
+    });
+    var order=(window.pjOrgGroupOrder||Object.keys(byGroup))
+              .filter(function(g){ return byGroup[g]; });
+    var rows=order.map(function(g){
+      var gk=byGroup[g], gt=0;
+      gk.forEach(function(k){ gt+=n[k]; });
+      gk.sort(function(a,b){ return n[b]-n[a] || (a<b?-1:1); });
+      var gpc=tot?(gt/tot*100):0;
+      var gt2=gpc>=10?Math.round(gpc):(gpc>=1?gpc.toFixed(1):'<1');
+      return '<div class="org-grp"><span class="ot-dot" style="background:'
+           + (window.pjOrgGroupColour?window.pjOrgGroupColour(g):'#8a917a')+'"></span>'
+           + g + '<span class="kcount"> '+gt.toLocaleString()+' \u00b7 '+gt2+'%</span></div>'
+           + gk.map(function(k){
+               var pc=tot?(n[k]/tot*100):0;
+               var t=pc>=10?Math.round(pc):(pc>=1?pc.toFixed(1):'<1');
+               return '<div class="org-row"><span>'+k.replace(/</g,'&lt;')+'</span>'
+                    + '<span class="kcount">'+n[k].toLocaleString()+' \u00b7 '+t+'%</span></div>';
+             }).join('');
     }).join('');
     var wrap=document.createElement('div');
     wrap.innerHTML =
       '<div class="ot-fold" data-fold="orglist"><span class="tr-tw">\u25b8</span>'
       + '<b>Every organism in this layer</b><span class="kcount"> ('+keys.length+')</span></div>'
+      + '<div class="ot-foldbody" data-foldbody="orglist-note" style="display:none"></div>'
       + '<div class="ot-foldbody org-list" data-foldbody="orglist" style="display:none">'
+      + '<div class="rec-meta" style="margin:0 0 6px">Grouped by what the organism is. The organism is a field on every release record, so these are counted rather than estimated \u2014 an unrecognised name goes to Other rather than being guessed at.</div>'
       + rows + '</div>';
     host.appendChild(wrap);
   }
@@ -5222,9 +5249,77 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 <style>
 .org-list{max-height:210px;overflow-y:auto;margin:2px 0 6px 14px;
   border-left:1px solid rgba(127,168,204,0.18);padding-left:8px;}
+.org-grp{display:flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:#c3cee0;margin:6px 0 2px;padding-top:4px;border-top:1px solid rgba(127,168,204,0.14);}
+.org-grp:first-child{border-top:none;padding-top:0;margin-top:0;}
+.org-grp .kcount{margin-left:auto;font-weight:400;}
+.org-row{margin-left:14px;}
 .org-row{display:flex;justify-content:space-between;gap:8px;font-size:10px;
   color:#9aa8c0;line-height:1.5;padding:1px 0;}
 .org-row .kcount{flex:0 0 auto;opacity:.75;}
 </style>
+<script>
+(function(){
+  // Group the release organisms the way a reader thinks about them, rather than
+  // as one alphabetical run of 200 names. The organism is structured data on
+  // every release record - it is the words before the last comma in the type
+  // string - so this is a classification of a real field, not a guess at one.
+  var GROUPS = [
+    ["Food crops", "#7f9a52", [
+      "maize","corn","soy","soybean","rice","wheat","barley","sorghum","oat","rye",
+      "potato","sweetpotato","cassava","bean","pea","lentil","chickpea","cowpea",
+      "peanut","groundnut","millet","quinoa","sugarcane","sugar beet","sunflower"]],
+    ["Vegetables & fruit", "#8fae62", [
+      "chardonnay","cabernet","merlot","pinot","sauvignon","zinfandel","thompson seedless",
+      "vitis","grapevine",
+      "tomato","lettuce","cabbage","brassica","broccoli","cauliflower","carrot",
+      "onion","pepper","cucumber","squash","melon","pumpkin","spinach","eggplant",
+      "brinjal","apple","banana","papaya","citrus","orange","grape","strawberry",
+      "plum","peach","pear","pineapple","avocado","mango","lime","grapefruit"]],
+    ["Fibre & industrial crops", "#9aae74", [
+      "cotton","flax","hemp","jute","canola","rapeseed","oilseed","safflower",
+      "camelina","castor","tobacco"]],
+    ["Forage, grass & feed", "#a8bd84", [
+      "alfalfa","lucerne","clover","bentgrass","ryegrass","fescue","bermudagrass",
+      "grass","medicago","barrel clover"]],
+    ["Trees & forestry", "#6b8f4a", [
+      "poplar","eucalyptus","pine","chestnut","walnut","spruce","elm","birch",
+      "willow","tree"]],
+    ["Livestock & poultry", "#a4713c", [
+      "cattle","cow","bovine","pig","swine","porcine","sheep","ovine","goat",
+      "chicken","poultry","turkey","duck","quail","horse","equine","rabbit"]],
+    ["Fish & aquaculture", "#5d8a72", [
+      "salmon","trout","tilapia","carp","catfish","zebrafish","shrimp","oyster",
+      "abalone","fish","bass","puffer","bream"]],
+    ["Laboratory animals", "#96637a", [
+      "mouse","mice","murine","rat","primate","macaque","monkey","ferret",
+      "hamster","guinea pig","dog","cat","xenopus","drosophila"]],
+    ["Insects & gene drives", "#b08d3e", [
+      "mosquito","aedes","anopheles","moth","fly","medfly","bollworm","weevil",
+      "beetle","aphid","psyllid","screwworm","insect","bee","silkworm"]],
+    ["Microbes & fermentation", "#9c8434", [
+      "bacteri","pseudomonas","rhizobium","agrobacterium","yeast","saccharomyces",
+      "fungus","fungi","algae","microb","e. coli","escherichia","bacillus",
+      "streptomyces","aspergillus","trichoderma"]],
+    ["Viruses & vectors", "#6f6a94", [
+      "virus","viral","vector","adeno","lentivir","baculovir","phage","vaccinia"]],
+    ["Human & clinical", "#d96ba0", [
+      "human","patient","embryo","gamete","cell therapy","gene therapy","car-t",
+      "sickle","thalassemia","haematopoietic","stem cell"]],
+  ];
+  window.pjOrgGroup = function(name){
+    var n = String(name||'').toLowerCase();
+    for(var i=0;i<GROUPS.length;i++){
+      var terms = GROUPS[i][2];
+      for(var j=0;j<terms.length;j++) if(n.indexOf(terms[j])>=0) return GROUPS[i][0];
+    }
+    return "Other / unclassified";
+  };
+  window.pjOrgGroupColour = function(g){
+    for(var i=0;i<GROUPS.length;i++) if(GROUPS[i][0]===g) return GROUPS[i][1];
+    return "#8a917a";
+  };
+  window.pjOrgGroupOrder = GROUPS.map(function(g){ return g[0]; }).concat(["Other / unclassified"]);
+})();
+</script>
 </body>
 </html>
