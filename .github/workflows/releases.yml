@@ -49,6 +49,7 @@ jobs:
             timeout 12m python3 harvest/ogtr_trials.py || echo "!! ogtr trials failed - continuing"
             timeout 8m python3 harvest/gmofree_zones.py     || echo "!! gmo-free zones failed - continuing"
             timeout 8m python3 harvest/fas_biotech.py       || echo "!! fas biotech failed - continuing"
+            timeout 6m python3 harvest/fertility_clinics.py || echo "!! fertility clinics failed - continuing"
             timeout 18m python3 harvest/bch_decisions.py    || echo "!! bch decisions failed - continuing"
             timeout 8m python3 harvest/clinical_sponsors.py || echo "!! clinical sponsors failed - continuing"
             timeout 8m python3 harvest/aphis_releases.py || echo "!! aphis harvester failed - continuing"
@@ -66,10 +67,23 @@ jobs:
                      harvest/ogtr_trials.json \
                      harvest/bch_decisions.json harvest/gmofree_zones.json harvest/fas_biotech.json \
                      harvest/clinical_sponsors.json \
+                     harvest/fertility_clinics.json \
                      overlays/trials.geojson overlays/regime.geojson overlays/cultivation.geojson overlays/gmofree.geojson \
                      overlays/incidents.geojson; do
-              [ -e "$f" ] && git add "$f"
+              if [ -e "$f" ]; then
+                # A file can be written this run and still never reach the
+                # commit. gitignore is the usual reason and it fails silently.
+                if git check-ignore -q "$f"; then
+                  echo "    !! $f IS GITIGNORED - written but never committed"
+                else
+                  git add "$f"
+                fi
+              else
+                echo "    -- $f not written this run"
+              fi
             done
+            echo "staged this run:"
+            git diff --staged --name-only | sed "s/^/    /"
             git diff --staged --quiet && { echo "no change"; exit 0; }
             git commit -m "releases: refresh $(date -u +%Y-%m-%d)"
             git push && exit 0
