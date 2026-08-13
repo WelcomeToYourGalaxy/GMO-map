@@ -73,6 +73,36 @@ TECHNIQUE = {
     "PAN": "protocol", "NIC": "protocol", "SLV": "protocol", "GTM": "likely",
     "HND": "protocol", "CUB": "likely", "DOM": "protocol", "JAM": "protocol",
     "TTO": "protocol", "HTI": "protocol",
+    # ---- added from the Cartagena party list ------------------------------
+    # Every state below is a Party to the Cartagena Protocol on the
+    # Secretariat's own ratification list, and none has an editing exemption
+    # this map has been able to find. The Protocol defines a living modified
+    # organism by the technique used to make it, so a country that enacted
+    # that definition and has not since carved editing out is technique-based
+    # by construction. That is what 'protocol' records: read from the treaty
+    # rather than from a national statute, and marked so nobody mistakes it
+    # for a reading of the law on the ground.
+    #
+    # Six are marked 'thin' instead. In each, the question is not which shape
+    # the statute takes but whether any of it is being administered.
+    # Africa
+    "AGO": "protocol", "BDI": "protocol", "BEN": "protocol", "CAF": "thin",
+    "COD": "protocol", "COG": "protocol", "COM": "protocol", "CPV": "protocol",
+    "DJI": "protocol", "ERI": "thin", "GAB": "protocol", "GIN": "protocol",
+    "GMB": "protocol", "GNB": "protocol", "LBR": "protocol", "LSO": "protocol",
+    "MDG": "protocol", "MRT": "protocol", "MUS": "protocol", "SOM": "thin",
+    "SYC": "protocol", "TCD": "protocol", "TGO": "protocol",
+    # The Caribbean and the Americas
+    "ATG": "protocol", "BHS": "protocol", "BLZ": "protocol", "BRB": "protocol",
+    "DMA": "protocol", "GRD": "protocol", "GUY": "protocol", "KNA": "protocol",
+    "LCA": "protocol", "SUR": "protocol", "VCT": "protocol",
+    # The Pacific
+    "FJI": "protocol", "KIR": "protocol", "MHL": "protocol", "NRU": "protocol",
+    "PLW": "protocol", "PNG": "protocol", "SLB": "protocol", "TON": "protocol",
+    "WSM": "protocol",
+    # Asia and the Middle East
+    "AFG": "thin", "ARE": "protocol", "BHR": "protocol", "PRK": "thin",
+    "PSE": "thin",
 }
 
 # ---------------------------------------------------------------------------
