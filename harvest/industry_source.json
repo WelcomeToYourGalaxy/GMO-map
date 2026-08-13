@@ -6709,5 +6709,233 @@
    "rules:associations"
   ],
   "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Cobb-Vantress (Tyson Foods)",
+  "url": "https://www.cobbgenetics.com/",
+  "desc": "One of two companies supplying the breeding stock behind essentially every broiler chicken raised on Earth, owned by the largest US meat processor. Roughly 70 billion chickens are slaughtered worldwide each year and the genetics of almost all of them trace to Cobb or Aviagen. That is a tighter concentration than seed, medicine or any other facet on this map, and it attracts a fraction of the attention: a breeding decision made in Arkansas reaches nearly every commercial flock in the world within a few generations, and there is no alternative supplier to switch to.",
+  "tags": [
+   "livestock:livestock",
+   "seed:majors"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Marshall BioResources",
+  "url": "https://www.marshallbio.com/",
+  "desc": "The principal supplier of purpose-bred beagles and ferrets for research worldwide. Beagles are used because they are docile and uniform, which is a sentence worth sitting with. Dogs are covered by the US Animal Welfare Act, so unlike mice the numbers and the inspection reports are public — the transparency exists here and not for the animals used in far greater numbers.",
+  "tags": [
+   "animals:breeders",
+   "animals:services"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Kite Pharma (Gilead)",
+  "url": "https://www.kitepharma.com/",
+  "desc": "Sells CAR-T cell therapies, in which a patient’s own immune cells are removed, genetically rewritten to attack their cancer, and returned. It is the treatment that made engineered cell therapy an industry rather than a research programme, and the manufacturing runs one patient at a time — which is why the price sits in the hundreds of thousands and why capacity, not science, decides who is treated.",
+  "tags": [
+   "clinical:therapy",
+   "cro:cdmo"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Spark Therapeutics (Roche)",
+  "url": "https://sparktx.com/",
+  "desc": "Luxturna, approved in 2017, was the first gene therapy for an inherited disease cleared in the United States — a one-time injection restoring some sight in a rare form of blindness, at $850,000 for two eyes. Every pricing argument since has been conducted in the shadow of that number, and Roche bought the company shortly after the approval.",
+  "tags": [
+   "clinical:therapy",
+   "clinical:vectors"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "OrbiMed",
+  "url": "https://www.orbimed.com/",
+  "desc": "The largest investment firm dedicated solely to healthcare, holding positions across therapeutics, devices and diagnostics worldwide. A fund of this size and focus shapes which diseases attract company formation at all — and a condition with few patients in wealthy countries does not attract it, however many people it affects elsewhere.",
+  "tags": [
+   "money:vc",
+   "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Bunge",
+  "url": "https://www.bunge.com/",
+  "desc": "One of the four traders — with Cargill, ADM and Louis Dreyfus — that move most of the world’s grain and oilseeds. These four decide what is worth growing more directly than any seed company: a variety nobody will buy does not get planted whatever its traits. Three of the four are private or family-controlled and disclose far less than any listed seed company on this map.",
+  "tags": [
+   "seed:distribution",
+   "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Caribou Biosciences",
+  "url": "https://cariboubio.com/",
+  "desc": "Founded by Jennifer Doudna, and the company through which the Berkeley side of the CRISPR patent dispute licensed its intellectual property. It holds a foundational position and lost the interference proceedings, which is why the licensing estate everyone else pays into sits with the Broad instead — the science was shared, the rights were not.",
+  "tags": [
+   "editing:platform",
+   "editing:patents",
+   "clinical:therapy"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Sartorius",
+  "url": "https://www.sartorius.com/",
+  "desc": "Supplies the bioreactors, filters and single-use bags that biologics and cell therapy manufacturing runs on. Equipment is the quiet constraint on genetic medicine: a therapy cannot be made faster than the vessels it is grown in can be built, and a handful of suppliers set that pace for the entire industry.",
+  "tags": [
+   "cro:cdmo",
+   "synthesis:reagents"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Merck KGaA / MilliporeSigma",
+  "url": "https://www.merckgroup.com/",
+  "desc": "Holds CRISPR patents granted in Europe, Canada and elsewhere while the American dispute ran, and supplies a large share of the reagents laboratories buy daily. The same technique therefore has different owners in different jurisdictions, so where an experiment happens decides who is owed for it — a fact about patent law rather than about biology.",
+  "tags": [
+   "editing:patents",
+   "synthesis:reagents",
+   "cro:cdmo"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "EW Group",
+  "url": "https://www.ew-group.de/",
+  "desc": "A private German holding company that owns Aviagen — the other of the two broiler genetics companies — alongside layer, turkey and aquaculture genetics businesses. It is one of the most consequential animal-breeding groups in the world and among the least visible, because being family-owned it publishes almost nothing.",
+  "tags": [
+   "livestock:livestock",
+   "seed:majors"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "uniQure",
+  "url": "https://www.uniquregroup.com/",
+  "desc": "Produced Glybera, approved in Europe in 2012 as the first gene therapy licensed anywhere in the Western world. It was withdrawn in 2017 having been used by a handful of patients — priced at around a million dollars, for a condition too rare to sustain it. The first approval and the first commercial failure are the same product.",
+  "tags": [
+   "clinical:therapy",
+   "clinical:vectors"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Vitrolife",
+  "url": "https://www.vitrolife.com/",
+  "desc": "Supplies much of the culture media, equipment and consumables that IVF laboratories worldwide depend on. An embryo develops in this company’s media, and the 2024 recall by a competitor showed what a supplier failure destroys — something irreplaceable, in a market regulated as devices rather than as the environment an embryo grows in.",
+  "tags": [
+   "repro:clinics",
+   "synthesis:reagents"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "COFCO International",
+  "url": "https://www.cofcointernational.com/",
+  "desc": "China’s state-owned grain trader, built deliberately to reduce dependence on the four Western traders. It buys soy and maize at a scale that moves world prices, and because the buyer is a state pursuing food security rather than a company pursuing margin, its purchasing decisions follow a different logic from the rest of this facet — and reach the same farmers.",
+  "tags": [
+   "seed:distribution",
+   "money:public",
+   "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Wilmar International",
+  "url": "https://www.wilmar-international.com/",
+  "desc": "The largest palm oil processor in the world. Palm is the highest-yielding oil crop by far and the one most associated with deforestation, and engineered and edited palm is under development to raise yields further. Whether that reduces land pressure or increases the return on clearing more is the question, and it will be settled by companies at this end of the chain rather than by the breeders.",
+  "tags": [
+   "seed:distribution",
+   "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Secretariat of the Convention on Biological Diversity",
+  "url": "https://www.cbd.int/",
+  "desc": "Runs the Cartagena Protocol and the Biosafety Clearing-House — the register this map draws its national decisions from. It is also where gene drives are argued over at treaty level, and where a moratorium on them has been proposed and rejected more than once. Almost every country is a party. The United States is not, and has never ratified the Convention itself.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
  }
 ]
