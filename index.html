@@ -5373,40 +5373,23 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // is the same list with different numbers on it, and it is drawn once.
   // Animals fails that test properly - "models" holds laboratory animals and
   // fish and nothing else - so it keeps its per-category breakdown.
-  // Requiring EVERY category to match was still too strict: under "Plants &
-  // crops" six of the seven categories covered 80-100% of the same five
-  // organisms and one - de-extinction trees, which is food crops and trees and
-  // nothing else - covered 40%, so the whole subject fell back to repeating the
-  // identical list six times to accommodate the one that differed.
+  // The organism level is a property of the subject, not of the categories
+  // under it, and every attempt to attach it to a category produced something
+  // that read as a mistake.
   //
-  // The answer is to do both. Where most categories say the same thing, that
-  // list is drawn once for the subject; and the categories that genuinely
-  // differ keep their own, because those are the ones where the level is
-  // telling the reader something. Under Animals no category reaches the
-  // threshold, so every one keeps its own list and nothing is drawn at the top.
-  var SHARE = 0.7;
-  function organismPlan(subjectKey, tagKeys, bySpec){
-    var union = {}, cover = {}, sets = 0;
-    tagKeys.forEach(function(t){
-      var g = organismsFor(subjectKey, bySpec[t]);
-      if(!g.length) return;
-      sets++;
-      cover[t] = g;
-      for(var q=0;q<g.length;q++) union[g[q]] = 1;
-    });
-    var n = Object.keys(union).length;
-    if(n < 2 || sets < 2) return {shared: false, differs: cover};
-    var agree = 0;
-    Object.keys(cover).forEach(function(t){
-      if(cover[t].length / n >= SHARE) agree++;
-    });
-    if(agree / sets < SHARE) return {shared: false, differs: cover};
-    var differs = {};
-    Object.keys(cover).forEach(function(t){
-      if(cover[t].length / n < SHARE) differs[t] = cover[t];
-    });
-    return {shared: true, differs: differs};
-  }
+  // The reason is in the data. An entry lists every organism it works on and
+  // every part of the industry it belongs to, and those two lists are not tied
+  // to each other. A livestock genetics firm that also sells research mice
+  // carries both livestock and laboratory animals, so counting organisms inside
+  // the "livestock" category put "Laboratory animals (3)" under a heading about
+  // livestock. Nothing was miscounted; the question was wrong. Crossing two
+  // independent lists and reading the result as a subdivision produces a number
+  // that is true and means nothing.
+  //
+  // So the two are shown side by side rather than nested: the categories say
+  // what part of the industry an organisation is in, and one organism list per
+  // subject says what the organisations in it work on. Neither claims to
+  // subdivide the other.
   function organismsForSubject(subjectKey, tagKeys, bySpec){
     var total = {};
     tagKeys.forEach(function(t){
@@ -5470,20 +5453,20 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       lab.appendChild(car);
       var sub=document.createElement('div');
       sub.className='subj-sub'; sub.style.display='none';
-      var plan = organismPlan(k, keys, bySpec);
-      var perCat = !plan.shared;
-      if(plan.shared){
-        var whole = organismsForSubject(k, keys, bySpec);
-        if(whole.keys.length){
-          var head=document.createElement('div');
-          head.className='spec-head';
-          head.textContent='What they work on \u2014 the same across most categories here';
-          sub.appendChild(head);
-          var lvlA=document.createElement('div');
-          lvlA.className='spec-sub spec-wide';
-          lvlA.innerHTML = specRows(whole.keys, whole.counts);
-          sub.appendChild(lvlA);
-        }
+      var whole = organismsForSubject(k, keys, bySpec);
+      if(whole.keys.length){
+        var head=document.createElement('div');
+        head.className='spec-head';
+        head.textContent='Organisms';
+        sub.appendChild(head);
+        var lvlA=document.createElement('div');
+        lvlA.className='spec-sub spec-wide';
+        lvlA.innerHTML = specRows(whole.keys, whole.counts);
+        sub.appendChild(lvlA);
+        var catHead=document.createElement('div');
+        catHead.className='spec-head'; catHead.style.marginTop='7px';
+        catHead.textContent='Part of the industry';
+        sub.appendChild(catHead);
       }
       keys.forEach(function(t){
         var nm=(window.SUBLABEL&&window.SUBLABEL[t])||t.split(':')[1]||t;
@@ -5492,24 +5475,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
           +'<span class="kcount"> ('+tags[t]+')</span>';
         sub.appendChild(l);
 
-        // Drawn once above, unless this category is one of the few that does
-        // not match the rest - in which case its own list is the useful thing.
-        if(!perCat && !plan.differs[t]) return;
-        var sp = bySpec[t];
-        var gk = organismsFor(k, sp);
-        if(!gk.length) return;
-        var c2=document.createElement('span');
-        c2.className='kind-car'; c2.textContent='\u25b8';
-        l.appendChild(c2);
-        var lvl3=document.createElement('div');
-        lvl3.className='spec-sub'; lvl3.style.display='none';
-        lvl3.innerHTML = specRows(gk, sp);
-        sub.appendChild(lvl3);
-        c2.onclick=function(e){
-          e.preventDefault(); e.stopPropagation();
-          var hid=lvl3.style.display==='none';
-          lvl3.style.display=hid?'':'none'; c2.textContent=hid?'\u25be':'\u25b8';
-        };
+        return;   // organisms are listed once for the subject, above
       });
       lab.parentNode.insertBefore(sub, lab.nextSibling);
       car.onclick=function(e){
@@ -6034,22 +6000,43 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     });
   }
   function order(){
-    // relBox holds the fold; the search box was parked beside it by an earlier
-    // pass. Put the search box immediately before the fold, whichever container
-    // each ended up in.
-    var fold=document.querySelector('.ot-fold[data-fold="leaveout"]');
-    var body=document.querySelector('[data-foldbody="leaveout"]');
+    // The search box has to sit INSIDE the container the Releases caret folds,
+    // not merely below the Releases label. Parked outside it, the box stayed on
+    // screen with the fold shut and read as a search over the whole map rather
+    // than over the release records.
+    //
+    // The release container is found first and the box moved into it whatever
+    // happens; only its position within that container waits on the fold.
     var q=document.querySelector('.proj-search');
-    if(!fold||!q) return false;
-    if(q.nextElementSibling===fold) return true;
-    fold.parentNode.insertBefore(q, fold);
-    if(body && fold.nextElementSibling!==body) fold.parentNode.insertBefore(body, fold.nextSibling);
-    return true;
+    if(!q) return false;
+    var cb=document.querySelector('.pj-kind[data-kind="release"]');
+    var lab=cb && cb.closest('label');
+    var host=null, n=lab && lab.nextSibling;
+    while(n){
+      if(n.nodeType===1){
+        if(n.tagName==='LABEL' && n.querySelector('.pj-kind')) break;
+        if(n.classList.contains('kind-sub')){ host=n; break; }
+      }
+      n=n.nextSibling;
+    }
+    if(!host) return false;
+    var fold=host.querySelector('.ot-fold[data-fold="leaveout"]');
+    var body=host.querySelector('[data-foldbody="leaveout"]');
+    if(fold){
+      if(q.nextElementSibling!==fold) fold.parentNode.insertBefore(q, fold);
+      if(body && fold.nextElementSibling!==body) fold.parentNode.insertBefore(body, fold.nextSibling);
+      return true;
+    }
+    if(q.parentNode!==host) host.appendChild(q);
+    return false;   // inside the fold now, still looking for its final place
   }
   function go(){
     if(document.body.dataset.pillsDone) return;
     [].slice.call(document.querySelectorAll('.proj-size, .proj-time'))
       .forEach(function(n){ n.remove(); });
+    // The loop used to stop the moment the box was placed. It also has to keep
+    // going until the fold exists, or the box is left in the container without
+    // ever reaching its place inside it.
     var placed = order();
     tidyEmpties();
     if(placed) document.body.dataset.pillsDone='1';
@@ -6200,10 +6187,23 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     var all=document.createElement('label');
     all.className='sh-all';
     all.innerHTML='<input type="checkbox" data-shaded="all" checked><b>All shaded areas</b>';
+    // Two overlays that both "shade a country" and mean different things. The
+    // regime layer draws the border and leaves the ground clear, because it is
+    // a statement about a whole state and its law. The GM zone layers fill the
+    // ground, because they are about particular places within a country. Left
+    // unsaid, a filled country and an outlined one look like the same claim at
+    // two strengths.
+    var expl=document.createElement('div');
+    expl.className='sh-note';
+    expl.innerHTML='<b>Outlines</b> are the law: the regulatory regime traces a country\u2019s '
+      + 'border and leaves the ground clear, because it describes the whole state. '
+      + '<b>Filled areas</b> are the ground: GM zones colour the regions themselves, '
+      + 'because they mark particular places inside a country rather than the country.';
 
     var hReg=head('Regulatory regime','regime');
     var hZone=head('GM zones','zones');
     regBox.parentNode.insertBefore(all, regBox);
+    regBox.parentNode.insertBefore(expl, regBox);
     regBox.parentNode.insertBefore(hReg, regBox);
     ovBox.parentNode.insertBefore(hZone, ovBox);
     regBox.classList.add('sh-body'); ovBox.classList.add('sh-body');
@@ -6265,10 +6265,14 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     });
   }
 
-  var done=false;
+  // Two separate jobs, and the loop used to stop as soon as the first finished.
+  // The shaded-area group would build, done went true, the interval cleared,
+  // and the search box was left wherever it happened to be.
+  var doneShaded=false, done=false;
   function go(){
     marks(); oneHost();
-    if(shaded()) done=true;
+    if(!doneShaded && shaded()) doneShaded=true;
+    done = doneShaded && !!document.body.dataset.pillsDone;
     tidy();
   }
   var t=setInterval(function(){ go(); if(done){ clearInterval(t); setTimeout(tidy,600); } }, 700);
@@ -6286,6 +6290,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 .sh-all input,.sh-head input{accent-color:#7fa8cc;width:13px;height:13px;cursor:pointer;}
 .sh-head{margin-left:8px;}
 .sh-body{margin-left:24px !important;}
+.sh-note{font-size:9.5px;line-height:1.5;color:#8a94a8;margin:2px 0 7px 4px;}
+.sh-note b{color:#a8b6cc;font-weight:700;}
 </style>
 </body>
 </html>
