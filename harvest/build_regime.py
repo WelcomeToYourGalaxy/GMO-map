@@ -88,7 +88,13 @@ def main():
         have.add(iso)
         feats.append({
             "type": "Feature", "geometry": geom,
-            "properties": {"name": iso, "regime": regime,
+            # name is what the popup prints as its title. It used to be the
+            # ISO code, so a reader clicking France was told "FRA". iso is a
+            # separate field because the popup matches a country's outline to
+            # its shaded areas on it, and matching on a display name fails the
+            # moment two datasets spell a country differently.
+            "properties": {"name": props.get("name") or iso, "iso": iso,
+                           "regime": regime,
                            "confidence": conf, "conf_note": CONF_NOTE[conf]},
         })
 
