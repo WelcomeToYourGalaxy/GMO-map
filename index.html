@@ -321,9 +321,10 @@ function pjReport(which, data){
 
     <b class="hl-sec">Reading the markers</b><br>
     Zoomed out you are looking at a painted world plate. Past about zoom 5 it cross-fades to live satellite imagery underneath. Three kinds of point, each with its own shape, colour and size:<br>
-    &bull; <b>Square</b> — an organisation, at its headquarters or principal site. Coloured by what kind of body it is: company, ministry, committee, institute, intergovernmental body, trade association, campaign group, fund, or register.<br>
-    &bull; <b>Red diamond</b> — a documented drift or contamination incident, placed where the material was found.<br>
-    &bull; <b>Green-to-blue circle</b> — a release authorisation from an official register.<br>
+    <b>Shape tells you what kind of record it is; colour tells you what kind of thing.</b> Circles are organisations, diamonds are incidents, olive circles are authorisations, and a numbered circle is several records in one place.<br>
+    &bull; <b>Filled circle</b> — an organisation, at its headquarters or principal site. A <b>hollow ring</b> instead means the address is not published and the marker sits at a city or country centre. Coloured by what kind of body it is: company, ministry, committee, institute, intergovernmental body, trade association, campaign group, fund, or register.<br>
+    &bull; <b>Rust diamond</b> — a documented drift or contamination incident, placed where the material was found.<br>
+    &bull; <b>Olive circle</b> — a release authorisation from an official register, darker the larger the release.<br>
     &bull; <b>Numbered circle</b> — several records in one area, sized by how many sit under it. Click it for the list. Below zoom 9 this is what you mostly see; above it, the individual records draw again.<br><br>
     <b>Filled</b> means a real coordinate. <b>Outlined and faint</b> means the source published none — most do not — so the marker sits at a fallback point for that country, state or city. A dense cluster of outlined markers is missing data in the source, not a failed pull. A corporate headquarters is always outlined: it is an office, and the laboratories, plants and fields the company runs are somewhere else entirely.<br><br>
     <b class="hl-sec">The map key</b><br>
@@ -342,7 +343,7 @@ function pjReport(which, data){
 <div id="wirePanel">
   <div class="help-head wire-head-drag" title="Click to collapse · drag to move"><span>Global Wire</span><span class="help-tog"></span></div>
   <div class="wire-body">
-    <div class="wire-lead">Farmers plant seeds. Some of those seeds have had genes added in a laboratory — usually taken from bacteria — so the crop survives being sprayed with weedkiller when a field full of weeds is sprayed, or makes its own insecticide in every leaf and root. These are examples of what’s called Genetic Modification. Proponents argue that insect-resistant cotton substantially reduced broad-spectrum insecticide spraying in several countries — sprays that killed bees, birds and farm workers — and the claim that these foods are unsafe to eat has not held up in decades of testing. But, that isn’t the whole picture.<br><br>
+    <div class="wire-lead">Farmers plant seeds. Some of those seeds have had genes added in a laboratory — usually taken from bacteria — so the crop survives being sprayed with weedkiller when a field full of weeds is sprayed, or makes its own insecticide in every leaf and root. These are examples of what’s called Genetic Modification. Proponents argue that insect-resistant cotton substantially reduced broad-spectrum insecticide spraying in several countries — sprays that killed bees, birds and farm workers — and the claim that these foods are unsafe to eat has not held up in decades of testing. But, that isn’t the whole story.<br><br>
     For one, seeds and pollen do not stay where you put them. In Oregon a grass engineered to survive weedkiller got out of its test fields; three years after the cleanup started, 62 of every 100 plants tested carried the gene, and it had crossed into two other grass species, one of them a different genus entirely. The product was pulled, the company was fined $500,000, and the grass is still out there. In North Dakota, researchers drove 3,000 miles testing roadside canola: more than 75% carried an engineered gene, and some carried two at once — a combination nobody bred, On the coast of Mexico grows the wild ancestor of cotton. In 2008 it carried no engineered genes. Ten years later, 60% of the plants tested did.<br><br>
     And spreading isn’t the end of it. Every wild plant sits inside a web of relationships with other species — things that guard it, feed on it, pollinate it, live in its roots, carry its seeds — and an engineered change entering at one point comes out at many others nobody has been watching or even defining. Wild plants carrying an engineered gene, for example, drew fewer of the insect species that defend them, and took the worst feeding damage of any group tested; parasitic wasps that control caterpillar numbers and that weren’t targeted in the first place came out 35% lighter after eating prey that carried the plant’s own built-in insecticide; introgressed wild cotton was found to hold less genetic variety than its unmodified neighbours, and Mexican wild cotton is now listed as vulnerable, with gene flow from crops being the main threat. Genetically modified insecticide-producing plants that travel beyond the field and cross-breed with wild plants also make less toxin than the original, leading to weaker doses of the plants’ insecticide, the exact conditions under which insect resistance to it spreads fastest. <br><br>
     Nobody knows the true ecological impacts of all of these combined. And, yet, some GMOs are released on purpose at enormous scale, as in the case of gene drives, which are built specifically to push through entire wild populations. Engineered insects have been let loose by the hundred million, and engineered bacteria coated onto seed spread across millions of acres with nothing registered, as a microbe on a seed is not a plant, spraying it is not planting — no rule catches it.<br><br>
@@ -354,7 +355,7 @@ function pjReport(which, data){
     The law pushes them out of the picture further by steadily shrinking the scope of regulation. On April 30, 2025, for example, the United States approved pigs edited to resist a disease that spreads in the crowded conditions of factory farms,  an edit that raises antibiotic use by more than 200%. The animals are marketed with the claim that they are “not GMOs,” because their DNA was edited rather than supplemented with foreign DNA. In animal testing too, most laboratory animals are not legally animals. In the United States, mice, rats and birds bred for research are excluded from the Animal Welfare Act. They are the overwhelming majority of animals used, so the great bulk of the practice appears in no official count at all. Catalogues run to thousands of mouse strains, each one a line bred to be ill in a particular way, shipped to order. In pet cloning, dogs and horses are cloned for anyone who pays, and no biosafety rule applies, because nothing foreign was inserted and the rules only trigger on inserted material. If an industry can name its way out of the rulebook like this, there is no rulebook. And, when the referees themselves are part of the game — regulators, registers, patent offices and standards bodies —, not outside the industry checking it, who’s there to call their foul play?<br><br>
     And, even where regulation does exist, much of the evidence behind approvals comes from the companies themselves. Safety studies are usually commissioned and paid for by the manufacturer, while regulators primarily evaluate the reports that companies submit. There is no comprehensive public register of these studies, so outside researchers cannot tell which tests were conducted, which produced unfavorable results, or whether unsuccessful studies were simply repeated until a satisfactory outcome was obtained. Furthermore, a venture fund has to sell its stake within a fixed number of years, and that deadline rewards moving fast and getting big long before any regulator sees the product. These problems are not necessarily discovered at the regulator’s desk; they appear later in fields, hospitals, or ecosystems. This is not without precedent. In the 1970s, the testing company Industrial Bio-Test was found to have falsified safety data supporting thousands of pesticide approvals.<br><br>
     Meanwhile, use of the technology has become increasingly unpredictable. Although the repositories that distribute plasmids, cell lines, and other standard biological materials generally require verified institutional affiliations, many firms only voluntarily screen orders against databases of dangerous pathogen sequences. No law requires them to do so. The industry association responsible for this voluntary system has estimated that its members account for roughly 80 percent of global DNA synthesis, leaving about one-fifth of the market outside any screening process. A lock on four of five doors isn’t a lock. Anyone seeking prohibited sequences can therefore turn to an unscreened supplier, and because no record exists of who asked for what, nothing can be traced. This is how, in 2017, researchers reconstructed an extinct poxvirus for approximately $100,000. No amount of good intent at one end can change what has become buildable at the other. We sit on a precipice.<br><br>
-    This map is the industry behind all of this — the companies that design and sell engineered organisms, the ones supplying them with DNA, animals and laboratory capacity, the money behind them, and the bodies that authorise them and argue on their behalf.<br><br>
+    This map is the industry behind all of this — the companies that design and sell engineered organisms, the ones supplying them with DNA, animals and laboratory capacity, the money behind them, and the bodies that authorise them and argue on their behalf. **Every dot is something on the record.** Four hundred and thirty-six organisations, each with its own write-up and a link to the source. Twenty-four thousand release authorisations from official registers, broken down by country and state. Twenty-five documented cases of engineered organisms turning up where nobody put them. Two hundred regions that have declared themselves GMO-free. And the shading over every country showing how it decides what counts as regulated in the first place — which, in most of the world, is now the question that decides everything else.<br><br>
     Twelve facets, running the length of the chain: seed and traits, gene editing and synthetic biology, DNA synthesis and sequencing, contract research and manufacturing, laboratory animals, livestock and aquaculture and pets, insects and microbes and open release, de-extinction, human clinical work, assisted reproduction, the money, and the rules. A handful of companies write the DNA everything starts as. Hired laboratories run the studies regulators read. Breeders sell millions of engineered animals a year, catalogued like supplies. Ventures rebuild extinct species as intellectual property. Clinics consolidate human reproduction. Venture funds, public grants, philanthropies and defence agencies pay for all of it.<br><br>
     This wire watches it in motion — worldwide, in many languages, filterable by region and subregion.</div>
     <div class="wire-tabs"><span class="wire-tab on" data-wm="live" onclick="setWireMode('live')"> Live</span><span class="wire-tab" data-wm="timeline" onclick="setWireMode('timeline')"> Timeline</span></div>
@@ -2255,7 +2256,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   // Loaded on demand from repo-hosted overlays/<k>.geojson (CORS-safe). The
   // harvester downloads + slims + commits these files; until then a toggle
   // gracefully shows "not yet available". These are AREAS, not project dots.
-  var PJ_OVERLAYS=[{"k":"cultivation","label":"Approved GM cultivation area","color":"#c2603a","note":"Hectares of engineered crops by country, from the USDA FAS Agricultural Biotechnology Annual reports. Area planted, not permits \u2014 the only layer here that shows scale rather than paperwork."},{"k":"gmofree","label":"GMO-free zones & regional bans","color":"#4fb3c9","note":"Regions and municipalities that have declared themselves GMO-free, crawled from the GMO Free Regions network. Declarations vary in legal force: some are binding, some are statements of intent, and the note on each says which where the source states it."},{"k": "regime", "label": "Regulatory regime by country", "color": "#8a7fc4", "note": "How each country decides what counts as a regulated organism \\u2014 by the technique used, by the trait produced, or not at all. This is the single layer that explains why the map looks different in different places: where editing has been ruled equivalent to conventional breeding there is no application, no assessment and no register entry, so an empty area can mean deregulation rather than absence."}];
+  var PJ_OVERLAYS=[{"k":"cultivation","label":"Approved GM cultivation area","color":"#c2603a","note":"Hectares of engineered crops by country, from the USDA FAS Agricultural Biotechnology Annual reports. Area planted, not permits \u2014 the only layer here that shows scale rather than paperwork."},{"k":"gmofree","label":"GMO-free zones & regional bans","color":"#4fb3c9","note":"Regions and municipalities that have declared themselves GMO-free, crawled from the GMO Free Regions network. Declarations vary in legal force: some are binding, some are statements of intent, and the note on each says which where the source states it."},{"k": "regime", "label": "Regulatory regime by country", "color": "#8a7fc4", "note": ""}];
   // Olive range rather than purple/blue/orange, which fought the atlas ground.
   // Three steps far enough apart to tell apart on a parchment background:
   // deep moss, mid olive, dry gold-olive.
@@ -2297,7 +2298,18 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     if(statusEl) statusEl.textContent=" loading\u2026";
     fetch('overlays/'+k+'.geojson').then(function(r){ if(!r.ok) throw 0; return r.json(); })
       .then(function(gj){
-        var lyr=L.geoJSON(gj,{style:function(f){ var p=(f&&f.properties)||{}; if(k==='regime'){ var rc=REGIMEC[p.regime]||'#8e7cc3'; if(!REGIMEON.has(p.regime)) return {opacity:0,fillOpacity:0,weight:0,interactive:false}; /* Boundary only. A fill puts a wash over the whole country and everything
+        // Leaflet draws in panes, and bringToFront only reorders within one. The
+        // regime outline kept vanishing because the context fills and the
+        // drill-down layer are added after it in the same pane. Its own pane at a
+        // higher z-index puts it above both for good.
+        try{
+          if(k==='regime' && !map.getPane('pjRegime')){
+            map.createPane('pjRegime');
+            map.getPane('pjRegime').style.zIndex = 450;
+            map.getPane('pjRegime').style.pointerEvents = 'auto';
+          }
+        }catch(_e){}
+        var lyr=L.geoJSON(gj,{pane:(k==='regime'?'pjRegime':undefined),style:function(f){ var p=(f&&f.properties)||{}; if(k==='regime'){ var rc=REGIMEC[p.regime]||'#8e7cc3'; if(!REGIMEON.has(p.regime)) return {opacity:0,fillOpacity:0,weight:0,interactive:false}; /* Boundary only. A fill puts a wash over the whole country and everything
                     drawn inside it - the dots, the drilled subregions - reads as though it
                     were shaded too. The regime is a fact about the country, so it is drawn
                     on the country's edge. fillOpacity stays barely above zero so the shape
@@ -2305,7 +2317,78 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
                  return {color:rc,weight:2.8,opacity:0.95,fillColor:rc,fillOpacity:0.012}; }
                  var c=((meta&&meta.color)||'#c98a2a'); return _ovStyle(c); },
           onEachFeature:function(f,l){ var p=(f&&f.properties)||{}; var nm=p.name||p.NAME||p.title||k;
-            var sub=(k==='regime'&&REGIMEL[p.regime])?('<br><span style="color:#7fa8cc;font-weight:600">'+REGIMES[p.regime]+'</span><span style="font-size:10.5px;line-height:1.55;display:block;margin-top:6px;max-width:340px;color:#c3cee0">'+(REGIMED[p.regime]||'')+'</span>'):''; l.bindPopup('<b>'+String(nm)+'</b>'+sub+'<br><span style="font-size:10px;opacity:.8">'+((meta&&meta.label)||k)+' \u2014 area, not a project point</span>'+(p.note?('<div style="font-size:10.5px;line-height:1.5;margin-top:6px;max-width:330px;color:#c3cee0">'+String(p.note)+(p.src?(' <a href="'+p.src+'" target="_blank" rel="noopener" style="color:#9dc0dd">source</a>'):'')+'</div>'):'')); }});
+            var sub=(k==='regime'&&REGIMEL[p.regime])?('<br><span style="color:#7fa8cc;font-weight:600">'+REGIMES[p.regime]+'</span><span style="font-size:10.5px;line-height:1.55;display:block;margin-top:6px;max-width:340px;color:#c3cee0">'+(REGIMED[p.regime]||'')+'</span>'):''; // A country can carry a fill and an outline at once - a GMO-free
+              // declaration and a regulatory regime. Two popups on top of each
+              // other made the reader dismiss one to read the other, and neither
+              // said which mark it was explaining. One box, and each part names
+              // the mark it belongs to.
+              l.bindPopup(function(){
+                var out = '<b>'+String(nm)+'</b>';
+                var iso = p.iso || p.ISO || '';
+                out += '<div style="font-size:10px;opacity:.75;margin-top:2px">area, not a project point</div>';
+                if(k === 'regime' && window.REGIMED && p.regime){
+                  // The regime layer draws above the fills, so its popup is the one
+                  // that opens. It therefore has to carry both explanations, which
+                  // is what the loop below adds.
+
+                  out += '<div style="margin-top:8px"><span style="display:inline-block;width:14px;height:8px;'
+                       + 'border:2px solid '+(REGIMEC[p.regime]||'#7d8f45')+';border-radius:2px;vertical-align:middle">'
+                       + '</span> <b style="color:#7fa8cc">The outline colour</b> \u2014 '
+                       + (REGIMES[p.regime]||'') + '</div>'
+                       + '<div style="font-size:10.5px;line-height:1.55;margin-top:5px;max-width:340px;color:#c3cee0">'
+                       + REGIMED[p.regime] + '</div>';
+                }
+                // whatever else is shaded here, named by its own layer
+                try{
+                  Object.keys(_ovLayers).forEach(function(ok){
+                    if(ok === k || ok === 'regime') return;
+                    var om = null;
+                    for(var z=0;z<PJ_OVERLAYS.length;z++) if(PJ_OVERLAYS[z].k===ok) om=PJ_OVERLAYS[z];
+                    if(!om) return;
+                    var hit = null;
+                    _ovLayers[ok].eachLayer(function(sub2){
+                      var q=(sub2.feature&&sub2.feature.properties)||{};
+                      if((iso && q.iso===iso) || (q.name && nm && String(q.name)===String(nm))) hit=q;
+                    });
+                    if(!hit) return;
+                    out += '<div style="margin-top:9px"><span style="display:inline-block;width:14px;height:8px;'
+                         + 'background:'+(om.color||'#c98a2a')+';opacity:.6;border-radius:2px;vertical-align:middle">'
+                         + '</span> <b style="color:#7fa8cc">The shading</b> \u2014 ' + om.label + '</div>';
+                    if(hit.note) out += '<div style="font-size:10.5px;line-height:1.5;margin-top:5px;'
+                         + 'max-width:340px;color:#c3cee0">' + String(hit.note)
+                         + (hit.src?(' <a href="'+hit.src+'" target="_blank" rel="noopener" style="color:#9dc0dd">source</a>'):'')
+                         + '</div>';
+                  });
+                }catch(_e){}
+                if(k !== 'regime'){
+                  out += '<div style="margin-top:9px"><span style="display:inline-block;width:14px;height:8px;'
+                       + 'background:'+((meta&&meta.color)||'#c98a2a')+';opacity:.6;border-radius:2px;vertical-align:middle">'
+                       + '</span> <b style="color:#7fa8cc">The shading</b> \u2014 ' + ((meta&&meta.label)||k) + '</div>';
+                  if(p.note) out += '<div style="font-size:10.5px;line-height:1.5;margin-top:5px;'
+                       + 'max-width:340px;color:#c3cee0">' + String(p.note)
+                       + (p.src?(' <a href="'+p.src+'" target="_blank" rel="noopener" style="color:#9dc0dd">source</a>'):'')
+                       + '</div>';
+                  // and the regime outline, if this country has one
+                  try{
+                    if(_ovLayers['regime'] && window.REGIMED){
+                      var rq=null;
+                      _ovLayers['regime'].eachLayer(function(sub3){
+                        var q=(sub3.feature&&sub3.feature.properties)||{};
+                        if((iso && q.iso===iso) || (q.name && nm && String(q.name)===String(nm))) rq=q;
+                      });
+                      if(rq && rq.regime && REGIMEON.has(rq.regime)){
+                        out += '<div style="margin-top:9px"><span style="display:inline-block;width:14px;height:8px;'
+                             + 'border:2px solid '+(REGIMEC[rq.regime]||'#7d8f45')+';border-radius:2px;vertical-align:middle">'
+                             + '</span> <b style="color:#7fa8cc">The outline colour</b> \u2014 '
+                             + (REGIMES[rq.regime]||'') + '</div>'
+                             + '<div style="font-size:10.5px;line-height:1.55;margin-top:5px;max-width:340px;'
+                             + 'color:#c3cee0">' + REGIMED[rq.regime] + '</div>';
+                      }
+                    }
+                  }catch(_e2){}
+                }
+                return out;
+              }); }});
         _ovLayers[k]=lyr; lyr.addTo(map);
         // The regime layer is an outline over the fills, so it has to be
         // drawn last. Without this its edge sits under whichever context
@@ -2894,11 +2977,15 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
           pjRad(z,o.i)*(o.kd==="release"?0.62:o.kd==="escape"?0.95:1.25)); } },
     _glyph:function(ctx,pt,o,r){
         if(o.kd==="industry"){
-          var d=r*1.7;
-          if(o.ap){ ctx.globalAlpha=0.20; ctx.fillStyle=o.c; ctx.fillRect(pt.x-d/2,pt.y-d/2,d,d); ctx.globalAlpha=1;
-            ctx.lineWidth=1.5; ctx.strokeStyle=o.c; ctx.strokeRect(pt.x-d/2,pt.y-d/2,d,d); }
-          else { ctx.fillStyle=o.c; ctx.fillRect(pt.x-d/2,pt.y-d/2,d,d);
-            if(r>=2.4){ ctx.lineWidth=1; ctx.strokeStyle="#0a1020"; ctx.strokeRect(pt.x-d/2,pt.y-d/2,d,d); } }
+          // Circles rather than squares. A square reads as a UI element next to
+          // the round cluster markers; a filled disc for a placed address and a
+          // hollow ring for a centroid says the same thing more quietly.
+          var d=r*0.95;
+          ctx.beginPath(); ctx.arc(pt.x,pt.y,d,0,6.2832);
+          if(o.ap){ ctx.globalAlpha=0.20; ctx.fillStyle=o.c; ctx.fill(); ctx.globalAlpha=1;
+            ctx.lineWidth=1.5; ctx.strokeStyle=o.c; ctx.stroke(); }
+          else { ctx.fillStyle=o.c; ctx.fill();
+            if(r>=2.4){ ctx.lineWidth=1; ctx.strokeStyle="#0a1020"; ctx.stroke(); } }
         } else if(o.kd==="escape"){
           var q=r*1.3;
           ctx.beginPath(); ctx.moveTo(pt.x,pt.y-q); ctx.lineTo(pt.x+q,pt.y);
@@ -3264,13 +3351,13 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   function ar(c){ return '<i class="lg-ar" style="background:'+c+'"></i>'; }
   var h='';
   h+='<div class="lg-h">Shape says what kind of record</div>';
-  h+=row(sq('#b8912f'),'<b>Square</b> — an organisation, at its head office or main site');
+  h+=row(ic('lg-ci','#b8912f'),'<b>Filled circle</b> — an organisation, at its head office or main site');
   h+=row(di('#a8523c'),'<b>Diamond</b> — an escape or contamination incident, where the material was found');
   h+=row(ci('#7f9a52'),'<b>Circle</b> — a release authorisation from an official register');
   h+='<div class="lg-n">Outlined and faint means the source published no coordinate, so the marker sits at a fallback for that country or state. A company head office is always outlined — it is an office, and the laboratories and fields are elsewhere.</div>';
   if(typeof OTC!=='undefined'&&typeof OTLABEL!=='undefined'){
     h+='<div class="lg-h">Colour says what kind of body</div>';
-    Object.keys(OTC).forEach(function(t){ h+=row(sq(OTC[t]),OTLABEL[t]); });
+    Object.keys(OTC).forEach(function(t){ h+=row(ci(OTC[t]),OTLABEL[t]); });
   }
   if(typeof REGIMEC!=='undefined'){
     h+='<div class="lg-h">Shaded areas — regulatory regime</div>';
@@ -3784,6 +3871,15 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   window.pjDrill = function(p){
     if(!p || p.level !== 'country') return false;
     var k = window.pjHierKey(p);
+    // Once the states are showing, this marker is no longer a "break this open"
+    // control - it is the national records sitting at the centroid. Clicking it
+    // was closing the states again, which reads as the map jumping back. Open
+    // its records instead; closing stays with the map background.
+    if(window.pjExpanded.has(k) && window.pjShowRecords){
+      var _own = window.pjOwnTotal ? window.pjOwnTotal(p) : null;
+      if(_own && _own.records && _own.records.length){ window.pjShowRecords(_own); return true; }
+      if(p.records && p.records.length){ window.pjShowRecords(p); return true; }
+    }
     var opening = !window.pjExpanded.has(k);
     if(opening) window.pjExpanded.add(k); else window.pjExpanded.delete(k);
     try{ if(window.pjRefresh) window.pjRefresh(); }catch(e){}
