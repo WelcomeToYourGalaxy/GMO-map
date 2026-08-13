@@ -3324,11 +3324,21 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // The checkboxes ship checked; this turns the layers on to match. Wrapped and
   // delayed because an overlay whose geojson is missing must not stop the rest.
   function on(){
-    document.querySelectorAll('input[data-ov]').forEach(function(cb){
-      if(!cb.checked) return;
-      try{ cb.dispatchEvent(new Event('change',{bubbles:true})); }catch(e){}
-    });
-  }
+          document.querySelectorAll('input[data-ov]').forEach(function(cb){
+            if(!cb.checked) return;
+            try{ cb.dispatchEvent(new Event('change',{bubbles:true})); }catch(e){}
+          });
+          // The regime layer has no data-ov checkbox - its box holds the three
+          // TYPE toggles, which restyle a layer somebody else was supposed to
+          // load. Nobody did, so the outlines never appeared however the types
+          // were ticked. Load it here, once.
+          try{
+            var anyReg = document.querySelector('input[data-reg]:checked');
+            if(anyReg && typeof pjToggleOverlay === 'function'){
+              pjToggleOverlay('regime', true, null);
+            }
+          }catch(e){}
+        }
   if(document.readyState==='complete') setTimeout(on,1200);
   else window.addEventListener('load',function(){ setTimeout(on,1200); });
 })();
