@@ -36,8 +36,16 @@ from urllib.request import Request, urlopen
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "harvest" / "animal_facilities.json"
 
-HUB = "https://www.aphis.usda.gov/pet-animal-care/annual-reports"
-ALT = "https://www.aphis.usda.gov/animal-welfare/annual-reports"
+# APHIS reorganised its Animal Care pages: both previous paths now 404. The
+# live ones sit under /awa/. Tried in order, so a further reorganisation
+# degrades to the next candidate rather than failing the whole harvest.
+HUB = "https://www.aphis.usda.gov/awa/annual-inspection-reports"
+ALT = "https://www.aphis.usda.gov/awa/public-search"
+MORE = [
+    "https://www.aphis.usda.gov/animal-care/awa-services/usda-animal-care-public-search-tool",
+    "https://www.aphis.usda.gov/awa/research-facility-report",
+    "https://www.aphis.usda.gov/ht/node/1255",
+]
 UA = "GMO-map-harvest/1.0 (+https://github.com/WelcomeToYourGalaxy/GMO-map)"
 
 # US state centroids. Facility street addresses are published, but a laboratory's
@@ -130,13 +138,13 @@ def to_record(row):
 
 def main():
     page = None
-    for hub in (HUB, ALT):
+    for hub in ([HUB, ALT] + MORE):
         try:
             page = fetch(hub); base = hub; break
         except Exception as e:
             print("  %s unreachable (%s)" % (hub, e), file=sys.stderr)
     if page is None:
-        print("could not reach either APHIS annual-report page. Nothing written.",
+        print("every APHIS candidate refused. Nothing written: an empty file would reach the map as no animal research facilities, which is the opposite of true. A 403 from every path usually means the request was blocked; a 404 would mean they moved again.",
               file=sys.stderr); return
 
     url = find_csv(page, base)

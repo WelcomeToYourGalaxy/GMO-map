@@ -38,7 +38,37 @@ OUT = ROOT / "harvest" / "register_records.json"
 HAND = ROOT / "harvest" / "escape_records.json"
 
 DOI = "10.1186/s40550-014-0005-8"
-ARTICLE = "https://link.springer.com/article/" + DOI
+
+# The Register stopped in 2013. Nothing replaced it, so the honest incident
+# picture is several partial sources stacked, each stating its own scope:
+#
+#   GM Contamination Register  1997-2013, 396 incidents, 63 countries. Compiled
+#                              by GeneWatch UK and Greenpeace. The only global
+#                              compilation that has ever existed.
+#   RASFF                      EU border rejections of unauthorised GM material.
+#                              Current and official, but EU imports only.
+#   Testbiotech / GMWatch      Case write-ups rather than a dataset - useful for
+#                              detail on a specific incident, not for coverage.
+#
+# All of them together are still not a world picture, and every record says so.
+EXTRA_SOURCES = [
+    ("RASFF", "https://webgate.ec.europa.eu/rasff-window/screen/search",
+     "EU border rejections of unauthorised GM material. Official and current, "
+     "but it records what was stopped entering the European Union - not what "
+     "happened elsewhere, and not what was never caught."),
+    ("Testbiotech", "https://www.testbiotech.org/en/", None),
+    ("GMWatch", "https://gmwatch.org/en/gm-contamination-register", None),
+]
+# The journal moved. It published as International Journal of Food Contamination
+# and is now Food Safety and Risk on BioMed Central, so the Springer path no
+# longer resolves and the supplementary link went with it. The data is
+# "Additional file 1" on the article page. Candidates tried in order.
+ARTICLE = "https://foodsafetyandrisk.biomedcentral.com/articles/" + DOI
+ARTICLE_ALTS = [
+    "https://link.springer.com/article/" + DOI,
+    "https://doi.org/" + DOI,
+    "https://foodsafetyandrisk.biomedcentral.com/counter/pdf/" + DOI + ".pdf",
+]
 UA = ("GMO-map-harvest/1.0 (+https://github.com/WelcomeToYourGalaxy/GMO-map) "
       "recovering an open-access supplementary dataset")
 
@@ -162,10 +192,19 @@ def to_record(row, seq):
 
 def main():
     print("fetching the article page")
-    try:
-        page = fetch(ARTICLE)
-    except Exception as e:
-        sys.exit("could not reach the article: %s" % e)
+    page = None
+    for _cand in ([ARTICLE] + ARTICLE_ALTS):
+        try:
+            page = fetch(_cand)
+            print("  reached %s" % _cand[:70])
+            break
+        except Exception as e:
+            print("  %-66s %s" % (_cand[:66], str(e)[:32]), file=sys.stderr)
+    if page is None:
+        sys.exit("every article route refused. Nothing written: an empty file would "
+                 "reach the map as no recorded incidents, which is the opposite of "
+                 "true. A 403 everywhere usually means the request was blocked; a "
+                 "404 would mean the article moved again.")
 
     link = find_supplement(page)
     if not link:
@@ -211,6 +250,15 @@ def main():
     if nogeo:
         print("    (rows without a country this script can place are dropped "
               "rather than guessed at)")
+
+    print()
+    print("  Sources that exist and are NOT compiled here:")
+    for name, url, note in EXTRA_SOURCES:
+        print("    %-12s %s" % (name, url))
+        if note:
+            print("                 %s" % note)
+    print("  Every record emitted carries the scope of its own source, because "
+          "no single one of them is a world picture.")
 
     if "--dry-run" in sys.argv:
         print("\ndry run \u2014 nothing written")
