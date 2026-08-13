@@ -1,0 +1,1754 @@
+<script>
+(function(){
+  // The checkboxes ship checked; this turns the layers on to match. Wrapped and
+  // delayed because an overlay whose geojson is missing must not stop the rest.
+  function on(){
+    document.querySelectorAll('input[data-ov]').forEach(function(cb){
+      if(!cb.checked) return;
+      try{ cb.dispatchEvent(new Event('change',{bubbles:true})); }catch(e){}
+    });
+  }
+  if(document.readyState==='complete') setTimeout(on,1200);
+  else window.addEventListener('load',function(){ setTimeout(on,1200); });
+})();
+</script>
+
+<div id="mapLegend" class="collapsed">
+  <div id="mapLegendHead"><span>Legend</span><span id="mapLegendTog">▴</span></div>
+  <div id="mapLegendBody"></div>
+</div>
+<script>
+(function(){
+  var body=document.getElementById('mapLegendBody');
+  var head=document.getElementById('mapLegendHead');
+  var box=document.getElementById('mapLegend');
+  if(!body||!head||!box) return;
+  function row(sw,txt){ return '<div class="lg-row">'+sw+'<span>'+txt+'</span></div>'; }
+  function sq(c){ return '<i class="lg-sq" style="background:'+c+'"></i>'; }
+  function di(c){ return '<i class="lg-di" style="background:'+c+'"></i>'; }
+  function ci(c){ return '<i class="lg-ci" style="background:'+c+'"></i>'; }
+  function ar(c){ return '<i class="lg-ar" style="background:'+c+'"></i>'; }
+  var h='';
+  h+='<div class="lg-h">Shape says what kind of record</div>';
+  h+=row(sq('#b8912f'),'<b>Square</b> — an organisation, at its head office or main site');
+  h+=row(di('#a8523c'),'<b>Diamond</b> — an escape or contamination incident, where the material was found');
+  h+=row(ci('#7f9a52'),'<b>Circle</b> — a release authorisation from an official register');
+  h+='<div class="lg-n">Outlined and faint means the source published no coordinate, so the marker sits at a fallback for that country or state. A company head office is always outlined — it is an office, and the laboratories and fields are elsewhere.</div>';
+  if(typeof OTC!=='undefined'&&typeof OTLABEL!=='undefined'){
+    h+='<div class="lg-h">Colour says what kind of body</div>';
+    Object.keys(OTC).forEach(function(t){ h+=row(sq(OTC[t]),OTLABEL[t]); });
+  }
+  if(typeof REGIMEC!=='undefined'){
+    h+='<div class="lg-h">Shaded areas — regulatory regime</div>';
+    h+=row(ar(REGIMEC.technique),'Regulated by <b>how it was made</b>');
+    h+=row(ar(REGIMEC.trait),'Regulated by <b>what the organism is</b>');
+    h+=row(ar(REGIMEC.carveout),'<b>Carve-out</b> — a class moved outside registration');
+    h+='<div class="lg-n"><b>Unshaded does not mean unregulated.</b> It means this map holds no classification for that country yet — most have a biosafety law of some kind. The three shaded groups are the ones whose approach is documented well enough to place.</div>';
+  }
+  if(typeof PJ_OVERLAYS!=='undefined'){
+    h+='<div class="lg-h">Other shaded areas</div>';
+    PJ_OVERLAYS.forEach(function(o){ if(o.k!=='regime') h+=row(ar(o.color||'#c98a2a'),o.label); });
+  }
+  body.innerHTML=h;
+  head.addEventListener('click',function(){
+    box.classList.toggle('collapsed');
+    document.getElementById('mapLegendTog').textContent=box.classList.contains('collapsed')?'▴':'▾';
+  });
+})();
+</script>
+<style>
+#mapLegend{position:absolute;left:12px;bottom:12px;z-index:640;width:250px;max-height:58vh;
+  background:rgba(8,14,32,0.93);border:1px solid rgba(127,168,204,0.35);border-radius:9px;
+  font-size:10.5px;color:#c3cee0;overflow:hidden;display:flex;flex-direction:column;
+  backdrop-filter:blur(3px);}
+#mapLegendHead{display:flex;justify-content:space-between;align-items:center;padding:7px 10px;
+  cursor:pointer;font-weight:700;letter-spacing:.6px;text-transform:uppercase;font-size:9.5px;
+  color:#7fa8cc;border-bottom:1px solid rgba(127,168,204,0.22);flex:0 0 auto;}
+#mapLegendBody{padding:6px 10px 9px;overflow-y:auto;}
+#mapLegend.collapsed #mapLegendBody{display:none;}
+#mapLegend.collapsed{width:118px;}
+#mapLegend .lg-h{font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+  color:#7fa8cc;margin:8px 0 4px;}
+#mapLegend .lg-h:first-child{margin-top:2px;}
+#mapLegend .lg-row{display:flex;align-items:flex-start;gap:7px;margin:0 0 3px;line-height:1.35;}
+#mapLegend .lg-n{font-size:9.5px;color:#8394ab;line-height:1.45;margin:5px 0 2px;}
+#mapLegend i{flex:0 0 auto;margin-top:2px;}
+.lg-sq{width:9px;height:9px;display:inline-block;}
+.lg-di{width:9px;height:9px;display:inline-block;transform:rotate(45deg);}
+.lg-ci{width:9px;height:9px;display:inline-block;border-radius:50%;}
+.lg-ar{width:13px;height:8px;display:inline-block;border-radius:2px;opacity:.55;}
+@media (max-width:820px){#mapLegend{display:none;}}
+</style>
+
+<script>
+(function(){
+  function sw(c,shape){ return '<span class="ot-dot'+(shape||'')+'" style="background:'+c+'"></span>'; }
+  // regime rows: read-only colour key, since the whole overlay has one toggle
+  var rb=document.getElementById('regBox');
+  if(rb && window.REGIMEC && window.REGIMEL && window.REGIMEON){
+    var h='<label class="ot-all"><input type="checkbox" id="regAll" checked> <span>All regimes</span></label>';
+    ['technique','trait','carveout'].forEach(function(k){
+      h+='<label title="'+REGIMEL[k].replace(/"/g,'&quot;')+'">'
+        +'<input type="checkbox" data-reg="'+k+'" checked>'
+        +'<span class="ot-dot ot-edge" style="border-color:'+REGIMEC[k]+';background:'+REGIMEC[k]+'33"></span>'
+        +REGIMEL[k].split(' \u2014 ')[0]+'</label>';
+    });
+    h+='<div class="ot-note">Drawn as the country outline, so a context overlay can fill the same country and both stay readable. Unshaded is a gap in this map, not a country without rules \u2014 most have a biosafety law of some kind.</div>';
+    rb.innerHTML=h;
+    rb.addEventListener('change',function(e){
+      if(e.target.id==='regAll'){
+        var on=e.target.checked;
+        rb.querySelectorAll('input[data-reg]').forEach(function(cb){ cb.checked=on;
+          on?REGIMEON.add(cb.dataset.reg):REGIMEON.delete(cb.dataset.reg); });
+        try{ if(window.pjRestyleOverlays) window.pjRestyleOverlays('regime'); }catch(_e){}
+        return;
+      }
+      var k=e.target&&e.target.dataset&&e.target.dataset.reg; if(!k)return;
+      if(e.target.checked) REGIMEON.add(k); else REGIMEON.delete(k);
+      try{ if(window.pjRestyleOverlays) window.pjRestyleOverlays('regime'); }catch(_e){}
+    });
+  }
+  // context overlays: real toggles, out of the collapsed panel and into the key
+  var ob=document.getElementById('ovBox');
+  if(ob && window.PJ_OVERLAYS){
+    var g='';
+    PJ_OVERLAYS.forEach(function(o){
+      if(o.k==='regime') return;
+      g+='<label title="'+String(o.note||'').replace(/"/g,'&quot;')+'">'
+        +'<input type="checkbox" data-ovkey="'+o.k+'" checked>'
+        +sw(o.color||'#c98a2a',' ot-area')+o.label+'</label>';
+    });
+    ob.innerHTML=g;
+    ob.addEventListener('change',function(e){
+      var k=e.target&&e.target.dataset&&e.target.dataset.ovkey; if(!k)return;
+      // drive the existing overlay checkbox so there is one source of truth
+      var src=document.querySelector('input[data-ov="'+k+'"]');
+      if(src){ src.checked=e.target.checked; src.dispatchEvent(new Event('change',{bubbles:true})); }
+      else { try{ pjToggleOverlay(k, e.target.checked, null); }catch(_e){} }
+    });
+  }
+})();
+</script>
+<style>
+#regBox label:not(.ot-all),#ovBox label{margin-left:17px;}
+.ot-key{display:flex;align-items:center;gap:6px;font-size:10.5px;color:#9aa8c0;margin:0 0 3px;}
+.ot-note{font-size:9.5px;color:#7d8ba1;line-height:1.45;margin:4px 0 2px;}
+.ot-area{width:13px;height:8px;border-radius:2px;opacity:.6;}
+</style>
+
+<script>
+(function(){
+  // The kind toggles were working; 94% of embedded points are industry, so
+  // unticking it looked like the map had emptied while unticking Releases looked
+  // like nothing happened. Live counts make the proportion visible instead of
+  // leaving the reader to guess whether a control is broken.
+  function count(){
+    try{
+      var rows=(window.pjDataRef&&window.pjDataRef.projects)||[];
+      if(!rows.length) return;
+      var byKind={industry:0,escape:0,release:0}, byType={};
+      rows.forEach(function(p){
+        var s=String(p.source||'');
+        var k=s.indexOf('industry')===0?'industry':s.indexOf('escape')===0?'escape':'release';
+        byKind[k]++;
+        if(k==='industry'){ var t=p.otype||'company'; byType[t]=(byType[t]||0)+1; }
+      });
+      document.querySelectorAll('.pj-kind').forEach(function(cb){
+        var k=cb.dataset.kind, lab=cb.parentNode;
+        var el=lab.querySelector('.kcount');
+        if(!el){ el=document.createElement('span'); el.className='kcount'; lab.appendChild(el); }
+        el.textContent=' ('+(byKind[k]||0)+')';
+      });
+      document.querySelectorAll('input[data-ot]').forEach(function(cb){
+        var lab=cb.parentNode, el=lab.querySelector('.kcount');
+        if(!el){ el=document.createElement('span'); el.className='kcount'; lab.appendChild(el); }
+        el.textContent=' ('+(byType[cb.dataset.ot]||0)+')';
+      });
+    }catch(e){}
+  }
+  var t=setInterval(function(){ if(window.pjDataRef){ count(); clearInterval(t); } }, 600);
+  setTimeout(count, 3500);
+  window.pjCountRefresh=count;
+})();
+</script>
+<style>.kcount{color:#7d8ba1;font-size:9.5px;margin-left:3px;}</style>
+<script>
+(function(){
+  // Release records span the whole life of the industry, so one flat layer is
+  // unreadable. Two filters, both read from the data at load: status, and the
+  // decade the authorisation was granted.
+  var relLive=new Set(['live','past']);
+  var relDec=new Set();
+  window.pjRelPasses=function(p){
+    var s=String(p.source||'');
+    if(s.indexOf('industry')===0||s.indexOf('escape')===0) return true;
+    if(!relLive.has(p.lapsed?'past':'live')) return false;
+    if(relDec.size){
+      var y=parseInt(String(p.date||'').slice(0,4),10);
+      if(!y) return relDec.has('unknown');
+      if(!relDec.has(String(Math.floor(y/10)*10))) return false;
+    }
+    return true;
+  };
+  function build(){
+    var host=document.getElementById('relBox'); if(!host||host.dataset.built) return;
+    var rows=(window.pjDataRef&&window.pjDataRef.projects)||[];
+    var rel=rows.filter(function(p){ var s=String(p.source||'');
+      return s.indexOf('industry')!==0 && s.indexOf('escape')!==0; });
+    if(!rel.length) return;
+    host.dataset.built='1';
+    var live=rel.filter(function(p){return !p.lapsed;}).length, past=rel.length-live;
+    var dec={}, unknown=0, src={};
+    rel.forEach(function(p){
+      var k=String(p.source||'').split(':')[0]; src[k]=(src[k]||0)+1;
+      var y=parseInt(String(p.date||'').slice(0,4),10);
+      if(!y){unknown++;return;}
+      var d=String(Math.floor(y/10)*10); dec[d]=(dec[d]||0)+1;
+    });
+    var h='<label><input type="checkbox" data-rel="live" checked><span class="ot-dot" style="background:#7f9a52"></span>Still in date<span class="kcount"> ('+live+')</span></label>'
+         +'<label><input type="checkbox" data-rel="past" checked><span class="ot-dot" style="background:#6b7c96"></span>Granted, since expired<span class="kcount"> ('+past+')</span></label>';
+    var keys=Object.keys(dec).sort();
+    if(keys.length){
+      h+='<div class="ot-head" style="margin-top:7px">Decade granted</div>';
+      keys.forEach(function(d){
+        relDec.add(d);
+        h+='<label><input type="checkbox" data-dec="'+d+'" checked>'+d+'s<span class="kcount"> ('+dec[d]+')</span></label>';
+      });
+      if(unknown){ relDec.add('unknown');
+        h+='<label><input type="checkbox" data-dec="unknown" checked>No date given<span class="kcount"> ('+unknown+')</span></label>'; }
+    }
+    // What the release layer is NOT, stated where the counts are read.
+    var tot=rel.length;
+    function pct(k){ return tot?Math.round(100*(src[k]||0)/tot):0; }
+    h+='<div class="ot-note"><b>What these records leave out.</b> '
+      +'US permits are '+pct('aphis')+'% of this layer, decisions filed by every other country '
+      +pct('bch')+'%, Canada '+pct('cfia')+'%, Australia '+pct('ogtr')+'%. '
+      +'Treat every non-US figure as a floor, not a finding: the US genuinely runs the most trials, '
+      +'and every other source here is either partly fetched or has not completed a run. '
+      +'<b>Contained laboratory and glasshouse work appears nowhere at all</b> \u2014 most countries '
+      +'exempt it or merely require notification, so it generates no public record in any register '
+      +'on this map. Food and feed approvals sit with separate agencies in most countries and are '
+      +'only here where the country filed them. And a country with no records has not necessarily '
+      +'approved nothing; it may simply not have filed.</div>';
+    host.innerHTML=h;
+    host.addEventListener('change',function(e){
+      var t=e.target;
+      if(t.dataset.rel){ t.checked?relLive.add(t.dataset.rel):relLive.delete(t.dataset.rel); }
+      else if(t.dataset.dec){ t.checked?relDec.add(t.dataset.dec):relDec.delete(t.dataset.dec); }
+      else return;
+      try{ if(window.pjRefresh) window.pjRefresh(); }catch(_e){}
+    });
+  }
+  var t=setInterval(function(){ if(window.pjDataRef){ build(); } },900);
+  setTimeout(function(){ clearInterval(t); },30000);
+})();
+</script>
+<style>
+@media (max-width:820px){}
+</style>
+<script>
+(function(){
+  // A grouped marker carries its whole list. Clicking one opens a scrollable,
+  // sortable panel instead of a pile of pins nobody can click past.
+  var box=null;
+  function ensure(){
+    if(box) return box;
+    box=document.createElement('div'); box.id='recList';
+    box.innerHTML='<div id="recHead"><span id="recTitle"></span>'
+      +'<div class="rec-note" id="recNote"></div>'
+      +'<span id="recClose" title="close">&times;</span></div>'
+      +'<div id="recFilt"></div><div id="recSort"></div><div id="recBody"></div>';
+    document.body.appendChild(box);
+    var bk=document.createElement('div'); bk.id='recBack';
+    document.body.appendChild(bk);
+    bk.addEventListener('click',function(){ box.style.display='none'; bk.style.display='none'; });
+    box.querySelector('#recClose').addEventListener('click',function(){ box.style.display='none'; var b2=document.getElementById('recBack'); if(b2)b2.style.display='none'; });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ box.style.display='none'; var b3=document.getElementById('recBack'); if(b3)b3.style.display='none'; } });
+    return box;
+  }
+    var state={rows:[],by:'d',dir:-1,title:'',q:'',type:'',kind:'',yrs:0,cap:500};
+
+  function recPass(o){
+    if(state.type && (o.t||'')!==state.type) return false;
+    if(state.kind && (o.k||'')!==state.kind) return false;
+    if(state.q){
+      // The box hands back whatever was typed. draw() used to lowercase it on
+      // the way in; recPass is the only filter now, so it does it here - without
+      // this a capital letter in the search box matches nothing at all.
+      var s=((o.n||'')+' '+(o.c||'')+' '+(o.s||'')+' '+(o.pl||'')+' '+(o.t||'')).toLowerCase();
+      if(s.indexOf(String(state.q).toLowerCase())<0) return false;
+    }
+    if(state.yrs){
+      if(!o.d) return false;
+      var t=Date.parse(o.d); if(isNaN(t)) return false;
+      if((Date.now()-t)/31557600000 > state.yrs) return false;
+    }
+    return true;
+  }
+
+  // The pill bar is rebuilt per open because the kinds present are whatever this
+  // region actually contains - a fixed list would offer pills with nothing
+  // behind them, and hide kinds the harvester added since. The type filter is
+  // no longer here: the tree in the body below IS the type filter, with counts
+  // visible on every node instead of hidden inside a dropdown.
+  function recPillBar(){
+    var kinds = {}, dated = 0, i;
+    for(i = 0; i < state.rows.length; i++){
+      var k = state.rows[i].k || '';
+      if(k) kinds[k] = (kinds[k] || 0) + 1;
+      if(state.rows[i].d && !isNaN(Date.parse(state.rows[i].d))) dated++;
+    }
+    var KL = {industry:'Organisations', escape:'Spread', release:'Release authorisations'};
+    var kk = Object.keys(kinds).sort(function(a,b){ return kinds[b]-kinds[a]; });
+    var h = '';
+    if(kk.length > 1){
+      h += '<div class="rec-pills">';
+      h += '<span class="rec-pill'+(state.kind===''?' on':'')+'" data-k="">All '+state.rows.length+'</span>';
+      kk.forEach(function(k){
+        h += '<span class="rec-pill'+(state.kind===k?' on':'')+'" data-k="'+k+'">'
+           + (KL[k]||k) + ' ' + kinds[k] + '</span>';
+      });
+      h += '</div>';
+    }
+    // A date window is only offered where dates exist. Half these registers
+    // publish no date at all, and a control that silently empties the list is
+    // worse than no control.
+    if(dated > 1){
+      h += '<div class="rec-pills">';
+      [[0,'Any date'],[1,'12 months'],[5,'5 years'],[10,'10 years']].forEach(function(o){
+        h += '<span class="rec-pill'+(state.yrs===o[0]?' on':'')+'" data-y="'+o[0]+'">'+o[1]+'</span>';
+      });
+      h += '</div>';
+    }
+    return h;
+  }
+
+  function draw(){
+    // One pass, one predicate. recPass() already knew how to test the search
+    // box, the kind and the date window; draw() was re-implementing the search
+    // half inline and ignoring the other two, which is why the kind and date
+    // pills did nothing wherever they appeared.
+    var r = state.rows.filter(recPass);
+
+    // The categories are the filter now, so the <select> is gone. Same grouping,
+    // drawn in the list where you can see the counts without opening anything.
+    // Sorting happens before grouping, so every leaf in the tree comes out in
+    // the chosen order rather than only the flat list being sorted.
+    // Count is the default: the first question a list of categories answers is
+    // which ones are big. Date was the default and it ordered nothing visible,
+    // because categories are not dated - only the records inside them are.
+    if(!window.pjSortBy){ window.pjSortBy = '#'; window.pjSortDir = -1; }
+    var by = state.by || window.pjSortBy, dir = state.dir || window.pjSortDir;
+    r.sort(function(a, b){
+      var x = String(a[by] || ''), y = String(b[by] || '');
+      return x < y ? -dir : x > y ? dir : 0;
+    });
+    var tree = window.pjTreeRows(r);
+    var fb = ensure().querySelector('#recFilt');
+    if(fb){
+      // Controls only. The caveat used to be built in here, which put it below
+      // the search box - the wrong place for a standing note about the whole
+      // map. It lives in the head now, level with the title it qualifies.
+      fb.innerHTML =
+          '<div class="rec-filt-main">'
+        +   '<div class="rec-filt-row">'
+        +     '<input id="recQ" placeholder="filter these records\u2026" value="'
+        +     (state.q||'').replace(/"/g,'&quot;') + '">'
+        +     '<span class="rec-count">' + r.length + ' of ' + state.rows.length + '</span>'
+        +   '</div>'
+        +   recPillBar()
+        + '</div>';
+      fb.onclick = function(e){
+        var el = e.target, ds = el.dataset || {};
+        if(ds.k !== undefined){ state.kind = ds.k; draw(); return; }
+        if(ds.y !== undefined){ state.yrs = +ds.y; draw(); return; }
+        var b = ds.by;
+        if(!b) return;
+        if(state.by === b) state.dir = -state.dir; else { state.by = b; state.dir = -1; }
+        draw();
+      };
+      var q = fb.querySelector('#recQ');
+      q.oninput = function(){ state.q = this.value; var pos = this.selectionStart; draw();
+        var q2 = ensure().querySelector('#recQ'); if(q2){ q2.focus(); try{ q2.setSelectionRange(pos,pos); }catch(e){} } };
+    }
+    var body = ensure().querySelector('#recBody');
+    body.innerHTML = window.pjTreeHtml(tree, state.open || (state.open = {}));
+    body.onclick = function(e){
+      var sb = e.target.dataset && e.target.dataset.by;
+      if(sb){                       // a sort control, not the heading itself
+        if(window.pjSortBy === sb) window.pjSortDir = -window.pjSortDir;
+        else { window.pjSortBy = sb; window.pjSortDir = -1; }
+        state.by = window.pjSortBy; state.dir = window.pjSortDir;
+        draw(); return;
+      }
+      var node = e.target.closest('.tr-cat, .tr-leaf');
+      if(!node) return;
+      var k = node.dataset.k;
+      if(state.open[k]) delete state.open[k]; else state.open[k] = 1;
+      draw();
+    };
+  }
+
+  window.pjShowCluster=function(title,rows){
+    state.rows=rows; state.by='d'; state.dir=-1;
+    state.q=''; state.type=''; state.kind=''; state.yrs=0;
+    var b=ensure();
+    var fb=b.querySelector('#recFilt'); if(fb) fb.dataset.live='';
+    b.querySelector('#recTitle').textContent=title;
+    b.style.display='flex'; var b4=document.getElementById('recBack'); if(b4)b4.style.display='block';
+    draw();
+    return true;
+  };
+  // A marker holding several registers lists each one with its count, collapsed.
+  // Provenance only starts to matter once you have found the place, so it is one
+  // click in rather than three markers stacked on top of each other.
+  function drawSources(p){
+    var b=ensure(); b.style.display='flex'; var b4=document.getElementById('recBack'); if(b4)b4.style.display='block';
+    try{ var _nn=b.querySelector('#recNote'); if(_nn&&window.pjPlaceNote) _nn.innerHTML=window.pjPlaceNote(p); }catch(_e){}
+    b.querySelector('#recTitle').textContent=(p.name||'Records');
+    b.querySelector('#recSort').innerHTML='';
+    var h='';
+    p.sources.forEach(function(src,ix){
+      h+='<div class="rec-src" data-ix="'+ix+'"><b>'+src.label+'</b>'
+        +'<span class="kcount"> ('+src.n+')</span><span class="rec-open">show</span></div>';
+    });
+    b.querySelector('#recBody').innerHTML=h;
+    b.querySelector('#recBody').onclick=function(e){
+      var row=e.target.closest('.rec-src'); if(!row)return;
+      var src=p.sources[+row.dataset.ix];
+      state.rows=src.records; state.by='d'; state.dir=-1;
+    state.q=''; state.type=''; state.kind=''; state.yrs=0;
+    var _fb=ensure().querySelector('#recFilt'); if(_fb) _fb.dataset.live='';
+      try{ var _nn=b.querySelector('#recNote'); if(_nn&&window.pjPlaceNote) _nn.innerHTML=window.pjPlaceNote(p); }catch(_e){}
+    b.querySelector('#recTitle').textContent=(p.name||'Records')+' \u2014 '+src.label+' ('+src.n+')';
+      b.querySelector('#recBody').onclick=null;
+      draw();
+      var back=document.createElement('div');
+      back.className='rec-back'; back.textContent='\u2039 all sources at this point';
+      back.onclick=function(){ drawSources(p); };
+      b.querySelector('#recBody').insertBefore(back, b.querySelector('#recBody').firstChild);
+    };
+  }
+
+  window.pjShowRecords=function(p){
+    if(p&&p.sources&&p.sources.length){ drawSources(p); return true; }
+    if(!p||!p.records||!p.records.length) return false;
+    state.rows=p.records; state.by='d'; state.dir=-1;
+    state.q=''; state.type=''; state.kind=''; state.yrs=0;
+    var _fb=ensure().querySelector('#recFilt'); if(_fb) _fb.dataset.live='';
+    var b=ensure();
+    var extra=(p.records_total&&p.records_total>p.records.length)
+      ? (' \u2014 showing '+p.records.length+' of '+p.records_total) : (p.records.length>1?(' \u2014 '+p.records.length+' records'):'');
+    try{ var _nn=b.querySelector('#recNote'); if(_nn&&window.pjPlaceNote) _nn.innerHTML=window.pjPlaceNote(p); }catch(_e){}
+    b.querySelector('#recTitle').textContent=(p.name||'Records')+extra;
+    b.style.display='flex'; var b4=document.getElementById('recBack'); if(b4)b4.style.display='block';
+    draw();
+    return true;
+  };
+})();
+</script>
+<style>
+#recList{display:none;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1200;width:min(700px,94vw);max-height:78vh;background:rgba(8,14,32,0.975);border:1px solid rgba(127,168,204,0.45);border-radius:11px;color:#c3cee0;font-size:11px;flex-direction:column;overflow:hidden;box-shadow:0 18px 60px rgba(0,0,0,0.6);}
+#recHead{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;
+  padding:8px 10px;border-bottom:1px solid rgba(127,168,204,0.22);color:#eaf1ff;
+  font-weight:600;line-height:1.35;flex:0 0 auto;}
+#recTitle{flex:0 1 auto;min-width:0;max-width:46%;}
+#recClose{cursor:pointer;color:#7fa8cc;font-size:15px;line-height:1;}
+#recSort{display:flex;gap:9px;padding:6px 10px;border-bottom:1px solid rgba(127,168,204,0.16);
+  font-size:9.5px;color:#8394ab;flex:0 0 auto;}
+.rec-sort{cursor:pointer;} .rec-sort.on{color:#7fa8cc;font-weight:700;}
+#recBody{overflow-y:auto;padding:4px 10px 9px;}
+.rec-row{padding:5px 0;border-bottom:1px solid rgba(127,168,204,0.10);line-height:1.35;}
+.rec-row a{color:#9dc0dd;text-decoration:none;} .rec-row a:hover{text-decoration:underline;}
+.rec-meta{color:#7d8ba1;font-size:9.5px;margin-top:2px;}
+#recFilt{display:flex;flex-direction:column;gap:6px;padding:7px 10px;
+  border-bottom:1px solid rgba(127,168,204,0.16);flex:0 0 auto;}
+.rec-filt-main{width:100%;min-width:0;display:flex;flex-direction:column;gap:6px;}
+.rec-filt-row{display:flex;align-items:center;gap:8px;}
+#recFilt input,#recFilt select{width:100%;background:rgba(127,168,204,0.08);
+  border:1px solid rgba(127,168,204,0.32);border-radius:6px;color:#dce6f5;
+  font-size:10.5px;padding:5px 7px;outline:none;font-family:inherit;}
+#recFilt input:focus,#recFilt select:focus{border-color:#9dc0dd;}
+#recFilt option{background:#0a1020;color:#dce6f5;}
+.rec-pills{display:flex;flex-wrap:wrap;gap:4px;}
+.rec-pill{cursor:pointer;font-size:9px;padding:3px 7px;border-radius:9px;
+  border:1px solid rgba(127,168,204,0.30);color:#8fa0b8;white-space:nowrap;user-select:none;}
+.rec-pill:hover{border-color:#9dc0dd;color:#c8d4e8;}
+.rec-pill.on{background:rgba(127,168,204,0.20);border-color:#9dc0dd;color:#eaf1ff;font-weight:700;}
+#recSort .rec-n{color:#6f7f96;margin-right:auto;}
+#recSort{align-items:center;}
+.rec-src{display:flex;align-items:center;gap:6px;padding:7px 0;cursor:pointer;border-bottom:1px solid rgba(127,168,204,0.12);line-height:1.35;}
+.rec-src:hover{color:#eaf1ff;}
+.rec-open{margin-left:auto;color:#7fa8cc;font-size:9.5px;}
+#recList optgroup{color:#7fa8cc;font-weight:700;font-size:9.5px;text-transform:uppercase;letter-spacing:.4px;}
+#recList optgroup option{color:#c3cee0;font-weight:400;text-transform:none;letter-spacing:0;}
+#recBack{display:none;position:fixed;inset:0;z-index:1190;background:rgba(4,8,20,0.45);}
+/* The backdrop is there so a click on the map dismisses the records panel. It
+   covered the control panels too, at a z-index above them, so with a panel open
+   the first click on a Lens pill was swallowed by the backdrop and the pill
+   never saw it. The controls sit above the backdrop; the map still sits below
+   it, which is the only thing the backdrop was ever for. */
+#sidebar,#rightbar{z-index:1195;}
+.rec-back{color:#7fa8cc;cursor:pointer;padding:4px 0 7px;font-size:9.5px;}
+@media (max-width:820px){#recList{display:none!important;}}
+</style>
+<script>
+(function(){
+  // Two levels drawn as one. At world zoom a country is a single marker whose
+  // count is everything filed under it - the national records plus every state's
+  // - so the reader is never asked to add a national dot to fifty state dots to
+  // find out what a country holds. Opening it does two things at once: the
+  // national box opens in the panel, and the states scatter onto the map.
+  window.pjExpanded = window.pjExpanded || new Set();
+
+  // The country marker's key was p.state ("United States") while its state
+  // markers looked for p.parent ("USA"). Different strings, so opening the
+  // country hid the country and never revealed the states. One key for both.
+  window.pjHierKey = function(q){
+    if(!q) return '';
+    return String((q.level === 'country' ? (q.state || q.parent) : (q.parent || q.state)) || 'USA')
+           .trim().toLowerCase();
+  };
+
+  // Records filed at this marker itself, ignoring anything below it.
+  window.pjOwnTotal = function(p){
+    if(!p) return 0;
+    if(typeof p.records_total === 'number' && p.records_total > 0) return p.records_total;
+    if(p.records && p.records.length) return p.records.length;
+    var n = 0;
+    (p.sources || []).forEach(function(s){
+      n += (typeof s.n === 'number' ? s.n : ((s.records && s.records.length) || 0));
+    });
+    return n;
+  };
+
+  // What the icon should say. Collapsed, a country carries its states with it;
+  // opened, the states are separate markers and it drops back to its own count,
+  // so the numbers on screen never double up.
+  window.pjHierTotal = function(p){
+    if(!p) return 1;
+    var own = window.pjOwnTotal(p);
+    if(p.level !== 'country') return own || 1;
+    if(window.pjExpanded.has(window.pjHierKey(p))) return own || 1;
+    var kids = 0;
+    (p.children || []).forEach(function(c){ kids += (+c.c || 0); });
+    return (own + kids) || 1;
+  };
+
+  window.pjLevelPasses = function(p){
+    if(!p || !p.level) return true;
+    // The country is always on the map. It is the combined marker, and it is
+    // also the control that closes the states again - hiding it on open left
+    // no way back except reloading.
+    if(p.level === 'rolled')  return false;   // folded into the country marker
+    if(p.level === 'country') return true;
+    if(p.level === 'state')   return window.pjExpanded.has(window.pjHierKey(p));
+    return true;
+  };
+
+  // Clicking a country opens the national box and scatters the states.
+  window.pjDrill = function(p){
+    if(!p || p.level !== 'country') return false;
+    var k = window.pjHierKey(p);
+    var opening = !window.pjExpanded.has(k);
+    if(opening) window.pjExpanded.add(k); else window.pjExpanded.delete(k);
+    try{ if(window.pjRefresh) window.pjRefresh(); }catch(e){}
+    if(!opening) return true;              // closing is a map action, not a panel one
+
+    if(!window.pjShowRecords) return true;
+    var own = window.pjOwnTotal(p);
+    if(own){
+      // The national box itself - the records filed at national level, run
+      // through the same tree and the same filters as everything else.
+      window.pjShowRecords({
+        name: p.name + ' \u2014 national records',
+        url: p.url || '',
+        sources: p.sources || null,
+        records: p.records || null,
+        records_total: p.records_total || own
+      });
+    } else if(p.children && p.children.length){
+      // Nothing is filed nationally, so the breakdown is the only thing there
+      // is to show. Typed, so it groups rather than arriving as a bare list.
+      window.pjShowRecords({
+        name: p.name + ' \u2014 by state',
+        records_total: p.children.length,
+        records: p.children.map(function(c){
+          return {n: c.n, d: '', c: String(c.c) + ' authorisations', s: '',
+                  u: '', t: 'State totals, breakdown'};
+        })
+      });
+    }
+    return true;
+  };
+})();
+</script>
+<script>
+(function(){
+  // The type filter was a <select>. A dropdown is the wrong shape for this: it
+  // hides the structure it just created, and you cannot see how many records sit
+  // under a category without opening it and reading one line at a time.
+  //
+  // Same data, drawn as a tree in the list itself. Categories collapsed, counts
+  // on every node, click to open. Where a leaf holds more than one record the
+  // records nest under it; where it holds one, the leaf IS the record.
+  // ---- categorisation -------------------------------------------------------
+  // A category has to come from somewhere. APHIS records carry a type; the
+  // Cartagena registers and most national ones do not, and every record from
+  // them was landing in one undifferentiated heap - a raw list with a heading
+  // on it. So: use the type where there is one, and where there is not, find a
+  // field in THIS set of records that behaves like a category and use that.
+  function _norm(x){
+    return String(x == null ? '' : x).toLowerCase()
+      .replace(/[\u2010-\u2015\u2212]/g, '-')
+      .replace(/[^a-z0-9]+/g, ' ').trim();
+  }
+  function _sing(w){
+    if(/ies$/.test(w) && w.length > 4) return w.slice(0, -3) + 'y';
+    if(/ss$/.test(w)) return w;
+    if(/s$/.test(w) && w.length > 3) return w.slice(0, -1);
+    return w;
+  }
+  function _key(x){ var n = _norm(x); return n ? n.split(' ').map(_sing).join(' ') : ''; }
+
+  // A field is a category if it repeats. An applicant name is unique per record
+  // and would give one category per record, which is the raw list again with
+  // more clicks. A decision type repeats a few dozen times and is what we want.
+  function _categorical(rows, f){
+    var seen = {}, n = 0, d = 0;
+    for(var i = 0; i < rows.length; i++){
+      var v = String(rows[i][f] == null ? '' : rows[i][f]).trim();
+      if(!v || v.length > 64) continue;
+      if(!isNaN(Date.parse(v)) && /\d/.test(v)) continue;   // a date is not a category
+      n++; if(!seen[v]){ seen[v] = 1; d++; }
+    }
+    return n >= 4 && d <= 14 && (d / n) <= 0.5;
+  }
+
+  // The categorical core of a free-text status. Registers write the count into
+  // the status string, which turns one status into two hundred. The count is
+  // already on the record; what is wanted here is the state it describes.
+  function _statusCore(v){
+    var t = String(v == null ? '' : v).trim();
+    if(!t || t.length > 64) return '';
+    t = t.replace(/^\s*\d+\s+of\s+\d+\s*/i, '')                       // "1 of 2 recruiting"
+         .replace(/^\s*\d[\d,]*\s+[a-z]+s?,\s*/i, '')                 // "2 trials, none recruiting"
+         .replace(/\s*\d{4}\s*[\u2012-\u2015-]\s*\d{4}\s*$/, '')      // "Filed 1998-2025"
+         .replace(/\s+/g, ' ').trim();
+    return t;
+  }
+
+  // Latin binomials and register shorthand for organisms that already appear on
+  // the map under their common name. This is not a botanical authority - it is
+  // the set of collisions the harvested registers actually produce.
+  var _LEAF_ALIAS_RAW = {
+    'zea mays':'Corn', 'maize':'Corn', 'corn sweet':'Corn',
+    'gossypium hirsutum':'Cotton', 'gossypium barbadense':'Cotton',
+    'glycine max':'Soybean', 'soybeans':'Soybean',
+    'brassica napus':'Rapeseed', 'canola':'Rapeseed', 'osr-canola':'Rapeseed',
+    'oilseed rape':'Rapeseed', 'osr':'Rapeseed',
+    'oryza sativa':'Rice', 'triticum aestivum':'Wheat',
+    'solanum lycopersicum':'Tomato', 'lycopersicon esculentum':'Tomato',
+    'medicago sativa':'Alfalfa', 'lucerne':'Alfalfa',
+    'arabidopsis thaliana':'Arabidopsis', 'mouse-ear cress':'Arabidopsis',
+    'thale cress':'Arabidopsis',
+    'nicotiana tabacum':'Tobacco', 'saccharum officinarum':'Sugarcane',
+    'beta vulgaris':'Sugar beet', 'solanum tuberosum':'Potato',
+    'helianthus annuus':'Sunflower', 'sorghum bicolor':'Sorghum',
+    'carthamus tinctorius':'Safflower', 'vigna unguiculata':'Cowpea',
+    'arachis hypogaea':'Peanut', 'groundnut':'Peanut',
+    'lactuca sativa':'Lettuce', 'camelina sativa':'Camelina',
+    'falseflax':'Camelina', 'false flax':'Camelina',
+    'cicer arietinum':'Chickpea', 'populus':'Poplar',
+    // Not an organism. The register withheld the organism, which is worth saying
+    // out loud rather than filing under a three-letter code nobody can read.
+    'cbi':'Withheld by the applicant as confidential'
+  };
+  var _LEAF_ALIAS = null;
+  function _leafAlias(){
+    if(_LEAF_ALIAS) return _LEAF_ALIAS;
+    _LEAF_ALIAS = {};
+    Object.keys(_LEAF_ALIAS_RAW).forEach(function(k){ _LEAF_ALIAS[_key(k)] = _LEAF_ALIAS_RAW[k]; });
+    return _LEAF_ALIAS;
+  }
+
+  // How few records make a leaf a standalone. Exposed rather than buried so the
+  // threshold can be moved without going back into the grouping code.
+  if(window.PJ_MIN_LEAF == null) window.PJ_MIN_LEAF = 1 /* every species keeps its own row: a permit for one Mexican Lime is still a permit for Mexican Lime, and folding it into a shared bucket hides exactly the unusual releases worth noticing */;
+
+  function _leafName(leaf){
+    var a = _leafAlias(), t = String(leaf || '').trim();
+    if(!t) return '';
+    if(a[_key(t)]) return a[_key(t)];
+    // A varietal list is not a category. "Thompson Seedless, Chardonnay,
+    // Cabernet Sauvignon, Merlot, Pinot Noir ... and Freedom" is one permit
+    // naming its rootstocks; the first name is the thing, the rest is the
+    // paperwork, and it belongs on the record rather than in the tree.
+    if(t.length > 44 || t.indexOf(';') >= 0){
+      var head = t.split(/[;,]/)[0].trim();
+      if(head && a[_key(head)]) return a[_key(head)];
+      if(head && head.length <= 44) return head;
+    }
+    return t;
+  }
+
+  function _foldLeaves(leaves){
+    var lk = Object.keys(leaves);
+    if(lk.length < 2) return leaves;
+
+    // 1. rename, merging anything that lands on the same name
+    var byName = {};
+    lk.forEach(function(lf){
+      var nm = _leafName(lf);
+      (byName[nm] || (byName[nm] = [])).push.apply(byName[nm], leaves[lf]);
+    });
+
+    // 2. a small leaf whose words contain a big leaf's words is that big leaf:
+    //    "Corn, Field" is corn. Largest wins, so nothing is folded upward.
+    var names = Object.keys(byName);
+    var big = names.filter(function(n){ return byName[n].length >= window.PJ_MIN_LEAF; });
+    names.forEach(function(n){
+      if(byName[n].length >= window.PJ_MIN_LEAF) return;
+      var nw = _key(n).split(' '), home = null;
+      big.forEach(function(b){
+        if(b === n) return;
+        var bw = _key(b).split(' ');
+        if(bw.length && bw.every(function(x){ return nw.indexOf(x) >= 0; })){
+          if(!home || byName[b].length > byName[home].length) home = b;
+        }
+      });
+      if(home){ byName[home] = byName[home].concat(byName[n]); delete byName[n]; }
+    });
+
+    // 3. whatever is still alone goes to one "Other", carrying its own name on
+    //    each record so the organism the register named is never lost.
+    var out = {}, other = [];
+    Object.keys(byName).forEach(function(n){
+      if(byName[n].length >= window.PJ_MIN_LEAF || n === ''){ out[n] = byName[n]; return; }
+      byName[n].forEach(function(r){
+        var copy = {}; for(var f in r) copy[f] = r[f];
+        copy._leaf = n; other.push(copy);
+      });
+    });
+    // One lonely leaf is not a category of leftovers - leave it named.
+    if(other.length === 1){ out[other[0]._leaf] = [other[0]]; other = []; }
+    if(other.length) out['Other'] = other;
+    return out;
+  }
+
+  // "<organism>, <category>" is an APHIS release type and splits on the comma.
+  // "Regulator, register or trade body" is an English list and is one type - but
+  // it has a comma, so it was being split into a category "Register or trade
+  // body" holding a leaf "Regulator": the same words twice, and a category
+  // nobody wrote. A tail is only a category if it ends like one.
+  var _TAIL_NOUNS = {'release':1, 'trial':1, 'permit':1, 'notification':1,
+                     'decision':1, 'authorisation':1, 'authorization':1,
+                     'approval':1, 'movement':1, 'import':1, 'export':1,
+                     'registration':1, 'licence':1, 'license':1, 'use':1,
+                     'breakdown':1, 'total':1, 'application':1};
+  function _isCategoryTail(tail){
+    var w = _key(tail).split(' ');
+    return !!_TAIL_NOUNS[w[w.length - 1]];
+  }
+
+  // Head nouns that make two differently-worded categories the same thing.
+  var _HEADS = {'release':1, 'trial':1, 'permit':1, 'notification':1, 'decision':1,
+                'authorisation':1, 'authorization':1, 'approval':1, 'use':1,
+                'movement':1, 'import':1, 'export':1, 'application':1, 'licence':1,
+                'license':1, 'company':1, 'organisation':1, 'organization':1,
+                'supplier':1, 'programme':1, 'program':1, 'facility':1, 'registration':1};
+
+  window.pjTreeRows = function(rows){
+    rows = rows || [];
+
+    // Which field carries the category for this particular set of records.
+    var fb = null;
+    var hasType = rows.some(function(r){ return String(r.t || r.type || '').trim(); });
+    if(!hasType){
+      ['s', 'c', 'k'].some(function(f){ if(_categorical(rows, f)){ fb = f; return true; } return false; });
+    }
+    function typeOf(r){
+      var t = String(r.t || r.type || '').trim();
+      if(!t && fb) t = String(r[fb] == null ? '' : r[fb]).trim();
+      return t;
+    }
+
+    var cats = {};            // key -> {label, leaves:{}, total}
+    function bucket(k, label, leaf, r){
+      var c = cats[k] || (cats[k] = {label: label, leaves: {}, total: 0, votes: {}});
+      (c.leaves[leaf] || (c.leaves[leaf] = [])).push(r);
+      c.total++;
+      // Keep the spelling that occurs most often rather than whichever arrived
+      // first, so "Environmental Release" does not label 400 records because it
+      // happened to sort earliest.
+      c.votes[label] = (c.votes[label] || 0) + 1;
+      if(c.votes[label] > (c.votes[c.label] || 0)) c.label = label;
+    }
+
+    rows.forEach(function(r){
+      var t = typeOf(r);
+      // Wrapper types belong to the marker, not to a record. They were leaking
+      // into the tree as categories called "All sources" and "Grouped by state",
+      // which describe the container rather than anything in it.
+      if(/^Release (records|authorisations),/i.test(t)) t = '';
+      // Older APHIS rows carry no type at all. That is a gap in the source, so
+      // it gets a name rather than a silent bucket at the bottom of the list.
+      if(!t) t = 'Type not recorded by the register';
+
+      // "<organism>, <category>" splits into a category and a leaf. A type with
+      // no comma - "Seed & trait company", "National biosafety decision" - is
+      // already a category in its own right, so it becomes one, with its records
+      // directly under it.
+      var ix = t.lastIndexOf(','), cat, leaf;
+      if(ix > 0 && _isCategoryTail(t.slice(ix + 1))){
+        cat = t.slice(ix + 1).trim(); leaf = t.slice(0, ix).trim();
+      }
+      else { cat = t; leaf = ''; }
+      if(!cat){ cat = 'Type not stated'; leaf = ''; }
+      cat = cat.charAt(0).toUpperCase() + cat.slice(1);
+      bucket(_key(cat) || 'other', cat, leaf, r);
+    });
+
+    // ---- give flat categories a second axis ---------------------------------
+    // A type like "Gene or cell therapy trial sponsor" is carried by every
+    // record in the set, so the tree came out as one heading with 822 lines
+    // under it - a raw list wearing a category's hat. Where a category has no
+    // leaf of its own, split it on whatever field in THIS set discriminates.
+    // Status usually does, once the counts baked into it are stripped off:
+    // "2 trials, none recruiting" and "3 trials, none recruiting" are the same
+    // status wearing two different numbers.
+    Object.keys(cats).forEach(function(k){
+      var c = cats[k], lk = Object.keys(c.leaves);
+      if(lk.length !== 1 || lk[0] !== '' || c.leaves[''].length < 8) return;
+      var flat = c.leaves[''];
+      ['s', 'c'].some(function(f){
+        var by = {}, d = 0, n = 0;
+        flat.forEach(function(r){
+          var v = _statusCore(r[f]);
+          if(!v) return;
+          n++; if(!by[v]){ by[v] = []; d++; } by[v].push(r);
+        });
+        // Two or forty groups is structure; one is no better than none, and
+        // one-per-record is the raw list again with an extra click in front.
+        if(n < flat.length * 0.8 || d < 2 || d > 40 || (d / n) > 0.6) return false;
+        c.leaves = {};
+        Object.keys(by).forEach(function(v){
+          c.leaves[v.charAt(0).toUpperCase() + v.slice(1)] = by[v];
+        });
+        return true;
+      });
+    });
+
+    // ---- consolidation ------------------------------------------------------
+    // Splitting on the type string alone left a tail of categories holding one
+    // or two records each - a wording variant of a category that already exists,
+    // or a one-off nobody will ever look for by name. Each is either folded into
+    // the category it actually belongs to, or into "Other". Nothing is dropped
+    // and the counts still add up.
+    if(window.PJ_MIN_CAT == null) window.PJ_MIN_CAT = 3;
+    var MIN = window.PJ_MIN_CAT, keys = Object.keys(cats);
+    var strong = keys.filter(function(k){ return cats[k].total >= MIN && k !== 'other'; });
+    var weak   = keys.filter(function(k){ return cats[k].total <  MIN || k === 'other'; });
+
+    if(strong.length && weak.length){
+      weak.forEach(function(wk){
+        var w = cats[wk], ww = wk.split(' '), whead = ww[ww.length - 1];
+        var best = null, bestScore = 0;
+        strong.forEach(function(sk){
+          var sw = sk.split(' '), shead = sw[sw.length - 1], score = 0;
+          // One name inside the other: "Environmental release (interstate
+          // movement)" is an environmental release.
+          var inside = sw.every(function(x){ return ww.indexOf(x) >= 0; }) ||
+                       ww.every(function(x){ return sw.indexOf(x) >= 0; });
+          if(inside) score += 10;
+          // Same head noun from a known list: "confined field trial" and
+          // "field trial" are the same kind of thing.
+          if(shead === whead && _HEADS[whead]) score += 4;
+          // Shared words break ties between two plausible homes.
+          var shared = ww.filter(function(x){ return sw.indexOf(x) >= 0; }).length;
+          if(score) score += shared;
+          if(score > bestScore || (score && score === bestScore && best && cats[sk].total > cats[best].total)){
+            bestScore = score; best = sk;
+          }
+        });
+        var into = best || 'other';
+        if(into === wk) return;
+        var dst = cats[into] || (cats[into] = {label: 'Other', leaves: {}, total: 0, votes: {}});
+        Object.keys(w.leaves).forEach(function(lf){
+          // Folding into "Other" keeps the original wording as the leaf, so a
+          // record is still findable by the name its register gave it.
+          var name = best ? (lf || w.label) : (lf ? (w.label + ' \u2014 ' + lf) : w.label);
+          dst.leaves[name] = (dst.leaves[name] || []).concat(w.leaves[lf]);
+        });
+        dst.total += w.total;
+        delete cats[wk];
+      });
+    }
+
+    // ---- leaves -------------------------------------------------------------
+    // The categories were never the problem. Inside "Environmental release" the
+    // leaf is the organism, and that is where the standalones are: California
+    // carries 71 leaves of which 16 hold a single record, including "Gossypium
+    // Hirsutum" sitting beside "Cotton" - the same plant under its Latin name -
+    // and a varietal string 180 characters long. Each leaf is renamed to the
+    // name the rest of the register uses, merged where that produces a
+    // duplicate, and anything still alone is collected under one "Other".
+    Object.keys(cats).forEach(function(k){ cats[k].leaves = _foldLeaves(cats[k].leaves); });
+
+    // ---- output -------------------------------------------------------------
+    var out = {}, order = [];
+    Object.keys(cats).forEach(function(k){
+      var c = cats[k], label = (k === 'other') ? 'Other' : c.label;
+      // Two keys can still collide on a label after folding; merge rather than
+      // overwrite, because an overwrite silently loses records.
+      if(!out[label]){ out[label] = c.leaves; order.push(label); }
+      else Object.keys(c.leaves).forEach(function(lf){
+        out[label][lf] = (out[label][lf] || []).concat(c.leaves[lf]);
+      });
+    });
+    function tot(label){ var n = 0; Object.keys(out[label]).forEach(function(k){ n += out[label][k].length; }); return n; }
+    order.sort(function(a, b){
+      // "Other" is the leftovers, so it sits at the bottom whatever its size.
+      if(a === 'Other') return 1;
+      if(b === 'Other') return -1;
+      // Categories follow the chosen sort. Only count and name mean anything to
+      // a heading - a category has no date or status of its own - so any other
+      // choice orders the records inside and leaves the headings by count.
+      var by = window.pjSortBy || '#', dir = window.pjSortDir || -1;
+      if(by === 'n') return a < b ? -dir : a > b ? dir : 0;
+      return (tot(b) - tot(a)) * (dir < 0 ? 1 : -1);
+    });
+    return {cats: out, order: order};
+  };
+
+  window.pjTreeHtml = function(tree, open){
+    var h = '';
+    tree.order.forEach(function(cat){
+      var leaves = tree.cats[cat];
+      // Leaves follow the chosen sort. They were always ordered by size, so
+      // clicking "name" or "date" reordered records that were still hidden
+      // inside collapsed leaves and the panel appeared not to respond at all.
+      var _sb = window.pjSortBy || 'd', _sd = window.pjSortDir || -1;
+      function _leafRank(k){
+        var rs = leaves[k];
+        if(_sb === 'd'){
+          var newest = '';
+          for(var q = 0; q < rs.length; q++){ var dv = String(rs[q].d || ''); if(dv > newest) newest = dv; }
+          return newest;
+        }
+        return String(k || '').toLowerCase();
+      }
+      var lk = Object.keys(leaves).sort(function(a,b){
+        // "Other" is the leftovers wherever it appears - category or leaf - so
+        // it sorts last by name rather than by size or date.
+        if(a === 'Other') return 1;
+        if(b === 'Other') return -1;
+        if(_sb === 'n' || _sb === 't' || _sb === 'd'){
+          var x = _leafRank(a), y = _leafRank(b);
+          if(x !== y) return x < y ? -_sd : _sd;
+        }
+        return leaves[b].length - leaves[a].length;
+      });
+      var tot = 0; lk.forEach(function(k){ tot += leaves[k].length; });
+      var oc = !!open['c:'+cat];
+      // Sorting belongs to the category you are reading, not to the whole panel.
+      // At the top it applied to everything and was visible even when nothing was
+      // open; here it appears only on an expanded heading, beside what it sorts.
+      var sorts = '';
+      if(oc){
+        sorts = '<span class="rec-sorts">'
+          + [['#','count'],['d','date'],['n','name'],['t','type'],['c','detail'],['s','status']].map(function(o){
+              return '<span class="rec-s'+(window.pjSortBy===o[0]?' on':'')+'" data-by="'+o[0]+'">'+o[1]
+                   + (window.pjSortBy===o[0]?(window.pjSortDir<0?' \u25be':' \u25b4'):'')+'</span>';
+            }).join('') + '</span>';
+      }
+      h += '<div class="tr-cat" data-k="c:'+cat.replace(/"/g,'&quot;')+'">'
+         + '<span class="tr-tw">'+(oc?'\u25be':'\u25b8')+'</span>'+cat
+         + '<span class="kcount"> ('+tot+')</span>' + sorts + '</div>';
+      var gloss = _catNote(cat);
+      if(gloss) h += '<div class="tr-note">'+gloss+'</div>';
+      if(!oc) return;
+      lk.forEach(function(leaf){
+        var rs = leaves[leaf];
+        var lo = !!open['l:'+cat+'|'+leaf];
+        if(leaf === ''){   // the category IS the type; records sit straight under it
+          rs.forEach(function(r){ h += '<div class="tr-rec tr-l1">'+recLine(r, (leaf==='Other'? null : leaf))+'</div>'; });
+          return;
+        }
+        if(rs.length === 1){
+          // A leaf holding one record IS that record, so no twisty is drawn -
+          // but the leaf name is the record's type, and dropping it silently
+          // threw the type away. It goes on the meta line instead. This matters
+          // most in "Other", where the leaf name is the only surviving trace of
+          // the category the register actually gave it.
+          h += '<div class="tr-rec tr-l1">'+recLine(rs[0], leaf)+'</div>';
+          return;
+        }
+        h += '<div class="tr-leaf" data-k="l:'+(cat+'|'+leaf).replace(/"/g,'&quot;')+'">'
+           + '<span class="tr-tw">'+(lo?'\u25be':'\u25b8')+'</span>'
+           + (leaf==='Other' ? 'Other species \u2014 one or two records each' : leaf)
+           + '<span class="kcount"> ('+rs.length+')</span></div>';
+        if(!lo) return;
+        rs.forEach(function(r){ h += '<div class="tr-rec tr-l2">'+recLine(r, (leaf==='Other'? null : leaf))+'</div>'; });
+      });
+    });
+    return h || '<div class="rec-meta">No records match.</div>';
+  };
+
+  // The clinical register files its detail column as a tally: "NA\u00d78, Phase 2\u00d76,
+  // Phase 1\u00d74, EARLY_Phase 1\u00d71". That is a machine's shorthand - a count on the
+  // wrong side of the label, an underscore where a space belongs, and "NA" for
+  // the fact that no phase was recorded at all. Same numbers, said in English.
+  var _PHASE_ORDER = ['early phase 1','phase 1','phase 1/phase 2','phase 2',
+                      'phase 2/phase 3','phase 3','phase 4','not applicable'];
+  function _phaseWords(v){
+    var t = String(v == null ? '' : v).trim();
+    if(!t || t.indexOf('\u00d7') < 0) return t;
+    var parts = t.split(','), out = [], ok = true;
+    parts.forEach(function(seg){
+      var m = /^\s*(.+?)\s*\u00d7\s*(\d+)\s*$/.exec(seg);
+      if(!m){ ok = false; return; }
+      var label = m[1].replace(/_/g, ' ').trim().toLowerCase();
+      if(label === 'na' || label === 'n/a') label = 'not applicable';
+      out.push({l: label, n: +m[2]});
+    });
+    if(!ok || !out.length) return t;
+    out.sort(function(a, b){
+      var ia = _PHASE_ORDER.indexOf(a.l), ib = _PHASE_ORDER.indexOf(b.l);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+    });
+    var total = 0; out.forEach(function(x){ total += x.n; });
+    var bits = out.map(function(x){
+      if(x.l === 'not applicable') return x.n + ' with no phase recorded';
+      return x.n + ' in ' + x.l;
+    });
+    return total + ' trial' + (total === 1 ? '' : 's') + ': ' + bits.join(', ');
+  }
+
+  // Registers title their own summary rows with the country code they file
+  // under - "IT \u2014 1 biosafety decision filed". The code is the register's
+  // shorthand, not a name, and it is the first thing a reader sees on the row.
+  function _expandName(n){
+    var t = String(n == null ? '' : n);
+    var m = /^([A-Za-z]{2})(\s*[\u2012-\u2015-]\s+)/.exec(t);
+    if(!m) return t;
+    var map = window.PJ_COUNTRY || {};
+    var full = map[m[1].toUpperCase()];
+    return full ? (full + m[2] + t.slice(m[0].length)) : t;
+  }
+
+  window.pjPhaseWords = _phaseWords;   // exposed for checking
+  window.pjExpandName = _expandName;
+
+  // A category heading is a term of art from a register. "Environmental release"
+  // and "carve-out" mean nothing to someone arriving cold, and the heading is
+  // the point where they decide whether to open it. One plain line each.
+  var _CAT_NOTE_RAW = {
+    'environmental release':
+      'Permission to grow or release an engineered organism outdoors, outside a laboratory.',
+    'confined field trial':
+      'A trial grown outdoors but fenced about with conditions meant to stop it spreading or being eaten.',
+    'interstate movement':
+      'Permission to move an engineered organism between states, not to plant it.',
+    'national biosafety decisions':
+      'A decision a government filed with the UN biosafety treaty. It covers the whole country, so there is no site attached.',
+    'gene or cell therapy trial sponsor':
+      'An organisation running clinical trials that alter genes inside people.',
+    'regulator, register or trade body':
+      'A body that writes the rules, keeps the public records, or lobbies governments on the industry\u2019s behalf.',
+    'seed & trait company':
+      'A company selling engineered seed, or owning the engineered traits inside seed other firms sell.',
+    'gene editing company':
+      'A company that alters the DNA of living things, usually as a service to others.',
+    'dna synthesis & sequencing':
+      'Companies that read DNA or write it to order. Almost every engineered organism starts as a sequence bought from one of these.',
+    'contract research & manufacturing':
+      'Firms paid to run the studies and make the products that appear under someone else\u2019s name.',
+    'laboratory animal supplier':
+      'Companies and institutes that breed engineered animals for research and sell them.',
+    'livestock & aquaculture company':
+      'Firms engineering farm animals and fish, or the breeding stock behind them.',
+    'assisted reproduction':
+      'Fertility clinics, gamete banks and embryo-screening companies \u2014 genetic selection applied to people.',
+    'clinical & therapeutic company':
+      'Companies developing genetic medicine for patients.',
+    'de-extinction & conservation biotech':
+      'Projects using engineering on wildlife \u2014 reviving lost species, or altering living ones to save them.',
+    'open release programme':
+      'Programmes deliberately releasing engineered organisms into the wild, rather than into a field.',
+    'funder':
+      'Where the money comes from: venture funds, foundations, governments and defence agencies.',
+    'state totals':
+      'How many authorisations each state holds. A count, not a record.',
+    'type not recorded by the register':
+      'The register published no type for these. The gap is the register\u2019s, not the map\u2019s.',
+    'other':
+      'Types that appear only once or twice here \u2014 most often <b>national biosafety decisions</b>, a country\u2019s formal ruling on whether an engineered organism may be grown, imported or sold, filed to the international treaty register. Kept together rather than each sitting alone; every record still carries its own name.'
+  };
+  var _CAT_NOTE = null;
+  function _catNote(label){
+    if(!_CAT_NOTE){
+      _CAT_NOTE = {};
+      Object.keys(_CAT_NOTE_RAW).forEach(function(k){ _CAT_NOTE[_key(k)] = _CAT_NOTE_RAW[k]; });
+    }
+    var k = _key(label);
+    if(_CAT_NOTE[k]) return _CAT_NOTE[k];
+    // Unknown headings still get something, taken from the noun they end on,
+    // so a category the harvesters add tomorrow is not left bare.
+    var w = k.split(' '), last = w[w.length - 1];
+    if(last === 'release')  return 'Permission to put an engineered organism outdoors.';
+    if(last === 'trial')    return 'A supervised test carried out before anything is approved for sale.';
+    if(last === 'permit' || last === 'licence' || last === 'license')
+      return 'A written permission issued by a regulator.';
+    if(last === 'decision' || last === 'approval')
+      return 'A regulator\u2019s ruling on an application.';
+    if(last === 'company' || last === 'supplier')
+      return 'A commercial organisation working in this part of the industry.';
+    return '';
+  }
+
+  function recLine(o, typeLabel){
+    var meta = [typeLabel || o._leaf, o.d, _phaseWords(o.c), o.s].filter(Boolean).join(' \u00b7 ');
+    var nm = _expandName(o.n);
+    return (o.u ? ('<a href="'+o.u+'" target="_blank" rel="noopener">'+nm+'</a>')
+                : ('<span>'+nm+'</span>'))
+         + (meta ? '<div class="rec-meta">'+meta+'</div>' : '');
+  }
+})();
+</script>
+<style>
+.rec-sorts{font-size:9.5px;color:#7d8ba1;display:flex;gap:7px;align-items:center;}
+.rec-s{cursor:pointer;} .rec-s:hover{color:#9dc0dd;} .rec-s.on{color:#7fa8cc;font-weight:700;}
+.rec-note{font-size:9.5px;font-weight:400;color:#7d8ba1;line-height:1.5;margin:0;flex:1 1 auto;min-width:0;align-self:stretch;border-left:1px solid rgba(127,168,204,0.16);padding-left:10px;max-height:132px;overflow-y:auto;padding-right:4px;}
+.rec-count{color:#7d8ba1;font-size:9.5px;margin-left:auto;white-space:nowrap;flex:0 0 auto;}
+.tr-cat,.tr-leaf{display:flex;align-items:center;gap:5px;cursor:pointer;line-height:1.4;}
+.tr-cat{padding:7px 0 6px;border-bottom:1px solid rgba(127,168,204,0.14);
+  color:#eaf1ff;font-weight:600;}
+.tr-leaf{padding:5px 0 5px 15px;color:#c3cee0;}
+.tr-cat:hover,.tr-leaf:hover{color:#7fa8cc;}
+.tr-tw{color:#7fa8cc;font-size:9px;width:9px;flex:0 0 auto;}
+.tr-note{font-size:9px;color:#7d8ba1;line-height:1.45;margin:1px 0 6px 14px;max-width:94%;}
+.tr-rec{padding:4px 0;border-bottom:1px solid rgba(127,168,204,0.08);line-height:1.35;}
+.tr-l1{padding-left:15px;} .tr-l2{padding-left:30px;}
+</style>
+<script>
+(function(){
+  // Organisation type says what kind of body something is. It says nothing about
+  // what the body works ON, and "what does this company do to what" is the
+  // question most readers arrive with. The facet tags already carry it - 49
+  // sub-tags across 436 organisations - so this is a second reading of data that
+  // is already there, not a new field.
+  //
+  // Subjects are deliberately coarser than the tags and finer than the facets.
+  // An entry can hold several: a company breeding disease-resistant pigs works on
+  // animals AND on livestock production, and hiding it under one loses the point.
+  window.PJ_SUBJ = {
+    plants:    {label:'Plants & crops',       colour:'#7d9b5a',
+                tags:['seed:traits','seed:germplasm','seed:majors','seed:licensees',
+                      'seed:distribution','editing:agtech']},
+    animals:   {label:'Animals',              colour:'#a4713c',
+                tags:['animals:models','animals:breeders','animals:primates','animals:services',
+                      'livestock:livestock','livestock:cloning','deextinct:rescue',
+                      'deextinct:biobank','deextinct:ventures']},
+    humans:    {label:'Human medicine & reproduction', colour:'#96637a',
+                tags:['clinical:therapy','clinical:trials','clinical:vectors','clinical:germline',
+                      'repro:clinics','repro:banks','repro:surrogacy','repro:screening']},
+    wild:      {label:'Wild release',         colour:'#5d8a72',
+                tags:['wild:insects','wild:microbes','wild:drives']},
+    microbes:  {label:'Microbes & fermentation', colour:'#9c8434',
+                tags:['editing:synbio','synthesis:synth','synthesis:seq','synthesis:reagents',
+                      'synthesis:repos','cro:cdmo']},
+    tools:     {label:'Tools, patents & platforms', colour:'#6f6a94',
+                tags:['editing:platform','editing:patents','rules:ip','cro:cro','clinical:cro']},
+    money:     {label:'Money',                colour:'#b8912f',
+                tags:['money:vc','money:markets','money:public','money:philanthropy','money:defence']},
+    rules:     {label:'Rules & influence',    colour:'#5f7a53',
+                tags:['rules:regulators','rules:standards','rules:associations','rules:influence']}
+  };
+
+  var TAG2SUBJ = {};
+  Object.keys(PJ_SUBJ).forEach(function(k){
+    PJ_SUBJ[k].tags.forEach(function(t){ (TAG2SUBJ[t] || (TAG2SUBJ[t] = [])).push(k); });
+  });
+
+  window.pjSubjOf = function(p){
+    var out = {}, tags = (p && p.tags) || [];
+    tags.forEach(function(t){
+      (TAG2SUBJ[t] || []).forEach(function(k){ out[k] = 1; });
+      // a tag nobody mapped still belongs to its facet, so nothing is orphaned
+      if(!TAG2SUBJ[t]){
+        var f = String(t).split(':')[0];
+        if(f === 'seed' || f === 'editing') out.plants = 1;
+        else if(f === 'animals' || f === 'livestock' || f === 'deextinct') out.animals = 1;
+        else if(f === 'clinical' || f === 'repro') out.humans = 1;
+        else if(f === 'wild') out.wild = 1;
+        else if(f === 'synthesis' || f === 'cro') out.microbes = 1;
+        else if(f === 'money') out.money = 1;
+        else if(f === 'rules') out.rules = 1;
+      }
+    });
+    return Object.keys(out);
+  };
+
+  window.pjSubjOn = new Set(Object.keys(PJ_SUBJ));
+
+  window.pjSubjPasses = function(p){
+    if(String((p && p.source) || '').indexOf('industry') !== 0) return true;   // organisations only
+    var s = window.pjSubjOf(p);
+    if(!s.length) return true;            // untagged: never hidden by a filter it is not in
+    for(var i = 0; i < s.length; i++){ if(window.pjSubjOn.has(s[i])) return true; }
+    return false;
+  };
+})();
+</script>
+<script>
+(function(){
+  function build(){
+    var box=document.getElementById('subjBox');
+    if(!box || box.dataset.built || !window.PJ_SUBJ) return;
+    box.dataset.built='1';
+    var h='';
+    Object.keys(window.PJ_SUBJ).forEach(function(k){
+      h+='<label><input type="checkbox" data-subj="'+k+'" checked>'
+        +'<span class="ot-dot" style="background:'+window.PJ_SUBJ[k].colour+'"></span>'
+        +window.PJ_SUBJ[k].label+'<span class="kcount" data-sc="'+k+'"></span></label>';
+    });
+    box.innerHTML=h;
+    box.addEventListener('change',function(e){
+      var k=e.target.dataset&&e.target.dataset.subj; if(!k)return;
+      e.target.checked?window.pjSubjOn.add(k):window.pjSubjOn.delete(k);
+      try{ if(window.pjRefresh) window.pjRefresh(); }catch(_e){}
+    });
+    count();
+  }
+  function count(){
+    try{
+      var rows=(window.pjDataRef&&window.pjDataRef.projects)||[];
+      var n={};
+      rows.forEach(function(p){
+        if(String(p.source||'').indexOf('industry')!==0) return;
+        window.pjSubjOf(p).forEach(function(k){ n[k]=(n[k]||0)+1; });
+      });
+      document.querySelectorAll('[data-sc]').forEach(function(el){
+        el.textContent=' ('+(n[el.dataset.sc]||0)+')'; });
+    }catch(e){}
+  }
+  var t=setInterval(function(){ build(); if(window.pjDataRef) count(); },700);
+  setTimeout(function(){ clearInterval(t); },30000);
+})();
+</script>
+<script>
+(function(){
+  // The standing note was one block of US-specific text shown over every
+  // country. Mexico has no state breakdown and no APHIS permits, so two of its
+  // three paragraphs described something that does not exist there.
+  //
+  // Built per panel instead, from what the records actually are. Short: a reader
+  // opening a list wants the caveat, not an essay.
+  window.pjPlaceNote = function(p){
+    // Organisations are placed at their head office, which is what the entry
+    // claims and not where the work happens. Saying so once here is better
+    // than repeating it in 436 descriptions.
+    if(p && String(p.source||'').indexOf('industry')===0){
+      return '<b>These are head offices.</b> The laboratories, plants and fields these companies run are somewhere else, and almost none of them are published.';
+    }
+    var srcs = {}, hier = p && (p.level === 'country' || p.level === 'state');
+    ((p && p.sources) || []).forEach(function(x){ srcs[x.k] = 1; });
+    if(p && p.source) srcs[String(p.source).split(':')[0]] = 1;
+    var bits = [];
+    if(srcs.aphis){
+      bits.push('<b>APHIS names the states a permit covers, never the sites</b> \u2014 there is no point data to place, only a state. One permit can cover several states, so a record counted here may name others.');
+    }
+    if(srcs.bch){
+      bits.push('<b>Decisions filed under the Cartagena Protocol apply to a whole country</b> '
+        + 'and carry no location at all.');
+    }
+    if(srcs.clinical){
+      bits.push('<b>Trial sponsors are placed at their country</b>, not at the hospitals running the trials.');
+    }
+    if(srcs.ogtr){
+      bits.push('<b>These are real sites.</b> Australia\u2019s OGTR is the only regulator in the world that publishes them.');
+    }
+    if(!bits.length){
+      bits.push('No register in this dataset publishes coordinates, so there is no point data to place \u2014 only the country, and sometimes the state.');
+    }
+    if(hier){
+      bits.push('<b>The national dot and the state dots are different records, not the same ones counted twice.</b> Permits name the states they cover and become state dots. Records that belong to the country as a whole \u2014 national decisions, trial sponsors \u2014 name no state and sit on the national dot. Click it again, or any empty part of the map, to put the states away.');
+    }
+    return bits.join(' ');
+  };
+})();
+</script>
+<script>
+(function(){
+  // The key box grew flat: eight sibling headings, several of which only qualify
+  // one of the three kind toggles above them. Release scale belongs under
+  // Releases; organisation type belongs under Industry. Nesting them says which
+  // toggle each one narrows, and lets a whole branch collapse.
+  function moveUnder(kindValue, nodes, indentClass){
+    var cb = document.querySelector('.pj-kind[data-kind="'+kindValue+'"]');
+    if(!cb) return;
+    var anchor = cb.closest('label');
+    if(!anchor || !anchor.parentNode) return;
+    var host = document.createElement('div');
+    host.className = 'kind-sub ' + (indentClass||'');
+    anchor.parentNode.insertBefore(host, anchor.nextSibling);
+    nodes.forEach(function(n){ if(n) host.appendChild(n); });
+    // the kind toggle now owns its subtree
+    cb.addEventListener('change', function(){
+      host.style.display = cb.checked ? '' : 'none';
+    });
+  }
+  function headAndBox(match){
+    var heads = [].slice.call(document.querySelectorAll('.ot-head'));
+    for(var i=0;i<heads.length;i++){
+      if(match.test(heads[i].textContent)){
+        var out=[heads[i]], n=heads[i].nextSibling;
+        while(n && !(n.classList && n.classList.contains('ot-head'))){
+          var nx=n.nextSibling; out.push(n); n=nx;
+        }
+        return out;
+      }
+    }
+    return [];
+  }
+  function go(){
+    if(document.querySelector('.kind-sub')) return;
+    var relScale = headAndBox(/release scale/i);
+    var relRecs  = headAndBox(/release records/i);
+    var orgType  = headAndBox(/organisation type/i);
+    var subj     = headAndBox(/work on/i);
+    if(!relRecs.length && !orgType.length) return;
+    moveUnder('release',  relRecs.concat(relScale));
+    moveUnder('industry', subj.concat(orgType));
+  }
+  var t=setInterval(function(){ go(); }, 800);
+  setTimeout(function(){ clearInterval(t); }, 25000);
+})();
+</script>
+<style>
+.kind-sub{margin:2px 0 6px 17px;padding-left:9px;border-left:1px solid rgba(127,168,204,0.22);}
+.kind-sub .ot-head{margin-top:6px;}
+.kind-sub .pj-otypes{margin-left:0;}
+</style>
+<script>
+(function(){
+  // Finish the key-box nesting: everything that only qualifies one kind sits
+  // under that kind and folds with it, the two shaded-area groups sit under one
+  // heading, and the collapsed state is a caret you can click rather than a side
+  // effect of unticking the layer.
+  function headBlock(match){
+    var heads=[].slice.call(document.querySelectorAll('.ot-head'));
+    for(var i=0;i<heads.length;i++){
+      if(match.test(heads[i].textContent)){
+        var out=[heads[i]], n=heads[i].nextSibling;
+        while(n && !(n.classList && n.classList.contains('ot-head'))){
+          var nx=n.nextSibling; out.push(n); n=nx;
+        }
+        return out;
+      }
+    }
+    return [];
+  }
+  function nest(kind, blocks){
+    var cb=document.querySelector('.pj-kind[data-kind="'+kind+'"]');
+    if(!cb) return null;
+    var lab=cb.closest('label'); if(!lab||!lab.parentNode) return null;
+    var host=lab.parentNode.querySelector('.kind-sub[data-for="'+kind+'"]');
+    if(!host){
+      host=document.createElement('div');
+      host.className='kind-sub'; host.dataset.for=kind;
+      lab.parentNode.insertBefore(host, lab.nextSibling);
+    }
+    blocks.forEach(function(b){ b.forEach(function(n){ if(n) host.appendChild(n); }); });
+    if(!lab.querySelector('.kind-car')){
+      var car=document.createElement('span');
+      car.className='kind-car'; car.textContent='\u25be';
+      car.title='show or hide these filters';
+      car.onclick=function(e){
+        e.preventDefault(); e.stopPropagation();
+        var hid=host.style.display==='none';
+        host.style.display=hid?'':'none';
+        car.textContent=hid?'\u25be':'\u25b8';
+      };
+      lab.appendChild(car);
+    }
+    return host;
+  }
+  function go(){
+    if(document.body.dataset.keyNested) return;
+    var relRecs=headBlock(/release records/i);
+    var relScale=headBlock(/release scale/i);
+    var relRec2=headBlock(/filing recency/i);
+    var orgType=headBlock(/organisation type/i);
+    var subj=headBlock(/work on/i);
+    var zones=headBlock(/gm zones/i);
+    if(!relRecs.length && !orgType.length) return;
+    nest('release', [relRecs, relScale, relRec2]);
+    nest('industry', [subj, orgType]);
+    // GM zones joins the regime block under one Shaded areas heading
+    var shaded=headBlock(/^\s*Shaded areas\s*$/i);
+    if(shaded.length && zones.length){
+      var last=shaded[shaded.length-1];
+      zones.forEach(function(n){ if(n && n!==zones[0]) last.parentNode.insertBefore(n, last.nextSibling); });
+      if(zones[0] && zones[0].classList) zones[0].className='ot-sub';
+      last.parentNode.insertBefore(zones[0], last.nextSibling);
+    }
+    document.body.dataset.keyNested='1';
+  }
+  var t=setInterval(go, 700);
+  setTimeout(function(){ clearInterval(t); }, 25000);
+})();
+</script>
+<style>
+.kind-car{margin-left:auto;color:#7fa8cc;font-size:9px;cursor:pointer;padding:0 3px;}
+.ot-sub{font-size:9px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;
+  color:#8394ab;margin:6px 0 3px 6px;}
+</style>
+<script>
+(function(){
+  // The two dropdowns at the foot of the key box - project type and context
+  // overlay - list the same things as the toggles above them. Before removing
+  // them, take what they had that the toggles did not: the one-line description
+  // under each option. Those explanations move up onto the toggle labels as
+  // tooltips, so nothing is lost with the control.
+  function go(){
+    if(document.body.dataset.dedup) return;
+    var moved = 0;
+    // overlay notes -> the GM zones and regime checkboxes
+    if(window.PJ_OVERLAYS){
+      PJ_OVERLAYS.forEach(function(o){
+        var cb = document.querySelector('input[data-ovkey="'+o.k+'"]');
+        if(cb && cb.parentNode && o.note && !cb.parentNode.title){
+          cb.parentNode.title = o.note; moved++;
+        }
+      });
+    }
+    // source-family descriptions -> the organisation-type checkboxes
+    if(window.PJ_SRC){
+      var byCat = {};
+      PJ_SRC.forEach(function(x){ if(x.desc) byCat[(x.label||'').toLowerCase()] = x.desc; });
+      document.querySelectorAll('input[data-ot], input[data-subj]').forEach(function(cb){
+        var lab = cb.parentNode; if(!lab || lab.title) return;
+        var txt = (lab.textContent || '').toLowerCase();
+        for(var k in byCat){ if(k && txt.indexOf(k.slice(0, 14)) >= 0){ lab.title = byCat[k]; moved++; break; } }
+      });
+    }
+    // now retire the duplicates
+    ['projTypeSel', 'ovSel', 'overlaySel', 'projTypeBox'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el){ var row = el.closest('.psrc-row, .ot-head, div'); (row || el).remove(); }
+    });
+    [].slice.call(document.querySelectorAll('select')).forEach(function(sel){
+      var t = (sel.previousSibling && sel.previousSibling.textContent) || sel.id || '';
+      if(/project type|context overlay/i.test(t + ' ' + (sel.className||''))){
+        var wrap = sel.closest('div'); (wrap || sel).remove();
+      }
+    });
+    if(moved) document.body.dataset.dedup = '1';
+  }
+  var t = setInterval(go, 800);
+  setTimeout(function(){ clearInterval(t); }, 25000);
+})();
+</script>
+<script>
+(function(){
+  // "What they work on" was eight flat checkboxes. The deleted project-type menu
+  // had the detail underneath - 51 named sub-filters, "Trait developers",
+  // "Germplasm & breeding stock", "Insects & sterile release" - and those were
+  // lost with the control. They come back here, nested under the subject they
+  // belong to, each with its own count.
+  window.pjSubOn = window.pjSubOn || null;   // null = no sub-filter applied
+
+  function tagsBySubject(){
+    var rows=(window.pjDataRef&&window.pjDataRef.projects)||[];
+    var out={};
+    rows.forEach(function(p){
+      if(String(p.source||'').indexOf('industry')!==0) return;
+      var subs=(window.pjSubjOf?window.pjSubjOf(p):[]);
+      (p.tags||[]).forEach(function(t){
+        subs.forEach(function(k){
+          if(!window.PJ_SUBJ[k] || window.PJ_SUBJ[k].tags.indexOf(t)<0) return;
+          (out[k]||(out[k]={}));
+          out[k][t]=(out[k][t]||0)+1;
+        });
+      });
+    });
+    return out;
+  }
+
+  window.pjSubTagPasses=function(p){
+    if(!window.pjSubOn || !window.pjSubOn.size) return true;
+    if(String((p&&p.source)||'').indexOf('industry')!==0) return true;
+    var tg=(p&&p.tags)||[];
+    for(var i=0;i<tg.length;i++){ if(window.pjSubOn.has(tg[i])) return true; }
+    return false;
+  };
+
+  function build(){
+    var box=document.getElementById('subjBox');
+    if(!box || box.dataset.deep || !window.PJ_SUBJ || !window.pjDataRef) return;
+    var byS=tagsBySubject();
+    if(!Object.keys(byS).length) return;
+    box.dataset.deep='1';
+    [].slice.call(box.querySelectorAll('label')).forEach(function(lab){
+      var cb=lab.querySelector('input[data-subj]'); if(!cb) return;
+      var k=cb.dataset.subj, tags=byS[k]; if(!tags) return;
+      var keys=Object.keys(tags).sort(function(a,b){ return tags[b]-tags[a]; });
+      if(keys.length<2) return;
+      var car=document.createElement('span');
+      car.className='kind-car'; car.textContent='\u25b8';
+      lab.appendChild(car);
+      var sub=document.createElement('div');
+      sub.className='subj-sub'; sub.style.display='none';
+      keys.forEach(function(t){
+        var nm=(window.SUBLABEL&&window.SUBLABEL[t])||t.split(':')[1]||t;
+        var l=document.createElement('label');
+        l.innerHTML='<input type="checkbox" data-subtag="'+t+'">'+nm
+          +'<span class="kcount"> ('+tags[t]+')</span>';
+        sub.appendChild(l);
+      });
+      lab.parentNode.insertBefore(sub, lab.nextSibling);
+      car.onclick=function(e){
+        e.preventDefault(); e.stopPropagation();
+        var hid=sub.style.display==='none';
+        sub.style.display=hid?'':'none'; car.textContent=hid?'\u25be':'\u25b8';
+      };
+      sub.addEventListener('change',function(e){
+        var t=e.target.dataset&&e.target.dataset.subtag; if(!t)return;
+        if(!window.pjSubOn) window.pjSubOn=new Set();
+        e.target.checked?window.pjSubOn.add(t):window.pjSubOn.delete(t);
+        try{ if(window.pjRefresh) window.pjRefresh(); }catch(_e){}
+      });
+    });
+  }
+  var t=setInterval(build,800);
+  setTimeout(function(){ clearInterval(t); },30000);
+})();
+</script>
+<style>
+.subj-sub{margin:1px 0 4px 20px;padding-left:8px;border-left:1px solid rgba(127,168,204,0.18);
+  display:flex;flex-direction:column;gap:2px;}
+.subj-sub label{font-size:10px;color:#9aa8c0;display:flex;align-items:center;gap:5px;cursor:pointer;}
+.subj-sub input{accent-color:#7fa8cc;width:12px;height:12px;cursor:pointer;}
+</style>
+<script>
+(function(){
+  // Finish the de-duplication. The overlay list and the data-source list are the
+  // collapsible psrc panels at the foot of the key box, not <select> elements -
+  // which is why the earlier pass missed them.
+  function go(){
+    if(document.body.dataset.dedup2) return;
+    var cats=[].slice.call(document.querySelectorAll('.psrc-cat'));
+    var moved=0, killed=0;
+
+    // 1. overlay descriptions onto the shaded-area checkboxes
+    if(window.PJ_OVERLAYS){
+      PJ_OVERLAYS.forEach(function(o){
+        var cb=document.querySelector('input[data-ovkey="'+o.k+'"]');
+        if(cb && cb.parentNode && o.note && !cb.parentNode.title){
+          cb.parentNode.title=o.note;
+          // and show the first sentence inline, since a tooltip is easy to miss
+          if(!cb.parentNode.querySelector('.ov-desc')){
+            var d=document.createElement('div');
+            d.className='ov-desc';
+            d.textContent=String(o.note).split('. ')[0]+'.';
+            cb.parentNode.appendChild(d);
+          }
+          moved++;
+        }
+      });
+    }
+
+    // 2. retire the overlay panel now its content has a home above
+    cats.forEach(function(c){
+      if(/areas\s*&\s*land-control|not project dots/i.test(c.textContent)){
+        var body=c.closest('.psrc-body') || c.parentNode;
+        var wrap=body && body.previousElementSibling;
+        if(body){ body.remove(); killed++; }
+        if(wrap && /overlay|area/i.test(wrap.textContent||'')) wrap.remove();
+      }
+    });
+
+    // 3. move the data-source panel under the heading that explains it
+    var srcHead=[].slice.call(document.querySelectorAll('*')).filter(function(el){
+      return el.children.length===0 && /where this data comes from/i.test(el.textContent||'');
+    })[0];
+    var srcPanel=document.querySelector('.psrc-wrap, #psrcBox, .psrc-body');
+    if(srcHead && srcPanel && srcHead.parentNode){
+      srcHead.parentNode.insertBefore(srcPanel, srcHead.nextSibling);
+    }
+
+    // 4. cultivation and gmofree sit directly under the GM zones heading
+    var zoneHead=[].slice.call(document.querySelectorAll('.ot-head, .ot-sub')).filter(function(h){
+      return /gm zones/i.test(h.textContent||''); })[0];
+    var ovBox=document.getElementById('ovBox');
+    if(zoneHead && ovBox && zoneHead.nextSibling!==ovBox){
+      zoneHead.parentNode.insertBefore(ovBox, zoneHead.nextSibling);
+    }
+    if(moved||killed) document.body.dataset.dedup2='1';
+  }
+  var t=setInterval(go,800);
+  setTimeout(function(){ clearInterval(t); },25000);
+})();
+</script>
+<style>
+.ov-desc{font-size:9px;color:#7d8ba1;line-height:1.45;margin:2px 0 4px 19px;flex:1 0 100%;}
+</style>
+<script>
+(function(){
+  // Release scale, consent phase and filing recency were pill rows in the old
+  // style, sitting outside the Releases branch. Rebuilt as counted checkboxes to
+  // match "Still in date (2,708)" - a filter that cannot tell you how many
+  // records it will remove is asking you to guess.
+  function counts(){
+    var rows=(window.pjDataRef&&window.pjDataRef.projects)||[];
+    var rel=rows.filter(function(p){ var q=String(p.source||'');
+      return q.indexOf('industry')!==0 && q.indexOf('escape')!==0; });
+    var scale={}, phase={}, age={};
+    var now=Date.now();
+    rel.forEach(function(p){
+      var n=(p.records_total||1);
+      scale[p.impact||1]=(scale[p.impact||1]||0)+n;
+      phase[p.phase||'post']=(phase[p.phase||'post']||0)+n;
+      var ds=(p.dates&&p.dates.length)?p.dates:(p.date?[p.date]:[]);
+      if(!ds.length){ age.none=(age.none||0)+n; return; }
+      var newest=ds[ds.length-1];
+      var days=(now-new Date(newest).getTime())/86400000;
+      var b = days<=365?'y1' : days<=1825?'y5' : days<=3650?'y10' : 'older';
+      age[b]=(age[b]||0)+n;
+    });
+    return {scale:scale, phase:phase, age:age, total:rel.length};
+  }
+  var SCALE={1:'Small \u2014 one site',2:'A few sites',3:'Medium \u2014 several sites or states',
+             4:'Large \u2014 ten or more sites',5:'Largest \u2014 forty sites or ten states'};
+  var PHASE={post:'Consented',pre:'Under assessment'};
+  var AGE={y1:'Last year',y5:'Last five years',y10:'Last ten years',
+           older:'Older than ten years',none:'No date given'};
+  function rows(map, labels, attr){
+    return Object.keys(labels).filter(function(k){ return map[k]; }).map(function(k){
+      return '<label><input type="checkbox" data-'+attr+'="'+k+'" checked>'+labels[k]
+           + '<span class="kcount"> ('+map[k].toLocaleString()+')</span></label>';
+    }).join('');
+  }
+  function build(){
+    var host=document.getElementById('relBox');
+    if(!host || host.dataset.deep || !window.pjDataRef) return;
+    var c=counts(); if(!c.total) return;
+    host.dataset.deep='1';
+    var h=document.createElement('div');
+    h.innerHTML='<div class="ot-head" style="margin-top:8px">Release scale</div>'
+      +'<div class="pj-otypes">'+rows(c.scale,SCALE,'rscale')+'</div>'
+      +'<div class="ot-head" style="margin-top:8px">Consent phase</div>'
+      +'<div class="pj-otypes">'+rows(c.phase,PHASE,'rphase')+'</div>'
+      +'<div class="ot-head" style="margin-top:8px">Filing recency</div>'
+      +'<div class="pj-otypes">'+rows(c.age,AGE,'rage')+'</div>';
+    host.appendChild(h);
+    window.pjRelScale=new Set(Object.keys(c.scale));
+    window.pjRelPhase=new Set(Object.keys(c.phase));
+    window.pjRelAge=new Set(Object.keys(c.age));
+    h.addEventListener('change',function(e){
+      var d=e.target.dataset||{}, set=null, key=null;
+      if(d.rscale){ set=window.pjRelScale; key=d.rscale; }
+      else if(d.rphase){ set=window.pjRelPhase; key=d.rphase; }
+      else if(d.rage){ set=window.pjRelAge; key=d.rage; }
+      else return;
+      e.target.checked?set.add(key):set.delete(key);
+      try{ if(window.pjRefresh) window.pjRefresh(); }catch(_e){}
+    });
+  }
+  window.pjRelDetailPasses=function(p){
+    var q=String((p&&p.source)||'');
+    if(q.indexOf('industry')===0 || q.indexOf('escape')===0) return true;
+    if(window.pjRelScale && !window.pjRelScale.has(String(p.impact||1))) return false;
+    if(window.pjRelPhase && !window.pjRelPhase.has(p.phase||'post')) return false;
+    if(window.pjRelAge){
+      var ds=(p.dates&&p.dates.length)?p.dates:(p.date?[p.date]:[]);
+      var b='none';
+      if(ds.length){
+        var days=(Date.now()-new Date(ds[ds.length-1]).getTime())/86400000;
+        b = days<=365?'y1' : days<=1825?'y5' : days<=3650?'y10' : 'older';
+      }
+      if(!window.pjRelAge.has(b)) return false;
+    }
+    return true;
+  };
+  var t=setInterval(build,800);
+  setTimeout(function(){ clearInterval(t); },30000);
+})();
+</script>
+
+<script>
+(function(){
+  // Which organisms are actually in this layer. The filter tree only shows the
+  // ones inside whichever place you have opened, so there was no way to see the
+  // whole set - and the whole set is the answer to "what is being released",
+  // which is the first question anyone asks of this map.
+  function organisms(){
+    var rows=(window.pjDataRef&&window.pjDataRef.projects)||[];
+    var n={};
+    rows.forEach(function(p){
+      var q=String(p.source||'');
+      if(q.indexOf('industry')===0 || q.indexOf('escape')===0) return;
+      var recs=[];
+      (p.sources||[]).forEach(function(sr){ recs=recs.concat(sr.records||[]); });
+      if(!recs.length && p.records) recs=p.records;
+      recs.forEach(function(r){
+        var t=String(r.t||'').trim();
+        if(!t) return;
+        var ix=t.lastIndexOf(',');
+        var leaf=(ix>0? t.slice(0,ix) : t).trim();
+        if(!leaf) return;
+        leaf=leaf.charAt(0).toUpperCase()+leaf.slice(1);
+        n[leaf]=(n[leaf]||0)+1;
+      });
+    });
+    return n;
+  }
+  function build(){
+    var host=document.getElementById('relBox');
+    if(!host || host.dataset.orgList || !window.pjDataRef) return;
+    var n=organisms();
+    var keys=Object.keys(n);
+    if(!keys.length) return;
+    host.dataset.orgList='1';
+    var tot=0; keys.forEach(function(k){ tot+=n[k]; });
+    keys.sort(function(a,b){ return n[b]-n[a] || (a<b?-1:1); });
+    // grouped, not one alphabetical run of 200 names
+    var byGroup={};
+    keys.forEach(function(k){
+      var g=window.pjOrgGroup?window.pjOrgGroup(k):'Other / unclassified';
+      (byGroup[g]||(byGroup[g]=[])).push(k);
+    });
+    var order=(window.pjOrgGroupOrder||Object.keys(byGroup))
+              .filter(function(g){ return byGroup[g]; });
+    var rows=order.map(function(g){
+      var gk=byGroup[g], gt=0;
+      gk.forEach(function(k){ gt+=n[k]; });
+      gk.sort(function(a,b){ return n[b]-n[a] || (a<b?-1:1); });
+      var gpc=tot?(gt/tot*100):0;
+      var gt2=gpc>=10?Math.round(gpc):(gpc>=1?gpc.toFixed(1):'<1');
+      return '<div class="org-grp"><span class="ot-dot" style="background:'
+           + (window.pjOrgGroupColour?window.pjOrgGroupColour(g):'#8a917a')+'"></span>'
+           + g + '<span class="kcount"> '+gt.toLocaleString()+' \u00b7 '+gt2+'%</span></div>'
+           + gk.map(function(k){
+               var pc=tot?(n[k]/tot*100):0;
+               var t=pc>=10?Math.round(pc):(pc>=1?pc.toFixed(1):'<1');
+               return '<div class="org-row"><span>'+k.replace(/</g,'&lt;')+'</span>'
+                    + '<span class="kcount">'+n[k].toLocaleString()+' \u00b7 '+t+'%</span></div>';
+             }).join('');
+    }).join('');
+    var wrap=document.createElement('div');
+    wrap.innerHTML =
+      '<div class="ot-fold" data-fold="orglist"><span class="tr-tw">\u25b8</span>'
+      + '<b>Every organism in this layer</b><span class="kcount"> ('+keys.length+')</span></div>'
+      + '<div class="ot-foldbody" data-foldbody="orglist-note" style="display:none"></div>'
+      + '<div class="ot-foldbody org-list" data-foldbody="orglist" style="display:none">'
+      + '<div class="rec-meta" style="margin:0 0 6px">Grouped by what the organism is. The organism is a field on every release record, so these are counted rather than estimated \u2014 an unrecognised name goes to Other rather than being guessed at.</div>'
+      + rows + '</div>';
+    host.appendChild(wrap);
+  }
+  var t=setInterval(build, 800);
+  setTimeout(function(){ clearInterval(t); }, 30000);
+})();
+</script>
