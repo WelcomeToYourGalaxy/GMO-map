@@ -157,6 +157,72 @@ def main():
     print("\n  %d trials, %d distinct lead sponsors" % (len(seen_nct), len(spon)))
 
     out, noplace = [], 0
+# Every sponsor carried the same three-part paragraph with two numbers dropped
+# into it, so 2,231 records read as one record printed 2,231 times. The wording
+# below is built from what the register holds about this sponsor and nothing
+# else: how many trials, how far they got, how many are recruiting, and over
+# what span they were filed. Where a fact is missing the sentence is not
+# written rather than filled in.
+_PHASE_WORDS = {
+    "1": "first tests in people",
+    "2": "testing whether it works",
+    "3": "the large trials that come before approval",
+    "4": "study continuing after approval",
+}
+
+
+def _top_phase(rec):
+    """The furthest phase any of this sponsor's trials reached."""
+    best = 0
+    for k in rec.get("phases", {}):
+        m = re.search(r"(\d)", str(k))
+        if m and int(m.group(1)) > best:
+            best = int(m.group(1))
+    return best
+
+
+def _describe(rec, ph, recruiting):
+    n = rec["trials"]
+    bits = ["Lead sponsor of %s registered gene or cell therapy %s."
+            % ("{:,}".format(n), "trial" if n == 1 else "trials")]
+
+    # A sponsor with one trial is the commonest case in this register, and
+    # "the furthest any of them has reached" about a single trial reads as a
+    # sentence written for somebody else.
+    one = (n == 1)
+    top = _top_phase(rec)
+    if top:
+        bits.append(("It reached Phase %d \u2014 %s." if one else
+                     "The furthest any of them has reached is Phase %d \u2014 %s.")
+                    % (top, _PHASE_WORDS[str(top)]))
+    else:
+        bits.append(("It states no phase, which the register permits and a great "
+                     "many filings do.") if one else
+                    ("None of them states a phase, which the register permits and "
+                     "a great many filings do."))
+
+    if recruiting:
+        bits.append(("It is currently recruiting." if one else
+                     "%d %s currently recruiting." %
+                     (recruiting, "is" if recruiting == 1 else "are")))
+    else:
+        bits.append("It is not currently recruiting." if one
+                    else "None is currently recruiting.")
+
+    yrs = sorted(rec.get("years") or [])
+    if yrs:
+        bits.append("Filed %s." % (yrs[0] if yrs[0] == yrs[-1]
+                                   else "between %s and %s" % (yrs[0], yrs[-1])))
+
+    bits.append("Registration is required for essentially every interventional trial "
+                "run in or submitted to the United States, so this count comes from a "
+                "complete register rather than from a figure an industry chose to "
+                "release. It records what this organisation has filed, which is a "
+                "different thing from what it has treated: a registered trial may "
+                "finish, stall, or never report a result.")
+    return " ".join(bits)
+
+
     for rec in spon.values():
         if rec["trials"] < min_trials:
             continue
@@ -178,27 +244,24 @@ def main():
                      else "Gene or cell therapy trial sponsor"),
             "lat": pos[0], "lng": pos[1], "state": country,
             "precise": False, "impact": 2 if rec["trials"] < 10 else 3,
-            "company": "", "size": "%d trials" % rec["trials"],
+            "size": "%d trials" % rec["trials"],
             # These records reached the map carrying a name and a recruiting
             # count and nothing else - no date, no phase, no condition - so a
             # list of 822 of them was 822 identical-looking lines. Everything
             # already gathered per sponsor now goes onto the record.
             "status": ("%d of %d recruiting" % (recruiting, rec["trials"])) if recruiting
                       else ("%d trials, none recruiting" % rec["trials"]),
-            "date": (max(rec["years"]) + "-01-01") if rec.get("years") else "",
             "company": ph or "",
-            "phase": "post", "date": "", "otype": kind,
+            # This dict used to set "date" twice - once to the most recent year
+            # the harvester had just worked out, and again to "" three keys
+            # later. Python keeps the last, so every one of these records
+            # reached the map undated, and the year was computed and thrown
+            # away on the following line.
+            "date": (max(rec["years"]) + "-01-01") if rec.get("years") else "",
+            "phase": "post", "otype": kind,
             "url": "https://clinicaltrials.gov/search?term=" +
                    rec["name"].replace(" ", "+")[:80],
-            "desc": ("WHAT. Lead sponsor of %d registered gene or cell therapy trials (%s). "
-                     "WHERE IT SITS. One organisation inside the only facet on this map with "
-                     "a complete public register \u2014 registration is required for essentially "
-                     "every interventional trial run in or submitted to the United States. "
-                     "WHY IT MATTERS. The register exists because a law requires it, after "
-                     "sponsors were found abandoning trials with unfavourable results "
-                     "unpublished. Every other facet here is argued about with figures the "
-                     "industry chose to release; this one is not."
-                     % (rec["trials"], ph or "phase not stated")),
+            "desc": _describe(rec, ph, recruiting),
             "checked": "",
         })
 

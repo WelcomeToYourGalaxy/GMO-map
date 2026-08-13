@@ -115,6 +115,42 @@ _KEEP = re.compile(
     r"hectare|since\s+\d{4}|in\s+(?:19|20)\d{2}|cultivation|free\s+zone)", re.I)
 
 
+# Page furniture that reached the map as though a country had said it. The
+# footer of every page on this site runs "19-20 10117 Berlin Germany Conferences
+# 2023 2022 2018 ... Copyright (c) Zukunftsstiftung Landwirtschaft ... We are
+# using cookies to give you the best experience on our", and it carries no
+# sentence punctuation, so the splitter handed it over whole. It matched _KEEP
+# on the word "Regions" and went out under the name of every region in the
+# country - all four distinct notes this harvester produced ended in that
+# cookie banner.
+_FURNITURE = re.compile(
+    r"(cookie|best experience|copyright|\u00a9|all rights reserved|data protection|"
+    r"privacy polic|newsletter|subscribe|follow us|contact us|sitemap|"
+    r"conferences\s+(?:19|20)\d{2}|https?://|www\.)", re.I)
+
+
+def _is_sentence(sn):
+    """Prose, rather than a navigation menu that happens to contain a keyword.
+
+    Four tests, each aimed at something the crawl actually produced:
+    it has to end like a sentence, it cannot be mostly numerals, it cannot
+    carry page furniture anywhere in it (not merely at the start), and it has
+    to hold enough ordinary lower-case words to be a sentence at all.
+    """
+    if not sn.endswith((".", "!", "?")):
+        return False
+    if _FURNITURE.search(sn):
+        return False
+    words = sn.split()
+    if not words:
+        return False
+    digity = sum(1 for w in words if re.search(r"\d", w))
+    if digity / len(words) > 0.15:
+        return False
+    lower = sum(1 for w in words if len(w) >= 3 and w[:1].islower())
+    return lower >= 6
+
+
 def _summarise(text, limit=3, chars=520):
     """A few sentences of the page, chosen for content rather than position."""
     body = re.sub(r"\s+", " ", text)
@@ -126,13 +162,15 @@ def _summarise(text, limit=3, chars=520):
             continue
         if not _KEEP.search(sn):
             continue
-        if sn.lower().startswith(("home", "menu", "search", "cookie", "click here")):
+        if not _is_sentence(sn):
             continue
         if sn in good:
             continue
         good.append(sn)
         if len(good) >= limit:
             break
+    # An empty note is the honest outcome when a page yields no prose. The map
+    # says so in words; a page of navigation dressed as a declaration does not.
     out = " ".join(good)
     return out[:chars].rsplit(" ", 1)[0] + ("\u2026" if len(out) > chars else "")
 
