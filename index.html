@@ -473,7 +473,7 @@ function pjReport(which, data){
   <div id="legHead"><span>Map key</span><span id="legTog" onclick="document.getElementById('legend').classList.toggle('collapsed')" title="Show / hide the map key">&#9662;</span></div>
   <div id="legBody">
   
-  <label class="f-status"><input type="checkbox" id="projChk" checked> All map points</label><div class="pj-kinds"><label><input type="checkbox" class="pj-kind" data-kind="industry" checked> <b>Industry</b> — organisations</label><label><input type="checkbox" class="pj-kind" data-kind="escape" checked> <b>Spread &amp; drift</b> — what got out</label><label><input type="checkbox" class="pj-kind" data-kind="release" checked> <b>Releases</b> — authorisations</label><label><input type="checkbox" class="pj-kind" data-kind="biosafety" checked> <b>Biosafety decisions</b> — national rulings</label></div><div class="ot-head">Release records</div><div class="pj-otypes" id="relBox"></div><div class="ot-head">What they work on</div><div class="pj-otypes" id="subjBox"></div><div class="ot-head">Organisation type</div><div class="pj-otypes" id="otBox"></div><div class="ot-head">Shaded areas</div><div class="pj-otypes" id="regBox"></div><div class="ot-head">GM zones</div><div class="pj-otypes" id="ovBox"></div>
+  <label class="f-status"><input type="checkbox" id="projChk" checked> All map points</label><div class="pj-kinds"><label><input type="checkbox" class="pj-kind" data-kind="industry" checked> <b>Industry</b> — organisations</label><label><input type="checkbox" class="pj-kind" data-kind="escape" checked> <b>Spread &amp; drift</b> — what got out</label><label><input type="checkbox" class="pj-kind" data-kind="release" checked> <b>Releases</b> — authorisations</label><label><input type="checkbox" class="pj-kind" data-kind="biosafety" checked> <b>Biosafety decisions</b> — national rulings</label><label><input type="checkbox" class="pj-kind" data-kind="clinical" checked> <b>Clinical trials</b> — gene &amp; cell therapy sponsors</label></div><div class="ot-head">Release records</div><div class="pj-otypes" id="relBox"></div><div class="ot-head">What they work on</div><div class="pj-otypes" id="subjBox"></div><div class="ot-head">Organisation type</div><div class="pj-otypes" id="otBox"></div><div class="ot-head">Shaded areas</div><div class="pj-otypes" id="regBox"></div><div class="ot-head">GM zones</div><div class="pj-otypes" id="ovBox"></div>
   <div class="proj-size"><span class="ps-lab">Release scale &mdash; select any</span><span class="ps-pill on" data-ms="all">All</span><span class="ps-pill" data-ms="3">Medium <i>multi-site trial</i></span><span class="ps-pill" data-ms="4">Large <i>regional / multi-season</i></span><span class="ps-pill" data-ms="5">Largest <i>commercial cultivation</i></span></div><div class="proj-size proj-phase"><span class="ps-lab">Consent phase &mdash; select any</span><span class="ps-pill on" data-ph="pre">In review <i>pre-consent &middot; applied / notified / under assessment</i></span><span class="ps-pill on" data-ph="post">Consented <i>post-consent &middot; approved / planted / marketed</i></span></div>
   <div class="proj-search"><input id="projQ" type="search" placeholder="Search releases by organism, trait or applicant…" autocomplete="off"><span id="projQn"></span></div>
   <div class="proj-time"><span class="ps-lab">Filing recency — dated registers</span><span class="pt-pill on" data-tw="0">All ages</span><span class="pt-pill" data-tw="30">≤30d</span><span class="pt-pill" data-tw="90">≤90d</span><span class="pt-pill" data-tw="180">≤6mo</span><span class="pt-pill" data-tw="365">≤1yr</span><label class="pt-und"><input type="checkbox" id="pjUndated" checked> Include undated</label></div><div class="lp-detail collapsed"><div class="lp-detail-head" onclick="this.parentNode.classList.toggle('collapsed')"><span class="lp-car">&#9662;</span> Where this data comes from &amp; what's not (yet) in it</div><div class="lp-detail-body">
@@ -1152,6 +1152,10 @@ function _ovFeats(k,iso){
   }
   return out;
 }
+// The wire table covers the countries the news feed watches, which is not the
+// same set as the countries that file biosafety decisions. These are the eight
+// it does not carry. EU is not a country and is left unmatched deliberately.
+var _A2_EXTRA = {BF:'BFA', UY:'URY', CU:'CUB', SZ:'SWZ', SK:'SVK', BG:'BGR'};
 function _regimeBox(iso){
   try{ return _regimeBoxInner(iso); }
   catch(e){
@@ -1191,6 +1195,40 @@ function _regimeBoxInner(iso){
   } else {
     h+='<div class="rgm-p">The regime layer has not loaded, so nothing can be said here yet.</div>';
   }
+  /* What this country has actually filed. A national decision is a ruling about
+     releases rather than a release, so it does not belong in the release list -
+     and it is a fact about the country, which is here. */
+  try{
+    var recs=(window.pjDataRef&&window.pjDataRef.projects)||[];
+    var a3=String(iso).toUpperCase(), dec=null;
+    for(var q=0;q<recs.length;q++){
+      var r=recs[q];
+      if(String(r.source||'').indexOf('bch')!==0) continue;
+      var st=String(r.state||'').toUpperCase();
+      if(!st || st==='\u2014') continue;
+      var got = st.length===3 ? st
+              : ((window._WIRE_A2TO3 && window._WIRE_A2TO3[st]) || _A2_EXTRA[st] || '');
+      if(got===a3){ dec=r; break; }
+    }
+    if(dec){
+      h+='<div class="rgm-h2"><span class="rgm-ar" style="background:#5389a4"></span>'
+        +'Decisions filed to the Cartagena Protocol</div>';
+      h+='<div class="rgm-p">'+_esc(String(dec.size||'decisions filed'))
+        +(dec.status?(' \u2014 '+_esc(String(dec.status))):'')+'. '
+        +'A decision is a ruling on whether a living modified organism may be used, '
+        +'imported or released here. It is not itself a release, and this map counts '
+        +'it separately from one.</div>';
+      if(dec.url) h+='<div class="rgm-p"><a href="'+_esc(dec.url)
+        +'" target="_blank" rel="noopener">the country\u2019s filing</a></div>';
+    } else if(recs.length){
+      h+='<div class="rgm-h2"><span class="rgm-ar" style="background:#5389a4"></span>'
+        +'Decisions filed to the Cartagena Protocol</div>';
+      h+='<div class="rgm-conf">Nothing filed here has been harvested. The Clearing-House '
+        +'holds decisions from far more countries than this map has fetched, so an empty '
+        +'line is this map\u2019s reach and not the country\u2019s record.</div>';
+    }
+  }catch(_e){}
+
   /* Shaded areas, named by their own layer. Area shading and the dots are
      separate things and are kept separate here. */
   var free=_ovFeats('gmofree',iso), cult=_ovFeats('cultivation',iso);
@@ -1841,6 +1879,7 @@ function setWireSort(v){ _wireSort=v||'smart'; try{ loadWire(true); }catch(e){ t
 var _wireISONAME={US:'United States',CA:'Canada',MX:'Mexico',BR:'Brazil',AR:'Argentina',CL:'Chile',PE:'Peru',CO:'Colombia',EC:'Ecuador',BO:'Bolivia',VE:'Venezuela',GB:'United Kingdom',IE:'Ireland',FR:'France',DE:'Germany',ES:'Spain',PT:'Portugal',IT:'Italy',NL:'Netherlands',BE:'Belgium',SE:'Sweden',NO:'Norway',FI:'Finland',DK:'Denmark',PL:'Poland',CZ:'Czechia',AT:'Austria',CH:'Switzerland',GR:'Greece',RO:'Romania',HU:'Hungary',UA:'Ukraine',RU:'Russia',TR:'Turkey',RS:'Serbia',CN:'China',IN:'India',PK:'Pakistan',BD:'Bangladesh',JP:'Japan',KR:'South Korea',ID:'Indonesia',PH:'Philippines',VN:'Vietnam',TH:'Thailand',MY:'Malaysia',MM:'Myanmar',NP:'Nepal',LK:'Sri Lanka',KZ:'Kazakhstan',MN:'Mongolia',TW:'Taiwan',AU:'Australia',NZ:'New Zealand',PG:'Papua New Guinea',FJ:'Fiji',ZA:'South Africa',NG:'Nigeria',KE:'Kenya',GH:'Ghana',TZ:'Tanzania',UG:'Uganda',ET:'Ethiopia',CD:'DR Congo',CM:'Cameroon',SN:'Senegal',ML:'Mali',ZM:'Zambia',ZW:'Zimbabwe',MZ:'Mozambique',AO:'Angola',NA:'Namibia',BW:'Botswana',MG:'Madagascar',RW:'Rwanda',MA:'Morocco',DZ:'Algeria',TN:'Tunisia',EG:'Egypt',LY:'Libya',SD:'Sudan',SA:'Saudi Arabia',AE:'UAE',IL:'Israel',PS:'Palestine',IQ:'Iraq',IR:'Iran',SY:'Syria',JO:'Jordan',LB:'Lebanon',YE:'Yemen',AZ:'Azerbaijan',GE:'Georgia',AM:'Armenia',UZ:'Uzbekistan',AF:'Afghanistan',GT:'Guatemala',HN:'Honduras',PA:'Panama',CR:'Costa Rica',NI:'Nicaragua',DO:'Dominican Republic',GL:'Global'};
 function _wireRegKey(it){ var iso=it&&it.iso; if(!iso)return null; iso=_wireISO3(iso); return it.region?(iso+'|'+it.region):iso; }
 var _WIRE_A2TO3={"AE": "ARE", "AF": "AFG", "AM": "ARM", "AO": "AGO", "AR": "ARG", "AT": "AUT", "AU": "AUS", "AZ": "AZE", "BD": "BGD", "BE": "BEL", "BO": "BOL", "BR": "BRA", "BW": "BWA", "CA": "CAN", "CD": "COD", "CH": "CHE", "CL": "CHL", "CM": "CMR", "CN": "CHN", "CO": "COL", "CR": "CRI", "CZ": "CZE", "DE": "DEU", "DK": "DNK", "DO": "DOM", "DZ": "DZA", "EC": "ECU", "EG": "EGY", "ES": "ESP", "ET": "ETH", "FI": "FIN", "FJ": "FJI", "FR": "FRA", "GB": "GBR", "GE": "GEO", "GH": "GHA", "GR": "GRC", "GT": "GTM", "HN": "HND", "HU": "HUN", "ID": "IDN", "IE": "IRL", "IL": "ISR", "IN": "IND", "IQ": "IRQ", "IR": "IRN", "IT": "ITA", "JO": "JOR", "JP": "JPN", "KE": "KEN", "KR": "KOR", "KZ": "KAZ", "LB": "LBN", "LK": "LKA", "LY": "LBY", "MA": "MAR", "MG": "MDG", "ML": "MLI", "MM": "MMR", "MN": "MNG", "MX": "MEX", "MY": "MYS", "MZ": "MOZ", "NA": "NAM", "NG": "NGA", "NI": "NIC", "NL": "NLD", "NO": "NOR", "NP": "NPL", "NZ": "NZL", "PA": "PAN", "PE": "PER", "PG": "PNG", "PH": "PHL", "PK": "PAK", "PL": "POL", "PS": "PSE", "PT": "PRT", "RO": "ROU", "RS": "SRB", "RU": "RUS", "RW": "RWA", "SA": "SAU", "SD": "SDN", "SE": "SWE", "SN": "SEN", "SY": "SYR", "TH": "THA", "TN": "TUN", "TR": "TUR", "TW": "TWN", "TZ": "TZA", "UA": "UKR", "UG": "UGA", "US": "USA", "UZ": "UZB", "VE": "VEN", "VN": "VNM", "YE": "YEM", "ZA": "ZAF", "ZM": "ZMB", "ZW": "ZWE"};
+try{ window._WIRE_A2TO3=_WIRE_A2TO3; }catch(e){}
 function _wireISO3(c){ if(!c)return c; c=String(c).toUpperCase(); if(c==='GL'||c.length===3)return c; return (_WIRE_A2TO3[c]||c); }
 var _WIRE_ISO3NAME=null;
 function _wireISO3Names(){ if(_WIRE_ISO3NAME)return _WIRE_ISO3NAME; var m={};
@@ -2224,7 +2263,13 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   var PC={5:"#4f6b2c",4:"#63813a",3:"#7f9a52",2:"#9aae74",1:"#b3c199"}, INDC={5:"#f2d06b",4:"#e8bf5c",3:"#dcae4e",2:"#cf9d42",1:"#c08c38"}, /* Spread records: one rust ramp, dark to pale. It was running
      rust-pink-magenta-plum, four hues for one category. Rust rather than
      olive so an incident stays distinguishable from a release. */
-  ESCC={5:"#8a3f2c",4:"#a8523c",3:"#bd6a4f",2:"#cd8670",1:"#dba694"}, PR={5:15,4:12,3:9,2:7,1:5};
+  ESCC={5:"#8a3f2c",4:"#a8523c",3:"#bd6a4f",2:"#cd8670",1:"#dba694"},
+  /* Trial sponsors are not releases and should not be read off the same ramp.
+     A muted blue-violet: nothing else on this map uses it, and it does not
+     compete with the olive that means "authorised to go outdoors". */
+  CLIC={5:"#4a4f86",4:"#5b619b",3:"#6f74ad",2:"#8a8dc0",1:"#a5a7d1"},
+  /* A ruling about releases, drawn in slate so it is not read as one. */
+  BIOC={5:"#37627a",4:"#43758f",3:"#5389a4",2:"#6f9fb6",1:"#8fb6c8"}, PR={5:15,4:12,3:9,2:7,1:5};
   try{ if(typeof map!=='undefined' && map.createPane && !map.getPane('projPane')){ map.createPane('projPane'); map.getPane('projPane').style.zIndex=620; } }catch(_e){}
   window.PJ_CLICK_MINZ=2 /* was 6: right when a world-zoom dot was a two-pixel speck, wrong now that clustering draws a large numbered circle over a country at zoom 3 */;
   try{ if(typeof map!=='undefined' && map.on){ map.on('zoomend', function(){ var _pn=map.getPane&&map.getPane('projPane'); if(_pn) _pn.style.pointerEvents=(map.getZoom()>=PJ_CLICK_MINZ?'auto':'none'); }); } }catch(_e){}
@@ -2602,7 +2647,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   var _pjPts=null,_pjGrid=null,_projLayer=null,_pjPopup=null,_pjShown=0;
   function pjHasDate(p){ if(!p||!p.date)return false; var t=new Date(p.date).getTime(); return !isNaN(t); }
   function pjAgeDays(p){ return Math.floor((Date.now()-new Date(p.date).getTime())/86400000); }
-  var pjKinds=new Set(["industry","escape","release","biosafety"]);
+  var pjKinds=new Set(["industry","escape","release","biosafety","clinical"]);
   function pjPasses(p){
     if(p.lat==null||p.lng==null) return false;
     if(!pjKinds.has(pjKind(p))) return false;
@@ -2736,7 +2781,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       _pjFan = pjData.projects.map(function(){ return [0,0]; });
     var pts=[],grid={},arr=(pjData&&pjData.projects)||[];
     for(var k=0;k<arr.length;k++){ var p=arr[k]; if(!pjPasses(p)) continue;
-      var i=p.impact||1, kd=pjKind(p), o={la:p.lat+((_pjFan&&_pjFan[k]&&_pjFan[k][1])||0),lo:p.lng+((_pjFan&&_pjFan[k]&&_pjFan[k][0])||0),i:i,c:(kd==="industry"?(OTC[p.otype]||INDC[i]):kd==="escape"?ESCC[i]:PC[i])||"#8fa0b8",ot:(p.otype||"company"),ap:(p.precise===false),kd:kd,p:p};
+      var i=p.impact||1, kd=pjKind(p), o={la:p.lat+((_pjFan&&_pjFan[k]&&_pjFan[k][1])||0),lo:p.lng+((_pjFan&&_pjFan[k]&&_pjFan[k][0])||0),i:i,c:(kd==="industry"?(OTC[p.otype]||INDC[i]):kd==="escape"?ESCC[i]:kd==="clinical"?CLIC[i]:kd==="biosafety"?BIOC[i]:PC[i])||"#8fa0b8",ot:(p.otype||"company"),ap:(p.precise===false),kd:kd,p:p};
       pts.push(o); var gk=Math.floor(o.la)+"|"+Math.floor(o.lo); (grid[gk]||(grid[gk]=[])).push(o);
     }
     _pjPts=pts; _pjGrid=grid; _pjShown=pts.length; _pjClu=null; _pjCluZ=null; return pts.length;
@@ -2805,7 +2850,10 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       // acting on an organisation, which is a single named thing at a single
       // address: two firms in one town were becoming an anonymous pile titled
       // after the town. Organisations and spread records draw one dot each.
-      if(o.kd !== 'release'){
+      // Sponsors sit on a country centroid, hundreds to a point, exactly like a
+      // register's records. Drawn solo they would be 830 dots stacked on one
+      // spot in the middle of Kansas.
+      if(o.kd !== 'release' && o.kd !== 'clinical'){
         g = cells['solo:' + i] = {la: o.la, lo: o.lo, n: 1, m: [o], kd: {}, i: o.i,
                                   ap: o.ap, total: 1, solo: true};
         g.kd[o.kd] = 1; out.push(g);
@@ -3396,6 +3444,19 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     return s.indexOf("industry")===0?"industry"
          : s.indexOf("escape")===0?"escape"
          : s.indexOf("biosafety")===0?"biosafety"
+         /* A registered trial is not an authorisation to put an organism
+            outdoors. Counting sponsors as releases put 2,231 organisations
+            inside the release totals and inside every filter written about
+            permits - decade granted, still in date, scale of the planting -
+            none of which a trial sponsor has. */
+         : s.indexOf("clinical")===0?"clinical"
+         /* The biosafety kind was written for a source prefix no harvester has
+            ever used, so it matched nothing and every national decision was
+            counted, filtered and listed as a release. The Cartagena filing is
+            the source that actually carries them, and the type string says so
+            outright. */
+         : (s.indexOf("bch")===0 ||
+            /national biosafety decision/i.test(String((p&&p.type)||"")))?"biosafety"
          : "release"; }
   document.querySelectorAll(".pj-kind").forEach(function(cb){
     cb.addEventListener("change",function(){
@@ -3782,7 +3843,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   var relDec=new Set();
   window.pjRelPasses=function(p){
     var s=String(p.source||'');
-    if(s.indexOf('industry')===0||s.indexOf('escape')===0) return true;
+    if(s.indexOf('industry')===0||s.indexOf('escape')===0||s.indexOf('clinical')===0||s.indexOf('bch')===0) return true;
     if(!relLive.has(p.lapsed?'past':'live')) return false;
     if(relDec.size){
       var y=parseInt(String(p.date||'').slice(0,4),10);
@@ -3794,14 +3855,21 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   function build(){
     var host=document.getElementById('relBox'); if(!host||host.dataset.built) return;
     var rows=(window.pjDataRef&&window.pjDataRef.projects)||[];
+    // Releases only. Trial sponsors used to be counted in here, which put 2,231
+    // organisations into "Granted, since expired" and into decade buckets built
+    // from a date they do not have.
     var rel=rows.filter(function(p){ var s=String(p.source||'');
-      return s.indexOf('industry')!==0 && s.indexOf('escape')!==0; });
+      return s.indexOf('industry')!==0 && s.indexOf('escape')!==0
+          && s.indexOf('clinical')!==0 && s.indexOf('bch')!==0; });
     if(!rel.length) return;
     host.dataset.built='1';
     var live=rel.filter(function(p){return !p.lapsed;}).length, past=rel.length-live;
-    var dec={}, unknown=0, src={};
+    var dec={}, unknown=0, src={}, scale={}, phase={};
     rel.forEach(function(p){
       var k=String(p.source||'').split(':')[0]; src[k]=(src[k]||0)+1;
+      var n=(p.records_total||1);
+      scale[p.impact||1]=(scale[p.impact||1]||0)+n;
+      phase[p.phase||'post']=(phase[p.phase||'post']||0)+n;
       var y=parseInt(String(p.date||'').slice(0,4),10);
       if(!y){unknown++;return;}
       var d=String(Math.floor(y/10)*10); dec[d]=(dec[d]||0)+1;
@@ -3825,6 +3893,32 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       if(unknown){ relDec.add('unknown');
         h+='<label><input type="checkbox" data-dec="unknown" checked>No date given<span class="kcount"> ('+_pcOf(unknown, live+past)+')</span></label>'; }
     }
+    // Consent phase and release scale were pill rows in the old style, sitting
+    // outside the Releases branch and indented under it once moved. They belong
+    // here, in the same shape as Decade granted, counted the same way.
+    var SCALE={1:'Small \u2014 one site',2:'A few sites',3:'Medium \u2014 several sites or states',
+               4:'Large \u2014 ten or more sites',5:'Largest \u2014 forty sites or ten states'};
+    var PHASE={pre:'Under assessment',post:'Consented'};
+    function group(title, map, labels, attr, store){
+      var ks=Object.keys(labels).filter(function(k){ return map[k]; });
+      if(!ks.length) return '';
+      var tot=0; ks.forEach(function(k){ tot+=map[k]; });
+      var out='<div class="ot-head" style="margin-top:7px">'+title+'</div>';
+      ks.forEach(function(k){
+        store.add(k);
+        out+='<label><input type="checkbox" data-'+attr+'="'+k+'" checked>'+labels[k]
+           + '<span class="kcount"> ('+_pcOf(map[k], tot)+')</span></label>';
+      });
+      return out;
+    }
+    window.pjRelPhase=new Set(); window.pjRelScale=new Set();
+    h+=group('Consent phase', phase, PHASE, 'rphase', window.pjRelPhase);
+    h+=group('Release scale', scale, SCALE, 'rscale', window.pjRelScale);
+    // Filing recency is gone. It bucketed the same dates as Decade granted, one
+    // control up, and two controls over one field disagree the moment somebody
+    // sets both.
+    window.pjRelAge=null;
+
     // What the release layer is NOT, stated where the counts are read.
     var tot=rel.length;
     function pct(k){ return tot?Math.round(100*(src[k]||0)/tot):0; }
@@ -3845,6 +3939,10 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       var t=e.target;
       if(t.dataset.rel){ t.checked?relLive.add(t.dataset.rel):relLive.delete(t.dataset.rel); }
       else if(t.dataset.dec){ t.checked?relDec.add(t.dataset.dec):relDec.delete(t.dataset.dec); }
+      else if(t.dataset.rphase){ t.checked?window.pjRelPhase.add(t.dataset.rphase)
+                                          :window.pjRelPhase.delete(t.dataset.rphase); }
+      else if(t.dataset.rscale){ t.checked?window.pjRelScale.add(t.dataset.rscale)
+                                          :window.pjRelScale.delete(t.dataset.rscale); }
       else return;
       try{ if(window.pjRefresh) window.pjRefresh(); }catch(_e){}
     });
@@ -5187,6 +5285,28 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // a seed distributor that also moves animal feed appears under both, and the
   // sub-counts therefore do not add up to the category count. That is the data
   // being honest rather than the count being wrong.
+  // An entry lists every organism it works on, so a seed distributor that also
+  // moves animal feed carries livestock as well as food crops. Counted straight,
+  // that put the same eight organisms under all seven categories of "Plants &
+  // crops" - "Livestock & poultry (7)" underneath a heading about plants, seven
+  // times over, which reads as a bug and buries the difference between the
+  // categories.
+  //
+  // Each subject therefore lists only the organisms that belong to it. The
+  // livestock work of a seed distributor is real and is not lost: it appears
+  // under Animals, which is where a reader looking for livestock will go. Three
+  // subjects - money, rules and tools - are about function rather than organism,
+  // and there the full list is the informative thing, so nothing is withheld.
+  var SUBJ_ORGANISM = {
+    plants:   ['food_crops','vegetables','fibre','forage','trees'],
+    animals:  ['livestock','lab_animals','fish','insects'],
+    humans:   ['human'],
+    wild:     ['insects','microbes','viruses','trees','fish'],
+    microbes: ['microbes','viruses'],
+    tools:    null,   // null = every organism, deliberately
+    money:    null,
+    rules:    null
+  };
   function speciesByTag(){
     var rows=(window.pjDataRef&&window.pjDataRef.projects)||[];
     var out={};
@@ -5199,6 +5319,15 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       });
     });
     return out;
+  }
+  function organismsFor(subjectKey, tagCounts){
+    if(!tagCounts) return [];
+    var allow = SUBJ_ORGANISM[subjectKey];
+    var ks = Object.keys(tagCounts).filter(function(g){
+      return !allow || allow.indexOf(g) >= 0; });
+    ks.sort(function(a,b){ return tagCounts[b]-tagCounts[a]; });
+    // One row under a heading is not a breakdown, it is the heading again.
+    return ks.length > 1 ? ks : [];
   }
 
   // A group can hang under several categories, so the same box is drawn more
@@ -5245,7 +5374,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
         sub.appendChild(l);
 
         var sp = bySpec[t];
-        var gk = sp ? Object.keys(sp).sort(function(a,b){ return sp[b]-sp[a]; }) : [];
+        var gk = organismsFor(k, sp);
         if(!gk.length) return;
         var c2=document.createElement('span');
         c2.className='kind-car'; c2.textContent='\u25b8';
@@ -5369,93 +5498,24 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 </style>
 <script>
 (function(){
-  // Release scale, consent phase and filing recency were pill rows in the old
-  // style, sitting outside the Releases branch. Rebuilt as counted checkboxes to
-  // match "Still in date (2,708)" - a filter that cannot tell you how many
-  // records it will remove is asking you to guess.
-  function counts(){
-    var rows=(window.pjDataRef&&window.pjDataRef.projects)||[];
-    var rel=rows.filter(function(p){ var q=String(p.source||'');
-      return q.indexOf('industry')!==0 && q.indexOf('escape')!==0; });
-    var scale={}, phase={}, age={};
-    var now=Date.now();
-    rel.forEach(function(p){
-      var n=(p.records_total||1);
-      scale[p.impact||1]=(scale[p.impact||1]||0)+n;
-      phase[p.phase||'post']=(phase[p.phase||'post']||0)+n;
-      var ds=(p.dates&&p.dates.length)?p.dates:(p.date?[p.date]:[]);
-      if(!ds.length){ age.none=(age.none||0)+n; return; }
-      var newest=ds[ds.length-1];
-      var days=(now-new Date(newest).getTime())/86400000;
-      var b = days<=365?'y1' : days<=1825?'y5' : days<=3650?'y10' : 'older';
-      age[b]=(age[b]||0)+n;
-    });
-    return {scale:scale, phase:phase, age:age, total:rel.length};
-  }
-  var SCALE={1:'Small \u2014 one site',2:'A few sites',3:'Medium \u2014 several sites or states',
-             4:'Large \u2014 ten or more sites',5:'Largest \u2014 forty sites or ten states'};
-  var PHASE={post:'Consented',pre:'Under assessment'};
-  var AGE={y1:'Last year',y5:'Last five years',y10:'Last ten years',
-           older:'Older than ten years',none:'No date given'};
-  function rows(map, labels, attr){
-    // A count alone does not say whether it is most of the data or a rounding
-    // error. 313 under assessment reads as a lot until you see it is 1% - and
-    // that 1% is the only category where a decision has not yet been made.
-    var keys = Object.keys(labels).filter(function(k){ return map[k]; });
-    var total = 0;
-    keys.forEach(function(k){ total += map[k]; });
-    return keys.map(function(k){
-      var pc = total ? (map[k] / total * 100) : 0;
-      var pcTxt = pc >= 10 ? Math.round(pc) : (pc >= 1 ? pc.toFixed(1) : '<1');
-      return '<label><input type="checkbox" data-'+attr+'="'+k+'" checked>'+labels[k]
-           + '<span class="kcount"> ('+map[k].toLocaleString()+' \u00b7 '+pcTxt+'%)</span></label>';
-    }).join('')
-    + '<div class="kcount kc-tot">'+total.toLocaleString()+' records in total</div>';
-  }
-  function build(){
-    var host=document.getElementById('relBox');
-    if(!host || host.dataset.deep || !window.pjDataRef) return;
-    var c=counts(); if(!c.total) return;
-    host.dataset.deep='1';
-    var h=document.createElement('div');
-    h.innerHTML='<div class="ot-head" style="margin-top:8px">Release scale</div>'
-      +'<div class="pj-otypes">'+rows(c.scale,SCALE,'rscale')+'</div>'
-      +'<div class="ot-head" style="margin-top:8px">Consent phase</div>'
-      +'<div class="pj-otypes">'+rows(c.phase,PHASE,'rphase')+'</div>'
-      +'<div class="ot-head" style="margin-top:8px">Filing recency</div>'
-      +'<div class="pj-otypes">'+rows(c.age,AGE,'rage')+'</div>';
-    host.appendChild(h);
-    window.pjRelScale=new Set(Object.keys(c.scale));
-    window.pjRelPhase=new Set(Object.keys(c.phase));
-    window.pjRelAge=new Set(Object.keys(c.age));
-    h.addEventListener('change',function(e){
-      var d=e.target.dataset||{}, set=null, key=null;
-      if(d.rscale){ set=window.pjRelScale; key=d.rscale; }
-      else if(d.rphase){ set=window.pjRelPhase; key=d.rphase; }
-      else if(d.rage){ set=window.pjRelAge; key=d.rage; }
-      else return;
-      e.target.checked?set.add(key):set.delete(key);
-      try{ if(window.pjRefresh) window.pjRefresh(); }catch(_e){}
-    });
-  }
+  // This block used to draw Release scale, consent phase and filing recency as
+  // a second set of counted checkboxes appended to #relBox. The builder that
+  // owns #relBox sets host.innerHTML a moment later and wiped them every time,
+  // which is why those three were only ever visible as the old pill rows. The
+  // controls now live in that one builder; what is left here is the filter they
+  // drive, which has to stay because the map reads it on every render.
   window.pjRelDetailPasses=function(p){
     var q=String((p&&p.source)||'');
-    if(q.indexOf('industry')===0 || q.indexOf('escape')===0) return true;
-    if(window.pjRelScale && !window.pjRelScale.has(String(p.impact||1))) return false;
-    if(window.pjRelPhase && !window.pjRelPhase.has(p.phase||'post')) return false;
-    if(window.pjRelAge){
-      var ds=(p.dates&&p.dates.length)?p.dates:(p.date?[p.date]:[]);
-      var b='none';
-      if(ds.length){
-        var days=(Date.now()-new Date(ds[ds.length-1]).getTime())/86400000;
-        b = days<=365?'y1' : days<=1825?'y5' : days<=3650?'y10' : 'older';
-      }
-      if(!window.pjRelAge.has(b)) return false;
-    }
+    // Scale and consent describe an authorisation to release. A trial sponsor,
+    // an organisation and a drift incident are none of those things.
+    if(q.indexOf('industry')===0 || q.indexOf('escape')===0 || q.indexOf('clinical')===0
+       || q.indexOf('bch')===0) return true;
+    if(window.pjRelScale && window.pjRelScale.size
+       && !window.pjRelScale.has(String(p.impact||1))) return false;
+    if(window.pjRelPhase && window.pjRelPhase.size
+       && !window.pjRelPhase.has(p.phase||'post')) return false;
     return true;
   };
-  var t=setInterval(build,800);
-  setTimeout(function(){ clearInterval(t); },30000);
 })();
 </script>
 <script>
@@ -5838,30 +5898,43 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   //
   // 2. The GM zones list sat flush against the search box below it, so the two
   //    read as one control.
-  function releaseHost(){
-    var cb=document.querySelector('.pj-kind[data-kind="release"]');
-    if(!cb) return null;
-    var lab=cb.closest('label'); if(!lab||!lab.parentNode) return null;
-    var host=lab.parentNode.querySelector('.kind-sub[data-for="release"]');
-    if(!host){
-      host=document.createElement('div');
-      host.className='kind-sub'; host.dataset.for='release';
-      lab.parentNode.insertBefore(host, lab.nextSibling);
-    }
-    return host;
+  // The three pill rows are gone for good. Consent phase and release scale are
+  // now counted checkboxes inside the Releases branch, aligned with Decade
+  // granted; filing recency bucketed the same dates Decade granted does, so it
+  // is not replaced.
+  //
+  // Two more arrangements this pass owns: the search box sits directly under
+  // Release scale with "What these records leave out" beneath it, and any
+  // container left hollow by an earlier pass is taken out. An empty bordered
+  // div reads as a section whose contents failed to load.
+  function tidyEmpties(){
+    ['.psrc-body','.psrc','.pj-otypes','.kind-sub','.proj-size','.proj-time',
+     '.ot-foldbody','.subj-sub','.spec-sub'].forEach(function(sel){
+      [].slice.call(document.querySelectorAll(sel)).forEach(function(n){
+        if(n.children.length===0 && !String(n.textContent||'').trim()) n.remove();
+      });
+    });
+  }
+  function order(){
+    // relBox holds the fold; the search box was parked beside it by an earlier
+    // pass. Put the search box immediately before the fold, whichever container
+    // each ended up in.
+    var fold=document.querySelector('.ot-fold[data-fold="leaveout"]');
+    var body=document.querySelector('[data-foldbody="leaveout"]');
+    var q=document.querySelector('.proj-search');
+    if(!fold||!q) return false;
+    if(q.nextElementSibling===fold) return true;
+    fold.parentNode.insertBefore(q, fold);
+    if(body && fold.nextElementSibling!==body) fold.parentNode.insertBefore(body, fold.nextSibling);
+    return true;
   }
   function go(){
     if(document.body.dataset.pillsDone) return;
-    var pills=[].slice.call(document.querySelectorAll('.proj-size, .proj-time'));
-    if(!pills.length){ document.body.dataset.pillsDone='1'; return; }
-    var counted=document.querySelector('input[data-rscale], input[data-rphase], input[data-rage]');
-    if(counted){
-      pills.forEach(function(n){ n.remove(); });
-    } else {
-      var host=releaseHost(); if(!host) return;
-      pills.forEach(function(n){ host.appendChild(n); });
-    }
-    document.body.dataset.pillsDone='1';
+    [].slice.call(document.querySelectorAll('.proj-size, .proj-time'))
+      .forEach(function(n){ n.remove(); });
+    var placed = order();
+    tidyEmpties();
+    if(placed) document.body.dataset.pillsDone='1';
   }
   var t=setInterval(go, 800);
   setTimeout(function(){ clearInterval(t); }, 25000);
