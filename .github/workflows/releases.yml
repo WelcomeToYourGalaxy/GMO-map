@@ -54,6 +54,7 @@ jobs:
             timeout 18m python3 harvest/bch_decisions.py    || echo "!! bch decisions failed - continuing"
             timeout 8m python3 harvest/clinical_sponsors.py || echo "!! clinical sponsors failed - continuing"
             timeout 8m python3 harvest/aphis_releases.py || echo "!! aphis harvester failed - continuing"
+            timeout 3m python3 harvest/build_regime.py || echo "!! regime overlay failed - continuing"
             timeout 2m python3 harvest/build_overlays.py || echo "!! overlay builder failed - continuing"
             # --ignore-errors so a file a failed harvester never wrote does not
             # abort the step under bash -e on the first run.
