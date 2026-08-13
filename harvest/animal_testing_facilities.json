@@ -1,0 +1,125 @@
+{
+ "generated": "2026-08-13",
+ "facilities": [
+  {
+   "name": "United States — USDA APHIS — licensed research facilities",
+   "url": "https://www.aphis.usda.gov/aphis/ourfocus/animalwelfare",
+   "type": "Animal research facility register",
+   "country": "United States",
+   "iso": "USA",
+   "lat": 38.9,
+   "lng": -77.04,
+   "desc": "Every registered US research facility is named, inspected, and reports annually how many dogs, cats, primates and other covered animals it used and in what pain category. The inspection reports are published per facility, specific, and almost never read. Mice, rats and birds bred for research are excluded from the governing Act, so the most detailed facility register in the world omits the overwhelming majority of the animals used in it.",
+   "precise": false,
+   "kind": "register"
+  },
+  {
+   "name": "United Kingdom — Home Office — licensed establishments and annual procedures",
+   "url": "https://www.gov.uk/government/collections/statistics-of-scientific-procedures-on-living-animals",
+   "type": "Animal research facility register",
+   "country": "United Kingdom",
+   "iso": "GBR",
+   "lat": 51.5,
+   "lng": -0.13,
+   "desc": "Every UK establishment licensed to use animals in research is named in a public list, alongside annual procedure counts by species, severity and purpose. It is the only place in the world where both the places and the numbers are public and complete, and it exists because Parliament legislated for it in 1986 rather than because anyone offered it.",
+   "precise": false,
+   "kind": "register"
+  },
+  {
+   "name": "European Union — ALURES — EU animal use database",
+   "url": "https://webgate.ec.europa.eu/envdataportal/web/resources/alures/submission/index",
+   "type": "Animal research facility register",
+   "country": "European Union",
+   "iso": "BEL",
+   "lat": 50.85,
+   "lng": 4.35,
+   "desc": "Member states report animal use by species, purpose and severity, and the Commission publishes the aggregate. It counts procedures rather than places: no member state is required to name its facilities, so the European picture is a set of national totals with nothing behind them.",
+   "precise": false,
+   "kind": "register"
+  },
+  {
+   "name": "Canada — CCAC — Canadian Council on Animal Care",
+   "url": "https://ccac.ca/en/facts-and-legislation/animal-data/",
+   "type": "Animal research facility register",
+   "country": "Canada",
+   "iso": "CAN",
+   "lat": 45.42,
+   "lng": -75.7,
+   "desc": "Canada's system is voluntary certification by a council rather than statutory licensing. Institutions that hold federal funding must participate, aggregate numbers are published, and the certified institutions are listed — which puts Canada between the UK and the countries that publish nothing.",
+   "precise": false,
+   "kind": "register"
+  },
+  {
+   "name": "China — no public facility register",
+   "url": "",
+   "type": "Animal research, unregistered",
+   "country": "China",
+   "iso": "CHN",
+   "lat": 35.86,
+   "lng": 104.19,
+   "desc": "A research system now comparable in scale to the American one. China publishes no national count of animals used and no facility register, so the size of the practice is inferred from the breeding suppliers rather than reported.",
+   "precise": false,
+   "kind": "gap"
+  },
+  {
+   "name": "Japan — no public facility register",
+   "url": "",
+   "type": "Animal research, unregistered",
+   "country": "Japan",
+   "iso": "JPN",
+   "lat": 36.2,
+   "lng": 138.25,
+   "desc": "Self-regulated through institutional committees and a professional society. No national count is published, so Japanese laboratory animal use is estimated from what the suppliers sell.",
+   "precise": false,
+   "kind": "gap"
+  },
+  {
+   "name": "India — no public facility register",
+   "url": "",
+   "type": "Animal research, unregistered",
+   "country": "India",
+   "iso": "IND",
+   "lat": 20.59,
+   "lng": 78.96,
+   "desc": "Experiments are overseen by a national committee that has banned animal use for cosmetics testing and some teaching, but facility-level records are not public.",
+   "precise": false,
+   "kind": "gap"
+  },
+  {
+   "name": "South Korea — no public facility register",
+   "url": "",
+   "type": "Animal research, unregistered",
+   "country": "South Korea",
+   "iso": "KOR",
+   "lat": 35.91,
+   "lng": 127.77,
+   "desc": "A large and fast-growing research sector. Aggregate figures are published annually; the institutions behind them are not named.",
+   "precise": false,
+   "kind": "gap"
+  },
+  {
+   "name": "Brazil — no public facility register",
+   "url": "",
+   "type": "Animal research, unregistered",
+   "country": "Brazil",
+   "iso": "BRA",
+   "lat": -14.24,
+   "lng": -51.93,
+   "desc": "Institutions register with a national council and aggregate figures exist, but facility-level inspection records are not published.",
+   "precise": false,
+   "kind": "gap"
+  },
+  {
+   "name": "Russia — no public facility register",
+   "url": "",
+   "type": "Animal research, unregistered",
+   "country": "Russia",
+   "iso": "RUS",
+   "lat": 61.52,
+   "lng": 105.31,
+   "desc": "No public register of animal research facilities and no national count.",
+   "precise": false,
+   "kind": "gap"
+  }
+ ]
+}

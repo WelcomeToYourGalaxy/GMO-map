@@ -1,0 +1,131 @@
+{
+ "generated": "2026-08-13",
+ "clinics": [
+  {
+   "name": "United Kingdom — HFEA licensed clinic register",
+   "url": "https://www.hfea.gov.uk/choose-a-clinic/clinic-search/results/",
+   "type": "Fertility clinic register",
+   "country": "United Kingdom",
+   "iso": "GBR",
+   "desc": "The UK regulator licenses every clinic and publishes its inspection history and its ratings of the optional add-on treatments clinics sell. Most add-ons are rated red or amber - no good evidence they work - and they continue to be sold.",
+   "precise": false,
+   "kind": "register"
+  },
+  {
+   "name": "United States — CDC ART clinic reporting",
+   "url": "https://www.cdc.gov/art/artdata/index.html",
+   "type": "Fertility clinic register",
+   "country": "United States",
+   "iso": "USA",
+   "desc": "US clinics performing IVF must report cycles and outcomes. Success rates depend heavily on which patients a clinic accepts, so a clinic can raise its published figures by declining harder cases, and the data cannot show you that.",
+   "precise": false,
+   "kind": "register"
+  },
+  {
+   "name": "Australia — ANZARD accredited units",
+   "url": "https://npesu.unsw.edu.au/data-collection/australian-new-zealand-assisted-reproduction-database-anzard",
+   "type": "Fertility clinic register",
+   "country": "Australia",
+   "iso": "AUS",
+   "desc": "Australia and New Zealand report through a shared database, with accreditation required to operate.",
+   "precise": false,
+   "kind": "register"
+  },
+  {
+   "name": "India — no public clinic register",
+   "url": "",
+   "type": "Fertility sector, unregistered",
+   "country": "India",
+   "iso": "IND",
+   "lat": 20.59,
+   "lng": 78.96,
+   "desc": "India regulates assisted reproduction under a 2021 Act and prohibited commercial surrogacy, but publishes no register of licensed clinics. Estimates of the number operating run into the thousands.",
+   "precise": false,
+   "kind": "gap"
+  },
+  {
+   "name": "China — no public clinic register",
+   "url": "",
+   "type": "Fertility sector, unregistered",
+   "country": "China",
+   "iso": "CHN",
+   "lat": 35.86,
+   "lng": 104.19,
+   "desc": "Clinics are licensed centrally by the National Health Commission and the list is not published in a form that can be read from outside.",
+   "precise": false,
+   "kind": "gap"
+  },
+  {
+   "name": "Russia — no public clinic register",
+   "url": "",
+   "type": "Fertility sector, unregistered",
+   "country": "Russia",
+   "iso": "RUS",
+   "lat": 61.52,
+   "lng": 105.31,
+   "desc": "A large fertility sector including commercial surrogacy for foreign patients, with no public clinic register.",
+   "precise": false,
+   "kind": "gap"
+  },
+  {
+   "name": "Ukraine — no public clinic register",
+   "url": "",
+   "type": "Fertility sector, unregistered",
+   "country": "Ukraine",
+   "iso": "UKR",
+   "lat": 48.38,
+   "lng": 31.17,
+   "desc": "A principal destination for cross-border surrogacy before 2022, with no published register of the clinics arranging it.",
+   "precise": false,
+   "kind": "gap"
+  },
+  {
+   "name": "Nigeria — no public clinic register",
+   "url": "",
+   "type": "Fertility sector, unregistered",
+   "country": "Nigeria",
+   "iso": "NGA",
+   "lat": 9.08,
+   "lng": 8.68,
+   "desc": "The largest fertility market in West Africa, with no national licensing register.",
+   "precise": false,
+   "kind": "gap"
+  },
+  {
+   "name": "Brazil — no public clinic register",
+   "url": "",
+   "type": "Fertility sector, unregistered",
+   "country": "Brazil",
+   "iso": "BRA",
+   "lat": -14.24,
+   "lng": -51.93,
+   "desc": "Clinics report to a national system run by the medical regulator, but clinic-level data is not published.",
+   "precise": false,
+   "kind": "gap"
+  },
+  {
+   "name": "Mexico — no public clinic register",
+   "url": "",
+   "type": "Fertility sector, unregistered",
+   "country": "Mexico",
+   "iso": "MEX",
+   "lat": 23.63,
+   "lng": -102.55,
+   "desc": "A significant destination for cross-border treatment, regulated at state level with no national register.",
+   "precise": false,
+   "kind": "gap"
+  },
+  {
+   "name": "Japan — no public clinic register",
+   "url": "",
+   "type": "Fertility sector, unregistered",
+   "country": "Japan",
+   "iso": "JPN",
+   "lat": 36.2,
+   "lng": 138.25,
+   "desc": "One of the highest per-capita IVF rates in the world, with clinics registered through a professional society rather than a public regulator.",
+   "precise": false,
+   "kind": "gap"
+  }
+ ]
+}
