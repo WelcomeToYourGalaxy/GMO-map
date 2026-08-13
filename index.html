@@ -5507,14 +5507,25 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 .subj-sub{margin:1px 0 4px 20px;padding-left:8px;border-left:1px solid rgba(127,168,204,0.18);
   display:flex;flex-direction:column;gap:2px;}
 .subj-sub label{font-size:10px;color:#9aa8c0;display:flex;align-items:center;gap:5px;cursor:pointer;}
-.spec-sub{margin:1px 0 4px 18px;padding-left:8px;
-  border-left:1px solid rgba(127,168,204,0.13);
+/* The organism list and the category list are two lists of the same standing,
+   so they are indented the same. The organism list used to be stepped in and a
+   rule drawn beside it, which is how you mark a subdivision - and it is not
+   one. */
+.spec-sub{margin:1px 0 4px 0;padding-left:0;
   display:flex;flex-direction:column;gap:2px;}
-.spec-sub label{font-size:9.5px;color:#8e9cb4;display:flex;align-items:center;gap:5px;cursor:pointer;}
+.spec-sub label{font-size:10px;color:#9aa8c0;display:flex;align-items:center;gap:5px;cursor:pointer;}
 .spec-sub input{accent-color:#7fa8cc;width:11px;height:11px;cursor:pointer;}
 .spec-sub .ot-dot{width:8px;height:8px;}
-.spec-head{font-size:9px;color:#7d8ba1;margin:3px 0 1px 6px;line-height:1.4;}
-.spec-wide{margin-left:6px;}
+.spec-head{font-size:9px;color:#7d8ba1;margin:3px 0 1px 0;line-height:1.4;
+  text-transform:uppercase;letter-spacing:.4px;}
+/* The organisms and the categories are two lists of the same standing, so
+   they get the same left edge. Indenting one further made it read as a
+   sub-list of the other, which is the reading the whole change was meant
+   to remove. */
+.spec-wide{margin-left:0 !important;padding-left:0 !important;border-left:none !important;}
+.spec-wide label{font-size:10px;color:#9aa8c0;}
+.spec-wide input{width:12px;height:12px;}
+.spec-head{margin-left:0 !important;}
 .subj-sub input{accent-color:#7fa8cc;width:12px;height:12px;cursor:pointer;}
 </style>
 <script>
@@ -6009,16 +6020,12 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     // happens; only its position within that container waits on the fold.
     var q=document.querySelector('.proj-search');
     if(!q) return false;
-    var cb=document.querySelector('.pj-kind[data-kind="release"]');
-    var lab=cb && cb.closest('label');
-    var host=null, n=lab && lab.nextSibling;
-    while(n){
-      if(n.nodeType===1){
-        if(n.tagName==='LABEL' && n.querySelector('.pj-kind')) break;
-        if(n.classList.contains('kind-sub')){ host=n; break; }
-      }
-      n=n.nextSibling;
-    }
+    // Walking out from the kind toggle to find a .kind-sub kept landing on the
+    // wrong container - three passes create one each, and only one of them is
+    // the container the caret folds. #relBox is not ambiguous: the release
+    // record counts are drawn into it and they fold with the caret, so anything
+    // put inside it folds with them.
+    var host=document.getElementById('relBox');
     if(!host) return false;
     var fold=host.querySelector('.ot-fold[data-fold="leaveout"]');
     var body=host.querySelector('[data-foldbody="leaveout"]');
@@ -6268,15 +6275,60 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // Two separate jobs, and the loop used to stop as soon as the first finished.
   // The shaded-area group would build, done went true, the interval cleared,
   // and the search box was left wherever it happened to be.
+  // Three passes in this file each create a .kind-sub under the Releases label,
+  // and whichever one the caret happened to own was the only thing that folded.
+  // The search box kept landing in one of the others - inside a container, just
+  // not the container that hides. Chasing that with flags failed twice, because
+  // a later pass would move the box again after the flag was set.
+  //
+  // So this runs to completion every tick and never latches: merge the
+  // containers, put the box in the surviving one, rebind the caret to it. Doing
+  // it again when nothing has changed costs nothing and cannot be got wrong.
+  function fixRelease(){
+    var cb=document.querySelector('.pj-kind[data-kind="release"]');
+    var lab=cb && cb.closest('label');
+    if(!lab || !lab.parentNode) return;
+    var hosts=[], n=lab.nextSibling;
+    while(n){
+      var nx=n.nextSibling;
+      if(n.nodeType===1){
+        if(n.tagName==='LABEL' && n.querySelector('.pj-kind')) break;
+        if(n.classList.contains('kind-sub')) hosts.push(n);
+      }
+      n=nx;
+    }
+    if(!hosts.length) return;
+    var host=hosts[0];
+    for(var i=1;i<hosts.length;i++){
+      while(hosts[i].firstChild) host.appendChild(hosts[i].firstChild);
+      hosts[i].remove();
+    }
+    host.dataset.for='release';
+    var q=document.querySelector('.proj-search');
+    if(q){
+      var fold=host.querySelector('.ot-fold[data-fold="leaveout"]');
+      if(fold){ if(q.nextElementSibling!==fold) fold.parentNode.insertBefore(q,fold); }
+      else if(q.parentNode!==host) host.appendChild(q);
+    }
+    var car=lab.querySelector('.kind-car');
+    if(car && car.dataset.bound!=='1'){
+      car.dataset.bound='1';
+      car.onclick=function(e){
+        e.preventDefault(); e.stopPropagation();
+        var hid=host.style.display==='none';
+        host.style.display=hid?'':'none';
+        car.textContent=hid?'\u25be':'\u25b8';
+      };
+    }
+  }
   var doneShaded=false, done=false;
   function go(){
-    marks(); oneHost();
+    marks(); oneHost(); fixRelease();
     if(!doneShaded && shaded()) doneShaded=true;
-    done = doneShaded && !!document.body.dataset.pillsDone;
     tidy();
   }
-  var t=setInterval(function(){ go(); if(done){ clearInterval(t); setTimeout(tidy,600); } }, 700);
-  setTimeout(function(){ clearInterval(t); }, 25000);
+  var t=setInterval(go, 700);
+  setTimeout(function(){ clearInterval(t); }, 30000);
 })();
 </script>
 <style>
