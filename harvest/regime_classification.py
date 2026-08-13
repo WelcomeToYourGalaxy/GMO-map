@@ -45,8 +45,8 @@ a biosafety law of some kind. This says which of three shapes it takes.
 TECHNIQUE = {
     # Europe outside the EU, and EU members pending the NGT reform
     "NZL": "firm", "NOR": "firm", "CHE": "firm", "ISL": "likely",
-    "AUT": "firm", "HUN": "firm", "SRB": "firm", "BIH": "thin",
-    "MKD": "thin", "ALB": "thin", "MNE": "thin", "MDA": "likely",
+    "AUT": "firm", "HUN": "firm", "SRB": "firm", "BIH": "protocol",
+    "MKD": "protocol", "ALB": "protocol", "MNE": "protocol", "MDA": "likely",
     "TUR": "firm", "UKR": "likely", "BLR": "likely", "RUS": "firm",
     # EU member states: the directive is technique-based following the 2018
     # Court of Justice ruling. Listed individually because the NGT proposal
@@ -61,18 +61,18 @@ TECHNIQUE = {
     # Asia and the Middle East
     "IND": "firm", "IRN": "likely", "IRQ": "thin", "SYR": "thin",
     "LBN": "thin", "JOR": "likely", "SAU": "likely", "KWT": "thin",
-    "QAT": "thin", "OMN": "thin", "YEM": "thin", "AZE": "thin",
-    "ARM": "thin", "GEO": "likely", "KAZ": "likely", "UZB": "thin",
-    "TKM": "thin", "TJK": "thin", "KGZ": "thin", "MNG": "thin",
-    "LKA": "likely", "NPL": "thin", "BTN": "thin", "MDV": "thin",
-    "KHM": "thin", "LAO": "thin", "MMR": "thin",
+    "QAT": "thin", "OMN": "thin", "YEM": "thin", "AZE": "protocol",
+    "ARM": "protocol", "GEO": "likely", "KAZ": "likely", "UZB": "protocol",
+    "TKM": "protocol", "TJK": "protocol", "KGZ": "protocol", "MNG": "protocol",
+    "LKA": "likely", "NPL": "protocol", "BTN": "protocol", "MDV": "protocol",
+    "KHM": "protocol", "LAO": "protocol", "MMR": "protocol",
     # Africa and the Americas
     "EGY": "firm", "TUN": "likely", "DZA": "likely", "MAR": "likely",
-    "LBY": "thin", "SDN": "thin", "MEX": "firm", "PER": "firm",
+    "LBY": "thin", "SDN": "protocol", "MEX": "firm", "PER": "firm",
     "ECU": "firm", "BOL": "firm", "VEN": "firm", "CRI": "likely",
-    "PAN": "thin", "NIC": "thin", "SLV": "thin", "GTM": "likely",
-    "HND": "thin", "CUB": "likely", "DOM": "thin", "JAM": "thin",
-    "TTO": "thin", "HTI": "thin",
+    "PAN": "protocol", "NIC": "protocol", "SLV": "protocol", "GTM": "likely",
+    "HND": "protocol", "CUB": "likely", "DOM": "protocol", "JAM": "protocol",
+    "TTO": "protocol", "HTI": "protocol",
 }
 
 # ---------------------------------------------------------------------------
@@ -97,11 +97,11 @@ CARVEOUT = {
     "PAK": "likely", "ISR": "firm",
     # Africa
     "NGA": "firm", "KEN": "firm", "GHA": "firm", "ZAF": "firm",
-    "ETH": "likely", "UGA": "likely", "TZA": "thin", "ZMB": "thin",
-    "MWI": "likely", "MOZ": "likely", "ZWE": "thin", "RWA": "likely",
-    "SEN": "likely", "BFA": "firm", "MLI": "thin", "NER": "thin",
-    "CIV": "likely", "CMR": "thin", "SWZ": "likely", "NAM": "thin",
-    "BWA": "thin",
+    "ETH": "likely", "UGA": "likely", "TZA": "protocol", "ZMB": "protocol",
+    "MWI": "likely", "MOZ": "likely", "ZWE": "protocol", "RWA": "likely",
+    "SEN": "likely", "BFA": "firm", "MLI": "protocol", "NER": "protocol",
+    "CIV": "likely", "CMR": "protocol", "SWZ": "likely", "NAM": "protocol",
+    "BWA": "protocol",
     # and the UK, which diverged from the EU with the Precision Breeding Act
     "GBR": "firm",
 }
@@ -110,9 +110,19 @@ CONF_NOTE = {
     "firm":   "The statute is explicit on this and has been applied.",
     "likely": ("The framework is clear; the position on gene-edited organisms is "
                "inferred from how it has been applied rather than stated in law."),
-    "thin":   ("A biosafety law exists, but its treatment of gene editing is "
-               "genuinely unsettled or could not be retrieved. Shown because "
-               "leaving it blank would read as a country without rules."),
+    "protocol": ("Classified from the law itself rather than from practice. This "
+                 "country implements the Cartagena Protocol, and the Protocol "
+                 "defines a living modified organism by the technique used to make "
+                 "it. A country that enacted that definition and has not since "
+                 "written an editing exemption is technique-based by construction, "
+                 "whether or not it has ever had an edited organism to assess."),
+    "thin":   ("A biosafety law is on the books and this map cannot verify what it "
+               "currently means. Several of these states are in or recovering from "
+               "armed conflict, where the question is not which approach the "
+               "statute takes but whether any of it is being administered. Shown "
+               "rather than left blank, because a gap on a map reads as a country "
+               "without rules, and marked so the shading is not mistaken for a "
+               "finding."),
 }
 
 
