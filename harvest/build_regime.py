@@ -68,7 +68,7 @@ def simplify(geom, tol=SIMPLIFY_TOL):
 
 def main():
     sys.path.insert(0, str(ROOT / "harvest"))
-    from regime_classification import classified, CONF_NOTE
+    from regime_classification import classified, CONF_NOTE, base_of
 
     cls = classified()
     world = load_world()
@@ -95,6 +95,9 @@ def main():
             # moment two datasets spell a country differently.
             "properties": {"name": props.get("name") or iso, "iso": iso,
                            "regime": regime,
+                           # What the carve-out is cut out of. A country is not
+                           # left without an approach by having an exemption.
+                           "base": base_of(regime),
                            "confidence": conf, "conf_note": CONF_NOTE[conf]},
         })
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Merge ind1.py-ind24.py into harvest/industry_source.json.
+"""Merge every ind*.py in the repository root into harvest/industry_source.json.
 
 This step used to be an ad-hoc snippet, and it deduplicated on URL silently. Six
 entries lost that way and nobody noticed for months, including the Jesse
@@ -23,13 +23,32 @@ import io, json, sys, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "harvest" / "industry_source.json"
-MODULES = 25
+# A hard-coded count is a silent cap. It was 25 while ind26.py-ind29.py sat in
+# the repository beside the others, written and committed and merged into
+# nothing: 451 entries reaching the builder against 519 in the modules. The
+# count now comes from the files that exist, so adding ind30.py is adding
+# ind30.py.
+def module_count():
+    n = 0
+    while (ROOT / ("ind%d.py" % (n + 1))).exists():
+        n += 1
+    if not n:
+        sys.exit("no ind*.py modules found beside index.html")
+    # A gap means a module was deleted or misnamed, and stopping at the gap
+    # would drop everything after it without saying so.
+    stray = sorted(int(f.stem[3:]) for f in ROOT.glob("ind*.py")
+                   if f.stem[3:].isdigit() and int(f.stem[3:]) > n)
+    if stray:
+        sys.exit("ind%d.py is missing but ind%s exist. Fix the numbering rather "
+                 "than merging a subset." % (n + 1, ", ind".join(str(x) for x in stray)))
+    return n
+
 
 
 def load_all():
     sys.path.insert(0, str(ROOT))
     parts = []
-    for i in range(1, MODULES + 1):
+    for i in range(1, module_count() + 1):
         name = "ind%d" % i
         try:
             mod = __import__(name)
@@ -77,7 +96,7 @@ def main():
         sys.stderr.write("Nothing written. %s unchanged.\n" % OUT.name)
         sys.exit(1)
 
-    print("  %d entries across %d modules, no collisions" % (total, MODULES))
+    print("  %d entries across %d modules, no collisions" % (total, module_count()))
     if dry:
         print("  dry run - nothing written")
         return

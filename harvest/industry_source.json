@@ -3899,6 +3899,22 @@
   "checked": "2026-07-31"
  },
  {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Bayer / Ginkgo — Joyn Bio nitrogen fixation",
+  "url": "https://www.joynbio.com/",
+  "desc": "A joint venture to engineer nitrogen-fixing microbes for cereals, since wound down. Nitrogen fixation in maize would displace a large share of world fertiliser use, and the attempt failing tells you how hard the biology is rather than how small the prize was.",
+  "tags": [
+   "wild:microbes",
+   "editing:synbio",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
   "kind": "structured",
   "voice": "official",
   "skind": "database",
@@ -3923,6 +3939,21 @@
   "name": "Recombinant DNA Advisory Committee — archive",
   "url": "https://osp.od.nih.gov/policies/biosafety-and-biosecurity-policy/",
   "desc": "The archive of the committee that oversaw early US genetic engineering, created after scientists themselves called for a moratorium at Asilomar in 1975. It is the record of a field agreeing to pause and then designing its own oversight, and of what happened to that oversight afterwards.",
+  "tags": [
+   "clinical:trials",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Jesse Gelsinger and the 1999 trial death — FDA record",
+  "url": "https://www.fda.gov/science-research/clinical-trials-and-human-subject-protection/office-good-clinical-practice",
+  "desc": "An eighteen-year-old died in a gene therapy trial in 1999, and the investigation found undisclosed conflicts of interest and unreported adverse events in earlier patients. The field stalled for a decade. The records are the reason trial registration and conflict disclosure exist in their current form.",
   "tags": [
    "clinical:trials",
    "rules:regulators"
@@ -4248,6 +4279,22 @@
   "tags": [
    "editing:agtech",
    "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Zymergen / Ginkgo — the collapse and absorption",
+  "url": "https://investors.ginkgobioworks.com/news-releases",
+  "desc": "Zymergen raised heavily on automated organism design, failed to deliver its first product, collapsed, and was bought by Ginkgo. The platform promise and the product reality diverged publicly, in filings, which is rare enough to be worth reading.",
+  "tags": [
+   "editing:synbio",
+   "money:vc",
+   "money:markets"
   ],
   "checked": "2026-07-31"
  },
@@ -4865,6 +4912,22 @@
   "tags": [
    "clinical:therapy",
    "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Cure Rare Disease and the 2022 trial death",
+  "url": "https://www.fda.gov/news-events/expanded-access",
+  "desc": "A patient died in a custom gene therapy trial for a single individual with Duchenne muscular dystrophy. Bespoke therapies for one patient sit outside the trial structures built for populations, and this is the case that showed what that means.",
+  "tags": [
+   "clinical:therapy",
+   "clinical:trials",
+   "rules:regulators"
   ],
   "checked": "2026-07-31"
  },
@@ -5970,6 +6033,22 @@
   "skind": "other",
   "type": "institutional",
   "trust": "medium",
+  "name": "Inari — SEEDesign platform",
+  "url": "https://inari.com/seedesign/",
+  "desc": "Multiplex editing that alters dozens of genes at once. Gene-editing carve-outs were written around single small changes that could plausibly have arisen naturally, and no framework anywhere has drawn a line at a number of edits.",
+  "tags": [
+   "editing:agtech",
+   "editing:platform",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
   "name": "Syngenta — biologicals and Valagro",
   "url": "https://www.syngenta.com/en/company/media/syngenta-news",
   "desc": "Syngenta’s acquisition of a biologicals company, part of every major buying into microbial and biostimulant products. The category that requires the least regulatory review is the one they are all expanding into.",
@@ -6497,6 +6576,22 @@
  },
  {
   "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "GBIRd — Genetic Biocontrol of Invasive Rodents",
+  "url": "https://www.geneticbiocontrol.org/about/",
+  "desc": "A partnership developing gene-drive mice to clear invasive rodents from islands. Islands are chosen because a drive should stay put, but mice reach islands on boats, which is how they arrived — so the containment argument rests on the same transport that defeated it before.",
+  "tags": [
+   "wild:drives",
+   "deextinct:rescue",
+   "animals:models"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
   "voice": "commentary",
   "skind": "other",
   "type": "institutional",
@@ -6935,6 +7030,937 @@
   "tags": [
    "rules:regulators",
    "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "International Treaty on Plant Genetic Resources (Plant Treaty)",
+  "url": "https://www.fao.org/plant-treaty/en/",
+  "desc": "The treaty governing access to the crop diversity everyone breeds from, and the multilateral system through which a breeder can take material from a genebank in one country and use it in another. It also carries the clause recognising farmers’ rights to save and exchange seed — which sits directly against what UPOV 91 requires, and countries have signed both. The contradiction is not an oversight; it is what happens when the same governments negotiate in two rooms.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Svalbard Global Seed Vault",
+  "url": "https://www.seedvault.no/",
+  "desc": "The backup of last resort: duplicate samples from genebanks worldwide, stored in permafrost inside a mountain. It has been withdrawn from once, by Syria’s ICARDA collection after the war destroyed its Aleppo store — which is the only demonstration anyone needed that the thing works and that it is needed. It holds seeds, not the living collections that maintain them, so it is insurance rather than a substitute for the genebanks this map documents.",
+  "tags": [
+   "seed:germplasm",
+   "deextinct:biobank"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Groupe Danone / dairy and ferment supply",
+  "url": "https://www.danone.com/",
+  "desc": "One of the largest dairy and plant-based food companies in the world, and a very large buyer of the engineered cultures and enzymes that dairy processing runs on. A buyer at this scale sets what is acceptable upstream: its supplier standards reach more farms than most national rules, and they are commercial documents that nobody votes on.",
+  "tags": [
+   "livestock:livestock",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Corteva — Pioneer seed production network",
+  "url": "https://www.pioneer.com/us/agronomy/production.html",
+  "desc": "The plants and contract growers that multiply hybrid seed before it reaches farmers. Seed production is the physical bottleneck the whole trait business rests on: a licensed trait is worth nothing until somebody has grown, dried, treated and bagged enough seed to plant a country, and the capacity to do that at scale belongs to a handful of companies.",
+  "tags": [
+   "seed:majors",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Elanco Animal Health",
+  "url": "https://www.elanco.com/",
+  "desc": "One of the largest animal health companies in the world, spun out of Eli Lilly. It sells the medicines that make dense livestock production possible, which puts it in the same position as the edited disease-resistance work on this map — both make the conditions survivable rather than changing them, and both are sold to the same producers.",
+  "tags": [
+   "livestock:livestock",
+   "clinical:therapy"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Ohio State / land-grant agricultural extension",
+  "url": "https://extension.osu.edu/",
+  "desc": "The US land-grant extension system is how public agricultural research reaches farmers as advice rather than as a sales call. Its funding has fallen for decades while input companies have expanded their own agronomy services, so the advice a farmer receives now comes increasingly from whoever is selling the input. That shift is quiet, documented in budget lines, and shapes adoption more than any regulator does.",
+  "tags": [
+   "rules:regulators",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "American Farm Bureau Federation",
+  "url": "https://www.fb.org/",
+  "desc": "The largest US farm organisation, and a consistent supporter of agricultural biotechnology in legislative and trade fights. Farm organisations are where adoption is argued out among the people who actually plant, and their positions carry weight that no company’s does — which is also why membership organisations of this size are worth lobbying.",
+  "tags": [
+   "rules:associations",
+   "rules:influence"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "National Seed Association of India",
+  "url": "https://nsai.co.in/",
+  "desc": "The Indian seed industry’s association, at the centre of the fight over Bt cotton trait fees after several state governments capped seed prices by law. India is one of the few places a government has directly set what a trait may be sold for, and the argument over whether that is price control or the correction of a monopoly has run for over a decade.",
+  "tags": [
+   "rules:associations",
+   "seed:licensees"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "BNDES — Brazilian Development Bank",
+  "url": "https://www.bndes.gov.br/",
+  "desc": "The state development bank that financed much of Brazil’s agricultural expansion and its meatpacking consolidation, including the growth of JBS into the largest meat processor in the world. Public credit built the private concentration, which is a different route to the same outcome and one that rarely appears in accounts of how these companies got so large.",
+  "tags": [
+   "money:public",
+   "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Ajinomoto",
+  "url": "https://www.ajinomoto.com/",
+  "desc": "Produces amino acids by microbial fermentation at industrial scale, for food, feed and pharmaceuticals. Fermentation-derived amino acids are in most animal feed worldwide and in a great deal of processed food, made by engineered microbes, and labelled nowhere — the organism is not in the product, so the rules do not reach it.",
+  "tags": [
+   "synthesis:synth",
+   "livestock:livestock"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "CJ CheilJedang — fermentation and feed",
+  "url": "https://www.cj.co.kr/en/",
+  "desc": "A major producer of fermentation-derived feed additives and food ingredients, competing directly with Ajinomoto. Two or three companies supply most of the world’s fermented amino acids, which is a concentration comparable to seed and attracts none of the same attention because the product is an ingredient nobody sees.",
+  "tags": [
+   "synthesis:synth",
+   "livestock:livestock"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Firmenich / flavour and fragrance biotechnology",
+  "url": "https://www.dsm-firmenich.com/en/businesses/taste-texture-health.html",
+  "desc": "Flavour compounds once extracted from plants are increasingly brewed by engineered microbes instead — vanillin being the clearest case. That displaces the farmers who grew the plant, in countries with no say in the decision, and the substitution happens inside a supply chain rather than through any policy anyone can object to.",
+  "tags": [
+   "synthesis:synth",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Nuffield Farming Scholarships / farmer knowledge networks",
+  "url": "https://www.nuffieldscholar.org/",
+  "desc": "Farmer-to-farmer study and exchange, independent of input suppliers. Where public extension has been cut back, networks like this are one of the few remaining routes by which a farmer hears about a practice from someone with nothing to sell them.",
+  "tags": [
+   "rules:associations",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "The Non-GMO Project",
+  "url": "https://www.nongmoproject.org/",
+  "desc": "The largest GMO-avoidance certification in North America, verifying tens of thousands of products. A private label doing what a labelling law would do, funded by the companies seeking the label — which means the standard is set by the market for it rather than by a legislature, and it covers only what its members choose to submit. It is also the reason a great deal of American food carries a GMO statement at all.",
+  "tags": [
+   "rules:standards",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "USDA National Organic Program",
+  "url": "https://www.ams.usda.gov/about-ams/programs-offices/national-organic-program",
+  "desc": "Organic certification prohibits engineered organisms, which makes the organic standard the largest binding GMO restriction in American agriculture — not by law but by contract, and enforced through inspection rather than a regulator. When engineered pollen reaches an organic field the grower carries the loss, because the standard tests the product and does not ask who caused the presence.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Genetic ID / GMO testing laboratories",
+  "url": "https://www.genetic-id.com/",
+  "desc": "Commercial laboratories that test grain, seed and food for engineered material, for exporters, certifiers and regulators. Whether unauthorised presence can be demonstrated at all depends on somebody buying a test, at a threshold somebody chose — so detection is a purchased service, and the countries that cannot afford it are the ones that find nothing.",
+  "tags": [
+   "rules:standards",
+   "synthesis:seq"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Munich Re / agricultural and biotechnology risk",
+  "url": "https://www.munichre.com/en/solutions/for-industry-clients/agro.html",
+  "desc": "Reinsurers price agricultural and liability risk, including for engineered crops and for the contamination claims that follow a spread event. An insurer deciding a risk is uninsurable stops a technology more completely than a regulator refusing a licence, and it does so commercially, without a hearing, and without publishing the reasoning.",
+  "tags": [
+   "money:markets",
+   "rules:influence"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Koppert Biological Systems",
+  "url": "https://www.koppert.com/",
+  "desc": "Sells predatory insects, mites and microbes for pest control — living organisms released deliberately into greenhouses and fields at enormous volume, none of them engineered. It is the working comparison for every engineered release argument: biological control has been done at scale for decades, with its own escape and establishment record, and almost nobody calls it a release.",
+  "tags": [
+   "wild:insects",
+   "wild:microbes"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "Bejo / Rijk Zwaan seed testing and ISTA certification",
+  "url": "https://www.seedtest.org/",
+  "desc": "The International Seed Testing Association sets the methods by which a seed lot is declared pure, viable and free of unwanted material. Those methods decide what counts as contamination in a trade dispute, so a technical committee most people have never heard of is where the threshold between clean and not is actually set.",
+  "tags": [
+   "rules:standards",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "SGS — inspection and certification",
+  "url": "https://www.sgs.com/",
+  "desc": "One of the largest inspection and certification companies in the world, testing and certifying agricultural cargoes at ports. A shipment is accepted or rejected on the strength of a private company’s certificate, which means a commercial testing firm sits between every exporting country and every import rule on this map.",
+  "tags": [
+   "rules:standards",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Bundessortenamt — variety registration",
+  "url": "https://www.bundessortenamt.de/",
+  "desc": "Before a variety can be sold in the EU it must be registered as distinct, uniform and stable. Uniformity is the requirement that quietly excludes the diverse populations smallholders and organic growers prefer, so a technical seed-marketing rule written for industrial agriculture decides what may lawfully be sold, entirely separately from any biosafety question.",
+  "tags": [
+   "rules:regulators",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "GeneWatch UK",
+  "url": "https://www.genewatch.org/",
+  "desc": "Tracks genetic technologies and their governance, including gene drives, genetic databases and the claims made for agricultural biotechnology. Small organisations doing technical scrutiny are a tiny fraction of the money in this field, and their submissions are most of the independent expert comment that reaches regulators.",
+  "tags": [
+   "rules:influence",
+   "rules:associations"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "Confédération paysanne / farmer seed movements",
+  "url": "https://www.confederationpaysanne.fr/",
+  "desc": "A French smallholder farmers’ union that has fought seed marketing rules and conducted crop destructions, with members prosecuted for both. It is the sharpest European example of the seed argument being about who may lawfully grow and exchange what, rather than about whether an engineered plant is safe to eat.",
+  "tags": [
+   "rules:associations",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "African Biodiversity Network / farmer seed systems",
+  "url": "https://africanbiodiversity.org/",
+  "desc": "Works on farmer-managed seed systems across east and southern Africa, where most seed still moves through exchange rather than purchase. Every seed law reform on this continent is a decision about whether that remains lawful, and the people it affects most are the least represented in the drafting.",
+  "tags": [
+   "seed:germplasm",
+   "rules:influence"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Navdanya / seed sovereignty movement",
+  "url": "https://www.navdanya.org/",
+  "desc": "Runs community seed banks and campaigns against seed patenting in India. It is the longest-running organised opposition to this industry anywhere, and its central claim — that seed saving is a right rather than an infringement — is the one UPOV 91 was written to settle the other way.",
+  "tags": [
+   "seed:germplasm",
+   "rules:influence"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Defense Threat Reduction Agency",
+  "url": "https://www.dtra.mil/",
+  "desc": "Funds and runs US work on biological threats, including sequencing, detection and countermeasures, and pays for laboratory capacity in partner countries. Defence biology sits outside the civilian biosafety systems this map documents, so the same techniques are being funded twice over under two sets of rules — and only one set publishes what it approved.",
+  "tags": [
+   "rules:regulators",
+   "money:defence",
+   "synthesis:seq"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Intelligence Advanced Research Projects Activity — biology programmes",
+  "url": "https://www.iarpa.gov/research-programs",
+  "desc": "The US intelligence community’s research arm has funded work on reading and attributing engineered biology — determining from a sample whether an organism was made deliberately and by whom. Attribution is the capability that would make any biological rule enforceable, and it is being built inside intelligence rather than inside biosafety.",
+  "tags": [
+   "synthesis:seq",
+   "money:defence",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "NTI | bio — Nuclear Threat Initiative",
+  "url": "https://www.nti.org/area/biosecurity/",
+  "desc": "Runs the International Biosecurity and Biosafety Initiative for Science and pushes for mandatory screening of synthetic DNA orders. It is the main organised effort to close the gap this map keeps returning to — that roughly a fifth of world synthesis capacity screens nothing — and it is philanthropy doing what no law requires.",
+  "tags": [
+   "synthesis:synth",
+   "rules:standards",
+   "rules:influence"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Defence Science and Technology Laboratory — Porton Down",
+  "url": "https://www.gov.uk/government/organisations/defence-science-and-technology-laboratory",
+  "desc": "The UK’s defence biology establishment, working on pathogens and countermeasures at the highest containment levels. Facilities like this exist in every state with the means, they hold the most dangerous material anywhere, and they are the least visible part of this entire field.",
+  "tags": [
+   "rules:regulators",
+   "money:defence"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Vector State Research Centre of Virology and Biotechnology",
+  "url": "https://www.vector.nsc.ru/",
+  "desc": "One of two facilities in the world authorised to hold live smallpox, the other being the US CDC. It has had a documented explosion and a laboratory-acquired infection. Whether the remaining stocks should be destroyed has been argued at the World Health Assembly for decades and repeatedly deferred — and since the sequence is published, the argument is now partly moot.",
+  "tags": [
+   "synthesis:repos",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "National Center for Biotechnology of Kazakhstan",
+  "url": "https://biocenter.kz/",
+  "desc": "Central Asia’s largest biotechnology research institute, working on crops for steppe conditions and on veterinary vaccines. The region grows wheat at enormous scale and appears almost nowhere in accounts of agricultural biotechnology, which is a gap in the telling rather than in the activity.",
+  "tags": [
+   "seed:traits",
+   "livestock:livestock"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Center of Genomics and Bioinformatics",
+  "url": "http://genomics.uz/",
+  "desc": "Uzbekistan’s genomics institute, with cotton as its central crop. Uzbek cotton has been the subject of a long international campaign over forced labour in the harvest — so the same crop carries an engineering question and a labour question, and the second is the one that changed practice.",
+  "tags": [
+   "seed:traits",
+   "editing:agtech"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Council for Scientific and Industrial Research — Ghana",
+  "url": "https://csir.org.gh/",
+  "desc": "Ghana’s public research council, which developed Bt cowpea alongside the Nigerian institute and holds the national crop collections. West African public research is where the crops poor farmers actually eat get worked on, and it operates on budgets a fraction of any company on this map.",
+  "tags": [
+   "seed:traits",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Institut Sénégalais de Recherches Agricoles",
+  "url": "https://www.isra.sn/",
+  "desc": "Senegal’s agricultural research institute, working on millet, sorghum and cowpea — the crops of the Sahel, which no multinational breeds for because there is no market to capture. What happens to those crops depends almost entirely on public institutes like this one.",
+  "tags": [
+   "seed:traits",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Pacific Community — Centre for Pacific Crops and Trees",
+  "url": "https://www.spc.int/cepact",
+  "desc": "The regional genebank for Pacific island crops — taro, breadfruit, yam — held for countries too small to maintain national collections. Island crop diversity is concentrated, irreplaceable and directly exposed to sea level rise, and this is essentially the whole of its formal conservation.",
+  "tags": [
+   "seed:germplasm",
+   "deextinct:biobank"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "National Agricultural Research Institute — Papua New Guinea",
+  "url": "https://www.nari.org.pg/",
+  "desc": "New Guinea is a centre of origin for sugarcane, banana and taro, and one of the most biologically diverse places on Earth. Its national research institute is small, its collections are globally significant, and the mismatch between those two facts is the ordinary condition of centres of origin.",
+  "tags": [
+   "seed:germplasm",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "INTA — Instituto Nacional de Tecnología Agropecuaria",
+  "url": "https://www.argentina.gob.ar/inta",
+  "desc": "Argentina’s public agricultural research institute, which developed the drought-tolerant wheat trait Bioceres commercialised. The trait was made with public money at a public institute and is sold by a private company under licence — the standard arrangement in this field, and the public share of the return is a matter of contract rather than of principle.",
+  "tags": [
+   "seed:traits",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "Bolsa de Cereales / grain trade associations",
+  "url": "https://www.bolsadecereales.com/",
+  "desc": "The Buenos Aires grain exchange, which publishes the planting and harvest estimates the trade runs on. Argentina is among the largest exporters of soy and maize in the world, and what its exchange reports moves prices everywhere — including for farmers who have never heard of it.",
+  "tags": [
+   "seed:distribution",
+   "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Agropalma / palm and tropical oils",
+  "url": "https://www.agropalma.com.br/",
+  "desc": "Brazilian palm oil production in the Amazon basin, certified and audited against deforestation criteria. Palm expansion in South America is far smaller than in southeast Asia and growing, and it is the case where certification is being applied from the start rather than retrofitted after the clearing.",
+  "tags": [
+   "trees",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Fiocruz — Oswaldo Cruz Foundation",
+  "url": "https://portal.fiocruz.br/",
+  "desc": "Brazil’s public health research foundation, which manufactures vaccines at scale and ran the local partnership for Wolbachia mosquito releases against dengue. It is the clearest example in the Americas of a public institution holding both the research and the manufacturing, so what it develops it can also make and give away.",
+  "tags": [
+   "clinical:therapy",
+   "wild:insects"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "ANASAC / Chilean seed multiplication",
+  "url": "https://www.anasac.cl/",
+  "desc": "Counter-season seed multiplication for northern hemisphere breeders, which is a large and little-discussed part of the world seed system. Chile grows engineered seed for export that its own farmers may not plant, so the country carries the agronomic risk of a crop it has not approved for itself.",
+  "tags": [
+   "seed:distribution",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "CATIE — tropical agricultural research and genebank",
+  "url": "https://www.catie.ac.cr/",
+  "desc": "Holds the world’s most important coffee and cacao collections, in Costa Rica. Both crops are grown by millions of smallholders and both face diseases conventional breeding has struggled with, so what is in this collection sets the limits of what either crop can become.",
+  "tags": [
+   "seed:germplasm",
+   "trees"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Instituto Nacional de Ciencias Agrícolas",
+  "url": "https://www.inca.edu.cu/",
+  "desc": "Cuba’s agricultural research institute, in a country that turned to low-input and biological methods after Soviet fertiliser and fuel supplies ended in 1990. That transition is the largest involuntary experiment in low-input agriculture anyone has run, and its results are argued over by both sides of this debate.",
+  "tags": [
+   "seed:traits",
+   "wild:microbes"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Indonesian Agency for Agricultural Research and Development",
+  "url": "https://www.litbang.pertanian.go.id/",
+  "desc": "Indonesia’s agricultural research agency, for a country of 280 million that is a centre of diversity for rice, banana and spices and the world’s largest palm oil producer. Decisions taken here affect more people and more land than most of the national bodies on this map, and reach English-language discussion almost never.",
+  "tags": [
+   "seed:traits",
+   "trees"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Philippine Rice Research Institute",
+  "url": "https://www.philrice.gov.ph/",
+  "desc": "The national rice institute, which worked on Golden Rice alongside IRRI and holds the Philippine rice collections. When a court cancelled the Golden Rice permit in 2024 it cancelled a public institute’s product, not a company’s — which is why that case does not fit the usual account of who wants what.",
+  "tags": [
+   "seed:traits",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Vietnam Academy of Agricultural Sciences",
+  "url": "https://vaas.vn/",
+  "desc": "Vietnam’s agricultural research system, in one of the largest rice-exporting countries in the world. Rice is where the food-security argument for engineering is strongest and where adoption has been slowest, because the export market has been the constraint rather than the science.",
+  "tags": [
+   "seed:traits",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "BIOTEC — National Center for Genetic Engineering and Biotechnology",
+  "url": "https://www.biotec.or.th/",
+  "desc": "Thailand’s national biotechnology centre, working on rice, shrimp and cassava. Thailand permits no commercial GM cultivation while conducting substantial research, which is a common arrangement and one that leaves a national capability with nowhere domestic to go.",
+  "tags": [
+   "seed:traits",
+   "livestock:aqua"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Silal / UAE food security investment",
+  "url": "https://www.silal.ae/",
+  "desc": "An Abu Dhabi state food company buying and building agricultural capacity at home and abroad. Gulf states import most of what they eat and have responded by acquiring farmland and food technology overseas — so a country with almost no agriculture is now a significant owner of other countries’ agriculture.",
+  "tags": [
+   "money:public",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "King Abdullah University of Science and Technology — desert agriculture",
+  "url": "https://www.kaust.edu.sa/",
+  "desc": "Research on crops for saline water and extreme heat, funded at a scale few public institutions match. Salinity and heat tolerance affect an enormous and growing area of farmland worldwide and attract a fraction of the investment that herbicide tolerance does, so where this work is funded at all is worth knowing.",
+  "tags": [
+   "seed:traits",
+   "editing:agtech"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "National Agricultural Research Organisation — Uganda",
+  "url": "https://www.naro.go.ug/",
+  "desc": "Developed disease-resistant banana and cassava, both staples eaten directly by tens of millions in the region. Uganda’s biosafety bill passed parliament twice and was returned unsigned twice, so the research exists and the legal route to release it does not — the clearest case anywhere of a country having the product and not the permission.",
+  "tags": [
+   "seed:traits",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Rwanda Agriculture and Animal Resources Development Board",
+  "url": "https://www.rab.gov.rw/",
+  "desc": "Runs seed certification and crop research for a country that has rebuilt its agricultural system from near nothing since 1994. Rwanda is frequently cited as a model for agricultural policy in the region, which means what it adopts tends to spread — and it has moved toward permitting engineered crops.",
+  "tags": [
+   "seed:traits",
+   "livestock:livestock"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Instituto de Investigação Agrária de Moçambique",
+  "url": "https://www.iiam.gov.mz/",
+  "desc": "Mozambique’s agricultural research institute, which ran confined field trials of drought-tolerant and insect-resistant maize under the WEMA programme. Those trials were donor-funded and the varieties donor-developed, which is the pattern across the region: the research is African and the agenda mostly is not.",
+  "tags": [
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Malawi Environmental Affairs Department — biosafety",
+  "url": "https://www.environment.gov.mw/",
+  "desc": "Approved Bt cotton for commercial cultivation, one of the few African countries to reach commercial approval. Malawi is small, poor and landlocked, so its decision carries little weight commercially and considerable weight as precedent — which is roughly the reverse of how it is usually reported.",
+  "tags": [
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Tanzania Commission for Science and Technology",
+  "url": "https://www.costech.or.tz/",
+  "desc": "Oversees research approvals in a country that halted its GM trials in 2018 and ordered the material destroyed. Reversal after approval is rare enough that this case is cited by both sides, and the trials were publicly funded research rather than a company’s product.",
+  "tags": [
+   "rules:regulators",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Institut de l’Environnement et de Recherches Agricoles",
+  "url": "https://www.inera.bf/",
+  "desc": "Burkina Faso grew Bt cotton commercially and then withdrew it, after the fibre came out shorter and buyers paid less. The trait worked against the pest and the crop lost value anyway — which is the clearest demonstration on this map that a trait doing what it says is not the same as a product that works.",
+  "tags": [
+   "fibre",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Conseil du Café-Cacao",
+  "url": "https://www.conseilcafecacao.ci/",
+  "desc": "Côte d’Ivoire produces more cocoa than anywhere else, grown almost entirely by smallholders, and the crop faces a virus conventional breeding has not solved. What happens to cocoa genetics is decided between this board, the chocolate companies and the research collections — and the growers are the party with the least say and the most at stake.",
+  "tags": [
+   "trees",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Institut de Recherche Agricole pour le Développement",
+  "url": "https://www.irad-cameroon.org/",
+  "desc": "Cameroon’s agricultural research institute, holding collections for crops of the Congo basin. Central Africa is the least documented region in this entire field, which is a fact about research funding rather than about what grows there.",
+  "tags": [
+   "seed:germplasm",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Institut National de la Recherche Agronomique de Tunisie",
+  "url": "https://www.inrat.agrinet.tn/",
+  "desc": "Works on durum wheat, olives and date palm for a warming, drying region. North Africa is where climate pressure on agriculture is arriving first and hardest, and the crops most affected are the ones with the least commercial breeding behind them.",
+  "tags": [
+   "seed:traits",
+   "trees"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Institut National de la Recherche Agronomique d’Algérie",
+  "url": "https://www.inraa.dz/",
+  "desc": "Algeria imports most of its wheat and has among the highest per-capita cereal consumption in the world, which makes it one of the buyers whose specifications shape what exporting countries plant. Its own research is on adapting cereals to drought.",
+  "tags": [
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Cambodian Agricultural Research and Development Institute",
+  "url": "https://www.cardi.org.kh/",
+  "desc": "Holds Cambodia’s rice collections, including traditional varieties from a country whose agricultural knowledge was deliberately destroyed in the 1970s. Rebuilding a seed system after that is a different problem from developing one, and the collections are what made it possible at all.",
+  "tags": [
+   "seed:germplasm",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Nepal Agricultural Research Council",
+  "url": "https://narc.gov.np/",
+  "desc": "Nepal spans lowland plains to high mountains and holds landraces adapted across that whole range, which is an unusual concentration of climate adaptation in one small country. Its collections matter well beyond its borders for exactly that reason.",
+  "tags": [
+   "seed:germplasm",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "ICTA — Instituto de Ciencia y Tecnología Agrícolas",
+  "url": "https://icta.gob.gt/",
+  "desc": "Guatemala sits inside the centre of origin for maize alongside Mexico, and its landraces are part of the same reservoir. It has far less institutional capacity to protect them and receives a fraction of the attention Mexico’s dispute does.",
+  "tags": [
+   "seed:germplasm",
+   "food_crops"
   ],
   "checked": "2026-07-31"
  }

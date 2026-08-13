@@ -359,16 +359,72 @@ def main():
     # into index.html at build time - which meant a harvester could succeed and
     # its 2,210 records would still never reach the map without a rebuild.
     # They are merged into projects.json instead, which the map fetches.
-    for extra_file in ("clinical_sponsors.json", "register_records.json",
-                       "animal_facilities.json", "ogtr_trials.json",
-                       "bch_decisions.json"):
+    # Two harvesters were missing from this list. fertility_clinics.py and
+    # animal_testing_facilities.py ran every week, wrote their JSON, had it
+    # committed, and stopped there: nothing read the files, so 21 records never
+    # reached the map. They also write under their own key ("clinics",
+    # "facilities") rather than "projects", and their rows carry lat/lng as
+    # strings with no source field, so they need converting rather than
+    # appending.
+    EXTRAS = (("clinical_sponsors.json", "projects", None),
+              ("register_records.json", "projects", None),
+              ("animal_facilities.json", "projects", None),
+              ("ogtr_trials.json", "projects", None),
+              ("bch_decisions.json", "projects", None),
+              ("fertility_clinics.json", "clinics", "industry:repro"),
+              ("animal_testing_facilities.json", "facilities", "industry:animals"))
+
+    def _as_record(row, source):
+        """One register pointer, in the shape the map reads."""
+        try:
+            lat, lng = float(row["lat"]), float(row["lng"])
+        except (KeyError, TypeError, ValueError):
+            return None
+        return {"name": str(row.get("name", "")).strip()[:150],
+                "source": source,
+                "type": row.get("type") or "Register",
+                "lat": lat, "lng": lng,
+                "state": row.get("country") or row.get("iso") or "",
+                # A national register has no address. Saying so is the whole
+                # difference between a centroid and a place.
+                "precise": False, "impact": 2,
+                "company": "", "size": "", "status": "Register",
+                "phase": "post", "date": "", "otype": "registry",
+                "url": row.get("url", ""), "desc": row.get("desc", ""),
+                "checked": ""}
+
+    # These pointers overlap the hand-written industry entries - the HFEA
+    # register is already on the map under its own name. Two dots on one
+    # register is worse than one, so a record whose URL is already present is
+    # dropped, and the count is printed rather than swallowed.
+    seen_urls = {str(r.get("url", "")) for r in records if r.get("url")}
+
+    for extra_file, key, source in EXTRAS:
         fp = HERE / extra_file
         if not fp.exists():
             continue
         try:
-            got = json.loads(fp.read_text(encoding="utf-8")).get("projects", [])
+            got = json.loads(fp.read_text(encoding="utf-8")).get(key, [])
         except Exception as e:
             print("  ! %s unreadable (%s)" % (extra_file, e), file=sys.stderr); continue
+        if source:
+            conv, dup, bad = [], 0, 0
+            for row in got:
+                rec = _as_record(row, source)
+                if not rec:
+                    bad += 1; continue
+                if rec["url"] and rec["url"] in seen_urls:
+                    dup += 1; continue
+                seen_urls.add(rec["url"]); conv.append(rec)
+            got = conv
+            if dup:
+                print("  %s: %d already on the map under another name" % (extra_file, dup))
+            if bad:
+                print("  %s: %d rows with no usable coordinates" % (extra_file, bad))
+        else:
+            for r in got:
+                if r.get("url"):
+                    seen_urls.add(str(r["url"]))
         if got:
             records.extend(got)
             print("  merging %5d records from %s" % (len(got), extra_file))

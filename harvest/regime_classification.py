@@ -103,6 +103,12 @@ TECHNIQUE = {
     # Asia and the Middle East
     "AFG": "thin", "ARE": "protocol", "BHR": "protocol", "PRK": "thin",
     "PSE": "thin",
+    # Acceded after the 2015 ratification list this map worked from. Sierra
+    # Leone ratified on 15 June 2020, and Uzbekistan on 25 October 2019 - the
+    # latter was already classified. The list is dated, so the thirteen states
+    # still absent below are absent from a 2015 document rather than from the
+    # Protocol, and each needs checking against a current one.
+    "SLE": "protocol",
 }
 
 # ---------------------------------------------------------------------------
@@ -115,7 +121,26 @@ TRAIT = {
 
 # ---------------------------------------------------------------------------
 # CARVE-OUT: a class of engineered organism sits outside registration.
-# ---------------------------------------------------------------------------
+#
+# A carve-out is not a third way of deciding what counts as engineered. It is an
+# exemption cut out of one of the other two, and everything the exemption does
+# not reach is still decided the old way. Reading the layer as three parallel
+# approaches made a carve-out country look like a country with no approach at
+# all, which is the opposite of the truth: a carve-out only exists because
+# something would otherwise have caught the organism.
+#
+# What it is cut out of is recorded below. For every country here that is the
+# technique trigger: each enacted a definition that catches an organism by the
+# method used to make it - almost all of them the Cartagena definition - and
+# then wrote an exemption for organisms edited without inserting DNA from
+# another species. A transgenic plant in Argentina, Japan or China still goes
+# through the scheme. Only the edited class walks out of it.
+#
+# No carve-out here sits on a trait-based scheme. Canada and the United States
+# are the two trait-based countries on this map and neither needed a carve-out:
+# a system that asks what the organism is rather than how it was made has
+# nothing to exempt, because the technique never triggered anything.
+CARVEOUT_BASE = "technique"
 CARVEOUT = {
     # The Americas, where the carve-out approach was established
     "ARG": "firm", "BRA": "firm", "CHL": "firm", "PRY": "firm",
@@ -168,6 +193,11 @@ def classified():
             seen[iso] = regime
             out[iso] = (regime, conf)
     return out
+
+
+def base_of(regime):
+    """What a carve-out is carved out of. Empty for the other two."""
+    return CARVEOUT_BASE if regime == "carveout" else ''
 
 
 if __name__ == "__main__":
