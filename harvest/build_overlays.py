@@ -173,9 +173,10 @@ def build_regime(subgeo):
             if not geom:
                 missing.append(iso); continue
             feats.append({"type": "Feature",
-                          "properties": {"name": "%s \u2014 %s" % (iso, spec["label"]),
-                                         "regime": cls,
-                                         "note": spec["note"]},
+                          # No per-feature note and no label in the name: the map prints
+                          # REGIMED for the regime type already, and a second copy
+                          # here rendered as a split answer in the popup.
+                          "properties": {"name": iso, "regime": cls},
                           "geometry": geom})
     return {"type": "FeatureCollection",
             "properties": {"note": ("Each country classified by how it decides what "
