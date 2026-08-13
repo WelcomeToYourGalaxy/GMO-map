@@ -1288,6 +1288,46 @@ function gbLoadAdm4(cb){ if(gbNav.adm4){cb(true);return;} fetchLevel(gbNav.iso,'
   fs.forEach(f=>{const L4=+((f.properties&&f.properties.adminLevel))||6;gbEnsureRep(f);(byLevel[L4]=byLevel[L4]||[]).push(f);lv[L4]=1;});
   gbNav.adm4={byLevel:byLevel,levels:Object.keys(lv).map(Number).sort((a,b)=>a-b)};cb(true); }).catch(()=>cb(false)); }
 function gbAdm4Inside(parent,after){ const levels=gbNav.adm4.levels; for(let k=0;k<levels.length;k++){const LL=levels[k];if(after!=null&&LL<=after)continue;const kids=gbKidsInside(gbNav.adm4.byLevel[LL],parent);if(kids.length)return{lvl:LL,feats:kids};}return null; }
+// Forty of the 236 territories on this map have no admin-1 file in the
+// boundary set, so clicking into them did nothing at all and looked like a
+// broken click. All but two are dependencies, overseas territories or
+// uninhabited: Aruba, Bermuda, Hong Kong, Macao, Puerto Rico, Guam, the
+// Falklands, Pitcairn and the like. Most genuinely have no sub-national tier to
+// draw - Gibraltar is not divided into provinces - and for those the map should
+// say so rather than fail silently.
+//
+// The two that are countries are Niue and the State of Palestine. Both are
+// Parties to the Cartagena Protocol and both are classified on the regime
+// layer; only their boundaries were missing. Those two files have now been
+// built from geoBoundaries and belong in the boundary repository - 14 villages
+// for Niue, West Bank and Gaza for Palestine. If the message below still
+// appears for either, the file did not reach the repository.
+var GB_NO_ADM1 = {
+  ABW:1, AIA:1, ALA:1, ASM:1, ATF:1, BLM:1, BMU:1, COK:1, CUW:1, CYM:1, FLK:1,
+  FRO:1, GGY:1, GIB:1, GUM:1, HKG:1, HMD:1, IMN:1, IOT:1, JEY:1, MAC:1, MAF:1,
+  MNP:1, MSR:1, NCL:1, NFK:1, PCN:1, PRI:1, PYF:1, SGS:1, SHN:1, SPM:1, SXM:1,
+  TCA:1, UMI:1, VGB:1, VIR:1, WLF:1
+};
+var GB_ADM1_PENDING = { NIU:1, PSE:1 };
+function gbNoUnits(iso){
+  try{
+    var nm = (trackerData[iso] && trackerData[iso].name) || iso;
+    var why = GB_ADM1_PENDING[iso]
+      ? 'This country does have sub-national units and this map holds them, so '
+        + 'seeing this means the boundary file did not reach the repository. '
+        + 'The gap is the upload, not the country.'
+      : (GB_NO_ADM1[iso]
+        ? 'This territory has no sub-national tier in the boundary set. Most of the '
+          + 'places in this position are dependencies or overseas territories that '
+          + 'are not divided into regions at all.'
+        : 'The boundary file for this country did not load. It may be missing, or '
+          + 'the fetch may have failed.');
+    showInfoPanel('<div class="popup-country">'+_esc(String(nm))+'</div>'
+      + '<div class="no-data">'+why+'</div>'
+      + '<div class="no-data" style="margin-top:6px;opacity:.75">Looked for '
+      + _esc(gbURL(iso,'ADM1'))+'</div>');
+  }catch(e){}
+}
 function gbChildren(top,cb){ const iso=gbNav.iso;
   if(top.type==='country'){
     const hasSub=trackerData[iso]&&trackerData[iso].sub&&Object.keys(trackerData[iso].sub).length;
@@ -1301,7 +1341,7 @@ function gbChildren(top,cb){ const iso=gbNav.iso;
         return;
       }
       cb(fs.length?{lvl:'ADM1',feats:fs,isAdm4:false}:null);
-    }).catch(()=>cb(null)); return; }
+    }).catch(()=>{ gbNoUnits(iso); cb(null); }); return; }
   if(top.type==='adm4'){ const r=gbAdm4Inside(top.feat,top.lvl);cb(r?{lvl:r.lvl,feats:r.feats,isAdm4:true}:null);return; }
   const start=GB_LEVELS.indexOf(top.lvl)+1, tries=GB_LEVELS.slice(start);
   (function tryNext(i){ if(i>=tries.length){cb(null);return;} const Lv=tries[i];
@@ -2507,85 +2547,40 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
                        restore it. */
                     interactive:true}; }
                  var c=((meta&&meta.color)||'#c98a2a'); return _ovStyle(c); },
-          onEachFeature:function(f,l){ var p=(f&&f.properties)||{}; var nm=p.name||p.NAME||p.title||k;
-            var sub=(k==='regime'&&REGIMEL[p.regime])?('<br><span style="color:#7fa8cc;font-weight:600">'+REGIMES[p.regime]+'</span><span style="font-size:10.5px;line-height:1.55;display:block;margin-top:6px;max-width:340px;color:#c3cee0">'+(REGIMED[p.regime]||'')+'</span>'):''; // A country can carry a fill and an outline at once - a GMO-free
-              // declaration and a regulatory regime. Two popups on top of each
-              // other made the reader dismiss one to read the other, and neither
-              // said which mark it was explaining. One box, and each part names
-              // the mark it belongs to.
-              l.bindPopup(function(){
-                var out = '<b>'+String(nm)+'</b>';
-                var iso = p.iso || p.ISO || '';
-                out += '<div style="font-size:10px;opacity:.75;margin-top:2px">area, not a project point</div>';
-                if(k === 'regime' && window.REGIMED && p.regime){
-                  // The regime layer draws above the fills, so its popup is the one
-                  // that opens. It therefore has to carry both explanations, which
-                  // is what the loop below adds.
-
-                  out += '<div style="margin-top:8px"><span style="display:inline-block;width:14px;height:8px;'
-                       + 'border:2px solid '+(REGIMEC[p.regime]||'#7d8f45')+';border-radius:2px;vertical-align:middle">'
-                       + '</span> <b style="color:#7fa8cc">The outline colour</b> \u2014 '
-                       + (REGIMES[p.regime]||'') + '</div>'
-                       + '<div style="font-size:10.5px;line-height:1.55;margin-top:5px;max-width:340px;color:#c3cee0">'
-                       + REGIMED[p.regime] + '</div>'
-                       // how well established this reading is, per country. The
-                       // classification is a judgement about a statute, not a
-                       // published field, so it says how sure it is.
-                       + (p.conf_note ? ('<div style="font-size:9.5px;line-height:1.45;margin-top:5px;'
-                           + 'max-width:340px;color:#8a94a8;font-style:italic">'
-                           + (p.confidence==='thin' ? '\u26a0 Not verified. ' : '') + p.conf_note + '</div>') : '');
-                }
-                // whatever else is shaded here, named by its own layer
-                try{
-                  Object.keys(_ovLayers).forEach(function(ok){
-                    if(ok === k || ok === 'regime') return;
-                    var om = null;
-                    for(var z=0;z<PJ_OVERLAYS.length;z++) if(PJ_OVERLAYS[z].k===ok) om=PJ_OVERLAYS[z];
-                    if(!om) return;
-                    var hit = null;
-                    _ovLayers[ok].eachLayer(function(sub2){
-                      var q=(sub2.feature&&sub2.feature.properties)||{};
-                      if((iso && q.iso===iso) || (q.name && nm && String(q.name)===String(nm))) hit=q;
-                    });
-                    if(!hit) return;
-                    out += '<div style="margin-top:9px"><span style="display:inline-block;width:14px;height:8px;'
-                         + 'background:'+(om.color||'#c98a2a')+';opacity:.6;border-radius:2px;vertical-align:middle">'
-                         + '</span> <b style="color:#7fa8cc">The shading</b> \u2014 ' + om.label + '</div>';
-                    if(hit.note) out += '<div style="font-size:10.5px;line-height:1.5;margin-top:5px;'
-                         + 'max-width:340px;color:#c3cee0">' + String(hit.note)
-                         + (hit.src?(' <a href="'+hit.src+'" target="_blank" rel="noopener" style="color:#9dc0dd">source</a>'):'')
-                         + '</div>';
-                  });
-                }catch(_e){}
-                if(k !== 'regime'){
-                  out += '<div style="margin-top:9px"><span style="display:inline-block;width:14px;height:8px;'
-                       + 'background:'+((meta&&meta.color)||'#c98a2a')+';opacity:.6;border-radius:2px;vertical-align:middle">'
-                       + '</span> <b style="color:#7fa8cc">The shading</b> \u2014 ' + ((meta&&meta.label)||k) + '</div>';
-                  if(p.note) out += '<div style="font-size:10.5px;line-height:1.5;margin-top:5px;'
-                       + 'max-width:340px;color:#c3cee0">' + String(p.note)
-                       + (p.src?(' <a href="'+p.src+'" target="_blank" rel="noopener" style="color:#9dc0dd">source</a>'):'')
-                       + '</div>';
-                  // and the regime outline, if this country has one
-                  try{
-                    if(_ovLayers['regime'] && window.REGIMED){
-                      var rq=null;
-                      _ovLayers['regime'].eachLayer(function(sub3){
-                        var q=(sub3.feature&&sub3.feature.properties)||{};
-                        if((iso && q.iso===iso) || (q.name && nm && String(q.name)===String(nm))) rq=q;
-                      });
-                      if(rq && rq.regime && REGIMEON.has(rq.regime)){
-                        out += '<div style="margin-top:9px"><span style="display:inline-block;width:14px;height:8px;'
-                             + 'border:2px solid '+(REGIMEC[rq.regime]||'#7d8f45')+';border-radius:2px;vertical-align:middle">'
-                             + '</span> <b style="color:#7fa8cc">The outline colour</b> \u2014 '
-                             + (REGIMES[rq.regime]||'') + '</div>'
-                             + '<div style="font-size:10.5px;line-height:1.55;margin-top:5px;max-width:340px;'
-                             + 'color:#c3cee0">' + REGIMED[rq.regime] + '</div>';
-                      }
+          onEachFeature:function(f,l){ var p=(f&&f.properties)||{};
+            var nm=p.name||p.NAME||p.title||k;
+            // One write-up, one code path. This popup used to build its own,
+            // and it had to guess which other layers were drawn to mention them
+            // - so a country with both a regime and a GM zone got whichever
+            // layer happened to be on top and nothing about the other. The
+            // country box already assembles every section from the overlay data
+            // rather than from the layers, so it is used here too. Clicking the
+            // outline and clicking the country now say the same thing, because
+            // they are the same thing.
+            l.bindPopup(function(){
+              var iso = p.iso || p.ISO || '';
+              // The regime file writes the ISO3 into name when it has no iso
+              // field, which is how the older build shipped.
+              if(!iso && /^[A-Z]{3}$/.test(String(nm))) iso = String(nm);
+              var body = '';
+              try{ body = (typeof _regimeBox === 'function') ? _regimeBox(iso) : ''; }catch(_e){}
+              var title = (window._ovData && window._ovData.regime && iso)
+                ? (function(){
+                    var fs=window._ovData.regime.features||[];
+                    for(var i=0;i<fs.length;i++){
+                      var q=fs[i].properties||{};
+                      if(String(q.iso||'').toUpperCase()===String(iso).toUpperCase() && q.name)
+                        return q.name;
                     }
-                  }catch(_e2){}
-                }
-                return out;
-              }); }});
+                    return nm;
+                  })()
+                : nm;
+              return '<b>'+String(title)+'</b>'
+                   + '<div style="font-size:10px;opacity:.75;margin-top:2px">'
+                   + 'area, not a project point</div>'
+                   + (body || '<div style="font-size:10.5px;color:#c3cee0;margin-top:8px">'
+                            + 'Nothing further is held about this area yet.</div>');
+            }); }});
         _ovLayers[k]=lyr; lyr.addTo(map);
         // The country box reads the overlay data directly. Walking a Leaflet
         // layer for it works until somebody unticks the box, at which point the
