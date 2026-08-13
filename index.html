@@ -1140,14 +1140,31 @@ function _ovUsableNote(t){
 }
 function _ovFeats(k,iso){
   var d=(window._ovData&&window._ovData[k])||null, out=[];
-  if(!d||!d.features) return out;
+  if(!d||!d.features||!iso) return out;
+  var want=String(iso).toUpperCase();
   for(var i=0;i<d.features.length;i++){
     var p=(d.features[i].properties)||{};
-    if(String(p.iso||'')===String(iso||'')) out.push(p);
+    // iso is the field to match on. The older regime file carried no iso and
+    // wrote the ISO3 code into name instead, so that is checked too - an
+    // out-of-date overlay should degrade, not go blank.
+    if(String(p.iso||'').toUpperCase()===want ||
+       (!p.iso && String(p.name||'').toUpperCase()===want)) out.push(p);
   }
   return out;
 }
 function _regimeBox(iso){
+  try{ return _regimeBoxInner(iso); }
+  catch(e){
+    // A write-up that throws used to take the whole country box with it, so the
+    // symptom was a panel that did not open rather than a section that did not
+    // draw. Named here instead.
+    try{ console.warn('[map] country write-up failed for '+iso+':', e); }catch(_x){}
+    return '<div class="rgm-box"><div class="rgm-h">What the law here counts as engineered</div>'
+         + '<div class="rgm-conf">This section could not be built. Type pjWhy() in the '
+         + 'browser console for what did and did not load.</div></div>';
+  }
+}
+function _regimeBoxInner(iso){
   if(!iso) return '';
   var R=window.REGIMED, RL=window.REGIMES, RC=window.REGIMEC;
   var h='', hit=null, rf=_ovFeats('regime',iso);
@@ -1160,6 +1177,13 @@ function _regimeBox(iso){
     h+='<div class="rgm-p">'+_esc(R[hit.regime])+'</div>';
     if(hit.conf_note) h+='<div class="rgm-conf">'
       +(hit.confidence==='thin'?'\u26a0 Not verified. ':'')+_esc(hit.conf_note)+'</div>';
+  } else if(hit){
+    // The country IS classified and the paragraph for its regime is missing.
+    // That is a fault in this build, and it must not be reported as a gap in
+    // the classification - one is a bug, the other is a fact about the world.
+    h+='<div class="rgm-conf">This country is classified as \u201c'+_esc(String(hit.regime||''))
+      +'\u201d and the write-up for that classification is missing from this build. '
+      +'Type pjWhy() in the browser console.</div>';
   } else if(window._ovData && window._ovData.regime){
     h+='<div class="rgm-p">This country is not classified on the regime layer. That is a gap in '
       +'this map rather than a finding about the country \u2014 almost every state has a biosafety '
@@ -1214,7 +1238,10 @@ function gbEnterCountry(iso,feat,latlng){ gbClear(); gbNav={iso:iso,feat:feat,ad
   const nv=natVis(iso), nm=(trackerData[iso]&&trackerData[iso].name)||(feat.properties&&feat.properties.name)||iso;
   let body = nv.length ? popHTML(nm,nv,'country','') : (trackerData[iso]?countryNoDataHTML(iso,nm,''):('<div class="popup-country">'+nm+'</div><div class="no-data">No verified independent database found for this country in any lens.</div>'));
   gbPopupCtx={iso:iso,lvl:'ADM0',feat:feat,bounds:(gbStack[0]&&gbStack[0].bounds)||gbFeatBounds(feat)};
-  body = body.replace('</div>','</div>'+gbZoomBar('ADM0')+_usGuide(iso)+_regimeBox(iso),1);
+  var _extra='';
+  try{ _extra=gbZoomBar('ADM0')+_usGuide(iso)+_regimeBox(iso); }catch(_e){
+    try{ console.warn('[map] country panel extras failed:', _e); }catch(_x){} }
+  body = body.replace('</div>','</div>'+_extra,1);
   showInfoPanel(body);
   gbFitCountry(feat);
   /* card clearance is handled by the fit's left reserve (gbFitPad) in one animation; no secondary pan */
@@ -2398,7 +2425,12 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     if(!on){ if(_ovLayers[k]) map.removeLayer(_ovLayers[k]); if(statusEl) statusEl.textContent=""; return; }
     if(_ovLayers[k]){ _ovLayers[k].addTo(map); return; }
     if(statusEl) statusEl.textContent=" loading\u2026";
-    fetch('overlays/'+k+'.geojson').then(function(r){ if(!r.ok) throw 0; return r.json(); })
+    // Fetch once, draw as often as the reader likes. The country write-up also
+    // reads this data, and it must not depend on whether a layer happens to be
+    // switched on at the moment somebody clicks a country.
+    ((window._ovData && window._ovData[k])
+        ? Promise.resolve(window._ovData[k])
+        : fetch('overlays/'+k+'.geojson').then(function(r){ if(!r.ok) throw 0; return r.json(); }))
       .then(function(gj){
         // Leaflet draws in panes, and bringToFront only reorders within one. The
         // regime outline kept vanishing because the context fills and the
@@ -2629,6 +2661,70 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     else { if(!pjInclUndated) return false; }
     return true;
   }
+  // "It is not on the map" has meant, on this project alone: never harvested,
+  // harvested and not committed, committed and not merged, merged and filtered
+  // out, and drawn but stacked under another dot. pjPasses is where the fourth
+  // one happens, and it fails silently by design - a filter's whole job is to
+  // remove things quietly.
+  //
+  // pjAudit('clinical') runs every guard separately over one set of records and
+  // says which guard removed them. It answers the fourth question and rules out
+  // the first three on the way past.
+  window.pjAudit = function(prefix){
+    prefix = String(prefix || '');
+    var all = (pjData && pjData.projects) || [];
+    var set = prefix ? all.filter(function(p){
+                return String(p.source || '').indexOf(prefix) === 0; }) : all;
+    var out = [];
+    function say(t){ out.push(t); console.log(t); }
+    say('--- pjAudit(' + JSON.stringify(prefix) + ') ---');
+    say('records carrying that source: ' + set.length + ' of ' + all.length + ' loaded');
+    if(!set.length){
+      say('   -> none loaded at all. The gap is upstream of every filter:');
+      say('      either the harvester did not write them, or projects.json.gz');
+      say('      does not hold them, or the merge dropped them on a duplicate key.');
+      return out.join('\n');
+    }
+    var lvl = set.filter(function(p){ return p.level === 'rolled'; }).length;
+    if(lvl) say('rolled into a parent marker (no dot of their own, by design): ' + lvl);
+    var guards = [
+      ['no coordinates',        function(p){ return p.lat==null || p.lng==null; }],
+      ['kind toggle',           function(p){ return !pjKinds.has(pjKind(p)); }],
+      ['source checkbox',       function(p){ return activeProjSrc.size &&
+                                    !activeProjSrc.has(pjSrcGroup(String(p.source||''))); }],
+      ['pjRelPasses',           function(p){ return window.pjRelPasses && !window.pjRelPasses(p); }],
+      ['pjLevelPasses',         function(p){ return window.pjLevelPasses && !window.pjLevelPasses(p); }],
+      ['subject filter',        function(p){ return window.pjSubjPasses && !window.pjSubjPasses(p); }],
+      ['category filter',       function(p){ return window.pjSubTagPasses && !window.pjSubTagPasses(p); }],
+      ['organism filter',       function(p){ return window.pjSpeciesPasses && !window.pjSpeciesPasses(p); }],
+      ['scale/phase/recency',   function(p){ return window.pjRelDetailPasses && !window.pjRelDetailPasses(p); }],
+      ['organisation type',     function(p){ return String(p.source||'').indexOf('industry')===0 &&
+                                    typeof pjTypes!=='undefined' && !pjTypes.has(p.otype||'company'); }],
+      ['type category',         function(p){ return !activeProjType.has(pjTypeCat(p)); }],
+      ['search box',            function(p){ return !!pjQ && String(p.name||'').toLowerCase().indexOf(pjQ)<0
+                                    && String(p.type||'').toLowerCase().indexOf(pjQ)<0; }]
+    ];
+    guards.forEach(function(g){
+      var n = 0;
+      for(var i=0;i<set.length;i++){ try{ if(g[1](set[i])) n++; }catch(e){} }
+      if(n) say('removed by ' + g[0] + ': ' + n);
+    });
+    var pass = set.filter(function(p){ try{ return pjPasses(p); }catch(e){ return false; } }).length;
+    say('passing every filter: ' + pass);
+    // Passing and being visible are still two things: coincident points share
+    // one dot.
+    var at = {};
+    set.forEach(function(p){ if(p.lat==null) return;
+      var k = p.lat.toFixed(2)+','+p.lng.toFixed(2); at[k]=(at[k]||0)+1; });
+    var spots = Object.keys(at);
+    say('sitting on ' + spots.length + ' distinct coordinates, so at most that many dots');
+    spots.sort(function(a,b){ return at[b]-at[a]; }).slice(0,5).forEach(function(k){
+      say('   ' + k + ': ' + at[k] + ' records on one spot');
+    });
+    say('--- end ---');
+    return out.join('\n');
+  };
+
   function pjBuildIndex(){
     /* pjFanOffsets is off. It spread coincident points into a ring so the top
        one was not the only clickable pin. Clustering does that job properly
@@ -5697,10 +5793,26 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
         ' | carrying a species field: ' + ind.filter(function(p){ return p.species; }).length);
     if(!ind.filter(function(p){ return p.species; }).length)
       say('   -> no species field: this index.html predates the species work');
-    say('overlay layers loaded: ' +
-        (window._ovLayers ? Object.keys(window._ovLayers).join(', ') : 'none'));
-    if(!window._ovLayers || !window._ovLayers.regime)
-      say('   -> regime layer NOT loaded: overlays/regime.geojson missing or failed to fetch');
+    // Drawn and loaded are different questions. The country write-up needs the
+    // data; the map needs the layer. Report both, because "the zones are not
+    // showing" has meant each of them.
+    ['regime','gmofree','cultivation'].forEach(function(k){
+      var d = window._ovData && window._ovData[k];
+      var n = (d && d.features && d.features.length) || 0;
+      var drawn = !!(window._ovLayers && window._ovLayers[k]);
+      say('overlay ' + k + ': ' + (n ? n + ' features loaded' : 'NOT loaded')
+          + ', ' + (drawn ? 'drawn on the map' : 'not drawn')
+          + ((window._ovFailed && window._ovFailed[k])
+              ? ('  -> ' + window._ovFailed[k]) : ''));
+      if(n && k === 'regime'){
+        var withIso = d.features.filter(function(f){
+          return f.properties && f.properties.iso; }).length;
+        if(!withIso) say('   -> this is the OLD regime file: no iso field, '
+                       + n + ' countries. The rebuilt one has 134 and an iso on each.');
+      }
+    });
+    say('country write-up: ' + (typeof _regimeBox === 'function'
+        ? 'present' : 'MISSING from this build'));
     ['fertility','animal-testing'].forEach(function(t){
       var n = seed.filter(function(p){ return String(p.source||'').indexOf(t)>=0; }).length;
       say(t + ' records: ' + n + (n ? '' : '  -> harvester has not run, or its JSON was not committed'));
@@ -5708,7 +5820,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     say('--- end. Paste this if something is not showing. ---');
     return out.join('\n');
   };
-  console.log('[map] type pjWhy() for a report on what loaded and what did not');
+  console.log('[map] pjWhy() reports what loaded. pjAudit("clinical") reports which filter removed a set of records.');
 })();
 </script>
 <script>
@@ -5761,5 +5873,64 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 .kind-sub .proj-search{margin-top:10px;}
 #ovBox{margin-bottom:10px;}
 </style>
+<script>
+(function(){
+  // Overlay loading used to start from the checkboxes: find every input[data-ov]
+  // that shipped ticked and fire a change event at it. A later pass in this file
+  // retires the old overlay panel once its content has a home in the key box -
+  // and it removes those inputs. Whichever ran first decided whether the GM
+  // zone layers loaded at all, and the country write-up, which reads the same
+  // data, went with them.
+  //
+  // Loading is now its own step. The data is fetched because the map needs it,
+  // not because a control happens to still be in the document, and drawing is a
+  // separate question answered by whatever control exists at the time.
+  var KEYS = ['regime', 'gmofree', 'cultivation'];
+  window._ovData = window._ovData || {};
+  window._ovFailed = window._ovFailed || {};
+
+  function wanted(k){
+    var cb = document.querySelector('input[data-ovkey="'+k+'"]')
+          || document.querySelector('input[data-ov="'+k+'"]');
+    if(cb) return !!cb.checked;
+    if(k === 'regime') return !!document.querySelector('input[data-reg]:checked')
+                           || !document.querySelector('input[data-reg]');
+    return true;   // ships on
+  }
+
+  function boot(){
+    KEYS.forEach(function(k){
+      if(window._ovData[k] || window._ovFailed[k] === 'loading') return;
+      if(window._ovFailed[k]) return;
+      window._ovFailed[k] = 'loading';
+      fetch('overlays/'+k+'.geojson')
+        .then(function(r){ if(!r.ok) throw new Error('http '+r.status); return r.json(); })
+        .then(function(gj){
+          var n = (gj && gj.features && gj.features.length) || 0;
+          if(!n) throw new Error('no features');
+          window._ovData[k] = gj;
+          delete window._ovFailed[k];
+          console.log('[map] overlay ' + k + ': ' + n + ' features');
+          if(wanted(k) && typeof window.pjToggleOverlay === 'function'){
+            try{ window.pjToggleOverlay(k, true, null); }catch(e){
+              console.warn('[map] overlay '+k+' loaded but would not draw:', e);
+            }
+          }
+        })
+        .catch(function(e){
+          // Named, not swallowed. A missing overlay file and a layer switched
+          // off look identical on the map and are completely different facts.
+          window._ovFailed[k] = String((e && e.message) || e);
+          console.warn('[map] overlay ' + k + ' did NOT load: ' + window._ovFailed[k]
+                     + '  (expected at overlays/' + k + '.geojson)');
+        });
+    });
+  }
+  if(document.readyState === 'complete') setTimeout(boot, 300);
+  else window.addEventListener('load', function(){ setTimeout(boot, 300); });
+  // one retry, in case pjToggleOverlay had not been defined on the first pass
+  setTimeout(boot, 4000);
+})();
+</script>
 </body>
 </html>
