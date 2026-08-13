@@ -2802,6 +2802,21 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   var PJ_CELL         = 46;  // cell edge in screen px
   var _pjClu = null, _pjCluZ = null;
 
+  // Separated in screen pixels rather than in degrees. A degree offset is
+  // invisible at world zoom and a mile wide at street zoom; a pixel offset is
+  // the same small nudge at every zoom, which is what "both visible at all
+  // levels" needs. Drawing and hit-testing both go through this, so a dot is
+  // clicked where it is seen.
+  var PJ_KIND_NUDGE = {release:[0,0], industry:[0,0], escape:[0,0],
+                       clinical:[8,-8], biosafety:[-8,-8]};
+  function pjNudge(g){
+    var kd = (g && (g.dk || (g.m && g.m[0] && g.m[0].kd))) || 'release';
+    return PJ_KIND_NUDGE[kd] || [0,0];
+  }
+  function pjCluPt(m, g){
+    var pt = m.latLngToContainerPoint([g.la, g.lo]), d = pjNudge(g);
+    return L.point(pt.x + d[0], pt.y + d[1]);
+  }
   function pjClusters(z){
     if(_pjClu) return _pjClu;   // zoom-invariant: built once per filter change
     var cells = {}, out = [], pts = _pjPts || [], i, g;
@@ -2861,7 +2876,11 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       }
       var _sla = (o.p && typeof o.p.lat === 'number') ? o.p.lat : o.la;
       var _slo = (o.p && typeof o.p.lng === 'number') ? o.p.lng : o.lo;
-      var k  = _sla.toFixed(2) + '|' + _slo.toFixed(2);
+      // The kind is part of the key. A country centroid carries a register's
+      // permits, its filed decisions and its trial sponsors at the identical
+      // coordinate; keyed on position alone they became one dot and two of the
+      // three kinds were unreachable at every zoom.
+      var k  = o.kd + '|' + _sla.toFixed(2) + '|' + _slo.toFixed(2);
       g = cells[k];
       if(!g){ g = cells[k] = {la:0, lo:0, n:0, m:[], kd:{}, i:0, ap:true}; out.push(g); }
       g.la += o.la; g.lo += o.lo; g.n++; g.m.push(o);
@@ -3237,7 +3256,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       var z=m.getZoom();
       var cl=pjClusters(z), pad=40;
       for(var k=0;k<cl.length;k++){ var g=cl[k];
-        var pt=m.latLngToContainerPoint([g.la,g.lo]);
+        var pt=pjCluPt(m,g);
         if(pt.x<-pad||pt.y<-pad||pt.x>s.x+pad||pt.y>s.y+pad) continue;
         if(g.n===1 && !g.hier){ this._glyph(ctx,pt,g.m[0],pjCluRad(z,g)); continue; }
         var r=pjCluRad(z,g);
@@ -3283,7 +3302,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     _nearestClu:function(cp){ var m=this._map,z=m.getZoom();
             var cl=pjClusters(z), best=null, bd=1e9;
       for(var i=0;i<cl.length;i++){ var g=cl[i];
-        var pt=m.latLngToContainerPoint([g.la,g.lo]);
+        var pt=pjCluPt(m,g);
         var d=Math.hypot(pt.x-cp.x,pt.y-cp.y), rr=pjCluRad(z,g)+5;
         if(d<=rr&&d<bd){ bd=d; best=g; } }
       return best; },
@@ -6005,5 +6024,169 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   setTimeout(boot, 4000);
 })();
 </script>
+<script>
+(function(){
+  // Three arrangements the key box was still missing.
+  //
+  // 1. Each kind toggle now carries the mark it controls. The legend explained
+  //    the shapes somewhere else entirely, so the reader had to hold five
+  //    colours in their head on the way between two panels.
+  // 2. Shaded areas gets a master switch, then regime and GM zones each with
+  //    their own switch and their own fold.
+  // 3. Anything a kind toggle owns lives in one container, so the fold takes
+  //    the search box with it. Three separate passes were each creating their
+  //    own .kind-sub, and whichever the caret happened to own was the only one
+  //    that folded.
+  var MARK = {
+    industry:  {c:'#dcae4e', s:'disc'},
+    escape:    {c:'#bd6a4f', s:'diamond'},
+    release:   {c:'#7f9a52', s:'disc'},
+    biosafety: {c:'#5389a4', s:'ring'},
+    clinical:  {c:'#6f74ad', s:'ring'}
+  };
+  function marks(){
+    [].slice.call(document.querySelectorAll('.pj-kind')).forEach(function(cb){
+      var lab=cb.closest('label'); if(!lab || lab.querySelector('.kglyph')) return;
+      var m=MARK[cb.dataset.kind]; if(!m) return;
+      var g=document.createElement('span');
+      g.className='kglyph kg-'+m.s;
+      g.style.setProperty('--kg', m.c);
+      lab.insertBefore(g, cb.nextSibling);
+    });
+  }
+
+  function oneHost(){
+    // Merge every .kind-sub belonging to one kind into the first of them, and
+    // give the caret that container.
+    [].slice.call(document.querySelectorAll('.pj-kind')).forEach(function(cb){
+      var lab=cb.closest('label'); if(!lab||!lab.parentNode) return;
+      var hosts=[], n=lab.nextSibling;
+      while(n){
+        var nx=n.nextSibling;
+        if(n.nodeType===1){
+          if(n.tagName==='LABEL' && n.querySelector('.pj-kind')) break;
+          if(n.classList.contains('kind-sub')) hosts.push(n);
+        }
+        n=nx;
+      }
+      if(hosts.length<2) return;
+      for(var i=1;i<hosts.length;i++){
+        while(hosts[i].firstChild) hosts[0].appendChild(hosts[i].firstChild);
+        hosts[i].remove();
+      }
+      hosts[0].dataset.for=cb.dataset.kind;
+      var car=lab.querySelector('.kind-car');
+      if(car) car.onclick=function(e){
+        e.preventDefault(); e.stopPropagation();
+        var hid=hosts[0].style.display==='none';
+        hosts[0].style.display=hid?'':'none';
+        car.textContent=hid?'\u25be':'\u25b8';
+      };
+    });
+  }
+
+  function shaded(){
+    var regBox=document.getElementById('regBox');
+    var ovBox=document.getElementById('ovBox');
+    if(!regBox||!ovBox||document.querySelector('[data-shaded="all"]')) return false;
+    if(!regBox.querySelector('input')||!ovBox.querySelector('input')) return false;
+
+    function head(txt, key){
+      var l=document.createElement('label');
+      l.className='sh-head';
+      l.innerHTML='<input type="checkbox" data-shaded="'+key+'" checked><b>'+txt+'</b>'
+                + '<span class="kind-car">\u25be</span>';
+      return l;
+    }
+    var all=document.createElement('label');
+    all.className='sh-all';
+    all.innerHTML='<input type="checkbox" data-shaded="all" checked><b>All shaded areas</b>';
+
+    var hReg=head('Regulatory regime','regime');
+    var hZone=head('GM zones','zones');
+    regBox.parentNode.insertBefore(all, regBox);
+    regBox.parentNode.insertBefore(hReg, regBox);
+    ovBox.parentNode.insertBefore(hZone, ovBox);
+    regBox.classList.add('sh-body'); ovBox.classList.add('sh-body');
+
+    // the two plain sub-headings this replaces
+    [].slice.call(document.querySelectorAll('.ot-sub')).forEach(function(n){
+      if(/^\s*(Regulatory regime|GM zones)\s*$/i.test(n.textContent||'')) n.remove();
+    });
+
+    [[hReg,regBox],[hZone,ovBox]].forEach(function(pair){
+      var car=pair[0].querySelector('.kind-car');
+      car.onclick=function(e){
+        e.preventDefault(); e.stopPropagation();
+        var hid=pair[1].style.display==='none';
+        pair[1].style.display=hid?'':'none';
+        car.textContent=hid?'\u25be':'\u25b8';
+      };
+    });
+
+    function setAll(box, on){
+      [].slice.call(box.querySelectorAll('input[type=checkbox]')).forEach(function(c){
+        if(c.checked===on) return;
+        c.checked=on; c.dispatchEvent(new Event('change',{bubbles:true}));
+      });
+    }
+    document.addEventListener('change', function(e){
+      var k=e.target && e.target.dataset && e.target.dataset.shaded;
+      if(!k) return;
+      var on=e.target.checked;
+      if(k==='all'){
+        [hReg,hZone].forEach(function(h){
+          var c=h.querySelector('input');
+          if(c.checked!==on){ c.checked=on; c.dispatchEvent(new Event('change',{bubbles:true})); }
+        });
+        return;
+      }
+      if(k==='regime'){
+        setAll(regBox,on);
+        // The regime types restyle a layer; nothing there removes it, so the
+        // parent switch has to.
+        try{ if(window.pjToggleOverlay) window.pjToggleOverlay('regime', on, null); }catch(_e){}
+      }
+      if(k==='zones') setAll(ovBox,on);
+    });
+    return true;
+  }
+
+  function tidy(){
+    // A bordered container with nothing in it reads as a section whose contents
+    // failed to load. The overlay panel was retired into the key box and left
+    // its box behind.
+    ['.proj-src-box','.psrc-body','.psrc','.pj-otypes','.kind-sub','.ot-foldbody',
+     '.subj-sub','.spec-sub','.proj-size','.proj-time'].forEach(function(sel){
+      [].slice.call(document.querySelectorAll(sel)).forEach(function(n){
+        if(n.querySelector('input,a,button,label')) return;
+        if(String(n.textContent||'').trim()) return;
+        n.remove();
+      });
+    });
+  }
+
+  var done=false;
+  function go(){
+    marks(); oneHost();
+    if(shaded()) done=true;
+    tidy();
+  }
+  var t=setInterval(function(){ go(); if(done){ clearInterval(t); setTimeout(tidy,600); } }, 700);
+  setTimeout(function(){ clearInterval(t); }, 25000);
+})();
+</script>
+<style>
+.kglyph{width:10px;height:10px;flex:0 0 auto;display:inline-block;background:var(--kg);}
+.kg-disc{border-radius:50%;}
+.kg-ring{border-radius:50%;background:transparent;border:2px solid var(--kg);}
+.kg-diamond{transform:rotate(45deg);border-radius:1px;}
+.sh-all,.sh-head{display:flex;align-items:center;gap:6px;font-size:10.5px;
+  color:#9aa8c0;cursor:pointer;margin:4px 0 2px;}
+.sh-all b,.sh-head b{color:#c8d4e8;font-weight:700;}
+.sh-all input,.sh-head input{accent-color:#7fa8cc;width:13px;height:13px;cursor:pointer;}
+.sh-head{margin-left:8px;}
+.sh-body{margin-left:24px !important;}
+</style>
 </body>
 </html>
