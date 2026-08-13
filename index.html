@@ -3502,7 +3502,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   window.pjCountRefresh=count;
 })();
 </script>
-<style>.kcount{color:#7d8ba1;font-size:9.5px;margin-left:3px;}</style>
+<style>.kc-tot{display:block;margin:3px 0 2px 17px;opacity:.7;font-style:italic;}
+.kcount{color:#7d8ba1;font-size:9.5px;margin-left:3px;}</style>
 <script>
 (function(){
   // Release records span the whole life of the industry, so one flat layer is
@@ -3536,17 +3537,24 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       if(!y){unknown++;return;}
       var d=String(Math.floor(y/10)*10); dec[d]=(dec[d]||0)+1;
     });
-    var h='<label><input type="checkbox" data-rel="live" checked><span class="ot-dot" style="background:#7f9a52"></span>Still in date<span class="kcount"> ('+live+')</span></label>'
-         +'<label><input type="checkbox" data-rel="past" checked><span class="ot-dot" style="background:#6b7c96"></span>Granted, since expired<span class="kcount"> ('+past+')</span></label>';
+    // Count plus share. A bare number cannot tell you whether it is most of
+  // the layer or a rounding error.
+  function _pcOf(v, tot){
+    if(!tot) return String(v);
+    var pc = v / tot * 100;
+    return v.toLocaleString() + ' \u00b7 ' + (pc >= 10 ? Math.round(pc) : (pc >= 1 ? pc.toFixed(1) : '<1')) + '%';
+  }
+  var h='<label><input type="checkbox" data-rel="live" checked><span class="ot-dot" style="background:#7f9a52"></span>Still in date<span class="kcount"> ('+_pcOf(live, live+past)+')</span></label>'
+         +'<label><input type="checkbox" data-rel="past" checked><span class="ot-dot" style="background:#6b7c96"></span>Granted, since expired<span class="kcount"> ('+_pcOf(past, live+past)+')</span></label>';
     var keys=Object.keys(dec).sort();
     if(keys.length){
       h+='<div class="ot-head" style="margin-top:7px">Decade granted</div>';
       keys.forEach(function(d){
         relDec.add(d);
-        h+='<label><input type="checkbox" data-dec="'+d+'" checked>'+d+'s<span class="kcount"> ('+dec[d]+')</span></label>';
+        h+='<label><input type="checkbox" data-dec="'+d+'" checked>'+d+'s<span class="kcount"> ('+_pcOf(dec[d], live+past)+')</span></label>';
       });
       if(unknown){ relDec.add('unknown');
-        h+='<label><input type="checkbox" data-dec="unknown" checked>No date given<span class="kcount"> ('+unknown+')</span></label>'; }
+        h+='<label><input type="checkbox" data-dec="unknown" checked>No date given<span class="kcount"> ('+_pcOf(unknown, live+past)+')</span></label>'; }
     }
     // What the release layer is NOT, stated where the counts are read.
     var tot=rel.length;
@@ -4315,15 +4323,10 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
           rs.forEach(function(r){ h += '<div class="tr-rec tr-l1">'+recLine(r, (leaf==='Other'? null : leaf))+'</div>'; });
           return;
         }
-        if(rs.length === 1){
-          // A leaf holding one record IS that record, so no twisty is drawn -
-          // but the leaf name is the record's type, and dropping it silently
-          // threw the type away. It goes on the meta line instead. This matters
-          // most in "Other", where the leaf name is the only surviving trace of
-          // the category the register actually gave it.
-          h += '<div class="tr-rec tr-l1">'+recLine(rs[0], leaf)+'</div>';
-          return;
-        }
+        // Every organism keeps its own heading, even holding one record. Drawing
+        // a lone record as a bare line made rare species disappear into a list
+        // while common ones got a named, countable group - which is backwards,
+        // since the one-off releases are the ones worth being able to find.
         h += '<div class="tr-leaf" data-k="l:'+(cat+'|'+leaf).replace(/"/g,'&quot;')+'">'
            + '<span class="tr-tw">'+(lo?'\u25be':'\u25b8')+'</span>'
            + (leaf==='Other' ? 'Other species \u2014 one or two records each' : leaf)
@@ -4597,7 +4600,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     if(p && p.source) srcs[String(p.source).split(':')[0]] = 1;
     var bits = [];
     if(srcs.aphis){
-      bits.push('<b>APHIS names the states a permit covers, never the sites</b> \u2014 there is no point data to place, only a state. One permit can cover several states, so a record counted here may name others.');
+      bits.push('<b>APHIS names the states a permit covers, never the sites</b> \u2014 there is no point data to place, only a state. One permit can cover several states, so a record counted here may name others. <b>Australia\u2019s OGTR is the only regulator in the world that publishes the actual locations of field trials.</b>');
     }
     if(srcs.bch){
       bits.push('<b>Decisions filed under the Cartagena Protocol apply to a whole country</b> '
@@ -4614,7 +4617,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       bits.push('No register in this dataset publishes coordinates, so there is no point data to place \u2014 only the country, and sometimes the state.');
     }
     if(hier){
-      bits.push('<b>The national dot and the state dots are different records, not the same ones counted twice.</b> Permits name the states they cover and become state dots. Records that belong to the country as a whole \u2014 national decisions, trial sponsors \u2014 name no state and sit on the national dot. Click it again, or any empty part of the map, to put the states away.');
+      bits.push('<b>The national dot and the state dots are different records, not the same ones counted twice</b>; records that belong to the country as a whole \u2014 national decisions, trial sponsors \u2014 name no state and sit on the national dot. Click it again, or any empty part of the map, to put the states away.');
     }
     return bits.join(' ');
   };
@@ -4967,10 +4970,19 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   var AGE={y1:'Last year',y5:'Last five years',y10:'Last ten years',
            older:'Older than ten years',none:'No date given'};
   function rows(map, labels, attr){
-    return Object.keys(labels).filter(function(k){ return map[k]; }).map(function(k){
+    // A count alone does not say whether it is most of the data or a rounding
+    // error. 313 under assessment reads as a lot until you see it is 1% - and
+    // that 1% is the only category where a decision has not yet been made.
+    var keys = Object.keys(labels).filter(function(k){ return map[k]; });
+    var total = 0;
+    keys.forEach(function(k){ total += map[k]; });
+    return keys.map(function(k){
+      var pc = total ? (map[k] / total * 100) : 0;
+      var pcTxt = pc >= 10 ? Math.round(pc) : (pc >= 1 ? pc.toFixed(1) : '<1');
       return '<label><input type="checkbox" data-'+attr+'="'+k+'" checked>'+labels[k]
-           + '<span class="kcount"> ('+map[k].toLocaleString()+')</span></label>';
-    }).join('');
+           + '<span class="kcount"> ('+map[k].toLocaleString()+' \u00b7 '+pcTxt+'%)</span></label>';
+    }).join('')
+    + '<div class="kcount kc-tot">'+total.toLocaleString()+' records in total</div>';
   }
   function build(){
     var host=document.getElementById('relBox');
@@ -5016,6 +5028,78 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   };
   var t=setInterval(build,800);
   setTimeout(function(){ clearInterval(t); },30000);
+})();
+</script>
+<script>
+(function(){
+  // Final key-box arrangement. Each block sits under the toggle it qualifies,
+  // and the shaded areas get the two named sub-headings they were missing -
+  // "Shaded areas" alone did not say that the regime types and the GM zones are
+  // two different kinds of mark on the same map.
+  function head(match){
+    var hs=[].slice.call(document.querySelectorAll('.ot-head, .ot-sub'));
+    for(var i=0;i<hs.length;i++) if(match.test(hs[i].textContent||'')) return hs[i];
+    return null;
+  }
+  function block(h){
+    if(!h) return [];
+    var out=[h], n=h.nextSibling;
+    while(n && !(n.classList && (n.classList.contains('ot-head')||n.classList.contains('ot-sub')))){
+      var nx=n.nextSibling; out.push(n); n=nx;
+    }
+    return out;
+  }
+  function sub(text){
+    var d=document.createElement('div'); d.className='ot-sub'; d.textContent=text; return d;
+  }
+  function moveInto(kind, nodes){
+    var cb=document.querySelector('.pj-kind[data-kind="'+kind+'"]');
+    if(!cb||!nodes.length) return false;
+    var lab=cb.closest('label'); if(!lab||!lab.parentNode) return false;
+    var host=lab.parentNode.querySelector('.kind-sub[data-for="'+kind+'"]');
+    if(!host){
+      host=document.createElement('div'); host.className='kind-sub'; host.dataset.for=kind;
+      lab.parentNode.insertBefore(host, lab.nextSibling);
+    }
+    nodes.forEach(function(n){ if(n) host.appendChild(n); });
+    return true;
+  }
+  function go(){
+    if(document.body.dataset.keyFinal) return;
+    var shaded = head(/^\s*Shaded areas\s*$/i);
+    var regBox = document.getElementById('regBox');
+    var ovBox  = document.getElementById('ovBox');
+    if(!shaded || !regBox || !ovBox) return;
+
+    // two named groups under one heading
+    if(!shaded.parentNode.querySelector('.ot-sub[data-s="reg"]')){
+      var a=sub('Regulatory regime'); a.dataset.s='reg';
+      var b=sub('GM zones');          b.dataset.s='gm';
+      regBox.parentNode.insertBefore(a, regBox);
+      ovBox.parentNode.insertBefore(b, ovBox);
+      // keep them in order: heading, regime, zones
+      a.parentNode.insertBefore(a, shaded.nextSibling);
+      a.parentNode.insertBefore(regBox, a.nextSibling);
+      regBox.parentNode.insertBefore(b, regBox.nextSibling);
+      b.parentNode.insertBefore(ovBox, b.nextSibling);
+    }
+
+    // filing recency belongs with spread & drift
+    moveInto('escape', block(head(/filing recency/i)));
+
+    // the release search box and the scale filter belong under releases
+    var relHost = [];
+    var scale = block(head(/release scale/i));
+    // the search box is #projQ inside .proj-search
+    var q = document.querySelector('.proj-search');
+    if(q) relHost.push(q);
+    relHost = relHost.concat(scale);
+    moveInto('release', relHost);
+
+    document.body.dataset.keyFinal='1';
+  }
+  var t=setInterval(go, 700);
+  setTimeout(function(){ clearInterval(t); }, 25000);
 })();
 </script>
 </body>
