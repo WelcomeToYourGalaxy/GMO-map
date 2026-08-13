@@ -1179,6 +1179,20 @@ function _regimeBoxInner(iso){
     h+='<div class="rgm-lead"><span class="rgm-sw" style="border-color:'+((RC&&RC[hit.regime])||'#7d8f45')+'"></span>'
       +'<b>'+_esc((RL&&RL[hit.regime])||hit.regime)+'</b></div>';
     h+='<div class="rgm-p">'+_esc(R[hit.regime])+'</div>';
+    // A carve-out is an exemption cut out of another scheme, and everything the
+    // exemption does not reach is still decided that way. Saying only
+    // "carve-out" left a reader with no idea what happens to the organisms that
+    // are not carved out - which is most of them.
+    if(hit.regime==='carveout' && hit.base && R && R[hit.base]){
+      h+='<div class="rgm-h2"><span class="rgm-sw" style="border-color:'
+        +((RC&&RC[hit.base])||'#7d8f45')+'"></span>Underneath the carve-out: '
+        +_esc((RL&&RL[hit.base])||hit.base)+'</div>';
+      h+='<div class="rgm-p">The exemption is cut out of this. Everything it does not '
+        +'reach \u2014 a plant carrying a gene from another species, for instance \u2014 '
+        +'still goes through the scheme below, and is assessed, recorded and open to '
+        +'comment in the ordinary way.</div>';
+      h+='<div class="rgm-p">'+_esc(R[hit.base])+'</div>';
+    }
     if(hit.conf_note) h+='<div class="rgm-conf">'
       +(hit.confidence==='thin'?'\u26a0 Not verified. ':'')+_esc(hit.conf_note)+'</div>';
   } else if(hit){
@@ -5334,6 +5348,73 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     });
     return out;
   }
+  // Under "Plants & crops" every one of the seven categories came out with the
+  // same five organisms - Food crops, Vegetables & fruit, Fibre, Trees, Forage -
+  // because those ARE the plant organisms and almost every plant entry touches
+  // several. Repeating an identical list seven times says nothing about the
+  // difference between distribution and germplasm, and reads as a fault.
+  //
+  // So the level is drawn where it varies and once where it does not. If every
+  // category under a subject resolves to the same set of organisms, the
+  // breakdown belongs to the subject and is drawn there a single time; if the
+  // sets differ - Animals splits cleanly into laboratory animals, livestock,
+  // fish and insects by category - it stays per category, where it is telling
+  // the reader something.
+  // Exact set equality was too strict to be any use. Under "Plants & crops"
+  // five of the seven categories resolved to the identical five organisms and
+  // two were missing Trees, so the sets were "different" and the same list went
+  // out seven times anyway. What matters is not whether the sets match to the
+  // letter but whether knowing the category tells you anything about the
+  // organisms - and if every category covers most of the same union, it does
+  // not.
+  //
+  // So: take the union across the subject, and ask how much of it each category
+  // covers. Every category covering at least 70% of the union means the level
+  // is the same list with different numbers on it, and it is drawn once.
+  // Animals fails that test properly - "models" holds laboratory animals and
+  // fish and nothing else - so it keeps its per-category breakdown.
+  // Requiring EVERY category to match was still too strict: under "Plants &
+  // crops" six of the seven categories covered 80-100% of the same five
+  // organisms and one - de-extinction trees, which is food crops and trees and
+  // nothing else - covered 40%, so the whole subject fell back to repeating the
+  // identical list six times to accommodate the one that differed.
+  //
+  // The answer is to do both. Where most categories say the same thing, that
+  // list is drawn once for the subject; and the categories that genuinely
+  // differ keep their own, because those are the ones where the level is
+  // telling the reader something. Under Animals no category reaches the
+  // threshold, so every one keeps its own list and nothing is drawn at the top.
+  var SHARE = 0.7;
+  function organismPlan(subjectKey, tagKeys, bySpec){
+    var union = {}, cover = {}, sets = 0;
+    tagKeys.forEach(function(t){
+      var g = organismsFor(subjectKey, bySpec[t]);
+      if(!g.length) return;
+      sets++;
+      cover[t] = g;
+      for(var q=0;q<g.length;q++) union[g[q]] = 1;
+    });
+    var n = Object.keys(union).length;
+    if(n < 2 || sets < 2) return {shared: false, differs: cover};
+    var agree = 0;
+    Object.keys(cover).forEach(function(t){
+      if(cover[t].length / n >= SHARE) agree++;
+    });
+    if(agree / sets < SHARE) return {shared: false, differs: cover};
+    var differs = {};
+    Object.keys(cover).forEach(function(t){
+      if(cover[t].length / n < SHARE) differs[t] = cover[t];
+    });
+    return {shared: true, differs: differs};
+  }
+  function organismsForSubject(subjectKey, tagKeys, bySpec){
+    var total = {};
+    tagKeys.forEach(function(t){
+      var m = bySpec[t]; if(!m) return;
+      Object.keys(m).forEach(function(g){ total[g] = (total[g]||0) + m[g]; });
+    });
+    return {counts: total, keys: organismsFor(subjectKey, total)};
+  }
   function organismsFor(subjectKey, tagCounts){
     if(!tagCounts) return [];
     var allow = SUBJ_ORGANISM[subjectKey];
@@ -5348,6 +5429,15 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // than once. One tick is one decision about the whole map, so every copy of
   // that box moves together - a checkbox that means different things in two
   // places is the more confusing of the two options.
+  function specRows(keys, counts){
+    return keys.map(function(g){
+      return '<label><input type="checkbox" data-spec="'+g+'" checked>'
+           + '<span class="ot-dot" style="background:'
+           + ((window.PJ_SPEC_COLOUR&&window.PJ_SPEC_COLOUR[g])||'#8a917a')+'"></span>'
+           + ((window.PJ_SPEC_LABEL&&window.PJ_SPEC_LABEL[g])||g)
+           + '<span class="kcount"> ('+counts[g]+')</span></label>';
+    }).join('');
+  }
   function syncSpecies(){
     var on = window.pjSpeciesOn;
     [].slice.call(document.querySelectorAll('input[data-spec]')).forEach(function(cb){
@@ -5380,6 +5470,21 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       lab.appendChild(car);
       var sub=document.createElement('div');
       sub.className='subj-sub'; sub.style.display='none';
+      var plan = organismPlan(k, keys, bySpec);
+      var perCat = !plan.shared;
+      if(plan.shared){
+        var whole = organismsForSubject(k, keys, bySpec);
+        if(whole.keys.length){
+          var head=document.createElement('div');
+          head.className='spec-head';
+          head.textContent='What they work on \u2014 the same across most categories here';
+          sub.appendChild(head);
+          var lvlA=document.createElement('div');
+          lvlA.className='spec-sub spec-wide';
+          lvlA.innerHTML = specRows(whole.keys, whole.counts);
+          sub.appendChild(lvlA);
+        }
+      }
       keys.forEach(function(t){
         var nm=(window.SUBLABEL&&window.SUBLABEL[t])||t.split(':')[1]||t;
         var l=document.createElement('label');
@@ -5387,6 +5492,9 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
           +'<span class="kcount"> ('+tags[t]+')</span>';
         sub.appendChild(l);
 
+        // Drawn once above, unless this category is one of the few that does
+        // not match the rest - in which case its own list is the useful thing.
+        if(!perCat && !plan.differs[t]) return;
         var sp = bySpec[t];
         var gk = organismsFor(k, sp);
         if(!gk.length) return;
@@ -5395,13 +5503,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
         l.appendChild(c2);
         var lvl3=document.createElement('div');
         lvl3.className='spec-sub'; lvl3.style.display='none';
-        lvl3.innerHTML = gk.map(function(g){
-          return '<label><input type="checkbox" data-spec="'+g+'" checked>'
-               + '<span class="ot-dot" style="background:'
-               + ((window.PJ_SPEC_COLOUR&&window.PJ_SPEC_COLOUR[g])||'#8a917a')+'"></span>'
-               + ((window.PJ_SPEC_LABEL&&window.PJ_SPEC_LABEL[g])||g)
-               + '<span class="kcount"> ('+sp[g]+')</span></label>';
-        }).join('');
+        lvl3.innerHTML = specRows(gk, sp);
         sub.appendChild(lvl3);
         c2.onclick=function(e){
           e.preventDefault(); e.stopPropagation();
@@ -5445,6 +5547,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 .spec-sub label{font-size:9.5px;color:#8e9cb4;display:flex;align-items:center;gap:5px;cursor:pointer;}
 .spec-sub input{accent-color:#7fa8cc;width:11px;height:11px;cursor:pointer;}
 .spec-sub .ot-dot{width:8px;height:8px;}
+.spec-head{font-size:9px;color:#7d8ba1;margin:3px 0 1px 6px;line-height:1.4;}
+.spec-wide{margin-left:6px;}
 .subj-sub input{accent-color:#7fa8cc;width:12px;height:12px;cursor:pointer;}
 </style>
 <script>
