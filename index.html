@@ -2499,6 +2499,16 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   // Now they hold something.
   try{window.REGIMED=REGIMED;window.REGIMES=REGIMES;}catch(e){}
   var REGIMEON=new Set(['technique','trait','carveout']);
+  // A carve-out is not a third way of deciding what counts as engineered, so it
+  // no longer gets a third colour. The country is drawn in the colour of the
+  // scheme the exemption is cut out of - technique, for all 42 of them - and the
+  // boundary is dashed to say an exemption exists. One glance now reads: this is
+  // how the law decides, and part of it has been lifted.
+  window.pjRegimeColourKey = function(p){
+    p = p || {};
+    return (p.regime === 'carveout' && p.base) ? p.base : p.regime;
+  };
+  window.pjRegimeDashed = function(p){ return (p && p.regime) === 'carveout'; };
   try{window.REGIMEON=REGIMEON;}catch(e){}
   try{window.pjRestyleOverlays=function(k){ var L=_ovLayers[k];
     if(!L) return;
@@ -2542,7 +2552,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
             map.getPane('pjRegime').style.pointerEvents = 'auto';
           }
         }catch(_e){}
-        var lyr=L.geoJSON(gj,{pane:(k==='regime'?'pjRegime':undefined),interactive:true,style:function(f){ var p=(f&&f.properties)||{}; if(k==='regime'){ var rc=REGIMEC[p.regime]||'#8e7cc3'; if(!REGIMEON.has(p.regime)) return {opacity:0,fillOpacity:0,weight:0,interactive:false}; /* Boundary only. A fill puts a wash over the whole country and everything
+        var lyr=L.geoJSON(gj,{pane:(k==='regime'?'pjRegime':undefined),interactive:true,style:function(f){ var p=(f&&f.properties)||{}; if(k==='regime'){ var _rk=(window.pjRegimeColourKey?window.pjRegimeColourKey(p):p.regime); var rc=REGIMEC[_rk]||REGIMEC[p.regime]||'#8e7cc3'; if(!REGIMEON.has(p.regime)) return {opacity:0,fillOpacity:0,weight:0,interactive:false}; /* Boundary only. A fill puts a wash over the whole country and everything
                     drawn inside it - the dots, the drilled subregions - reads as though it
                     were shaded too. The regime is a fact about the country, so it is drawn
                     on the country's edge. fillOpacity stays barely above zero so the shape
@@ -2552,7 +2562,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
                        shading is not mistaken for a finding. */
                     return {color:rc, weight:(p.confidence==='thin'?1.8:2.8),
                             opacity:(p.confidence==='thin'?0.55:0.95),
-                            dashArray:(p.confidence==='thin'?'4,4':null),
+                            dashArray:((window.pjRegimeDashed && window.pjRegimeDashed(p)) ? '5,4' : (p.confidence==='thin' ? '4,4' : null)),
                             fillColor:rc, fillOpacity:0.012,
                     /* fillOpacity is near zero so the outline reads as an outline, but
                        Leaflet still hit-tests the polygon, so the country stays
@@ -2733,6 +2743,18 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     function say(t){ out.push(t); console.log(t); }
     say('--- pjAudit(' + JSON.stringify(prefix) + ') ---');
     say('records carrying that source: ' + set.length + ' of ' + all.length + ' loaded');
+    // "removed by kind toggle" was true and useless: it did not say which kind
+    // the records are, nor which kinds are switched on, so it read as a fault
+    // in the data when it is usually a box somebody unticked.
+    var kinds = {};
+    for(var _k = 0; _k < set.length; _k++) kinds[pjKind(set[_k])] = 1;
+    say('their kind: ' + Object.keys(kinds).join(', '));
+    say('kinds switched on: ' + Array.prototype.slice.call(pjKinds).join(', '));
+    try{
+      var boxes = [].slice.call(document.querySelectorAll('.pj-kind'))
+        .map(function(c){ return c.dataset.kind + (c.checked ? '' : ' (UNTICKED)'); });
+      say('kind checkboxes: ' + boxes.join(', '));
+    }catch(_e){}
     if(!set.length){
       say('   -> none loaded at all. The gap is upstream of every filter:');
       say('      either the harvester did not write them, or projects.json.gz');
@@ -2816,8 +2838,11 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   // the same small nudge at every zoom, which is what "both visible at all
   // levels" needs. Drawing and hit-testing both go through this, so a dot is
   // clicked where it is seen.
+  // 8px was not enough. A national release marker is drawn at radius 15, so a
+  // dot nudged 11px from its centre still sits inside it. The offset has to
+  // clear the largest glyph, not merely differ from zero.
   var PJ_KIND_NUDGE = {release:[0,0], industry:[0,0], escape:[0,0],
-                       clinical:[8,-8], biosafety:[-8,-8]};
+                       clinical:[22,-14], biosafety:[-22,-14]};
   function pjNudge(g){
     var kd = (g && (g.dk || (g.m && g.m[0] && g.m[0].kd))) || 'release';
     return PJ_KIND_NUDGE[kd] || [0,0];
@@ -3775,7 +3800,9 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // regime rows: read-only colour key, since the whole overlay has one toggle
   var rb=document.getElementById('regBox');
   if(rb && window.REGIMEC && window.REGIMEL && window.REGIMEON){
-    var h='<label class="ot-all"><input type="checkbox" id="regAll" checked> <span>All regimes</span></label>';
+    // "All regimes" used to sit here as well as the parent switch above the
+    // group. Two controls doing one job, and unticking either emptied the layer.
+    var h='';
     ['technique','trait','carveout'].forEach(function(k){
       h+='<label title="'+REGIMEL[k].replace(/"/g,'&quot;')+'">'
         +'<input type="checkbox" data-reg="'+k+'" checked>'
@@ -6309,6 +6336,10 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       var fold=host.querySelector('.ot-fold[data-fold="leaveout"]');
       if(fold){ if(q.nextElementSibling!==fold) fold.parentNode.insertBefore(q,fold); }
       else if(q.parentNode!==host) host.appendChild(q);
+      // Four attempts at placing this box have failed, because a later pass
+      // keeps moving it back out. So stop depending on where it sits: whatever
+      // container it lands in, its visibility follows the release container's.
+      q.style.display = (host.style.display==='none') ? 'none' : '';
     }
     var car=lab.querySelector('.kind-car');
     if(car && car.dataset.bound!=='1'){
@@ -6318,12 +6349,55 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
         var hid=host.style.display==='none';
         host.style.display=hid?'':'none';
         car.textContent=hid?'\u25be':'\u25b8';
+        var qq=document.querySelector('.proj-search');
+        if(qq) qq.style.display=hid?'':'none';
       };
+    }
+  }
+
+  // "Filter by data source" and the caveat fold describe the whole map, not one
+  // kind, so they sit at the top level of the key box. An earlier pass that
+  // swept loose panels into a kind container gave them a child's indent and
+  // made them read as belonging to Releases.
+  function unindent(){
+    ['#projSrcBox','#overlayBox','.psrc'].forEach(function(sel){
+      [].slice.call(document.querySelectorAll(sel)).forEach(function(n){
+        n.style.marginLeft='0'; n.style.paddingLeft='0';
+        var h=n.closest && n.closest('.kind-sub');
+        if(h && h.parentNode) h.parentNode.insertBefore(n, h.nextSibling);
+      });
+    });
+    [].slice.call(document.querySelectorAll('.psrc-head'))
+      .forEach(function(n){ n.style.marginLeft='0'; });
+  }
+
+  // What each layer holds, next to the switch that turns it on. These numbers
+  // were only inside the caveat fold, which is shut by default, so a reader
+  // could tick "Biosafety decisions" with no idea whether that meant nine
+  // countries or ninety.
+  var FIGURE = {biosafety:'49 countries \u00b7 3,072 decisions',
+                clinical:'2,231 sponsors'};
+  function figures(){
+    [].slice.call(document.querySelectorAll('.pj-kind')).forEach(function(cb){
+      var lab=cb.closest('label');
+      if(!lab || lab.querySelector('.kfig')) return;
+      var f=FIGURE[cb.dataset.kind]; if(!f) return;
+      var sp=document.createElement('span'); sp.className='kfig'; sp.textContent=f;
+      lab.appendChild(sp);
+    });
+    var hReg=document.querySelector('[data-shaded="regime"]');
+    if(hReg){
+      var host=hReg.closest('label') || hReg.parentNode;
+      if(host && host.parentNode && !host.parentNode.querySelector('.kfig-reg')){
+        var d2=document.createElement('div'); d2.className='kfig-reg';
+        d2.textContent='183 countries \u00b7 60 firm, 32 likely, 77 from the Protocol, 14 unverified';
+        host.parentNode.insertBefore(d2, host.nextSibling);
+      }
     }
   }
   var doneShaded=false, done=false;
   function go(){
-    marks(); oneHost(); fixRelease();
+    marks(); figures(); oneHost(); fixRelease(); unindent();
     if(!doneShaded && shaded()) doneShaded=true;
     tidy();
   }
@@ -6344,6 +6418,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 .sh-body{margin-left:24px !important;}
 .sh-note{font-size:9.5px;line-height:1.5;color:#8a94a8;margin:2px 0 7px 4px;}
 .sh-note b{color:#a8b6cc;font-weight:700;}
+.kfig{margin-left:6px;font-size:9px;color:#7d8ba1;white-space:nowrap;}
+.kfig-reg{font-size:9px;color:#7d8ba1;margin:1px 0 4px 26px;line-height:1.4;}
 </style>
 </body>
 </html>
