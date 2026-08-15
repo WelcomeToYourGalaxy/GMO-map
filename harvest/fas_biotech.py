@@ -248,6 +248,9 @@ def isaaa_area():
                 out.append({"title": "%s \u2014 %s million hectares of biotech crops"
                                      % (name, format(ha / 1e6, ".1f")),
                             "country": name, "url": u, "date": "",
+                            # ISAAA's own published national total, which IS a
+                            # figure somebody stands behind - unlike the regex
+                            # hits above. Kept under the verified name.
                             "area_candidates": [{"hectares": int(ha), "crop": ""}]})
             break
     return out
@@ -329,7 +332,18 @@ def main():
         text = re.sub(r"<[^>]+>", " ", body)
         hits = read_area(html.unescape(text))
         if hits:
-            rec["area_candidates"] = hits[:6]
+            # Renamed at source. Every attache report quotes the same global
+            # totals alongside its own country's, and read_area cannot tell one
+            # from the other - which is how Argentina, Brazil, Canada, China,
+            # India and South Africa all ended up carrying a byte-identical list
+            # of six numbers. Under the old name the overlay builder took them
+            # for measured areas and painted a national figure onto every region
+            # of every country.
+            #
+            # The key says what they are: pointers into the report, for a human
+            # to check. Nothing downstream can now read them as a figure by
+            # accident, because nothing downstream is looking for this name.
+            rec["area_candidates_unverified"] = hits[:6]
             got += 1
         else:
             missed.append(rec["country"])
@@ -342,7 +356,7 @@ def main():
         print("  no figure found for %d: %s%s"
               % (len(missed), ", ".join(missed[:8]),
                  " …" if len(missed) > 8 else ""))
-    print("  NOTE: area_candidates are unverified regex hits from prose written "
+    print("  NOTE: area_candidates_unverified are regex hits from prose written "
           "by different attaches in different years. Treat them as pointers into "
           "the report, not as the figure. The index is the reliable output.")
 

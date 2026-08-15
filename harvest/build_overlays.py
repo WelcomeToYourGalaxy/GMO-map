@@ -227,7 +227,21 @@ def main():
             if nm:
                 by_name[nm.lower()] = (iso, f)
 
-    def area_layer(src_file, key, note, pick):
+    # scope says what a value on a polygon is a statement about. A row matched
+    # to a named region carries a regional figure; a row matched only to a
+    # country is painted across every one of that country's regions, and the
+    # figure on each is the national one. Without the distinction the map read
+    # Argentina's national maize area off each of 24 provinces as though every
+    # province held it.
+    #
+    # verified says whether the figure is a figure. fas_biotech.py extracts
+    # area_candidates with a regular expression from prose written by different
+    # attaches in different years, and says in its own output that they are
+    # "NOT verified figures" and should be treated as pointers into the report.
+    # This builder was copying them into the layer as the value anyway - which
+    # is how the same six numbers ended up under Argentina, Brazil, Canada,
+    # China, India and South Africa alike.
+    def area_layer(src_file, key, note, pick, verified=True):
         fp = HERE / src_file
         if not fp.exists():
             print("  %-22s no harvest yet (%s)" % (key, src_file))
@@ -250,7 +264,11 @@ def main():
                 if kk not in placed:
                     placed.add(kk)
                     feats.append({"type": "Feature", "geometry": f["geometry"],
-                                  "properties": {"name": k, "iso": iso, "value": val,
+                                  "properties": {"name": k, "iso": iso,
+                                                 "value": val if verified else "",
+                                                 "unverified": ([] if verified
+                                                                else (val or [])),
+                                                 "scope": "region",
                                                  "note": r.get("note", ""),
                                                  "src": r.get("url", "")}})
                 continue
@@ -263,7 +281,15 @@ def main():
                         continue
                     placed.add(kk)
                     feats.append({"type": "Feature", "geometry": f["geometry"],
-                                  "properties": {"name": nm, "iso": iso, "value": val,
+                                  "properties": {"name": nm, "iso": iso,
+                                                 "value": val if verified else "",
+                                                 "unverified": ([] if verified
+                                                                else (val or [])),
+                                                 # painted across the country:
+                                                 # the figure is national, and
+                                                 # this polygon is one region of
+                                                 # the country it belongs to.
+                                                 "scope": "country",
                                                  "note": r.get("note", ""),
                                                  "src": r.get("url", "")}})
             else:
@@ -275,12 +301,22 @@ def main():
         print("  %-22s %d polygons, %d rows unplaced" % (key, len(feats), missed))
 
     area_layer("fas_biotech.json", "cultivation",
-               "Hectares of engineered crops by country. Source is the USDA FAS Agricultural "
+               "Where the USDA FAS Agricultural Biotechnology Annual reports engineered crops "
+               "being planted. The shading marks the countries the reports name, not an "
+               "area measured for each region. Hectare figures are carried as unverified "
+               "pointers into the report rather than as the layer's value: they are read "
+               "out of report prose by pattern, and the same figures recur across "
+               "countries because attache reports quote the same global totals. "
+               "Original source note: hectares of engineered crops by country, from the USDA FAS Agricultural "
                "Biotechnology Annual where it can be reached, and the ISAAA Global Status brief "
                "otherwise - ISAAA is an industry body and its framing is promotional, but the "
                "hectarage is the figure everyone including its critics cites, and each record "
                "names which source it came from. Country level: neither source gives a field.",
-               lambda r: (r.get("country"), r.get("area_candidates")))
+               # area_candidates now holds only ISAAA's published national
+               # totals - a figure somebody stands behind. The regex hits moved
+               # to area_candidates_unverified and are not read here at all.
+               lambda r: (r.get("country"), r.get("area_candidates")),
+               verified=False)
     area_layer("gmofree_zones.json", "gmofree",
                "Regions and municipalities that have declared themselves GMO-free, from the GMO "
                "Free Regions network. Where the declaration is municipal the whole country is "
