@@ -50,6 +50,13 @@ jobs:
             timeout 8m python3 harvest/gmofree_zones.py     || echo "!! gmo-free zones failed - continuing"
             timeout 8m python3 harvest/fas_biotech.py       || echo "!! fas biotech failed - continuing"
             timeout 6m python3 harvest/fertility_clinics.py || echo "!! fertility clinics failed - continuing"
+            timeout 15m python3 harvest/cdc_art_clinics.py || echo "!! cdc art clinics failed - continuing"
+            timeout 12m python3 harvest/osm_facilities.py || echo "!! osm facilities failed - continuing"
+            timeout 20m python3 harvest/aaalac_facilities.py || echo "!! aaalac failed - continuing"
+            timeout 12m python3 harvest/hfea_clinics.py || echo "!! hfea clinics failed - continuing"
+            timeout 15m python3 harvest/aphis_animal_facilities.py || echo "!! aphis animal facilities failed - continuing"
+            timeout 20m python3 harvest/china_nhc_art.py || echo "!! china nhc failed - continuing"
+            timeout 25m python3 harvest/ccac_redlara.py || echo "!! ccac/redlara failed - continuing"
             timeout 6m python3 harvest/animal_testing_facilities.py || echo "!! animal testing facilities failed - continuing"
             timeout 18m python3 harvest/bch_decisions.py    || echo "!! bch decisions failed - continuing"
             timeout 8m python3 harvest/clinical_sponsors.py || echo "!! clinical sponsors failed - continuing"
@@ -70,6 +77,11 @@ jobs:
                      harvest/bch_decisions.json harvest/gmofree_zones.json harvest/fas_biotech.json \
                      harvest/clinical_sponsors.json \
                      harvest/fertility_clinics.json \
+                     harvest/cdc_art_clinics.json harvest/osm_facilities.json \
+                     harvest/aaalac_facilities.json harvest/hfea_clinics.json \
+                     harvest/aphis_animal_facilities.json harvest/china_nhc_art.json \
+                     harvest/ccac_redlara.json \
+                     harvest/_geocache.json \
                      harvest/animal_testing_facilities.json \
                      overlays/trials.geojson overlays/regime.geojson overlays/cultivation.geojson overlays/gmofree.geojson \
                      overlays/incidents.geojson; do
