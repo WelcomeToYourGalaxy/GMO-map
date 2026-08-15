@@ -97,12 +97,22 @@ def newest_dataset():
 
 def _first(row, *names):
     """Socrata lower-cases and underscores column names, and the ART tables have
-    changed their spelling between years. Ask for every spelling seen rather
-    than guessing one."""
+    changed their spelling between years, so several spellings are tried.
+
+    If none of them match, the last resort is to find any column whose name
+    CONTAINS the words asked for. The 2022 table used spellings none of the
+    guesses covered, and the harvester dropped all 5,000 rows for want of a
+    name - a silent total loss that looked like an empty register."""
     for n in names:
         for k in (n, n.lower(), n.replace(" ", "_").lower()):
             if row.get(k) not in (None, ""):
                 return str(row[k]).strip()
+    for n in names:
+        want = [w for w in re.split(r"[^a-z]+", n.lower()) if w]
+        for k, v in row.items():
+            kl = str(k).lower()
+            if v not in (None, "") and all(w in kl for w in want):
+                return str(v).strip()
     return ""
 
 
@@ -148,13 +158,21 @@ def main():
         print("  empty response — nothing written", file=sys.stderr)
         return
 
+    # What the table actually calls its columns, printed once. Guessing at
+    # column names and dropping every row in silence is the failure this line
+    # exists to prevent happening twice.
+    print("  columns: %s" % ", ".join(sorted(rows[0].keys())))
+
     cache = load_cache()
     out, precise, approx, dropped = [], 0, 0, 0
     for r in rows:
-        nm = _first(r, "clinicname", "clinic_name", "facilityname")
-        city = _first(r, "clinicaddress2", "city", "clinic_city")
-        state = _first(r, "clinicstate", "state", "clinic_state")[:2].upper()
-        street = _first(r, "clinicaddress1", "address1", "clinic_address")
+        nm = _first(r, "clinicname", "clinic_name", "facilityname",
+                    "medicalofficename", "name")
+        city = _first(r, "clinicaddress2", "city", "clinic_city", "cityname")
+        state = _first(r, "clinicstate", "state", "clinic_state",
+                       "statename", "stateabbreviation")[:2].upper()
+        street = _first(r, "clinicaddress1", "address1", "clinic_address",
+                        "address", "streetaddress")
         if not nm:
             dropped += 1
             continue
@@ -218,6 +236,11 @@ def main():
     if dropped:
         print("  %d rows had no name or no usable state and were dropped rather "
               "than placed somewhere plausible" % dropped)
+    if dropped and not out:
+        # Everything dropped is never a fact about the register.
+        print("  EVERY row was dropped. The column names above do not match what "
+              "this harvester asks for. Nothing written.", file=sys.stderr)
+        return
 
     if dry:
         print("dry run — nothing written")

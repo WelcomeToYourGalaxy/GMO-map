@@ -30,7 +30,12 @@ OUT = HERE / "ccac_redlara.json"
 CACHE = HERE / "_geocache.json"
 
 CCAC = "https://ccac.ca/en/certification/certified-institutions.html"
-REDLARA_LIST = "https://redlara.com/quem_somos_centros.asp"
+# The list is reached from quem_somos.asp; the guessed filename 404s. Both
+# are tried, newest guess first, because a site that renames one page
+# usually keeps the other.
+REDLARA_LIST = "https://redlara.com/quem_somos.asp"
+REDLARA_ALT = ["https://redlara.com/centros.asp",
+               "https://redlara.com/quem_somos_centros.asp"]
 PHOTON = "https://photon.komoot.io/api/?limit=1&q="
 
 COUNTRY_PT = {
@@ -257,9 +262,21 @@ def main():
         # The site is windows-1252, not UTF-8. Decoded as UTF-8 it throws;
         # decoded as UTF-8 with errors ignored it silently turns Ginecolog\u00eda
         # into mojibake on every Spanish-language centre name.
-        html = (pathlib.Path(f).read_bytes().decode("cp1252", "replace")
-                if f else get(REDLARA_LIST, encoding="cp1252"))
-        centres = parse_redlara_list(html)
+        centres = []
+        if f:
+            centres = parse_redlara_list(
+                pathlib.Path(f).read_bytes().decode("cp1252", "replace"))
+        else:
+            for u in [REDLARA_LIST] + REDLARA_ALT:
+                try:
+                    got = parse_redlara_list(get(u, encoding="cp1252"))
+                except Exception as e:
+                    print("  %s: %s" % (u.split("/")[-1], e))
+                    continue
+                if len(got) > 20:
+                    print("  centre list found at %s" % u)
+                    centres = got
+                    break
         print("  REDLARA: %d accredited centres" % len(centres))
         exact_n = 0
         for c in centres:

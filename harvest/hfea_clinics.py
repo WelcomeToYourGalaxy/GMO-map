@@ -36,7 +36,10 @@ HERE = pathlib.Path(__file__).resolve().parent
 OUT = HERE / "hfea_clinics.json"
 CACHE = HERE / "_geocache.json"
 
-BASE = "https://www.hfea.gov.uk/choose-a-fertility-clinic/all-clinics/"
+# Read off the saved page rather than guessed at. The letter is a query
+# parameter on one path, not a path segment: every one of the 26 guesses
+# returned 404 and the harvester dutifully reported 26 gaps.
+BASE = "https://www.hfea.gov.uk/choose-a-fertility-clinic/search/all-clinics/?alpha="
 LETTERS = "abcdefghijklmnopqrstuvwxyz"
 
 # A UK postcode resolves to a street, free and without a key. Better than a
@@ -131,13 +134,18 @@ def main():
     else:
         for ch in LETTERS:
             try:
-                pages.append(get(BASE + ch + "/"))
+                pages.append(get(BASE + ch))
             except Exception as e:
                 # One letter missing is a gap of a few clinics, not a reason to
                 # write nothing. It is printed so the gap is visible.
                 print("  letter %s unreachable (%s)" % (ch, e), file=sys.stderr)
             time.sleep(1)
 
+    if not pages:
+        print("  every letter page failed. That is the URL being wrong, not the "
+              "register being empty - check BASE. Nothing written.",
+              file=sys.stderr)
+        return
     rows = []
     for p in pages:
         rows += parse(p)
