@@ -43,7 +43,8 @@ jobs:
           # is a normal condition, not a build failure.
           for i in 1 2 3; do
             timeout 5m python3 harvest/cfia_approvals.py || echo "!! cfia harvester failed - continuing"
-            timeout 2m python3 harvest/build_industry_points.py || echo "!! industry points failed - continuing"
+            timeout 2m python3 harvest/merge_industry.py || echo "!! merge_industry failed - continuing"
+            python3 harvest/build_industry_points.py || echo "!! industry points failed - continuing"
             timeout 4m python3 harvest/contamination_register.py || echo "!! contamination register failed - continuing"
             timeout 5m python3 harvest/animal_facilities.py || echo "!! animal facilities failed - continuing"
             timeout 12m python3 harvest/ogtr_trials.py || echo "!! ogtr trials failed - continuing"
@@ -58,6 +59,9 @@ jobs:
             timeout 20m python3 harvest/china_nhc_art.py || echo "!! china nhc failed - continuing"
             timeout 25m python3 harvest/ccac_redlara.py || echo "!! ccac/redlara failed - continuing"
             timeout 30m python3 harvest/india_nartsr.py || echo "!! india nartsr failed - continuing"
+            timeout 8m python3 harvest/treaties.py || echo "!! treaties failed - continuing"
+            # last: it reads what the facility harvesters wrote
+            timeout 5m python3 harvest/ownership.py || echo "!! ownership failed - continuing"
             timeout 6m python3 harvest/animal_testing_facilities.py || echo "!! animal testing facilities failed - continuing"
             timeout 18m python3 harvest/bch_decisions.py    || echo "!! bch decisions failed - continuing"
             timeout 8m python3 harvest/clinical_sponsors.py || echo "!! clinical sponsors failed - continuing"
@@ -82,6 +86,7 @@ jobs:
                      harvest/aaalac_facilities.json harvest/hfea_clinics.json \
                      harvest/aphis_animal_facilities.json harvest/china_nhc_art.json \
                      harvest/ccac_redlara.json harvest/india_nartsr.json \
+                     overlays/treaties.geojson harvest/ownership.json \
                      harvest/_geocache.json \
                      harvest/animal_testing_facilities.json \
                      overlays/trials.geojson overlays/regime.geojson overlays/cultivation.geojson overlays/gmofree.geojson \
