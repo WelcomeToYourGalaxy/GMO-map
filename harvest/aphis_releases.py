@@ -376,6 +376,15 @@ def main():
               ("animal_facilities.json", "projects", None, None, None),
               ("ogtr_trials.json", "projects", None, None, None),
               ("bch_decisions.json", "projects", None, None, None),
+              # Clinic-level files. These already arrive in the map's shape and
+              # carry their own tags, so they pass through unconverted.
+              ("cdc_art_clinics.json", "projects", None, None, None),
+              ("osm_facilities.json", "projects", None, None, None),
+              ("aaalac_facilities.json", "projects", None, None, None),
+              ("hfea_clinics.json", "projects", None, None, None),
+              ("aphis_animal_facilities.json", "projects", None, None, None),
+              ("china_nhc_art.json", "projects", None, None, None),
+              ("ccac_redlara.json", "projects", None, None, None),
               ("fertility_clinics.json", "clinics", "industry:repro",
                ["repro:clinics"], ["human"]),
               ("animal_testing_facilities.json", "facilities", "industry:animals",
@@ -394,7 +403,7 @@ def main():
                 "state": row.get("country") or row.get("iso") or "",
                 # A national register has no address. Saying so is the whole
                 # difference between a centroid and a place.
-                "precise": False, "impact": 2,
+                "precise": False, "addr_grade": "centroid", "impact": 2,
                 "company": "", "size": "", "status": "Register",
                 "phase": "post", "date": "", "otype": "registry",
                 "tags": list(tags or []), "species": list(species or []),
