@@ -1,0 +1,70 @@
+name: Harvest facility registers
+
+# Split out of releases.yml. That workflow's step timeouts summed to 257 minutes
+# against an 86-minute job ceiling, so the run was cancelled partway through and
+# NOTHING was committed - every harvester that had already succeeded had its
+# work thrown away with the ones that had not. Splitting is the fix rather than
+# raising the ceiling: these registers change a few times a year, and there is
+# no reason to re-read 1,140 AAALAC organisations every week to find out that a
+# US release permit was issued.
+
+on:
+  schedule:
+    - cron: '17 4 1 * *'          # monthly, on the 1st
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: facilities
+  cancel-in-progress: false
+
+jobs:
+  facilities:
+    runs-on: ubuntu-latest
+    # Comfortably above the sum of the step timeouts below, so a slow source
+    # cannot cost the run everything the fast ones already produced.
+    timeout-minutes: 200
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Harvest and commit
+        run: |
+          set +e
+            timeout 5m python3 harvest/animal_facilities.py || echo "!! animal facilities failed - continuing"
+            timeout 6m python3 harvest/fertility_clinics.py || echo "!! fertility clinics failed - continuing"
+            timeout 15m python3 harvest/cdc_art_clinics.py || echo "!! cdc art clinics failed - continuing"
+            timeout 12m python3 harvest/osm_facilities.py || echo "!! osm facilities failed - continuing"
+            timeout 20m python3 harvest/aaalac_facilities.py || echo "!! aaalac failed - continuing"
+            timeout 12m python3 harvest/hfea_clinics.py || echo "!! hfea clinics failed - continuing"
+            timeout 15m python3 harvest/aphis_animal_facilities.py || echo "!! aphis animal facilities failed - continuing"
+            timeout 20m python3 harvest/china_nhc_art.py || echo "!! china nhc failed - continuing"
+            timeout 25m python3 harvest/ccac_redlara.py || echo "!! ccac/redlara failed - continuing"
+            timeout 30m python3 harvest/india_nartsr.py || echo "!! india nartsr failed - continuing"
+            timeout 5m python3 harvest/ownership.py || echo "!! ownership failed - continuing"
+            timeout 6m python3 harvest/animal_testing_facilities.py || echo "!! animal testing facilities failed - continuing"
+          # ownership reads what the harvesters above wrote, so it runs last.
+          timeout 5m python3 harvest/ownership.py || echo "!! ownership failed - continuing"
+          # and the merge that folds them into projects.json.gz
+          timeout 8m python3 harvest/aphis_releases.py --merge-only || \
+            timeout 8m python3 harvest/aphis_releases.py || \
+            echo "!! merge failed - continuing"
+          set -e
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A --ignore-errors harvest/ projects.json projects.json.gz overlays/
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+          else
+            git commit -m "facilities: refresh $(date -u +%Y-%m-%d)"
+            for i in 1 2 3; do
+              git pull --rebase --autostash && git push && exit 0
+              sleep 5
+            done
+            echo "push failed after 3 attempts"; exit 1
+          fi
