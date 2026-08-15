@@ -1176,22 +1176,29 @@ function _regimeBoxInner(iso){
   h+='<div class="rgm-box">';
   h+='<div class="rgm-h">What the law here counts as engineered</div>';
   if(hit && R && R[hit.regime]){
-    h+='<div class="rgm-lead"><span class="rgm-sw" style="border-color:'+((RC&&RC[hit.regime])||'#7d8f45')+'"></span>'
-      +'<b>'+_esc((RL&&RL[hit.regime])||hit.regime)+'</b></div>';
-    h+='<div class="rgm-p">'+_esc(R[hit.regime])+'</div>';
+    // Carve-out is not a third way of deciding what counts as engineered, so it
+    // no longer heads the box as though it were one. The heading is the scheme
+    // the country actually runs - technique or trait - and the exemption is a
+    // qualifier under it. A reader who saw only "Carve-out" was told what the
+    // law had stopped doing and never what it does.
+    var _base = (hit.regime === 'carveout' && hit.base) ? hit.base : hit.regime;
+    var _carve = (hit.regime === 'carveout');
+    h+='<div class="rgm-lead"><span class="rgm-sw" style="border-color:'+((RC&&RC[_base])||'#7d8f45')+'"></span>'
+      +'<b>'+_esc((RL&&RL[_base])||_base)+'</b>'
+      +(_carve?'<span class="rgm-tag">with a carve-out</span>':'')+'</div>';
+    h+='<div class="rgm-p">'+_esc(R[_base]||R[hit.regime])+'</div>';
     // A carve-out is an exemption cut out of another scheme, and everything the
     // exemption does not reach is still decided that way. Saying only
     // "carve-out" left a reader with no idea what happens to the organisms that
     // are not carved out - which is most of them.
-    if(hit.regime==='carveout' && hit.base && R && R[hit.base]){
+    if(_carve && R && R.carveout){
       h+='<div class="rgm-h2"><span class="rgm-sw" style="border-color:'
-        +((RC&&RC[hit.base])||'#7d8f45')+'"></span>Underneath the carve-out: '
-        +_esc((RL&&RL[hit.base])||hit.base)+'</div>';
-      h+='<div class="rgm-p">The exemption is cut out of this. Everything it does not '
-        +'reach \u2014 a plant carrying a gene from another species, for instance \u2014 '
-        +'still goes through the scheme below, and is assessed, recorded and open to '
-        +'comment in the ordinary way.</div>';
-      h+='<div class="rgm-p">'+_esc(R[hit.base])+'</div>';
+        +((RC&&RC.carveout)||'#b08d3e')+'"></span>The carve-out</div>';
+      h+='<div class="rgm-p">'+_esc(R.carveout)+'</div>';
+      h+='<div class="rgm-p">Everything the exemption does not reach \u2014 a plant '
+        +'carrying a gene from another species, for instance \u2014 still goes through '
+        +'the scheme above, and is assessed, recorded and open to comment in the '
+        +'ordinary way.</div>';
     }
     if(hit.conf_note) h+='<div class="rgm-conf">'
       +(hit.confidence==='thin'?'\u26a0 Not verified. ':'')+_esc(hit.conf_note)+'</div>';
@@ -1230,8 +1237,7 @@ function _regimeBoxInner(iso){
       h+='<div class="rgm-p">'+_esc(String(dec.size||'decisions filed'))
         +(dec.status?(' \u2014 '+_esc(String(dec.status))):'')+'. '
         +'A decision is a ruling on whether a living modified organism may be used, '
-        +'imported or released here. It is not itself a release, and this map counts '
-        +'it separately from one.</div>';
+        +'imported or released here.</div>';
       if(dec.url) h+='<div class="rgm-p"><a href="'+_esc(dec.url)
         +'" target="_blank" rel="noopener">the country\u2019s filing</a></div>';
     } else if(recs.length){
@@ -1253,7 +1259,7 @@ function _regimeBoxInner(iso){
     h+='<div class="rgm-h2"><span class="rgm-ar" style="background:#4fb3c9"></span>GMO-free declarations</div>';
     h+='<div class="rgm-p">'+free.length+' region'+(free.length===1?'':'s')+' recorded by the GMO Free '
       +'Regions network'+(show?': '+_esc(show):'')+'. Declarations vary in legal force \u2014 some bind, '
-      +'some state an intention \u2014 and this map does not hold which is which for each one.</div>';
+      +'some state an intention.</div>';
     var fn=_ovUsableNote(free[0].note);
     if(fn) h+='<div class="rgm-p">'+_esc(fn)+'</div>';
     else h+='<div class="rgm-conf">The crawl of the source page did not come back as readable text, '
@@ -2481,7 +2487,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   var REGIMEC={technique:"#4a5d2f",trait:"#7d8f45",carveout:"#b08d3e"};
   var REGIMEL={technique:"Technique-based — regulated by how it was made",
     trait:"Trait-based — regulated by what the organism is",
-    carveout:"Carve-out — a class moved outside registration entirely"};
+    carveout:"… with a carve-out — a class moved outside registration entirely"};
   // REGIMED is declared with var further down. Hoisting makes the name exist
   // here and hold undefined, so exporting it at this point published undefined
   // and every popup branch reading window.REGIMED failed its own guard - the
@@ -2600,8 +2606,6 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
                   })()
                 : nm;
               return '<b>'+String(title)+'</b>'
-                   + '<div style="font-size:10px;opacity:.75;margin-top:2px">'
-                   + 'area, not a project point</div>'
                    + (body || '<div style="font-size:10.5px;color:#c3cee0;margin-top:8px">'
                             + 'Nothing further is held about this area yet.</div>');
             }); }});
@@ -2644,6 +2648,39 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       cb.addEventListener("change",function(){ var st=box.querySelector('.ov-status[data-ovs="'+cb.dataset.ov+'"]'); pjToggleOverlay(cb.dataset.ov, cb.checked, st); });
     });
   }
+  // precise/not-precise was one bit doing three jobs, and it hid the failure
+  // that costs a map like this its credibility: a registry address is very
+  // often administrative rather than operational. A university's animal-welfare
+  // registration gives the main campus; the vivarium may be in another building
+  // or another city. A clinic chain's licence sits with the corporate
+  // registrant. Geocode either naively and you get a confident pin on an
+  // administration block - wrong, and wrong in a way nothing on screen admits.
+  //
+  // addr_grade says which of the three a point is, so a reader can tell an
+  // address somebody stood at from an address on a form.
+  var ADDR_GRADE = {
+    operational: ['\u25c9 At the site',
+      'The published address is where the work is done.'],
+    administrative: ['\u25cb Registered address',
+      'This is the address on the registration, which for a university or a '
+      + 'clinic group is usually a head office. The work may be in another '
+      + 'building or another city.'],
+    centroid: ['\u2248 Country or region only',
+      'No address was published, so this sits at the centre of the area. It is '
+      + 'not a location.'],
+    mapped: ['\u25c9 Mapped position',
+      'Somebody mapped this on the ground or from imagery, rather than it '
+      + 'coming from a register.']
+  };
+  function _addrGrade(q){
+    var g = q && q.addr_grade;
+    if(!g) g = (q && q.precise === false) ? 'centroid' : null;
+    if(!g || !ADDR_GRADE[g]) return '';
+    if(g === 'operational' || g === 'mapped') return '';   // the quiet, good case
+    var a = ADDR_GRADE[g];
+    return '<div class="approx-badge">' + a[0] + ' \u2014 ' + a[1] + '</div>';
+  }
+  try{ window.pjAddrGrade=_addrGrade; }catch(e){}
   function pjIcon(impact, precise){
     var c=PC[impact]||"#13202e";
     if(precise===false){
@@ -3076,7 +3113,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       dl=(dd>=0)?'<div class="pj-dl open">Comments close '+q.deadline+' \u2014 '+(dd===0?'today':dd+' day'+(dd===1?'':'s')+' left')+'</div>'
                 :'<div class="pj-dl shut">Comment window closed '+q.deadline+'</div>'; }
     return '<div class="pjm-pop">'
-      +(q.precise===false?'<div class="approx-badge">\u2248 Approximate \u2014 area/region level; open source for exact site</div>':'')
+      +_addrGrade(q)
       +dl+'<b>'+pjLabel(q)+'</b>'+(pjIsGeneric(pjNameClean(q.name),q.type)?'<div class="d" style="opacity:.72">Source feed gave no usable title \u2014 open the source for the official description.</div>':'')+'<br><span class="t">'+(q.type||'project')+'</span>'+(q.state||'')
       +(q.date?'<div class="d pj-date">Filed / dated '+q.date+pjAge(q.date)+'</div>':'')
       +(q.company?' \u00b7 '+q.company:'')
@@ -3803,6 +3840,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     // "All regimes" used to sit here as well as the parent switch above the
     // group. Two controls doing one job, and unticking either emptied the layer.
     var h='';
+    // Two regimes and one qualifier. Listing carve-out beside the other two
+    // made it read as a third way a country can decide, which it is not.
     ['technique','trait','carveout'].forEach(function(k){
       h+='<label title="'+REGIMEL[k].replace(/"/g,'&quot;')+'">'
         +'<input type="checkbox" data-reg="'+k+'" checked>'
@@ -4962,6 +5001,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   display:flex;align-items:center;gap:6px;}
 .rgm-lead{font-size:11.5px;color:#dfe6f0;display:flex;align-items:center;gap:6px;margin:0 0 5px;}
 .rgm-sw{width:14px;height:8px;border:2px solid #7d8f45;border-radius:2px;flex:0 0 auto;}
+.rgm-tag{margin-left:6px;font-size:9px;color:#b08d3e;border:1px solid rgba(176,141,62,.5);border-radius:3px;padding:0 4px;white-space:nowrap;}
 .rgm-ar{width:14px;height:8px;border-radius:2px;opacity:.6;flex:0 0 auto;}
 .rgm-p{font-size:10.5px;line-height:1.55;color:#c3cee0;margin:0 0 5px;}
 .rgm-p a{color:#9dc0dd;}
