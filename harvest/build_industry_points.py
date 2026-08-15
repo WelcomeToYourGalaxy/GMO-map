@@ -667,6 +667,11 @@ def main():
             # An entry with no organism gets an empty list, not a guess. A
             # patent register and an index fund work on no organism at all.
             "species": SPECIES.get(x["name"], []),
+            # A corporate address is a registered office. Bayer's entry is
+            # Monheim am Rhein because that is where the company is registered,
+            # not because that is where the work is done, and the map should say
+            # so rather than let a street number imply a laboratory.
+            "addr_grade": "administrative",
             "url": x["url"],
             "desc": x["desc"],
             "checked": x.get("checked", ""),
