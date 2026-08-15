@@ -57,6 +57,7 @@ jobs:
             timeout 15m python3 harvest/aphis_animal_facilities.py || echo "!! aphis animal facilities failed - continuing"
             timeout 20m python3 harvest/china_nhc_art.py || echo "!! china nhc failed - continuing"
             timeout 25m python3 harvest/ccac_redlara.py || echo "!! ccac/redlara failed - continuing"
+            timeout 30m python3 harvest/india_nartsr.py || echo "!! india nartsr failed - continuing"
             timeout 6m python3 harvest/animal_testing_facilities.py || echo "!! animal testing facilities failed - continuing"
             timeout 18m python3 harvest/bch_decisions.py    || echo "!! bch decisions failed - continuing"
             timeout 8m python3 harvest/clinical_sponsors.py || echo "!! clinical sponsors failed - continuing"
@@ -80,7 +81,7 @@ jobs:
                      harvest/cdc_art_clinics.json harvest/osm_facilities.json \
                      harvest/aaalac_facilities.json harvest/hfea_clinics.json \
                      harvest/aphis_animal_facilities.json harvest/china_nhc_art.json \
-                     harvest/ccac_redlara.json \
+                     harvest/ccac_redlara.json harvest/india_nartsr.json \
                      harvest/_geocache.json \
                      harvest/animal_testing_facilities.json \
                      overlays/trials.geojson overlays/regime.geojson overlays/cultivation.geojson overlays/gmofree.geojson \
