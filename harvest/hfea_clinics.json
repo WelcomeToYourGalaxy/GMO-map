@@ -1,33 +1,7 @@
 {
- "generated": "2026-08-15",
+ "generated": "2026-08-16",
  "note": "HFEA licensed fertility clinics, from the A-Z listing. Positions from the published postcode.",
  "projects": [
-  {
-   "name": "Abbey Fertility Clinic",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 53.24675,
-   "lng": -2.93282,
-   "state": "6 Telford Court, Chestergates Business Park, Chester, CH1 6LT",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "Satellite clinic to Manchester Fertility",
-   "size": "",
-   "status": "HFEA licensed — satellite",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to Manchester Fertility. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
   {
    "name": "Aberdeen Fertility Centre",
    "source": "industry:repro",
@@ -81,32 +55,6 @@
    "checked": ""
   },
   {
-   "name": "Adrian Lower",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 51.52107,
-   "lng": -0.14908,
-   "state": "9, Upper Wimpole Street, London, W1G 6LJ",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "Satellite clinic to Care Fertility London",
-   "size": "",
-   "status": "HFEA licensed — satellite",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to Care Fertility London. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
    "name": "Agora Clinic Brighton",
    "source": "industry:repro",
    "type": "Fertility clinic",
@@ -130,84 +78,6 @@
    ],
    "url": "www.agoraclinic.co.uk",
    "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "Agora Clinic Eastbourne",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 50.81968,
-   "lng": 0.26821,
-   "state": "J7, J8 Franklin House, Chaucer Business Park, Dittons Road, Polegate, BN26 6JF",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "HFEA licensed",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "agoraclinic.co.uk/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "Agora Clinic Worthing",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 50.8066,
-   "lng": -0.40442,
-   "state": "Phoenix Medical Centre, Lime Tree Surgery Goring, 4 The Waterfront, Worthing, BN124FD",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "Satellite clinic to Agora Clinic Brighton",
-   "size": "",
-   "status": "HFEA licensed — satellite",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to Agora Clinic Brighton. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "Alma Fertility",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 51.48151,
-   "lng": -0.14544,
-   "state": "LIPS Healthcare, Battersea Power Station, Level 1, Turbine Hall B, London, SW11 8DD",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "Satellite clinic to The Lister Fertility Clinic",
-   "size": "",
-   "status": "HFEA licensed — satellite",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to The Lister Fertility Clinic. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
    "checked": ""
   },
   {
@@ -341,58 +211,6 @@
    "checked": ""
   },
   {
-   "name": "Assisted Reproduction Unit, Jersey General Hospital",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 54.0,
-   "lng": -2.55,
-   "state": "Assisted Reproductive Unit, Enid Quenault Health and Wellbeing Centre, Les Quennevais Park, La Route des Quennevais, St.",
-   "precise": false,
-   "addr_grade": "centroid",
-   "impact": 2,
-   "company": "Satellite clinic to The Lister Fertility Clinic",
-   "size": "",
-   "status": "HFEA licensed — satellite",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to The Lister Fertility Clinic. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated. The postcode did not resolve, so this point sits at the centre of the country rather than at the clinic.",
-   "checked": ""
-  },
-  {
-   "name": "Aurora Reproductive Healthcare",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 53.39728,
-   "lng": -2.21583,
-   "state": "The Alexandra Hospital, Mill Lane, Cheadle, SK8 2PX",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "Satellite clinic to Manchester Fertility",
-   "size": "",
-   "status": "HFEA licensed — satellite",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to Manchester Fertility. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
    "name": "Avenues",
    "source": "industry:repro",
    "type": "Fertility clinic",
@@ -416,32 +234,6 @@
    ],
    "url": "avenues.life",
    "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "Avenues Cambridge",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 52.19715,
-   "lng": 0.12951,
-   "state": "19E, Gillvray Health, Hills Road, Cambridge, CB2 1NW",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "Satellite clinic to Avenues",
-   "size": "",
-   "status": "HFEA licensed — satellite",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to Avenues. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
    "checked": ""
   },
   {
@@ -2213,12 +2005,12 @@
    "checked": ""
   },
   {
-   "name": "Evewell Harley Street",
+   "name": "Reproductive Genetics Institute",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 51.51903,
-   "lng": -0.14749,
-   "state": "61 Harley Street, London, W1G 8QU",
+   "lat": 51.52085,
+   "lng": -0.14689,
+   "state": "32A, Weymouth Street, London, W1G 7BX, United Kingdom",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -2234,17 +2026,17 @@
    "species": [
     "human"
    ],
-   "url": "www.evewell.com",
+   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
    "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
    "checked": ""
   },
   {
-   "name": "Evewell West London",
+   "name": "TFP GCRM Fertility",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 51.4933,
-   "lng": -0.22099,
-   "state": "182, Hammersmith Road, London, W6 7DJ",
+   "lat": 55.85967,
+   "lng": -4.3505,
+   "state": "GCRM Fertility, 21 Fifty Pitches Way, Glasgow, G51 4FD",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -2260,7 +2052,59 @@
    "species": [
     "human"
    ],
-   "url": "www.evewell.com",
+   "url": "tfp-fertility.com/en-gb/tfp-gcrm-fertility",
+   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
+   "checked": ""
+  },
+  {
+   "name": "Fertility Centre at Whittington Health",
+   "source": "industry:repro",
+   "type": "Fertility clinic",
+   "lat": 51.56648,
+   "lng": -0.13907,
+   "state": "Clinic 4C, Whittington Hospital, Magdala Avenue, London, N19 5NF",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "HFEA licensed",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "repro:clinics"
+   ],
+   "species": [
+    "human"
+   ],
+   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
+   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
+   "checked": ""
+  },
+  {
+   "name": "Fertility Fusion",
+   "source": "industry:repro",
+   "type": "Fertility clinic",
+   "lat": 53.58982,
+   "lng": -2.71151,
+   "state": "Wrightington Hospital, Hall Lane, Appley Bridge, Wigan, Lancashire, WN6 9EP, United Kingdom",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "HFEA licensed",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "repro:clinics"
+   ],
+   "species": [
+    "human"
+   ],
+   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
    "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
    "checked": ""
   },
@@ -2317,32 +2161,6 @@
    "checked": ""
   },
   {
-   "name": "Fertility Centre at Whittington Health",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 51.56648,
-   "lng": -0.13907,
-   "state": "Clinic 4C, Whittington Hospital, Magdala Avenue, London, N19 5NF",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "HFEA licensed",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
    "name": "Fertility Exeter",
    "source": "industry:repro",
    "type": "Fertility clinic",
@@ -2365,32 +2183,6 @@
     "human"
    ],
    "url": "fertilityexeter.co.uk",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "Fertility Fusion",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 53.58982,
-   "lng": -2.71151,
-   "state": "Wrightington Hospital, Hall Lane, Appley Bridge, Wigan, Lancashire, WN6 9EP, United Kingdom",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "HFEA licensed",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
    "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
    "checked": ""
   },
@@ -4449,32 +4241,6 @@
    "checked": ""
   },
   {
-   "name": "Reproductive Genetics Institute",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 51.52085,
-   "lng": -0.14689,
-   "state": "32A, Weymouth Street, London, W1G 7BX, United Kingdom",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "HFEA licensed",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
    "name": "ROC Clinic Aberdeen",
    "source": "industry:repro",
    "type": "Fertility clinic",
@@ -4965,32 +4731,6 @@
     "human"
    ],
    "url": "tfp-fertility.com/en-gb/tfp-boston-place-fertility",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "TFP GCRM Fertility",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 55.85967,
-   "lng": -4.3505,
-   "state": "GCRM Fertility, 21 Fifty Pitches Way, Glasgow, G51 4FD",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "HFEA licensed",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "tfp-fertility.com/en-gb/tfp-gcrm-fertility",
    "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
    "checked": ""
   },
