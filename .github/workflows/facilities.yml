@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     # Comfortably above the sum of the step timeouts below, so a slow source
     # cannot cost the run everything the fast ones already produced.
-    timeout-minutes: 200
+    timeout-minutes: 243
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -41,7 +41,7 @@ jobs:
             timeout 12m python3 harvest/osm_facilities.py || echo "!! osm facilities failed - continuing"
             timeout 20m python3 harvest/aaalac_facilities.py || echo "!! aaalac failed - continuing"
             timeout 12m python3 harvest/hfea_clinics.py || echo "!! hfea clinics failed - continuing"
-            timeout 15m python3 harvest/aphis_animal_facilities.py || echo "!! aphis animal facilities failed - continuing"
+            timeout 20m python3 harvest/aphis_animal_facilities.py || echo "!! aphis animal facilities failed - continuing"
             timeout 20m python3 harvest/china_nhc_art.py || echo "!! china nhc failed - continuing"
             timeout 10m python3 harvest/advocacy_facilities.py || echo "!! advocacy facilities failed - continuing"
           timeout 25m python3 harvest/ccac_redlara.py || echo "!! ccac/redlara failed - continuing"
