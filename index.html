@@ -473,7 +473,7 @@ function pjReport(which, data){
   <div id="legHead"><span>Map key</span><span id="legTog" onclick="document.getElementById('legend').classList.toggle('collapsed')" title="Show / hide the map key">&#9662;</span></div>
   <div id="legBody">
   
-  <label class="f-status"><input type="checkbox" id="projChk" checked> All map points</label><div class="pj-kinds"><label><input type="checkbox" class="pj-kind" data-kind="industry" checked> <b>Industry</b> — organisations</label><label><input type="checkbox" class="pj-kind" data-kind="escape" checked> <b>Spread &amp; drift</b> — what got out</label><label><input type="checkbox" class="pj-kind" data-kind="release" checked> <b>Releases</b> — authorisations</label><label><input type="checkbox" class="pj-kind" data-kind="biosafety" checked> <b>Biosafety decisions</b> — national rulings</label><label><input type="checkbox" class="pj-kind" data-kind="clinical" checked> <b>Clinical trials</b> — gene &amp; cell therapy sponsors</label></div><div class="ot-head">Release records</div><div class="pj-otypes" id="relBox"></div><div class="ot-head">What they work on</div><div class="pj-otypes" id="subjBox"></div><div class="ot-head">Organisation type</div><div class="pj-otypes" id="otBox"></div><div class="ot-head">Shaded areas</div><div class="pj-otypes" id="regBox"></div><div class="ot-head">GM zones</div><div class="pj-otypes" id="ovBox"></div>
+  <label class="f-status"><input type="checkbox" id="projChk" checked> All map points</label><div class="pj-kinds"><label><input type="checkbox" class="pj-kind" data-kind="industry" checked> <b>Industry</b> — organisations</label><label><input type="checkbox" class="pj-kind" data-kind="escape" checked> <b>Spread &amp; drift</b> — what got out</label><label><input type="checkbox" class="pj-kind" data-kind="release" checked> <b>Releases</b> — authorisations</label><label><input type="checkbox" class="pj-kind" data-kind="biosafety" checked> <b>Biosafety decisions</b> — national rulings</label><label><input type="checkbox" class="pj-kind" data-kind="clinical" checked> <b>Clinical trials</b> — gene &amp; cell therapy sponsors</label><label><input type="checkbox" class="pj-kind" data-kind="repro" checked> <b>Fertility clinics</b> — licensed and approved</label><label><input type="checkbox" class="pj-kind" data-kind="animals" checked> <b>Animal facilities</b> — registered and accredited</label></div><div class="ot-head">Release records</div><div class="pj-otypes" id="relBox"></div><div class="ot-head">What they work on</div><div class="pj-otypes" id="subjBox"></div><div class="ot-head">Organisation type</div><div class="pj-otypes" id="otBox"></div><div class="ot-head">Shaded areas</div><div class="pj-otypes" id="regBox"></div><div class="ot-head">GM zones</div><div class="pj-otypes" id="ovBox"></div>
   <div class="proj-size"><span class="ps-lab">Release scale &mdash; select any</span><span class="ps-pill on" data-ms="all">All</span><span class="ps-pill" data-ms="3">Medium <i>multi-site trial</i></span><span class="ps-pill" data-ms="4">Large <i>regional / multi-season</i></span><span class="ps-pill" data-ms="5">Largest <i>commercial cultivation</i></span></div><div class="proj-size proj-phase"><span class="ps-lab">Consent phase &mdash; select any</span><span class="ps-pill on" data-ph="pre">In review <i>pre-consent &middot; applied / notified / under assessment</i></span><span class="ps-pill on" data-ph="post">Consented <i>post-consent &middot; approved / planted / marketed</i></span></div>
   <div class="proj-search"><input id="projQ" type="search" placeholder="Search releases by organism, trait or applicant…" autocomplete="off"><span id="projQn"></span></div>
   <div class="proj-time"><span class="ps-lab">Filing recency — dated registers</span><span class="pt-pill on" data-tw="0">All ages</span><span class="pt-pill" data-tw="30">≤30d</span><span class="pt-pill" data-tw="90">≤90d</span><span class="pt-pill" data-tw="180">≤6mo</span><span class="pt-pill" data-tw="365">≤1yr</span><label class="pt-und"><input type="checkbox" id="pjUndated" checked> Include undated</label></div><div class="lp-detail collapsed"><div class="lp-detail-head" onclick="this.parentNode.classList.toggle('collapsed')"><span class="lp-car">&#9662;</span> Where this data comes from &amp; what's not (yet) in it</div><div class="lp-detail-body">
@@ -2329,7 +2329,11 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
      compete with the olive that means "authorised to go outdoors". */
   CLIC={5:"#4a4f86",4:"#5b619b",3:"#6f74ad",2:"#8a8dc0",1:"#a5a7d1"},
   /* A ruling about releases, drawn in slate so it is not read as one. */
-  BIOC={5:"#37627a",4:"#43758f",3:"#5389a4",2:"#6f9fb6",1:"#8fb6c8"}, PR={5:15,4:12,3:9,2:7,1:5};
+  BIOC={5:"#37627a",4:"#43758f",3:"#5389a4",2:"#6f9fb6",1:"#8fb6c8"},
+  /* A clinic and a laboratory are not releases and are not each other.
+     Rose for the reproductive side, teal for the animal side. */
+  REPC={5:"#8c3f63",4:"#a24f77",3:"#b3648a",2:"#c4839f",1:"#d4a5b8"},
+  ANIC={5:"#2f6f66",4:"#3c857a",3:"#4e9a8e",2:"#6fb0a5",1:"#93c5bc"}, PR={5:15,4:12,3:9,2:7,1:5};
   try{ if(typeof map!=='undefined' && map.createPane && !map.getPane('projPane')){ map.createPane('projPane'); map.getPane('projPane').style.zIndex=620; } }catch(_e){}
   window.PJ_CLICK_MINZ=2 /* was 6: right when a world-zoom dot was a two-pixel speck, wrong now that clustering draws a large numbered circle over a country at zoom 3 */;
   try{ if(typeof map!=='undefined' && map.on){ map.on('zoomend', function(){ var _pn=map.getPane&&map.getPane('projPane'); if(_pn) _pn.style.pointerEvents=(map.getZoom()>=PJ_CLICK_MINZ?'auto':'none'); }); } }catch(_e){}
@@ -2484,7 +2488,14 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   // Olive range rather than purple/blue/orange, which fought the atlas ground.
   // Three steps far enough apart to tell apart on a parchment background:
   // deep moss, mid olive, dry gold-olive.
-  var REGIMEC={technique:"#4a5d2f",trait:"#7d8f45",carveout:"#b08d3e"};
+  // Two colours, because there are two ways a country can decide. They were
+  // olive and olive-green, near enough identical against a dark map, which
+  // made the one comparison this layer exists for impossible to see. Now a
+  // cool blue for technique and a warm amber for trait: opposite ends of
+  // the wheel, legible at world zoom and to a colour-blind reader, because
+  // they differ in hue AND in lightness. Carve-out keeps a colour only for
+  // legacy callers; it is drawn as a dashed boundary in its base colour.
+  var REGIMEC={technique:"#5b9bd5",trait:"#d99b3c",carveout:"#b08d3e"};
   var REGIMEL={technique:"Technique-based — regulated by how it was made",
     trait:"Trait-based — regulated by what the organism is",
     carveout:"… with a carve-out — a class moved outside registration entirely"};
@@ -2703,7 +2714,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   var _pjPts=null,_pjGrid=null,_projLayer=null,_pjPopup=null,_pjShown=0;
   function pjHasDate(p){ if(!p||!p.date)return false; var t=new Date(p.date).getTime(); return !isNaN(t); }
   function pjAgeDays(p){ return Math.floor((Date.now()-new Date(p.date).getTime())/86400000); }
-  var pjKinds=new Set(["industry","escape","release","biosafety","clinical"]);
+  var pjKinds=new Set(["industry","escape","release","biosafety","clinical","repro","animals"]);
   function pjPasses(p){
     if(p.lat==null||p.lng==null) return false;
     if(!pjKinds.has(pjKind(p))) return false;
@@ -2849,7 +2860,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       _pjFan = pjData.projects.map(function(){ return [0,0]; });
     var pts=[],grid={},arr=(pjData&&pjData.projects)||[];
     for(var k=0;k<arr.length;k++){ var p=arr[k]; if(!pjPasses(p)) continue;
-      var i=p.impact||1, kd=pjKind(p), o={la:p.lat+((_pjFan&&_pjFan[k]&&_pjFan[k][1])||0),lo:p.lng+((_pjFan&&_pjFan[k]&&_pjFan[k][0])||0),i:i,c:(kd==="industry"?(OTC[p.otype]||INDC[i]):kd==="escape"?ESCC[i]:kd==="clinical"?CLIC[i]:kd==="biosafety"?BIOC[i]:PC[i])||"#8fa0b8",ot:(p.otype||"company"),ap:(p.precise===false),kd:kd,p:p};
+      var i=p.impact||1, kd=pjKind(p), o={la:p.lat+((_pjFan&&_pjFan[k]&&_pjFan[k][1])||0),lo:p.lng+((_pjFan&&_pjFan[k]&&_pjFan[k][0])||0),i:i,c:(kd==="industry"?(OTC[p.otype]||INDC[i]):kd==="escape"?ESCC[i]:kd==="clinical"?CLIC[i]:kd==="biosafety"?BIOC[i]:kd==="repro"?REPC[i]:kd==="animals"?ANIC[i]:PC[i])||"#8fa0b8",ot:(p.otype||"company"),ap:(p.precise===false),kd:kd,p:p};
       pts.push(o); var gk=Math.floor(o.la)+"|"+Math.floor(o.lo); (grid[gk]||(grid[gk]=[])).push(o);
     }
     _pjPts=pts; _pjGrid=grid; _pjShown=pts.length; _pjClu=null; _pjCluZ=null; return pts.length;
@@ -2879,7 +2890,12 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   // dot nudged 11px from its centre still sits inside it. The offset has to
   // clear the largest glyph, not merely differ from zero.
   var PJ_KIND_NUDGE = {release:[0,0], industry:[0,0], escape:[0,0],
-                       clinical:[22,-14], biosafety:[-22,-14]};
+                       clinical:[22,-14], biosafety:[-22,-14],
+                       // A clinic and the company that owns it are often at
+                       // the same address, and an animal facility and its
+                       // university likewise. Their own corners, or the two
+                       // dots become one.
+                       repro:[14,16], animals:[-14,16]};
   function pjNudge(g){
     var kd = (g && (g.dk || (g.m && g.m[0] && g.m[0].kd))) || 'release';
     return PJ_KIND_NUDGE[kd] || [0,0];
@@ -3531,7 +3547,14 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
        Counting it as one put "National biosafety decisions" inside the release
        list for every country and inflated the totals with records that
        authorise nothing. */
-    return s.indexOf("industry")===0?"industry"
+    /* Fertility clinics and animal facilities arrived under industry: prefixes,
+       so a reader who wanted the industry layer off lost every clinic with it,
+       and there was no way to ask for the clinics on their own. They are their
+       own kinds now. The prefix stays as it is - it is what the source filter
+       and the merge key on. */
+    return s.indexOf("industry:repro")===0?"repro"
+         : s.indexOf("industry:animals")===0?"animals"
+         : s.indexOf("industry")===0?"industry"
          : s.indexOf("escape")===0?"escape"
          : s.indexOf("biosafety")===0?"biosafety"
          /* A registered trial is not an authorisation to put an organism
@@ -3842,13 +3865,24 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     var h='';
     // Two regimes and one qualifier. Listing carve-out beside the other two
     // made it read as a third way a country can decide, which it is not.
-    ['technique','trait','carveout'].forEach(function(k){
+    ['technique','trait'].forEach(function(k){
       h+='<label title="'+REGIMEL[k].replace(/"/g,'&quot;')+'">'
         +'<input type="checkbox" data-reg="'+k+'" checked>'
-        +'<span class="ot-dot ot-edge" style="border-color:'+REGIMEC[k]+';background:'+REGIMEC[k]+'33"></span>'
+        +'<span class="ot-dot ot-edge" style="border-color:'+REGIMEC[k]+'"></span>'
         +REGIMEL[k].split(' \u2014 ')[0]+'</label>';
     });
-    h+='<div class="ot-note"> </div>';
+    // Carve-out is a property of a country, not a third kind of country, so it
+    // is a tick that says "and show me which of these have an exemption" rather
+    // than a colour of its own.
+    h+='<label title="A class of engineered organism placed outside registration, '
+      +'cut out of whichever scheme the country runs">'
+      +'<input type="checkbox" data-reg="carveout" checked>'
+      +'<span class="ot-dot ot-edge" style="border-color:#b08d3e;border-style:dashed"></span>'
+      +'\u2026 with a carve-out</label>';
+    h+='<div class="ot-note">The boundary is the law. A country\u2019s outline is '
+      +'coloured by how it decides what counts as engineered; a dashed outline '
+      +'means part of that has been lifted. Colour <em>inside</em> a country is a '
+      +'GM zone, which is a different thing.</div>';
     rb.innerHTML=h;
     rb.addEventListener('change',function(e){
       if(e.target.id==='regAll'){
@@ -4352,44 +4386,16 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   window.pjDrill = function(p){
     if(!p || p.level !== 'country') return false;
     var k = window.pjHierKey(p);
-    // Once the states are showing, this marker is no longer a "break this open"
-    // control - it is the national records sitting at the centroid. Clicking it
-    // was closing the states again, which reads as the map jumping back. Open
-    // its records instead; closing stays with the map background.
-    if(window.pjExpanded.has(k) && window.pjShowRecords){
-      var _own = window.pjOwnTotal ? window.pjOwnTotal(p) : null;
-      if(_own && _own.records && _own.records.length){ window.pjShowRecords(_own); return true; }
-      if(p.records && p.records.length){ window.pjShowRecords(p); return true; }
-    }
+    // Clicking the national marker used to open a box of national records. The
+    // states carry their own totals now, and a national box on top of them is
+    // the same authorisations counted twice in two places - a reader comparing
+    // the two would be comparing a set with a subset of itself.
+    //
+    // So this control does one thing: break the country into its states, or put
+    // it back together. No panel either way.
     var opening = !window.pjExpanded.has(k);
     if(opening) window.pjExpanded.add(k); else window.pjExpanded.delete(k);
     try{ if(window.pjRefresh) window.pjRefresh(); }catch(e){}
-    if(!opening) return true;              // closing is a map action, not a panel one
-
-    if(!window.pjShowRecords) return true;
-    var own = window.pjOwnTotal(p);
-    if(own){
-      // The national box itself - the records filed at national level, run
-      // through the same tree and the same filters as everything else.
-      window.pjShowRecords({
-        name: p.name + ' \u2014 national records',
-        url: p.url || '',
-        sources: p.sources || null,
-        records: p.records || null,
-        records_total: p.records_total || own
-      });
-    } else if(p.children && p.children.length){
-      // Nothing is filed nationally, so the breakdown is the only thing there
-      // is to show. Typed, so it groups rather than arriving as a bare list.
-      window.pjShowRecords({
-        name: p.name + ' \u2014 by state',
-        records_total: p.children.length,
-        records: p.children.map(function(c){
-          return {n: c.n, d: '', c: String(c.c) + ' authorisations', s: '',
-                  u: '', t: 'State totals, breakdown'};
-        })
-      });
-    }
     return true;
   };
 })();
@@ -6202,7 +6208,9 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     escape:    {c:'#bd6a4f', s:'diamond'},
     release:   {c:'#7f9a52', s:'disc'},
     biosafety: {c:'#5389a4', s:'ring'},
-    clinical:  {c:'#6f74ad', s:'ring'}
+    clinical:  {c:'#6f74ad', s:'ring'},
+    repro:     {c:'#b3648a', s:'disc'},
+    animals:   {c:'#4e9a8e', s:'ring'}
   };
   function marks(){
     [].slice.call(document.querySelectorAll('.pj-kind')).forEach(function(cb){
@@ -6373,9 +6381,18 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     host.dataset.for='release';
     var q=document.querySelector('.proj-search');
     if(q){
-      var fold=host.querySelector('.ot-fold[data-fold="leaveout"]');
-      if(fold){ if(q.nextElementSibling!==fold) fold.parentNode.insertBefore(q,fold); }
-      else if(q.parentNode!==host) host.appendChild(q);
+      // Four earlier attempts moved this box and something moved it back. The
+      // fold is inside #relBox, and #relBox is the one container the caret
+      // owns, so the box goes INSIDE #relBox and nowhere else. Re-asserted
+      // every tick, because whatever kept moving it is still running.
+      var rel=document.getElementById('relBox');
+      var fold=(rel||host).querySelector('.ot-fold[data-fold="leaveout"]');
+      if(rel){
+        if(fold){ if(q.nextElementSibling!==fold) rel.insertBefore(q,fold); }
+        else if(q.parentNode!==rel) rel.appendChild(q);
+      } else if(fold){
+        if(q.nextElementSibling!==fold) fold.parentNode.insertBefore(q,fold);
+      } else if(q.parentNode!==host){ host.appendChild(q); }
       // Four attempts at placing this box have failed, because a later pass
       // keeps moving it back out. So stop depending on where it sits: whatever
       // container it lands in, its visibility follows the release container's.
@@ -6417,11 +6434,30 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // countries or ninety.
   var FIGURE = {biosafety:'49 countries \u00b7 3,072 decisions',
                 clinical:'2,231 sponsors'};
+  // Counted from the data rather than written down, because these two grow by
+  // thousands the first time the facility harvesters commit and a hard-coded
+  // number would be wrong within the hour.
+  function liveCount(kind){
+    try{
+      var rows=(window.pjDataRef&&window.pjDataRef.projects)||[];
+      var n=0;
+      for(var i=0;i<rows.length;i++) if(pjKind(rows[i])===kind) n++;
+      return n;
+    }catch(e){ return 0; }
+  }
   function figures(){
     [].slice.call(document.querySelectorAll('.pj-kind')).forEach(function(cb){
       var lab=cb.closest('label');
       if(!lab || lab.querySelector('.kfig')) return;
-      var f=FIGURE[cb.dataset.kind]; if(!f) return;
+      var kd=cb.dataset.kind, f=FIGURE[kd];
+      if(kd==='repro' || kd==='animals'){
+        var n=liveCount(kd);
+        // 21 register pointers is what is there until the facility harvesters
+        // run. Saying so beats an empty label that reads as a broken filter.
+        f = n ? (n.toLocaleString() + (n < 100 ? ' \u2014 country registers only'
+                                               : ' facilities')) : '';
+      }
+      if(!f) return;
       var sp=document.createElement('span'); sp.className='kfig'; sp.textContent=f;
       lab.appendChild(sp);
     });
