@@ -363,7 +363,13 @@ def main():
     # ones per run. The cache is committed, so each monthly run resolves
     # another slice and the rest sit at a state centroid, marked as such. A
     # partial answer that says which part is partial beats no answer.
+    # Two limits, not one. The count bounds how much work a run adds to the
+    # cache; the clock bounds how long it can take. A budget alone assumes each
+    # lookup costs about a second, and the moment the geocoder is slow the step
+    # is killed and writes nothing - which is how this harvester failed before.
     GEOCODE_BUDGET = 900
+    GEOCODE_SECONDS = 480
+    started = time.time()
     todo = []
     for r in active:
         if r["street"] and r["city"] and r["state"]:
@@ -373,10 +379,16 @@ def main():
             todo.append(k)
     print("  %d distinct cities not yet resolved; doing up to %d this run"
           % (len(todo), GEOCODE_BUDGET))
+    done = 0
     for k in todo[:GEOCODE_BUDGET]:
+        if time.time() - started > GEOCODE_SECONDS:
+            print("  eight minutes of lookups; stopping here and writing what "
+                  "there is rather than being killed with nothing")
+            break
         geocode(k, cache)
-    if len(todo) > GEOCODE_BUDGET:
-        print("  %d cities left for the next run" % (len(todo) - GEOCODE_BUDGET))
+        done += 1
+    if len(todo) > done:
+        print("  %d cities left for the next run" % (len(todo) - done))
 
     out, exact_n, approx_n = [], 0, 0
     for r in active:
