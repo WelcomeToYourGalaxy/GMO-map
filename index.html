@@ -1186,14 +1186,29 @@ function _regimeBoxInner(iso){
     h+='<div class="rgm-lead"><span class="rgm-sw" style="border-color:'+((RC&&RC[_base])||'#7d8f45')+'"></span>'
       +'<b>'+_esc((RL&&RL[_base])||_base)+'</b>'
       +(_carve?'<span class="rgm-tag">with a carve-out</span>':'')+'</div>';
-    h+='<div class="rgm-p">'+_esc(R[_base]||R[hit.regime])+'</div>';
+    // R[_base] is the scheme the country runs. The fallback to R[hit.regime]
+    // was meant for a feature with no base field - but on a carve-out country
+    // it prints the carve-out paragraph here AND again in the section below,
+    // so Colombia and Brazil each described their exemption twice and their
+    // actual scheme never. It only falls back to something DIFFERENT now.
+    var _lead = R[_base];
+    if(!_lead && hit.regime !== 'carveout') _lead = R[hit.regime];
+    if(_lead) h+='<div class="rgm-p">'+_esc(_lead)+'</div>';
+    else if(_carve) h+='<div class="rgm-conf">This country runs a carve-out, and '
+      +'which scheme it is cut out of is not recorded for it. That is a gap in '
+      +'this map rather than a fact about the country.</div>';
     // A carve-out is an exemption cut out of another scheme, and everything the
     // exemption does not reach is still decided that way. Saying only
     // "carve-out" left a reader with no idea what happens to the organisms that
     // are not carved out - which is most of them.
     if(_carve && R && R.carveout){
-      h+='<div class="rgm-h2"><span class="rgm-sw" style="border-color:'
-        +((RC&&RC.carveout)||'#b08d3e')+'"></span>The carve-out</div>';
+      // A solid gold square here read as a second regime of equal standing,
+      // and identical whether the country underneath was technique- or
+      // trait-based. Dashed, and in the country's OWN colour: the same scheme
+      // as the heading above, with a piece cut out of it.
+      h+='<div class="rgm-h2"><span class="rgm-sw" style="border:2px dashed '
+        +((RC&&RC[_base])||'#b08d3e')+';background:transparent"></span>'
+        +'The carve-out</div>';
       h+='<div class="rgm-p">'+_esc(R.carveout)+'</div>';
       h+='<div class="rgm-p">Everything the exemption does not reach \u2014 a plant '
         +'carrying a gene from another species, for instance \u2014 still goes through '
@@ -2890,7 +2905,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   // dot nudged 11px from its centre still sits inside it. The offset has to
   // clear the largest glyph, not merely differ from zero.
   var PJ_KIND_NUDGE = {release:[0,0], industry:[0,0], escape:[0,0],
-                       clinical:[22,-14], biosafety:[-22,-14],
+                       clinical:[20,-13], biosafety:[-20,-13],
                        // A clinic and the company that owns it are often at
                        // the same address, and an animal facility and its
                        // university likewise. Their own corners, or the two
@@ -2908,11 +2923,20 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   // So the offset fades out as the map zooms out. Below zoom 4 there is none:
   // at that scale the whole country is a few pixels wide and a dot in the
   // wrong sea is worse than two dots on top of each other.
+  // Two failures to steer between. A large pixel offset at world zoom is
+  // hundreds of kilometres and puts markers in the sea; no offset at world zoom
+  // leaves the release, clinical and biosafety dots exactly on top of each
+  // other, which is where they all are, because they are all country centroids.
+  //
+  // So the offset never goes to zero and never gets large: about ten pixels at
+  // world zoom, enough to see three dots side by side, growing to the full
+  // separation once the map is close enough for it to mean anything. Ten pixels
+  // at world zoom is a few hundred kilometres, which for a marker that is
+  // already a country centroid is not a claim about where anything is.
   function pjCluPt(m, g){
     var pt = m.latLngToContainerPoint([g.la, g.lo]), d = pjNudge(g);
     if(!d[0] && !d[1]) return pt;
-    var z = m.getZoom(), f = z <= 4 ? 0 : Math.min(1, (z - 4) / 3);
-    if(!f) return pt;
+    var z = m.getZoom(), f = Math.max(0.5, Math.min(1, (z - 2) / 5));
     return L.point(pt.x + d[0] * f, pt.y + d[1] * f);
   }
   function pjClusters(z){
@@ -3767,6 +3791,10 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 .pj-otypes label{display:flex;align-items:center;gap:6px;font-size:10.5px;color:#9aa8c0;cursor:pointer;}
 .pj-otypes input{accent-color:#7fa8cc;width:13px;height:13px;cursor:pointer;}
 .ot-dot{width:9px;height:9px;border-radius:2px;display:inline-block;flex:0 0 auto;}
+/* The regime rows drew a border colour onto a span with no border set,
+   so the two schemes were labelled and uncoloured - the one thing the
+   legend existed to show. */
+.ot-edge{border:2px solid transparent;box-sizing:border-box;}
 </style>
 
 <script>
@@ -3879,7 +3907,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     ['technique','trait'].forEach(function(k){
       h+='<label title="'+REGIMEL[k].replace(/"/g,'&quot;')+'">'
         +'<input type="checkbox" data-reg="'+k+'" checked>'
-        +'<span class="ot-dot ot-edge" style="border-color:'+REGIMEC[k]+'"></span>'
+        +'<span class="ot-dot ot-edge" style="border-color:'+REGIMEC[k]
+        +';background:'+REGIMEC[k]+'"></span>'
         +REGIMEL[k].split(' \u2014 ')[0]+'</label>';
     });
     // Carve-out is a property of a country, not a third kind of country, so it
@@ -3888,7 +3917,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     h+='<label title="A class of engineered organism placed outside registration, '
       +'cut out of whichever scheme the country runs">'
       +'<input type="checkbox" data-reg="carveout" checked>'
-      +'<span class="ot-dot ot-edge" style="border-color:#b08d3e;border-style:dashed"></span>'
+      +'<span class="ot-dot ot-edge" style="border:2px dashed #b08d3e;background:transparent"></span>'
       +'\u2026 with a carve-out</label>';
     h+='<div class="ot-note">The boundary is the law. A country\u2019s outline is '
       +'coloured by how it decides what counts as engineered; a dashed outline '
@@ -5277,6 +5306,10 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     }
     blocks.forEach(function(b){ b.forEach(function(n){ if(n) host.appendChild(n); }); });
     if(!lab.querySelector('.kind-car')){
+      // Open by default. Industry and Releases are the two branches a reader
+      // arrives wanting, and a caret they have to find first is a filter on
+      // curiosity rather than on data.
+      host.style.display='';
       var car=document.createElement('span');
       car.className='kind-car'; car.textContent='\u25be';
       car.title='show or hide these filters';
