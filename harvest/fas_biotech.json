@@ -6,7 +6,7 @@
    "year": 0,
    "title": "Argentina — 24.0 million hectares of biotech crops",
    "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
-   "area_candidates": [
+   "area_candidates_unverified": [
     {
      "hectares": 1300000,
      "crop": ""
@@ -38,7 +38,7 @@
    "year": 0,
    "title": "Bolivia — 1.4 million hectares of biotech crops",
    "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
-   "area_candidates": [
+   "area_candidates_unverified": [
     {
      "hectares": 1300000,
      "crop": ""
@@ -70,7 +70,7 @@
    "year": 0,
    "title": "Brazil — 52.8 million hectares of biotech crops",
    "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
-   "area_candidates": [
+   "area_candidates_unverified": [
     {
      "hectares": 1300000,
      "crop": ""
@@ -102,7 +102,7 @@
    "year": 0,
    "title": "Canada — 12.5 million hectares of biotech crops",
    "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
-   "area_candidates": [
+   "area_candidates_unverified": [
     {
      "hectares": 1300000,
      "crop": ""
@@ -134,7 +134,7 @@
    "year": 0,
    "title": "China — 3.2 million hectares of biotech crops",
    "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
-   "area_candidates": [
+   "area_candidates_unverified": [
     {
      "hectares": 1300000,
      "crop": ""
@@ -166,7 +166,7 @@
    "year": 0,
    "title": "India — 11.9 million hectares of biotech crops",
    "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
-   "area_candidates": [
+   "area_candidates_unverified": [
     {
      "hectares": 1300000,
      "crop": ""
@@ -198,7 +198,7 @@
    "year": 0,
    "title": "Latin America — 83.9 million hectares of biotech crops",
    "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
-   "area_candidates": [
+   "area_candidates_unverified": [
     {
      "hectares": 1300000,
      "crop": ""
@@ -230,7 +230,7 @@
    "year": 0,
    "title": "Pacific — 19.5 million hectares of biotech crops",
    "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
-   "area_candidates": [
+   "area_candidates_unverified": [
     {
      "hectares": 1300000,
      "crop": ""
@@ -262,7 +262,7 @@
    "year": 0,
    "title": "Pakistan — 2.5 million hectares of biotech crops",
    "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
-   "area_candidates": [
+   "area_candidates_unverified": [
     {
      "hectares": 1300000,
      "crop": ""
@@ -294,7 +294,7 @@
    "year": 0,
    "title": "Paraguay — 4.1 million hectares of biotech crops",
    "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
-   "area_candidates": [
+   "area_candidates_unverified": [
     {
      "hectares": 1300000,
      "crop": ""
@@ -326,7 +326,7 @@
    "year": 0,
    "title": "South Africa — 2.7 million hectares of biotech crops",
    "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
-   "area_candidates": [
+   "area_candidates_unverified": [
     {
      "hectares": 1300000,
      "crop": ""
@@ -358,7 +358,7 @@
    "year": 0,
    "title": "Uruguay — 1.2 million hectares of biotech crops",
    "url": "https://www.isaaa.org/resources/publications/briefs/55/executivesummary/default.asp",
-   "area_candidates": [
+   "area_candidates_unverified": [
     {
      "hectares": 1300000,
      "crop": ""
