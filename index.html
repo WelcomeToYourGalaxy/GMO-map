@@ -2900,9 +2900,20 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     var kd = (g && (g.dk || (g.m && g.m[0] && g.m[0].kd))) || 'release';
     return PJ_KIND_NUDGE[kd] || [0,0];
   }
+  // A constant pixel offset is a constant SCREEN distance and therefore a
+  // wildly varying GROUND distance. At world zoom 22px is several hundred
+  // kilometres, which put clinics in the sea; zoom in and the same offset is a
+  // few streets and looks right. That is exactly the reported symptom.
+  //
+  // So the offset fades out as the map zooms out. Below zoom 4 there is none:
+  // at that scale the whole country is a few pixels wide and a dot in the
+  // wrong sea is worse than two dots on top of each other.
   function pjCluPt(m, g){
     var pt = m.latLngToContainerPoint([g.la, g.lo]), d = pjNudge(g);
-    return L.point(pt.x + d[0], pt.y + d[1]);
+    if(!d[0] && !d[1]) return pt;
+    var z = m.getZoom(), f = z <= 4 ? 0 : Math.min(1, (z - 4) / 3);
+    if(!f) return pt;
+    return L.point(pt.x + d[0] * f, pt.y + d[1] * f);
   }
   function pjClusters(z){
     if(_pjClu) return _pjClu;   // zoom-invariant: built once per filter change
@@ -3935,11 +3946,15 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     try{
       var rows=(window.pjDataRef&&window.pjDataRef.projects)||[];
       if(!rows.length) return;
-      var byKind={industry:0,escape:0,release:0}, byType={};
+      // This counted with its own private copy of pjKind, written when there
+      // were three kinds. There are now seven, so clinical, biosafety, repro
+      // and animals all counted as "release" and their own toggles read (0)
+      // while holding thousands of records. One function decides what a kind
+      // is; nothing else gets to have an opinion.
+      var byKind={}, byType={};
       rows.forEach(function(p){
-        var s=String(p.source||'');
-        var k=s.indexOf('industry')===0?'industry':s.indexOf('escape')===0?'escape':'release';
-        byKind[k]++;
+        var k=pjKind(p);
+        byKind[k]=(byKind[k]||0)+1;
         if(k==='industry'){ var t=p.otype||'company'; byType[t]=(byType[t]||0)+1; }
       });
       document.querySelectorAll('.pj-kind').forEach(function(cb){
@@ -6379,8 +6394,13 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       hosts[i].remove();
     }
     host.dataset.for='release';
-    var q=document.querySelector('.proj-search');
+    // #relBox rebuilds itself with innerHTML, which DESTROYS anything moved
+    // into it - the search box did not move away, it was deleted, and
+    // querySelector then found nothing to move back. The node is kept here and
+    // re-inserted whenever it has left the document.
+    var q=document.querySelector('.proj-search') || window.__pjSearchBox;
     if(q){
+      window.__pjSearchBox = q;
       // Four earlier attempts moved this box and something moved it back. The
       // fold is inside #relBox, and #relBox is the one container the caret
       // owns, so the box goes INSIDE #relBox and nowhere else. Re-asserted
