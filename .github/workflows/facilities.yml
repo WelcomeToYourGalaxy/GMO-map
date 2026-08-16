@@ -47,6 +47,11 @@ jobs:
             timeout 30m python3 harvest/india_nartsr.py || echo "!! india nartsr failed - continuing"
             timeout 5m python3 harvest/ownership.py || echo "!! ownership failed - continuing"
             timeout 6m python3 harvest/animal_testing_facilities.py || echo "!! animal testing facilities failed - continuing"
+          # geolocation runs after the facility harvesters, because its corpus is
+          # the places they write. Selftest first: a matcher that has silently
+          # loosened is worse than one that does not run.
+          python3 harvest/geolocate_wire.py --selftest || echo "!! geolocator selftest FAILED - not running it"
+          timeout 6m python3 harvest/geolocate_wire.py || echo "!! geolocate wire failed - continuing"
           # ownership reads what the harvesters above wrote, so it runs last.
           timeout 5m python3 harvest/ownership.py || echo "!! ownership failed - continuing"
           # and the merge that folds them into projects.json.gz
@@ -57,7 +62,7 @@ jobs:
 
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A --ignore-errors harvest/ projects.json projects.json.gz overlays/
+          git add -A --ignore-errors harvest/ projects.json projects.json.gz overlays/ wire_geo.json
           if git diff --cached --quiet; then
             echo "nothing changed"
           else
