@@ -6102,6 +6102,21 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     });
     say('country write-up: ' + (typeof _regimeBox === 'function'
         ? 'present' : 'MISSING from this build'));
+    // Which build is actually loaded, and whether any key-box pass is dying.
+    // "The fix is in the file" and "the fix is running" are different claims
+    // and this is the line that separates them.
+    var marks = [['nudge reads the kind tally', typeof pjNudge === 'function' &&
+                    JSON.stringify(pjNudge({kd:{clinical:3}, m:[]})) !== '[0,0]'],
+                 ['branches opened', !!document.body.dataset.branchesOpen],
+                 ['regime legend coloured',
+                    !!document.querySelector('.ot-edge[style*="background"]')]];
+    marks.forEach(function(m){ say('build check: ' + m[0] + ' \u2014 ' +
+                                   (m[1] ? 'yes' : 'NO')); });
+    if(window.__pjPassFail){
+      Object.keys(window.__pjPassFail).forEach(function(k){
+        say('key-box pass FAILING: ' + k + ' \u2014 ' + window.__pjPassFail[k]);
+      });
+    }
     ['fertility','animal-testing'].forEach(function(t){
       var n = seed.filter(function(p){ return String(p.source||'').indexOf(t)>=0; }).length;
       say(t + ' records: ' + n + (n ? '' : '  -> harvester has not run, or its JSON was not committed'));
@@ -6562,9 +6577,26 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   }
   var doneShaded=false, done=false;
   function go(){
-    marks(); figures(); oneHost(); fixRelease(); unindent(); openBranches();
-    if(!doneShaded && shaded()) doneShaded=true;
-    tidy();
+    // Six passes on one line, and a throw in any of them killed every pass
+    // after it - silently, every tick, for as long as the interval ran. That is
+    // consistent with fixes that are demonstrably in the deployed file and
+    // demonstrably not happening: openBranches was last in the queue and never
+    // got a turn. Each pass now stands or falls alone, and says which it was.
+    [['marks',marks],['figures',figures],['oneHost',oneHost],
+     ['fixRelease',fixRelease],['unindent',unindent],
+     ['openBranches',openBranches]].forEach(function(pair){
+      try{ pair[1](); }
+      catch(e){
+        if(!window.__pjPassFail) window.__pjPassFail={};
+        if(!window.__pjPassFail[pair[0]]){
+          window.__pjPassFail[pair[0]] = String(e && e.message || e);
+          try{ console.warn('[map] key-box pass "'+pair[0]+'" threw:', e); }catch(_x){}
+        }
+      }
+    });
+    try{ if(!doneShaded && shaded()) doneShaded=true; }
+    catch(e){ try{ console.warn('[map] shaded-areas pass threw:', e); }catch(_x){} }
+    try{ tidy(); }catch(e){}
   }
   var t=setInterval(go, 700);
   setTimeout(function(){ clearInterval(t); }, 30000);
