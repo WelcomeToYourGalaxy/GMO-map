@@ -2912,7 +2912,20 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
                        // dots become one.
                        repro:[14,16], animals:[-14,16]};
   function pjNudge(g){
-    var kd = (g && (g.dk || (g.m && g.m[0] && g.m[0].kd))) || 'release';
+    // g.kd is a TALLY - {clinical: 5} - not a string, and g.dk does not exist.
+    // Reading g.m[0].kd works for an ordinary cluster and returns nothing for a
+    // hierarchy cell, whose m[] is empty: those fell back to 'release' and were
+    // never nudged at all, which is why the national markers stayed on top of
+    // each other however the offsets were tuned.
+    var kd = '';
+    if(g){
+      if(typeof g.dk === 'string') kd = g.dk;
+      else if(g.kd && typeof g.kd === 'object'){
+        var best = -1;
+        for(var k in g.kd){ if(g.kd[k] > best){ best = g.kd[k]; kd = k; } }
+      }
+      if(!kd && g.m && g.m[0]) kd = g.m[0].kd || '';
+    }
     return PJ_KIND_NUDGE[kd] || [0,0];
   }
   // A constant pixel offset is a constant SCREEN distance and therefore a
@@ -6381,6 +6394,29 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     return true;
   }
 
+  // Three passes create .kind-sub containers and only one of them was taught to
+  // start open, so which branches a reader found expanded depended on which
+  // pass had won the race. Opened here, once, after all of them - and only on
+  // the first tick, so a reader who collapses a branch keeps it collapsed.
+  function openBranches(){
+    if(document.body.dataset.branchesOpen) return;
+    var any=false;
+    [].slice.call(document.querySelectorAll('.pj-kind')).forEach(function(cb){
+      if(['industry','release'].indexOf(cb.dataset.kind)<0) return;
+      var lab=cb.closest('label'); if(!lab) return;
+      var n=lab.nextSibling;
+      while(n){
+        if(n.nodeType===1){
+          if(n.tagName==='LABEL' && n.querySelector('.pj-kind')) break;
+          if(n.classList.contains('kind-sub')){ n.style.display=''; any=true; }
+        }
+        n=n.nextSibling;
+      }
+      var car=lab.querySelector('.kind-car');
+      if(car) car.textContent='\u25be';
+    });
+    if(any) document.body.dataset.branchesOpen='1';
+  }
   function tidy(){
     // A bordered container with nothing in it reads as a section whose contents
     // failed to load. The overlay panel was retired into the key box and left
@@ -6526,7 +6562,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   }
   var doneShaded=false, done=false;
   function go(){
-    marks(); figures(); oneHost(); fixRelease(); unindent();
+    marks(); figures(); oneHost(); fixRelease(); unindent(); openBranches();
     if(!doneShaded && shaded()) doneShaded=true;
     tidy();
   }
