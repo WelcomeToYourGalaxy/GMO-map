@@ -68,9 +68,30 @@ jobs:
             echo "nothing changed"
           else
             git commit -m "facilities: refresh $(date -u +%Y-%m-%d)"
-            for i in 1 2 3; do
-              git pull --rebase --autostash && git push && exit 0
+            # Rebasing cannot work here. Every file this job writes is a
+            # generated artefact, and projects.json.gz is a BINARY one - git has
+            # no way to merge two gzips and stops with a conflict it cannot be
+            # taught to resolve. A whole successful run was lost to that: five
+            # thousand CDC clinics, two hundred REDLARA centres, nine hundred
+            # geocoded cities, all harvested and then thrown away at the push.
+            #
+            # For generated files the newest run is simply right, so on a
+            # collision the commit is rebuilt on top of whatever arrived in the
+            # meantime rather than merged with it. reset --mixed moves the
+            # branch pointer and leaves the working tree alone, so the files
+            # this run just wrote are still on disk to be re-committed.
+            for i in 1 2 3 4 5; do
+              git push && exit 0
+              echo "push rejected; rebuilding the commit on top of origin (attempt $i)"
+              git fetch origin main || true
+              git reset --mixed origin/main
+              git add -A --ignore-errors harvest/ projects.json projects.json.gz \
+                                         overlays/ wire_geo.json
+              if git diff --cached --quiet; then
+                echo "nothing left to commit after fetching"; exit 0
+              fi
+              git commit -m "facilities: refresh $(date -u +%Y-%m-%d)"
               sleep 5
             done
-            echo "push failed after 3 attempts"; exit 1
+            echo "push failed after 5 attempts"; exit 1
           fi
