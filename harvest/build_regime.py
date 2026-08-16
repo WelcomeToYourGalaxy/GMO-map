@@ -50,6 +50,20 @@ def _thin_ring(ring, tol):
     return out if len(out) >= 4 else ring
 
 
+
+# The upstream boundary file writes -99 for France and Norway instead of their
+# ISO3 codes - an old defect in that dataset. Left alone it silently drops two
+# countries from every layer built on it, and the regime layer has been missing
+# France this whole time.
+BOUNDARY_ISO_FIX = {"France": "FRA", "Norway": "NOR"}
+
+
+def iso_of(props):
+    iso = props.get("ISO3166-1-Alpha-3") or ""
+    if iso and iso != "-99":
+        return iso
+    return BOUNDARY_ISO_FIX.get(props.get("name") or "", "")
+
 def simplify(geom, tol=SIMPLIFY_TOL):
     t = geom.get("type")
     if t == "Polygon":
@@ -76,7 +90,7 @@ def main():
     feats, have = [], set()
     for f in world.get("features", []):
         props = f.get("properties") or {}
-        iso = props.get("ISO3166-1-Alpha-3") or props.get("ISO_A3") or ""
+        iso = iso_of(props) or props.get("ISO_A3") or ""
         if iso in ("-99", ""):
             iso = BY_NAME.get(props.get("name", ""), "")
         if iso not in cls:

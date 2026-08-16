@@ -181,6 +181,26 @@ CONF_NOTE = {
 }
 
 
+
+# ---------------------------------------------------------------------------
+# THE THIRTEEN THAT ARE NOT CLASSIFIED, AND WHY.
+#
+# Andorra, Brunei, Micronesia, Equatorial Guinea, Liechtenstein, Monaco,
+# San Marino, South Sudan, Sao Tome and Principe, Timor-Leste, Tuvalu, the
+# Vatican and Vanuatu.
+#
+# These were carried as "absent from a 2015 list, probably stale". Checked
+# against the Secretariat's own ratification list of 9 August 2026 - 173 parties,
+# complete - not one of them is a party. So the gap is not this map being out of
+# date. Each is genuinely outside the Protocol, and none has a biosafety statute
+# this map has been able to read, so none can be classified by construction the
+# way the other 77 protocol-based entries were.
+#
+# Worth knowing which company they keep: Argentina and the United States are
+# also not parties, and both are among the largest growers of engineered crops
+# in the world. Being outside the Protocol says nothing about how much a country
+# grows. It says only that it has not agreed to tell anyone.
+
 def classified():
     """iso3 -> (regime, confidence). One dict, checked for collisions."""
     out, seen = {}, {}

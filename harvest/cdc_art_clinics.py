@@ -212,6 +212,10 @@ def main():
             bits.append("It reported %s treatment cycles in %d." % (cycles, year))
         if director:
             bits.append("Medical director: %s." % director)
+        bits.append("A fertility clinic is where human embryos are made, selected and "
+                "stored, and where assisted reproduction happens, like IVF, "
+                "ICSI, egg and sperm donation, freezing embryos and eggs for "
+                "later.")
         bits.append("Reporting is required of every US clinic performing assisted "
                     "reproduction, under the Fertility Clinic Success Rate and "
                     "Certification Act, so this is close to a complete register "

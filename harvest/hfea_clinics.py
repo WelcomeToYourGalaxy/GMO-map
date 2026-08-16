@@ -184,6 +184,10 @@ def main():
             bits.append("A satellite is where patients are seen; the licence sits "
                         "with the parent clinic, so the regulator's paperwork and "
                         "the treatment are in different places.")
+        bits.append("A fertility clinic is where human embryos are made, selected and "
+                "stored, and where assisted reproduction happens, like IVF, "
+                "ICSI, egg and sperm donation, freezing embryos and eggs for "
+                "later.")
         bits.append("The HFEA licenses every clinic in the United Kingdom, "
                     "inspects them, and publishes findings and success rates "
                     "clinic by clinic. No other fertility regulator publishes at "

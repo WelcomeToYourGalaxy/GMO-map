@@ -234,6 +234,11 @@ def main():
                             "formal operation." % (trial, "is" if trial == 1 else "are"))
             elif running:
                 bits.append("All of its approvals are in formal operation.")
+            if not bank:
+                bits.append("A fertility clinic is where human embryos are made, selected and "
+                "stored, and where assisted reproduction happens, like IVF, "
+                "ICSI, egg and sperm donation, freezing embryos and eggs for "
+                "later.")
             bits.append("Approval is compulsory in China and performing assisted "
                         "reproduction without it is unlawful, so this list is a "
                         "register rather than a directory of members. It names "

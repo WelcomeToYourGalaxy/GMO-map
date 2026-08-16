@@ -270,6 +270,10 @@ def main():
                 "Technology (Regulation) Act 2021."]
         if r["reg"]:
             bits.append("Registration number %s." % r["reg"])
+        bits.append("A fertility clinic is where human embryos are made, selected and "
+                "stored, and where assisted reproduction happens, like IVF, "
+                "ICSI, egg and sperm donation, freezing embryos and eggs for "
+                "later.")
         bits.append("Registration is compulsory and operating without it is an "
                     "offence, so this is a register rather than a list of members. "
                     "It is also the largest of its kind anywhere: India records "

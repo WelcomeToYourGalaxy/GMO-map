@@ -385,6 +385,7 @@ def main():
               ("aphis_animal_facilities.json", "projects", None, None, None),
               ("china_nhc_art.json", "projects", None, None, None),
               ("ccac_redlara.json", "projects", None, None, None),
+              ("advocacy_facilities.json", "projects", None, None, None),
               ("india_nartsr.json", "projects", None, None, None),
               ("fertility_clinics.json", "clinics", "industry:repro",
                ["repro:clinics"], ["human"]),

@@ -33,9 +33,19 @@ CCAC = "https://ccac.ca/en/certification/certified-institutions.html"
 # The list is reached from quem_somos.asp; the guessed filename 404s. Both
 # are tried, newest guess first, because a site that renames one page
 # usually keeps the other.
-REDLARA_LIST = "https://redlara.com/quem_somos.asp"
-REDLARA_ALT = ["https://redlara.com/centros.asp",
-               "https://redlara.com/quem_somos_centros.asp"]
+# acreditacao.asp is the page that actually holds the list; every earlier guess
+# 404'd or returned the wrong page, and the run reported "0 accredited centres"
+# without saying it had never found the list at all.
+REDLARA_LIST = "https://redlara.com/acreditacao.asp"
+REDLARA_ALT = ["https://redlara.com/quem_somos.asp",
+               "https://redlara.com/centros.asp"]
+
+# The detail pages are numbered, not linked from one index in a form this
+# harvester can rely on. If the list page ever moves again, the centres are
+# still reachable by walking the numbers - centro.asp?USIM5=1 upward - and a
+# gap in the numbering is a centre that has left the network, not a failure.
+REDLARA_CENTRE = "https://redlara.com/centro.asp?USIM5=%d"
+REDLARA_MAX_ID = 400
 PHOTON = "https://photon.komoot.io/api/?limit=1&q="
 
 COUNTRY_PT = {
@@ -166,6 +176,25 @@ def parse_redlara_list(html):
     return out
 
 
+def _centre_name(html):
+    """The centre's own name.
+
+    Walking backwards from Localiza\u00e7\u00e3o looked reasonable and returned
+    the laboratory director - the page puts Diretores/Administradores between
+    the name and the address, so the nearest line above is a person. The <title>
+    holds the name followed by country and city, which is unambiguous, so that
+    is used and the trailing place words are cut off.
+    """
+    m = re.search(r"<title>(.*?)</title>", html, re.S)
+    if not m:
+        return ""
+    t = _text(m.group(1))
+    tail = re.search(r"\s+(Argentina|Bolivia|Brasil|Brazil|Chile|Colombia|Costa Rica|"
+                     r"Ecuador|El Salvador|Guatemala|M\u00e9xico|Mexico|Nicaragua|Panama|"
+                     r"Paraguay|Peru|Republica Dominicana|Uruguay|Venezuela)\b", t)
+    return (t[:tail.start()] if tail else t).strip()
+
+
 def parse_redlara_centre(html):
     """The detail page prints a Localiza\u00e7\u00e3o block: street, then
     'Country - City', then contact lines."""
@@ -277,16 +306,36 @@ def main():
                     print("  centre list found at %s" % u)
                     centres = got
                     break
+            if not centres:
+                # Walking the ids rather than reporting nothing. A list page
+                # that moves should cost us the country labels, not 209 clinics.
+                print("  no list page answered; walking centro.asp ids instead")
+                for i in range(1, REDLARA_MAX_ID + 1):
+                    u = REDLARA_CENTRE % i
+                    try:
+                        page = get(u, tries=1, encoding="cp1252")
+                    except Exception:
+                        continue
+                    d = parse_redlara_centre(page)
+                    if d.get("street") or d.get("city"):
+                        centres.append({"country": d.get("country", ""),
+                                        "name": _centre_name(page) or ("centre %d" % i),
+                                        "url": u, "_page": page})
+                    time.sleep(0.4)
+                print("  %d centres found by walking ids" % len(centres))
         print("  REDLARA: %d accredited centres" % len(centres))
         exact_n = 0
         for c in centres:
             d = {}
-            try:
-                page = get(c["url"], tries=2, encoding="cp1252")
-                d = parse_redlara_centre(page)
-                time.sleep(1)
-            except Exception:
-                pass
+            if c.get("_page"):
+                d = parse_redlara_centre(c["_page"])
+            else:
+                try:
+                    page = get(c["url"], tries=2, encoding="cp1252")
+                    d = parse_redlara_centre(page)
+                    time.sleep(1)
+                except Exception:
+                    pass
             street, city = d.get("street", ""), d.get("city", "")
             latlng, exact = None, False
             if street and city:
@@ -304,6 +353,10 @@ def main():
                     "Assisted Reproduction."]
             if d.get("website"):
                 bits.append("Website: %s." % d["website"])
+            bits.append("A fertility clinic is where human embryos are made, selected and "
+                "stored, and where assisted reproduction happens, like IVF, "
+                "ICSI, egg and sperm donation, freezing embryos and eggs for "
+                "later.")
             bits.append("REDLARA accreditation is voluntary and its members report "
                         "to a shared registry, which is why Latin America can be "
                         "read at all \u2014 most countries in the region have no "
