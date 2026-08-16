@@ -169,7 +169,10 @@ def main():
         nm = _first(r, "clinicname", "clinic_name", "facilityname",
                     "medicalofficename", "name")
         city = _first(r, "clinicaddress2", "city", "clinic_city", "cityname")
-        state = _first(r, "clinicstate", "state", "clinic_state",
+        # locationabbr is what this table calls the state, and no guess covered
+        # it: every one of 5,000 rows was dropped for want of a state that was
+        # sitting in the row all along. The printed column list is what found it.
+        state = _first(r, "locationabbr", "clinicstate", "state", "clinic_state",
                        "statename", "stateabbreviation")[:2].upper()
         street = _first(r, "clinicaddress1", "address1", "clinic_address",
                         "address", "streetaddress")
@@ -177,8 +180,19 @@ def main():
             dropped += 1
             continue
 
+        # The table carries a geolocation column. Using it means 5,000 clinics
+        # placed without a single geocoder call, and placed by the publisher
+        # rather than by us.
         latlng, exact = None, False
-        if street and city and state:
+        g = r.get("geolocation") or {}
+        if isinstance(g, dict):
+            c = g.get("coordinates")
+            if isinstance(c, (list, tuple)) and len(c) == 2:
+                latlng, exact = [round(float(c[1]), 5), round(float(c[0]), 5)], True
+            elif g.get("latitude") not in (None, ""):
+                latlng, exact = [round(float(g["latitude"]), 5),
+                                 round(float(g["longitude"]), 5)], True
+        if latlng is None and street and city and state:
             latlng = geocode("%s, %s, %s" % (street, city, state), cache)
             exact = latlng is not None
         if latlng is None:

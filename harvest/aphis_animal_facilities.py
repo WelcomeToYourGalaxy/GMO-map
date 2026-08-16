@@ -355,6 +355,29 @@ def main():
           "whose status nothing states is not evidence that it is current.")
 
     cache = load_cache()
+    # 12,443 active certificates, one geocoder call each, is three and a half
+    # hours - so the step hit its timeout and was killed before printing a
+    # single line, which read in the log as "failed" with no reason given.
+    #
+    # Distinct cities are geocoded, not rows, and only a bounded number of new
+    # ones per run. The cache is committed, so each monthly run resolves
+    # another slice and the rest sit at a state centroid, marked as such. A
+    # partial answer that says which part is partial beats no answer.
+    GEOCODE_BUDGET = 900
+    todo = []
+    for r in active:
+        if r["street"] and r["city"] and r["state"]:
+            continue
+        k = "%s, %s" % (r["city"], r["state"])
+        if r["city"] and r["state"] and k not in cache and k not in todo:
+            todo.append(k)
+    print("  %d distinct cities not yet resolved; doing up to %d this run"
+          % (len(todo), GEOCODE_BUDGET))
+    for k in todo[:GEOCODE_BUDGET]:
+        geocode(k, cache)
+    if len(todo) > GEOCODE_BUDGET:
+        print("  %d cities left for the next run" % (len(todo) - GEOCODE_BUDGET))
+
     out, exact_n, approx_n = [], 0, 0
     for r in active:
         latlng, exact = None, False
@@ -363,7 +386,8 @@ def main():
                                                 r["state"], r["zip"]), cache)
             exact = latlng is not None
         if latlng is None and r["city"] and r["state"]:
-            latlng = geocode("%s, %s" % (r["city"], r["state"]), cache)
+            # cache only - the budget above decided what gets looked up
+            latlng = cache.get("%s, %s" % (r["city"], r["state"]))
         if latlng is None:
             latlng = STATE_CENTROID.get(r["state"])
         if latlng is None:

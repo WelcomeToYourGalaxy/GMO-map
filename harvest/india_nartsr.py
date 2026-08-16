@@ -60,7 +60,7 @@ STATE = {
 }
 
 
-def fetch(url, data=None, headers=None, tries=2):
+def fetch(url, data=None, headers=None, tries=1, timeout=25):
     h = {"User-Agent": "GMO-map/1.0 (public research map)",
          "X-Requested-With": "XMLHttpRequest",
          "Accept": "application/json, text/html, */*"}
@@ -69,7 +69,7 @@ def fetch(url, data=None, headers=None, tries=2):
         try:
             req = Request(url, data=(urlencode(data).encode() if data else None),
                           headers=h)
-            return urlopen(req, timeout=90).read().decode("utf-8", "replace")
+            return urlopen(req, timeout=timeout).read().decode("utf-8", "replace")
         except Exception:
             if i == tries - 1:
                 raise
@@ -196,6 +196,9 @@ def harvest():
                             ).read_text(encoding="utf-8", errors="replace")
         return rows_from_html(html), "a saved page"
 
+    # A probe that hangs is worse than a probe that fails: the step gets killed
+    # before it can report which shapes it tried. One attempt each, short
+    # timeout, and the whole search is over in under two minutes.
     chosen, rows = None, []
     for label, url, post in strategies(0):
         try:
@@ -214,7 +217,12 @@ def harvest():
 
     label, _, post = chosen
     seen = {r["reg"] or r["name"] for r in rows}
+    started = time.time()
     for page in range(1, 60):
+        if time.time() - started > 900:
+            print("  fifteen minutes of paging; stopping with %d rows rather "
+                  "than being killed with none" % len(rows))
+            break
         _, url, p = strategies(page)[[s[0] for s in strategies(page)].index(label)]
         try:
             got = rows_from_json(fetch(url, data=p)) or rows_from_html(fetch(url, data=p))
