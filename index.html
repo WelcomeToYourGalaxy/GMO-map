@@ -565,6 +565,71 @@ const SUBGEO = {"USA": {"type": "FeatureCollection", "features": [{"type": "Feat
 const SUBNATIONAL = {};
 const DMAP={}; DOMAINS.forEach(d=>DMAP[d.key]=d); DMAP['all']={key:'all',label:'All lenses',accent:'#354582',hi:'#7889b5',desc:'‘Every’ research, investigation and accountability resource for opposing the genetic engineering of organisms — from a single field trial to the treaty registers.',subs:[]};
 const SUBLABEL={}; DOMAINS.forEach(d=>d.subs.forEach(s=>SUBLABEL[d.key+':'+s[0]]=s[1]));
+/* One tag in the subject tree has no entry in DOMAINS, so it drew as "cro"
+   under Tools next to another row already called "Contract research
+   organisations". */
+SUBLABEL['clinical:cro']='Clinical trial CROs';
+/* `const` at the top of a script is not a property of window, so every later
+   script asking for window.SUBLABEL got undefined and printed the raw tag
+   instead - which is where "germplasm", "agtech", "biobank", "ventures",
+   "vectors", "models", "drives", "synbio", "cdmo" and "repos" came from. The
+   labels existed the whole time. */
+try{ window.SUBLABEL = SUBLABEL; }catch(e){}
+
+/* What each of these is, in one line. Written for a reader who has not met the
+   word before, which is most readers: the tag names are trade shorthand. */
+try{ window.SUBDEF = {
+ 'seed:traits':'Firms that develop the trait itself, then license it into other companies\u2019 varieties.',
+ 'seed:germplasm':'Breeding stock \u2014 the seed lines and parent material new varieties are bred from.',
+ 'seed:majors':'The four firms holding most of the world\u2019s commercial seed and trait patents.',
+ 'seed:licensees':'Regional breeders selling varieties built on traits licensed from someone else.',
+ 'seed:distribution':'The dealers and retailers that move seed from breeder to field.',
+ 'editing:agtech':'Companies applying gene editing to crops rather than inserting genes from another species.',
+ 'deextinct:trees':'Engineered forest trees \u2014 chestnut, poplar, eucalyptus \u2014 intended for planting outdoors.',
+ 'animals:models':'Repositories that hold engineered laboratory strains and ship them to order.',
+ 'animals:breeders':'Firms that breed and supply laboratory animals.',
+ 'animals:primates':'Suppliers of monkeys for research, and the facilities holding them.',
+ 'animals:services':'Contractors that build a bespoke engineered animal to a client\u2019s specification.',
+ 'livestock:livestock':'Gene-edited farm animals \u2014 cattle, pigs, poultry.',
+ 'livestock:cloning':'Commercial cloning of animals, mostly livestock and pets.',
+ 'livestock:aqua':'Engineered fish and shellfish bred for farming.',
+ 'livestock:pets':'Companion and ornamental animals sold as engineered products.',
+ 'deextinct:rescue':'Engineering a wild population to keep a species going rather than to farm it.',
+ 'deextinct:biobank':'Frozen tissue, cells and gametes banked from wild species for use later.',
+ 'deextinct:ventures':'Companies funded to bring back an extinct animal.',
+ 'clinical:therapy':'Companies making gene and cell therapies for patients.',
+ 'clinical:trials':'Organisations running registered trials of those therapies.',
+ 'clinical:vectors':'Manufacturers of the viruses used to carry engineered genes into cells.',
+ 'clinical:germline':'Work on embryos and inherited changes rather than on one patient\u2019s own cells.',
+ 'repro:clinics':'Fertility clinic chains, and the groups that own them.',
+ 'repro:banks':'Sperm, egg and embryo banks.',
+ 'repro:surrogacy':'Surrogacy agencies, including those arranging it across borders.',
+ 'repro:screening':'Testing embryos before transfer, and choosing between them on the results.',
+ 'wild:insects':'Engineered insects released outdoors \u2014 mosquitoes, moths, flies.',
+ 'wild:microbes':'Engineered soil and crop microbes applied to fields.',
+ 'wild:drives':'Engineered inheritance built to spread itself through a wild population.',
+ 'editing:synbio':'Organisms rebuilt as manufacturing platforms \u2014 yeast, bacteria, algae.',
+ 'synthesis:synth':'Firms that synthesise DNA to order from a sequence file.',
+ 'synthesis:seq':'Sequencing machines and services \u2014 reading DNA rather than writing it.',
+ 'synthesis:reagents':'The enzymes, kits and reagents everyone else in the industry buys.',
+ 'synthesis:repos':'Repositories that distribute plasmids and engineered strains to laboratories.',
+ 'cro:cdmo':'Contract manufacturers that make biological products for other companies.',
+ 'editing:platform':'Owners of the editing tools themselves, licensed out to everyone else.',
+ 'editing:patents':'Holders of the foundational patents on the editing techniques.',
+ 'rules:ip':'Patent and plant-variety offices \u2014 where ownership of an organism is granted.',
+ 'cro:cro':'The laboratories other firms hire to run the work.',
+ 'clinical:cro':'Contract organisations that run clinical trials on a sponsor\u2019s behalf.',
+ 'money:vc':'Venture capital and private equity funding the sector.',
+ 'money:markets':'Listed companies and the investors holding them.',
+ 'money:public':'Government research funders.',
+ 'money:philanthropy':'Foundations funding the work through grants.',
+ 'money:defence':'Military and security funding of biotechnology.',
+ 'rules:regulators':'The agencies that approve releases and keep the registers.',
+ 'rules:standards':'Bodies setting standards, and issuing the identifiers organisms are tracked by.',
+ 'rules:associations':'Trade associations, and the lobbying done through them.',
+ 'rules:influence':'Industry-funded bodies that publish information about the industry.',
+ 'cro:regulatory':'Consultancies hired to get an application through a regulator.'
+}; }catch(e){}
 let domain='all', activeSubs=new Set(), showHistorical=true;
 function resetSubs(){ activeSubs=new Set(DMAP[domain].subs.map(s=>domain+':'+s[0])); }
 resetSubs();
@@ -2454,7 +2519,16 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
     return s; }
   var activeProjSrc=new Set(PJ_SRC.map(function(s){return s.k;}));
   function pjBuildSrcUI(){
-    var box=document.getElementById("projSrcBox"); if(!box) return;
+    // If anything has removed the container, put it back rather than silently
+    // doing nothing: this filter went missing for exactly that reason.
+    var box=document.getElementById("projSrcBox");
+    if(!box){
+      var leg=document.getElementById("legBody");
+      if(!leg) return;
+      box=document.createElement("div"); box.id="projSrcBox"; box.className="proj-src-box";
+      var after=document.querySelector(".lp-detail");
+      if(after && after.parentNode===leg) leg.insertBefore(box, after.nextSibling); else leg.appendChild(box);
+    }
     var counts={}; ((pjData&&pjData.projects)||[]).forEach(function(p){ var g=pjSrcGroup(p.source); counts[g]=(counts[g]||0)+1; });
     var nRows=0; PJ_SRC.forEach(function(s){ if(counts[s.k]) nRows++; });
     // Only lock the UI once it has real rows to show; otherwise allow a later rebuild when data arrives.
@@ -2484,7 +2558,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
 
   // ---- Filter by PROJECT TYPE (what the project IS, not who recorded it) ----
   // ---- Filter by PROJECT TYPE (what the project IS, not who recorded it) ----
-  var PJ_TYPES=[{"k": "crop_food", "g": "Plants & crops", "label": "Food crops (maize, soy, rice, wheat)"}, {"k": "crop_fibre", "g": "Plants & crops", "label": "Fibre & industrial crops"}, {"k": "crop_veg", "g": "Plants & crops", "label": "Vegetables & fruit"}, {"k": "crop_forage", "g": "Plants & crops", "label": "Forage, grass & feed"}, {"k": "crop_pharma", "g": "Plants & crops", "label": "Pharma & industrial plants"}, {"k": "tree", "g": "Trees & wild", "label": "Trees & forestry"}, {"k": "deextinct", "g": "Trees & wild", "label": "De-extinction & wild release"}, {"k": "livestock", "g": "Animals", "label": "Livestock & poultry"}, {"k": "fish", "g": "Animals", "label": "Fish & aquaculture"}, {"k": "pet", "g": "Animals", "label": "Companion & cloned animals"}, {"k": "lab_animal", "g": "Animals", "label": "Laboratory animals"}, {"k": "insect", "g": "Insects & microbes", "label": "Insects & gene drives"}, {"k": "microbe", "g": "Insects & microbes", "label": "Microbes & fermentation"}, {"k": "virus_vaccine", "g": "Insects & microbes", "label": "Viral vectors & GM vaccines"}, {"k": "germline", "g": "Human & clinical", "label": "Human germline & embryos"}, {"k": "gene_therapy", "g": "Human & clinical", "label": "Somatic gene therapy"}, {"k": "art", "g": "Human & clinical", "label": "In vitro & assisted reproduction"}, {"k": "cellline", "g": "Human & clinical", "label": "Cell lines & cultured tissue"}, {"k": "other", "g": "Other", "label": "Other / unclassified"}];
+  var PJ_TYPES=[{"k": "crop_food", "g": "Plants & crops", "label": "Staple & field crops (maize, soy, rice, wheat)"}, {"k": "crop_fibre", "g": "Plants & crops", "label": "Fibre & industrial crops"}, {"k": "crop_veg", "g": "Plants & crops", "label": "Vegetables & fruit"}, {"k": "crop_forage", "g": "Plants & crops", "label": "Forage, grass & feed"}, {"k": "crop_pharma", "g": "Plants & crops", "label": "Pharma & industrial plants"}, {"k": "tree", "g": "Trees & wild", "label": "Trees & forestry"}, {"k": "deextinct", "g": "Trees & wild", "label": "De-extinction & wild release"}, {"k": "livestock", "g": "Animals", "label": "Livestock & poultry"}, {"k": "fish", "g": "Animals", "label": "Fish & aquaculture"}, {"k": "pet", "g": "Animals", "label": "Companion & cloned animals"}, {"k": "lab_animal", "g": "Animals", "label": "Laboratory animals"}, {"k": "insect", "g": "Insects & microbes", "label": "Insects & gene drives"}, {"k": "microbe", "g": "Insects & microbes", "label": "Microbes & fermentation"}, {"k": "virus_vaccine", "g": "Insects & microbes", "label": "Viral vectors & GM vaccines"}, {"k": "germline", "g": "Human & clinical", "label": "Human germline & embryos"}, {"k": "gene_therapy", "g": "Human & clinical", "label": "Somatic gene therapy"}, {"k": "art", "g": "Human & clinical", "label": "In vitro & assisted reproduction"}, {"k": "cellline", "g": "Human & clinical", "label": "Cell lines & cultured tissue"}, {"k": "other", "g": "Other", "label": "Other / unclassified"}];
   var PJ_TYPE_LABEL={}; PJ_TYPES.forEach(function(t){ PJ_TYPE_LABEL[t.k]=t.label; });
   // Classify a project into ONE type from keywords in its text + source.
   // Cached on the object (__tc) -- pjPasses runs across ~20k projects per render.
@@ -2818,7 +2892,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
   var pjQ="", pjSizes=new Set(), pjWindow=0, pjInclUndated=true;
 
   // ===== Culled canvas project layer (replaces ~170k circleMarkers) =====
-  var _pjPts=null,_pjGrid=null,_projLayer=null,_pjPopup=null,_pjShown=0;
+  var _pjPts=null,_pjGrid=null,_projLayer=null,_pjPopup=null,_pjShown=0,_pjCo={};
   function pjHasDate(p){ if(!p||!p.date)return false; var t=new Date(p.date).getTime(); return !isNaN(t); }
   function pjAgeDays(p){ return Math.floor((Date.now()-new Date(p.date).getTime())/86400000); }
   var pjKinds=new Set(["industry","escape","release","biosafety","clinical","repro","animals"]);
@@ -2971,6 +3045,15 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
     if(!_pjFan && pjData && pjData.projects)
       _pjFan = pjData.projects.map(function(){ return [0,0]; });
     var pts=[],grid={},arr=(pjData&&pjData.projects)||[];
+    // How many records of the same kind sit on each exact coordinate. A grade
+    // is one way to know a point is a centroid; this is the other, and it works
+    // on registers that publish no grade at all.
+    _pjCo={};
+    for(var _c=0;_c<arr.length;_c++){ var _cp=arr[_c];
+      if(typeof _cp.lat!=='number'||typeof _cp.lng!=='number') continue;
+      var _ck=pjKind(_cp)+'|'+_cp.lat.toFixed(3)+'|'+_cp.lng.toFixed(3);
+      _pjCo[_ck]=(_pjCo[_ck]||0)+1;
+    }
     for(var k=0;k<arr.length;k++){ var p=arr[k]; if(!pjPasses(p)) continue;
       var i=p.impact||1, kd=pjKind(p), o={la:p.lat+((_pjFan&&_pjFan[k]&&_pjFan[k][1])||0),lo:p.lng+((_pjFan&&_pjFan[k]&&_pjFan[k][0])||0),i:i,c:(kd==="industry"?(OTC[p.otype]||INDC[i]):kd==="escape"?ESCC[i]:kd==="clinical"?CLIC[i]:kd==="biosafety"?BIOC[i]:kd==="repro"?REPC[i]:kd==="animals"?ANIC[i]:PC[i])||"#8fa0b8",ot:(p.otype||"company"),ap:(p.precise===false),kd:kd,p:p};
       pts.push(o); var gk=Math.floor(o.la)+"|"+Math.floor(o.lo); (grid[gk]||(grid[gk]=[])).push(o);
@@ -3135,6 +3218,48 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
     return _pjQRe.test(hay);
   }
 
+  // Two markers that stand for the same COUNTRY at slightly different
+  // centroids. The release register puts the United States at 39.83/-98.58; a
+  // sponsor list puts it at its own national centroid a degree or two away. At
+  // world zoom a degree is a few pixels, so the two circles cover each other
+  // while the code believes they are nowhere near each other, and the click
+  // resolves to whichever holds more records.
+  //
+  // They are made to share a coordinate, which is what each of them is already
+  // claiming: not a place, a country. The fan below then separates them on a
+  // ring. Nothing that is genuinely somewhere else is moved.
+  //
+  // The bar for qualifying is deliberately high, because this is the mechanism
+  // that used to drag state markers off their states. A group is snapped only
+  // when a hierarchy country marker exists for that country name, every record
+  // in the group names that country and nothing narrower, every record is
+  // imprecise, and it already sits within a few degrees of the anchor. "Iowa"
+  // and "Mattawan, MI" are not "United States", so state markers never match.
+  function pjNatSnap(out){
+    var anchor = {}, i, q, g, c, nm, ok, p, st, a;
+    for(i = 0; i < out.length; i++){
+      g = out[i];
+      if(!g.hier || !g.m.length) continue;
+      c = String((g.m[0].p && g.m[0].p.state) || '').trim().toLowerCase();
+      if(c && !anchor[c]) anchor[c] = [g.la, g.lo];
+    }
+    if(!Object.keys(anchor).length) return;
+    for(i = 0; i < out.length; i++){
+      g = out[i]; nm = ''; ok = g.m.length > 0;
+      for(q = 0; q < g.m.length && ok; q++){
+        p = g.m[q].p;
+        if(!p || p.precise !== false){ ok = false; break; }
+        st = String(p.state || '').trim().toLowerCase();
+        if(!st || st.indexOf(',') >= 0){ ok = false; break; }
+        if(!nm) nm = st; else if(st !== nm) ok = false;
+      }
+      if(!ok || !anchor[nm]) continue;
+      a = anchor[nm];
+      if(Math.abs(g.la - a[0]) > 3 || Math.abs(g.lo - a[1]) > 3) continue;
+      g.la = a[0]; g.lo = a[1]; g.snapped = nm;
+    }
+  }
+
   function pjClusters(z){
     if(_pjClu) return _pjClu;   // zoom-invariant: built once per filter change
     var cells = {}, out = [], pts = _pjPts || [], i, g;
@@ -3198,9 +3323,26 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
       // with a street address is a single named thing at a single place, and
       // collapsing it into a city pile would throw away the precision the
       // harvester worked for.
-      var _coarse = (o.kd === 'repro' || o.kd === 'animals') &&
-                    o.p && o.p.addr_grade !== 'operational' &&
-                    o.p.addr_grade !== 'mapped';   /* 'state' included */
+      // A point is coarse when something SAYS it is coarse, never because the
+      // field is absent. The old test read a missing addr_grade as a coarse
+      // one, and not one of the 549 records embedded in this file carries the
+      // field at all - so every hand-placed clinic and animal facility went
+      // down the clustering path and drew as a register pile instead of as the
+      // address it was entered at.
+      //
+      // Two things count as saying so. The register can grade the address:
+      // AAALAC publishes a city, APHIS a mailing city, the China list a
+      // province. Or the data can show it without a grade - four or more
+      // records of one kind on ONE coordinate is a centroid, because four
+      // separate laboratories do not share a coordinate to three decimal
+      // places. Anything else draws where it was placed.
+      var _ag = String((o.p && o.p.addr_grade) || '').toLowerCase();
+      var _agCoarse = (_ag && _ag !== 'operational' && _ag !== 'mapped' &&
+                       _ag !== 'street' && _ag !== 'exact' && _ag !== 'site');
+      var _pile = (o.p && typeof o.p.lat === 'number' && typeof o.p.lng === 'number')
+                ? ((_pjCo[o.kd + '|' + o.p.lat.toFixed(3) + '|' + o.p.lng.toFixed(3)] || 0) >= 4)
+                : false;
+      var _coarse = (o.kd === 'repro' || o.kd === 'animals') && (_agCoarse || _pile);
       if(o.kd !== 'release' && o.kd !== 'clinical' && !_coarse){
         g = cells['solo:' + i] = {la: o.la, lo: o.lo, n: 1, m: [o], kd: {}, i: o.i,
                                   ap: o.ap, total: 1, solo: true};
@@ -3243,43 +3385,31 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
       }
       g.total = t;
     }
-    // Slot assignment for the fan above. Everything drawn on one coordinate
-    // shares a ring, so no two glyphs are ever concentric. The order is fixed
-    // by kind rather than by whatever order the points arrived in, so a given
-    // register always takes the same side and markers do not swap places when a
-    // filter changes.
-    // Grouping on the coordinate rounded to 2dp only ever caught markers at the
-    // IDENTICAL point. The US national release marker sits at the average of its
-    // members and the clinical cluster sits at the country centroid - a degree
-    // or two apart, so different keys, no fan, and at world zoom a degree is a
-    // few pixels: two markers overlapping while the code believed they were
-    // nowhere near each other. Same for a state centroid against a facility
-    // pile in the same state.
+    // Country markers first, so the ones that are the same country end up on
+    // the same coordinate before anything is grouped.
+    pjNatSnap(out);
+    // Slot assignment for the fan. Everything drawn on one coordinate shares a
+    // ring, so no two glyphs are ever concentric. The order is fixed by kind
+    // rather than by whatever order the points arrived in, so a given register
+    // always takes the same side and markers do not swap places when a filter
+    // changes.
     //
-    // Overlap is a screen fact, so it is measured on the screen. Two markers
-    // belong in one fan when their drawn circles would touch at this zoom,
-    // whatever their coordinates say.
-    var _groups = [], _pts = [], _rads = [];
-    for(i = 0; i < out.length; i++){
-      var _p;
-      try{ _p = map.latLngToContainerPoint([out[i].la, out[i].lo]); }
-      catch(e){ _p = {x: out[i].lo * 100, y: out[i].la * -100}; }
-      _pts.push(_p);
-      _rads.push(pjCluRad(z, out[i]) || 10);
-    }
-    for(i = 0; i < out.length; i++){
-      var placed = false;
-      for(var q2 = 0; q2 < _groups.length && !placed; q2++){
-        var lead = _groups[q2][0];
-        var dx = _pts[i].x - _pts[lead].x, dy = _pts[i].y - _pts[lead].y;
-        if(Math.hypot(dx, dy) <= (_rads[i] + _rads[lead]) * 0.95){
-          _groups[q2].push(i); placed = true;
-        }
-      }
-      if(!placed) _groups.push([i]);
-    }
+    // Two markers are fanned when they are AT THE SAME PLACE. The previous
+    // version grouped them when their drawn circles would touch on screen,
+    // which was written for national markers a degree or two apart and caught
+    // far more than that: a capped circle is 27px, at world zoom that covers
+    // several states, so every state marker in the north-east was grouped with
+    // its neighbours and pushed off its own state. Two markers 400km apart are
+    // two places whatever their circles do, and the overlap between them is
+    // honest.
+    //
+    // The national case it was written for is handled above, by giving those
+    // markers one coordinate, so an exact key catches it.
     var _fan = {};
-    _groups.forEach(function(idx, gi){ _fan['g' + gi] = idx.map(function(k){ return out[k]; }); });
+    for(i = 0; i < out.length; i++){
+      var _fk = out[i].la.toFixed(3) + ',' + out[i].lo.toFixed(3);
+      (_fan[_fk] || (_fan[_fk] = [])).push(out[i]);
+    }
     Object.keys(_fan).forEach(function(key){
       var arr = _fan[key], q;
       if(arr.length < 2){ arr[0]._sib = null; arr[0]._fi = 0; return; }
@@ -3849,12 +3979,21 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
       var _usPart = pjUsState(st);
       if(String(p.source || '').indexOf('industry:animals') === 0 && _usPart){
         p.level = 'state'; p.parent = 'United States \u2014 animal facilities';
+        // The key that ties a child to its parent is now ONE field, written on
+        // both rows. It used to be read off `state` for the country row and
+        // `parent` for its children, and those two strings were never the same
+        // for this register: the country said "United States", the children said
+        // "United States - animal facilities". Different keys, so opening the
+        // animal marker revealed nothing, and the release marker - which keys to
+        // "united states" and whose children match it - answered the click
+        // instead. Any register that publishes states would have hit this.
+        p.hier  = 'United States \u2014 animal facilities';
         var aState = _usPart;
         akids[aState] = (akids[aState] || 0) + 1; aktot++;
         continue;
       }
       if(String(p.source || '').indexOf('aphis:') === 0){
-        p.level = 'state'; p.parent = 'United States';
+        p.level = 'state'; p.parent = 'United States'; p.hier = 'United States';
         // A permit names every state it authorises. The first is the one the
         // marker's coordinate belongs to, so that is the one it counts under.
         var firstState = (st.split(',')[0] || '').trim() || 'State not stated';
@@ -3868,6 +4007,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
       rows.push({
         name: 'United States \u2014 animal facilities', source: 'industry:animals',
         level: 'country', type: 'Animal facilities, grouped by state',
+        hier: 'United States \u2014 animal facilities',
         lat: 39.83, lng: -98.58, state: 'United States',
         precise: false, impact: 4, company: '', size: '',
         status: achildren.length + ' states \u00b7 ' + aktot + ' registrations',
@@ -3889,6 +4029,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
       .map(function(k){ return {n: k, c: kids[k]}; });
     rows.push({
       name: 'United States', source: 'aphis:national', level: 'country',
+      hier: 'United States',
       type: 'Release records, grouped by state',
       lat: 39.83, lng: -98.58, state: 'United States',
       precise: false, impact: 5, company: '', size: '',
@@ -4004,6 +4145,12 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
          : (s.indexOf("bch")===0 ||
             /national biosafety decision/i.test(String((p&&p.type)||"")))?"biosafety"
          : "release"; }
+  // Published because three later scripts classify records and none of them can
+  // see inside this closure. figures() called it, threw a ReferenceError on
+  // every tick, caught it, and returned 0 - so five of the seven kind toggles
+  // showed no count at all, and the two that did were showing a hard-coded
+  // fallback rather than a live number.
+  try{ window.pjKind = pjKind; }catch(e){}
   document.querySelectorAll(".pj-kind").forEach(function(cb){
     cb.addEventListener("change",function(){
       if(cb.checked) pjKinds.add(cb.dataset.kind); else pjKinds.delete(cb.dataset.kind);
@@ -4805,8 +4952,15 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // The country marker's key was p.state ("United States") while its state
   // markers looked for p.parent ("USA"). Different strings, so opening the
   // country hid the country and never revealed the states. One key for both.
+  // `hier` is written by pjBuildHierarchy on the country row and on every one
+  // of its state rows, so both sides of the relationship derive the key from the
+  // same field. This is not a special case for one layer - the animal register
+  // was only the first to publish states, and the next one to do it will work
+  // for the same reason. The old derivation is kept underneath for rows written
+  // before the field existed.
   window.pjHierKey = function(q){
     if(!q) return '';
+    if(q.hier) return String(q.hier).trim().toLowerCase();
     return String((q.level === 'country' ? (q.state || q.parent) : (q.parent || q.state)) || 'USA')
            .trim().toLowerCase();
   };
@@ -5918,7 +6072,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     return out;
   }
   // Under "Plants & crops" every one of the seven categories came out with the
-  // same five organisms - Food crops, Vegetables & fruit, Fibre, Trees, Forage -
+  // same five organisms - Staple & field crops, Vegetables & fruit, Fibre, Trees, Forage -
   // because those ARE the plant organisms and almost every plant entry touches
   // several. Repeating an identical list seven times says nothing about the
   // difference between distribution and germplasm, and reads as a fault.
@@ -6039,9 +6193,11 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       }
       keys.forEach(function(t){
         var nm=(window.SUBLABEL&&window.SUBLABEL[t])||t.split(':')[1]||t;
+        var df=(window.SUBDEF&&window.SUBDEF[t])||'';
         var l=document.createElement('label');
         l.innerHTML='<input type="checkbox" data-subtag="'+t+'">'+nm
-          +'<span class="kcount"> ('+tags[t]+')</span>';
+          +'<span class="kcount"> ('+tags[t]+')</span>'
+          +(df?'<span class="grp-def">'+df+'</span>':'');
         sub.appendChild(l);
 
         return;   // organisms are listed once for the subject, above
@@ -6075,7 +6231,11 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 <style>
 .subj-sub{margin:1px 0 4px 20px;padding-left:8px;border-left:1px solid rgba(127,168,204,0.18);
   display:flex;flex-direction:column;gap:2px;}
-.subj-sub label{font-size:10px;color:#9aa8c0;display:flex;align-items:center;gap:5px;cursor:pointer;}
+.subj-sub label{font-size:10px;color:#9aa8c0;display:flex;align-items:center;gap:5px;cursor:pointer;flex-wrap:wrap;}
+/* The definition sits under its own row rather than beside it: at this width a
+   line of explanation next to a label pushes the count off the end. */
+.subj-sub label .grp-def{flex-basis:100%;margin:1px 0 3px 18px;font-size:9.5px;
+  font-weight:400;color:#7d87a6;line-height:1.35;cursor:default;}
 /* The organism list and the category list are two lists of the same standing,
    so they are indented the same. The organism list used to be stepped in and a
    rule drawn beside it, which is how you mark a subdivision - and it is not
@@ -6382,7 +6542,14 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // every release record - it is the words before the last comma in the type
   // string - so this is a classification of a real field, not a guess at one.
   var GROUPS = [
-    ["Food crops", "#7f9a52", [
+    /* "Food crops" and "Vegetables & fruit" sat side by side as though they
+       were alternatives, and a reader could reasonably take one for a subset of
+       the other - vegetables and fruit are food. They are not nested, because
+       they are not a hierarchy: this list holds the broadacre staples grown by
+       the tonne, and the other holds horticultural crops grown by the crate.
+       So the names now say that outright rather than leaving it to be worked
+       out. Keys are untouched, so every saved filter still resolves. */
+    ["Staple & field crops", "#7f9a52", [
       "maize","corn","soy","soybean","rice","wheat","barley","sorghum","oat","rye",
       "potato","sweetpotato","cassava","bean","pea","lentil","chickpea","cowpea",
       "peanut","groundnut","millet","quinoa","sugarcane","sugar beet","sunflower"]],
@@ -6444,7 +6611,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // What each organisation works on. Filled in by hand in batches, so the filter
   // has to say how much of the set it covers - a filter silently covering a
   // tenth of the entries is worse than no filter, because it looks complete.
-  var L = {food_crops:"Food crops", vegetables:"Vegetables & fruit",
+  var L = {food_crops:"Staple & field crops", vegetables:"Vegetables & fruit",
            fibre:"Fibre & industrial crops", forage:"Forage, grass & feed",
            trees:"Trees & forestry", livestock:"Livestock & poultry",
            fish:"Fish & aquaculture", lab_animals:"Laboratory animals",
@@ -7141,6 +7308,12 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     ['.proj-src-box','.psrc-body','.psrc','.pj-otypes','.kind-sub','.ot-foldbody',
      '.subj-sub','.spec-sub','.proj-size','.proj-time'].forEach(function(sel){
       [].slice.call(document.querySelectorAll(sel)).forEach(function(n){
+        // An element with an id is somebody's target. #projSrcBox ships empty
+        // and is filled by pjBuildSrcUI when the projects feed lands - which is
+        // seconds after this pass first runs, so this removed the container and
+        // the builder then found nothing to fill. That is where the "Filter by
+        // data source" box went. Same for #projTypeBox and #overlayBox.
+        if(n.id) return;
         if(n.querySelector('input,a,button,label')) return;
         if(String(n.textContent||'').trim()) return;
         n.remove();
@@ -7243,11 +7416,23 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // Counted from the data rather than written down, because these two grow by
   // thousands the first time the facility harvesters commit and a hard-coded
   // number would be wrong within the hour.
+  // `pjKind` is defined inside the map's own closure and published on window.
+  // Naming it bare here threw on every call, and the catch turned that into a
+  // count of zero rather than into a visible fault - which is what a caught
+  // exception does when the fallback looks like a legitimate answer.
   function liveCount(kind){
     try{
+      var kf = window.pjKind;
+      if(typeof kf !== 'function'){
+        if(!window.__pjKindMissing){
+          window.__pjKindMissing = 1;
+          try{ console.warn('[map] window.pjKind not published yet - kind counts will read 0'); }catch(_x){}
+        }
+        return 0;
+      }
       var rows=(window.pjDataRef&&window.pjDataRef.projects)||[];
       var n=0;
-      for(var i=0;i<rows.length;i++) if(pjKind(rows[i])===kind) n++;
+      for(var i=0;i<rows.length;i++) if(kf(rows[i])===kind) n++;
       return n;
     }catch(e){ return 0; }
   }
@@ -7539,7 +7724,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-17 21:53";
+  var BUILD = "BUILD-2026-08-18 fixes 1-6";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
