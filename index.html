@@ -3088,8 +3088,29 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
   // view and slid into position as you came in. The offset is a fixed number of
   // pixels again. Separation is the fan's job — it sizes its own ring to the
   // markers in it — and this only keeps the kinds from sitting on each other.
+  // I deleted the fan out of this function while fixing the zoom drift, and the
+  // drift went away along with the only thing separating two markers at the
+  // same coordinate. The US release marker and the US animal-facility marker
+  // both sit at the country centroid: twenty pixels of kind-nudge is nothing
+  // against two circles of radius 27, so they overlapped at every zoom, and the
+  // click always resolved to the bigger one. Which is why clicking the animal
+  // marker opened releases.
+  //
+  // The fan is back, and it is the zoom-independent version, so both problems
+  // stay fixed: markers separate properly AND they do not slide as you zoom.
   function pjCluPt(m, g){
-    var pt = m.latLngToContainerPoint([g.la, g.lo]), d = pjNudge(g);
+    var pt = m.latLngToContainerPoint([g.la, g.lo]);
+    var R = pjFanRing(m, g);
+    if(R && g._sib && g._sib.length > 1){
+      var n = g._sib.length, i = g._fi || 0, a;
+      // A pair goes left and right: a country centroid usually sits in
+      // something wider than it is tall, so a horizontal pair stays inside the
+      // country it belongs to.
+      if(n === 2) a = i ? 0 : Math.PI;
+      else a = (i / n) * 2 * Math.PI - Math.PI / 2;
+      return L.point(pt.x + R * Math.cos(a), pt.y + R * Math.sin(a));
+    }
+    var d = pjNudge(g);
     if(!d[0] && !d[1]) return pt;
     return L.point(pt.x + d[0], pt.y + d[1]);
   }
@@ -7518,7 +7539,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-17 20:50";
+  var BUILD = "BUILD-2026-08-17 21:53";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
