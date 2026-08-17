@@ -5366,6 +5366,23 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     // Organisations are placed at their head office, which is what the entry
     // claims and not where the work happens. Saying so once here is better
     // than repeating it in 436 descriptions.
+    // Facility registers are placed at wildly different precisions and the
+    // difference is the register's, not ours. Said once here rather than left
+    // for a reader to infer from dots that look identical.
+    var _fs = String((p && p.source) || '');
+    if(_fs.indexOf('industry:repro')===0 || _fs.indexOf('industry:animals')===0){
+      return '<b>Why these sit where they do.</b> Each register publishes a '
+        + 'different amount, and the dot is only ever as precise as its source. '
+        + 'A clinic with a published street address is at its own door. AAALAC '
+        + 'gives a city and no address, so those are the middle of a city. '
+        + 'China\u2019s list gives addresses that no geocoder here can read, so '
+        + 'all but one of its 664 sit at the centre of a province. USDA APHIS '
+        + 'gives a mailing city, and where even that will not resolve, the '
+        + 'centre of a state \u2014 several of which are wider than a small '
+        + 'country. Every record says which of these it is, and the ones at '
+        + 'street level are drawn as their own point rather than folded into '
+        + 'the pile.';
+    }
     if(p && String(p.source||'').indexOf('industry')===0){
       return '<b>These are head offices.</b> The laboratories, plants and fields these companies run are somewhere else, and almost none of them are published.';
     }
@@ -6733,21 +6750,26 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       return n;
     }catch(e){ return 0; }
   }
+  var KIND_NOUN = {industry:'organisations', escape:'incidents',
+                   release:'authorisations', biosafety:'countries filing',
+                   clinical:'sponsors', repro:'clinics', animals:'facilities'};
   function figures(){
     [].slice.call(document.querySelectorAll('.pj-kind')).forEach(function(cb){
       var lab=cb.closest('label');
-      if(!lab || lab.querySelector('.kfig')) return;
-      var kd=cb.dataset.kind, f=FIGURE[kd];
-      if(kd==='repro' || kd==='animals'){
-        var n=liveCount(kd);
-        // 21 register pointers is what is there until the facility harvesters
-        // run. Saying so beats an empty label that reads as a broken filter.
-        f = n ? (n.toLocaleString() + (n < 100 ? ' \u2014 country registers only'
-                                               : ' facilities')) : '';
-      }
+      if(!lab) return;
+      var kd=cb.dataset.kind;
+      // Counted from the data every tick, not written down and not written
+      // once. The old version bailed the moment a .kfig existed, so whatever
+      // number happened to be true on the first tick - usually zero, because
+      // projects.json.gz had not arrived yet - was the number for the rest of
+      // the session. Two toggles read (0) that way while holding thousands.
+      var n = liveCount(kd);
+      var f = n ? (n.toLocaleString() + ' ' + (KIND_NOUN[kd] || 'records'))
+                : (FIGURE[kd] || '');
       if(!f) return;
-      var sp=document.createElement('span'); sp.className='kfig'; sp.textContent=f;
-      lab.appendChild(sp);
+      var sp = lab.querySelector('.kfig');
+      if(!sp){ sp=document.createElement('span'); sp.className='kfig'; lab.appendChild(sp); }
+      if(sp.textContent !== f) sp.textContent = f;
     });
     var hReg=document.querySelector('[data-shaded="regime"]');
     if(hReg){
@@ -7009,7 +7031,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-17 01:26";
+  var BUILD = "BUILD-2026-08-17 01:34";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
