@@ -225,6 +225,17 @@
 /* Same width as the How to use this map panel, which is 270px. */
 #rundownPanel{width:270px;}
 #wirePanel{width:270px;}
+/* The wire sat at a fixed offset, so collapsing the rundown left a gap where it
+   used to be instead of the wire moving up. Both panels live in one column now
+   and the wire follows whatever the rundown's height happens to be. */
+#panelColumn{position:fixed;left:14px;top:70px;width:270px;z-index:1000;
+  display:flex;flex-direction:column;gap:9px;max-height:calc(100vh - 84px);}
+#panelColumn #rundownPanel,#panelColumn #wirePanel{position:static !important;
+  left:auto !important;top:auto !important;width:100% !important;flex:0 0 auto;}
+#rundownPanel .help-head span:first-child,#wirePanel .help-head span:first-child{
+  font-size:12px;font-weight:700;color:#e6eefc;letter-spacing:.2px;}
+#rundownPanel .help-tog,#wirePanel .help-tog{font-size:15px;line-height:1;
+  color:#98a2c1;}
 #wirePanel{position:fixed;left:14px;top:70px;width:300px;z-index:1000;background:rgba(8,12,27,0.97);border:1px solid var(--accent-soft);border-radius:10px;box-shadow:0 4px 22px rgba(0,0,0,0.45);overflow:hidden;bottom:18px;max-height:none;display:flex;flex-direction:column;transition:bottom .22s ease,max-height .22s ease;}
 /* the wire owns the whole column until a unit is opened, then yields the lower half */
 body.info-open #wirePanel{bottom:auto;max-height:calc(50vh - 58px);}
@@ -369,7 +380,7 @@ function pjReport(which, data){
       </div>
 </div>
 <div id="rundownPanel">
-  <div class="help-head wire-head-drag" title="Click to collapse · drag to move"><span>Map rundown</span><span class="help-tog"></span></div>
+  <div class="help-head wire-head-drag" title="Click to collapse · drag to move"><span>Map rundown</span><span class="help-tog">−</span></div>
   <div class="wire-body">
     <div class="wire-lead">Farmers plant seeds. Some of those seeds have had genes added in a laboratory — usually taken from bacteria — so the crop survives being sprayed with weedkiller when a field full of weeds is sprayed, or makes its own insecticide in every leaf and root. These are examples of Genetic Modification. The technique is fifty years old: in 1973 the biochemists Herbert Boyer and Stanley Cohen moved DNA from one bacterium into another, and in 1982 the FDA approved the first consumer product made this way — human insulin brewed in engineered bacteria rather than extracted from pig and cattle pancreases.<br><br>
     Proponents argue that, in the context of agriculture, insect-resistant cotton substantially reduced broad-spectrum insecticide spraying in several countries — sprays that killed bees, birds and farm workers — and the claim that these foods are unsafe to eat has not held up in decades of testing. But, that isn’t the whole story.<br><br>
@@ -3123,6 +3134,11 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
                        // university likewise. Their own corners, or the two
                        // dots become one.
                        repro:[14,16], animals:[-14,16]};
+  // NOTHING CALLS THIS ANY MORE. It is kept because the reasoning above is the
+  // record of why a pixel offset cannot work, and deleting it invites the next
+  // attempt. Do not wire it back into pjCluPt: coordinate-keyed fanning means
+  // it can only ever fire on a marker that has nothing to be separated from,
+  // and it displaces that marker by hundreds of kilometres at world zoom.
   function pjNudge(g){
     // g.kd is a TALLY - {clinical: 5} - not a string, and g.dk does not exist.
     // Reading g.m[0].kd works for an ordinary cluster and returns nothing for a
@@ -3226,49 +3242,73 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
       // Offset the COORDINATE, not the screen point. A ring in degrees stays
       // over the same ground at every zoom; a ring in pixels does not, and that
       // is what made the clinics drift.
+      // The units depend on what the group IS, and getting this wrong breaks one
+      // case to fix the other. A ring in degrees is a fixed piece of ground: it
+      // holds under a real address at every zoom, and it shrinks to nothing on
+      // screen when you zoom out - which is why the two national markers went
+      // back to overlapping. A ring in pixels is a fixed gap on screen: right
+      // for centroids, wrong for addresses.
+      //
+      // So: centroids and hierarchy markers fan in PIXELS, everything with a
+      // real coordinate fans in DEGREES.
+      // A group that pjNatSnap moved onto a national anchor is in the same
+      // position as a hierarchy marker: its coordinate is a country, not a
+      // place. It has to fan in the same units, or one member of a ring is
+      // 20px out while the next is a fraction of a pixel out at world zoom -
+      // which puts them back on top of each other at exactly the zoom the ring
+      // was built for.
+      if(g.hier || g.snapped){
+        var _pc = m.latLngToContainerPoint([g.la, g.lo]);
+        return L.point(_pc.x + R * Math.cos(a0), _pc.y + R * Math.sin(a0));
+      }
       var dLat = -(R * PJ_FAN_DEG) * Math.sin(a0);
       var cosl = Math.cos(g.la * Math.PI / 180) || 1;
       var dLng = (R * PJ_FAN_DEG) * Math.cos(a0) / cosl;
       return m.latLngToContainerPoint([g.la + dLat, g.lo + dLng]);
     }
-    // THE KIND NUDGE, which is what was left moving these markers.
+    // No offset from here, for anything.
     //
-    // It is a PIXEL offset, and a pixel is a different distance at every zoom:
-    // eleven pixels is several hundred kilometres at world view and a few metres
-    // at street level. So a clinic sat in the sea zoomed out and snapped into
-    // place as you came in - which is exactly the reported symptom, and exactly
-    // the kinds that carry a nudge: repro and animals.
+    // The kind nudge existed to stop two markers at ONE coordinate covering
+    // each other. Fanning is now keyed on the coordinate, so that case is
+    // handled above and never arrives here: a marker with siblings is fanned,
+    // which means this line is only ever reached by a marker that is ALONE on
+    // its coordinate with nothing to be separated from. Everything the nudge
+    // could still do was move a marker that had no conflict.
     //
-    // A solo marker is one named thing at one address and never needed it: the
-    // nudge exists to stop co-located CENTROIDS covering each other. Solo
-    // markers now draw where they say they are, and the nudge that remains is
-    // converted to degrees so it holds its ground position too.
-    if(g.solo){ return m.latLngToContainerPoint([g.la, g.lo]); }
-    // Centroids keep the PIXEL nudge. A centroid is not a place - it is the
-    // middle of a shape - so moving it a fixed distance on screen claims
-    // nothing false, and it keeps two national markers the same distance apart
-    // at every zoom. Converting this one to degrees was worse: the gap grew to
-    // 388 pixels at street zoom, throwing the markers off opposite sides of the
-    // country.
-    var d = pjNudge(g);
-    if(d[0] || d[1]){
-      var _p = m.latLngToContainerPoint([g.la, g.lo]);
-      return L.point(_p.x + d[0], _p.y + d[1]);
-    }
-    var pt = m.latLngToContainerPoint([g.la, g.lo]);
-    if(false){
-      var n = g._sib.length, i = g._fi || 0, a;
-      // A pair goes left and right: a country centroid usually sits in
-      // something wider than it is tall, so a horizontal pair stays inside the
-      // country it belongs to.
-      if(n === 2) a = i ? 0 : Math.PI;
-      else a = (i / n) * 2 * Math.PI - Math.PI / 2;
-      return L.point(pt.x + R * Math.cos(a), pt.y + R * Math.sin(a));
-    }
-    var d = pjNudge(g);
-    if(!d[0] && !d[1]) return pt;
-    return L.point(pt.x + d[0], pt.y + d[1]);
+    // And it moved it by a fixed number of SCREEN pixels, which is a different
+    // distance on the ground at every zoom. Measured by running this function
+    // against a shipped record - The Jackson Laboratory, 44.356/-68.247 - the
+    // 21px repro/animals offset drew it 605km out at zoom 2, 299km at zoom 3,
+    // 74km at zoom 5, 19km at zoom 7, 5km at zoom 9 and 1km at zoom 12: the
+    // marker converging on its own address as the map comes in, which is the
+    // reported symptom to the kilometre.
+    //
+    // The `g.solo` bypass above did not cover it. Solo is only set for points
+    // that took the non-clustering path, so a facility graded to a city, or any
+    // one of four sharing a coordinate, still fell through to the nudge.
+    //
+    // A dot is drawn where its record says it is. Separation belongs to the
+    // fan, which offsets in degrees and therefore holds its ground position at
+    // every zoom.
+    return m.latLngToContainerPoint([g.la, g.lo]);
   }
+
+  // Where a lone marker actually lands, in pixels from its own coordinate.
+  // Zero at every zoom or the drift is back. This asks where a marker is drawn
+  // rather than whether a function exists, which is the difference between the
+  // two build checks it replaces and the fault they failed to catch.
+  window.pjDrawOffset = function(kd){
+    try{
+      if(typeof map === 'undefined' || !map) return -1;
+      kd = kd || 'animals';
+      var la = 44.3560, lo = -68.2470;
+      var g = {la: la, lo: lo, n: 1, i: 1, total: 1, dk: kd, kd: {}, _sib: null, _fi: 0,
+               m: [{la: la, lo: lo, kd: kd, i: 1, p: {lat: la, lng: lo}}]};
+      g.kd[kd] = 1;
+      var a = pjCluPt(map, g), b = map.latLngToContainerPoint([la, lo]);
+      return Math.round(Math.sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)));
+    }catch(e){ return -1; }
+  };
   // Built once per query rather than per record: 25,000 records times a regex
   // compile is a visible pause on every keystroke.
   var _pjQRe = null, _pjQSrc = null;
@@ -4528,6 +4568,9 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     // Round 86. The swatch is now the same shape as the thing it stands for: a
     // bar of the colour the country's border is drawn in, at the width it is
     // drawn at, rather than a small square that read as a generic bullet.
+    h+='<div class="ot-note">Outlines are the regulatory regime; filled areas '
+      +'are the GM zones. A dashed outline means a class of organism has been '
+      +'excluded altogether.</div>';
     ['technique','trait','none'].forEach(function(k){
       h+='<label title="'+window.REGIMEL[k].replace(/"/g,'&quot;')+'">'
         +'<input type="checkbox" data-reg="'+k+'" checked>'
@@ -4550,7 +4593,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       +'<i style="border-color:'+window.REGIMEC.technique+'"></i>'
       +'<i style="border-color:'+window.REGIMEC.trait+'"></i></span>'
       +'\u2026 with a carve-out</label>';
-    h+='<div class="ot-note">Outlines are the regulatory regime; filled areas are the GM zones. A dashed outline means a class of organism has been excluded altogether.</div>';
+
     rb.innerHTML=h;
     rb.addEventListener('change',function(e){
       if(e.target.id==='regAll'){
@@ -6779,8 +6822,9 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     // Which build is actually loaded, and whether any key-box pass is dying.
     // "The fix is in the file" and "the fix is running" are different claims
     // and this is the line that separates them.
-    var marks = [['nudge reads the kind tally', typeof pjNudge === 'function' &&
-                    JSON.stringify(pjNudge({kd:{clinical:3}, m:[]})) !== '[0,0]'],
+    var marks = [['a lone facility draws on its own coordinate',
+                    typeof window.pjDrawOffset === 'function' &&
+                    window.pjDrawOffset('animals') === 0],
                  ['branches opened', !!document.body.dataset.branchesOpen],
                  ['regime legend coloured',
                     !!document.querySelector('.ot-edge[style*="background"]')]];
@@ -7754,6 +7798,17 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 
   /* move fires throughout a pan and an animated zoom, which is what keeps the
      edge off screen while the gesture is still running. */
+  // Put the two panels in one flex column so collapsing the top one pulls the
+  // bottom one up, the way every other stacked panel on this map behaves.
+  try{
+    (function(){
+      var rp=document.getElementById('rundownPanel'), wp=document.getElementById('wirePanel');
+      if(!rp || !wp || document.getElementById('panelColumn')) return;
+      var col=document.createElement('div'); col.id='panelColumn';
+      rp.parentNode.insertBefore(col, rp);
+      col.appendChild(rp); col.appendChild(wp);
+    })();
+  }catch(e){}
   map.on('move zoom zoomend moveend resize viewreset', cover);
 
   // The flag the click handler reads. dragstart fires only for a real pan, so
@@ -7796,7 +7851,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-17 22:50";
+  var BUILD = "BUILD-2026-08-18 marker position";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
@@ -7807,9 +7862,9 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     d.id = 'pjBuild';
     d.style.cssText = 'font-size:9px;color:#7d8ba1;margin:6px 0 2px;letter-spacing:.3px;';
     var checks = [];
-    try{ checks.push('nudge:' + (typeof pjNudge === 'function' &&
-        JSON.stringify(pjNudge({kd:{clinical:3}, m:[]})) !== '[0,0]' ? 'on' : 'OFF')); }
-    catch(e){ checks.push('nudge:ERR'); }
+    try{ var _off = (typeof window.pjDrawOffset === 'function') ? window.pjDrawOffset('animals') : -1;
+         checks.push('facility-offset:' + (_off === 0 ? '0px' : _off < 0 ? 'ERR' : _off + 'px')); }
+    catch(e){ checks.push('facility-offset:ERR'); }
     checks.push('legend:' + (document.querySelector('#regBox input[data-reg]')
         ? 'built' : 'EMPTY'));
     checks.push('branches:' + (document.body.dataset.branchesOpen ? 'open' : 'NOT'));
