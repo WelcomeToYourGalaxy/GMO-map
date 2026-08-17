@@ -2765,7 +2765,13 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
                        the false branch above turns it off and style() does not
                        restore it. */
                     interactive:true}; }
-                 var c=((meta&&meta.color)||'#c98a2a'); return _ovStyle(c); },
+                 /* No meta means this key is not one of the shaded-area
+                    overlays and must not be drawn as one. 'treaties' is loaded
+                    through the same boot loader but has its own layer and its
+                    own controls; drawn here as well it became an orange fill
+                    over every country on Earth. */
+                 if(!meta) return {opacity:0, fillOpacity:0, weight:0, interactive:false};
+                 var c=meta.color; return _ovStyle(c); },
           onEachFeature:function(f,l){ var p=(f&&f.properties)||{};
             var nm=p.name||p.NAME||p.title||k;
             // One write-up, one code path. This popup used to build its own,
@@ -3181,10 +3187,26 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
   //
   // The fan is back, and it is the zoom-independent version, so both problems
   // stay fixed: markers separate properly AND they do not slide as you zoom.
+  // Degrees per pixel at the reference zoom the ring is sized at (zoom 8):
+  // the whole world is 256 * 2^8 pixels wide, so one pixel is 360/65536 degrees
+  // of longitude at the equator.
+  var PJ_FAN_DEG = 360 / (256 * Math.pow(2, 8));
   function pjCluPt(m, g){
-    var pt = m.latLngToContainerPoint([g.la, g.lo]);
     var R = pjFanRing(m, g);
     if(R && g._sib && g._sib.length > 1){
+      var n0 = g._sib.length, i0 = g._fi || 0, a0;
+      if(n0 === 2) a0 = i0 ? 0 : Math.PI;
+      else a0 = (i0 / n0) * 2 * Math.PI - Math.PI / 2;
+      // Offset the COORDINATE, not the screen point. A ring in degrees stays
+      // over the same ground at every zoom; a ring in pixels does not, and that
+      // is what made the clinics drift.
+      var dLat = -(R * PJ_FAN_DEG) * Math.sin(a0);
+      var cosl = Math.cos(g.la * Math.PI / 180) || 1;
+      var dLng = (R * PJ_FAN_DEG) * Math.cos(a0) / cosl;
+      return m.latLngToContainerPoint([g.la + dLat, g.lo + dLng]);
+    }
+    var pt = m.latLngToContainerPoint([g.la, g.lo]);
+    if(false){
       var n = g._sib.length, i = g._fi || 0, a;
       // A pair goes left and right: a country centroid usually sits in
       // something wider than it is tall, so a horizontal pair stays inside the
@@ -7724,7 +7746,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-18 fixes 1-6";
+  var BUILD = "BUILD-2026-08-17 22:29";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
