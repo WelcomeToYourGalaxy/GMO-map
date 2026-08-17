@@ -1181,7 +1181,7 @@ function _regimeBoxInner(iso){
     // the country actually runs - technique or trait - and the exemption is a
     // qualifier under it. A reader who saw only "Carve-out" was told what the
     // law had stopped doing and never what it does.
-    var _base = (hit.regime === 'carveout' && hit.base) ? hit.base : hit.regime;
+    var _base = window.pjRegimeBase ? window.pjRegimeBase(hit) : hit.regime;
     var _carve = (hit.regime === 'carveout');
     h+='<div class="rgm-lead"><span class="rgm-sw" style="border-color:'+((RC&&RC[_base])||'#7d8f45')+'"></span>'
       +'<b>'+_esc((RL&&RL[_base])||_base)+'</b>'
@@ -1191,7 +1191,10 @@ function _regimeBoxInner(iso){
     // it prints the carve-out paragraph here AND again in the section below,
     // so Colombia and Brazil each described their exemption twice and their
     // actual scheme never. It only falls back to something DIFFERENT now.
-    var _lead = R[_base];
+    // Belt as well as braces: whatever _base resolves to, the lead paragraph is
+    // never allowed to be the carve-out text. That text has its own section
+    // below, and printing it twice was the whole complaint.
+    var _lead = (_base === 'carveout') ? null : R[_base];
     if(!_lead && hit.regime !== 'carveout') _lead = R[hit.regime];
     if(_lead) h+='<div class="rgm-p">'+_esc(_lead)+'</div>';
     else if(_carve) h+='<div class="rgm-conf">This country runs a carve-out, and '
@@ -2536,10 +2539,27 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   // scheme the exemption is cut out of - technique, for all 42 of them - and the
   // boundary is dashed to say an exemption exists. One glance now reads: this is
   // how the law decides, and part of it has been lifted.
-  window.pjRegimeColourKey = function(p){
+  // Round 86. A carve-out feature is supposed to carry the scheme it is cut out
+  // of in `base`. The shipped overlay does not write that field, so every
+  // carve-out country fell through to the carve-out entry itself - drawn gold
+  // whatever scheme it runs, and given a write-up that printed the carve-out
+  // paragraph as the lead and then printed it again underneath. That is what
+  // Colombia and Brazil were showing.
+  //
+  // The map's own classification settles what the base is. A trait-based
+  // country is classified `trait`, and there are two of them; a country
+  // classified `carveout` is therefore an exemption cut out of a
+  // technique-based scheme, which is what this file already recorded for all
+  // 42 of them. Resolved in one place so the colour, the heading and the
+  // paragraph cannot disagree. If the overlay builder starts writing `base`,
+  // that value wins over the default.
+  window.pjRegimeBase = function(p){
     p = p || {};
-    return (p.regime === 'carveout' && p.base) ? p.base : p.regime;
+    if(p.regime !== 'carveout') return p.regime;
+    if(p.base && p.base !== 'carveout') return p.base;
+    return 'technique';
   };
+  window.pjRegimeColourKey = function(p){ return window.pjRegimeBase(p); };
   window.pjRegimeDashed = function(p){ return (p && p.regime) === 'carveout'; };
   try{window.REGIMEON=REGIMEON;}catch(e){}
   try{window.pjRestyleOverlays=function(k){ var L=_ovLayers[k];
@@ -2946,11 +2966,52 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   // separation once the map is close enough for it to mean anything. Ten pixels
   // at world zoom is a few hundred kilometres, which for a marker that is
   // already a country centroid is not a claim about where anything is.
+  // Round 86. The fixed pixel nudge could not have worked, and the reason is
+  // arithmetic rather than tuning. A clinical cluster was pushed 20px while the
+  // release cluster beside it draws at radius 27, so the smaller circle sat
+  // inside the larger one whatever the offsets were set to, and at world zoom
+  // the fade factor cut the 20px to 10. Separation has to be measured against
+  // the size of the things being separated, and that size is only known at the
+  // moment of drawing.
+  //
+  // So every cluster sharing a coordinate is given a slot on a ring whose
+  // radius clears the largest glyph in that group. Two markers on one centroid
+  // sit edge to edge; more sit in a rosette wide enough that none of them
+  // touch. It holds at every zoom because the radius it is built from is the
+  // radius actually painted. Drawing and hit-testing both call this, so a dot
+  // is still clicked where it is seen.
+  var PJ_FAN_ORDER = ['release','clinical','biosafety','repro','animals','industry','escape'];
+  function pjFanRing(m, g){
+    var sib = g && g._sib;
+    if(!sib || sib.length < 2) return 0;
+    var z = m.getZoom(), R = 0, i;
+    for(i = 0; i < sib.length; i++){
+      var r = pjCluRad(z, sib[i]);
+      if(r > R) R = r;
+    }
+    var n = sib.length;
+    // Two markers: half a ring each, so the gap between centres is 2R and the
+    // widest pair is edge to edge with a hairline between.
+    if(n === 2) return R + 3.5;
+    // Three or more: the chord between neighbours has to clear two radii, so
+    // the ring grows with the count rather than staying put and letting the
+    // rosette close up on itself. The cap is 54 rather than a rounder number
+    // because that is what five capped 30px glyphs need to stop touching -
+    // tested, not guessed. Beyond that a ring is wider than most countries and
+    // the overlap is the lesser fault.
+    return Math.min((R + 2.5) / Math.sin(Math.PI / n), 54);
+  }
   function pjCluPt(m, g){
-    var pt = m.latLngToContainerPoint([g.la, g.lo]), d = pjNudge(g);
-    if(!d[0] && !d[1]) return pt;
-    var z = m.getZoom(), f = Math.max(0.5, Math.min(1, (z - 2) / 5));
-    return L.point(pt.x + d[0] * f, pt.y + d[1] * f);
+    var pt = m.latLngToContainerPoint([g.la, g.lo]);
+    var R = pjFanRing(m, g);
+    if(!R) return pt;
+    var n = g._sib.length, i = g._fi || 0;
+    // A pair goes left and right rather than up and down: a country centroid
+    // sits in something usually wider than it is tall, so a horizontal pair
+    // stays inside the country it belongs to.
+    var a = (n === 2) ? (i ? 0 : Math.PI)
+                      : (-Math.PI / 2 + (2 * Math.PI * i) / n);
+    return L.point(pt.x + R * Math.cos(a), pt.y + R * Math.sin(a));
   }
   function pjClusters(z){
     if(_pjClu) return _pjClu;   // zoom-invariant: built once per filter change
@@ -3045,6 +3106,43 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       }
       g.total = t;
     }
+    // Slot assignment for the fan above. Everything drawn on one coordinate
+    // shares a ring, so no two glyphs are ever concentric. The order is fixed
+    // by kind rather than by whatever order the points arrived in, so a given
+    // register always takes the same side and markers do not swap places when a
+    // filter changes.
+    var _fan = {}, _fk;
+    for(i = 0; i < out.length; i++){
+      g = out[i];
+      _fk = g.la.toFixed(2) + '|' + g.lo.toFixed(2);
+      (_fan[_fk] || (_fan[_fk] = [])).push(g);
+    }
+    Object.keys(_fan).forEach(function(key){
+      var arr = _fan[key], q;
+      if(arr.length < 2){ arr[0]._sib = null; arr[0]._fi = 0; return; }
+      arr.sort(function(a, b){
+        var ai = PJ_FAN_ORDER.indexOf(a.dk), bi = PJ_FAN_ORDER.indexOf(b.dk);
+        if(ai < 0) ai = 99;
+        if(bi < 0) bi = 99;
+        if(ai !== bi) return ai - bi;
+        return (b.total || 0) - (a.total || 0);
+      });
+      // Slot order, not list order. Two large glyphs adjacent on the ring is
+      // the one arrangement that can still touch once the ring hits its cap,
+      // so the biggest and the second biggest are placed opposite each other
+      // and the rest interleave between them. The size ranking comes from the
+      // record count, which is fixed for a given filter state, so the layout
+      // is stable rather than reshuffling as the map is panned.
+      var bySize = arr.slice().sort(function(a, b){
+        return ((b.total || b.n || 0) - (a.total || a.n || 0))
+               || (arr.indexOf(a) - arr.indexOf(b));
+      });
+      var half = Math.ceil(arr.length / 2), slot = 0;
+      for(q = 0; q < half; q++){
+        bySize[slot]._sib = arr; bySize[slot]._fi = q; slot++;
+        if(slot < bySize.length){ bySize[slot]._sib = arr; bySize[slot]._fi = q + half; slot++; }
+      }
+    });
     _pjClu = out; _pjCluZ = z;
     return out;
   }
@@ -3864,7 +3962,11 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     h+='<div class="lg-h">Shaded areas — regulatory regime</div>';
     h+=row(ar(REGIMEC.technique),'Regulated by <b>how it was made</b>');
     h+=row(ar(REGIMEC.trait),'Regulated by <b>what the organism is</b>');
-    h+=row(ar(REGIMEC.carveout),'<b>Carve-out</b> — a class moved outside registration');
+    // Not a third colour. The dashes sit on whichever of the two above the
+    // country already carries, which is what the map draws.
+    h+=row('<i class="lg-ar" style="background:transparent;border:1.5px dashed '
+          +REGIMEC.technique+'"></i>',
+           '<b>… with a carve-out</b> — dashed, in that country’s own colour');
     h+='<div class="lg-n"><b>Unshaded does not mean unregulated.</b> It means this map holds no classification for that country yet — most have a biosafety law of some kind. The three shaded groups are the ones whose approach is documented well enough to place.</div>';
   }
   if(typeof PJ_OVERLAYS!=='undefined'){
@@ -3917,25 +4019,37 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     var h='';
     // Two regimes and one qualifier. Listing carve-out beside the other two
     // made it read as a third way a country can decide, which it is not.
+    // Round 86. The swatch is now the same shape as the thing it stands for: a
+    // bar of the colour the country's border is drawn in, at the width it is
+    // drawn at, rather than a small square that read as a generic bullet.
     ['technique','trait'].forEach(function(k){
       h+='<label title="'+window.REGIMEL[k].replace(/"/g,'&quot;')+'">'
         +'<input type="checkbox" data-reg="'+k+'" checked>'
-        +'<span class="ot-dot ot-edge" style="border-color:'+window.REGIMEC[k]
-        +';background:'+window.REGIMEC[k]+'"></span>'
+        +'<span class="reg-sw" style="background:'+window.REGIMEC[k]
+        +';border-color:'+window.REGIMEC[k]+'"></span>'
         +window.REGIMEL[k].split(' \u2014 ')[0]+'</label>';
     });
-    // Carve-out is a property of a country, not a third kind of country, so it
-    // is a tick that says "and show me which of these have an exemption" rather
-    // than a colour of its own.
+    // A carve-out is a qualifier on a regime, not a regime. Giving it one gold
+    // square said the opposite twice over: it read as a third scheme of equal
+    // standing, and a technique-based country with an exemption and a
+    // trait-based country with an exemption were iconned identically when the
+    // two are not the same thing at all. The swatch now shows what actually
+    // happens on the map - the country keeps its own colour and its border
+    // goes dashed - by carrying both colours, dashed, side by side.
     h+='<label title="A class of engineered organism placed outside registration, '
-      +'cut out of whichever scheme the country runs">'
+      +'cut out of whichever scheme the country runs. The country keeps the colour '
+      +'of that scheme; the dashes mark the part that has been lifted.">'
       +'<input type="checkbox" data-reg="carveout" checked>'
-      +'<span class="ot-dot ot-edge" style="border:2px dashed #b08d3e;background:transparent"></span>'
+      +'<span class="reg-sw reg-sw-carve">'
+      +'<i style="border-color:'+window.REGIMEC.technique+'"></i>'
+      +'<i style="border-color:'+window.REGIMEC.trait+'"></i></span>'
       +'\u2026 with a carve-out</label>';
     h+='<div class="ot-note">The boundary is the law. A country\u2019s outline is '
-      +'coloured by how it decides what counts as engineered; a dashed outline '
-      +'means part of that has been lifted. Colour <em>inside</em> a country is a '
-      +'GM zone, which is a different thing.</div>';
+      +'coloured by how it decides what counts as engineered \u2014 blue or amber, '
+      +'never both. A dashed outline in that same colour means a class of organism '
+      +'has been lifted out of it, so the dashes qualify the colour rather than '
+      +'replacing it. Colour <em>inside</em> a country is a GM zone, which is a '
+      +'different thing.</div>';
     rb.innerHTML=h;
     rb.addEventListener('change',function(e){
       if(e.target.id==='regAll'){
@@ -3973,6 +4087,15 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 </script>
 <style>
 #regBox label:not(.ot-all),#ovBox label{margin-left:17px;}
+/* The regime rows draw a boundary, not a dot, so the swatch is a bar the
+   width of a border sample. reg-sw-carve holds two of them, dashed, because a
+   carve-out attaches to whichever scheme the country already runs. */
+.reg-sw{width:17px;height:10px;border-radius:2px;border:2px solid transparent;
+  box-sizing:border-box;display:inline-block;flex:0 0 auto;}
+.reg-sw-carve{background:transparent!important;border:none;display:inline-flex;
+  gap:2px;align-items:stretch;}
+.reg-sw-carve i{flex:1 1 auto;border:1.5px dashed #b08d3e;border-radius:2px;
+  background:transparent;box-sizing:border-box;}
 .ot-key{display:flex;align-items:center;gap:6px;font-size:10.5px;color:#9aa8c0;margin:0 0 3px;}
 .ot-note{font-size:9.5px;color:#7d8ba1;line-height:1.45;margin:4px 0 2px;}
 .ot-area{width:13px;height:8px;border-radius:2px;opacity:.6;}
@@ -6413,9 +6536,17 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // start open, so which branches a reader found expanded depended on which
   // pass had won the race. Opened here, once, after all of them - and only on
   // the first tick, so a reader who collapses a branch keeps it collapsed.
+  // Round 86. This latched on the first tick that found any container, and the
+  // three passes that build them do not finish on the same tick - so whichever
+  // branch happened to exist first got opened, the latch closed, and the other
+  // kept whatever state the pass that made it left behind. Which branch a
+  // reader found expanded was therefore a race.
+  //
+  // It now runs every tick and stops only when the reader has used a caret,
+  // which is the thing the latch was there to protect. Reopening a branch
+  // nobody has touched costs one style write and cannot be got wrong.
   function openBranches(){
-    if(document.body.dataset.branchesOpen) return;
-    var any=false;
+    if(window.__pjBranchTouched) return;
     [].slice.call(document.querySelectorAll('.pj-kind')).forEach(function(cb){
       if(['industry','release'].indexOf(cb.dataset.kind)<0) return;
       var lab=cb.closest('label'); if(!lab) return;
@@ -6423,14 +6554,24 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       while(n){
         if(n.nodeType===1){
           if(n.tagName==='LABEL' && n.querySelector('.pj-kind')) break;
-          if(n.classList.contains('kind-sub')){ n.style.display=''; any=true; }
+          if(n.classList.contains('kind-sub') && n.style.display==='none') n.style.display='';
         }
         n=n.nextSibling;
       }
       var car=lab.querySelector('.kind-car');
-      if(car) car.textContent='\u25be';
+      if(car){
+        car.textContent='\u25be';
+        // Capture phase, so the flag is set before the caret's own handler
+        // runs and this pass does not undo the reader on the next tick.
+        if(car.dataset.userFlag!=='1'){
+          car.dataset.userFlag='1';
+          car.addEventListener('click',function(){ window.__pjBranchTouched=1; },true);
+        }
+      }
     });
-    if(any) document.body.dataset.branchesOpen='1';
+    // pjWhy() reports on this; it means the pass ran, not that it has finished
+    // having anything to do.
+    document.body.dataset.branchesOpen='1';
   }
   function tidy(){
     // A bordered container with nothing in it reads as a section whose contents
@@ -6620,41 +6761,6 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 </style>
 <script>
 (function(){
-  // A visible build stamp, in its own block that depends on nothing.
-  //
-  // Four rounds of fixes have been verified byte-for-byte in the deployed file
-  // and reported as absent from the page. That leaves two possibilities a
-  // console message cannot separate, because the console message would come
-  // from whichever file is loaded: either the browser is holding an old copy,
-  // or the fixes are running and aimed at the wrong thing. This line says which
-  // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-17 00:49";
-  function stamp(){
-    if(document.getElementById('pjBuild')) return;
-    var host = document.querySelector('.pj-kinds') ||
-               document.getElementById('mapLegend') ||
-               document.body;
-    if(!host) return;
-    var d = document.createElement('div');
-    d.id = 'pjBuild';
-    d.style.cssText = 'font-size:9px;color:#7d8ba1;margin:6px 0 2px;letter-spacing:.3px;';
-    var checks = [];
-    try{ checks.push('nudge:' + (typeof pjNudge === 'function' &&
-        JSON.stringify(pjNudge({kd:{clinical:3}, m:[]})) !== '[0,0]' ? 'on' : 'OFF')); }
-    catch(e){ checks.push('nudge:ERR'); }
-    checks.push('legend:' + (document.querySelector('#regBox input[data-reg]')
-        ? 'built' : 'EMPTY'));
-    checks.push('branches:' + (document.body.dataset.branchesOpen ? 'open' : 'NOT'));
-    checks.push('terrain:' + (typeof window.pjSatTune === 'function' ? 'on' : 'OFF'));
-    d.textContent = BUILD + '  ' + checks.join('  ');
-    host.appendChild(d);
-  }
-  var t = setInterval(stamp, 900);
-  setTimeout(function(){ clearInterval(t); stamp(); }, 12000);
-})();
-</script>
-<script>
-(function(){
   /* Satellite restyle: composite, never replace.
    *
    * The photographic quality of satellite imagery is carried almost entirely by
@@ -6709,12 +6815,42 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     if(blend) el.style.mixBlendMode = blend;
     return el;
   }
+  /* A flat fill inside a Leaflet pane is NOT viewport-sized. Leaflet translates
+   * the map pane as you pan and zoom, and every pane goes with it - so a box of
+   * inset:-2000px is a 4000px square nailed to the map, not to the screen. Pan
+   * or zoom far enough and its edge crosses the view: the tint stops in a hard
+   * horizontal line about three-quarters up, and the line moves as you zoom.
+   * That edge was the div running out.
+   *
+   * The fills carry no geography - they are one colour - so they should follow
+   * the SCREEN. Each is repositioned against the map pane's own offset on every
+   * move, which cancels the translate exactly and leaves it covering the
+   * viewport whatever the map underneath is doing.
+   */
+  var _fills = [];
+  function cover(){
+    try{
+      var mp = map.getPanes().mapPane;
+      var o  = L.DomUtil.getPosition(mp) || {x:0, y:0};
+      var sz = map.getSize();
+      /* a margin so a fill never lags a pan mid-gesture */
+      var m  = 400;
+      for(var i=0;i<_fills.length;i++){
+        var d = _fills[i];
+        d.style.left   = (-o.x - m) + 'px';
+        d.style.top    = (-o.y - m) + 'px';
+        d.style.width  = (sz.x + m*2) + 'px';
+        d.style.height = (sz.y + m*2) + 'px';
+      }
+    }catch(e){}
+  }
   function fillPane(name, z, blend, colour, opacity){
     var el = pane(name, z, blend);
     var d = document.createElement('div');
-    d.style.cssText = 'position:absolute;inset:-2000px;background:' + colour +
-                      ';opacity:' + opacity + ';';
+    d.style.cssText = 'position:absolute;left:0;top:0;width:100%;height:100%;' +
+                      'background:' + colour + ';opacity:' + opacity + ';';
     el.appendChild(d);
+    _fills.push(d);
     return {el:el, fill:d};
   }
 
@@ -6793,6 +6929,12 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   map.whenReady(ramp);
   ramp();
 
+  /* move fires throughout a pan and an animated zoom, which is what keeps the
+     edge off screen while the gesture is still running. */
+  map.on('move zoom zoomend moveend resize viewreset', cover);
+  map.whenReady(cover);
+  cover();
+
   /* Dial it from the console rather than through another upload:
        pjSatTune({green:0.4, warm:0.3, shade:0.5, sat:1.3})
        pjSatTune()            - prints the current values
@@ -6812,6 +6954,41 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     if(on === false){ var sp = map.getPane(SAT_PANE); if(sp) sp.style.filter = ''; }
     else applyFilter();
   };
+})();
+</script>
+<script>
+(function(){
+  // A visible build stamp, in its own block that depends on nothing.
+  //
+  // Four rounds of fixes have been verified byte-for-byte in the deployed file
+  // and reported as absent from the page. That leaves two possibilities a
+  // console message cannot separate, because the console message would come
+  // from whichever file is loaded: either the browser is holding an old copy,
+  // or the fixes are running and aimed at the wrong thing. This line says which
+  // file you are actually looking at, without opening anything.
+  var BUILD = "BUILD-2026-08-17 01:07";
+  function stamp(){
+    if(document.getElementById('pjBuild')) return;
+    var host = document.querySelector('.pj-kinds') ||
+               document.getElementById('mapLegend') ||
+               document.body;
+    if(!host) return;
+    var d = document.createElement('div');
+    d.id = 'pjBuild';
+    d.style.cssText = 'font-size:9px;color:#7d8ba1;margin:6px 0 2px;letter-spacing:.3px;';
+    var checks = [];
+    try{ checks.push('nudge:' + (typeof pjNudge === 'function' &&
+        JSON.stringify(pjNudge({kd:{clinical:3}, m:[]})) !== '[0,0]' ? 'on' : 'OFF')); }
+    catch(e){ checks.push('nudge:ERR'); }
+    checks.push('legend:' + (document.querySelector('#regBox input[data-reg]')
+        ? 'built' : 'EMPTY'));
+    checks.push('branches:' + (document.body.dataset.branchesOpen ? 'open' : 'NOT'));
+    checks.push('terrain:' + (typeof window.pjSatTune === 'function' ? 'on' : 'OFF'));
+    d.textContent = BUILD + '  ' + checks.join('  ');
+    host.appendChild(d);
+  }
+  var t = setInterval(stamp, 900);
+  setTimeout(function(){ clearInterval(t); stamp(); }, 12000);
 })();
 </script>
 </body>
