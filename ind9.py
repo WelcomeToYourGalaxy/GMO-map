@@ -66,7 +66,7 @@ IND9["IRL"] = [
 
 IND9["SGP"] = [
  e("Lonza Singapore / biologics cluster", "https://www.edb.gov.sg/en/our-industries/pharmaceuticals-and-biotechnology.html",
-   "Part of Singapore’s deliberate build-out of biologics manufacturing, alongside its willingness to approve novel foods first. A small state has assembled a position in global biotechnology through policy rather than through having a domestic market.",
+   "Part of Singapore's deliberate build-out of biologics manufacturing, alongside the tax and land policy that brought it there. A state can acquire an industry this way in a decade, and the resulting capacity means therapies approved elsewhere are physically made in a country with no say in whether they were approved.",
    ["cro:cdmo","money:public"], base=BODY)]
 
 # ================================================= LABORATORY ANIMALS =========

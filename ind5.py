@@ -63,7 +63,7 @@ IND5["USA"] = IND5["USA"] + [
    "Sells polygenic risk scoring of IVF embryos, including for traits with no single genetic cause. Professional genetics bodies have said the science does not support clinical use. It is sold regardless, because embryo selection requires none of the approval a drug or device would need — the distance between what the evidence supports and what may lawfully be sold is the entire market.",
    ["repro:screening","clinical:germline"]),
  e("Society for Assisted Reproductive Technology", "https://www.sart.org/",
-   "The US fertility profession’s own body, which collects and publishes clinic outcome data and sets practice guidance. Self-regulation covers most of what US fertility clinics do, and this is what it looks like in practice: real data collection, real guidance, no enforcement, and a membership free to ignore either.",
+   "Collects and publishes US clinic outcome data alongside the CDC's, and sets much of the professional guidance the sector follows in the absence of law — including the voluntary family limits for donors. Success rates published per clinic create an incentive that shapes practice: a clinic can improve its numbers by treating easier patients, and the published figure cannot distinguish that from better medicine.",
    ["repro:clinics","rules:associations"], base=ASSN)]
 
 IND5["ESP"] = [

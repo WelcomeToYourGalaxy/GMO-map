@@ -46,9 +46,6 @@ IND12["BEL"] = [
 # Public figures in public roles. Each entry describes the role and the decisions
 # attached to it, not the person.
 IND12["USA"] = IND12["USA"] + [
- e("Bayer Crop Science \u2014 divisional leadership", "https://www.bayer.com/en/agriculture/crop-science-leadership",
-   "The named executives running the division, disclosed in corporate filings. Naming who decides is what makes a decision attributable at all — without it, an industry is discussed as though its choices were made by nobody.",
-   ["seed:majors","rules:influence"]),
  e("Broad Institute \u2014 CRISPR inventors and the patent record", "https://www.broadinstitute.org/crispr",
    "The scientists credited on the patents the Broad prevailed with, and the institutional arrangements around them. Individual inventors are named on patents by law, so the record connecting people, institutions and licensing terms is public and complete.",
    ["editing:patents","money:public"], base=BODY),
@@ -56,7 +53,7 @@ IND12["USA"] = IND12["USA"] + [
    "The Berkeley institute founded by one of the CRISPR Nobel laureates, running work on agricultural and therapeutic editing with an explicit access mission for low-income settings. The same scientists appear on the patents, in the companies, and in the ethics debates, which is ordinary in this field and worth being able to trace.",
    ["editing:patents","clinical:therapy","money:philanthropy"], base=BODY),
  e("Colossal Biosciences \u2014 founders and scientific advisers", "https://colossal.com/team/",
-   "The named founders and advisory board of the de-extinction company, several of whom hold senior academic posts. Academic credibility is part of what the company raises money on, and the affiliations are disclosed.",
+   "The named founders and advisory board of the de-extinction company, including George Church. The advisers matter because de-extinction has almost no regulatory surface — no product to approve, no release yet proposed — so the credibility of the people involved is doing the work that a regulator's assessment would do in any other part of this field.",
    ["deextinct:ventures","money:vc","editing:platform"])]
 
 IND12["CHN"] = [
@@ -70,14 +67,9 @@ IND12["GBR"] = [
    "The oldest agricultural research station in the world, running field experiments that have continued since the 1840s and conducting engineered wheat and camelina trials. Its long-term experiments are the reference dataset against which agricultural change is measured, engineered or otherwise.",
    ["editing:agtech","money:public"], base=BODY)]
 
-IND12["CHE"] = [
- e("Syngenta \u2014 sustainability and regulatory reporting", "https://www.syngenta.com/en/sustainability",
-   "The company’s own published sustainability and regulatory disclosures. Self-reported figures are the industry’s account of itself, and having them in one place is what allows the account to be compared against independent measurement.",
-   ["seed:majors","rules:influence"], trust="medium")]
-
 IND12["FRA"] = [
  e("OECD \u2014 Working Party on Biotechnology", "https://www.oecd.org/en/topics/biotechnology.html",
-   "Where national regulators harmonise consensus documents and unique identifiers for biotechnology products. Harmonisation decisions made here shape what national rules can practically diverge on, well upstream of any national debate.",
+   "Where national regulators agree the consensus documents that describe what is known about a crop or trait, so that each country does not reassess the same biology separately. Those documents carry no legal force and are relied on everywhere, which makes a technical committee of officials one of the quieter sources of what counts as settled science in this field.",
    ["rules:standards","rules:regulators"], base=REGI)]
 
 IND12["ITA"] = [

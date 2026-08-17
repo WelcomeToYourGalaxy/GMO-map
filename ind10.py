@@ -25,7 +25,7 @@ IND10["ECU"] = [
 # ========================================================== COSTA RICA ========
 IND10["CRI"] = [
  e("Comisi\u00f3n T\u00e9cnica Nacional de Bioseguridad", "https://www.protecnet.go.cr/",
-   "Costa Rica permits engineered crops to be grown for seed export while restricting domestic cultivation — the same arrangement as Chile. Several countries have settled on producing engineered seed for others to plant without planting it themselves.",
+   "Costa Rica permits engineered crops to be grown for seed export while not authorising them for domestic cultivation. Seed multiplication for northern markets happens in tropical countries because two or three generations a year are possible there, so a country can host the production of a crop its own farmers may not plant.",
    ["rules:regulators","seed:distribution"], base=REGI)]
 
 # ============================================================ TANZANIA ========
@@ -88,22 +88,22 @@ IND10["USA"] = [
    "Research toward using engineered organisms for conservation — suppressing invasive species, rescuing populations too small to recover. The conservation case is the strongest argument for deliberate release, and it is being made by people with no commercial interest in the outcome.",
    ["deextinct:rescue","wild:drives","wild:insects"], base=BODY),
  e("Nature Conservancy \u2014 biotechnology in conservation", "https://www.nature.org/",
-   "One of the largest conservation organisations in the world, which has engaged with rather than opposed biotechnology in conservation. Its position splits the environmental movement, and the split is substantive rather than tactical.",
+   "One of the largest conservation organisations in the world, and among the few with a stated position on engineered organisms in wild systems. The split inside conservation is real: engineered resistance could save chestnuts, corals and island birds, and it is also an irreversible release into places valued for being unmanaged. This is one of the bodies that has to decide rather than comment.",
    ["deextinct:rescue","rules:associations"], base=BODY)]
 
 # ============================================================= MONEY ==========
 IND10["GBR"] = [
  e("Wellcome Leap", "https://wellcomeleap.org/",
-   "A programme funding high-risk biomedical work on short timelines, including in genetic medicine. It is an attempt to buy speed with philanthropic money rather than venture money, and the difference in what gets attempted is visible in its portfolio.",
+   "Funds high-risk biomedical programmes on fixed timelines, modelled on DARPA and financed by the Wellcome Trust's endowment. Philanthropic money of this size chooses research directions without any of the public-comment machinery that attaches to state funding, and the choices are made by programme managers rather than by peer review.",
    ["money:philanthropy","clinical:therapy","repro:screening"], base=BODY)]
 
 IND10["CHN"] = [
  e("China National Seed Group (Syngenta / Sinochem)", "https://www.sinochem.com/en/",
-   "China’s largest seed company, inside the state-owned group that also owns Syngenta. The combination gives one state-controlled entity a position in both domestic and international seed markets that no private company holds.",
+   "China's largest seed company, inside the state group that also owns Syngenta. It puts domestic breeding and a global crop protection business under one owner, which is the structure China built deliberately after deciding that dependence on foreign maize and soy genetics was a strategic exposure rather than a commercial one.",
    ["seed:majors","seed:distribution","money:public"])]
 
 # ============================================================= ANIMALS ========
 IND10["DEU"] = [
  e("European Bioinformatics Institute \u2014 model organism databases", "https://www.ebi.ac.uk/",
-   "The public databases holding genome and model-organism data that biology worldwide depends on, funded by European states. Almost every entry on this map relies on this infrastructure, and none of it is owned by anyone who charges for it.",
+   "The public databases holding genome and model-organism data for the whole field, run as European infrastructure and free to use. Every argument about sequence ownership and benefit-sharing runs through the fact that this data is already open: material collected in one country is deposited here and readable by anyone, which is the practical reason the Nagoya negotiations on digital sequence information have gone on so long.",
    ["animals:models","synthesis:repos"], base=BODY)]

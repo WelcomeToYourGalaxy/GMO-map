@@ -90,9 +90,7 @@ IND29["CIV"] = [
 IND29["CMR"] = [
  e("Institut de Recherche Agricole pour le D\u00e9veloppement",
    "https://www.irad-cameroon.org/",
-   "Cameroon\u2019s agricultural research institute, holding collections for crops of the "
-   "Congo basin. Central Africa is the least documented region in this entire field, "
-   "which is a fact about research funding rather than about what grows there.",
+   "Cameroon's agricultural research institute, holding germplasm and running breeding for crops grown across central Africa. Institutes of this kind hold collections nobody else has, are chronically underfunded, and are the entities that benefit-sharing arrangements are written about — usually without their participation in the writing.",
    ["seed:germplasm", "seed:traits"], base=BODY),
 ]
 
@@ -139,8 +137,6 @@ IND29["NPL"] = [
 IND29["GTM"] = [
  e("ICTA \u2014 Instituto de Ciencia y Tecnolog\u00eda Agr\u00edcolas",
    "https://icta.gob.gt/",
-   "Guatemala sits inside the centre of origin for maize alongside Mexico, and its "
-   "landraces are part of the same reservoir. It has far less institutional capacity to "
-   "protect them and receives a fraction of the attention Mexico\u2019s dispute does.",
+   "Guatemala sits inside the centre of origin for maize, where wild relatives and thousands of local varieties still grow. Gene flow from an engineered crop into that diversity is a different question from gene flow in a field in Iowa, and this is the institute that holds the collections and would have to answer it.",
    ["seed:germplasm", "food_crops"], base=BODY),
 ]

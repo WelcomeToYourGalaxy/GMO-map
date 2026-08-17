@@ -7,18 +7,18 @@ IND19 = {}
 # ===================================== INSECTS, MICROBES & OPEN RELEASE =======
 IND19["USA"] = [
  e("Pivot Bio \u2014 PROVEN product record", "https://www.pivotbio.com/proven",
-   "The nitrogen-fixing microbial product applied across millions of US acres. By area it is among the largest deliberate releases of an engineered organism in history, and it generates no entry in any biosafety register anywhere.",
+   "A nitrogen-fixing microbial product applied across millions of US acres, using engineered soil bacteria that supply nitrogen to maize directly. It is one of the largest deliberate releases of engineered microorganisms into open farmland anywhere, registered as a crop input, and it attracts almost none of the attention an engineered plant would.",
    ["wild:microbes","seed:distribution"]),
  e("Marrone / Pro Farm Group", "https://profarmgroup.com/",
-   "Biological crop protection products, some using engineered microbes. The biologicals sector grew into the regulatory space where the least is required, which is visible in what it chooses to sell.",
+   "Biological crop protection products — microbes and microbial extracts applied to fields instead of synthetic pesticides, some of them engineered. Biologicals are registered as pesticides rather than as releases, which is a faster and cheaper route than an engineered plant takes for a product that is also a living organism spread deliberately across farmland.",
    ["wild:microbes","seed:licensees","money:vc"]),
  e("USDA APHIS \u2014 biotechnology regulatory notices", "https://www.aphis.usda.gov/biotechnology/notices",
-   "The notices and rule changes through which US biotechnology regulation is actually altered, including the exemptions that removed whole classes of edited plants from oversight. The rulemaking record is public and the comment periods are open.",
+   "The notices and rule changes through which US oversight of engineered plants has been rewritten, most substantially by the SECURE rule of 2020. That rule let developers themselves determine whether a plant is exempt, with the agency confirming rather than assessing — which moved the initial judgement from the regulator to the company and is why the count of reviewed products fell sharply afterwards.",
    ["rules:regulators","wild:insects"], base=REGI)]
 
 IND19["GBR"] = [
  e("Rothamsted \u2014 GM aphid-repellent wheat trial", "https://www.rothamsted.ac.uk/gm-field-trials",
-   "A publicly funded field trial of wheat engineered to repel aphids, which worked in the laboratory and not in the field. The negative result was published, which is rarer than it should be and is the reason this trial is worth knowing about.",
+   "A publicly funded field trial of wheat engineered to emit an aphid alarm pheromone, which drew protest, an attempted crop destruction and a fenced security cordon costing more than the science. The wheat did not repel aphids in the field. Both halves matter: a public trial conducted openly, at great cost, that produced a negative result and published it.",
    ["editing:agtech","money:public","wild:insects"], base=BODY)]
 
 IND19["AUS"] = [
@@ -29,38 +29,38 @@ IND19["AUS"] = [
 # ================================= DE-EXTINCTION & CONSERVATION BIOTECH =======
 IND19["USA"] = IND19["USA"] + [
  e("ViaGen \u2014 Przewalski's horse and endangered species cloning", "https://www.viagen.com/",
-   "Cloned Przewalski’s horses from cells banked decades earlier, for a subspecies with almost no remaining genetic diversity. The capability now used for conservation exists because a consumer pet-cloning market paid to develop it.",
+   "Cloned Przewalski's horses from cells banked in the 1980s, reintroducing genetic diversity that had been lost from the living population entirely. The same company clones pet dogs and cats commercially. Conservation cloning and pet cloning are the same laboratory procedure sold to different buyers, and the commercial side is what pays for the capability.",
    ["deextinct:rescue","livestock:cloning","deextinct:biobank"]),
  e("Wildlife Conservation Society \u2014 biotechnology position", "https://www.wcs.org/",
-   "A major conservation organisation’s position on engineered organisms in conservation. The conservation movement is genuinely split on this, and the split runs through organisations rather than between them.",
+   "One of the largest conservation organisations, and among the first to set out a position on engineered organisms in wild systems. Conservation is genuinely split here: gene drives and engineered resistance could save species from invasive predators and disease, and they are also irreversible releases into places chosen precisely because they are not managed. The argument runs inside the movement rather than between it and industry.",
    ["deextinct:rescue","rules:associations"], base=BODY)]
 
 IND19["ZAF"] = [
  e("Rhino and wildlife biobanking \u2014 BioRescue partners", "https://www.biorescue.org/",
-   "The programme attempting to produce northern white rhino embryos from banked material, with two females remaining and no males. It is the clearest test of whether biobanking can recover a species after the population has effectively gone.",
+   "The programme attempting to produce northern white rhinos from banked cells and harvested eggs, with two females alive and no males. It has created viable embryos and has not yet produced a calf. If it works it is the first species brought back from functional extinction; if it does not, it is the clearest demonstration that banking material is not the same as saving a species.",
    ["deextinct:rescue","deextinct:biobank","repro:clinics"], base=BODY)]
 
 # ========================================================= HUMAN CLINICAL =====
 IND19["USA"] = IND19["USA"] + [
  e("Vertex Pharmaceuticals", "https://www.vrtx.com/",
-   "Holds the commercial control of the first approved CRISPR therapy, priced above two million dollars. Sickle cell is overwhelmingly a West African and Indian disease, and the treatment was priced for American insurance.",
+   "Holds commercial control of Casgevy, the first approved CRISPR therapy, developed with CRISPR Therapeutics. Vertex is the partner that took it through approval and sets the price, and its earlier cystic fibrosis franchise is the template: a small patient population, an extremely high price, and a payer system reorganised around a single company's product. The same model applied to a curable genetic disease is what the sickle cell rollout is now testing.",
    ["clinical:therapy","editing:platform","money:markets"]),
  e("National Marrow Donor Program / NMDP \u2014 cell therapy infrastructure", "https://nmdp.org/",
-   "The US registry and network through which stem cell transplants are matched and delivered, now also handling cell therapy logistics. The infrastructure that determines who can physically receive a cell therapy was built for transplants.",
+   "The US registry through which unrelated stem cell donors are matched to patients, and the infrastructure gene therapies for blood disorders depend on. Casgevy and its equivalents need the same capability — conditioning, apheresis, a specialist transplant unit — so a cure delivered as edited cells can only reach patients where that system already exists, which is a smaller map than the disease.",
    ["clinical:therapy","clinical:trials"], base=BODY),
  e("Sickle Cell Disease Association of America", "https://www.sicklecelldisease.org/",
-   "The patient organisation for a disease with an approved cure most patients cannot obtain. Patient organisations are where the gap between approval and access is documented most concretely.",
+   "The patient organisation for a disease with an approved cure that almost no patient can obtain. Casgevy costs over two million dollars and requires chemotherapy conditioning and a transplant-capable hospital; sickle cell is most common in sub-Saharan Africa and, in the United States, among Black Americans, and it was for decades among the least funded conditions relative to its burden. The gap between an approval and a treated patient is the whole subject here, and this is the organisation that has to argue it.",
    ["clinical:therapy","rules:associations"], base=ASSN)]
 
 IND19["JPN"] = [
  e("PMDA \u2014 regenerative medicine conditional approval", "https://www.pmda.go.jp/english/",
-   "Japan grants conditional approval to regenerative medicine products on preliminary evidence, with confirmation required later. Several products approved this way were subsequently found ineffective, and the pathway remains.",
+   "Japan grants conditional, time-limited approval to regenerative and cell therapies on evidence of safety and probable benefit, with efficacy confirmed afterwards. It is the most permissive route of its kind in a major jurisdiction, and it is the live experiment in whether approving early gets treatments to patients sooner or gets ineffective ones onto the market.",
    ["clinical:therapy","rules:regulators"], base=REGI)]
 
 # ================================================================ MONEY =======
 IND19["USA"] = IND19["USA"] + [
  e("Fidelity and index funds \u2014 passive ownership of the sector", "https://www.sec.gov/edgar/search/",
-   "Index funds hold large stakes in nearly every listed company on this map without choosing any of them. Passive ownership at this scale means the largest shareholders of the industry have no view on it at all.",
+   "Index funds hold large stakes in nearly every listed company on this map at once, because they hold the index rather than choosing companies. The consequence is that the same handful of managers are simultaneously among the largest owners of firms that compete with each other — a concentration produced by a savings product, examined by no merger review, and voted at every annual meeting.",
    ["money:markets","money:vc"], base=REGI),
  e("Bill & Melinda Gates Agricultural Innovations (Gates Ag One)", "https://www.gatesagone.org/",
    "The foundation’s agricultural vehicle, funding crop development for low-income countries. Philanthropy is among the largest funders of putting engineered organisms into the ground there, so the usual test of whether farmers want a product never happens.",
@@ -68,18 +68,18 @@ IND19["USA"] = IND19["USA"] + [
 
 IND19["CHN"] = [
  e("Chinese state agricultural investment \u2014 seed industry revitalisation", "https://www.moa.gov.cn/",
-   "State-directed consolidation of Chinese seed companies into larger national champions. Concentration is being produced deliberately as policy rather than emerging through mergers.",
+   "State-directed consolidation of Chinese seed companies into a smaller number of national champions, through Sinochem, COFCO and provincial funds. The stated aim is seed self-sufficiency: China imports a large share of its maize and soy genetics and treats that as a strategic exposure. Consolidation here is industrial policy, where the same concentration elsewhere is the residue of private mergers.",
    ["money:public","seed:majors","rules:regulators"], base=REGI)]
 
 # ============================================ CONTRACT RESEARCH ===============
 IND19["IND"] = [
  e("Aurigene / Dr Reddy's discovery services", "https://www.aurigene.com/",
-   "An Indian contract discovery operation working for international pharmaceutical clients. A large share of the world’s preclinical data is generated in a country whose regulator is not the one reading it.",
+   "An Indian contract discovery operation running early-stage work for international pharmaceutical companies. Discovery outsourcing means the earliest decisions about what to develop — which target, which molecule, which disease — are increasingly taken in laboratories that will never appear on the resulting approval.",
    ["cro:cro","clinical:trials"])]
 
 IND19["KOR"] = [
  e("SK pharmteco", "https://www.skpharmteco.com/",
-   "A Korean conglomerate’s contract manufacturing arm, including cell and gene therapy production. Manufacturing capacity determines which therapies can exist at scale, and it is concentrating in a few groups.",
+   "The contract manufacturing arm of a Korean conglomerate, making cell and gene therapies and their viral vectors for other companies. Asian manufacturing capacity of this kind is why a therapy approved in the United States may be physically produced somewhere with no say in whether it was approved.",
    ["cro:cdmo","clinical:vectors"])]
 
 # ================================================ SEED, RULES, TERRITORIES ====
@@ -90,5 +90,5 @@ IND19["POL"] = [
 
 IND19["MYS"] = [
  e("Malaysian Palm Oil Board \u2014 genome programme", "https://mpob.gov.my/",
-   "Sequenced the oil palm genome and identified genes controlling yield, in a public programme. Palm oil is among the most consequential crops in the world for land use, and the research on it is largely state-run.",
+   "Sequenced the oil palm genome and identified the single gene controlling shell thickness, which determines oil yield per fruit. A test for that gene lets a planter reject unproductive seedlings before planting a tree that occupies land for twenty-five years. It is the clearest case of genomics changing a plantation crop without any engineering — the knowledge alone was worth the programme.",
    ["editing:agtech","money:public","editing:synbio"], base=BODY)]

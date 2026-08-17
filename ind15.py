@@ -12,7 +12,7 @@ IND15["DEU"] = [
 
 IND15["DNK"] = [
  e("DLF Seeds", "https://www.dlf.com/",
-   "A Danish cooperative that is the world’s largest grass and forage seed company. Grass gets almost no attention in this debate, and it is the crop where the clearest documented case of transgene spread into wild relatives occurred, in Oregon.",
+   "A Danish cooperative that is the world's largest supplier of grass and clover seed, for pasture, forage and turf. Grassland covers more of the planet's agricultural area than any crop and receives almost none of the attention: a seed sector this large sits outside the entire engineered-crop argument because nobody has found it worth engineering.",
    ["seed:germplasm","seed:licensees"])]
 
 IND15["FRA"] = [
@@ -22,27 +22,27 @@ IND15["FRA"] = [
 
 IND15["JPN"] = [
  e("Sakata Seed", "https://www.sakataseed.co.jp/english/",
-   "A Japanese vegetable seed company with worldwide operations. Vegetable seed is a separate market from row crops, more fragmented and less discussed, and a handful of Japanese and Dutch firms hold much of it.",
+   "A Japanese vegetable and flower seed company operating worldwide, and one of the handful of firms that dominate vegetable breeding. Vegetables are bred conventionally almost everywhere, because the crops are too many and the markets too fragmented for engineered varieties to repay approval costs — so seed concentration in vegetables happened without any of the technology this map otherwise tracks.",
    ["seed:germplasm","seed:licensees"])]
 
 IND15["CHE"] = [
  e("Bucher / agricultural machinery and data", "https://www.bucherindustries.com/",
-   "Agricultural machinery that collects field data as it works. Machinery data and seed data converge on the same platforms, so the company that sells the seed can end up holding the record of how it performed.",
+   "Agricultural machinery that records field conditions as it works, feeding the same data streams the seed companies collect. Machinery makers and seed companies are now competing for the same asset — a continuous record of what was planted, sprayed and harvested on each field — and whoever holds it can price inputs to each farm individually.",
    ["seed:distribution","editing:platform"])]
 
 # ==================================== GENE EDITING & SYNTHETIC BIOLOGY ========
 IND15["USA"] = [
  e("Beam Therapeutics", "https://beamtx.com/",
-   "Base editing changes a single DNA letter without cutting both strands, which avoids some of the unintended rearrangements cutting produces. It is a genuine reduction in one class of risk, and it does not address where in the genome the change lands.",
+   "Base editing changes a single DNA letter without cutting the double helix, which avoids the breaks that cause most unintended damage from earlier methods. Roughly half of known disease-causing mutations are single-letter changes, so the technique addresses more conditions than any other editing chemistry — and because it makes a change indistinguishable from a natural variant, it is also the hardest to detect afterwards in anything it is used on.",
    ["editing:platform","clinical:therapy"]),
  e("Prime Medicine", "https://primemedicine.com/",
-   "Prime editing writes new sequence into a target site with a template, in principle correcting mutations rather than disrupting genes. The technique is newer than the companies built on it, which is the usual sequence in this field.",
+   "Prime editing writes new sequence into a target site without cutting both strands of the DNA, which is where most unintended damage from earlier editing comes from. In principle it can make the majority of known disease-causing mutations correctable by one method. It is the most capable editing chemistry yet demonstrated and the furthest from routine use, which is the ordinary gap in this field between what works in a cell and what reaches a patient.",
    ["editing:platform","clinical:therapy","rules:regulators"]),
  e("Arcadia Biosciences", "https://www.arcadiabio.com/",
-   "Developed wheat and other crops with altered nutritional composition, and shifted toward consumer products after the agricultural business struggled. Trait companies without distribution keep discovering that the breeding is not the hard part.",
+   "Developed wheat and other crops with altered nutritional composition, including reduced-gluten wheat, using both conventional and engineered approaches. It is a long-running example of the output trait — a change a consumer might want rather than one a farmer wants — which has repeatedly been promised as the next phase of this industry and repeatedly not arrived.",
    ["editing:agtech","rules:regulators"]),
  e("Zymergen / Ginkgo \u2014 the collapse and absorption", "https://investors.ginkgobioworks.com/news-releases",
-   "Zymergen raised heavily on automated organism design, failed to deliver its first product, collapsed, and was bought by Ginkgo. The platform promise and the product reality diverged publicly, in filings, which is rare enough to be worth reading.",
+   "Zymergen raised heavily on automated organism engineering, listed publicly in 2021, disclosed months later that its lead product had no viable market, and was bought by Ginkgo for a fraction of its valuation. It is the clearest failure on this map, and it is here because the pitch it failed on — that engineering biology would industrialise like software — is the pitch the sector still makes.",
    ["editing:synbio","money:vc","money:markets"])]
 
 IND15["GBR"] = [
@@ -56,10 +56,10 @@ IND15["USA"] = IND15["USA"] + [
    "A sequencing company competing with Illumina, part of the first real challenge to that dominance in over a decade. Competition in sequencing instruments changes the cost of checking things, which affects everyone doing verification rather than production.",
    ["synthesis:seq"]),
  e("Ultima Genomics", "https://www.ultimagenomics.com/",
-   "Announced very low-cost sequencing, aimed at making genome reading cheap enough to do routinely at population scale. Cheap sequencing expands both surveillance and verification, and the same instrument serves both.",
+   "Announced sequencing at a cost far below the prevailing price, on a machine built around a spinning wafer rather than a flow cell. Whether or not it displaces Illumina, the announcement changed what buyers expect to pay — and the cost of reading a genome is the variable that decides whether population-scale programmes, newborn sequencing and routine embryo screening are affordable at all.",
    ["synthesis:seq","clinical:trials"]),
  e("New England Biolabs", "https://www.neb.com/",
-   "An employee-owned company supplying the enzymes molecular biology runs on, which has kept prices low and published methods openly. Ownership structure has visibly shaped its behaviour in a sector where most suppliers are inside conglomerates.",
+   "An employee-owned company supplying the enzymes molecular biology is done with, including many of the restriction enzymes and polymerases that made the field possible. Its ownership structure is the unusual part: a central supplier to a heavily consolidated industry that has stayed independent and prices its catalogue accordingly.",
    ["synthesis:reagents","editing:platform"])]
 
 # ================================================ RULES, RECORDS & ADVOCACY ==
@@ -70,7 +70,7 @@ IND15["CHE"] = IND15.get("CHE", []) + [
 
 IND15["KEN"] = [
  e("African Union \u2014 continental biosafety and biotechnology policy", "https://au.int/",
-   "Continental coordination on biosafety policy, which shapes what individual African regulators adopt. Model laws written at this level propagate into national statutes, so the drafting is more consequential than any single country’s decision.",
+   "Continental coordination on biosafety policy through AUDA-NEPAD, providing model law and technical support to member states. Where a country has no capacity to assess an application, the assessment is effectively imported — and the continent's regulatory direction is therefore set in a small number of places rather than in fifty-five separate debates.",
    ["rules:standards","rules:regulators"], base=BODY)]
 
 # ======================================================= NEW TERRITORIES ======
@@ -91,5 +91,5 @@ IND15["LKA"] = [
 
 IND15["PHL"] = [
  e("SEARCA \u2014 regional biotechnology information", "https://www.searca.org/",
-   "A Southeast Asian centre producing biotechnology information and training for regional regulators and journalists. Who supplies the briefing material shapes what regulators consider normal, and this function is rarely examined.",
+   "A Southeast Asian centre producing biotechnology information and training for governments across the region, in a part of the world where several countries have adopted carve-outs for edited crops within a few years of each other. Where a regional body supplies the briefing material, the regulatory texts tend to converge.",
    ["rules:influence","rules:regulators"], base=BODY, trust="medium")]

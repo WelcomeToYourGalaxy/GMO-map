@@ -23,9 +23,6 @@ IND11["USA"] = [
  e("USDA APHIS \u2014 annual research facility reports", "https://www.aphis.usda.gov/livestock-poultry-disease/annual-report-animal-usage-research-facility",
    "Every registered US research facility reports annually how many dogs, cats, primates and other covered animals it used, and by what pain category. The reports are published per facility. They also exclude mice, rats and birds bred for research, which are the overwhelming majority — so the most detailed animal-use record in the United States omits most of the animals.",
    ["animals:models","animals:breeders","rules:regulators"], base=REGI),
- e("Charles River \u2014 global site network", "https://www.criver.com/about-us/locations",
-   "Breeding, holding and testing sites across North America, Europe and Asia, which is what lets one company supply animals and run the studies on them in the same corporate structure. The site list is public through inspection records in some countries and nowhere near it in others.",
-   ["animals:breeders","animals:services","cro:cro"]),
  e("Jackson Laboratory \u2014 Bar Harbor", "https://www.jax.org/about-us/our-locations",
    "The Maine campus where the strain collection is maintained and distributed, one of a small number of places in the world holding a genetic archive of this size. A fire in 1989 destroyed part of the colony and strains were rebuilt from material other laboratories had received — the distribution network turned out to be the backup.",
    ["animals:models","animals:breeders"], base=BODY),
@@ -39,7 +36,7 @@ IND11["USA"] = [
 # ------------------------------------------------------------- United Kingdom -
 IND11["GBR"] = [
  e("Home Office \u2014 licensed establishments", "https://www.gov.uk/guidance/research-and-testing-using-animals",
-   "Every UK establishment licensed to use animals in research is named in a public list, alongside the annual procedure statistics. Naming the places, not just counting the procedures, is a level of disclosure no other large research system matches.",
+   "Every UK establishment licensed to use animals in research holds a licence from the Home Office, and every procedure is counted and published in annual statistics. What is not published is which establishment did what: the numbers are national, the names are withheld, so British laboratories cannot be mapped while British fertility clinics can.",
    ["animals:models","animals:breeders","rules:regulators"], base=REGI),
  e("The Francis Crick Institute \u2014 animal research", "https://www.crick.ac.uk/research/find-a-researcher/animal-research",
    "One of the largest biomedical research institutes in Europe, which publishes its animal numbers and describes the work under the UK Concordat on openness. Voluntary disclosure by an institution of this scale sets what other institutions can be asked for.",
@@ -58,7 +55,7 @@ IND11["NLD"] = [
 
 IND11["FRA"] = [
  e("Charles River / Janvier \u2014 European breeding sites", "https://janvier-labs.com/en/contact/",
-   "The European rodent breeding operations supplying research across the continent. EU law requires member states to collect and publish animal-use statistics, so the scale of what these sites supply is visible in aggregate through ALURES.",
+   "The European rodent breeding operations supplying laboratories across the continent, extended when Charles River acquired Janvier Labs. Two companies now supply most of the laboratory rodents used in Europe and North America, so the genetic background of the animals behind a very large share of published biology traces to a handful of colonies.",
    ["animals:breeders","animals:models"])]
 
 # ----------------------------------------------------------------------- Asia -

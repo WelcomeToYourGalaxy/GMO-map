@@ -62,13 +62,13 @@ IND23["USA"] = IND23["USA"] + [
 
 IND23["DNK"] = [
  e("VikingGenetics", "https://www.vikinggenetics.com/",
-   "A Nordic farmer-owned cattle cooperative running genomic selection across Danish, Swedish and Finnish herds. Its breeding indexes include health and longevity alongside yield, and the composition of an index decides what a national herd becomes.",
+   "A Nordic farmer-owned cattle cooperative running genomic selection across Danish, Swedish and Finnish herds. Cooperative breeding puts the genetics in the hands of the farmers who use them, and it produces the same narrowing of the gene pool as the corporate route, because selection intensity is what narrows it rather than ownership.",
    ["livestock:livestock","seed:germplasm"])]
 
 # =============================================================== MONEY =======
 IND23["GBR"] = IND23["GBR"] + [
  e("Legal & General / institutional stewardship", "https://www.lgim.com/uk/en/capabilities/investment-stewardship/",
-   "A large asset manager publishing its voting record and engagement priorities. Voting records are searchable, so a claim that shareholders are indifferent can be checked rather than asserted, and it is where a resolution has to find support to pass.",
+   "A large asset manager that publishes its voting record and engages companies on governance, including in agriculture and pharmaceuticals. Stewardship of this kind is the only routine mechanism by which an owner questions a company's conduct between scandals, and it operates through private meetings with a public voting record attached.",
    ["money:markets","rules:influence"])]
 
 # ================================================================ RULES ======

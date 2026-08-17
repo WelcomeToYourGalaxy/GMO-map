@@ -17,7 +17,7 @@ IND14["USA"] = [
    "Every filing by every US-listed company, searchable in full text. Companies must disclose material risks and segment finances accurately or commit an offence, which makes this the most reliable public account of what firms on this map actually earn and fear.",
    ["money:markets","rules:influence"], base=REGI),
  e("Open Philanthropy \u2014 biosecurity and science funding", "https://www.openphilanthropy.org/grants/",
-   "A major funder of biosecurity work, including DNA synthesis screening. Much of the effort to close the screening gap is paid for by philanthropy rather than required by law, which is why the coverage is partial.",
+   "A major private funder of biosecurity, including DNA synthesis screening, pandemic preparedness and far-ultraviolet light research. It is one of a small number of philanthropic sources setting the agenda in a field where governments fund response and almost nobody funds prevention — which means a handful of private decisions shape what defences exist.",
    ["money:philanthropy","synthesis:synth"], base=REGI)]
 
 IND14["GBR"] = [
@@ -39,7 +39,7 @@ IND14["USA"] = IND14["USA"] + [
 
 IND14["BRA"] = [
  e("Moscamed Brasil", "https://moscamed.org.br/",
-   "A Brazilian sterile insect facility rearing and releasing hundreds of millions of insects, including for engineered mosquito programmes. Rearing at this scale is the practical constraint on any release strategy, engineered or not.",
+   "Rears and releases sterile insects at very large scale, mainly Mediterranean fruit fly, and has produced engineered Aedes mosquitoes for release. Sterile insect technique has been used for seventy years and is uncontroversial; the same facility producing engineered insects for the same purpose is regulated differently, which is where the argument about the method rather than the outcome shows most plainly.",
    ["wild:insects","cro:cdmo"])]
 
 # ========================================================= HUMAN CLINICAL =====
@@ -51,13 +51,13 @@ IND14["USA"] = IND14["USA"] + [
    "An eighteen-year-old died in a gene therapy trial in 1999, and the investigation found undisclosed conflicts of interest and unreported adverse events in earlier patients. The field stalled for a decade. The records are the reason trial registration and conflict disclosure exist in their current form.",
    ["clinical:trials","rules:regulators"], base=REGI),
  e("Alnylam Pharmaceuticals", "https://www.alnylam.com/",
-   "Commercialised RNA interference as medicine, delivering sequence-specific silencing to patients. The same mechanism sprayed on a field is regulated as a pesticide or as nothing at all, depending on the jurisdiction.",
+   "Turned RNA interference into medicine, delivering short RNA sequences that switch off a specific gene's message before it becomes protein. It took twenty years and the near-abandonment of the field by every large pharmaceutical company between the Nobel-winning discovery in 1998 and the first approval in 2018. The result is a drug that silences a gene without editing it — reversible, repeatable, and outside every framework written for permanent genetic change.",
    ["clinical:therapy","editing:platform"])]
 
 # ============================================= LIVESTOCK & AQUACULTURE ========
 IND14["USA"] = IND14["USA"] + [
  e("FDA \u2014 intentional genomic alterations in animals", "https://www.fda.gov/animal-veterinary/biotechnology-products-cvm-animals-and-animal-food/intentional-genomic-alterations-igas-animals",
-   "The US pathway for approving edited and engineered animals, under which the AquaBounty salmon spent twenty-five years and the PRRS-resistant pig was cleared in 2025. The approvals and the review documents are public.",
+   "The US pathway for approving edited and engineered animals, which treats the introduced genetic change as an animal drug. That framing has been in place since 2009 and is why AquAdvantage salmon took twenty years: a drug approval requires evidence about the compound in every animal that receives it, which fits a veterinary medicine and does not fit a heritable trait. The agency has since created faster routes for low-risk alterations.",
    ["livestock:livestock","rules:regulators"], base=REGI),
  e("Hendrix Genetics", "https://www.hendrix-genetics.com/",
    "A Dutch multi-species animal breeding company — poultry, pigs, aquaculture, turkeys. A handful of breeding companies supply the genetics for most of the world’s farmed animals, so a trait selected here reaches enormous populations within a few generations.",
@@ -65,7 +65,7 @@ IND14["USA"] = IND14["USA"] + [
 
 IND14["NLD"] = [
  e("Topigs Norsvin", "https://www.topigsnorsvin.com/",
-   "A Dutch-Norwegian pig genetics company supplying breeding stock internationally. With Genus and a few others it forms the small group deciding what the world’s pigs are bred to be.",
+   "A Dutch-Norwegian pig genetics company supplying breeding stock across Europe, the Americas and Asia, and one of the three companies that between them supply most of the world's commercial pig genetics. It runs genomic selection and computed-tomography scanning of breeding animals, and has worked on editing for disease resistance. Pigs are the animal where editing is furthest advanced in food production and also the source of engineered organs for human transplant, so the same breeding companies sit behind both.",
    ["livestock:livestock","seed:germplasm"])]
 
 IND14["NOR"] = [
@@ -76,22 +76,22 @@ IND14["NOR"] = [
 # ================================================ SYNTHESIS & INSTRUMENTS =====
 IND14["USA"] = IND14["USA"] + [
  e("International Gene Synthesis Consortium", "https://genesynthesisconsortium.org/",
-   "The industry body whose members voluntarily screen DNA orders against dangerous sequence lists. Its members estimate they make about 80% of world supply, leaving roughly a fifth unscreened — and no law requires any of it.",
+   "The industry body whose members voluntarily screen DNA orders against sequences of concern and check the identity of customers. Its members cover a large share of commercial synthesis capacity, which is the reassuring half of the sentence. The other half is that membership is voluntary, non-members are not counted anywhere, and benchtop synthesisers remove the order that screening depends on.",
    ["synthesis:synth","rules:associations","rules:standards"], base=ASSN),
  e("Benchling", "https://www.benchling.com/",
    "Software that laboratories use to design and record genetic engineering work, holding the design files for a substantial share of the field. Where the designs live is a question about security and access that the biosafety frameworks were not written to consider.",
    ["editing:platform","synthesis:synth"]),
  e("Codex DNA / Telesis Bio", "https://telesisbio.com/",
-   "Sells benchtop machines that synthesise DNA in a laboratory rather than ordering it from a supplier. Order screening only works if orders are placed; a machine on a bench removes the step at which screening happens.",
+   "Sells benchtop machines that synthesise and assemble DNA in a laboratory, including whole genes, without an order passing through any manufacturer. Synthesis screening exists because orders can be checked; a machine on a bench removes the order. It is the same gap DNA Script opens from the enzymatic side, and no jurisdiction has legislated for either.",
    ["synthesis:synth","editing:platform"])]
 
 # ==================================================== DE-EXTINCTION ===========
 IND14["AUS"] = [
  e("Australian Frozen Zoo \u2014 threatened species cryobanking", "https://www.zoo.org.au/melbourne/",
-   "Cryopreservation of Australian threatened species, in a country with among the highest extinction rates in the world. The collecting is racing a clock nobody controls, and it is done by a small number of underfunded programmes.",
+   "Cryopreservation of cells and reproductive tissue from Australian threatened species, in a country with the highest recorded rate of mammal extinction in the world. Banking material now is a bet that assisted reproduction or cloning will later be able to use it — and for several of the species held, the bet is already the only remaining option.",
    ["deextinct:biobank","deextinct:rescue"], base=BODY)]
 
 IND14["GBR"] = IND14["GBR"] + [
  e("Nature's SAFE", "https://www.natures-safe.com/",
-   "A European biobank preserving reproductive tissue and cells from endangered species. What is banked now is the whole set of options anyone will have later, and this work is done by a handful of small, underfunded organisations.",
+   "A European biobank preserving reproductive tissue and cells from endangered animals, working with zoos to collect material at death rather than losing it. Banking is only useful if something can later be done with the material, so this is infrastructure built on the assumption that assisted reproduction and cloning in wild species will improve — a bet made by storing things.",
    ["deextinct:biobank","deextinct:rescue"], base=BODY)]

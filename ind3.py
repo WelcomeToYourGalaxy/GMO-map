@@ -6,9 +6,6 @@ IND3 = {}
 
 # =========================================================== SEED & TRAITS ====
 IND3["USA"] = [
- e("Bayer \u2014 Climate FieldView & digital farming", "https://climate.com/",
-   "A platform that collects yield, soil and planting data from the machinery in a farmer’s fields and returns recommendations. A second product is built out of the first. the seed generates the data, the data sells the next seed, and the aggregate picture of what works where belongs to the company rather than to the farmers who produced it. A grower can leave Bayer’s seed and still find the agronomic knowledge derived from their own fields sitting on Bayer’s servers.",
-   ["seed:majors","seed:distribution","editing:platform"]),
  e("Benson Hill", "https://bensonhill.com/",
    "Used computational breeding and editing to design soy for protein content, raised heavily on that promise, and went bankrupt in 2025. The technology worked well enough, and the company still could not build a business between the four majors and the commodity buyers. It is the clearest recent evidence that the concentration on this map is not only about patents — the distribution and processing chain is closed too.",
    ["seed:traits","editing:agtech","money:vc"]),
@@ -41,8 +38,8 @@ IND3["USA"] = IND3["USA"] + [
 # ===================================== SYNTHESIS, SEQUENCING & REAGENTS =======
 IND3["USA"] = IND3["USA"] + [
  e("Thermo Fisher Scientific", "https://www.thermofisher.com/",
-   "The largest life-sciences supplier in the world by revenue, selling the instruments, reagents and services nearly every laboratory on this map depends on daily. It is also the company that sold DNA collection kits used in Xinjiang, which it withdrew after sustained pressure. A supplier this central makes a market-access decision every time it chooses a customer, and almost none of those decisions are visible.",
-   ["synthesis:reagents","synthesis:seq","cro:cdmo"]),
+   "The largest life-sciences supplier in the world by revenue, selling the instruments, reagents and cell-culture media that nearly every laboratory on this map depends on daily. Through Patheon it also manufactures drugs for other companies, and through PPD it runs their clinical trials, so the same firm can supply the materials, make the product and test it in people. Almost no engineered organism anywhere is made without something from this company, which makes it infrastructure rather than a participant — and infrastructure is rarely regulated as an actor. It is also the company that sold DNA collection kits used in Xinjiang, which it withdrew after sustained pressure.",
+   ["synthesis:reagents", "synthesis:seq", "cro:cdmo", "cro:cro", "clinical:trials", "animals:services"]),
  e("GenScript", "https://www.genscript.com/",
    "One of the largest gene synthesis and CRISPR services companies, China-based with global operations. It is a member of the voluntary screening consortium, which is the whole point: the most consequential control on what sequences get made is a trade association code that firms join by choice, and roughly a fifth of world capacity belongs to companies that have not.",
    ["synthesis:synth","cro:cdmo","clinical:vectors"]),

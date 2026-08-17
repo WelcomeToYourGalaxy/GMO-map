@@ -37,7 +37,7 @@ IND8["URY"] = [
 # ============================================================= PARAGUAY =======
 IND8["PRY"] = [
  e("SENAVE \u2014 seed and plant health service", "https://www.senave.gov.py/",
-   "Paraguay’s seed authority. Engineered soy reached Paraguay through unapproved cross-border planting from Brazil and Argentina before being legalised retroactively — approval following the fact rather than preceding it, which happened in Brazil too.",
+   "Paraguay's seed authority. Engineered soy arrived in Paraguay across the border and was widely planted before it was legal, and the authority's task became regularising a situation rather than deciding one. That sequence — adoption first, approval afterwards — has happened in several countries and is rarely described in accounts of how these crops spread.",
    ["rules:regulators","seed:distribution"], base=REGI)]
 
 # ============================================================== CHILE =========
@@ -82,7 +82,7 @@ IND8["CAN"] = [
 # =============================================== SYNTHESIS & INSTRUMENTS ======
 IND8["USA"] = [
  e("Aldevron (Danaher)", "https://www.aldevron.com/",
-   "A manufacturer of plasmid DNA and mRNA for gene therapy and vaccine producers, now inside Danaher. Plasmid supply is a bottleneck for genetic medicine, and it sits with the same conglomerate that owns much of the reagent and instrument supply chain.",
+   "A manufacturer of plasmid DNA and mRNA for other companies, supplying the raw genetic material that vaccines and gene therapies are built from. It made the plasmid behind several COVID-19 vaccines. The starting material for a therapy is made by a contractor most patients and many regulators never see named.",
    ["synthesis:synth","cro:cdmo","clinical:vectors"]),
  e("Pacific Biosciences", "https://www.pacb.com/",
    "Long-read sequencing, which reads DNA in longer continuous stretches than short-read platforms and so detects structural changes that short reads miss — including unintended insertions at an edit site. The verification capability and the editing capability come from the same industry.",
