@@ -218,10 +218,6 @@
   overflow:auto;}
 #rundownPanel.collapsed .wire-body{display:none;}
 #rundownPanel .wire-lead{font-size:11.5px;line-height:1.55;}
-/* the wire drops below it */
-#wirePanel{top:calc(70px + 42vh);}
-@media (max-height:760px){ #rundownPanel .wire-body{max-height:30vh;}
-  #wirePanel{top:calc(70px + 34vh);} }
 #wirePanel{position:fixed;left:14px;top:70px;width:300px;z-index:1000;background:rgba(8,12,27,0.97);border:1px solid var(--accent-soft);border-radius:10px;box-shadow:0 4px 22px rgba(0,0,0,0.45);overflow:hidden;bottom:18px;max-height:none;display:flex;flex-direction:column;transition:bottom .22s ease,max-height .22s ease;}
 /* the wire owns the whole column until a unit is opened, then yields the lower half */
 body.info-open #wirePanel{bottom:auto;max-height:calc(50vh - 58px);}
@@ -230,6 +226,15 @@ body.info-open #wirePanel{bottom:auto;max-height:calc(50vh - 58px);}
 #wirePanel .help-head{flex:0 0 auto;padding-left:11px;padding-top:12px;}
 #wirePanel .help-head .help-tog{position:absolute;top:8px;right:10px;margin:0;font-size:15px;line-height:1;color:#98a2c1;}
 #wirePanel.collapsed{max-height:none;}
+/* Placed AFTER the original #wirePanel rules on purpose. The first attempt put
+   this override above them, so `top:70px` from the original won and the wire sat
+   directly on top of the rundown panel - which is why the split looked like it
+   had not happened at all. */
+#wirePanel{top:calc(70px + 42vh) !important;}
+#rundownPanel .wire-body{max-height:36vh;}
+@media (max-height:760px){
+  #rundownPanel .wire-body{max-height:28vh;}
+  #wirePanel{top:calc(70px + 32vh) !important;} }
 @media (max-width:900px){ #wirePanel{display:none;} }
 #wirePanel.collapsed .wire-body{display:none;}
 #wirePanel .help-tog::before{content:"\25B4";}
@@ -862,7 +867,10 @@ const FEDLABEL={USA:'United States \u2014 Federal',CAN:'Canada \u2014 Federal',A
 const NOUN={CAN:['province','provinces'],DEU:['Land','L\u00e4nder'],ITA:['region','regions'],PAK:['province','provinces'],ARG:['province','provinces'],ESP:['community','communities'],ZAF:['province','provinces'],AUT:['Land','L\u00e4nder'],CHE:['canton','cantons'],JPN:['prefecture','prefectures'],IDN:['province','provinces'],RUS:['region','regions'],GBR:['nation','nations'],KOR:['region','regions'],COL:['department','departments'],PER:['region','regions'],FRA:['region','regions'],VEN:['state','states'],LKA:['province','provinces'],NPL:['province','provinces'],BEL:['region','regions'],BIH:['entity','entities'],PRT:['region','regions'],DNK:['region','regions'],CHN:['province','provinces'],VNM:['province','provinces'],BOL:['department','departments'],IRQ:['governorate','governorates'],THA:['province','provinces'],_:['state','states']};
 
 function subStyle(iso,region){ const v=subVis(iso,region); const act=v.some(t=>statusOf(t)==='active'); const acc=DMAP[domain].accent; const hi=DMAP[domain].hi; const lit=v.length>0;
-  return {fillColor:'#d8b24a',weight:lit?1.0:0.4,opacity:lit?0.5:0.16,color:lit?'#b8912f':'rgba(205,190,150,0.22)',fillOpacity:0}; }
+  /* The other half of the tracker gold. baseStyle was fixed and this was not,
+     so any country opened through activate() painted its regions gold again. */
+  if(!lit) return {stroke:false,weight:0,opacity:0,fillOpacity:0,fillColor:'transparent'};
+  return {fillColor:'#d8b24a',weight:1.0,opacity:0.5,color:'#b8912f',fillOpacity:0}; }
 function buildSubLayers(){ /* retired: replaced by geoBoundaries drill */ }
 function activate(iso,latlng,nData){ if(activeIso && SUBLAYERS[activeIso] && map.hasLayer(SUBLAYERS[activeIso])) map.removeLayer(SUBLAYERS[activeIso]);
   activeIso=iso; const lyr=SUBLAYERS[iso]; if(!lyr){ var hh='<div class="popup-country">'+(trackerData[iso]?trackerData[iso].name:iso)+'</div>'; var vv=natVis(iso); if(vv.length){vv.forEach(function(t){hh+=tHTML(t,'fed');});} else {hh+='<div class="no-data">Map layer not ready - try again in a moment.</div>';} L.popup({maxWidth:380,maxHeight:480}).setLatLng(latlng).setContent(hh).openOn(map); return; } lyr.setStyle(f=>subStyle(iso,f.properties.name)); lyr.addTo(map); lyr.bringToFront();
@@ -1627,7 +1635,11 @@ fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json').then(r=>r
       const nm=(f.properties&&f.properties.name)||'This territory';
       showInfoPanel('<div class="popup-country">'+nm+'</div><div class="no-data">This area isn\'t identified as a country here, so it can\'t be opened.</div>'); return; }
     gbEnterCountry(a3,f,latlng); }
-  function baseOnEach(f,layer){ layer.on({ mouseover:e=>{ const a3=NUM2A3[f.id]||''; if(countryAny(a3)||trackerData[a3]||SUBGEO[a3]){e.target.setStyle({weight:2.6,fillOpacity:0.38,fillColor:'#d8b24a',color:'#f2d472'});} },
+  function baseOnEach(f,layer){ layer.on({ mouseover:e=>{ const a3=NUM2A3[f.id]||'';
+      /* A hover highlight is fine; a gold WASH over the country is not, because
+         it hides every layer underneath at the moment a reader is pointing at
+         it. Outline only, and only where there is something to open. */
+      if(countryAny(a3)||trackerData[a3]||SUBGEO[a3]){e.target.setStyle({weight:1.6,fillOpacity:0,color:'rgba(223,231,245,0.75)'});} },
       mouseout:e=>geojsonLayer.resetStyle(e.target), click:e=>baseClick(f,e.latlng) }); }
     countries.features.forEach(f=>{ if(!f.geometry)return;
     if(f.geometry.type==='Polygon'){ const p=nrPoly(f.geometry.coordinates);
@@ -3711,6 +3723,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
   function pjBuildHierarchy(rows){
     if(!rows || !rows.length) return rows;
     var nat = [], kids = {}, ktot = 0, i, p;
+    var akids = {}, aktot = 0;   // the same two, for animal facilities
     for(i = 0; i < rows.length; i++){
       p = rows[i];
       if(p.level) continue;                       // already placed, or a re-run
@@ -3726,6 +3739,21 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
                   o: p.otype || '', sr: p.source || ''});
         continue;
       }
+      // Animal facilities behaved differently from everything else in the same
+      // country: APHIS registrations were placed at state centroids and drawn
+      // straight away, so the United States arrived pre-broken into fifty
+      // markers while every other country showed one. That is not a fact about
+      // the US, it is a fact about which register happened to publish a state.
+      //
+      // They now roll into the national marker like release records do, and the
+      // states appear when the reader asks for them.
+      if(String(p.source || '').indexOf('industry:animals') === 0 &&
+         PJ_US_NATIONAL[st.split(',').pop().trim().toLowerCase()] !== undefined){
+        p.level = 'state'; p.parent = 'United States \u2014 animal facilities';
+        var aState = (st.split(',')[0] || '').trim() || 'State not stated';
+        akids[aState] = (akids[aState] || 0) + 1; aktot++;
+        continue;
+      }
       if(String(p.source || '').indexOf('aphis:') === 0){
         p.level = 'state'; p.parent = 'United States';
         // A permit names every state it authorises. The first is the one the
@@ -3734,7 +3762,29 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
         kids[firstState] = (kids[firstState] || 0) + 1; ktot++;
       }
     }
-    if(!nat.length && !ktot) return rows;
+    if(aktot){
+      var achildren = Object.keys(akids)
+        .sort(function(a, b){ return akids[b] - akids[a]; })
+        .map(function(k){ return {n: k, c: akids[k]}; });
+      rows.push({
+        name: 'United States \u2014 animal facilities', source: 'industry:animals',
+        level: 'country', type: 'Animal facilities, grouped by state',
+        lat: 39.83, lng: -98.58, state: 'United States',
+        precise: false, impact: 4, company: '', size: '',
+        status: achildren.length + ' states \u00b7 ' + aktot + ' registrations',
+        phase: 'post', date: '', lapsed: false,
+        url: 'https://www.aphis.usda.gov/animal-welfare',
+        desc: 'Every US animal facility on this map under one marker: ' + aktot
+            + ' registrations across ' + achildren.length + ' states. Opening it puts '
+            + 'the states on the map as their own markers. APHIS publishes a mailing '
+            + 'city for each certificate and not the address of the building where '
+            + 'animals are kept, so a state is often as close as this gets. Rats, '
+            + 'mice and birds bred for research are excluded from the Animal Welfare '
+            + 'Act entirely and appear in no count anywhere.',
+        records: [], records_total: 0, children: achildren
+      });
+    }
+    if(!nat.length && !ktot && !aktot) return rows;
     var children = Object.keys(kids)
       .sort(function(a, b){ return kids[b] - kids[a]; })
       .map(function(k){ return {n: k, c: kids[k]}; });
@@ -7359,7 +7409,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-17 19:23";
+  var BUILD = "BUILD-2026-08-17 19:45";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
