@@ -105,11 +105,7 @@ IND31["NLD"] = [
 IND31["GBR"] = [
  e("Global BioLabs",
    "https://www.globalbiolabs.org/",
-   "Maps the world\u2019s BSL4 and BSL3+ laboratories and scores national biorisk "
-   "governance, from King\u2019s College London and the Schar School. There is no "
-   "international register of high-containment laboratories and no obligation to "
-   "declare one, so a research project is the only global account of where the most "
-   "dangerous work is done.",
+   "Maps the world's BSL4 and BSL3+ laboratories and scores national biorisk governance, from King's College London and the Schar School. There is no international register of high-containment laboratories and no obligation to declare one, so a research project is the only global account of where the most dangerous work is done: 69 BSL4 labs across 27 countries, 51 of them operational and 18 planned or under construction, plus 57 BSL3+ labs. Its scorecards find an asymmetry worth stating plainly — of those 27 countries, 21 score high on biosafety governance, 12 on biosecurity, and exactly one on oversight of dual-use research. States are competent at preventing accidents, weaker at preventing theft, and almost entirely without rules on whether dangerous research should be done at all.",
    ["rules:standards", "wild:microbes"], base=BODY),
 ]
 

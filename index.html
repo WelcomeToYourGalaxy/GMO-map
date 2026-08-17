@@ -225,13 +225,14 @@
 /* Same width as the How to use this map panel, which is 270px. */
 #rundownPanel{width:270px;}
 #wirePanel{width:270px;}
-/* The wire sat at a fixed offset, so collapsing the rundown left a gap where it
-   used to be instead of the wire moving up. Both panels live in one column now
-   and the wire follows whatever the rundown's height happens to be. */
-#panelColumn{position:fixed;left:14px;top:70px;width:270px;z-index:1000;
-  display:flex;flex-direction:column;gap:9px;max-height:calc(100vh - 84px);}
-#panelColumn #rundownPanel,#panelColumn #wirePanel{position:static !important;
-  left:auto !important;top:auto !important;width:100% !important;flex:0 0 auto;}
+/* The two panels were put in one flex column so that collapsing the rundown
+   pulled the wire up. That closed a gap and bought a worse fault: the wire is
+   the panel being read, and it moved under the reader every time the rundown
+   above it was opened, closed or scrolled to a different length. A gap is
+   still: a feed that jumps while you are reading it is not.
+   So each panel is anchored on its own again. The wire holds its position
+   whatever the rundown does, and both stay draggable, which position:static
+   had also taken away. */
 #rundownPanel .help-head span:first-child,#wirePanel .help-head span:first-child{
   font-size:12px;font-weight:700;color:#e6eefc;letter-spacing:.2px;}
 #rundownPanel .help-tog,#wirePanel .help-tog{font-size:15px;line-height:1;
@@ -248,11 +249,16 @@ body.info-open #wirePanel{bottom:auto;max-height:calc(50vh - 58px);}
    this override above them, so `top:70px` from the original won and the wire sat
    directly on top of the rundown panel - which is why the split looked like it
    had not happened at all. */
-#wirePanel{top:calc(70px + 42vh) !important;}
+/* The wire's top has to clear the rundown at its FULL height, because the two
+   are anchored separately now and nothing moves out of the way. The rundown
+   starts at 70px, its header is about 34px, and its body is capped at 36vh
+   below - so 70 + 34 + 36vh, plus a 9px gap. 42vh was measured against a
+   layout where the panels shared a column and could push each other. */
+#wirePanel{top:calc(113px + 36vh) !important;}
 #rundownPanel .wire-body{max-height:36vh;}
 @media (max-height:760px){
   #rundownPanel .wire-body{max-height:28vh;}
-  #wirePanel{top:calc(70px + 32vh) !important;} }
+  #wirePanel{top:calc(113px + 28vh) !important;} }
 @media (max-width:900px){ #wirePanel{display:none;} }
 #wirePanel.collapsed .wire-body{display:none;}
 #wirePanel .help-tog::before{content:"\25B4";}
@@ -525,20 +531,23 @@ function pjReport(which, data){
   <div class="proj-time"><span class="ps-lab">Filing recency — dated registers</span><span class="pt-pill on" data-tw="0">All ages</span><span class="pt-pill" data-tw="30">≤30d</span><span class="pt-pill" data-tw="90">≤90d</span><span class="pt-pill" data-tw="180">≤6mo</span><span class="pt-pill" data-tw="365">≤1yr</span><label class="pt-und"><input type="checkbox" id="pjUndated" checked> Include undated</label></div><div class="lp-detail collapsed"><div class="lp-detail-head" onclick="this.parentNode.classList.toggle('collapsed')"><span class="lp-car">&#9662;</span> Where this data comes from &amp; what's not (yet) in it</div><div class="lp-detail-body">
 <b class="hl-sec">Where the live-releases data comes from</b><br>
     <b>Right now this layer is the United States only.</b> That is not the intention and it is not hidden here: it is what has actually been harvested. Every dot comes from the two public data files that APHIS Biotechnology Regulatory Services publishes and updates each business day, in the public domain. Nothing else currently feeds it.<br><br>
-    <b>What is kept, and what is thrown away.</b> Only records with a release component survive — an import permit or an interstate movement permit is not an environmental release, and most rows in the source are one of those. Only records that were never authorised are dropped — withdrawn, denied, void, returned, cancelled. Everything that was granted stays, including permits that have since lapsed, because a trial that ran in 1994 happened whether or not the paperwork is still in date. Lapsed ones are marked and the “Show dormant / defunct” switch controls them.<br><br>
-    <b>One circle per area, numbered.</b> Below zoom 9 the map draws a single circle for each area rather than one dot per record, sized by how many records sit under it — area tracks the count, so a hundred records reads as ten times one, not a hundred times. Click it for the list. Above that zoom the individual records draw again.<br><br><b>Almost none of them is a site.</b> APHIS publishes the states a release is authorised in and never the coordinates, so every record sits at a state centroid and is marked imprecise. A circle over a state capital means <i>the register gave states, not sites</i>. To find the actual ground, take the authorisation number to the agency. **Australia's OGTR is the only regulator in the world that publishes field trial sites**, and those are the only release points here drawn where the thing actually is.<br><br>
-    <b>Scale is a sorting aid, not a measurement.</b> The current system publishes a count of declared release locations and nothing about area. Its predecessor published acreage, which is carried through where a record has it — so some older entries can say &ldquo;20 acres&rdquo; and newer ones cannot. The newer system publishes less about scale than the one it replaced.<br><br>
-    <b>Confidential business information.</b> Where an applicant claimed CBI, the trait description in the source arrives partly redacted as [CBI]. Those records say so in their own description rather than presenting a redacted list as if it were complete.<br><br>
+    <b>What is kept, and what is thrown away.</b> Only records with a release component survive — an import permit or an interstate movement permit is not an environmental release, and most rows in the source are one of those. Only records that were never authorised are dropped — withdrawn, denied, void, returned, cancelled. <span id="dropShare"></span> Everything that was granted stays, including permits that have since lapsed, because a trial that ran in 1994 happened whether or not the paperwork is still in date. Lapsed ones are marked and the “Show dormant / defunct” switch controls them.<br><br>
+    
     <b class="hl-sec">Why the rest of the world is not here yet</b><br>
     Almost all of this is state-published — biosafety law in most countries requires a public register. The gaps are not gaps in publication but in <b>machine-readable</b> publication, and each one has a specific reason:<br>
     &bull; <b>Australia — OGTR.</b> The best release register in the world: every licence, every risk assessment, and published locations for active crop field-trial sites. It <b>cannot be harvested</b> — ogtr.gov.au disallows automated access in its robots.txt. Read it by hand; it is worth the time, and it is in the index.<br>
-    &bull; <b>The Biosafety Clearing-House.</b> The global spine under the Cartagena Protocol, and the only genuinely cross-national record. Its site is a JavaScript application that returns nothing to a fetcher. The Secretariat does publish the national focal point list as a PDF, which is how the country directory on this map was extended.<br>
+    &bull; <b>The Biosafety Clearing-House.</b> The global spine under the Cartagena Protocol, and the only genuinely cross-national record. Its website is a JavaScript application that returns nothing to a fetcher — but the page fills itself from a search endpoint at api.cbd.int, and that endpoint does answer. So this one is reachable after all, and a harvester for it is written and waiting on a run. Until then the country directory here comes from the Secretariat’s national focal point list, which is published as a PDF.<br>
     &bull; <b>EU, Canada, Brazil, Argentina, India, New Zealand and the rest.</b> Real registers, named in the index with what each holds. None publishes a bulk file of the kind APHIS does; most are search forms over a database, and several are PDF minutes.<br>
     &bull; <b>Contained use is under-recorded everywhere.</b> Most laboratory work is notified rather than licensed, and notifications are rarely published individually. This layer will always under-count how much engineering is happening relative to how much is being released.<br>
     &bull; <b>Gene-edited organisms are increasingly invisible by design.</b> Where a jurisdiction has moved editing techniques outside registration — as the EU has now legislated for one class of them — there is no record to harvest. An absence of dots means the law stopped requiring one. This is the largest structural gap and it is growing.<br>
-    &bull; <b>Tracking one across borders is harder than tracking a transgenic event.</b> This map keeps telling you to write down the OECD unique identifier, because it is the one string that follows a single engineered event through every country that has ruled on it. That system was designed around transgenic events — an applicant code, an event code and a check digit, identifying a specific insertion. Where an organism carries no transgene there is nothing for it to name, and in the Canadian register — the one harvestable place still listing both classes side by side — <b>not one of its 27 approved non-transgenic products carries an identifier, against 98 of 101 transgenic ones that do.</b> So the class being written out of registration in one jurisdiction after another is also the class the international identifier system cannot follow between them. Those two facts compound: an organism can be both unregistered where it is grown and unnameable everywhere else.<br>
+    &bull; <b>An edited organism cannot be followed from country to country.</b> An organism made by inserting a gene from another species is given an international serial number, and that number follows it everywhere — every regulator that rules on it files under the same string, which is why this map keeps telling you to write it down. An organism made by editing its own genes gets no number, because the system was built around insertions and there is nothing for it to name. In Canada’s register, the one harvestable place still listing both kinds side by side, <b>not one of the 27 approved edited products carries an identifier, against 98 of 101 inserted ones that do.</b> So the kind of organism being written out of registration in one country after another is also the kind no country can follow between them: unregistered where it is grown, and unnameable everywhere else.<br>
     &bull; <b>The human side is not a release register at all.</b> Germline work, embryo selection, and the in-vitro and assisted-reproduction industry are covered through clinical-trial registries, national fertility regulators and clinic reporting. None of that maps to a release dot, so it lives in the lenses and the index instead of being forced into a layer it does not fit.<br><br>
-    <b>No coverage percentage is claimed.</b> No dataset holds the true global count of releases, so any figure would be invented. What can be said honestly is the shape of the sample, which is what this panel does. Treat an empty area as unharvested, never as clean.<br></div></div>
+    <b>&bull; <b>Facilities are a patchwork, and the pattern is legal rather than technical.</b> Fertility clinics are well covered where a regulator publishes a register — the UK, the US, China, India — and absent where none exists, which is most of the world. Animal research is worse: the United States and Canada publish registers, the UK publishes procedure counts without naming an establishment, and the EU publishes only totals. Maximum-containment laboratories have no register anywhere; the only global account is a research project, and it lists 69 BSL4 labs that no government is obliged to declare.<br>
+    &bull; <b>The industry layer is hand-built and always will be.</b> No register lists the companies in this field, so every entry here was found, read and written by hand. It is complete in the sense that no facet is empty, and incomplete in the sense that a hand-built list of 711 organisations cannot be the whole of an industry. Treat it as a map of the parts that matter rather than a census.<br>
+    &bull; <b>Regulatory regimes are read from law, not from a feed.</b> The 197 classifications here come from statutes and from Cartagena Protocol membership. Thirteen countries have no biosafety statute this map could find and are drawn as such; 41 dependencies and territories are not classified at all, because they are governed under someone else’s law.<br>
+    &bull; <b>Treaty membership is the one layer that is complete.</b> Five treaties, every party drawn, taken from the depositaries’ own ratification lists. If a country is not shaded it is not a party — that is a fact, not a gap, and it is the only place on this map where an absence can be read that way.<br>
+    &bull; <b>Ownership is only what the registers admit.</b> Where a regulator names a parent company this map records it; where a chain simply trades under one name across a dozen sites, that is recorded as an inference. What is not here is share registers: who actually owns these businesses is in company filings across dozens of jurisdictions, and reading those is a different project.<br><br>
+    No coverage percentage is claimed.</b> No dataset holds the true global count of releases, so any figure would be invented. What can be said honestly is the shape of the sample, which is what this panel does. Treat an empty area as unharvested, never as clean.<br></div></div>
   <div id="projSrcBox" class="proj-src-box"></div>
   <div id="projTypeBox" class="proj-src-box"></div>
   <div id="overlayBox" class="proj-src-box"></div>
@@ -1686,7 +1695,10 @@ fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json').then(r=>r
        carries no meaning - it is the shape of the world, not a finding - and
        the polygon stays interactive so the popup works. Gold returns only for a
        country that actually has tracker data. */
-    if(!L) return {color:'rgba(150,165,195,0.34)',weight:0.6,opacity:1,
+    /* 0.6px at a third opacity was technically present and effectively
+       invisible. A country outline is the shape of the world and should read as
+       one - neutral, so it carries no meaning, but actually visible. */
+    if(!L) return {color:'rgba(163,178,206,0.55)',weight:1.0,opacity:1,
                    fillColor:'#0a1020',fillOpacity:0.001,interactive:true};
     return {fillColor:'#d8b24a',weight:1.0,opacity:0.5,color:'#b8912f',
             fillOpacity:0.001,interactive:true}; }
@@ -3684,8 +3696,23 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
       +dl+'<b>'+pjLabel(q)+'</b>'+(pjIsGeneric(pjNameClean(q.name),q.type)?'<div class="d" style="opacity:.72">Source feed gave no usable title \u2014 open the source for the official description.</div>':'')+'<br><span class="t">'+(q.type||'project')+'</span>'+(q.state||'')
       +(q.date?'<div class="d pj-date">Filed / dated '+q.date+pjAge(q.date)+'</div>':'')
       +(q.company?' \u00b7 '+q.company:'')
-      +'<div class="d">'+(q.desc||'')+'</div>'
-      +(q.size?'<div class="d">Scale: '+q.size+(q.status?' \u00b7 '+q.status:'')+'</div>':'')
+      +'<div class="d">'+(q.desc||'')
+         +(/\[CBI\]/.test(String(q.desc||''))
+            ? '<span class="d-note">[CBI] is where the applicant claimed '
+              + 'confidential business information and the regulator published '
+              + 'the record with that part removed. The gap is in the source, '
+              + 'not here.</span>' : '')
+         +'</div>'
+      /* The caveat sits with the number rather than in a panel nobody has open
+         while reading a record. Only on release records, which are the only
+         ones where scale means an area at all. */
+      +(q.size?'<div class="d">Scale: '+q.size+(q.status?' \u00b7 '+q.status:'')
+         +(String(q.source||'').indexOf('aphis')===0
+            ? '<span class="d-note">Sorting aid, not a measurement. The current '
+              + 'US system publishes a count of declared locations and no area; '
+              + 'acreage appears only on older records carried over from the '
+              + 'system it replaced.</span>' : '')
+         +'</div>':'')
       +(q.url?'<div class="d"><a href="'+q.url+'" target="_blank" style="color:#263f9d">Open source \u2192</a></div>':'')
       +pjDigHtml(q)
       +'<div class="pj-live" id="pjLiveBox"></div>'
@@ -4153,7 +4180,8 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
           + 'level plus ' + ktot + ' state-level authorisations. Opening it lists the '
           + 'national records and puts the states on the map as their own markers. '
           + 'No coordinate here is a site - APHIS publishes the states a permit covers '
-          + 'and the number of locations in each, never the locations themselves.',
+          + 'and the number of locations in each, never the locations themselves. '
+          + 'To find the actual ground, take the authorisation number to the agency.',
       records: nat, records_total: nat.length, children: children
     });
     return rows;
@@ -4645,6 +4673,11 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 .tw-q:hover{color:#dfe7f5;border-bottom-color:#dfe7f5;}
 .tw-note{font-size:10px;line-height:1.5;color:#a8b3cc;margin:2px 0 6px 18px;padding-left:7px;border-left:2px solid rgba(120,140,180,.35);}
 .ot-note{font-size:9.5px;color:#7d8ba1;line-height:1.45;margin:4px 0 2px;}
+/* The caveat that travels with a value: scale on a release record, the CBI
+   redaction on a trait description. Small, indented, and beside the thing it
+   qualifies rather than in a panel the reader does not have open. */
+.subj-def{display:block;font-size:9.5px;line-height:1.45;color:#8d99b4;margin:1px 0 3px 18px;font-weight:400;}
+.d-note{display:block;font-size:9.5px;line-height:1.45;color:#8d99b4;margin-top:3px;padding-left:7px;border-left:2px solid rgba(120,140,180,.35);}
 .ot-area{width:13px;height:8px;border-radius:2px;opacity:.6;}
 </style>
 
@@ -4781,9 +4814,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       +'<b>What these records leave out</b></div>'
       +'<div class="ot-note ot-foldbody" data-foldbody="leaveout" style="display:none">'
       +'US permits are '+pct('aphis')+'% of this layer, decisions filed by every other country '
-      +pct('bch')+'%, Canada '+pct('cfia')+'%, Australia '+pct('ogtr')+'%. '
-      +'Treat every non-US figure as a floor, not a finding: the US genuinely runs the most trials, '
-      +'and every other source here is either partly fetched or has not completed a run. '
+      +pct('bch')+'%, Canada '+pct('cfia')+'%, Australia '+pct('ogtr')+'%. Some sources here are fully harvested and others are only partly in, because a run can fail or a register can change its pages between runs. An empty area means nothing has been collected there yet, never that there is nothing there. '
       +'<b>Contained laboratory and glasshouse work appears nowhere at all</b> \u2014 most countries '
       +'exempt it or merely require notification, so it generates no public record in any register '
       +'on this map. Food and feed approvals sit with separate agencies in most countries and are '
@@ -6256,6 +6287,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
            + '<span class="ot-dot" style="background:'
            + ((window.PJ_SPEC_COLOUR&&window.PJ_SPEC_COLOUR[g])||'#8a917a')+'"></span>'
            + ((window.PJ_SPEC_LABEL&&window.PJ_SPEC_LABEL[g])||g)
+           + ((window.PJ_SPEC_DESC&&window.PJ_SPEC_DESC[g])
+               ? '<span class="subj-def">'+window.PJ_SPEC_DESC[g]+'</span>' : '')
            + '<span class="kcount"> ('+counts[g]+')</span></label>';
     }).join('');
   }
@@ -6738,7 +6771,32 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
              microbes:"#9c8434", viruses:"#6f6a94", human:"#d96ba0"};
   // Published so the subject tree can draw the same names and colours. Two
   // tables saying the same thing drift apart; one table read twice does not.
-  try{ window.PJ_SPEC_LABEL = L; window.PJ_SPEC_COLOUR = COL; }catch(e){}
+  // One line each, for a reader who has not met the category before. Half of
+  // these names mean something narrower than they sound, and two of them look
+  // like duplicates until you know they are different industries.
+  var D = {
+    food_crops:  "Maize, soy, rice, wheat \u2014 the crops grown by the acre.",
+    vegetables:  "Crops sold as produce: tomato, brassica, salad, fruit. Bred by "
+                 + "different companies from the field crops above.",
+    fibre:       "Cotton and other crops grown for fibre rather than food.",
+    forage:      "Grass, alfalfa and clover \u2014 grown to be eaten by animals.",
+    trees:       "Forestry and orchard species. A tree planted now is harvested in "
+                 + "twenty to forty years.",
+    livestock:   "Farmed mammals and birds: cattle, pigs, sheep, chickens.",
+    fish:        "Farmed fish and shellfish, including salmon and shrimp.",
+    lab_animals: "Animals bred to be used in research \u2014 mostly mice, rats, "
+                 + "dogs and primates.",
+    insects:     "Insects released to change a wild population, and the gene drives "
+                 + "designed to spread through one.",
+    microbes:    "Bacteria, yeast and fungi, usually working in a sealed tank rather "
+                 + "than a field.",
+    viruses:     "Viruses used to carry genes into cells. The delivery vehicle for "
+                 + "most gene therapy.",
+    human:       "Human cells, embryos and patients \u2014 fertility, gene therapy "
+                 + "and clinical trials."
+  };
+  try{ window.PJ_SPEC_LABEL = L; window.PJ_SPEC_COLOUR = COL;
+       window.PJ_SPEC_DESC = D; }catch(e){}
   window.pjSpeciesOn = null;   // null = filter not applied
 
   window.pjSpeciesPasses = function(p){
@@ -7193,6 +7251,24 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     return true;
   }
 
+  // The share of dropped records, read from the file the harvester writes
+  // rather than guessed at. It cannot be computed here - those rows never reach
+  // the map - so if the harvester has not published a count, the sentence says
+  // nothing rather than a number nobody can check.
+  try{
+    fetch('harvest/aphis_releases.json')
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(d){
+        var dr = d && d.dropped;
+        if(!dr || !dr.total || !dr.seen) return;
+        var el = document.getElementById('dropShare');
+        if(el) el.textContent = 'That is ' + dr.total.toLocaleString() + ' of '
+          + dr.seen.toLocaleString() + ' applications, or ' + dr.share_pct
+          + '% of the register.';
+      })
+      .catch(function(){});
+  }catch(e){}
+
   function boot(){
     try{ treatyToggles(); }catch(e){}
     try{ window.pjTreatyCounts && window.pjTreatyCounts(); }catch(e){}
@@ -7309,23 +7385,12 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     var all=document.createElement('label');
     all.className='sh-all';
     all.innerHTML='<input type="checkbox" data-shaded="all" checked><b>All shaded areas</b>';
-    // Two overlays that both "shade a country" and mean different things. The
-    // regime layer draws the border and leaves the ground clear, because it is
-    // a statement about a whole state and its law. The GM zone layers fill the
-    // ground, because they are about particular places within a country. Left
-    // unsaid, a filled country and an outlined one look like the same claim at
-    // two strengths.
-    var expl=document.createElement('div');
-    expl.className='sh-note';
-    expl.innerHTML='<b>Outlines</b> are the law: the regulatory regime traces a country\u2019s '
-      + 'border and leaves the ground clear, because it describes the whole state. '
-      + '<b>Filled areas</b> are the ground: GM zones colour the regions themselves, '
-      + 'because they mark particular places inside a country rather than the country.';
-
+    // The paragraph that used to sit here explained the difference between an
+    // outlined country and a filled region at length. Removed: the shorter note
+    // above the regime swatches already says it, and the key box is a key.
     var hReg=head('Regulatory regime','regime');
     var hZone=head('GM zones','zones');
     regBox.parentNode.insertBefore(all, regBox);
-    regBox.parentNode.insertBefore(expl, regBox);
     regBox.parentNode.insertBefore(hReg, regBox);
     ovBox.parentNode.insertBefore(hZone, ovBox);
     regBox.classList.add('sh-body'); ovBox.classList.add('sh-body');
@@ -7798,15 +7863,17 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 
   /* move fires throughout a pan and an animated zoom, which is what keeps the
      edge off screen while the gesture is still running. */
-  // Put the two panels in one flex column so collapsing the top one pulls the
-  // bottom one up, the way every other stacked panel on this map behaves.
+  // The two panels are NOT put in a shared column. Doing that made the wire's
+  // top edge a function of the rundown's height, so the feed slid up and down
+  // whenever the panel above it changed size. If this is ever tried again, the
+  // thing to preserve is that the wire does not move while it is being read.
+  // Anything still holding a panelColumn from an earlier session is unwrapped.
   try{
     (function(){
-      var rp=document.getElementById('rundownPanel'), wp=document.getElementById('wirePanel');
-      if(!rp || !wp || document.getElementById('panelColumn')) return;
-      var col=document.createElement('div'); col.id='panelColumn';
-      rp.parentNode.insertBefore(col, rp);
-      col.appendChild(rp); col.appendChild(wp);
+      var col=document.getElementById('panelColumn');
+      if(!col || !col.parentNode) return;
+      while(col.firstChild) col.parentNode.insertBefore(col.firstChild, col);
+      col.remove();
     })();
   }catch(e){}
   map.on('move zoom zoomend moveend resize viewreset', cover);
@@ -7851,7 +7918,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-18 marker position";
+  var BUILD = "BUILD-2026-08-17 23:48";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
