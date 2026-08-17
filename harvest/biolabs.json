@@ -1,0 +1,3074 @@
+{
+ "generated": "2026-08-17",
+ "note": "BSL4 and BSL3+ laboratories from Global BioLabs, a research project at King's College London and the Schar School. There is no official register of these facilities anywhere.",
+ "projects": [
+  {
+   "name": "Galveston National Laboratory",
+   "source": "industry:animals",
+   "type": "BSL4 animal laboratory",
+   "lat": 29.3105,
+   "lng": -94.77871,
+   "state": "301 University Boulevard, Galveston, Texas 77555, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "The University of Texas Medical Branch",
+   "size": "1022 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2010",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://www.utmb.edu/gnl/",
+   "desc": "A BSL4 animal laboratory, operational. Run by The University of Texas Medical Branch. It is categorised as a university laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 1022 SqM. Operational or announced: 2010. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "The Betty Slick and Lewis J. Moorman, Jr. Laboratory Complex",
+   "source": "industry:animals",
+   "type": "BSL4 animal laboratory",
+   "lat": 29.44004,
+   "lng": -98.63827,
+   "state": "8715 W. Military Dr., San Antonio, TX 78227, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Texas Biomedical Research Institute",
+   "size": "114 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "1970s",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.txbiomed.org/research/high-containment/",
+   "desc": "A BSL4 animal laboratory, operational. Run by Texas Biomedical Research Institute. It is categorised as a private laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 114 SqM. Operational or announced: 1970s. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "National Bio and Agro-Defense Facility (NBAF)",
+   "source": "industry:animals",
+   "type": "BSL4 animal laboratory",
+   "lat": 39.19744,
+   "lng": -96.58472,
+   "state": "Kansas State Univeristy, Manhattan, KS 66502, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "US Department of Homeland Security, US Department of Agriculture",
+   "size": "4084 SqM",
+   "status": "Under Construction",
+   "phase": "post",
+   "date": "Expected 2024",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.usda.gov/nbaf",
+   "desc": "A BSL4 animal laboratory, under construction. Run by US Department of Homeland Security, US Department of Agriculture. It is categorised as a public health laboratory, working on animal health. Containment space: 4084 SqM. Operational or announced: Expected 2024. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "National Centre for Foreign Animal Disease",
+   "source": "industry:animals",
+   "type": "BSL4 animal laboratory",
+   "lat": 49.90859,
+   "lng": -97.16332,
+   "state": "1015 Arlington Avenue, Winnipeg, Manitoba, Canada",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Canadian Food Inspection Agency",
+   "size": "100 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "1998",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.inspection.gc.ca/science-and-research/our-laboratories/ncfad-winnipeg/eng/1549576575939/1549576643836",
+   "desc": "A BSL4 animal laboratory, operational. Run by Canadian Food Inspection Agency. It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 100 SqM. Operational or announced: 1998. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "National Microbiology Laboratory (NML)",
+   "source": "industry:animals",
+   "type": "BSL4 animal laboratory",
+   "lat": 49.9087,
+   "lng": -97.16332,
+   "state": "1015 Arlington Avenue, Winnipeg, Manitoba, Canada",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Public Health Agency of Canada",
+   "size": "185 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "1999",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.canada.ca/en/public-health/programs/national-microbiology-laboratory.html",
+   "desc": "A BSL4 animal laboratory, operational. Run by Public Health Agency of Canada. It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 185 SqM. Operational or announced: 1999. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "High Containment Core (HCC) (formerly the Viral Immunology Center)",
+   "source": "industry:animals",
+   "type": "BSL4 animal laboratory",
+   "lat": 33.75103,
+   "lng": -84.38558,
+   "state": "100 Piedmont Avenue SE, Atlanta, GA 30303, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Georgia State University",
+   "size": "60 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "1988",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://research.gsu.edu/high-containment-labs/",
+   "desc": "A BSL4 animal laboratory, operational. Run by Georgia State University. It is categorised as a university laboratory, working on human health. Personnel work in both pressure suits and sealed cabinets. Containment space: 60 SqM. Operational or announced: 1988. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "National Biodefense Analysis and Countermeasures Center (NBACC)",
+   "source": "industry:animals",
+   "type": "BSL4 animal laboratory",
+   "lat": 39.44146,
+   "lng": -77.4228,
+   "state": "8300 Research Plaza, Fort Detrick, Maryland 21702, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "U.S. Department of Homeland Security Science and Technology Directorate Operated by Battelle National Biodefense Institute LLC",
+   "size": "980 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2008",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://bnbi.org/",
+   "desc": "A BSL4 animal laboratory, operational. Run by U.S. Department of Homeland Security Science and Technology Directorate Operated by Battelle National Biodefense Institute LLC. It is categorised as a defense laboratory, working on both human and animal health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 980 SqM. Operational or announced: 2008. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "US Army Medical Research Institute of Infectious Diseases (USAMRIID)",
+   "source": "industry:animals",
+   "type": "BSL4 animal laboratory",
+   "lat": 39.43817,
+   "lng": -77.42312,
+   "state": "1425 Porter Street, Fort Detrick, Frederick, Maryland 21702-5011, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "U.S. Army Medical Research and Materiel Command, Department of Defense",
+   "size": "1186 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "1969",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.usamriid.army.mil/",
+   "desc": "A BSL4 animal laboratory, operational. Run by U.S. Army Medical Research and Materiel Command, Department of Defense. It is categorised as a defense laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 1186 SqM. Operational or announced: 1969. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Integrated Research Facility at Fort Detrick (IRF - Detrick)",
+   "source": "industry:animals",
+   "type": "BSL4 animal laboratory",
+   "lat": 39.44038,
+   "lng": -77.42232,
+   "state": "8200 Research Plaza, Fort Detrick, Maryland 21702, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "National Institutes of Health, Department of Health and Human Services. Operated by Battelle Memorial Institute, National Institute of Allergy and Infectious Diseases (NIAID) until March 2020, since then operated by Laulima Government Solutions LLC (Jens Kuhn)",
+   "size": "1305 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2013",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.niaid.nih.gov/research/frederick-integrated-research-facility",
+   "desc": "A BSL4 animal laboratory, operational. Run by National Institutes of Health, Department of Health and Human Services. Operated by Battelle Memorial Institute, National Institute of Allergy and Infectious Diseases (NIAID) until March 2020, since then operated by Laulima Government Solutions LLC (Jens Kuhn). It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 1305 SqM. Operational or announced: 2013. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "National Emerging Infectious Disease Laboratories (NEIDL)",
+   "source": "industry:animals",
+   "type": "BSL4 animal laboratory",
+   "lat": 42.33593,
+   "lng": -71.06919,
+   "state": "620 Albany Street, Boston, MA 02118, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Boston University",
+   "size": "1,202 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2017",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.bu.edu/neidl/",
+   "desc": "A BSL4 animal laboratory, operational. Run by Boston University. It is categorised as a university laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 1,202 SqM. Operational or announced: 2017. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Center for Biodefense and Emerging Infectious Diseases Shope Laboratory",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 29.31088,
+   "lng": -94.77894,
+   "state": "915 Strand St. Galveston, TX 77555-0609, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "The University of Texas Medical Branch",
+   "size": "186 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2003",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.utmb.edu/cbeid/areas-of-interest/safety-biocontainment",
+   "desc": "A BSL4 laboratory, operational. Run by The University of Texas Medical Branch. It is categorised as a university laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 186 SqM. Operational or announced: 2003. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Intergrated Research Facility at Rocky Mountain Lab (IRF - RML)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 46.23739,
+   "lng": -114.15985,
+   "state": "903 South 4th Street, Hamilton, Montana 59840 United States, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "National Institutes of Health (NIH), Department of Health and Human Services (HHS), National Institute of Allergy and Infectious Diseases (NIAID)",
+   "size": "1145 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2008",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.niaid.nih.gov/about/rocky-mountain-laboratories",
+   "desc": "A BSL4 laboratory, operational. Run by National Institutes of Health (NIH), Department of Health and Human Services (HHS), National Institute of Allergy and Infectious Diseases (NIAID). It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 1145 SqM. Operational or announced: 2008. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Vaccine and Infectious Disease Organization, Centre for Pandemic Research",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 52.13734,
+   "lng": -106.6263,
+   "state": "120 Veterinary Road Saskatoon, SK, S7N 5E3 Canada, Canada",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "University of Saskatchewan",
+   "size": "",
+   "status": "Planned",
+   "phase": "post",
+   "date": "Announced 2021",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.vido.org/",
+   "desc": "A BSL4 laboratory, planned. Run by University of Saskatchewan. It is categorised as a university laboratory, working on both human and animal health. Operational or announced: Announced 2021. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Centers for Disease Control and Prevention (CDC)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 33.79961,
+   "lng": -84.32805,
+   "state": "1600 Clifton Road N.E., Atlanta, Georgia, 30329, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Centers for Disease Control and Prevention (CDC), Department of Health and Human Services (HHS)",
+   "size": "533 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "1988",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.cdc.gov/ncezid/dhcpp/hcl-50/high-containment-laboratories.html",
+   "desc": "A BSL4 laboratory, operational. Run by Centers for Disease Control and Prevention (CDC), Department of Health and Human Services (HHS). It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 533 SqM. Operational or announced: 1988. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Galveston National Laboratory (GNL)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 29.31043,
+   "lng": -94.77583,
+   "state": "301 University Boulevard, Galveston, Texas 77555, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Texas Medical Branch University",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://www.utmb.edu/gnl/",
+   "desc": "A BSL3+ laboratory, operational. Run by Texas Medical Branch University. It is categorised as a university laboratory, working on human health. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Lovelace Respiratory Research Institute",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 35.05593,
+   "lng": -106.57864,
+   "state": "2425 Ridgecrest Dr SE, Albuquerque, NM 87108, United States, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Lovelace Respiratory Research Institute",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.lovelacebiomedical.org/",
+   "desc": "A BSL3+ laboratory, operational. Run by Lovelace Respiratory Research Institute. It is categorised as a private laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "California NanoSystems Institute (CNSI)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 34.06804,
+   "lng": -118.4432,
+   "state": "570 Westwood Plaza Building 114 | Mail Code: 722710 Los Angeles, CA 90, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "University of California Los Angeles (UCLA)",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://cnsi.ucla.edu/",
+   "desc": "A BSL3+ laboratory, operational. Run by University of California Los Angeles (UCLA). It is categorised as a university laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Department of Molecular Microbiology Research Laboratory Facility",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 38.63486,
+   "lng": -90.26263,
+   "state": "Office of the University Registrar Campus Box 1143 St. Louis MO 63130, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Washington University",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://bulletin.wustl.edu/medicine/departments/molecular-biology/",
+   "desc": "A BSL3+ laboratory, operational. Run by Washington University. It is categorised as a university laboratory, working on animal health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "The Institute for Antiviral Research (IAR) - College of Agriculture and Applied Sciences",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 41.7407,
+   "lng": -111.81064,
+   "state": "4800 Old Main Hill Logan, UT 84322 AGRS 421, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Utah State University",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://caas.usu.edu/iar/",
+   "desc": "A BSL3+ laboratory, operational. Run by Utah State University. It is categorised as a university laboratory, working on both human and animal health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Midwest Research Institute (MRI) - Influenza and Respiratory Pathogen Research Center",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 39.03795,
+   "lng": -94.58128,
+   "state": "425 Dr Martin Luther King Jr Blvd Kansas City, MO 64110, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Midwest Research Institute",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.mriglobal.org/",
+   "desc": "A BSL3+ laboratory, operational. Run by Midwest Research Institute. It is categorised as a public health laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Biosecurity Research Institute",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 39.20151,
+   "lng": -96.58405,
+   "state": "1041 Pat Roberts Hall 1900 Denison Avenue, Manhattan, KS 66506-7600, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Kansas State University",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.bri.k-state.edu/",
+   "desc": "A BSL3+ laboratory, operational. Run by Kansas State University. It is categorised as a university laboratory, working on human health. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Center for Infectious Disease Research (CIDR)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 43.04358,
+   "lng": -88.02138,
+   "state": "TBRC, 3rd Floor 8701 Watertown Plank Rd. Milwaukee, WI 53226, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Medical College of Wisconsin",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.mcw.edu/",
+   "desc": "A BSL3+ laboratory, operational. Run by Medical College of Wisconsin. It is categorised as a university laboratory, working on both human and animal health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "IIT Research Institute",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 41.83142,
+   "lng": -87.62723,
+   "state": "10 West 35th Street Chicago, IL 60616, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Illinois Institute of Technology (IIT)",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://iitri.org/",
+   "desc": "A BSL3+ laboratory, operational. Run by Illinois Institute of Technology (IIT). It is categorised as a private laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "ZeptoMetrix Corp",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 42.89772,
+   "lng": -78.87078,
+   "state": "878 Main St, Buffalo, NY 14202, United States, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "ZeptoMetrix Corp",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.zeptometrix.com",
+   "desc": "A BSL3+ laboratory, operational. Run by ZeptoMetrix Corp. It is categorised as a private laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "High-Containment Continuity Laboratory (HCCL)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 33.88084,
+   "lng": -84.29329,
+   "state": "Atlanta, GA 75D301-18-R-67933 (CDC Roybal Campus), United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Center for Disease Control and Prevention (CDC)",
+   "size": "",
+   "status": "Under construction",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "None",
+   "desc": "A BSL3+ laboratory, under construction. Run by Center for Disease Control and Prevention (CDC). It is categorised as a public health laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "U.S. Army Medical Research Institute of Infectious Diseases (USAMRIID)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 39.43818,
+   "lng": -77.42313,
+   "state": "1425 Porter St, Frederick, MD 21702, United States, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "U.S. Army",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://www.usamriid.army.mi",
+   "desc": "A BSL3+ laboratory, operational. Run by U.S. Army. It is categorised as a defense laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "The Southeast Poultry Research Laboratory (SEPRL)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 33.92866,
+   "lng": -83.35799,
+   "state": "934 College Station Road Athens, GA 30605, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "U.S. Department of Agriculture (USDA)",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.ars.usda.gov/southeast-area/athens-ga/us-national-poultry-research-center/docs/seprl/",
+   "desc": "A BSL3+ laboratory, operational. Run by U.S. Department of Agriculture (USDA). It is categorised as a public health laboratory, working on animal health. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Regional Biocontainment Laboratory (Center for Vaccine Research)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 40.44096,
+   "lng": -79.96005,
+   "state": "3501 Fifth Avenue Pittsburgh, Pennsylvania 15261, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Pittsburgh University",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.cvr.pitt.edu/facilities/regional-biocontainment-laboratory",
+   "desc": "A BSL3+ laboratory, operational. Run by Pittsburgh University. It is categorised as a university laboratory, working on animal health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Foreign Animal Disease Diagnostic Laboratory (FADDL) at Plum Island Animal Disease Center (PIADC)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 41.1792,
+   "lng": -72.20557,
+   "state": "P.O. Box 848 Greenport, N.Y. 11945, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "U.S. Department of Agriculture (USDA) and Plant Health Inspection Service (APHIS)",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.aphis.usda.gov/aphis/ourfocus/animalhealth/lab-info-services/SA_About_NVSL/CT_About_faddl",
+   "desc": "A BSL3+ laboratory, operational. Run by U.S. Department of Agriculture (USDA) and Plant Health Inspection Service (APHIS). It is categorised as a public health laboratory, working on animal health. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Battelle Biomedical Research Center (BRC)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 39.98973,
+   "lng": -83.02064,
+   "state": "505 King Ave, Columbus, OH 43201, United States, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Battelle",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.battelle.org/",
+   "desc": "A BSL3+ laboratory, operational. Run by Battelle. It is categorised as a private laboratory, working on both human and animal health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "University of Georgia",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 33.94487,
+   "lng": -83.37783,
+   "state": "1197 S Lumpkin St, Athens, GA 30602, United States, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Georgia University",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://research.uga.edu/",
+   "desc": "A BSL3+ laboratory, operational. Run by Georgia University. It is categorised as a university laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Department of Veterinary Medicine",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 39.00428,
+   "lng": -76.94181,
+   "state": "8075 Greenmead Drive College Park, MD 20742, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "University of Maryland",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://vetmed.umd.edu/",
+   "desc": "A BSL3+ laboratory, operational. Run by University of Maryland. It is categorised as a university laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Mount Sinai School of Medicine",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 40.78983,
+   "lng": -73.95334,
+   "state": "1 Gustave L. Levy Pl, New York, NY 10029, United States, United States",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Mount Sinai School of Medicine",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://icahn.mssm.edu/",
+   "desc": "A BSL3+ laboratory, operational. Run by Mount Sinai School of Medicine. It is categorised as a university laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Friedrich Loeffler Institute (FLI) (Federal Research Institute for Animal Health)",
+   "source": "industry:animals",
+   "type": "BSL4 animal laboratory",
+   "lat": 54.18282,
+   "lng": 13.36295,
+   "state": "Südufer 10, D-17493 Greifswald – Insel Riems, Germany",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Federal Ministry of Food and Agriculture",
+   "size": "405 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2019",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.fli.de/en/startpage/",
+   "desc": "A BSL4 animal laboratory, operational. Run by Federal Ministry of Food and Agriculture. It is categorised as a public health laboratory, working on both human and animal health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 405 SqM. Operational or announced: 2019. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "High Containment Large Animal Facility (HCLAF)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 51.27975,
+   "lng": -0.63498,
+   "state": "Pirbright, Woking, Surrey GU24 0NF, United Kingdom, United Kingdom",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Pirbright Institute",
+   "size": "257 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.pirbright.ac.uk/",
+   "desc": "A BSL4 laboratory, operational. Run by Pirbright Institute. It is categorised as a public health laboratory, working on animal health. Personnel work in sealed cabinets, handling material through glove ports. Containment space: 257 SqM. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Defence Science and Technology Laboratory (Dstl)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 51.135,
+   "lng": -1.7,
+   "state": "Dstl, Porton Down, Salisbury, Wiltshire SP4 0JQ, United Kingdom",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Ministry of Defense",
+   "size": "335 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2005",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.gov.uk/government/organisations/defence-science-and-technology-laboratory",
+   "desc": "A BSL4 laboratory, operational. Run by Ministry of Defense. It is categorised as a defense laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 335 SqM. Operational or announced: 2005. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "The Francis Crick Institute Containment 4 facility (formerly NIMR)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 51.53165,
+   "lng": -0.12875,
+   "state": "The Francis Crick Institute, 1 Midland Road, London NW1 1AT, United Kingdom",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "The Francis Crick Institute",
+   "size": "298 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2016",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.crick.ac.uk/",
+   "desc": "A BSL4 laboratory, operational. Run by The Francis Crick Institute. It is categorised as a university laboratory, working on human health. Personnel work in glove box. Containment space: 298 SqM. Operational or announced: 2016. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Centre for Infections (CFL)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 51.59494,
+   "lng": -0.25476,
+   "state": "61 Colindale Avenue, London NW9 5EQ, United Kingdom",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "United Kingdom Health Security Agency (UKHSA)",
+   "size": "30 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2013",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.gov.uk/government/organisations/public-health-england",
+   "desc": "A BSL4 laboratory, operational. Run by United Kingdom Health Security Agency (UKHSA). It is categorised as a public health laboratory, working on human health. Personnel work in glove box. Containment space: 30 SqM. Operational or announced: 2013. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "National Institute for Biological Standards and Control (NIBSC)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 51.68838,
+   "lng": -0.24087,
+   "state": "Blanche Lane, South Mimms, Potters Bar, Hertfordshire EN6 3QG, United Kingdom",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "The Medicines and Healthcare Products Regulatory Agency, Department of Health & Social Care",
+   "size": "118 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.nibsc.org/",
+   "desc": "A BSL4 laboratory, operational. Run by The Medicines and Healthcare Products Regulatory Agency, Department of Health & Social Care. It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 118 SqM. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Centre for Emergency Preparedness and Response",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 51.129,
+   "lng": -1.7,
+   "state": "Porton Down, Salisbury, Wiltshire SP4 0JG, United Kingdom",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "United Kingdom Health Security Agency",
+   "size": "105 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "1974",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.gov.uk/government/organisations/public-health-england",
+   "desc": "A BSL4 laboratory, operational. Run by United Kingdom Health Security Agency. It is categorised as a public health laboratory, working on human health. Personnel work in glove box. Containment space: 105 SqM. Operational or announced: 1974. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Institut Pasteur de Côte d'Ivoire",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 5.31743,
+   "lng": -4.13343,
+   "state": "Route de Dabou KM17 Adiopodoumé et Site Cocody CHU, Cote d'Ivoire",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Ministry of Higher Education and Scientific Research",
+   "size": "140 SqM",
+   "status": "Under Construction",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://www.pasteur.ci/",
+   "desc": "A BSL4 laboratory, under construction. Run by Ministry of Higher Education and Scientific Research. It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 140 SqM. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Unknown",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 51.76585,
+   "lng": 0.06893,
+   "state": "Industrial Estate, Pinnacles, Harlow CM19 5AD, United Kingdom, United Kingdom",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "United Kingdom Health Security Agency (UKHSA)",
+   "size": "",
+   "status": "Under Construction",
+   "phase": "post",
+   "date": "Expected 2024",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.gov.uk/government/publications/phe-harlow-science-hub-proposals/phe-harlow-science-hub-proposals#:~:text=science%2Dhub%2Dproposals-,About%20PHE%20Harlow,world%2Dleading%20campus%20and%20headquarters.&text=The%2040%2Dacre%20campus%20is,the%20headquarters%20in%20central%20London.",
+   "desc": "A BSL4 laboratory, under construction. Run by United Kingdom Health Security Agency (UKHSA). It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Operational or announced: Expected 2024. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Spiez Laboratory",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 46.69047,
+   "lng": 7.64396,
+   "state": "LABOR SPIEZ, Austrasse, 3700 Spiez, Switzerland, Switzerland",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Federal Office for Civil Protection, Federal Department of Defence, Civil Protection and Sports",
+   "size": "132 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2014",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.labor-spiez.ch",
+   "desc": "A BSL4 laboratory, operational. Run by Federal Office for Civil Protection, Federal Department of Defence, Civil Protection and Sports. It is categorised as a defense laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 132 SqM. Operational or announced: 2014. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "High Containment Laboratory",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 59.349,
+   "lng": 18.023,
+   "state": "Public Health Agency of Sweden, SE-17182 Solna, Sweden, Sweden",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Folkhälsmyndigheten (FOHM), Public Health Agency of Sweden",
+   "size": "136 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2001",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.folkhalsomyndigheten.se/publicerat-material/publikationsarkiv/t/the-bsl-4-laboratory-an-important-part-of-the-nordic-public-health-emergency-preparedness/",
+   "desc": "A BSL4 laboratory, operational. Run by Folkhälsmyndigheten (FOHM), Public Health Agency of Sweden. It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 136 SqM. Operational or announced: 2001. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "National Health Laboratory",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 24.9307,
+   "lng": 46.58544,
+   "state": "7090 King Abdulaziz Rd, Al Aarid, DISTRICT 13351, Saudi Arabia, Saudi Arabia",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Saudi Ministry of Health",
+   "size": "",
+   "status": "Planned",
+   "phase": "post",
+   "date": "Announced 2015",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.moh.gov.sa/en/Pages/default.aspx",
+   "desc": "A BSL4 laboratory, planned. Run by Saudi Ministry of Health. It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Operational or announced: Announced 2015. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "48th Central Scientific Research Institute Sergiev Posad",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 56.25861,
+   "lng": 38.11889,
+   "state": "48th Central Scientific Research Institute Sergiev Posad, 141306, Russ, Russian Federation",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Ministry of Defense",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "1979",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "None",
+   "desc": "A BSL4 laboratory, operational. Run by Ministry of Defense. It is categorised as a defense laboratory, working on human health. Operational or announced: 1979. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Laboratory of Clinical Microbiology, Virology and Bioemergencies (CLIMVIB), Luigi Sacco University Hospital",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 45.51795,
+   "lng": 9.11974,
+   "state": "Via Giovanni Battista Grassi, 74, 20157 Milano MI, Italy",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "University of Milan",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://climvib.eu/the-hospital/",
+   "desc": "A BSL4 laboratory, operational. Run by University of Milan. It is categorised as a university laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Istituto Nationale Malattei Infettive (INMI) Lazzaro Spallanzani",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 41.86511,
+   "lng": 12.45696,
+   "state": "Via Portuense, 292, 00149 Roma, Italy",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "National Institute for Infectious Disease",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2000",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.inmi.it/",
+   "desc": "A BSL4 laboratory, operational. Run by National Institute for Infectious Disease. It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Operational or announced: 2000. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "National Biosafety Laboratory (NBL) (Nemzeti Biztonsági Laboratórium) (OKI)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 47.47686,
+   "lng": 19.09143,
+   "state": "1097 Budapest, Albert Flórián út 2-6, Hungary",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "National Public Health Center (former National Center for Epidemiology)",
+   "size": "164 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2007",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.nnk.gov.hu/",
+   "desc": "A BSL4 laboratory, operational. Run by National Public Health Center (former National Center for Epidemiology). It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 164 SqM. Operational or announced: 2007. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Szentágothai Research Center",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 46.07574,
+   "lng": 18.20361,
+   "state": "20 Ifjúság útja, Pécs, H-7624, Hungary, Hungary",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Institute of Biology, Faculty of Sciences, University of Pécs, Pécs",
+   "size": "55 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://szkk.pte.hu/en/research_groups/molecular_biology_cluster/virological_research_group_0",
+   "desc": "A BSL4 laboratory, operational. Run by Institute of Biology, Faculty of Sciences, University of Pécs, Pécs. It is categorised as a university laboratory, working on animal health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 55 SqM. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "RKI Centre for Biological Threats and Special Pathogens (Zentrum für Biologische Gefahren und Spezielle Pathogene, ZBS)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 52.53973,
+   "lng": 13.34701,
+   "state": "Nordufer 20, 13353 Berlin, Germany",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Robert Koch Institute, Federal Ministry of Health",
+   "size": "330 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2018",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.rki.de/EN/Content/Institute/DepartmentsUnits/CenterBioSafety/CenterBioSafety_node.html",
+   "desc": "A BSL4 laboratory, operational. Run by Robert Koch Institute, Federal Ministry of Health. It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 330 SqM. Operational or announced: 2018. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Institute for Virology at the University of Marburg (UMR)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 50.81227,
+   "lng": 8.80977,
+   "state": "Hans-Meerwein-Straße 2, D-35043 Marburg, Germany",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Philipps University of Marburg",
+   "size": "152 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2007",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.uni-marburg.de/en/fb20/departments/ciii/virology",
+   "desc": "A BSL4 laboratory, operational. Run by Philipps University of Marburg. It is categorised as a university laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 152 SqM. Operational or announced: 2007. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Bernhard Nocht Institute for Tropical Medicine (BNI)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 53.54677,
+   "lng": 9.96487,
+   "state": "Bernhard-Nocht-Straße 74, D-20359 Hamburg, Germany",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Free and Hanseatic City of Hamburg",
+   "size": "150 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2014",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.bnitm.de/en/",
+   "desc": "A BSL4 laboratory, operational. Run by Free and Hanseatic City of Hamburg. It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 150 SqM. Operational or announced: 2014. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "DGA Maîtrise NRBC",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 48.53905,
+   "lng": 2.36613,
+   "state": "BP 3, 5 rue Lavoisier, 91710 Vert le Petit, France, France",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "General Directorate of Armaments (DGA)",
+   "size": "178 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2013",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.defense.gouv.fr/dga/la-dga2/expertise-et-essais/les-centres-d-expertise-et-d-essais-de-la-dga/dga-maitrise-nrbc",
+   "desc": "A BSL4 laboratory, operational. Run by General Directorate of Armaments (DGA). It is categorised as a defense laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 178 SqM. Operational or announced: 2013. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Institut de Recherche Biomédicale des Armées (IRBA)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 48.60446,
+   "lng": 2.32232,
+   "state": "1 Place Valérie André BP 73 91223 Brétigny sur Orge, France, France",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Army Health Service (SSA)",
+   "size": "240 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.defense.gouv.fr/sante/notre-expertise/recherche-biomedicale/recherche-biomedicale",
+   "desc": "A BSL4 laboratory, operational. Run by Army Health Service (SSA). It is categorised as a defense laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 240 SqM. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Jean Mérieux-Inserm (Institut national de la santé et de la recherche médicale)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 45.75329,
+   "lng": 4.82791,
+   "state": "Av. Tony Garnier, 69007 Lyon, France, France",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "French National Institute of Health and Medical Research",
+   "size": "400 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "1999",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.fondation-merieux.org/en/",
+   "desc": "A BSL4 laboratory, operational. Run by French National Institute of Health and Medical Research. It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 400 SqM. Operational or announced: 1999. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Department for Biological Defence, Military Institute of Health",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 50.0597,
+   "lng": 16.61177,
+   "state": "561 66 Techonin, Czech Republic, Czech Republic",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Military Institute of Health",
+   "size": "50 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2007",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.army.cz/en/armed-forces/organisational-structure/general-staff/biological-defence-department-at-techonin-61370/",
+   "desc": "A BSL4 laboratory, operational. Run by Military Institute of Health. It is categorised as a defense laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 50 SqM. Operational or announced: 2007. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Laboratory for Biological Monitoring and Protection",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 49.62692,
+   "lng": 13.99682,
+   "state": "Kamenná 71, 262 31 Milín, Czech Republic, Czech Republic",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "National Institute for Nuclear, Chemical and Biological Protection",
+   "size": "28 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2007",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.sujchbo.cz/",
+   "desc": "A BSL4 laboratory, operational. Run by National Institute for Nuclear, Chemical and Biological Protection. It is categorised as a defense laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 28 SqM. Operational or announced: 2007. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Republican Research and Practical Center for Epidemiology and Microbiology (RPPCM)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 53.91643,
+   "lng": 27.63165,
+   "state": "23 Filimonova St., Minsk, Belarus",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Belarus Ministry of Health",
+   "size": "1589 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2009",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.belriem.by/en/",
+   "desc": "A BSL4 laboratory, operational. Run by Belarus Ministry of Health. It is categorised as a public health laboratory, working on human health. Personnel work in glove box. Containment space: 1589 SqM. Operational or announced: 2009. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Center for Emerging Zoonotic and Parasitic Diseases, Special Viral Pathogens Laboratory",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": -26.13242,
+   "lng": 28.11654,
+   "state": "1 Modderfontein Road, Sandringham, Johannesburg 2192, South Africa",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "National Institute for Communicable Diseases (NICD), a Division of the National Health Laboratory Service (NHLS)",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "1979",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.nicd.ac.za/",
+   "desc": "A BSL4 laboratory, operational. Run by National Institute for Communicable Diseases (NICD), a Division of the National Health Laboratory Service (NHLS). It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Operational or announced: 1979. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Emerging Viral Diseases Unit (L’Unité des Maladies Virales Emergentes) (UMVE)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": -1.6162,
+   "lng": 13.58199,
+   "state": "9HMJ+GQH, Franceville, Gabon, Gabon",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Ministry of the Arm Forces",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2008",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://www.cirmf.org/en/cirmf/history",
+   "desc": "A BSL4 laboratory, operational. Run by Ministry of the Arm Forces. It is categorised as a public health laboratory, working on human health. Personnel work in glove box. Operational or announced: 2008. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "The Pirbright Institute",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 51.2797,
+   "lng": -0.6363,
+   "state": "Ash Road, Pirbright, Woking, GU24 0NF, United Kingdom",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "The Pirbright Institute",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.pirbright.ac.uk",
+   "desc": "A BSL3+ laboratory, operational. Run by The Pirbright Institute. It is categorised as a public health laboratory, working on human health. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Veterinary Faculty - Virology Department",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 39.95746,
+   "lng": 32.86245,
+   "state": "Ziraat Mah., Şht. Ömer Halisdemir Bulvarı, 06110 ltındağ/Ankara/Türkiy, Turkey",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Ankara University",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://www.veterinary.ankara.edu.tr/en/department-of-virology/",
+   "desc": "A BSL3+ laboratory, operational. Run by Ankara University. It is categorised as a university laboratory, working on both human and animal health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Institute of Virology and Immunology (IVI)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 46.88074,
+   "lng": 7.36277,
+   "state": "Sensemattstrasse 293 3147 Mittelhäusern, Switzerland, Switzerland",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Federal Department of Home Affairs",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.ivi.admin.ch/ivi/en/home.html",
+   "desc": "A BSL3+ laboratory, operational. Run by Federal Department of Home Affairs. It is categorised as a public health laboratory, working on both human and animal health. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Centre for Research into Animal Health (CReSA)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 41.50487,
+   "lng": 2.09664,
+   "state": "08193 Bellaterra, Barcelona (Edifici CReSA. Campus UAB), Spain",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "The Institute of Agri-food Research and Technology (IRTA)",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.irta.cat/ca/centre/irta-cresa/",
+   "desc": "A BSL3+ laboratory, operational. Run by The Institute of Agri-food Research and Technology (IRTA). It is categorised as a university laboratory, working on animal health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "The Laboratory for Diagnosis of Zoonoses at the Institute of Microbiology and Immunology",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 46.05182,
+   "lng": 14.52344,
+   "state": "Zaloška 4, 1000 Ljubljana, Slovenia",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Faculty of Medicine, University of Ljubljana",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://imi.si/?set_language=en",
+   "desc": "A BSL3+ laboratory, operational. Run by Faculty of Medicine, University of Ljubljana. It is categorised as a university laboratory, working on animal health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "The National Institute for Infectious Diseases “Matei Balș”- Centre for Biomolecular Applied Research in Infectious Diseases",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 44.45512,
+   "lng": 26.11296,
+   "state": "Strada Doctor Calistrat Grozovici 1, București 021105, Romania, Romania",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Ministry of Health",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.mateibals.ro/",
+   "desc": "A BSL3+ laboratory, operational. Run by Ministry of Health. It is categorised as a public health laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Institute of Biotechnology",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 54.39325,
+   "lng": 18.5784,
+   "state": "Jana Bażyńskiego 8, 80-309 Gdańsk, Poland, Poland",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "University of Gdansk",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://ug.edu.pl/",
+   "desc": "A BSL3+ laboratory, operational. Run by University of Gdansk. It is categorised as a university laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "The Malopolska Centre of Biotechnology Laboratory of Virology",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 50.02697,
+   "lng": 19.90079,
+   "state": "7a Gronostajowa Str 30-387 Kraków, Poland, Poland",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Jagiellonian University",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://virogenetics.info/",
+   "desc": "A BSL3+ laboratory, operational. Run by Jagiellonian University. It is categorised as a university laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Viroclinics DDL",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 51.91193,
+   "lng": 4.42965,
+   "state": "Rotterdam Science Tower Marconistraat 16 3029 AK Rotterdam, Netherlands",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Private",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.viroclinics.com/",
+   "desc": "A BSL3+ laboratory, operational. Run by Private. It is categorised as a public health laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "The Erasmus MC Complex",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 51.91095,
+   "lng": 4.46792,
+   "state": "Doctor Molewaterplein 40, 3015 GD Rotterdam, The Netherlands, Netherlands",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Eramus",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.erasmusmc.nl/nl-nl/",
+   "desc": "A BSL3+ laboratory, operational. Run by Eramus. It is categorised as a public health laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Wageningen Bioveterinary Research",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 52.55068,
+   "lng": 5.48758,
+   "state": "Houtribweg 39, 8221 RA Lelystad, the Netherlands, Netherlands",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Wageningen University",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.wur.nl/en/research-results/research-institutes/bioveterinary-research/about-us.htm",
+   "desc": "A BSL3+ laboratory, operational. Run by Wageningen University. It is categorised as a university laboratory, working on both human and animal health. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Istituto Zooprofilattico Sperimentale della Lombardia e dell’Emilia Romagna (IZSLER)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 45.5223,
+   "lng": 10.22275,
+   "state": "Via Antonio Bianchi, 7/9, 25124 Brescia BS, Italy, Italy",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Ministry of Health",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.izsler.it/",
+   "desc": "A BSL3+ laboratory, operational. Run by Ministry of Health. It is categorised as a public health laboratory, working on both human and animal health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "National Biosafety Laboratory (NBL)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 47.47696,
+   "lng": 19.09149,
+   "state": "1097 Budapest, Albert Flórián út 2-6, Hungary",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Ministry of Human capacities",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://erinha.antsz.hu/index.php/national-biosafety-laboratory",
+   "desc": "A BSL3+ laboratory, operational. Run by Ministry of Human capacities. It is categorised as a public health laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Friedrich-Loeffler-Institut, Federal Research Institute for Animal Health",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 54.18276,
+   "lng": 13.36299,
+   "state": "Südufer 10, 17493 Greifswald-Insel Riems, Germany",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Federal Ministry for Food and Agriculture",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "1910",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.fli.de/de/startseite",
+   "desc": "A BSL3+ laboratory, operational. Run by Federal Ministry for Food and Agriculture. It is categorised as a public health laboratory, working on animal health. Operational or announced: 1910. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "The Heinrich Pette Institute, Leibniz Institute for Experimental Virology",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 53.59399,
+   "lng": 9.97306,
+   "state": "Martinistraße 52 20251 Hamburg, Germany",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "University Medical Center Hamburg-Eppendorf",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "1948",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.hpi-hamburg.de/en/",
+   "desc": "A BSL3+ laboratory, operational. Run by University Medical Center Hamburg-Eppendorf. It is categorised as a university laboratory, working on human health. Operational or announced: 1948. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Aix-Marseille University (AMU) -The \"Unité des Virus Emergents\"",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 43.28844,
+   "lng": 5.40221,
+   "state": "27, Bd Jean Moulin, 13005 Marseille cedex 05, France",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Faculté de Médecine de Marseille",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.univ-amu.fr/",
+   "desc": "A BSL3+ laboratory, operational. Run by Faculté de Médecine de Marseille. It is categorised as a university laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "National Veterinary Institute",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 55.68459,
+   "lng": 12.54629,
+   "state": "Bülowsvej 27 DK-1790 Kopenhagen Denmark., Denmark",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Technical University of Denmark",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.vet.dtu.dk/english",
+   "desc": "A BSL3+ laboratory, operational. Run by Technical University of Denmark. It is categorised as a university laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "The Institute of Tropical Medicine (ITM)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 51.21245,
+   "lng": 4.3975,
+   "state": "Nationalestraat 155 - 2000 Antwerp - Belgium, Belgium",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "The Institute of Tropical Medicine (ITM)",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.itg.be/",
+   "desc": "A BSL3+ laboratory, operational. Run by The Institute of Tropical Medicine (ITM). It is categorised as a public health laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "KU Leuven Rega Institute (3CAPS)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 50.87983,
+   "lng": 4.66935,
+   "state": "Herestraat 49 - box 1030, 3000 Leuven, Belgium",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Catholic University of Leuven",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "1954",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://rega.kuleuven.be/",
+   "desc": "A BSL3+ laboratory, operational. Run by Catholic University of Leuven. It is categorised as a university laboratory, working on human health. Operational or announced: 1954. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Medical University Graz",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 47.08057,
+   "lng": 15.47015,
+   "state": "Medizinische Universität Graz Auenbruggerplatz 2 8036 Graz Österreich, Austria",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "The Medical University of Graz",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.medunigraz.at/",
+   "desc": "A BSL3+ laboratory, operational. Run by The Medical University of Graz. It is categorised as a university laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Institute for Veterinary Medicine (AGES Mödling)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 48.07881,
+   "lng": 16.30509,
+   "state": "Robert Koch-Gasse 17 2340 Mödling, Austria",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Austrian Agency for Health and Food Safety",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.ages.at/en/",
+   "desc": "A BSL3+ laboratory, operational. Run by Austrian Agency for Health and Food Safety. It is categorised as a public health laboratory, working on both human and animal health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "The Centre for Viral Zoonoses (CVZ)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": -25.75456,
+   "lng": 28.23144,
+   "state": "Lynnwood Rd, Hatfield, Pretoria, 0002, South Africa, South Africa",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "University of Pretoria",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.up.ac.za/centre-for-viral-zoonoses/article/2804265/research-facilities",
+   "desc": "A BSL3+ laboratory, operational. Run by University of Pretoria. It is categorised as a university laboratory, working on both human and animal health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Emerging Viral Diseases Unit (L’Unité des Maladies Virales Emergentes)(UMVE)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": -1.61587,
+   "lng": 13.5816,
+   "state": "9HMJ+GQH, Franceville, Gabon, Gabon",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Ministry of the Arm Forces",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2008",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.defense.gouv.fr/dga/la-dga2/expertise-et-essais/les-centres-d-expertise-et-d-essais-de-la-dga/dga-maitrise-nrbc",
+   "desc": "A BSL3+ laboratory, operational. Run by Ministry of the Arm Forces. It is categorised as a public health laboratory, working on human health. Operational or announced: 2008. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Australian Centre for Disease Preparedness (formerly Australian Animal Health Laboratory)",
+   "source": "industry:animals",
+   "type": "BSL4 animal laboratory",
+   "lat": -38.151,
+   "lng": 144.389,
+   "state": "5 Portarlington Road East Geelong VIC, Australia",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Commonwealth Scientific and Industrial Research Organization (CSIRO)",
+   "size": "469 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "1985",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.csiro.au/en/about/facilities-collections/ACDP",
+   "desc": "A BSL4 animal laboratory, operational. Run by Commonwealth Scientific and Industrial Research Organization (CSIRO). It is categorised as a public health laboratory, working on animal health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 469 SqM. Operational or announced: 1985. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "High-Level Biosafety Primate Experimental Center",
+   "source": "industry:animals",
+   "type": "BSL4 animal laboratory",
+   "lat": 25.05969,
+   "lng": 102.61316,
+   "state": "No. 935, Jiaoling Road, Wuhua District, Kunming City, Yunnan Province, China",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Institute of Medical Biology, Chinese Academy of Medical Sciences",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2019",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.imbcams.ac.cn/kxyj/kydw",
+   "desc": "A BSL4 animal laboratory, operational. Run by Institute of Medical Biology, Chinese Academy of Medical Sciences. It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Operational or announced: 2019. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Chinese National High Containment Facilities for Animal Diseases Control and Prevention, Harbin Veterinary Research Institute",
+   "source": "industry:animals",
+   "type": "BSL4 animal laboratory",
+   "lat": 45.628,
+   "lng": 126.656,
+   "state": "No.678 Heping Road, Xiangfang District, Harbin 150069, P.R.China, China",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Chinese Academy of Agricultural Sciences",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2018",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://www.hvri.ac.cn/en/index.htm",
+   "desc": "A BSL4 animal laboratory, operational. Run by Chinese Academy of Agricultural Sciences. It is categorised as a public health laboratory, working on animal health. Personnel work in full-body positive-pressure suits with their own air supply. Operational or announced: 2018. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Institute of Preventive Medical Research (IPMR)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 24.93756,
+   "lng": 121.307,
+   "state": "XingFeng Rd., Bade Dist., Taoyuan City 33448, Taiwan (R.O.C.), Taiwan",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "National Defense University",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.ndu.edu.tw/?Lang=en",
+   "desc": "A BSL4 laboratory, operational. Run by National Defense University. It is categorised as a defense laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "DSO National Lab",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 1.28754,
+   "lng": 103.78735,
+   "state": "11 Stockport Road, Singapore 117605, Singapore",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Defense Science Organization",
+   "size": "",
+   "status": "Planned",
+   "phase": "post",
+   "date": "Announced 2021; Expected 2025",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.dso.org.sg/",
+   "desc": "A BSL4 laboratory, planned. Run by Defense Science Organization. It is categorised as a defense laboratory, working on human health. Operational or announced: Announced 2021; Expected 2025. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Osong BSL-4 Laboratory, Korea Centers for Disease",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 36.64,
+   "lng": 127.327,
+   "state": "Osong Health Technology Administration Complex, 187, Osongsaengmyeong , Republic of Korea",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Korean Disease Control and Prevention Agency",
+   "size": "300 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2017",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://www.kdca.go.kr/index.es?sid=a3",
+   "desc": "A BSL4 laboratory, operational. Run by Korean Disease Control and Prevention Agency. It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 300 SqM. Operational or announced: 2017. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "RIKEN BioResource Research Centre",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 36.024,
+   "lng": 140.121,
+   "state": "3-1-1, Koyadai, Tsukuba-shi, Ibaraki, 305-0074, Japan",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "The Institute of Physical and Chemical Research (RIKEN)",
+   "size": "164 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://web.brc.riken.jp/en/",
+   "desc": "A BSL4 laboratory, operational. Run by The Institute of Physical and Chemical Research (RIKEN). It is categorised as a private laboratory, working on human health. Containment space: 164 SqM. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Nagasaki University BSL-4",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 32.7852,
+   "lng": 129.86664,
+   "state": "1-14 Bunkyo, Nagasaki City, Japan",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Nagasaki University",
+   "size": "1000 SqM",
+   "status": "Planned",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://www.nagasaki-u.ac.jp/en/index.html",
+   "desc": "A BSL4 laboratory, planned. Run by Nagasaki University. It is categorised as a university laboratory, working on human health. Containment space: 1000 SqM. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Murayama Annex, National Institute of Infectious Diseases (NIID)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 35.74466,
+   "lng": 139.40156,
+   "state": "Gakuen4-7-1, Musashimurayama, Tokyo, 208-0011, Japan",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Ministry of Health, Labour and Welfare",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2015",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.niid.go.jp/niid/en/",
+   "desc": "A BSL4 laboratory, operational. Run by Ministry of Health, Labour and Welfare. It is categorised as a public health laboratory, working on human health. Personnel work in glove box. Operational or announced: 2015. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Wuhan Institute of Virology",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 30.37639,
+   "lng": 114.2625,
+   "state": "Xiao Hong Shan No.44, Wuhan, China",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Chinese Academy of Sciences",
+   "size": "200 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2016",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://english.whiov.cas.cn/",
+   "desc": "A BSL4 laboratory, operational. Run by Chinese Academy of Sciences. It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 200 SqM. Operational or announced: 2016. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Chinese Center for Disease Control and Prevention",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 40.184,
+   "lng": 116.301,
+   "state": "155 Changbai Road Changping District, Beijing 102206, China",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "National Health Commission",
+   "size": "",
+   "status": "Planned",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://www.chinacdc.cn/en/",
+   "desc": "A BSL4 laboratory, planned. Run by National Health Commission. It is categorised as a public health laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Queensland Health Forensic Scientific Services (QHFSS)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": -27.559,
+   "lng": 153.044,
+   "state": "39 Kessels Road, Coopers Plains QLD 4108, Australia",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Queensland Department of Health (State Government)",
+   "size": "150 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.health.qld.gov.au/healthsupport/businesses/forensic-and-scientific-services",
+   "desc": "A BSL4 laboratory, operational. Run by Queensland Department of Health (State Government). It is categorised as a public health laboratory, working on human health. Containment space: 150 SqM. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "National High Security Quarantine Laboratory",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": -37.8,
+   "lng": 144.95793,
+   "state": "Victorian Infectious Diseases Reference Laboratory (VIDRL), 792 Elizab, Australia",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Peter Doherty Institute for Infection and Immunity",
+   "size": "90 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2014",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.vidrl.org.au/",
+   "desc": "A BSL4 laboratory, operational. Run by Peter Doherty Institute for Infection and Immunity. It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 90 SqM. Operational or announced: 2014. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Emerging Infectious Diseases and Biohazard Response Unit (EIBRU), Westmead Hospital",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": -33.802,
+   "lng": 150.989,
+   "state": "Hawkesbury Rd, Westmead NSW 2145, Australia",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Institute for Clinical Pathology and Medical Research, NSW Health Pathology",
+   "size": "86 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2007",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.westmeadinstitute.org.au/about/research-centres/centre-for-infectious-disease-and-microbiology",
+   "desc": "A BSL4 laboratory, operational. Run by Institute for Clinical Pathology and Medical Research, NSW Health Pathology. It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 86 SqM. Operational or announced: 2007. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Directorate of Foot and Mouth Disease (FMD)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 20.13233,
+   "lng": 85.67646,
+   "state": "Arugul, Jatni, Bhubaneswar-752050 District- Khorda, Odisha (India ), India",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Indian Council of Agricultural Research (ICAR)",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.pdfmd.ernet.in/",
+   "desc": "A BSL3+ laboratory, operational. Run by Indian Council of Agricultural Research (ICAR). It is categorised as a public health laboratory, working on both human and animal health. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Regional Reference Laboratory for FMD in South East Asia National Institute of Animal Health",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 14.70453,
+   "lng": 101.42991,
+   "state": "1213/1 Moo 11, Pakchong, Nakhonratchasima,30130 Thailand, Thailand",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Department of Livestock Development",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2004",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://rrl.dld.go.th",
+   "desc": "A BSL3+ laboratory, operational. Run by Department of Livestock Development. It is categorised as a public health laboratory, working on animal health. Operational or announced: 2004. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "National Defense Medical Center Institutes of Preventive Medicine (IPM)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 25.07103,
+   "lng": 121.59529,
+   "state": "No. 161號, Section 6, Minquan E Rd, Neihu District, Taipei City, Taiwan, Taiwan",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "The Republic of China Armed Forces (ROC)",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.ndmctsgh.edu.tw/english",
+   "desc": "A BSL3+ laboratory, operational. Run by The Republic of China Armed Forces (ROC). It is categorised as a defense laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "International Vaccine Institute-The headquarters of the IVI on the campus.",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 37.46481,
+   "lng": 126.95977,
+   "state": "IVI, SNU Research Park, San 4-8, Bongcheon 7-dong, Gwanak-gu, Seoul, S, Republic of Korea",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Seoul National University",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2008",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.ivi.int/",
+   "desc": "A BSL3+ laboratory, operational. Run by Seoul National University. It is categorised as a university laboratory, working on human health. Operational or announced: 2008. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Defence Medical and Environmental Research Institute",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 1.29628,
+   "lng": 103.78138,
+   "state": "27 Medical Dr, Singapore 117510, Singapore",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "DSO National Laboratories",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.dso.org.sg/research/dmeri",
+   "desc": "A BSL3+ laboratory, operational. Run by DSO National Laboratories. It is categorised as a defense laboratory, working on both human and animal health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "NUS Yong Loo Lin School of Medicine",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 1.29646,
+   "lng": 103.78182,
+   "state": "1E Kent Ridge Road, Singapore 119228 NUHS Tower Block, Level 11, Singapore",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "National University of Singapore",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://medicine.nus.edu.sg/",
+   "desc": "A BSL3+ laboratory, operational. Run by National University of Singapore. It is categorised as a university laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Institut Pasteur du Laos",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 17.96257,
+   "lng": 102.61516,
+   "state": "Samsenthai Road, Ban Kao-Gnot, Sisattanak district, P.O Box 3560, Vien, Laos",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Ministry of Health",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2011",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.pasteur.la/",
+   "desc": "A BSL3+ laboratory, operational. Run by Ministry of Health. It is categorised as a public health laboratory, working on human health. Operational or announced: 2011. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Harbin Veterinary Research Institute (HVRI)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 45.76321,
+   "lng": 126.66432,
+   "state": "China, Heilongjiang, Harbin, Nangang, 人和街 邮政编码: 150008, China",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Chinese Academy of Agricultural Sciences (CAAS)",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "1948",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.caas.cn/en/administration/research_institutes/research_institutes_out_beijing/heilongjiang_harbin/77941.html http://www.hvri.ac.cn/en/index.htm",
+   "desc": "A BSL3+ laboratory, operational. Run by Chinese Academy of Agricultural Sciences (CAAS). It is categorised as a public health laboratory, working on animal health. Operational or announced: 1948. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Pan American Foot and Mouth Disease Center (PANAFTOSA)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": -22.735,
+   "lng": -43.31,
+   "state": "Cidade Administrativa do Governo de, Prédio Gerais Rod. Papa João Paul, Brazil",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "The Pan American Health Organization (PAHO)",
+   "size": "",
+   "status": "Planned",
+   "phase": "post",
+   "date": "Announced 2021",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.paho.org/es/panaftosa/laboratorio-referencia",
+   "desc": "A BSL4 laboratory, planned. Run by The Pan American Health Organization (PAHO). It is categorised as a public health laboratory, working on animal health. Operational or announced: Announced 2021. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Pan American Foot and Mouth Disease Center (PANAFTOSA)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": -19.78513,
+   "lng": -43.95062,
+   "state": "Cidade Administrativa do Governo de, Prédio Gerais Rod. Papa João Paul, Brazil",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "The Pan American Health Organization (PAHO)",
+   "size": "",
+   "status": "Planned",
+   "phase": "post",
+   "date": "Announced 2021",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.paho.org/es/panaftosa/laboratorio-referencia",
+   "desc": "A BSL3+ laboratory, planned. Run by The Pan American Health Organization (PAHO). It is categorised as a public health laboratory, working on animal health. Operational or announced: Announced 2021. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Laboratório de Virologia Clínica e Molecular do Instituto de Ciências Biomédicas (ICB-II)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": -23.5675,
+   "lng": -46.73183,
+   "state": "Av. Prof. Lineu Prestes, nº 2415 Butantã - São Paulo/SP - CEP 05508-00, Brazil",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Universidade de São Paulo",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://ww3.icb.usp.br/",
+   "desc": "A BSL3+ laboratory, operational. Run by Universidade de São Paulo. It is categorised as a university laboratory, working on human health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "National Food Safety and Quality Service (SENASA)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": -34.4973,
+   "lng": -58.5237,
+   "state": "Talcahuano 1660 (1640) Martínez, Buenos Aires Province, Argentina",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Ministry of Agriculture, Livestock and Fisheries (https://www.argentina.gob.ar/senasa/laboratorios)",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.argentina.gob.ar/senasa",
+   "desc": "A BSL3+ laboratory, operational. Run by Ministry of Agriculture, Livestock and Fisheries (https://www.argentina.gob.ar/senasa/laboratorios). It is categorised as a public health laboratory, working on animal health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Institute of Virology, National Institute of Agricultural Technology (INTA)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": -34.60415,
+   "lng": -58.67382,
+   "state": "98WG+8F William C. Morris, Buenos Aires Province, Argentina",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Ministry of Agriculture, Livestock and Fisheries",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2009",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://inta.gob.ar/servicios/laboratorio-de-contencion-biologica-nsb-4-oie",
+   "desc": "A BSL3+ laboratory, operational. Run by Ministry of Agriculture, Livestock and Fisheries. It is categorised as a public health laboratory, working on animal health. Operational or announced: 2009. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "National Biocontainment Laboratory “Te Whare Rerenga Koiora o Aotearoa”",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": -41.13241,
+   "lng": 175.0556,
+   "state": "66 Ward Street, Wallaceville, Upper Hutt 5018, New Zealand, New Zealand",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Ministry Primary Industries",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2021",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.mpi.govt.nz/science/laboratories/national-animal-health-laboratory/national-biocontainment-laboratory/",
+   "desc": "A BSL3+ laboratory, operational. Run by Ministry Primary Industries. It is categorised as a public health laboratory, working on both human and animal health. Operational or announced: 2021. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "National Institute of High Security Animal Diseases (NIHSAD)",
+   "source": "industry:animals",
+   "type": "BSL4 animal laboratory",
+   "lat": 23.25454,
+   "lng": 77.49366,
+   "state": "Anand Nagar, Bhopal- 462 022 (MP), INDIA, India",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Indian Council of Agricultural Research",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2000",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://www.nihsad.nic.in/bio-cont-lab.html",
+   "desc": "A BSL4 animal laboratory, operational. Run by Indian Council of Agricultural Research. It is categorised as a public health laboratory, working on animal health. Operational or announced: 2000. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Rajiv Gandhi Centre for Biotechnology (RGCB)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 8.493,
+   "lng": 76.97,
+   "state": "Thycaud Post, Poojappura, Thiruvananthapuram - 695 014, Kerala, India, India",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Rajiv Gandhi Centre for Biotechnology (RGCB)",
+   "size": "",
+   "status": "Planned",
+   "phase": "post",
+   "date": "Announced 2020",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://rgcb.res.in/",
+   "desc": "A BSL4 laboratory, planned. Run by Rajiv Gandhi Centre for Biotechnology (RGCB). It is categorised as a public health laboratory, working on human health. Operational or announced: Announced 2020. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Microbial Containment Complex (MCC)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 18.5432,
+   "lng": 73.78893,
+   "state": "130, MCC, 1, Pashan - Sus Rd, Pashan, Pune, Maharashtra 411021, India, India",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "National Institute of Virology",
+   "size": "848 SqM",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2012",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.niv.co.in/",
+   "desc": "A BSL4 laboratory, operational. Run by National Institute of Virology. It is categorised as a public health laboratory, working on human health. Personnel work in full-body positive-pressure suits with their own air supply. Containment space: 848 SqM. Operational or announced: 2012. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Rajiv Gandhi Centre For Biotechnology (RCGB) - Second campus",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 8.49239,
+   "lng": 76.96687,
+   "state": "Cheruvikkal Village Office, road, Aakkulam, Thiruvananthapuram, Kerala, India",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Ministry of Science & Technology (Department of Biotechnology)",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "2022",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "https://www.rgcb.res.in/",
+   "desc": "A BSL3+ laboratory, operational. Run by Ministry of Science & Technology (Department of Biotechnology). It is categorised as a public health laboratory, working on human health. Operational or announced: 2022. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "National Institute of High Security Animal Diseases (NIHSAD)",
+   "source": "industry:animals",
+   "type": "BSL3+ laboratory",
+   "lat": 23.25444,
+   "lng": 77.49366,
+   "state": "162, Manak Vihar, Patel Nagar, Bhopal, Madhya Pradesh 462022, India, India",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 3,
+   "company": "Indian Council of Agricultural Research (ICAR)",
+   "size": "",
+   "status": "Operational",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "http://www.nihsad.nic.in/",
+   "desc": "A BSL3+ laboratory, operational. Run by Indian Council of Agricultural Research (ICAR). It is categorised as a public health laboratory, working on animal health. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  },
+  {
+   "name": "Advanced Biological Defense Research Centre (ABDRC)",
+   "source": "industry:animals",
+   "type": "BSL4 laboratory",
+   "lat": 26.208,
+   "lng": 78.182,
+   "state": "Jhansi Road Gwalior 474002, India",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 4,
+   "company": "Defense Research and Development Establishment, Ministry of Defense",
+   "size": "",
+   "status": "Planned",
+   "phase": "post",
+   "date": "Announced 2021",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "microbes"
+   ],
+   "url": "None",
+   "desc": "A BSL4 laboratory, planned. Run by Defense Research and Development Establishment, Ministry of Defense. It is categorised as a defense laboratory, working on human health. Operational or announced: Announced 2021. It stands in a built-up area, with more than fifty thousand people living within two and a half miles. There is no international register of laboratories at this containment level and no obligation to declare one, so this record comes from a research project rather than a regulator. What that project could not find out is absent here too.",
+   "checked": ""
+  }
+ ]
+}
