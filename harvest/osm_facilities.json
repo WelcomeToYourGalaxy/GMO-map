@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-16",
+ "generated": "2026-08-17",
  "note": "OpenStreetMap facilities. Fertility clinics tagged healthcare:speciality=fertility or healthcare=fertility_clinic, and mapped sites of named animal-research companies. Coverage follows mapper density, not facility density. Data (c) OpenStreetMap contributors, ODbL.",
  "projects": [
   {
@@ -21944,6 +21944,32 @@
    ],
    "url": "https://www.openstreetmap.org/relation/18084337",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
+   "checked": ""
+  },
+  {
+   "name": "Katharina Tscharland",
+   "source": "industry:animals",
+   "type": "Animal research company site (OpenStreetMap)",
+   "lat": 47.42782,
+   "lng": 7.65095,
+   "state": "",
+   "precise": true,
+   "addr_grade": "mapped",
+   "impact": 2,
+   "company": "Katharina Tscharland",
+   "size": "",
+   "status": "Mapped in OpenStreetMap",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.openstreetmap.org/node/10789439705",
+   "desc": "A mapped site of Harlan, a company whose business is animal research, breeding laboratory animals, or both. What this record says is that the company has a site here. It does not say animals are used at this address: a mapped corporate site may be an office, and no regulator publishes a worldwide list of the buildings where the work happens. There is no OpenStreetMap tag for an animal research facility and there should not be one — whether a building runs toxicology studies is not visible from the street, which is the test OpenStreetMap applies to everything it records.",
    "checked": ""
   }
  ]
