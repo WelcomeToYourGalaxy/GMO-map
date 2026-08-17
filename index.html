@@ -1288,7 +1288,7 @@ function _regimeBoxInner(iso){
     var cnames=cult.map(function(p){return String(p.name||'').trim();}).filter(Boolean).sort();
     var cshow=cnames.slice(0,6).join(', ');
     if(cnames.length>6) cshow+=' and '+(cnames.length-6)+' more';
-    h+='<div class="rgm-h2"><span class="rgm-ar" style="background:#f2b134"></span>Approved GM cultivation area</div>';
+    h+='<div class="rgm-h2"><span class="rgm-ar" style="background:#b79ede"></span>Approved GM cultivation area</div>';
     h+='<div class="rgm-p">'+cult.length+' region'+(cult.length===1?'':'s')+' shaded'
       +(cshow?': '+_esc(cshow):'')+'.</div>';
     /* No hectares printed. The harvest wrote one identical figure list onto all
@@ -2502,7 +2502,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   // Loaded on demand from repo-hosted overlays/<k>.geojson (CORS-safe). The
   // harvester downloads + slims + commits these files; until then a toggle
   // gracefully shows "not yet available". These are AREAS, not project dots.
-  var PJ_OVERLAYS=[{"k":"cultivation","label":"Approved GM cultivation area","color":"#f2b134","note":"Hectares of engineered crops by country, from the USDA FAS Agricultural Biotechnology Annual reports. Area planted, not permits \u2014 the only layer here that shows scale rather than paperwork."},{"k":"gmofree","label":"GMO-free zones & regional bans","color":"#4fb3c9","note":"Regions and municipalities that have declared themselves GMO-free, crawled from the GMO Free Regions network. Declarations vary in legal force: some are binding, some are statements of intent, and the note on each says which where the source states it."},{"k": "regime", "label": "Regulatory regime by country", "color": "#8a7fc4", "note": ""}];
+  var PJ_OVERLAYS=[{"k":"cultivation","label":"Approved GM cultivation area","color":"#b79ede","note":"Hectares of engineered crops by country, from the USDA FAS Agricultural Biotechnology Annual reports. Area planted, not permits \u2014 the only layer here that shows scale rather than paperwork."},{"k":"gmofree","label":"GMO-free zones & regional bans","color":"#4fb3c9","note":"Regions and municipalities that have declared themselves GMO-free, crawled from the GMO Free Regions network. Declarations vary in legal force: some are binding, some are statements of intent, and the note on each says which where the source states it."},{"k": "regime", "label": "Regulatory regime by country", "color": "#8a7fc4", "note": ""}];
   // Olive range rather than purple/blue/orange, which fought the atlas ground.
   // Three steps far enough apart to tell apart on a parchment background:
   // deep moss, mid olive, dry gold-olive.
@@ -2711,7 +2711,10 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       'This is the address on the registration, which for a university or a '
       + 'clinic group is usually a head office. The work may be in another '
       + 'building or another city.'],
-    centroid: ['\u2248 Country or region only',
+    state: ['\u2248 State or province only',
+      'No town resolved, so this sits at the centre of the state or province. '
+      + 'Several of those are wider than a small country.'],
+    centroid: ['\u2248 Town or region only',
       'No address was published, so this sits at the centre of the area. It is '
       + 'not a location.'],
     mapped: ['\u25c9 Mapped position',
@@ -3078,7 +3081,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       // harvester worked for.
       var _coarse = (o.kd === 'repro' || o.kd === 'animals') &&
                     o.p && o.p.addr_grade !== 'operational' &&
-                    o.p.addr_grade !== 'mapped';
+                    o.p.addr_grade !== 'mapped';   /* 'state' included */
       if(o.kd !== 'release' && o.kd !== 'clinical' && !_coarse){
         g = cells['solo:' + i] = {la: o.la, lo: o.lo, n: 1, m: [o], kd: {}, i: o.i,
                                   ap: o.ap, total: 1, solo: true};
@@ -3470,9 +3473,29 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
         if(!pjOn||map.getZoom()<PJ_CLICK_MINZ)return;
         var cp=map.mouseEventToContainerPoint(ev);
         var g=self._nearestClu(cp);
-        if(g && g.n>1 && !g.hier){ ev.stopPropagation(); gbClickTime=Date.now();
-          if(window.pjShowCluster) window.pjShowCluster(pjCluTitle(g), pjCluRows(g));
-          return; }
+        // A cluster of one is still a cluster. The n>1 test sent every
+        // single-record centroid down the fallback path, where _nearest() looks
+        // for a marker at its UNNUDGED position - and since the offsets were
+        // added, a release or clinical centroid is up to twenty pixels away
+        // from where that search is looking. The click found nothing and did
+        // nothing, which is exactly what a dead marker looks like.
+        if(g && !g.hier){
+          ev.stopPropagation(); gbClickTime=Date.now();
+          try{
+            if(g.n > 1 && window.pjShowCluster){
+              window.pjShowCluster(pjCluTitle(g), pjCluRows(g)); return;
+            }
+            var one = g.m && g.m[0];
+            if(one && one.p){
+              if(!_pjPopup) _pjPopup=L.popup({maxWidth:320,autoPan:true});
+              _pjPopup.setLatLng([one.la,one.lo])
+                      .setContent(pjPopupHtml(one.p)).openOn(map);
+              pjEnrich(one.p);
+              if(window.pjShowRecords) window.pjShowRecords(one.p);
+              return;
+            }
+          }catch(_e){}
+        }
         var hit=(g&&g.m&&g.m.length)?g.m[0]:self._nearest(cp);
         if(hit){ ev.stopPropagation(); gbClickTime=Date.now();
           // A country marker is a container, not a record. It was opening the
@@ -6986,7 +7009,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-17 01:18";
+  var BUILD = "BUILD-2026-08-17 01:26";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
