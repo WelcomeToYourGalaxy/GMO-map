@@ -1184,7 +1184,7 @@
    ]
   },
   {
-   "owner": "GENESIS",
+   "owner": "Genesis",
    "basis": "inferred from the site's own name",
    "sites": 24,
    "countries": [
@@ -1671,7 +1671,7 @@
    ]
   },
   {
-   "owner": "Vida",
+   "owner": "VIDA",
    "basis": "inferred from the site's own name",
    "sites": 13,
    "countries": [
@@ -1733,7 +1733,7 @@
     },
     {
      "name": "Vidafer, Unidad de Medicina Reproductiva",
-     "lat": 10.49689,
+     "lat": 10.49685,
      "lng": -66.87472,
      "where": "Caracas",
      "source": "osm_facilities.json"
@@ -2233,75 +2233,6 @@
    ]
   },
   {
-   "owner": "IVI",
-   "basis": "inferred from the site's own name",
-   "sites": 8,
-   "countries": [
-    "NY",
-    "Panama",
-    "Salvador",
-    "W1G 9RQ"
-   ],
-   "members": [
-    {
-     "name": "IVI London (Wimpole Street)",
-     "lat": 51.51699,
-     "lng": -0.14787,
-     "where": "83, Wimpole Street, London, W1G 9RQ",
-     "source": "hfea_clinics.json"
-    },
-    {
-     "name": "IVI Panamá",
-     "lat": 8.55956,
-     "lng": -81.13084,
-     "where": "Panama, Panama",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "Ivica Brkljaca",
-     "lat": 42.17,
-     "lng": -74.95,
-     "where": "Roslyn Heights, NY",
-     "source": "aphis_animal_facilities.json"
-    },
-    {
-     "name": "IVI. Clínica de Reproducción Asistida",
-     "lat": 38.36405,
-     "lng": -0.46179,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "IVI Sevilla - Clínica de Reproducción Asistida y Fertilidad",
-     "lat": 37.37639,
-     "lng": -6.00547,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Ivi",
-     "lat": 28.46347,
-     "lng": -16.26272,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "IVI. Clínica de reproducción asistida",
-     "lat": 38.36404,
-     "lng": -0.46178,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "IVI Reprodução Humana",
-     "lat": -12.99463,
-     "lng": -38.45444,
-     "where": "Salvador",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
    "owner": "WuXi AppTec Co., Ltd",
    "basis": "stated by the register",
    "sites": 7,
@@ -2422,6 +2353,67 @@
      "lat": 45.54073,
      "lng": 12.17109,
      "where": "Martellago",
+     "source": "osm_facilities.json"
+    }
+   ]
+  },
+  {
+   "owner": "IVI",
+   "basis": "inferred from the site's own name",
+   "sites": 7,
+   "countries": [
+    "NY",
+    "Panama",
+    "W1G 9RQ"
+   ],
+   "members": [
+    {
+     "name": "IVI London (Wimpole Street)",
+     "lat": 51.51699,
+     "lng": -0.14787,
+     "where": "83, Wimpole Street, London, W1G 9RQ",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "IVI Panamá",
+     "lat": 8.55956,
+     "lng": -81.13084,
+     "where": "Panama, Panama",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Ivica Brkljaca",
+     "lat": 42.17,
+     "lng": -74.95,
+     "where": "Roslyn Heights, NY",
+     "source": "aphis_animal_facilities.json"
+    },
+    {
+     "name": "IVI. Clínica de Reproducción Asistida",
+     "lat": 38.36405,
+     "lng": -0.46179,
+     "where": "",
+     "source": "osm_facilities.json"
+    },
+    {
+     "name": "IVI Sevilla - Clínica de Reproducción Asistida y Fertilidad",
+     "lat": 37.37639,
+     "lng": -6.00547,
+     "where": "",
+     "source": "osm_facilities.json"
+    },
+    {
+     "name": "Ivi",
+     "lat": 28.46347,
+     "lng": -16.26272,
+     "where": "",
+     "source": "osm_facilities.json"
+    },
+    {
+     "name": "IVI. Clínica de reproducción asistida",
+     "lat": 38.36404,
+     "lng": -0.46178,
+     "where": "",
      "source": "osm_facilities.json"
     }
    ]
@@ -4359,7 +4351,7 @@
    ]
   },
   {
-   "owner": "CITMER",
+   "owner": "Citmer",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
@@ -4550,31 +4542,6 @@
      "lat": 57.14791,
      "lng": -2.29812,
      "where": "Westhill Business Park, Peregrine Road, Aberdeen, AB32 6JL",
-     "source": "hfea_clinics.json"
-    }
-   ]
-  },
-  {
-   "owner": "London Women's Clinic, Darlington",
-   "basis": "stated by the register",
-   "sites": 2,
-   "countries": [
-    "SE19RY",
-    "TS20 1PX"
-   ],
-   "members": [
-    {
-     "name": "IVF North East",
-     "lat": 54.59401,
-     "lng": -1.33197,
-     "where": "Tees Hospital, Junction Road, Norton, Stockton on Tees, TS20 1PX",
-     "source": "hfea_clinics.json"
-    },
-    {
-     "name": "London Egg Bank",
-     "lat": 51.505,
-     "lng": -0.08823,
-     "where": "1, St Thomas Street, London Bridge, London, SE19RY",
      "source": "hfea_clinics.json"
     }
    ]
@@ -7333,23 +7300,6 @@
    ]
   },
   {
-   "owner": "TFP Boston Place Fertility",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "W1G 9PF"
-   ],
-   "members": [
-    {
-     "name": "IVF Matters",
-     "lat": 51.51739,
-     "lng": -0.14598,
-     "where": "10, Harley Street, London, W1G 9PF",
-     "source": "hfea_clinics.json"
-    }
-   ]
-  },
-  {
    "owner": "Hull & East Riding Fertility",
    "basis": "stated by the register",
    "sites": 1,
@@ -7362,6 +7312,23 @@
      "lat": 53.85045,
      "lng": -1.51734,
      "where": "5 Stoneleigh Garth, Moortown, Leeds, LS17 8FG",
+     "source": "hfea_clinics.json"
+    }
+   ]
+  },
+  {
+   "owner": "London Women's Clinic, Darlington",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "SE19RY"
+   ],
+   "members": [
+    {
+     "name": "London Egg Bank",
+     "lat": 51.505,
+     "lng": -0.08823,
+     "where": "1, St Thomas Street, London Bridge, London, SE19RY",
      "source": "hfea_clinics.json"
     }
    ]
@@ -61986,21 +61953,6 @@
    ]
   },
   {
-   "owner": "СПЕЦИАЛИЗИРАНА БОЛНИЦА ЗА АКТИВНО ЛЕЧЕНИЕ ПО ГИНЕКОЛОГИЯ И АСИСТИРАНА РЕПРОДУКЦИЯ /СБАЛГАР/-Д-Р МАЛИНОВ ООД",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Клиника Малинов",
-     "lat": 42.67522,
-     "lng": 23.28944,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
    "owner": "Centrum Medyczne Femmemedica sp. z o.o",
    "basis": "stated by the register",
    "sites": 1,
@@ -63317,7 +63269,7 @@
    ]
   },
   {
-   "owner": "دکتر زهرا شمالی",
+   "owner": "کلینیک درمان ناباروری",
    "basis": "stated by the register",
    "sites": 1,
    "countries": [],
@@ -63379,53 +63331,6 @@
    ]
   },
   {
-   "owner": "Dr Sagar Kasar",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Nashik"
-   ],
-   "members": [
-    {
-     "name": "Dr. Kasar Hospital & Maternity Home",
-     "lat": 19.94995,
-     "lng": 73.83779,
-     "where": "Nashik",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "ООО «Клиника семейного здоровья»",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Моя Клиника",
-     "lat": 53.71277,
-     "lng": 23.83907,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Newtown Medical",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Monksland Medical Center",
-     "lat": 53.42097,
-     "lng": -7.99075,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
    "owner": "City Fertility Limited",
    "basis": "stated by the register",
    "sites": 1,
@@ -63452,21 +63357,6 @@
      "name": "Fertility clinic (unnamed in OpenStreetMap)",
      "lat": 53.45876,
      "lng": -2.21666,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "CHU Dijon Bourgogne",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Hôpital François Mitterrand",
-     "lat": 47.32042,
-     "lng": 5.06935,
      "where": "",
      "source": "osm_facilities.json"
     }
@@ -63547,6 +63437,23 @@
      "lat": -29.3431,
      "lng": 27.5288,
      "where": "",
+     "source": "osm_facilities.json"
+    }
+   ]
+  },
+  {
+   "owner": "CK Birla Group",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "Gurugram"
+   ],
+   "members": [
+    {
+     "name": "CK Birla Hospital Gurgaon",
+     "lat": 28.42369,
+     "lng": 77.0616,
+     "where": "Gurugram",
      "source": "osm_facilities.json"
     }
    ]
@@ -63896,23 +63803,6 @@
      "lat": 22.36013,
      "lng": 91.82793,
      "where": "Chittagong",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "CK Birla Group",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Gurugram"
-   ],
-   "members": [
-    {
-     "name": "CK Birla Hospital Gurgaon",
-     "lat": 28.42367,
-     "lng": 77.06156,
-     "where": "Gurugram",
      "source": "osm_facilities.json"
     }
    ]
