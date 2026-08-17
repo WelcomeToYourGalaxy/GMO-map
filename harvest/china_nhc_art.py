@@ -203,8 +203,28 @@ def main():
     cache = load_cache()
     out, exact_n, prov_n = [], 0, 0
     for f in files:
-        bank = "精子库" in f.name
-        recs = institutions(table_rows(f))
+        # Decided on the table, not the filename. BOTH files are called
+        # "...\u4eba\u7c7b\u7cbe\u5b50\u5e93..." because that phrase is in the
+        # notice's title, so a filename test matched the centre list too and
+        # skipped everything. The bank table has five columns and the centre
+        # table six; that is a fact about the document rather than about what
+        # somebody named the download.
+        _rows = table_rows(f)
+        bank = max((len(c) for c in _rows), default=0) == 5
+        # China's 29 approved sperm banks are skipped. Not because they do not
+        # matter, but because a bank stores gametes and a clinic decides what is
+        # made from them: the selection, the screening and the transfer all
+        # happen at the clinic. Mapping 29 Chinese banks while no other country's
+        # banks are mapped as facilities would have made China look like the only
+        # place they exist. The industry layer holds the large bank operators -
+        # Cryos, European Sperm Bank, California Cryobank and others - as
+        # organisations, which is the right level for a business whose product
+        # travels.
+        if bank:
+            print("  sperm banks in this file: skipped, see the note in this "
+                  "harvester")
+            continue
+        recs = institutions(_rows)
         print("  %-22s %d institutions" %
               ("sperm banks" if bank else "reproductive centres", len(recs)))
         for r in recs:

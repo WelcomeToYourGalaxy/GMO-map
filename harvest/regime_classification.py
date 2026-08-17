@@ -109,6 +109,13 @@ TECHNIQUE = {
     # still absent below are absent from a 2015 document rather than from the
     # Protocol, and each needs checking against a current one.
     "SLE": "protocol",
+    # Hong Kong legislates its own biosafety separately from the mainland: the
+    # Genetically Modified Organisms (Control of Release) Ordinance, Cap. 607,
+    # which implements the Cartagena Protocol as extended to the territory and
+    # triggers on the technique in the Protocol's own terms. It was absent only
+    # because it is a separate boundary from China and the classification had
+    # been done country by country.
+    "HKG": "likely",
 }
 
 # ---------------------------------------------------------------------------
@@ -201,11 +208,32 @@ CONF_NOTE = {
 # in the world. Being outside the Protocol says nothing about how much a country
 # grows. It says only that it has not agreed to tell anyone.
 
+# ---------------------------------------------------------------------------
+# NO STATUTE FOUND.
+#
+# These thirteen are not a gap in the reading. Each was checked against the
+# Cartagena ratification list of 9 August 2026 and is genuinely not a party, and
+# no national biosafety statute for any of them has been found. Most are
+# micro-states or very small island states; two - South Sudan and Timor-Leste -
+# are among the youngest countries in the world and have not yet legislated.
+#
+# They are given their own value rather than left off the map. A country drawn
+# in no colour says "not looked at"; a country drawn as NONE says "looked at,
+# and there appears to be nothing", which is a different and more useful claim -
+# and it is falsifiable, which "not looked at" is not.
+NONE = {
+    "AND": "likely", "BRN": "likely", "TLS": "thin", "GNQ": "thin",
+    "FSM": "likely", "LIE": "likely", "MCO": "likely", "SMR": "likely",
+    "SSD": "thin", "STP": "thin", "TUV": "likely", "VUT": "likely",
+    "VAT": "firm",
+}
+
+
 def classified():
     """iso3 -> (regime, confidence). One dict, checked for collisions."""
     out, seen = {}, {}
     for regime, table in (("technique", TECHNIQUE), ("trait", TRAIT),
-                          ("carveout", CARVEOUT)):
+                          ("carveout", CARVEOUT), ("none", NONE)):
         for iso, conf in table.items():
             if iso in seen:
                 raise ValueError("%s classified twice: %s and %s"

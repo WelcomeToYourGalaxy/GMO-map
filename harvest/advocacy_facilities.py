@@ -111,6 +111,49 @@ def geocode(q, cache):
     return None
 
 
+# Farm Transparency's global map export is one file of 75,175 facilities, of
+# which 98 are experimentation. The rest are dairy farms, abattoirs, saleyards
+# and zoos - real, and a different subject from this map. Taking the whole file
+# would bury a genetic-engineering map under seventy thousand dairy sheds.
+#
+# It also arrives with latitude and longitude already in it, so nothing here is
+# geocoded and nothing is guessed: every point is where the source says it is.
+FT_KEEP = ("experimentation",)
+
+
+def farm_transparency_rows(path):
+    """The experimentation subset, with the source's own coordinates."""
+    import csv as _csv
+    out = []
+    with open(path, encoding="utf-8-sig", newline="") as fh:
+        for r in _csv.DictReader(fh):
+            cats = (r.get("Categories") or "").lower()
+            if not any(k in cats for k in FT_KEEP):
+                continue
+            try:
+                lat, lng = float(r["Lat"]), float(r["Lng"])
+            except (KeyError, TypeError, ValueError):
+                continue
+            street = " ".join(x for x in ((r.get("Street Num") or ""),
+                                          (r.get("Street") or "")) if x).strip()
+            out.append({
+                "name": (r.get("Name") or "").strip(),
+                "lat": lat, "lng": lng,
+                "street": street,
+                "city": (r.get("Suburb") or "").strip(),
+                "state": (r.get("State") or "").strip(),
+                "country": (r.get("Country") or "").strip(),
+                # "unconfirmed" in the category is the source telling us how
+                # sure it is, and it travels with the record rather than being
+                # dropped for tidiness.
+                "unconfirmed": "unconfirmed" in cats,
+                "status": (r.get("Last Known Status") or "").strip(),
+                "owner": (r.get("Owned By") or "").strip(),
+                "url": (r.get("Profile URL") or "").strip(),
+            })
+    return out
+
+
 def kind_of(row, filename):
     """Which of the two sources a row came from, decided on its content rather
     than on what somebody named the file."""
@@ -136,6 +179,54 @@ def main():
     cache = load_cache()
     out, exact_n, coarse_n, dropped = [], 0, 0, 0
     for f in files:
+        # A 20 MB export is not a spreadsheet somebody hand-made; it is the
+        # whole global map. Detected by its own column names rather than by
+        # filename, and reduced to the 98 rows this map is about.
+        head = open(f, encoding="utf-8-sig").readline()
+        if "Categories" in head and "Profile URL" in head:
+            ft = farm_transparency_rows(f)
+            print("  %-30s Farm Transparency export: %d experimentation "
+                  "facilities" % (f.name[:30], len(ft)))
+            for r in ft:
+                if not r["name"] or r["name"] == "?":
+                    r["name"] = "Unnamed facility, %s" % (r["city"] or r["state"]
+                                                          or r["country"])
+                bits = ["An animal-research facility on Farm Transparency "
+                        "Project's map."]
+                if r["owner"]:
+                    bits.append("Owned by %s." % r["owner"])
+                if r["status"]:
+                    bits.append("Last known status: %s." % r["status"])
+                if r["unconfirmed"]:
+                    bits.append("The source marks this one unconfirmed, and that "
+                                "travels with the record rather than being "
+                                "quietly dropped.")
+                bits.append("The map is compiled from freedom-of-information "
+                            "requests and public licence registers by a "
+                            "campaigning organisation. The documents behind it "
+                            "are the regulator's own; what the regulator does "
+                            "not do is put them on a map. The coordinates here "
+                            "are the source's, not geocoded from an address.")
+                out.append({
+                    "name": r["name"][:150], "source": "industry:animals",
+                    "type": "Animal research facility",
+                    "lat": round(r["lat"], 5), "lng": round(r["lng"], 5),
+                    "state": ", ".join(x for x in (r["city"], r["state"],
+                                                   r["country"]) if x),
+                    "precise": bool(r["street"]),
+                    "addr_grade": "operational" if r["street"] else "centroid",
+                    "impact": 2, "company": r["owner"], "size": "",
+                    "status": "Farm Transparency Project"
+                              + (" \u2014 unconfirmed" if r["unconfirmed"] else ""),
+                    "phase": "post", "date": "", "otype": "institute",
+                    "tags": ["animals:services"], "species": ["lab_animals"],
+                    "url": r["url"] or FARMT, "desc": " ".join(bits),
+                    "checked": "",
+                })
+                exact_n += 1 if r["street"] else 0
+                coarse_n += 0 if r["street"] else 1
+            continue
+
         rows = list(csv.DictReader(open(f, encoding="utf-8-sig", newline="")))
         if not rows:
             continue
