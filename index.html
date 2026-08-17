@@ -371,7 +371,7 @@ function pjReport(which, data){
 <div id="rundownPanel">
   <div class="help-head wire-head-drag" title="Click to collapse · drag to move"><span>Map rundown</span><span class="help-tog"></span></div>
   <div class="wire-body">
-    <div class="wire-lead">Farmers plant seeds. Some of those seeds have had genes added in a laboratory — usually taken from bacteria — so the crop survives being sprayed with weedkiller when a field full of weeds is sprayed, or makes its own insecticide in every leaf and root. These are examples of what’s called Genetic Modification. The technique is fifty years old: in 1973 the biochemists Herbert Boyer and Stanley Cohen moved DNA from one bacterium into another, and in 1982 the FDA approved the first consumer product made this way — human insulin brewed in engineered bacteria rather than extracted from pig and cattle pancreases.<br><br>
+    <div class="wire-lead">Farmers plant seeds. Some of those seeds have had genes added in a laboratory — usually taken from bacteria — so the crop survives being sprayed with weedkiller when a field full of weeds is sprayed, or makes its own insecticide in every leaf and root. These are examples of Genetic Modification. The technique is fifty years old: in 1973 the biochemists Herbert Boyer and Stanley Cohen moved DNA from one bacterium into another, and in 1982 the FDA approved the first consumer product made this way — human insulin brewed in engineered bacteria rather than extracted from pig and cattle pancreases.<br><br>
     Proponents argue that, in the context of agriculture, insect-resistant cotton substantially reduced broad-spectrum insecticide spraying in several countries — sprays that killed bees, birds and farm workers — and the claim that these foods are unsafe to eat has not held up in decades of testing. But, that isn’t the whole story.<br><br>
     For one, seeds and pollen do not stay where you put them. In Oregon a grass engineered to survive weedkiller got out of its test fields; three years after the cleanup started, 62 of every 100 plants tested carried the gene, and it had crossed into two other grass species, one of them a different genus entirely. The product was pulled, the company was fined $500,000, and the grass is still out there. In North Dakota, researchers drove 3,000 miles testing roadside canola: more than 75% carried an engineered gene, and some carried two at once — a combination nobody bred, On the coast of Mexico grows the wild ancestor of cotton. In 2008 it carried no engineered genes. Ten years later, 60% of the plants tested did.<br><br>
     And spreading isn’t the end of it. Every wild plant sits inside a web of relationships with other species — things that guard it, feed on it, pollinate it, live in its roots, carry its seeds — and an engineered change entering at one point comes out at many others nobody has been watching or even defining. Wild plants carrying an engineered gene, for example, drew fewer of the insect species that defend them, and took the worst feeding damage of any group tested; parasitic wasps that control caterpillar numbers and that weren’t targeted in the first place came out 35% lighter after eating prey that carried the plant’s own built-in insecticide; introgressed wild cotton was found to hold less genetic variety than its unmodified neighbours, and Mexican wild cotton is now listed as vulnerable, with gene flow from crops being the main threat. Genetically modified insecticide-producing plants that travel beyond the field and cross-breed with wild plants also make less toxin than the original, leading to weaker doses of the plants’ insecticide, the exact conditions under which insect resistance to it spreads fastest. <br><br>
@@ -2715,6 +2715,23 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
   window.pjRegimeDashed = function(p){ return (p && p.regime) === 'carveout'; };
   try{window.REGIMEON=REGIMEON;}catch(e){}
   try{window.pjRestyleOverlays=function(k){ var L=_ovLayers[k];
+    // Restyle EVERY layer in the pane, not only the one the registry currently
+    // points at. The boot loader and the toggle can each build a layer for the
+    // same key, and _ovLayers[k] keeps whichever was made last - so the visible
+    // boundaries could belong to an earlier layer that no toggle ever reached.
+    // That is why ticking a regime box changed some faint second drawing and
+    // left the coloured outlines alone.
+    try{
+      if(k === 'regime' && window.map && map.eachLayer){
+        map.eachLayer(function(ly){
+          if(ly && ly.options && ly.options.pane === 'pjRegime' &&
+             typeof ly.setStyle === 'function' &&
+             typeof ly.options.style === 'function'){
+            ly.setStyle(ly.options.style);
+          }
+        });
+      }
+    }catch(_e){}
     if(!L) return;
     // setStyle(fn) re-evaluates the style per feature. Passing L.options.style
     // applied one frozen object instead, which is why the regime toggles did
@@ -3213,6 +3230,30 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
       var cosl = Math.cos(g.la * Math.PI / 180) || 1;
       var dLng = (R * PJ_FAN_DEG) * Math.cos(a0) / cosl;
       return m.latLngToContainerPoint([g.la + dLat, g.lo + dLng]);
+    }
+    // THE KIND NUDGE, which is what was left moving these markers.
+    //
+    // It is a PIXEL offset, and a pixel is a different distance at every zoom:
+    // eleven pixels is several hundred kilometres at world view and a few metres
+    // at street level. So a clinic sat in the sea zoomed out and snapped into
+    // place as you came in - which is exactly the reported symptom, and exactly
+    // the kinds that carry a nudge: repro and animals.
+    //
+    // A solo marker is one named thing at one address and never needed it: the
+    // nudge exists to stop co-located CENTROIDS covering each other. Solo
+    // markers now draw where they say they are, and the nudge that remains is
+    // converted to degrees so it holds its ground position too.
+    if(g.solo){ return m.latLngToContainerPoint([g.la, g.lo]); }
+    // Centroids keep the PIXEL nudge. A centroid is not a place - it is the
+    // middle of a shape - so moving it a fixed distance on screen claims
+    // nothing false, and it keeps two national markers the same distance apart
+    // at every zoom. Converting this one to degrees was worse: the gap grew to
+    // 388 pixels at street zoom, throwing the markers off opposite sides of the
+    // country.
+    var d = pjNudge(g);
+    if(d[0] || d[1]){
+      var _p = m.latLngToContainerPoint([g.la, g.lo]);
+      return L.point(_p.x + d[0], _p.y + d[1]);
     }
     var pt = m.latLngToContainerPoint([g.la, g.lo]);
     if(false){
@@ -7755,7 +7796,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-17 22:34";
+  var BUILD = "BUILD-2026-08-17 22:50";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
