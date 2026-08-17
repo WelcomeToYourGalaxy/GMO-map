@@ -5,9 +5,17 @@
 Each was written off for a reason that turns out to be about the website rather
 than about the data, so each is worth one more attempt:
 
-  BIOSAFETY CLEARING-HOUSE. The map says its site is a JavaScript application
-  that returns nothing to a fetcher. True of the page - and the page fills
-  itself by calling an API. If the front end can read it, so can this.
+  BIOSAFETY CLEARING-HOUSE. CONFIRMED WORKING. The map says its site is a
+  JavaScript application that returns nothing to a fetcher. That is true of the
+  page and false of the data: the page fills itself from a Solr endpoint at
+  api.cbd.int, and
+
+      https://api.cbd.int/api/v2013/index/select
+          ?q=schema_s:modifiedOrganism&rows=5&wt=json
+
+  returns JSON in a browser. So the only genuinely cross-national record in this
+  field is harvestable after all, and the map's claim that it cannot be reached
+  needs correcting once this has run.
 
   OGTR. robots.txt disallows automated access to ogtr.gov.au, and that is
   respected here. But Australian agencies publish datasets to data.gov.au, a
