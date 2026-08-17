@@ -1095,7 +1095,8 @@ function gbUnitStyle(iso,lvl,feat){ let lit=false,act=false; let pool=[];
      of the country you have drilled into, without competing with the layers
      that carry meaning. */
   const st = lit?{color:'#b8912f',weight:2.6,opacity:1,fillColor:'#d8b24a',fillOpacity:0.34}
-               :{color:'rgba(150,165,195,0.30)',weight:1.0,opacity:1,fillColor:'transparent',fillOpacity:0};
+               :{color:'rgba(150,165,195,0.34)',weight:1.0,opacity:1,
+                 fillColor:'#0a1020',fillOpacity:0.001};
   if(gbSelFeat){
     if(feat===gbSelFeat){ st.color='#ffffff'; st.weight=3.6; st.opacity=1; st.fillOpacity=Math.max(st.fillOpacity,0.28); }   /* the unit the user clicked */
     else { st.fillOpacity=0; st.fillColor='transparent'; st.color='rgba(184,145,47,0.22)'; st.weight=0.7; }   /* rest of the country: unhighlighted, still clickable to raise back up */
@@ -1668,8 +1669,16 @@ fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json').then(r=>r
        The layer stays - it is the click target for drilling into a country -
        but it is drawn invisibly. If tracker data is ever loaded, the lit branch
        below brings the gold back for the countries that have some. */
-    if(!L) return {stroke:false,weight:0,opacity:0,fillOpacity:0,fillColor:'transparent'};
-    return {fillColor:'#d8b24a',weight:1.0,opacity:0.5,color:'#b8912f',fillOpacity:0}; }
+    /* Removing the gold removed the country boundaries with it, and stroke:false
+       also took away the thing Leaflet hit-tests, so clicking a country stopped
+       opening its write-up. The boundary comes back in a neutral grey-blue that
+       carries no meaning - it is the shape of the world, not a finding - and
+       the polygon stays interactive so the popup works. Gold returns only for a
+       country that actually has tracker data. */
+    if(!L) return {color:'rgba(150,165,195,0.34)',weight:0.6,opacity:1,
+                   fillColor:'#0a1020',fillOpacity:0.001,interactive:true};
+    return {fillColor:'#d8b24a',weight:1.0,opacity:0.5,color:'#b8912f',
+            fillOpacity:0.001,interactive:true}; }
   function baseClick(f,latlng){ const a3=NUM2A3[f.id]||''; gbClickTime=Date.now();
     if(gbNav&&gbNav.iso&&a3&&a3!==gbNav.iso){ gbToWorld(); return; }   /* drilled into another country: step out first, then it's selectable */
     if(gbNav&&gbNav.iso===a3&&map.getZoom()>=6){
@@ -7746,7 +7755,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-17 22:29";
+  var BUILD = "BUILD-2026-08-17 22:34";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
