@@ -6618,5 +6618,39 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 .kfig{margin-left:6px;font-size:9px;color:#7d8ba1;white-space:nowrap;}
 .kfig-reg{font-size:9px;color:#7d8ba1;margin:1px 0 4px 26px;line-height:1.4;}
 </style>
+<script>
+(function(){
+  // A visible build stamp, in its own block that depends on nothing.
+  //
+  // Four rounds of fixes have been verified byte-for-byte in the deployed file
+  // and reported as absent from the page. That leaves two possibilities a
+  // console message cannot separate, because the console message would come
+  // from whichever file is loaded: either the browser is holding an old copy,
+  // or the fixes are running and aimed at the wrong thing. This line says which
+  // file you are actually looking at, without opening anything.
+  var BUILD = "BUILD-2026-08-17 00:14";
+  function stamp(){
+    if(document.getElementById('pjBuild')) return;
+    var host = document.querySelector('.pj-kinds') ||
+               document.getElementById('mapLegend') ||
+               document.body;
+    if(!host) return;
+    var d = document.createElement('div');
+    d.id = 'pjBuild';
+    d.style.cssText = 'font-size:9px;color:#7d8ba1;margin:6px 0 2px;letter-spacing:.3px;';
+    var checks = [];
+    try{ checks.push('nudge:' + (typeof pjNudge === 'function' &&
+        JSON.stringify(pjNudge({kd:{clinical:3}, m:[]})) !== '[0,0]' ? 'on' : 'OFF')); }
+    catch(e){ checks.push('nudge:ERR'); }
+    checks.push('legend:' + (document.querySelector('#regBox input[data-reg]')
+        ? 'built' : 'EMPTY'));
+    checks.push('branches:' + (document.body.dataset.branchesOpen ? 'open' : 'NOT'));
+    d.textContent = BUILD + '  ' + checks.join('  ');
+    host.appendChild(d);
+  }
+  var t = setInterval(stamp, 900);
+  setTimeout(function(){ clearInterval(t); stamp(); }, 12000);
+})();
+</script>
 </body>
 </html>
