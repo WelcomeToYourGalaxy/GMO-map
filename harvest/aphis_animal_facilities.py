@@ -400,14 +400,20 @@ def main():
         if latlng is None and r["city"] and r["state"]:
             # cache only - the budget above decided what gets looked up
             latlng = cache.get("%s, %s" % (r["city"], r["state"]))
+        state_only = False
         if latlng is None:
             latlng = STATE_CENTROID.get(r["state"])
+            # A state centroid is a much weaker claim than a city one, and
+            # calling both "centroid" hid the difference. Kansas is 400km wide.
+            state_only = latlng is not None
         if latlng is None:
             continue
 
         # A research registration is issued to an entity, not to a building.
         admin = (r["cls"] in RESEARCH) or bool(ADMIN_WORDS.search(r["street"]))
-        grade = "centroid" if not exact else ("administrative" if admin else "operational")
+        grade = ("state" if state_only else
+                 "centroid" if not exact else
+                 "administrative" if admin else "operational")
         exact_n += 1 if grade == "operational" else 0
         approx_n += 0 if grade == "operational" else 1
 
