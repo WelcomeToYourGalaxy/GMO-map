@@ -3918,11 +3918,11 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     // Two regimes and one qualifier. Listing carve-out beside the other two
     // made it read as a third way a country can decide, which it is not.
     ['technique','trait'].forEach(function(k){
-      h+='<label title="'+REGIMEL[k].replace(/"/g,'&quot;')+'">'
+      h+='<label title="'+window.REGIMEL[k].replace(/"/g,'&quot;')+'">'
         +'<input type="checkbox" data-reg="'+k+'" checked>'
-        +'<span class="ot-dot ot-edge" style="border-color:'+REGIMEC[k]
-        +';background:'+REGIMEC[k]+'"></span>'
-        +REGIMEL[k].split(' \u2014 ')[0]+'</label>';
+        +'<span class="ot-dot ot-edge" style="border-color:'+window.REGIMEC[k]
+        +';background:'+window.REGIMEC[k]+'"></span>'
+        +window.REGIMEL[k].split(' \u2014 ')[0]+'</label>';
     });
     // Carve-out is a property of a country, not a third kind of country, so it
     // is a tick that says "and show me which of these have an exemption" rather
@@ -3941,12 +3941,12 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       if(e.target.id==='regAll'){
         var on=e.target.checked;
         rb.querySelectorAll('input[data-reg]').forEach(function(cb){ cb.checked=on;
-          on?REGIMEON.add(cb.dataset.reg):REGIMEON.delete(cb.dataset.reg); });
+          on?window.REGIMEON.add(cb.dataset.reg):window.REGIMEON.delete(cb.dataset.reg); });
         try{ if(window.pjRestyleOverlays) window.pjRestyleOverlays('regime'); }catch(_e){}
         return;
       }
       var k=e.target&&e.target.dataset&&e.target.dataset.reg; if(!k)return;
-      if(e.target.checked) REGIMEON.add(k); else REGIMEON.delete(k);
+      if(e.target.checked) window.REGIMEON.add(k); else window.REGIMEON.delete(k);
       try{ if(window.pjRestyleOverlays) window.pjRestyleOverlays('regime'); }catch(_e){}
     });
   }
@@ -5123,8 +5123,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   };
 
   var TAG2SUBJ = {};
-  Object.keys(PJ_SUBJ).forEach(function(k){
-    PJ_SUBJ[k].tags.forEach(function(t){ (TAG2SUBJ[t] || (TAG2SUBJ[t] = [])).push(k); });
+  Object.keys(window.PJ_SUBJ).forEach(function(k){
+    window.PJ_SUBJ[k].tags.forEach(function(t){ (TAG2SUBJ[t] || (TAG2SUBJ[t] = [])).push(k); });
   });
 
   window.pjSubjOf = function(p){
@@ -5146,7 +5146,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     return Object.keys(out);
   };
 
-  window.pjSubjOn = new Set(Object.keys(PJ_SUBJ));
+  window.pjSubjOn = new Set(Object.keys(window.PJ_SUBJ));
 
   window.pjSubjPasses = function(p){
     if(String((p && p.source) || '').indexOf('industry') !== 0) return true;   // organisations only
