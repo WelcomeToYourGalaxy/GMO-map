@@ -1,0 +1,59 @@
+{
+  "generated": "2026-08-17",
+  "source": "Global BioLabs Report 2023, King's College London and the Schar School of Policy and Government, George Mason University",
+  "url": "https://www.globalbiolabs.org/",
+  "note": "Country-level scores for the 27 countries that have or plan a BSL4 laboratory. These are scores of what a country's LAWS provide for, not of how well laboratories comply: the report is explicit that national governance measures cannot capture practice inside an individual facility. Only countries with BSL4 laboratories were scored, so a country missing here was not assessed rather than assessed and found wanting. Governance and stability are percentile ranks against the other 26, not absolute measures.",
+  "scales": {
+    "biosafety": 20,
+    "biosecurity": 18,
+    "dual_use": 10,
+    "overall": 48,
+    "governance": "percentile, 0-100",
+    "stability": "percentile, 0-100"
+  },
+  "findings": {
+    "bsl4_labs": {"total": 69, "operational": 51, "under_construction": 3, "planned": 15, "countries": 27},
+    "bsl3plus_labs": {"total": 57, "operational": 55, "planned_or_under_construction": 2},
+    "in_cities": "About 75 per cent of BSL4 laboratories are in urban areas with more than 50,000 people within 2.5 miles.",
+    "public_health_not_biodefence": "Over 60 per cent are government-run public health institutions; under 20 per cent are defence laboratories.",
+    "dual_use_gap": "Only one of the 27 countries scores high on dual-use research governance. Twenty-two have no national oversight of it at all.",
+    "dna_screening": "Only two of the 27 countries have any governance measure covering DNA synthesis screening."
+  },
+  "countries": {
+    "AUS": {"name": "Australia",          "biosafety": 20, "biosecurity": 17, "dual_use": 3, "overall": 40, "governance": 83, "stability": 68},
+    "BLR": {"name": "Belarus",            "biosafety": 14, "biosecurity": 9,  "dual_use": 0, "overall": 23, "governance": 12, "stability": 26},
+    "BRA": {"name": "Brazil",             "biosafety": 18, "biosecurity": 9,  "dual_use": 1, "overall": 28, "governance": 26, "stability": 23},
+    "CAN": {"name": "Canada",             "biosafety": 20, "biosecurity": 17, "dual_use": 9, "overall": 46, "governance": 86, "stability": 66},
+    "CHN": {"name": "China",              "biosafety": 18, "biosecurity": 15, "dual_use": 0, "overall": 33, "governance": 25, "stability": 26},
+    "CIV": {"name": "Cote d'Ivoire",      "biosafety": 3,  "biosecurity": 1,  "dual_use": 1, "overall": 5,  "governance": 16, "stability": 18},
+    "CZE": {"name": "Czech Republic",     "biosafety": 11, "biosecurity": 11, "dual_use": 0, "overall": 22, "governance": 56, "stability": 80},
+    "FRA": {"name": "France",             "biosafety": 19, "biosecurity": 18, "dual_use": 1, "overall": 38, "governance": 63, "stability": 52},
+    "GAB": {"name": "Gabon",              "biosafety": 3,  "biosecurity": 1,  "dual_use": 0, "overall": 4,  "governance": 9,  "stability": 45},
+    "DEU": {"name": "Germany",            "biosafety": 19, "biosecurity": 9,  "dual_use": 4, "overall": 32, "governance": 81, "stability": 72},
+    "HUN": {"name": "Hungary",            "biosafety": 15, "biosecurity": 12, "dual_use": 2, "overall": 29, "governance": 40, "stability": 67},
+    "IND": {"name": "India",              "biosafety": 5,  "biosecurity": 5,  "dual_use": 1, "overall": 11, "governance": 30, "stability": 15},
+    "ITA": {"name": "Italy",              "biosafety": 18, "biosecurity": 6,  "dual_use": 2, "overall": 26, "governance": 50, "stability": 52},
+    "JPN": {"name": "Japan",              "biosafety": 19, "biosecurity": 17, "dual_use": 2, "overall": 38, "governance": 74, "stability": 79},
+    "KAZ": {"name": "Kazakhstan",         "biosafety": 16, "biosecurity": 13, "dual_use": 1, "overall": 30, "governance": 22, "stability": 42},
+    "PHL": {"name": "Philippines",        "biosafety": 7,  "biosecurity": 4,  "dual_use": 0, "overall": 11, "governance": 22, "stability": 10},
+    "KOR": {"name": "Republic of Korea",  "biosafety": 15, "biosecurity": 13, "dual_use": 1, "overall": 29, "governance": 57, "stability": 67},
+    "RUS": {"name": "Russian Federation", "biosafety": 15, "biosecurity": 12, "dual_use": 0, "overall": 27, "governance": 9,  "stability": 17},
+    "SAU": {"name": "Saudi Arabia",       "biosafety": 1,  "biosecurity": 2,  "dual_use": 0, "overall": 3,  "governance": 29, "stability": 25},
+    "SGP": {"name": "Singapore",          "biosafety": 18, "biosecurity": 13, "dual_use": 0, "overall": 31, "governance": 77, "stability": 79},
+    "ZAF": {"name": "South Africa",       "biosafety": 16, "biosecurity": 4,  "dual_use": 1, "overall": 21, "governance": 34, "stability": 36},
+    "ESP": {"name": "Spain",              "biosafety": 18, "biosecurity": 13, "dual_use": 0, "overall": 31, "governance": 56, "stability": 58},
+    "SWE": {"name": "Sweden",             "biosafety": 17, "biosecurity": 12, "dual_use": 1, "overall": 30, "governance": 94, "stability": 80},
+    "CHE": {"name": "Switzerland",        "biosafety": 16, "biosecurity": 6,  "dual_use": 2, "overall": 24, "governance": 91, "stability": 82},
+    "TWN": {"name": "Taiwan",             "biosafety": 18, "biosecurity": 14, "dual_use": 3, "overall": 35, "governance": 71, "stability": 75},
+    "GBR": {"name": "United Kingdom",     "biosafety": 18, "biosecurity": 17, "dual_use": 5, "overall": 40, "governance": 76, "stability": 63},
+    "USA": {"name": "United States",      "biosafety": 19, "biosecurity": 18, "dual_use": 5, "overall": 42, "governance": 60, "stability": 35}
+  },
+  "regions": {
+    "Europe":        {"bsl4_total": 26, "bsl4_operational": 24, "bsl3plus_total": 21},
+    "Asia":          {"bsl4_total": 20, "bsl4_operational": 9,  "bsl3plus_total": 10},
+    "North America": {"bsl4_total": 15, "bsl4_operational": 12, "bsl3plus_total": 19},
+    "Oceania":       {"bsl4_total": 4,  "bsl4_operational": 4,  "bsl3plus_total": 1},
+    "Africa":        {"bsl4_total": 3,  "bsl4_operational": 2,  "bsl3plus_total": 2},
+    "South America": {"bsl4_total": 1,  "bsl4_operational": 0,  "bsl3plus_total": 4}
+  }
+}

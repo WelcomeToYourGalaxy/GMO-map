@@ -53,6 +53,9 @@ DEFAULT_KEEP = 40000
 # fail-safe gate: a withdrawn or denied application is not a release.
 LIVE = {"issued", "acknowledged", "submitted", "state review", "in review",
         "waiting on customer", "pending"}
+# Filled as the gate below runs, and written into the output header.
+DROPSTAT = {"seen": 0, "by_status": {}}
+
 NEVER_GRANTED = {"withdrawn", "denied", "void", "voided", "returned",
                  "incomplete", "cancelled", "canceled"}
 DEAD = {"withdrawn", "denied", "superceded", "superseded", "expired",
@@ -249,7 +252,13 @@ def build(rows, source_label):
         # industry since it began, not a list of what is live this morning, and
         # a trial that ran in 1994 happened whether or not the paperwork is
         # still in date.
+        # Counted as well as dropped. The map says it drops these and could not
+        # say how many, because the count died right here - the reader was asked
+        # to take "some records are excluded" on trust. Published in the file's
+        # header so the sentence can carry a real number.
+        DROPSTAT["seen"] += 1
         if sl in NEVER_GRANTED:
+            DROPSTAT["by_status"][sl] = DROPSTAT["by_status"].get(sl, 0) + 1
             continue
         states = release_states(get(r, "Location(s)", legacy))
         if not states:
@@ -386,6 +395,8 @@ def main():
               ("china_nhc_art.json", "projects", None, None, None),
               ("ccac_redlara.json", "projects", None, None, None),
               ("advocacy_facilities.json", "projects", None, None, None),
+              ("biolabs_facilities.json", "projects", None, None, None),
+              ("biolabs.json", "projects", None, None, None),
               ("india_nartsr.json", "projects", None, None, None),
               ("fertility_clinics.json", "clinics", "industry:repro",
                ["repro:clinics"], ["human"]),
@@ -486,6 +497,14 @@ def main():
                  "register records a national approval rather than a planting location. "
                  "Everywhere else is not yet harvested."),
         "generated": date.today().isoformat(),
+        "dropped": {"reason": "never authorised \u2014 withdrawn, denied, void, "
+                              "returned, incomplete or cancelled",
+                    "by_status": DROPSTAT["by_status"],
+                    "total": sum(DROPSTAT["by_status"].values()),
+                    "seen": DROPSTAT["seen"],
+                    "share_pct": (round(100.0 * sum(DROPSTAT["by_status"].values())
+                                        / DROPSTAT["seen"], 1)
+                                  if DROPSTAT["seen"] else 0)},
         "source": "APHIS BRS public data files, " + date.today().isoformat(),
         "projects": curated + extra + records,
     }

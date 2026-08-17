@@ -245,6 +245,9 @@ def main():
             "url": "https://%s/resource/%s.json" % (DOMAIN, ds_id),
             "desc": " ".join(bits),
             "checked": "",
+            # stripped again after deduplication; they exist only to key it
+            "_clinicid": _first(r, "clinicid", "clinic_id", "facilityid") or None,
+            "_year": _first(r, "year", "reportingyear", "data_year") or None,
         })
         if len(out) % 50 == 0:
             time.sleep(0.5)

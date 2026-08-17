@@ -38,6 +38,23 @@ SRC = ROOT / "harvest" / "industry_source.json"
 # Positions stay marked approximate. A corporate headquarters is a registered
 # address, not where the work happens, and a street number does not change that.
 PLACES = {
+    # ---- ind49: BWC declarations, variola inspections, Interpol ----------
+    "BWC confidence-building measures — annual declarations": (46.227, 6.14, "Geneva — Palais des Nations, BWC Implementation Support Unit"),
+    "WHO — variola virus repository inspections": (46.232, 6.14, "Geneva — Avenue Appia 20"),
+    "Interpol — bioterrorism prevention programme": (45.782, 4.857, "Lyon — 200 quai Charles de Gaulle"),
+    # ---- ind48: the biorisk governance layer ------------------------------
+    "ERINHA — European Research Infrastructure on Highly Pathogenic Agents": (48.839, 2.31, "Paris — 25-28 rue du Docteur Roux"),
+    "BSL4ZNET — Biosafety Level 4 Zoonotic Laboratory Network": (49.903, -97.147, "Winnipeg — National Microbiology Laboratory, 1015 Arlington Street"),
+    "Global Partnership Biosecurity Working Group": (45.423, -75.7, "Ottawa — Global Affairs Canada, 125 Sussex Drive"),
+    "International Federation of Biosafety Associations": (46.204, 6.143, "Geneva — international secretariat"),
+    "ISO 35001 — biorisk management standard": (46.227, 6.14, "Geneva — ISO Central Secretariat, chemin de Blandonnet 8"),
+    "WHO Laboratory Biosafety Manual": (46.232, 6.14, "Geneva — WHO, Avenue Appia 20"),
+    "UN Secretary-General's Mechanism for investigation of alleged use": (46.232, 6.139, "Geneva — UN Office for Disarmament Affairs"),
+    "WHO Joint External Evaluation": (46.2325, 6.1401, "Geneva — WHO, Avenue Appia 20"),
+    "International Experts Group of Biosafety and Biosecurity Regulators": (38.995, -77.027, "Bethesda, Maryland — rotating chair, US secretariat"),
+    "Global Health Security Agenda": (38.907, -77.043, "Washington DC — rotating secretariat"),
+    "UN Security Council Resolution 1540 Committee": (48.234, 16.413, "Vienna — UN Office at Vienna"),
+    "Tianjin Biosecurity Guidelines for Codes of Conduct for Scientists": (39.108, 117.17, "Tianjin — Tianjin University Center for Biosafety Research and Strategy"),
     # ---- ind47: producers, service sequencing, diagnostics, genetics -----
     "Aleph Farms": (32.788, 35.034, "Rehovot — Weizmann Science Park"),
     "Believer Meats": (35.8, -78.8, "Wilson, North Carolina — production plant"),

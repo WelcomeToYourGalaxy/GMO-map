@@ -40,7 +40,15 @@ INDIR = HERE / "nhc_docx"
 OUT = HERE / "china_nhc_art.json"
 CACHE = HERE / "_geocache.json"
 
+# Photon resolves almost no Chinese addresses - 1 of 664 on the last run.
+# Nominatim does, given two things Photon does not need: a real User-Agent (it
+# returns 403 without one) and accept-language=zh so the query is matched
+# against the Chinese name rather than a transliteration. Its usage policy caps
+# this at one request a second, which is 11 minutes for the whole list.
 PHOTON = "https://photon.komoot.io/api/?limit=1&lang=default&q="
+NOMINATIM = ("https://nominatim.openstreetmap.org/search"
+             "?format=json&limit=1&accept-language=zh&countrycodes=cn&q=")
+NOMINATIM_UA = "GMO-map/1.0 (public research map; contact via repository)"
 SOURCE = "http://www.nhc.gov.cn/fys/s3581/new_list.shtml"
 
 # Techniques, in the order the register lists them. Plain English, because a
@@ -161,9 +169,41 @@ def load_cache():
     return {}
 
 
+def _nominatim(addr):
+    """One request a second, with a User-Agent, or it returns 403."""
+    req = Request(NOMINATIM + quote(addr),
+                  headers={"User-Agent": NOMINATIM_UA,
+                           "Accept-Language": "zh,en"})
+    raw = urlopen(req, timeout=30).read().decode("utf-8", "replace")
+    d = json.loads(raw)
+    if isinstance(d, list) and d:
+        return [round(float(d[0]["lat"]), 5), round(float(d[0]["lon"]), 5)]
+    return None
+
+
 def geocode(addr, cache):
     if addr in cache:
         return cache[addr]
+    # Nominatim first: it reads Chinese addresses and Photon does not.
+    try:
+        hit = _nominatim(addr)
+        time.sleep(1.1)          # their policy, not a guess
+        if hit:
+            cache[addr] = hit
+            return hit
+    except Exception:
+        time.sleep(1.1)
+    # Then the street number stripped off, which is what usually defeats a match
+    short = re.sub(r"\d+\s*\u53f7.*$", "", addr).strip()
+    if short and short != addr:
+        try:
+            hit = _nominatim(short)
+            time.sleep(1.1)
+            if hit:
+                cache[addr] = hit
+                return hit
+        except Exception:
+            time.sleep(1.1)
     try:
         d = json.loads(get(PHOTON + quote(addr)))
         fs = d.get("features") or []

@@ -8024,7 +8024,7 @@
   "trust": "high",
   "name": "Global BioLabs",
   "url": "https://www.globalbiolabs.org/",
-  "desc": "Maps the world’s BSL4 and BSL3+ laboratories and scores national biorisk governance, from King’s College London and the Schar School. There is no international register of high-containment laboratories and no obligation to declare one, so a research project is the only global account of where the most dangerous work is done.",
+  "desc": "Maps the world's BSL4 and BSL3+ laboratories and scores national biorisk governance, from King's College London and the Schar School. There is no international register of high-containment laboratories and no obligation to declare one, so a research project is the only global account of where the most dangerous work is done: 69 BSL4 labs across 27 countries, 51 of them operational and 18 planned or under construction, plus 57 BSL3+ labs. Its scorecards find an asymmetry worth stating plainly — of those 27 countries, 21 score high on biosafety governance, 12 on biosecurity, and exactly one on oversight of dual-use research. States are competent at preventing accidents, weaker at preventing theft, and almost entirely without rules on whether dangerous research should be done at all.",
   "tags": [
    "rules:standards",
    "wild:microbes"
@@ -10751,6 +10751,244 @@
   "tags": [
    "livestock:livestock",
    "animals:breeders"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "ERINHA — European Research Infrastructure on Highly Pathogenic Agents",
+  "url": "https://www.erinha.eu/",
+  "desc": "A pan-European network of ten BSL3+ and BSL4 laboratories that opens their facilities to outside scientists working on dangerous pathogens. Shared access is how a country without maximum containment gets work done in one — and it also means the people using a lab and the country answerable for it are not always the same.",
+  "tags": [
+   "wild:microbes",
+   "rules:standards",
+   "money:public"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "BSL4ZNET — Biosafety Level 4 Zoonotic Laboratory Network",
+  "url": "https://www.bsl4znet.org/",
+  "desc": "A dozen BSL4 laboratories in five countries sharing knowledge and training on zoonotic disease. Networks of this kind are the only routine contact between maximum containment facilities in different states: there is no inspectorate and no obligation to declare what is held, so a voluntary network is the nearest thing to mutual oversight that exists.",
+  "tags": [
+   "wild:microbes",
+   "rules:standards",
+   "livestock:livestock"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Global Partnership Biosecurity Working Group",
+  "url": "https://www.gpwmd.com/",
+  "desc": "The biosecurity arm of the G7-led Global Partnership Against the Spread of Weapons of Mass Destruction, funding capacity-building in more than twenty countries. Biosecurity assistance is delivered as a nonproliferation programme rather than a health one, which shapes what gets funded: securing pathogens attracts money that operating a laboratory safely does not.",
+  "tags": [
+   "money:defence",
+   "rules:standards",
+   "money:public"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "International Federation of Biosafety Associations",
+  "url": "https://internationalbiosafety.org/",
+  "desc": "A non-governmental federation of national and regional biosafety associations, providing training and professional certification in biorisk management. In most countries there is no licence to work in a containment laboratory, so a voluntary certificate from an international federation is the only credential the role has.",
+  "tags": [
+   "rules:standards",
+   "rules:associations",
+   "wild:microbes"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "ISO 35001 — biorisk management standard",
+  "url": "https://www.iso.org/standard/71293.html",
+  "desc": "Published in 2019, this is the international standard for managing biological risk in a laboratory. It describes a management system rather than prescribing equipment, which is why it can be adopted anywhere — and it is voluntary everywhere, with no international mechanism to audit compliance. The Global BioLabs report's first recommendation is that laboratories doing high-consequence work should adopt it.",
+  "tags": [
+   "rules:standards",
+   "wild:microbes"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "WHO Laboratory Biosafety Manual",
+  "url": "https://www.who.int/publications/i/item/9789240011311",
+  "desc": "The reference that defines what containment levels mean. Its fourth edition moved from prescribing equipment by pathogen to requiring a risk assessment for the work actually being done — which is more flexible and puts more weight on the judgement of the institution doing it. There is no definition of BSL3+ in it, or anywhere else, which is why that category is self-declared.",
+  "tags": [
+   "rules:standards",
+   "wild:microbes"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "UN Secretary-General's Mechanism for investigation of alleged use",
+  "url": "https://disarmament.unoda.org/wmd/secretary-general-mechanism/",
+  "desc": "The only standing international capability to investigate an alleged use of biological weapons, since the Biological Weapons Convention has no verification system of its own. It relies on a roster of experts and laboratories nominated by member states and can only be triggered by the Secretary-General — an investigative body with no inspectors of its own.",
+  "tags": [
+   "rules:regulators",
+   "money:defence",
+   "wild:microbes"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "WHO Joint External Evaluation",
+  "url": "https://www.who.int/emergencies/operations/international-health-regulations-monitoring-evaluation-framework",
+  "desc": "A voluntary peer review of a country's capacity to prevent, detect and respond to health emergencies, covering nineteen technical areas of which biosafety and biosecurity is one. Voluntary and public: a country choosing to be evaluated and publishing the result is the closest thing to an inspection that exists for laboratory biosafety anywhere.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards",
+   "wild:microbes"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "International Experts Group of Biosafety and Biosecurity Regulators",
+  "url": "https://www.iegbbr.org/",
+  "desc": "National regulators from eleven countries sharing practice on biosafety and biosecurity. Eleven is the number worth noticing: there are 27 countries with BSL4 laboratories, so most of the states running maximum containment are not in the room where regulators compare notes.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards",
+   "wild:microbes"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Global Health Security Agenda",
+  "url": "https://globalhealthsecurityagenda.org/",
+  "desc": "More than seventy countries matching donors to recipients for public health capacity building, with a specific package on biosafety and biosecurity. It is the main route by which a country without containment capability acquires one — which means the same programme builds the laboratories and is supposed to govern them.",
+  "tags": [
+   "money:public",
+   "rules:standards",
+   "wild:microbes"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "UN Security Council Resolution 1540 Committee",
+  "url": "https://www.un.org/en/sc/1540/",
+  "desc": "Requires every state to prohibit non-state actors from acquiring biological, chemical and nuclear weapons, and to report on the measures it has taken. It is binding on all UN members, which is rare in this field — and its implementation is measured by self-reporting, so what it actually produces is a record of what governments say they have done.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards",
+   "money:defence"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "Tianjin Biosecurity Guidelines for Codes of Conduct for Scientists",
+  "url": "https://www.tianjinbiosecurityguidelines.org/",
+  "desc": "Ten guiding principles for responsible conduct in the life sciences, agreed between Chinese and international academies in 2021 and endorsed by the InterAcademy Partnership. They carry no force at all. Their significance is where they came from: a code of conduct for dual-use research negotiated with Chinese institutions is a rarer thing than another Western guideline.",
+  "tags": [
+   "rules:standards",
+   "wild:microbes",
+   "rules:associations"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "BWC confidence-building measures — annual declarations",
+  "url": "https://bwc-ecbm.unog.ch/",
+  "desc": "The only routine declaration any state makes about its maximum-containment laboratories: one form asks for information on BSL4 facilities, another on national biosafety legislation. Between 2017 and 2021 only 78 to 92 of the 185 states parties submitted anything at all, and roughly a third of those made the submission public. Of the twenty countries with operating BSL4 laboratories, nine publish these reports. The declarations are voluntary in practice, unverified in principle, and they are the whole of international transparency on this subject.",
+  "tags": [
+   "rules:standards",
+   "wild:microbes",
+   "money:defence"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "WHO — variola virus repository inspections",
+  "url": "https://www.who.int/groups/advisory-committee-on-variola-virus-research",
+  "desc": "Smallpox exists in two declared laboratories, one in the United States and one in Russia, and the WHO inspects both every two years. They are the only laboratories anywhere subject to international inspection of this kind, agreed because the virus was eradicated and the stocks kept deliberately. Every other maximum-containment facility on Earth is inspected by its own government or by nobody — which makes two laboratories the exception that shows the shape of the rule.",
+  "tags": [
+   "wild:microbes",
+   "rules:regulators",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Interpol — bioterrorism prevention programme",
+  "url": "https://www.interpol.int/en/Crimes/Terrorism/Bioterrorism",
+  "desc": "Trains police and customs services on detecting the misuse of biological material and coordinates investigations across borders. It is the only body in this field whose work can end in an arrest rather than a guideline. The Global BioLabs assessment places it among the international organisations that have the resources to act and put biorisk management low on their own list of priorities, which is that report's recurring finding about every large institution in this space.",
+  "tags": [
+   "rules:regulators",
+   "money:defence",
+   "wild:microbes"
   ],
   "checked": "2026-07-31"
  }
