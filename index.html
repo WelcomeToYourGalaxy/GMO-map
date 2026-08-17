@@ -6652,5 +6652,133 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   setTimeout(function(){ clearInterval(t); stamp(); }, 12000);
 })();
 </script>
+<script>
+(function(){
+  /* Satellite restyle: composite, never replace.
+   *
+   * The photographic quality of satellite imagery is carried almost entirely by
+   * its HUE. Its usefulness - coastlines, terrain shape, where the trees stop -
+   * is carried by its LUMINANCE. So the imagery stays exactly where it is and
+   * supplies the light; a flat wash replaces the colour; a hillshade puts the
+   * sculpting back. Nothing is thrown away and nothing is redrawn from scratch,
+   * which is why the result is still accurate: every coastline on screen is
+   * still Esri's.
+   *
+   * The painted plate above zoom 3-5 is untouched - that is the atlas layer and
+   * it has its own look.
+   *
+   * The map is EPSG:3857 (no crs option is passed to L.map), so plain XYZ
+   * endpoints register correctly and the 4326 workaround is not needed.
+   */
+  if(typeof map === 'undefined' || !window.L) return;
+
+  var SAT_PANE = 'tilePane';          /* the existing imagery */
+  var FAILS_ALLOWED = 12;
+
+  function pane(name, z, blend){
+    if(!map.getPane(name)) map.createPane(name);
+    var el = map.getPane(name);
+    el.style.zIndex = z;
+    el.style.pointerEvents = 'none';
+    if(blend) el.style.mixBlendMode = blend;
+    return el;
+  }
+
+  /* 1. the imagery itself: desaturated, so the wash above has something even
+   *    to work on rather than fighting green against green. */
+  try{
+    var sat = map.getPane(SAT_PANE);
+    if(sat) sat.style.filter = 'saturate(0.35) contrast(0.82) brightness(1.18)';
+  }catch(e){}
+
+  /* 2. land wash. mix-blend-mode:color takes the hue of this layer and the
+   *    lightness of everything under it - which is precisely "keep the terrain,
+   *    lose the photograph". */
+  var washEl = pane('satWash', 210, 'color');
+  var wash = document.createElement('div');
+  wash.style.cssText = 'position:absolute;inset:-2000px;background:#d8e4b4;';
+  /* One flat wash gives one hue to everything under it, sea included, and the
+     brief asks for water at #a9d4e8. CSS cannot mask a blend to "only the blue
+     parts", so the ocean is handled the other way round: a blue pane BELOW the
+     wash, blended screen, which lifts the dark water toward blue before the
+     wash arrives and leaves land - already light - almost untouched. */
+  var seaEl = pane('satSea', 205, 'screen');
+  var sea = document.createElement('div');
+  sea.style.cssText = 'position:absolute;inset:-2000px;background:#12314a;opacity:0.55;';
+  seaEl.appendChild(sea);
+  washEl.appendChild(wash);
+
+  /* 3. hillshade, multiplied. This is what makes it read as drawn terrain.
+   *    Past 0.45 the map goes muddy, so it is capped well under that. */
+  var shadeEl = pane('satShade', 220, 'multiply');
+  var shade = L.tileLayer(
+    'https://services.arcgisonline.com/arcgis/rest/services/Elevation/' +
+    'World_Hillshade/MapServer/tile/{z}/{y}/{x}',
+    {pane:'satShade', opacity:0.35, maxZoom:18, maxNativeZoom:16,
+     noWrap:true, bounds:[[-85.05,-180],[85.05,180]],
+     updateWhenZooming:false, keepBuffer:2,
+     attribution:'Hillshade: &copy; Esri'});
+
+  /* 4. labels and road casings, transparent, on top of the terrain. */
+  var labelEl = pane('satLabels', 240);
+  var labels = L.tileLayer(
+    'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_only_labels/' +
+    '{z}/{x}/{y}{r}.png',
+    {pane:'satLabels', opacity:0.9, maxZoom:18, noWrap:true,
+     bounds:[[-85.05,-180],[85.05,180]], subdomains:'abcd',
+     updateWhenZooming:false, keepBuffer:2,
+     attribution:'Labels: &copy; CARTO, &copy; OpenStreetMap contributors'});
+
+  /* A blocked or rate-limited endpoint must cost the restyle, not the map. Each
+   * layer counts its own failures and takes itself off; the imagery underneath
+   * is untouched either way, so the worst case is the plain satellite view this
+   * started from. */
+  function guard(layer, name, onGone){
+    var n = 0;
+    layer.on('tileerror', function(){
+      if(++n === FAILS_ALLOWED){
+        try{ map.removeLayer(layer); }catch(e){}
+        try{ onGone && onGone(); }catch(e){}
+        try{ console.warn('[map] ' + name + ' failed ' + n + ' times; ' +
+                          'dropping it and leaving the imagery as it was'); }catch(e){}
+      }
+    });
+    layer.addTo(map);
+  }
+  guard(shade, 'hillshade', function(){
+    /* Without the sculpting, a flat wash over flat imagery is worse than no
+     * wash at all - so the wash goes with it. */
+    washEl.style.display = 'none';
+    seaEl.style.display = 'none';
+    var sp = map.getPane(SAT_PANE); if(sp) sp.style.filter = '';
+  });
+  guard(labels, 'CARTO labels');
+
+  /* 5. the wash fades as you zoom in. Wide out it is doing the work; close in
+   *    it flattens the detail somebody zoomed in to see. */
+  function ramp(){
+    try{
+      var z = map.getZoom();
+      var o = z <= 6 ? 0.85 : z >= 12 ? 0.30
+            : 0.85 - (z - 6) * (0.55 / 6);
+      wash.style.opacity = o;
+      sea.style.opacity = o * 0.65;
+      shade.setOpacity(z <= 4 ? 0.28 : 0.35);
+    }catch(e){}
+  }
+  map.on('zoomend', ramp);
+  map.whenReady(ramp);
+  ramp();
+
+  window.pjSatStyle = function(on){
+    [washEl, seaEl, shadeEl, labelEl].forEach(function(el){
+      el.style.display = on === false ? 'none' : '';
+    });
+    var sp = map.getPane(SAT_PANE);
+    if(sp) sp.style.filter = on === false ? ''
+      : 'saturate(0.35) contrast(0.82) brightness(1.18)';
+  };
+})();
+</script>
 </body>
 </html>
