@@ -1288,7 +1288,7 @@ function _regimeBoxInner(iso){
     var cnames=cult.map(function(p){return String(p.name||'').trim();}).filter(Boolean).sort();
     var cshow=cnames.slice(0,6).join(', ');
     if(cnames.length>6) cshow+=' and '+(cnames.length-6)+' more';
-    h+='<div class="rgm-h2"><span class="rgm-ar" style="background:#c2603a"></span>Approved GM cultivation area</div>';
+    h+='<div class="rgm-h2"><span class="rgm-ar" style="background:#f2b134"></span>Approved GM cultivation area</div>';
     h+='<div class="rgm-p">'+cult.length+' region'+(cult.length===1?'':'s')+' shaded'
       +(cshow?': '+_esc(cshow):'')+'.</div>';
     /* No hectares printed. The harvest wrote one identical figure list onto all
@@ -2502,7 +2502,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
   // Loaded on demand from repo-hosted overlays/<k>.geojson (CORS-safe). The
   // harvester downloads + slims + commits these files; until then a toggle
   // gracefully shows "not yet available". These are AREAS, not project dots.
-  var PJ_OVERLAYS=[{"k":"cultivation","label":"Approved GM cultivation area","color":"#c2603a","note":"Hectares of engineered crops by country, from the USDA FAS Agricultural Biotechnology Annual reports. Area planted, not permits \u2014 the only layer here that shows scale rather than paperwork."},{"k":"gmofree","label":"GMO-free zones & regional bans","color":"#4fb3c9","note":"Regions and municipalities that have declared themselves GMO-free, crawled from the GMO Free Regions network. Declarations vary in legal force: some are binding, some are statements of intent, and the note on each says which where the source states it."},{"k": "regime", "label": "Regulatory regime by country", "color": "#8a7fc4", "note": ""}];
+  var PJ_OVERLAYS=[{"k":"cultivation","label":"Approved GM cultivation area","color":"#f2b134","note":"Hectares of engineered crops by country, from the USDA FAS Agricultural Biotechnology Annual reports. Area planted, not permits \u2014 the only layer here that shows scale rather than paperwork."},{"k":"gmofree","label":"GMO-free zones & regional bans","color":"#4fb3c9","note":"Regions and municipalities that have declared themselves GMO-free, crawled from the GMO Free Regions network. Declarations vary in legal force: some are binding, some are statements of intent, and the note on each says which where the source states it."},{"k": "regime", "label": "Regulatory regime by country", "color": "#8a7fc4", "note": ""}];
   // Olive range rather than purple/blue/orange, which fought the atlas ground.
   // Three steps far enough apart to tell apart on a parchment background:
   // deep moss, mid olive, dry gold-olive.
@@ -3064,7 +3064,22 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       // Sponsors sit on a country centroid, hundreds to a point, exactly like a
       // register's records. Drawn solo they would be 830 dots stacked on one
       // spot in the middle of Kansas.
-      if(o.kd !== 'release' && o.kd !== 'clinical'){
+      // Facility registers behave like release registers, not like companies.
+      // AAALAC gives a city and no street; APHIS gives a mailing city; the
+      // China list geocodes to a province for all but one of its 664. Those are
+      // hundreds of records on one point, and drawn solo they become hundreds
+      // of overlapping circles rather than one marker saying how many are
+      // there - which is what the numbered circle is for, and why releases and
+      // trial sponsors already use it.
+      //
+      // Points that DID resolve to their own address are excluded: a clinic
+      // with a street address is a single named thing at a single place, and
+      // collapsing it into a city pile would throw away the precision the
+      // harvester worked for.
+      var _coarse = (o.kd === 'repro' || o.kd === 'animals') &&
+                    o.p && o.p.addr_grade !== 'operational' &&
+                    o.p.addr_grade !== 'mapped';
+      if(o.kd !== 'release' && o.kd !== 'clinical' && !_coarse){
         g = cells['solo:' + i] = {la: o.la, lo: o.lo, n: 1, m: [o], kd: {}, i: o.i,
                                   ap: o.ap, total: 1, solo: true};
         g.kd[o.kd] = 1; out.push(g);
@@ -5442,12 +5457,14 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     }
     blocks.forEach(function(b){ b.forEach(function(n){ if(n) host.appendChild(n); }); });
     if(!lab.querySelector('.kind-car')){
-      // Open by default. Industry and Releases are the two branches a reader
-      // arrives wanting, and a caret they have to find first is a filter on
-      // curiosity rather than on data.
-      host.style.display='';
+      // Industry and Releases start closed: they are the two longest branches
+      // and expanded they push the treaty and zone controls off the panel.
+      // openBranches() settles it after all three container passes have run;
+      // this only stops them flashing open first.
+      var _shut = (kind === 'industry' || kind === 'release');
+      if(_shut) host.style.display='none';
       var car=document.createElement('span');
-      car.className='kind-car'; car.textContent='\u25be';
+      car.className='kind-car'; car.textContent = _shut ? '\u25b8' : '\u25be';
       car.title='show or hide these filters';
       car.onclick=function(e){
         e.preventDefault(); e.stopPropagation();
@@ -6554,13 +6571,16 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       while(n){
         if(n.nodeType===1){
           if(n.tagName==='LABEL' && n.querySelector('.pj-kind')) break;
-          if(n.classList.contains('kind-sub') && n.style.display==='none') n.style.display='';
+          // Closed, not open. These two branches are the longest in the box and
+          // expanded they push the shaded-area and treaty controls off the
+          // panel entirely.
+          if(n.classList.contains('kind-sub') && n.style.display!=='none') n.style.display='none';
         }
         n=n.nextSibling;
       }
       var car=lab.querySelector('.kind-car');
       if(car){
-        car.textContent='\u25be';
+        car.textContent='\u25b8';
         // Capture phase, so the flag is set before the caret's own handler
         // runs and this pass does not undo the reader on the next tick.
         if(car.dataset.userFlag!=='1'){
@@ -6966,7 +6986,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-17 01:07";
+  var BUILD = "BUILD-2026-08-17 01:18";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
