@@ -218,6 +218,13 @@
   overflow:auto;}
 #rundownPanel.collapsed .wire-body{display:none;}
 #rundownPanel .wire-lead{font-size:11.5px;line-height:1.55;}
+/* The heading sat smaller than the text under it and hard against the edge.
+   Indented to the body's own left margin and set at the wire's size. */
+#rundownPanel .help-head{padding:9px 12px;font-size:12px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:#e6eefc;}
+#rundownPanel .help-head span:first-child{font-size:12px;font-weight:700;color:#e6eefc;}
+/* Same width as the How to use this map panel, which is 270px. */
+#rundownPanel{width:270px;}
+#wirePanel{width:270px;}
 #wirePanel{position:fixed;left:14px;top:70px;width:300px;z-index:1000;background:rgba(8,12,27,0.97);border:1px solid var(--accent-soft);border-radius:10px;box-shadow:0 4px 22px rgba(0,0,0,0.45);overflow:hidden;bottom:18px;max-height:none;display:flex;flex-direction:column;transition:bottom .22s ease,max-height .22s ease;}
 /* the wire owns the whole column until a unit is opened, then yields the lower half */
 body.info-open #wirePanel{bottom:auto;max-height:calc(50vh - 58px);}
@@ -2865,7 +2872,11 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
         try{ Object.defineProperty(p,'_hay',{value:hay.toLowerCase(),enumerable:false}); }
         catch(e){ p._hay = hay.toLowerCase(); }
       }
-      if(p._hay.indexOf(pjQ) < 0) return false;
+      // Whole words, not substrings. "corn" was matching acorn, "rice" matching
+      // price, "pea" matching repeat - the shorter the term the worse it got,
+      // and short terms are what people actually type. A term still matches the
+      // start of a longer word only when the reader asks for it with a *.
+      if(!pjQMatch(p._hay)) return false;
     }
     if(pjSizes.size && !pjSizes.has(p.impact||1)) return false;
     if(pjPhases.size<2 && !pjPhases.has(pjPhase(p))) return false;
@@ -2925,8 +2936,9 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
       ['organisation type',     function(p){ return String(p.source||'').indexOf('industry')===0 &&
                                     typeof pjTypes!=='undefined' && !pjTypes.has(p.otype||'company'); }],
       ['type category',         function(p){ return !activeProjType.has(pjTypeCat(p)); }],
-      ['search box',            function(p){ return !!pjQ && String(p.name||'').toLowerCase().indexOf(pjQ)<0
-                                    && String(p.type||'').toLowerCase().indexOf(pjQ)<0; }]
+      ['search box',            function(p){ return !!pjQ &&
+                                    !pjQMatch(String(p.name||'').toLowerCase()) &&
+                                    !pjQMatch(String(p.type||'').toLowerCase()); }]
     ];
     guards.forEach(function(g){
       var n = 0;
@@ -3049,12 +3061,17 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
   function pjFanRing(m, g){
     var sib = g && g._sib;
     if(!sib || sib.length < 2) return 0;
-    var z = m.getZoom(), R = 0, i;
+    var R = 0, i;
     for(i = 0; i < sib.length; i++){
-      var r = pjCluRad(z, sib[i]);
+      var r = pjCluRad(8, sib[i]);   /* fixed reference zoom */
       if(r > R) R = r;
     }
     var n = sib.length;
+    // R is taken at a FIXED zoom, not the current one. Sizing the ring from the
+    // radius at the zoom you happen to be at made the whole rosette expand and
+    // contract as you zoomed, so a clinic appeared in one place at world view
+    // and slid outward as you came in. The ring is a constant number of pixels
+    // now; only the map moves.
     // Two markers: half a ring each, so the gap between centres is 2R and the
     // widest pair is edge to edge with a hairline between.
     if(n === 2) return R + 3.5;
@@ -3076,6 +3093,27 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
     if(!d[0] && !d[1]) return pt;
     return L.point(pt.x + d[0], pt.y + d[1]);
   }
+  // Built once per query rather than per record: 25,000 records times a regex
+  // compile is a visible pause on every keystroke.
+  var _pjQRe = null, _pjQSrc = null;
+  function pjQMatch(hay){
+    if(!pjQ) return true;
+    if(_pjQSrc !== pjQ){
+      _pjQSrc = pjQ;
+      var terms = pjQ.split(/\s+/).filter(Boolean).map(function(t){
+        var star = t.slice(-1) === '*';
+        var body = (star ? t.slice(0, -1) : t).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        // \b on both ends is an exact word; a trailing * drops the closing
+        // boundary so "gene*" still finds genetically.
+        return star ? '\\b' + body : '\\b' + body + '\\b';
+      });
+      try{ _pjQRe = terms.length ? new RegExp(terms.join('.*'), 'i') : null; }
+      catch(e){ _pjQRe = null; }
+    }
+    if(!_pjQRe) return hay.indexOf(pjQ) >= 0;
+    return _pjQRe.test(hay);
+  }
+
   function pjClusters(z){
     if(_pjClu) return _pjClu;   // zoom-invariant: built once per filter change
     var cells = {}, out = [], pts = _pjPts || [], i, g;
@@ -3720,6 +3758,41 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
   // The country marker carries the combined count; opening it shows the national
   // records and puts the states on the map.
   var PJ_US_NATIONAL = {'united states':1, 'usa':1, 'us':1};
+  // Every US state and territory postal code, plus the full names, because the
+  // registers write the same place three different ways: "Iowa", "IA",
+  // "Ames, IA" and "Iowa, United States" all appear in the data.
+  var PJ_US_ST = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',
+    CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',
+    FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',
+    IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',
+    MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',
+    MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',
+    NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',
+    OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',
+    SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',
+    WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',
+    PR:'Puerto Rico',VI:'US Virgin Islands',GU:'Guam'};
+  var PJ_US_NAME = {};
+  (function(){ for(var k in PJ_US_ST) PJ_US_NAME[PJ_US_ST[k].toLowerCase()] = PJ_US_ST[k]; })();
+  // Returns the state name if this record is in the United States, else ''.
+  function pjUsState(st){
+    var parts = String(st || '').split(',').map(function(x){ return x.trim(); });
+    for(var i = parts.length - 1; i >= 0; i--){
+      var v = parts[i], u = v.toUpperCase(), l = v.toLowerCase();
+      if(PJ_US_ST[u]) return PJ_US_ST[u];
+      if(PJ_US_NAME[l]) return PJ_US_NAME[l];
+      if(PJ_US_NATIONAL[l]) {
+        // "Iowa, United States" - the state is the part before it
+        for(var j = i - 1; j >= 0; j--){
+          var w = parts[j];
+          if(PJ_US_ST[w.toUpperCase()]) return PJ_US_ST[w.toUpperCase()];
+          if(PJ_US_NAME[w.toLowerCase()]) return PJ_US_NAME[w.toLowerCase()];
+        }
+        return 'State not stated';
+      }
+    }
+    return '';
+  }
   function pjBuildHierarchy(rows){
     if(!rows || !rows.length) return rows;
     var nat = [], kids = {}, ktot = 0, i, p;
@@ -3747,10 +3820,15 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
       //
       // They now roll into the national marker like release records do, and the
       // states appear when the reader asks for them.
-      if(String(p.source || '').indexOf('industry:animals') === 0 &&
-         PJ_US_NATIONAL[st.split(',').pop().trim().toLowerCase()] !== undefined){
+      // The test used to be "does the last comma-part say United States", which
+      // is how release records are written. Animal facility records are written
+      // "Mattawan, MI" - a city and a two-letter code, no country at all - so
+      // the test never fired and every one of them stayed a state centroid,
+      // which is exactly what it was meant to stop.
+      var _usPart = pjUsState(st);
+      if(String(p.source || '').indexOf('industry:animals') === 0 && _usPart){
         p.level = 'state'; p.parent = 'United States \u2014 animal facilities';
-        var aState = (st.split(',')[0] || '').trim() || 'State not stated';
+        var aState = _usPart;
         akids[aState] = (akids[aState] || 0) + 1; aktot++;
         continue;
       }
@@ -4232,12 +4310,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       +'<i style="border-color:'+window.REGIMEC.technique+'"></i>'
       +'<i style="border-color:'+window.REGIMEC.trait+'"></i></span>'
       +'\u2026 with a carve-out</label>';
-    h+='<div class="ot-note">The boundary is the law. A country\u2019s outline is '
-      +'coloured by how it decides what counts as engineered \u2014 blue or amber, '
-      +'never both. A dashed outline in that same colour means a class of organism '
-      +'has been lifted out of it, so the dashes qualify the colour rather than '
-      +'replacing it. Colour <em>inside</em> a country is a GM zone, which is a '
-      +'different thing.</div>';
+    h+='<div class="ot-note">Outlines are the regulatory regime; filled areas are the GM zones. A dashed outline means a class of organism has been excluded altogether.</div>';
     rb.innerHTML=h;
     rb.addEventListener('change',function(e){
       if(e.target.id==='regAll'){
@@ -6641,6 +6714,23 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // "Nagoya-Kuala Lumpur" tells a reader nothing about what they are switching
   // on, and these five differ in exactly the way that matters: what each one
   // obliges a country to do.
+  // Party counts, filled from the overlay once it loads, so a number here can
+  // never drift from the boundaries actually drawn.
+  var TREATY_N = {};
+  window.pjTreatyCounts = function(){
+    var gj = window._ovData && window._ovData.treaties;
+    if(!gj) return;
+    TREATY_DEFS.forEach(function(d){
+      var n = 0;
+      gj.features.forEach(function(f){ if(f.properties && f.properties[d.k]) n++; });
+      TREATY_N[d.k] = n + ' countries';
+      var lab = document.querySelector('#treatyBox input[data-treaty="'+d.k+'"]');
+      if(lab && lab.parentNode){
+        var sp = lab.parentNode.querySelector('.kfig');
+        if(sp) sp.textContent = TREATY_N[d.k];
+      }
+    });
+  };
   var TREATY_WHAT = {
     cartagena:
       "Governs the movement of living modified organisms between countries. A "
@@ -6662,13 +6752,22 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       + "than a domestic decision, which is why the map of who has signed looks "
       + "like a map of who has negotiated with whom.",
     upov78:
-      "The earlier plant variety act, which leaves farm-saved seed alone. "
-      + "Seventeen countries remain on it \u2014 most of South America plus "
-      + "China \u2014 and they are under steady pressure to move to 1991. Which "
-      + "act a country signed is the seed-sovereignty argument in one variable.",
+      "The earlier plant variety act, which leaves farm-saved seed alone. Under "
+      + "1978 a farmer may keep seed from the harvest and sow it again; under "
+      + "1991 that needs the breeder\u2019s permission, the right lasts longer, "
+      + "and it reaches the harvest and not just the seed. Seventeen countries "
+      + "remain on 1978 \u2014 most of South America plus China \u2014 and the "
+      + "pressure to move comes through trade agreements rather than from "
+      + "farmers. Which act a country signed is the seed-sovereignty argument "
+      + "in one variable.",
     plant_treaty:
-      "The multilateral system for exchanging crop genetic material, and for "
-      + "sharing what comes of it. 152 countries are parties. The absences are "
+      "Puts 64 of the world\u2019s most important food crops into a shared pool: "
+      + "any party can take material from another\u2019s genebank for breeding "
+      + "or research without negotiating a separate deal, and agrees in return "
+      + "to pay a share of the proceeds into a common fund if the result is "
+      + "commercialised and cannot be freely used by others. It also affirms "
+      + "farmers\u2019 rights to save and exchange seed, which is the clause "
+      + "that sits awkwardly beside UPOV 1991. The absences are "
       + "the interesting part: China and Russia are outside it and the United "
       + "States is inside, which is the reverse of the Cartagena pattern and "
       + "shows that a country's position is taken treaty by treaty rather than "
@@ -6681,17 +6780,27 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     {k:'upov78',       label:'UPOV 1978 \u2014 saved seed permitted',      c:'#9a8a5a'},
     {k:'plant_treaty', label:'Plant Treaty \u2014 shared crop genetics',   c:'#4a7a5a'}
   ];
-  window.pjTreatyOn = null;   // null = layer off; otherwise a treaty key
+  // A Set, not a single key: the point of this layer is comparing two lists,
+  // and a radio group cannot show a country that is in one and not the other.
+  window.pjTreatyOn = new Set();
 
   function treatyStyle(f){
-    var p = (f && f.properties) || {}, k = window.pjTreatyOn;
-    if(!k) return {opacity:0, fillOpacity:0, weight:0, interactive:false};
-    var d = null;
-    for(var i=0;i<TREATY_DEFS.length;i++) if(TREATY_DEFS[i].k===k) d=TREATY_DEFS[i];
-    var member = !!p[k];
-    return {color: d.c, weight: member ? 0.8 : 0.4,
-            opacity: member ? 0.55 : 0.25,
-            fillColor: d.c, fillOpacity: member ? 0.30 : 0.04,
+    var p = (f && f.properties) || {}, on = window.pjTreatyOn;
+    if(!on || !on.size) return {opacity:0, fillOpacity:0, weight:0, interactive:false};
+    // With several treaties on, a country is coloured by the first it belongs
+    // to and its opacity rises with how many - so a state in four of the five
+    // reads darker than one in a single treaty, and a country in none stays
+    // faint but visible.
+    var hits = TREATY_DEFS.filter(function(d){ return on.has(d.k) && p[d.k]; });
+    var any  = TREATY_DEFS.filter(function(d){ return on.has(d.k); });
+    if(!hits.length){
+      return {color:'#7d8ba1', weight:0.4, opacity:0.22,
+              fillColor:'#7d8ba1', fillOpacity:0.03, interactive:true};
+    }
+    var share = hits.length / Math.max(1, any.length);
+    return {color: hits[0].c, weight: 0.8,
+            opacity: 0.35 + 0.30 * share,
+            fillColor: hits[0].c, fillOpacity: 0.14 + 0.26 * share,
             interactive: true};
   }
   var _treatyLayer = null;
@@ -6740,17 +6849,14 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     head.className = 'ot-head'; head.textContent = 'Treaty membership';
     var note = document.createElement('div');
     note.className = 'ot-note';
-    note.innerHTML = 'One at a time. A filled country is a party; a faint one has '
-      + 'been checked and is not. The Cartagena and liability lists are the pair '
-      + 'worth comparing \u2014 172 countries agreed to notify and 54 agreed to be '
-      + 'liable for damage.';
-    var h = '<label><input type="radio" name="pjTreaty" value="" checked>'
-          + '<span class="ot-dot ot-edge" style="border-color:#7d8ba1"></span>None</label>';
+    note.innerHTML = 'Any number at once. A filled country is a party; a faint one has been checked and is not.';
+    var h = '';
     TREATY_DEFS.forEach(function(d){
       h += '<label title="'+d.label.replace(/"/g,'&quot;')+'">'
-        +  '<input type="radio" name="pjTreaty" value="'+d.k+'">'
+        +  '<input type="checkbox" data-treaty="'+d.k+'">'
         +  '<span class="ot-dot ot-edge" style="border-color:'+d.c+';background:'+d.c+'"></span>'
         +  d.label.split(' \u2014 ')[0]
+        +  '<span class="kfig">' + (TREATY_N[d.k] || '') + '</span>'
         +  '<span class="tw-q" data-tw="'+d.k+'" title="what this treaty obliges a '
         +  'country to do">what it does</span>'
         +  '</label>'
@@ -6773,8 +6879,9 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     });
     box.addEventListener('change', function(e){
       var t=e.target;
-      if(!t || t.name!=='pjTreaty') return;
-      window.pjTreatyOn = t.value || null;
+      if(!t || !t.dataset || !t.dataset.treaty) return;
+      if(t.checked) window.pjTreatyOn.add(t.dataset.treaty);
+      else window.pjTreatyOn.delete(t.dataset.treaty);
       try{ window.pjDrawTreaties(); }catch(err){
         try{ console.warn('[map] treaty layer:', err); }catch(_x){}
       }
@@ -6784,6 +6891,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 
   function boot(){
     try{ treatyToggles(); }catch(e){}
+    try{ window.pjTreatyCounts && window.pjTreatyCounts(); }catch(e){}
     KEYS.forEach(function(k){
       if(window._ovData[k] || window._ovFailed[k] === 'loading') return;
       if(window._ovFailed[k]) return;
@@ -6796,6 +6904,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
           window._ovData[k] = gj;
           delete window._ovFailed[k];
           console.log('[map] overlay ' + k + ': ' + n + ' features');
+          if(k==='treaties'){ try{ window.pjTreatyCounts(); }catch(e){} }
           if(wanted(k) && typeof window.pjToggleOverlay === 'function'){
             try{ window.pjToggleOverlay(k, true, null); }catch(e){
               console.warn('[map] overlay '+k+' loaded but would not draw:', e);
@@ -7409,7 +7518,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-17 19:45";
+  var BUILD = "BUILD-2026-08-17 20:50";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
@@ -7427,7 +7536,13 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
         ? 'built' : 'EMPTY'));
     checks.push('branches:' + (document.body.dataset.branchesOpen ? 'open' : 'NOT'));
     checks.push('terrain:' + (typeof window.pjSatTune === 'function' ? 'on' : 'OFF'));
-    d.textContent = BUILD + '  ' + checks.join('  ');
+    // The stamp stays in the DOM so a build can still be identified, and is
+    // no longer printed across the key box - it was there to settle a
+    // question about which file was deployed, and that question is answered.
+    d.textContent = '';
+    d.title = BUILD + '  ' + checks.join('  ');
+    d.style.display = 'none';
+    try{ console.log('[map] ' + BUILD + '  ' + checks.join('  ')); }catch(e){}
     host.appendChild(d);
   }
   var t = setInterval(stamp, 900);
