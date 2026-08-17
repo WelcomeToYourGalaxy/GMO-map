@@ -206,6 +206,22 @@
 .best-wrap{margin:8px 0;} .best-hint{font-size:10px;color:#7e88a6;margin:2px 0 5px;line-height:1.35;}#bestPills{display:flex;gap:5px;flex-wrap:wrap;}.best-pill{font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--accent-soft);color:#c3c9d9;cursor:pointer;background:rgba(255,255,255,.03);user-select:none;}.best-pill:hover{border-color:#26378a;}.best-pill.on{background:#7fa8cc;color:#0b1220;border-color:#9dc0dd;font-weight:600;}
 .top-src{margin:6px 0 10px;padding:7px 9px;background:rgba(47,67,161,.10);border:1px solid rgba(47,67,161,.28);border-radius:8px;}.top-src-h{font-size:11px;font-weight:700;color:#2f47a0;margin-bottom:5px;letter-spacing:.02em;}.ts-row{font-size:12px;margin:3px 0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}.ts-row a{color:#26378a;}.ts-b{font-size:9.5px;padding:1px 6px;border-radius:9px;font-weight:600;white-space:nowrap;}.ts-pop{background:#2d4d73;color:#1a1200;} .ts-help{background:#2a3875;color:#02081a;}
 
+
+/* Map rundown: the essay, split out of the wire so the two can be read and
+   collapsed separately. It inherits the wire's styling by sharing every rule
+   below, and sits above it. */
+#rundownPanel{position:fixed;left:14px;top:70px;width:300px;z-index:1000;
+  background:rgba(8,12,27,0.97);border:1px solid rgba(120,140,180,0.30);
+  border-radius:7px;box-shadow:0 6px 22px rgba(0,0,0,.5);overflow:hidden;
+  font-size:11.5px;color:#c3c9d9;}
+#rundownPanel .wire-body{padding:2px 12px 11px;line-height:1.5;max-height:38vh;
+  overflow:auto;}
+#rundownPanel.collapsed .wire-body{display:none;}
+#rundownPanel .wire-lead{font-size:11.5px;line-height:1.55;}
+/* the wire drops below it */
+#wirePanel{top:calc(70px + 42vh);}
+@media (max-height:760px){ #rundownPanel .wire-body{max-height:30vh;}
+  #wirePanel{top:calc(70px + 34vh);} }
 #wirePanel{position:fixed;left:14px;top:70px;width:300px;z-index:1000;background:rgba(8,12,27,0.97);border:1px solid var(--accent-soft);border-radius:10px;box-shadow:0 4px 22px rgba(0,0,0,0.45);overflow:hidden;bottom:18px;max-height:none;display:flex;flex-direction:column;transition:bottom .22s ease,max-height .22s ease;}
 /* the wire owns the whole column until a unit is opened, then yields the lower half */
 body.info-open #wirePanel{bottom:auto;max-height:calc(50vh - 58px);}
@@ -340,8 +356,8 @@ function pjReport(which, data){
 
       </div>
 </div>
-<div id="wirePanel">
-  <div class="help-head wire-head-drag" title="Click to collapse · drag to move"><span>Global Wire</span><span class="help-tog"></span></div>
+<div id="rundownPanel">
+  <div class="help-head wire-head-drag" title="Click to collapse · drag to move"><span>Map rundown</span><span class="help-tog"></span></div>
   <div class="wire-body">
     <div class="wire-lead">Farmers plant seeds. Some of those seeds have had genes added in a laboratory — usually taken from bacteria — so the crop survives being sprayed with weedkiller when a field full of weeds is sprayed, or makes its own insecticide in every leaf and root. These are examples of what’s called Genetic Modification. The technique is fifty years old: in 1973 the biochemists Herbert Boyer and Stanley Cohen moved DNA from one bacterium into another, and in 1982 the FDA approved the first consumer product made this way — human insulin brewed in engineered bacteria rather than extracted from pig and cattle pancreases.<br><br>
     Proponents argue that, in the context of agriculture, insect-resistant cotton substantially reduced broad-spectrum insecticide spraying in several countries — sprays that killed bees, birds and farm workers — and the claim that these foods are unsafe to eat has not held up in decades of testing. But, that isn’t the whole story.<br><br>
@@ -360,7 +376,13 @@ function pjReport(which, data){
     No amount of good intent at one end can change what has become buildable at the other. We sit on a precipice.<br><br>
     This map is the industry behind all of this — the companies that design and sell engineered organisms, the ones supplying them with DNA, animals and laboratory capacity, the money behind them, and the bodies that authorise them and argue on their behalf. Four hundred and thirty-six organisations, each with its own write-up and a link to the source. Twenty-four thousand release authorisations from official registers, broken down by country and state. Twenty-five documented cases of engineered organisms turning up where nobody put them. Two hundred regions that have declared themselves GMO-free. And thirty-six countries shaded by how each one decides what even counts as regulated.<br><br>
     Twelve facets, running the length of the chain: seed and traits, gene editing and synthetic biology, DNA synthesis and sequencing, contract research and manufacturing, laboratory animals, livestock and aquaculture and pets, insects and microbes and open release, de-extinction, human clinical work, assisted reproduction, the money, and the rules. A handful of companies write the DNA everything starts as. Hired laboratories run the studies regulators read. Breeders sell millions of engineered animals a year, catalogued like supplies. Ventures rebuild extinct species as intellectual property. Clinics consolidate human reproduction. Venture funds, public grants, philanthropies and defence agencies pay for all of it.<br><br>
-    This wire watches it in motion — worldwide, in many languages, filterable by region and subregion.</div>
+</div>
+  </div>
+</div>
+<div id="wirePanel">
+  <div class="help-head wire-head-drag" title="Click to collapse · drag to move"><span>Global Wire</span><span class="help-tog"></span></div>
+  <div class="wire-body">
+    <div class="wire-lead">This wire watches it in motion — worldwide, in many languages, filterable by region and subregion.</div>
     <div class="wire-tabs"><span class="wire-tab on" data-wm="live" onclick="setWireMode('live')"> Live</span><span class="wire-tab" data-wm="timeline" onclick="setWireMode('timeline')"> Timeline</span></div>
     <div id="wireRegionWrap" style="display:none;"><select id="wireRegion" onchange="setWireRegion(this.value)" title="Filter the wire by place"><option value="">All regions</option></select><select id="wireLang" onchange="setWireLang(this.value)" title="Filter the wire by language" style="margin-top:5px;"><option value="">All languages</option></select><select id="wireDays" onchange="setWireDays(this.value)" title="How far back to show" style="margin-top:5px;"><option value="7">Last 7 days</option><option value="30" selected>Last 30 days</option><option value="90">Last 90 days</option><option value="365">Last year</option><option value="0">Everything held</option></select><select id="wireSort" onchange="setWireSort(this.value)" title="How to order the feed" style="margin-top:5px;"><option value="smart" selected>Sort: project size / impact</option><option value="hits">Sort: most covered (news hits)</option><option value="new">Sort: newest first</option><option value="old">Sort: oldest first</option><option value="lang">Sort: by language</option><option value="az">Sort: A–Z by place</option></select></div>
     <div id="wireItems"><div class="wire-load">Loading the wire&hellip;</div></div>
@@ -988,8 +1010,12 @@ function gbUnitStyle(iso,lvl,feat){ let lit=false,act=false; let pool=[];
   if(feat&&feat._bubble){ lit=true; if(feat._bubble.active) act=true; }
   const acc=DMAP[domain].accent, hi=DMAP[domain].hi;
   /* lit sub-units use the same gold as the national highlight (was domain blue-green) */
+  /* Same reasoning as baseStyle: an unlit unit is not a finding, and drawing it
+     gold said there was something to see. Kept faint enough to show the shape
+     of the country you have drilled into, without competing with the layers
+     that carry meaning. */
   const st = lit?{color:'#b8912f',weight:2.6,opacity:1,fillColor:'#d8b24a',fillOpacity:0.34}
-               :{color:'rgba(184,145,47,0.55)',weight:2.2,opacity:1,fillColor:'rgba(216,178,74,0.05)',fillOpacity:0.06};
+               :{color:'rgba(150,165,195,0.30)',weight:1.0,opacity:1,fillColor:'transparent',fillOpacity:0};
   if(gbSelFeat){
     if(feat===gbSelFeat){ st.color='#ffffff'; st.weight=3.6; st.opacity=1; st.fillOpacity=Math.max(st.fillOpacity,0.28); }   /* the unit the user clicked */
     else { st.fillOpacity=0; st.fillColor='transparent'; st.color='rgba(184,145,47,0.22)'; st.weight=0.7; }   /* rest of the country: unhighlighted, still clickable to raise back up */
@@ -1554,8 +1580,16 @@ map.on('zoomend',function(){ const z=map.getZoom(), pz=gbLastZoom; gbLastZoom=z;
 
 fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json').then(r=>r.json()).then(wd=>{
   const countries=topojson.feature(wd,wd.objects.countries);
-  function baseStyle(f){ const a3=NUM2A3[f.id]||''; const L=countryAny(a3),A=countryActive(a3),acc=DMAP[domain].accent;
-    return {fillColor:'#d8b24a',weight:L?1.0:0.4,opacity:L?0.5:0.16,color:L?'#b8912f':'rgba(205,190,150,0.22)',fillOpacity:0}; }
+  function baseStyle(f){ const a3=NUM2A3[f.id]||''; const L=countryAny(a3);
+    /* trackerdata.json is empty, so countryAny() is false for every country on
+       Earth and every outline was drawn in the "no data here" style: a faint
+       gold line on all 197, meaning nothing, over the top of the regime
+       boundaries that do mean something.
+       The layer stays - it is the click target for drilling into a country -
+       but it is drawn invisibly. If tracker data is ever loaded, the lit branch
+       below brings the gold back for the countries that have some. */
+    if(!L) return {stroke:false,weight:0,opacity:0,fillOpacity:0,fillColor:'transparent'};
+    return {fillColor:'#d8b24a',weight:1.0,opacity:0.5,color:'#b8912f',fillOpacity:0}; }
   function baseClick(f,latlng){ const a3=NUM2A3[f.id]||''; gbClickTime=Date.now();
     if(gbNav&&gbNav.iso&&a3&&a3!==gbNav.iso){ gbToWorld(); return; }   /* drilled into another country: step out first, then it's selectable */
     if(gbNav&&gbNav.iso===a3&&map.getZoom()>=6){
@@ -2249,14 +2283,21 @@ document.getElementById('subBox').addEventListener('click',e=>{ const c=e.target
  function up(){ on=false; document.removeEventListener("mousemove",move); document.removeEventListener("mouseup",up); document.removeEventListener("touchmove",move); document.removeEventListener("touchend",up); if(!moved){ p.classList.toggle("collapsed"); if(window._reflowInfo)_reflowInfo(); } }
  hdl.addEventListener("mousedown",down); hdl.addEventListener("touchstart",down,{passive:false}); hdl.style.cursor="move";
 })();
-(function(){ var p=document.getElementById("wirePanel"), hdl=p&&p.querySelector(".help-head"); if(!p||!hdl)return;
+// Both draggable panels use the same code. It was written for one id, so the
+// rundown panel split out of the wire inherited none of it - no drag, no
+// collapse - until this ran per panel.
+["wirePanel","rundownPanel"].forEach(function(_pid){
+(function(){ var p=document.getElementById(_pid), hdl=p&&p.querySelector(".help-head"); if(!p||!hdl)return;
  var sx,sy,sl,st,on=false,moved=false;
  function down(e){ var ev=e.touches?e.touches[0]:e; var r=p.getBoundingClientRect(); on=true; moved=false; sl=r.left; st=r.top; sx=ev.clientX; sy=ev.clientY; document.addEventListener("mousemove",move); document.addEventListener("mouseup",up); document.addEventListener("touchmove",move,{passive:false}); document.addEventListener("touchend",up); }
  function move(e){ if(!on)return; var ev=e.touches?e.touches[0]:e; var dx=ev.clientX-sx, dy=ev.clientY-sy; if(Math.abs(dx)>4||Math.abs(dy)>4){ moved=true; p.style.transition="none"; var w=p.offsetWidth, hh=p.offsetHeight; var nl=Math.max(4,Math.min(sl+dx, window.innerWidth-w-4)); var nt=Math.max(4,Math.min(st+dy, window.innerHeight-hh-4)); p.style.left=nl+"px"; p.style.top=nt+"px"; p.style.right="auto"; } if(e.cancelable)e.preventDefault(); }
  function up(){ on=false; document.removeEventListener("mousemove",move); document.removeEventListener("mouseup",up); document.removeEventListener("touchmove",move); document.removeEventListener("touchend",up); p._wasDrag=moved; }
  hdl.addEventListener("mousedown",down); hdl.addEventListener("touchstart",down,{passive:false}); hdl.style.cursor="move"; hdl.addEventListener("click",function(){ if(p._wasDrag){ p._wasDrag=false; return; } p.classList.toggle("collapsed"); document.body.classList.toggle("wire-up", p.classList.contains("collapsed")); if(window._reflowInfo)_reflowInfo(); });
 })();
-try{var _wp=document.getElementById("wirePanel"); if(_wp && window.L){ L.DomEvent.disableScrollPropagation(_wp); L.DomEvent.disableClickPropagation(_wp);} }catch(e){}
+});
+try{["wirePanel","rundownPanel"].forEach(function(id){
+  var _wp=document.getElementById(id);
+  if(_wp && window.L){ L.DomEvent.disableScrollPropagation(_wp); L.DomEvent.disableClickPropagation(_wp);} });}catch(e){}
 (function(){ var p=document.getElementById("indexPanel"), hdl=document.getElementById("idxHead"); if(!p||!hdl)return;
  var sx,sy,sl,st,on=false,moved=false;
  function down(e){ if(e.target && e.target.id==="idxToggle") return; var ev=e.touches?e.touches[0]:e; var r=p.getBoundingClientRect();
@@ -2285,7 +2326,7 @@ try{ var _ixt=document.getElementById('idxToggle'); if(_ixt){ _ixt.style.cursor=
 
 
 /* robust wheel-scroll for side panels (scroll without clicking; never zooms the map) */
-try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #indexPanel #idxBody, .wire-climate-static, #legend #legBody').forEach(function(el){
+try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #rundownPanel .wire-body, #indexPanel #idxBody, .wire-climate-static, #legend #legBody').forEach(function(el){
   el.addEventListener('wheel', function(e){ if(el.scrollHeight>el.clientHeight){ el.scrollTop += e.deltaY; e.stopPropagation(); e.preventDefault(); } }, {passive:false});
 }); }catch(e){}
 </script>
@@ -2542,7 +2583,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     none:"No national biosafety statute has been found for this country, and it is not a party to the Cartagena Protocol. Almost all of the thirteen in this position are micro-states or very small island states; two, South Sudan and Timor-Leste, are among the youngest countries in the world. This is a finding rather than a gap: each was checked against the Protocol’s own ratification list. It says nothing about whether engineered organisms arrive there, only that nothing here governs their arrival."};
       // Now they hold something.
   try{window.REGIMED=REGIMED;window.REGIMES=REGIMES;}catch(e){}
-  var REGIMEON=new Set(['technique','trait','carveout']);
+  var REGIMEON=new Set(['technique','trait','carveout','none']);
   // A carve-out is not a third way of deciding what counts as engineered, so it
   // no longer gets a third colour. The country is drawn in the colour of the
   // scheme the exemption is cut out of - technique, for all 42 of them - and the
@@ -3013,17 +3054,15 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
     // the overlap is the lesser fault.
     return Math.min((R + 2.5) / Math.sin(Math.PI / n), 54);
   }
+  // Scaling this to the drawn radius made every marker move as the map zoomed,
+  // because the radius changes with zoom: a dot appeared in one place at world
+  // view and slid into position as you came in. The offset is a fixed number of
+  // pixels again. Separation is the fan's job — it sizes its own ring to the
+  // markers in it — and this only keeps the kinds from sitting on each other.
   function pjCluPt(m, g){
-    var pt = m.latLngToContainerPoint([g.la, g.lo]);
-    var R = pjFanRing(m, g);
-    if(!R) return pt;
-    var n = g._sib.length, i = g._fi || 0;
-    // A pair goes left and right rather than up and down: a country centroid
-    // sits in something usually wider than it is tall, so a horizontal pair
-    // stays inside the country it belongs to.
-    var a = (n === 2) ? (i ? 0 : Math.PI)
-                      : (-Math.PI / 2 + (2 * Math.PI * i) / n);
-    return L.point(pt.x + R * Math.cos(a), pt.y + R * Math.sin(a));
+    var pt = m.latLngToContainerPoint([g.la, g.lo]), d = pjNudge(g);
+    if(!d[0] && !d[1]) return pt;
+    return L.point(pt.x + d[0], pt.y + d[1]);
   }
   function pjClusters(z){
     if(_pjClu) return _pjClu;   // zoom-invariant: built once per filter change
@@ -3507,6 +3546,9 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #i
       this._onClick=function(ev){ if(ev&&ev.target&&ev.target.closest&&ev.target.closest('.leaflet-control'))return;
         if(!pjOn||map.getZoom()<PJ_CLICK_MINZ)return;
         var cp=map.mouseEventToContainerPoint(ev);
+        // A pan ends in a mouseup at a different point from the mousedown, and
+        // that was collapsing whatever the reader had just expanded.
+        if(window.__pjDragged){ window.__pjDragged=false; return; }
         var g=self._nearestClu(cp);
         // A cluster of one is still a cluster. The n>1 test sent every
         // single-record centroid down the fallback path, where _nearest() looks
@@ -4118,7 +4160,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     // Round 86. The swatch is now the same shape as the thing it stands for: a
     // bar of the colour the country's border is drawn in, at the width it is
     // drawn at, rather than a small square that read as a generic bullet.
-    ['technique','trait'].forEach(function(k){
+    ['technique','trait','none'].forEach(function(k){
       h+='<label title="'+window.REGIMEL[k].replace(/"/g,'&quot;')+'">'
         +'<input type="checkbox" data-reg="'+k+'" checked>'
         +'<span class="reg-sw" style="background:'+window.REGIMEC[k]
@@ -4193,6 +4235,9 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 .reg-sw-carve i{flex:1 1 auto;border:1.5px dashed #b08d3e;border-radius:2px;
   background:transparent;box-sizing:border-box;}
 .ot-key{display:flex;align-items:center;gap:6px;font-size:10.5px;color:#9aa8c0;margin:0 0 3px;}
+.tw-q{display:inline-block;margin-left:6px;font-size:9px;letter-spacing:.2px;color:#8fa4c6;cursor:pointer;border-bottom:1px dotted rgba(143,164,198,.6);white-space:nowrap;}
+.tw-q:hover{color:#dfe7f5;border-bottom-color:#dfe7f5;}
+.tw-note{font-size:10px;line-height:1.5;color:#a8b3cc;margin:2px 0 6px 18px;padding-left:7px;border-left:2px solid rgba(120,140,180,.35);}
 .ot-note{font-size:9.5px;color:#7d8ba1;line-height:1.45;margin:4px 0 2px;}
 .ot-area{width:13px;height:8px;border-radius:2px;opacity:.6;}
 </style>
@@ -6542,6 +6587,43 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // at", and the whole point of this layer is that a country outside a treaty is
   // a fact rather than a gap - the United States is not a Cartagena party, and
   // that absence explains why it files no decisions anywhere else on this map.
+  // Each treaty gets a fold in the key box. A radio button labelled
+  // "Nagoya-Kuala Lumpur" tells a reader nothing about what they are switching
+  // on, and these five differ in exactly the way that matters: what each one
+  // obliges a country to do.
+  var TREATY_WHAT = {
+    cartagena:
+      "Governs the movement of living modified organisms between countries. A "
+      + "party must decide before a first import for release and file that "
+      + "decision publicly within fifteen days. Almost every national biosafety "
+      + "law on this map exists because its country joined this. 172 countries "
+      + "are parties; the United States and Argentina, two of the largest "
+      + "growers of engineered crops on Earth, are not.",
+    nagoya_kl:
+      "Liability and redress: it answers the question Cartagena leaves open, "
+      + "which is who pays when a released organism causes damage. Only 54 "
+      + "countries have joined, against Cartagena's 172. That gap is the most "
+      + "pointed number on this map \u2014 two-thirds of the states that agreed "
+      + "to notify have not agreed to be liable.",
+    upov91:
+      "Plant variety rights under the 1991 act, which restricts what a farmer "
+      + "may do with seed saved from their own harvest. 61 countries are bound "
+      + "by it. Countries usually move onto it through a trade agreement rather "
+      + "than a domestic decision, which is why the map of who has signed looks "
+      + "like a map of who has negotiated with whom.",
+    upov78:
+      "The earlier plant variety act, which leaves farm-saved seed alone. "
+      + "Seventeen countries remain on it \u2014 most of South America plus "
+      + "China \u2014 and they are under steady pressure to move to 1991. Which "
+      + "act a country signed is the seed-sovereignty argument in one variable.",
+    plant_treaty:
+      "The multilateral system for exchanging crop genetic material, and for "
+      + "sharing what comes of it. 152 countries are parties. The absences are "
+      + "the interesting part: China and Russia are outside it and the United "
+      + "States is inside, which is the reverse of the Cartagena pattern and "
+      + "shows that a country's position is taken treaty by treaty rather than "
+      + "as a general stance."
+  };
   var TREATY_DEFS = [
     {k:'cartagena',    label:'Cartagena Protocol \u2014 biosafety',        c:'#4a7a8c'},
     {k:'nagoya_kl',    label:'Nagoya\u2013Kuala Lumpur \u2014 liability',   c:'#8c5a4a'},
@@ -6618,12 +6700,27 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       h += '<label title="'+d.label.replace(/"/g,'&quot;')+'">'
         +  '<input type="radio" name="pjTreaty" value="'+d.k+'">'
         +  '<span class="ot-dot ot-edge" style="border-color:'+d.c+';background:'+d.c+'"></span>'
-        +  d.label.split(' \u2014 ')[0]+'</label>';
+        +  d.label.split(' \u2014 ')[0]
+        +  '<span class="tw-q" data-tw="'+d.k+'" title="what this treaty obliges a '
+        +  'country to do">what it does</span>'
+        +  '</label>'
+        +  '<div class="tw-note" id="tw-'+d.k+'" style="display:none">'
+        +  _esc(TREATY_WHAT[d.k] || '') + '</div>';
     });
     box.innerHTML = h;
     host.parentNode.insertBefore(head, host.nextSibling);
     host.parentNode.insertBefore(box, head.nextSibling);
     box.parentNode.insertBefore(note, box.nextSibling);
+    // The question mark opens the fold without selecting the treaty, so a
+    // reader can find out what something is before switching it on.
+    box.addEventListener('click', function(e){
+      var q = e.target && e.target.classList && e.target.classList.contains('tw-q')
+              ? e.target : null;
+      if(!q) return;
+      e.preventDefault(); e.stopPropagation();
+      var n = document.getElementById('tw-' + q.dataset.tw);
+      if(n) n.style.display = (n.style.display === 'none') ? 'block' : 'none';
+    });
     box.addEventListener('change', function(e){
       var t=e.target;
       if(!t || t.name!=='pjTreaty') return;
@@ -7221,6 +7318,13 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   /* move fires throughout a pan and an animated zoom, which is what keeps the
      edge off screen while the gesture is still running. */
   map.on('move zoom zoomend moveend resize viewreset', cover);
+
+  // The flag the click handler reads. dragstart fires only for a real pan, so
+  // this cannot be tripped by a click that happens to wobble a pixel.
+  try{
+    map.on('dragstart', function(){ window.__pjDragged = true; });
+    map.on('mousedown', function(){ window.__pjDragged = false; });
+  }catch(e){}
   map.whenReady(cover);
   cover();
 
@@ -7255,7 +7359,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-17 07:03";
+  var BUILD = "BUILD-2026-08-17 19:23";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
