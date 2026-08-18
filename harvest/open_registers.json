@@ -1,0 +1,2353 @@
+{
+ "generated": "2026-08-18",
+ "bch": [
+  {
+   "name": "TUC-873RH-7 - Herbicide-tolerant sugarcane",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115057-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c171"
+  },
+  {
+   "name": "CTC-14117-4 - Sugarcane modified for insect resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-112454-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b746"
+  },
+  {
+   "name": "Sugar cane resistant to herbicide",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-100335-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187ef"
+  },
+  {
+   "name": "MON-89788-1 - Roundup Ready2Yield™ soybean",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-40284-18",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000009d5c"
+  },
+  {
+   "name": "GloFish® Electric Green® Tetra",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-281471-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000044b7f"
+  },
+  {
+   "name": "Red fluorescent zebrafish",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-260324-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f8e4"
+  },
+  {
+   "name": "Green fluorescent zebrafish",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-260325-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f8e5"
+  },
+  {
+   "name": "GloFish®",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-45406-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000b15e"
+  },
+  {
+   "name": "CTC-932Ø9-4 - Insect resistant sugarcane",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115563-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c36b"
+  },
+  {
+   "name": "Sugar cane resistant to fungi",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-100327-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187e7"
+  },
+  {
+   "name": "Sugar cane resistant to fungi and herbicide",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-100324-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187e4"
+  },
+  {
+   "name": "Sugar cane resistant to fungi and tolerant to the herbicide Basta",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-100330-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187ea"
+  },
+  {
+   "name": "Canola MPS964 Phytaseed™ (phytase-producing)",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-15382-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c16"
+  },
+  {
+   "name": "Chicory RM3-4 modified for tolerance to herbicides",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-15403-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c2b"
+  },
+  {
+   "name": "INI-FMAPDF-6 - Common Bean modified for fungal resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-108263-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a6e7"
+  },
+  {
+   "name": "DAS-24236-5 × DAS-21Ø23-5 × MON-88913-8 - Widestrike™ Roundup Ready Flex™ cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-15169-12",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003b41"
+  },
+  {
+   "name": "ACS-GMØØ8-6 - Herbicide-tolerant soybean",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-15418-5",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c3a"
+  },
+  {
+   "name": "Potato producing vaccine against cholera",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-103103-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000192bf"
+  },
+  {
+   "name": "Garden Pea modified for the expression of a single chain antibody (scFv) in the seed",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-103028-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019274"
+  },
+  {
+   "name": "Wheat modified for increased protein content",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-102891-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000191eb"
+  },
+  {
+   "name": "Poplar with modified lignin",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-102141-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018efd"
+  },
+  {
+   "name": "High-protein, antibiotic and herbicide resistant wheat SUTAP60",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-102892-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000191ec"
+  },
+  {
+   "name": "IFD-264Ø7-2 - Moonvelvet carnation",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104609-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000198a1"
+  },
+  {
+   "name": "Rice modified for Ultraviolet- B radiation sensitivity",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104772-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019944"
+  },
+  {
+   "name": "ACS-BNØØ5-8 × ACS-BNØØ3-6 × MON-ØØØ73-7 - Male Sterile/ Fertility Restored Herbicide Tolerant Canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104829-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001997d"
+  },
+  {
+   "name": "Flax modified for improved ability to bind heavy metals",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104318-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001977e"
+  },
+  {
+   "name": "Rice modified for Ultraviolet- B radiation resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104771-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019943"
+  },
+  {
+   "name": "MON-15985-7 - Bollgard II™ cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14774-19",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039b6"
+  },
+  {
+   "name": "AAT-7Ø9AA-4 - Pod Borer-resistant cowpea",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-114444-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001bf0c"
+  },
+  {
+   "name": "NMK-89812-3 - New Leaf™ Russet Burbank potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14790-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039c6"
+  },
+  {
+   "name": "MON-ØØ1Ø1-8 - Roundup Ready™ alfalfa",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-15330-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003be2"
+  },
+  {
+   "name": "MON-ØØ163-7 - Roundup Ready™ alfalfa",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-15331-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003be3"
+  },
+  {
+   "name": "MON-883Ø2-9 × ACS-BNØØ5-8 × ACS-BNØØ3-6 - Male sterile, herbicide tolerant canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-106345-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019f69"
+  },
+  {
+   "name": "MON-ØØ179-5 - Reduced Lignin Alfalfa",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-105598-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019c7e"
+  },
+  {
+   "name": "NMK-89576-1 - Superior NewLeaf™ potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14900-10",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a34"
+  },
+  {
+   "name": "NMK-8917Ø-9 - Atlantic NewLeaf™ potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14787-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039c3"
+  },
+  {
+   "name": "NMK-89761-6 - Atlantic NewLeaf™ potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14789-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039c5"
+  },
+  {
+   "name": "MON-ØØ757-7 - Bollgard™ cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14777-8",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039b9"
+  },
+  {
+   "name": "MON-89924-2 - Bollgard™ cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14785-8",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039c1"
+  },
+  {
+   "name": "QUT-QCAV4-6 - Banana resistant to Fusarium Wilt Tropical Race 4",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-280168-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000044668"
+  },
+  {
+   "name": "SYN-IR162-4 × SYN-IR6Ø4-5 × MON-89Ø34-3 - Insect-resistant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-269708-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000041d8c"
+  },
+  {
+   "name": "SYN-IR6Ø4-5 × MON-89Ø34-3 × SYN-Ø53Ø7-1 - Insect-resistant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-269713-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000041d91"
+  },
+  {
+   "name": "Female-specific Dominant Lethal Olive Fly",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-105039-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019a4f"
+  },
+  {
+   "name": "Rice Modified for Multiple Disease Resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-103735-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019537"
+  },
+  {
+   "name": "BXN™ Plus Bollgard™ Cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-105479-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019c07"
+  },
+  {
+   "name": "BXN™ Plus Bollgard™ Cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-105478-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019c06"
+  },
+  {
+   "name": "SYN-IR162-4 × MON-89Ø34-3 × SYN-Ø53Ø7-1 - Insect-resistant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-269723-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000041d9b"
+  },
+  {
+   "name": "BXN™ Plus Bollgard™ Cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-105480-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019c08"
+  },
+  {
+   "name": "DP-Ø61Ø61-7 - Glyphosate tolerant canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-105040-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019a50"
+  },
+  {
+   "name": "FGN-Ø1A21-5 × FGN-Ø3S19-5 × FGN-Ø6K59-4 - Insect-resistant, herbicide-tolerant, high yield eucalyptus",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-272539-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000004289b"
+  },
+  {
+   "name": "FGN-Ø1A21-5 × FGN-Ø3S19-5 - Herbicide-tolerant, high yield eucalyptus",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-272540-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000004289c"
+  },
+  {
+   "name": "FGN-Ø1A21-5 × FGN-Ø6K59-4 - Insect-resistant, high yield eucalyptus",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-272541-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000004289d"
+  },
+  {
+   "name": "FGN-Ø3S19-5 × FGN-Ø6K59-4 - Herbicide-tolerant, insect-resistant eucalyptus",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-272542-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000004289e"
+  },
+  {
+   "name": "DP-Ø9814Ø-6 - Optimum™ GAT™ maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-48466-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000bd52"
+  },
+  {
+   "name": "MON-87751-7 × MON-877Ø1-2 × MON-877Ø8-9 × MON-89788-1 - Herbicide tolerant insect resistant soybean",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-111951-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b54f"
+  },
+  {
+   "name": "FGN-Ø4K22-1 - Herbicide-tolerant eucalpytus",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-260712-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003fa68"
+  },
+  {
+   "name": "GalSafe® pig",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-263132-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000403dc"
+  },
+  {
+   "name": "SN-2128Ø1-2 - Blue-violet chrysanthemum",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-263160-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000403f8"
+  },
+  {
+   "name": "SN-2Ø18Ø6-5 - Blue-violet chrysanthemum",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-263161-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000403f9"
+  },
+  {
+   "name": "SN-2Ø22Ø1-4 - Violet chrysanthemum",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-263162-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000403fa"
+  },
+  {
+   "name": "SN-2Ø37Ø1-1 - Blue chrysanthemum",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-263163-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000403fb"
+  },
+  {
+   "name": "SN-2Ø8133-5 - Violet chrysanthemum",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-263164-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000403fc"
+  },
+  {
+   "name": "BioCassava Pro-vitamin A cassava",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-263490-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000040542"
+  },
+  {
+   "name": "BCS-BNØ12-7 × ACS-BNØØ3-6 - Fertility restored, Glufinosate tolerant canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115683-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c3e3"
+  },
+  {
+   "name": "BCS-BNØ12-7 × ACS-BNØØ3-6 × MON-883Ø2-9 - Fertility restored, Herbicide tolerant canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115686-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c3e6"
+  },
+  {
+   "name": "Barley modified for the production of LL-37 peptide",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115698-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c3f2"
+  },
+  {
+   "name": "Barley modified for the production of LL-37 peptide",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115699-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c3f3"
+  },
+  {
+   "name": "SYN-IR162-4 × SYN-IR6Ø4-5 × MON-89Ø34-3 × SYN-Ø53Ø7-1 - Insect-resistant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-269701-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000041d85"
+  },
+  {
+   "name": "Maize with modified growth characteristics",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-277137-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000043a91"
+  },
+  {
+   "name": "DPS-2ØØV2-2 - Pod borer resistant cowpea",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-277225-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000043ae9"
+  },
+  {
+   "name": "Pod borer resistant cowpea",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-277250-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000043b02"
+  },
+  {
+   "name": "Poplar with decreased lignin content",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-277310-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000043b3e"
+  },
+  {
+   "name": "Genome-edited maize for increased growth under stress",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-277317-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000043b45"
+  },
+  {
+   "name": "Genome-edited maize for increased growth under stress",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-277318-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000043b46"
+  },
+  {
+   "name": "BXN™ Plus Bollgard™ Cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-105481-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019c09"
+  },
+  {
+   "name": "BXN™ Plus Bollgard™ Cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-105482-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019c0a"
+  },
+  {
+   "name": "MON-87712-4 - Soybean modified for increased yield",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-105601-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019c81"
+  },
+  {
+   "name": "SMG-368ØØ-2 - Roundup Ready® Creeping Bentgrass",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-105604-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019c84"
+  },
+  {
+   "name": "Rice Modified for Multiple Disease Resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104874-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000199aa"
+  },
+  {
+   "name": "Rice Modified for Multiple Disease Resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104875-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000199ab"
+  },
+  {
+   "name": "Rice Modified for Multiple Disease Resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104879-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000199af"
+  },
+  {
+   "name": "Rice Modified for Multiple Disease Resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104880-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000199b0"
+  },
+  {
+   "name": "Rice Modified for Multiple Disease Resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104881-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000199b1"
+  },
+  {
+   "name": "Papaya modified for delayed ripening",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104889-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000199b9"
+  },
+  {
+   "name": "ARSOlux Biosensor",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104942-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000199ee"
+  },
+  {
+   "name": "SYN-IR162-4 × SYN-IR6Ø4-5 × SYN-Ø53Ø7-1 - Insect resistant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115549-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c35d"
+  },
+  {
+   "name": "Oilseed rape modified for an altered fatty acid metabolism in the seeds",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-110914-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b142"
+  },
+  {
+   "name": "Oilseed rape modified for an altered fatty acid metabolism in the seeds",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-110915-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b143"
+  },
+  {
+   "name": "Rubber tree modified to express Human atrial natriuretic factor",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-108909-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a96d"
+  },
+  {
+   "name": "Rubber tree modified to express the scFv4715 antibody fragment",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-108912-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a970"
+  },
+  {
+   "name": "AAT-7Ø9AA-4 × AAT-Ø245F-3 - Cowpea resistant to maruca pod borer",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-114508-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001bf4c"
+  },
+  {
+   "name": "Cisgenic barley with improved phytase activity",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-114555-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001bf7b"
+  },
+  {
+   "name": "Cassava modified for high starch yield, increased photosynthetic capacity, and ACMV resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-114704-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c010"
+  },
+  {
+   "name": "Cassava modified for increased starch yield, elevated photosynthesis, and ACMV resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-114705-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c011"
+  },
+  {
+   "name": "Cassava modified for high starch yield, increased photosynthetic capacity, and ACMV resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-114706-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c012"
+  },
+  {
+   "name": "MON-15985-7 × MON-887Ø1-3 × MON-88913-8 - Insect resistant, Herbicide tolerant Cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-108887-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a957"
+  },
+  {
+   "name": "Barley modified for increased fungal resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-108905-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a969"
+  },
+  {
+   "name": "Rubber tree modified to express a reporter gene",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-108906-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a96a"
+  },
+  {
+   "name": "Rubber tree modified to express Human Protamine 1",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-108908-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a96c"
+  },
+  {
+   "name": "Oilseed rape modified for an altered fatty acid metabolism in the seeds",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-110916-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b144"
+  },
+  {
+   "name": "Oilseed rape modified for an altered fatty acid metabolism in the seeds",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-110917-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b145"
+  },
+  {
+   "name": "Oilseed rape modified for an altered fatty acid metabolism in the seeds",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-110918-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b146"
+  },
+  {
+   "name": "Oilseed rape modified for an altered fatty acid metabolism in the seeds",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-110919-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b147"
+  },
+  {
+   "name": "SYN-IR162-4 × SYN-Ø53Ø7-1 - Insect resistant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-112642-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b802"
+  },
+  {
+   "name": "Canola modified for the expression of chicken interferon alpha",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-108268-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a6ec"
+  },
+  {
+   "name": "Barley modified for tolerance to drought and nutrient deficiencies",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-108704-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a8a0"
+  },
+  {
+   "name": "Barley modified for tolerance to drought and nutrient deficiencies",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-108706-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a8a2"
+  },
+  {
+   "name": "Barley modified for tolerance to drought and nutrient deficiencies",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-108708-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a8a4"
+  },
+  {
+   "name": "Barley modified for tolerance to drought and nutrient deficiencies",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-108710-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a8a6"
+  },
+  {
+   "name": "Black Nightshade with reduced pathogenesis-related protein 1S synthesis.",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-108713-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a8a9"
+  },
+  {
+   "name": "Black Nightshade with reduced pathogenesis-related protein 1S synthesis",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-108714-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a8aa"
+  },
+  {
+   "name": "Streptococcus thermophilus T102 containing synthetic luxA, luxB genes and chloramphenicol-acetyl-transferase gene",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-100383-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001881f"
+  },
+  {
+   "name": "IR-ØØGR2E-5 - Provitamin A biofortified rice",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-112997-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b965"
+  },
+  {
+   "name": "NMK-89653-6 - New Leaf™ Y Russet Burbank potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14903-8",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a37"
+  },
+  {
+   "name": "NMK-89185-6 - New Leaf™ Plus Russet Burbank potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14897-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a31"
+  },
+  {
+   "name": "ACS-OSØØ2-5 - Liberty Link™ rice",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14859-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a0b"
+  },
+  {
+   "name": "NMK-89279-1 - Atlantic NewLeaf™ potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14898-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a32"
+  },
+  {
+   "name": "FLO-4Ø619-8 - Moonshade™ carnation",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14828-9",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039ec"
+  },
+  {
+   "name": "FLO-11226-9 - Moonshade™ carnation",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14829-8",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039ed"
+  },
+  {
+   "name": "FLO-11351-8 - Moonshade™ carnation",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14830-8",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039ee"
+  },
+  {
+   "name": "FLO-Ø7442-5 - Moondust™ carnation",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14836-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039f4"
+  },
+  {
+   "name": "FLO-ØØØ66-9 - Long vase life carnation",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14839-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039f7"
+  },
+  {
+   "name": "FLO-ØØØØ4-1 - Moondust™ carnation",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14840-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039f8"
+  },
+  {
+   "name": "FLO-ØØØ15-3 - Moondust™ carnation",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14837-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039f5"
+  },
+  {
+   "name": "FLO-ØØØ16-4 - Moondust™ carnation",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14838-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039f6"
+  },
+  {
+   "name": "ACS-ZMØØ4-3 - Starlink™ maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14862-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a0e"
+  },
+  {
+   "name": "NMK-89167-6 - New Leaf™ Russet Burbank potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14894-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a2e"
+  },
+  {
+   "name": "NMK-89175-5 - New Leaf™ Russet Burbank potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14895-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a2f"
+  },
+  {
+   "name": "MON-15985-7 × MON-Ø1445-2 - Roundup Ready™ Bollgard II™ cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14875-8",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a1b"
+  },
+  {
+   "name": "DP-32138-1 - 32138 SPT Maintainer",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-105060-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019a64"
+  },
+  {
+   "name": "ACS-ZMØØ5-4 - InVigor™ maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14863-11",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a0f"
+  },
+  {
+   "name": "ACS-OSØØ1-4 - Liberty Link™ rice",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14858-5",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a0a"
+  },
+  {
+   "name": "Cowpea resistant to lepidoptera pests",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-103630-5",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000194ce"
+  },
+  {
+   "name": "Potato with altered starch quality",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-103636-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000194d4"
+  },
+  {
+   "name": "Potato with modified starch composition",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-103651-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000194e3"
+  },
+  {
+   "name": "Barley modified for the production of LL-37 peptide",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115700-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c3f4"
+  },
+  {
+   "name": "MON-87427-7 × MON-ØØ81Ø-6 - Herbicide tolerant, insect resistant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115718-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c406"
+  },
+  {
+   "name": "ESF-DAR58-3 - Blight-tolerant Darling 58 American Chestnut",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115759-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c42f"
+  },
+  {
+   "name": "FLO-4Ø686-3 - Moonstrike™ carnation",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115776-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c440"
+  },
+  {
+   "name": "FLO-4Ø62Ø-9 - Moonburst™ carnation",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115777-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c441"
+  },
+  {
+   "name": "Maize with altered growth and tolerance to herbicides",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115131-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c1bb"
+  },
+  {
+   "name": "MON-87427-7 × SYN-IR162-4 - Herbicide tolerant, Insect resistant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115663-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c3cf"
+  },
+  {
+   "name": "MON-ØØ1Ø1-8 × MON-ØØ163-7 - Roundup Ready™ alfalfa",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-16135-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003f07"
+  },
+  {
+   "name": "Potato modified to synthesise fusion spider silk fragment/ elastin protein",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-100316-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187dc"
+  },
+  {
+   "name": "Papaya transformed with a viral coat protein that confers resistance to PRSV",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-100307-8",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187d3"
+  },
+  {
+   "name": "Maize with altered growth and tolerance to herbicides",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-103523-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019463"
+  },
+  {
+   "name": "Potato modified for the production of spider silk protein",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-103555-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019483"
+  },
+  {
+   "name": "Sorghum with modified levels of vitamin A, zinc and iron",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-103628-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000194cc"
+  },
+  {
+   "name": "ACS-BNØØ5-8 × MON-ØØØ73-7 - Male-sterile, Herbicide-tolerant canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-116284-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c63c"
+  },
+  {
+   "name": "ACS-BNØØ3-6 × MON-ØØØ73-7 - Herbicide tolerant, male fertility restoring canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-116285-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c63d"
+  },
+  {
+   "name": "ALVAC‐HIV Vaccine",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-116157-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c5bd"
+  },
+  {
+   "name": "Herbicide-tolerant Indian mustard (RF3 juncea canola)",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-262997-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000040355"
+  },
+  {
+   "name": "CTC-79ØØ5-2 - Insect-resistant sugarcane",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-261452-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003fd4c"
+  },
+  {
+   "name": "NS-B5ØØ27-4 - DHA canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-113306-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001ba9a"
+  },
+  {
+   "name": "NPS-Ø12Ø1-8 - Purple Tomato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-263016-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000040368"
+  },
+  {
+   "name": "MON-883Ø2-9 - TruFlex Roundup Ready™ Canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104752-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019930"
+  },
+  {
+   "name": "Genome-edited drought tolerant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-277322-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000043b4a"
+  },
+  {
+   "name": "Lignin-modified maize (Maize CCR1)",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-277339-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000043b5b"
+  },
+  {
+   "name": "Lignin-modified maize (Maize CCR2)",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-277340-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000043b5c"
+  },
+  {
+   "name": "Lignin-modified maize (Maize CCR3)",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-277341-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000043b5d"
+  },
+  {
+   "name": "INNOVAX-ND-IBD",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-277353-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000043b69"
+  },
+  {
+   "name": "Pseudomonas fluorescens strain SBW25 modified for biocontrol of fungal pathogens",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-100725-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018975"
+  },
+  {
+   "name": "Barley modified for increased (1,3-1,4)-β-glucan degradation",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-108902-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a966"
+  },
+  {
+   "name": "Tobacco modified for antibiotic resistance and GFP expression",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-109069-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001aa0d"
+  },
+  {
+   "name": "Maize modified for herbicide tolerance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-110306-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001aee2"
+  },
+  {
+   "name": "REN-ØØØ38-3 - Mavera™ maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-15103-8",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003aff"
+  },
+  {
+   "name": "MON-948Ø4-4 - Short-stature maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-277049-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000043a39"
+  },
+  {
+   "name": "SEM-ØZW2Ø-7 - Virus-resistant squash",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-15218-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003b72"
+  },
+  {
+   "name": "ACS-BNØØ8-2 - Herbicide Tolerant Canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14762-14",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039aa"
+  },
+  {
+   "name": "DD-Ø26ØØ5-3 - High oleic acid soybean",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14769-8",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039b1"
+  },
+  {
+   "name": "ACS-BNØØ4-7 - InVigor™ canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14756-5",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039a4"
+  },
+  {
+   "name": "ACS-BNØØ5-8 × ACS-BNØØ3-6 - InVigor™ canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14760-9",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039a8"
+  },
+  {
+   "name": "ACS-BNØØ7-1 - Liberty-Link™ Innovator Canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14761-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039a9"
+  },
+  {
+   "name": "Giant Potato",
+   "iso": "",
+   "identifier": "bchtrg-lmo-scbd-265274-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000040c3a"
+  },
+  {
+   "name": "DKB-89614-9 - Bt Xtra™ maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14770-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039b2"
+  },
+  {
+   "name": "SYN-EV176-9 - NaturGard KnockOut™ maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14751-10",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000399f"
+  },
+  {
+   "name": "SYN-IR6Ø4-5 × MON-89Ø34-3 - Insect-resistant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-269726-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000041d9e"
+  },
+  {
+   "name": "MON-89Ø34-3 × SYN-Ø53Ø7-1 - Insect-resistant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-269727-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000041d9f"
+  },
+  {
+   "name": "AAT-Ø245F-3 - Pod borer-resistant cowpea",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-269931-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000041e6b"
+  },
+  {
+   "name": "FGN-Ø3S19-5 - Herbicide-tolerant eucalyptus",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-272464-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000042850"
+  },
+  {
+   "name": "FGN-Ø6K59-4 - Insect-resistant eucalyptus",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-272537-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000042899"
+  },
+  {
+   "name": "CGN-89111-8 - High oleic acid canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14780-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039bc"
+  },
+  {
+   "name": "DAS-24236-5 × DAS-21Ø23-5 × MON-Ø1445-2 - WideStrike™ Roundup Ready™ cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14798-9",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039ce"
+  },
+  {
+   "name": "Hybrid glyphosate herbicide tolerant Canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14821-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039e5"
+  },
+  {
+   "name": "CGN-89322-3 - Delayed-ripening tomato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14781-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039bd"
+  },
+  {
+   "name": "PH-MON8Ø9-2 - Insect-resistant maize MON809",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14779-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039bb"
+  },
+  {
+   "name": "CGN-89465-2 - High oleic acid canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14782-5",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039be"
+  },
+  {
+   "name": "DD-Ø1951A-7 - Herbicide-tolerant cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14783-5",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039bf"
+  },
+  {
+   "name": "PH-ØØØ678-9 - Male-sterile, herbicide-tolerant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14792-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039c8"
+  },
+  {
+   "name": "DKB-8979Ø-5 - Herbicide-tolerant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14771-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039b3"
+  },
+  {
+   "name": "ACS-BNØØ4-7 × ACS-BNØØ1-4 - InVigor™ canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14757-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039a5"
+  },
+  {
+   "name": "ACS-BNØØ4-7 × ACS-BNØØ2-5 - InVigor™ canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14758-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039a6"
+  },
+  {
+   "name": "ACS-ZMØØ1-9 - InVigor™ maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14765-14",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039ad"
+  },
+  {
+   "name": "FLO-4Ø644-6 - Moonlite™ carnation",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14834-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039f2"
+  },
+  {
+   "name": "MON-718ØØ-4 - Roundup Ready™ wheat",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-45398-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000b156"
+  },
+  {
+   "name": "BPS-25271-9 - Amflora™Potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-15100-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003afc"
+  },
+  {
+   "name": "DAS-Ø6275-8 - Herbicide-tolerant, insect-resistant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-15187-5",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003b53"
+  },
+  {
+   "name": "TIC-AR233-5 - Potato Virus Y-resistant Potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115053-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c16d"
+  },
+  {
+   "name": "VECTORMUNE® ND",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115064-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c178"
+  },
+  {
+   "name": "Poplar with modified lignin",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115134-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c1be"
+  }
+ ],
+ "ogtr": [
+  {
+   "title": "NESP MBH A1 Euryhaline Elasmobranchs Fishing Database",
+   "org": "Australian Ocean Data Network",
+   "files": [
+    {
+     "name": "DATA ACCESS - Euryhaline Elasmobranch Database (.acccb) - updated 25/10/17 [direct download]",
+     "format": "HTML",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/1_NERP_NESP_euryhaline elasmo_database_06Apr20.accdb"
+    },
+    {
+     "name": "PUBLICATION: A guide to sharks of Kakadu rivers",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/A5_Kakadu_Shark_Guide_8pp_12-13_PRINT.pdf"
+    },
+    {
+     "name": "PUBLICATION: Complete mitochondrial genome of the endangered narrow sawfish Anoxypristis cuspidata (Rajiformes: Pristidae)",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Chen_etal_Anoxypristis_cuspidata_complete_mitochondrial_genome_early_online.pdf"
+    },
+    {
+     "name": "PUBLICATION: Complete mitochondrial genome of the Critically Endangered speartooth shark Glyphis glyphis (Carcharhiniformes: Carcharhinidae)",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Chen_etal_Glyphis_glyphis_complete_mitochondrial_genome__2014.pdf"
+    },
+    {
+     "name": "PUBLICATION: Australia’s protected area network fails to adequately protect the world’s most threatened marine fishes",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Devitt_etal_Sawfish_Australian_protected_areas_2015.pdf"
+    },
+    {
+     "name": "PUBLICATION: Comparison of fin and muscle tissues for analysis of signature fatty acids in tropical euryhaline sharks",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Every_etal_Euryhaline_shark_tissue_fatty_acid_comparison_2016.pdf"
+    },
+    {
+     "name": "PUBLICATION: Complete mitochondrial genome of the Pigeye Shark Carcharhinus amboinensis (Carcharhiniformes: Carcharhinidae)",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Feutry_etal_Carcharhinus_amblyrhynchoides_complete_mitogenome_2016.pdf"
+    },
+    {
+     "name": "PUBLICATION: Complete mitogenomic sequence of the Critically Endangered Northern River Shark Glyphis garricki (Carcharhiniformes: Carcharhinidae)",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Feutry_etal_Glyphis_garricki_complete_mitogenome_2015.pdf"
+    },
+    {
+     "name": "PUBLICATION: The phylogenomic position of the Winghead Shark Eusphyra blochii (Carcharhiniformes, Sphyrnidae) inferred from the mitochondrial genome",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Feutry_etal_Eusphyra_blochii_phylogenomic_position_2016.pdf"
+    },
+    {
+     "name": "PUBLICATION: Mitogenomics of the Speartooth Shark challenges ten years of control region sequencing",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Feutry_etal_Glyphis_glyphis_mitogenomics_population_structure_2014.pdf"
+    },
+    {
+     "name": "PUBLICATION: Whole mitogenome sequencing refines population structure of the Critically Endangered sawfish Pristis pristis",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Feutry_etal_Pristis_pristis_mitogenomics_population_structure_2015.pdf"
+    },
+    {
+     "name": "PUBLICATION: Complete mitochondrial genome of the Freshwater Whipray Himantura dalyensis",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Feutry_etal_Himantura_dalyensis_complete_mitogenome_2016.pdf"
+    },
+    {
+     "name": "PUBLICATION: Whole mitogenome of the Endangered dwarf sawfish Pristis clavata (Rajiformes: Pristidae)",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Feutry_etal_Pristis_clavata_complete_mitogenome_2015.pdf"
+    },
+    {
+     "name": "PUBLICATION: Occurrence of a Sharksucker ('Echeneis naucrates') on a Northern River Shark ('Glyphis garricki') in a tidal riverine habitat",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Kyne_Sharksucker_on_Glyphis_garricki_2015.pdf"
+    },
+    {
+     "name": "PUBLICATION: Complete mitogenome of the Graceful Shark Carcharhinus amblyrhynchoides (Carcharhiniformes: Carcharhinidae)",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Feutry_etal_Carcharhinus_amblyrhynchoides_complete_mitogenome_2016.pdf"
+    },
+    {
+     "name": "PUBLICATION: Protocols for Surveying and Tagging Sawfishes and River Sharks",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Kyne_Pillans_Protocols_surveying_tagging_sawfishes_riversharks_2014.pdf"
+    },
+    {
+     "name": "PUBLICATION: Kakadu National Park Landscape Symposia Series. Symposium 7: Conservation of threatened species [REPORT]",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Kyne_Threatened_fishes_of_Kakadu_2014.pdf"
+    },
+    {
+     "name": "PUBLICATION: Urogymnus acanthobothrium sp. nov., a new euryhaline whipray (Myliobatiformes: Dasyatidae) from Australia and Papua New Guinea",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Last_etal_Urogymnus_acanthobothrium_sp_2016.pdf"
+    },
+    {
+     "name": "PUBLICATION: Freshwater sharks and rays",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Lucifora_etal_Freshwater_sharks_rays_2015.pdf"
+    },
+    {
+     "name": "PUBLICATION: Environmental DNA detects Critically Endangered largetooth sawfish in the wild",
+     "format": "PDF",
+     "url": "https://data.imas.utas.edu.au/attachments/a0cf8cc5-67cd-49bb-bcaa-dedf21ed3287/Simpfendorfer_etal_Environmental_DNA_Pristis_pristis_2016.pdf"
+    },
+    {
+     "name": "NESP:NESP_A1_catch_summary_MAP",
+     "format": "WMS",
+     "url": "https://geoserver.imas.utas.edu.au/geoserver/NESP/wms"
+    },
+    {
+     "name": "NESP Project A1 [ANDS RDA record]",
+     "format": "HTML",
+     "url": "http://purl.org/au-research/grants/nesp/mb/a1"
+    },
+    {
+     "name": "Unnamed resource",
+     "format": "HTML",
+     "url": "http://gcmd.gsfc.nasa.gov/Resources/valids"
+    },
+    {
+     "name": "Unnamed resource",
+     "format": "PNG",
+     "url": "http://i.creativecommons.org/l/by/4.0/88x31.png"
+    },
+    {
+     "name": "Unnamed resource",
+     "format": "HTML",
+     "url": "http://creativecommons.org/international/"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nesp-mbh-a1-euryhaline-elasmobranchs-fishing-database2"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 13/2008",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12731",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/7ba1a858-080e-42cb-bb9c-c770de5a9c76/resource/0697d7ce-35d2-43e0-aab8-7b49dbbecf53/download/document_12731.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11659-government-gazette-of-the-state-of-new-south-wales-week-no-13-2008"
+  },
+  {
+   "title": "State Forests of New South Wales Research and Development Report 2000/01",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 10976",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/f85b9620-6780-471d-81cf-daa9a6056651/resource/13157510-d347-4a80-97ca-de9d2ea14f47/download/document_10976.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-10081-state-forests-of-new-south-wales-research-and-development-report-2000-01"
+  },
+  {
+   "title": "State Forests of New South Wales Research and Development Annual Report 2003-2004",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 10925",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/7b583e10-8bba-4d74-9367-be0b9211b336/resource/2515696e-09b8-4fd1-b502-17ed0a50cce6/download/document_10925.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-10030-state-forests-of-new-south-wales-research-and-development-annual-report-2003-2004"
+  },
+  {
+   "title": "NSW Child Death Review Team Report 2015",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "CDRT review report 2015 final 16572",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/1035db4a-7c40-46b9-b7da-541faab723ab/resource/77d1ddeb-88aa-4c3e-8049-41c6984b23bc/download/cdrt_review_report_2015_final_16572.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-16341-nsw-child-death-review-team-report-2015"
+  },
+  {
+   "title": "State Forests of New South Wales Research and Development Report 2001/02",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 10596",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/85cc39c8-472a-45a3-a330-2bf3a0d35b04/resource/7aaa4a4a-f5bd-453a-859e-f1b2452e5c55/download/document_10596.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-9716-state-forests-of-new-south-wales-research-and-development-report-2001-02"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 31/2007",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12782",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/d14076c0-01dc-4c60-b2d6-901532f272fa/resource/6c7caf30-4898-4d6b-b053-b7a191a77140/download/document_12782.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11693-government-gazette-of-the-state-of-new-south-wales-week-no-31-2007"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 32/2007",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12780",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/2c89c852-294c-4bb5-b730-ebc40e554c88/resource/0dc63d69-2258-4c81-9109-ee99ee12f3f7/download/document_12780.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11692-government-gazette-of-the-state-of-new-south-wales-week-no-32-2007"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 48/2011",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12511",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/bd61fd1e-edc5-45a7-bca5-7cae3b01250a/resource/1e18bc72-f899-4f51-9c5e-4b39f9d723bd/download/document_12511.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11467-government-gazette-of-the-state-of-new-south-wales-week-no-48-2011"
+  },
+  {
+   "title": "Privacy NSW Annual Report 2006 2007",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12037",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/76a5e87d-86d4-43a5-986c-eab48d3f5e2f/resource/cf358012-e69a-4da4-9fd4-b7559eee19e1/download/document_12037.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11049-privacy-nsw-annual-report-2006-2007"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 06/2009",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12665",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/e20aa307-06a5-4a64-8abb-42e6f2f31f2c/resource/bb071024-4f01-43dc-999a-adfffb3e5f45/download/document_12665.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11614-government-gazette-of-the-state-of-new-south-wales-week-no-06-2009"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 42/2005",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12908",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/094d92ca-e5f5-4b41-9efb-684a6510101f/resource/f38d6336-2dc4-4da9-9f2f-63a6302efee6/download/document_12908.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11786-government-gazette-of-the-state-of-new-south-wales-week-no-42-2005"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 05/2007",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12809",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/44bbfab1-128c-4c8f-ab0a-1400d8a9da47/resource/4ec98e7a-5de5-42b3-ae19-9ee152219346/download/document_12809.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11719-government-gazette-of-the-state-of-new-south-wales-week-no-05-2007"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 20/2008",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12713",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/69a87c98-9791-471d-9150-ab0526f26d40/resource/34a3989b-2b35-403e-a9d0-f89627e38487/download/document_12713.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11652-government-gazette-of-the-state-of-new-south-wales-week-no-20-2008"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 51/2009",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12619",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/3615eaab-239e-4474-ac14-72af2dc1dd67/resource/4c278414-7758-4c83-9306-0c2ccc9751ab/download/document_12619.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11569-government-gazette-of-the-state-of-new-south-wales-week-no-51-2009"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 44/2005",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12906",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/6f01bdb5-8023-4264-a603-a26ba83ab80b/resource/20ca7b67-2225-4ef4-bf37-558b4200437b/download/document_12906.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11784-government-gazette-of-the-state-of-new-south-wales-week-no-44-2005"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 44/2008",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12682",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/e1c7362d-9c12-405e-bf23-a565088a2883/resource/6f2c91c1-6aa3-449b-8712-6ed2d2f467e2/download/document_12682.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11628-government-gazette-of-the-state-of-new-south-wales-week-no-44-2008"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 41/2011",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12518",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/6824967d-482f-48bf-931f-db4ccd53cdf1/resource/734e5318-6096-4776-9d0d-96f394e593aa/download/document_12518.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11474-government-gazette-of-the-state-of-new-south-wales-week-no-41-2011"
+  },
+  {
+   "title": "Mason Park Plan of Management",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "Mason Park Plan of Management   adopted 15067",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/89582bc3-9a63-4db5-8f5b-82498799d510/resource/dea22dab-8b79-44bf-b580-82845c581d94/download/mason_park_plan_of_management___adopted_15067.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-14837-mason-park-plan-of-management"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 52/2003",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 13030",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/7fc462dc-f1e7-4708-ab12-b8c510b386ea/resource/c54499d9-2fb4-4524-a504-ab016f4aae7f/download/document_13030.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11881-government-gazette-of-the-state-of-new-south-wales-week-no-52-2003"
+  },
+  {
+   "title": "WAMSI 2 - Dredging Node - Project 4.1 - Assessing impacts of dredging on corals, Western Australia",
+   "org": "Australian Ocean Data Network",
+   "files": [
+    {
+     "name": "Jones R, Bessell-Browne P, Fisher R, Klonowski W, Slivkoff M (2017) Assessing the impacts of sediments from dredging on corals. Report of Theme 4 – Project 4.1 Dredging Science Node, Western Australian Marine Science Institution (WAMSI). Perth, Western Australia, 33pp.",
+     "format": "PDF",
+     "url": "https://wamsi.org.au/wp-content/uploads/bsk-pdf-manager/2019/10/Dredging-Science-Final-Report-PROJ-4.1-Assessing-Impacts-of-dredging-on-corals-Review-Jones-et-al-April-2017.pdf"
+    },
+    {
+     "name": "AIMS Web Site",
+     "format": "audio/basic",
+     "url": "https://www.aims.gov.au"
+    },
+    {
+     "name": "AIMS Web Site",
+     "format": "audio/basic",
+     "url": "https://www.aims.gov.au"
+    },
+    {
+     "name": "AIMS Web Site",
+     "format": "audio/basic",
+     "url": "https://www.aims.gov.au"
+    },
+    {
+     "name": "Unnamed resource",
+     "format": "PNG",
+     "url": "http://i.creativecommons.org/l/by-nc/3.0/au/88x31.png"
+    },
+    {
+     "name": "Unnamed resource",
+     "format": "HTML",
+     "url": "http://creativecommons.org/international/au/"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/wamsi-2-dredging-node-project-4-1-assessing-impacts-of-dredging-on-corals-western-australia"
+  },
+  {
+   "title": "Department of Environment and Conservation (NSW) Annual Report 2003-04",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 11565",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/ca25ca42-f3e8-4ce9-b20c-9ca6d5e5c381/resource/6cab30c1-0dfd-4615-8a9f-f1e57e01f22f/download/document_11565.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-10619-department-of-environment-and-conservation-nsw-annual-report-2003-04"
+  },
+  {
+   "title": "NSW Child Death Review Team Annual Report 2014",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "Child Death Review Team Annual Report 2014 15335",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/268fe04e-02d9-4ee8-9449-e0629b2e737f/resource/bb903eed-ae6f-438f-adfb-a0814a00e086/download/child_death_review_team_annual_report_2014_15335.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-15112-nsw-child-death-review-team-annual-report-2014"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 08/2003",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 13081",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/dc15e2c3-b3be-43a6-beee-4eb6b6c6650d/resource/5a1b7ee3-813a-49ea-93ab-5de0e84082f3/download/document_13081.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11925-government-gazette-of-the-state-of-new-south-wales-week-no-08-2003"
+  },
+  {
+   "title": "NSW Environmental Trust Annual Report 2007-08",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12226",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/e72aab15-38b2-4b33-ad0b-02495882ac0e/resource/0fa066bd-c36a-43be-9e65-893ccf7fb194/download/document_12226.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11205-nsw-environmental-trust-annual-report-2007-08"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 27/2011",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12532",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/d8e6bb43-e70e-4ef1-b787-6c878ee7806f/resource/f653b0c1-2fd9-4813-9a3c-c70a534230ea/download/document_12532.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11488-government-gazette-of-the-state-of-new-south-wales-week-no-27-2011"
+  },
+  {
+   "title": "NSW Trade & Investment 2013-14 Annual Report",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "T I Annual Report 2013 14   BOOK   web ver 14786",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/e6b0805c-7622-4725-a4e8-c215b96c69c7/resource/9d8bd160-e657-4614-82c8-95d243664eb6/download/t_i_annual_report_2013_14___book___web_ver_14786.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-14552-nsw-trade-investment-2013-14-annual-report"
+  },
+  {
+   "title": "NSW Food Authority Annual Report 2008-2009",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 11830",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/b79ee598-b216-4f0c-9682-14d9245f4c1a/resource/df113574-6324-4f89-9bcc-86f1fe90ef9c/download/document_11830.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-10854-nsw-food-authority-annual-report-2008-2009"
+  },
+  {
+   "title": "Privacy NSW Annual Report 2005-06",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 11288",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/5b991fd9-4890-4b31-8f7d-86e22a84612e/resource/6d04ee4b-f57f-4507-9497-37fe0ccbf749/download/document_11288.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-10357-privacy-nsw-annual-report-2005-06"
+  },
+  {
+   "title": "Botanic Gardens Trust Annual Report 2005-2006",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 10630",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/b69b310a-ad76-4023-a4b0-920b5173d0d3/resource/2c9e9a23-f8d4-4d02-bc2f-9862fd0211c6/download/document_10630.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-9750-botanic-gardens-trust-annual-report-2005-2006"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 04/2008",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12753",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/ffc6cf33-7ee3-4211-b669-c7cae61ebce6/resource/f9bbf70f-962e-41e8-949a-a4115e6994e0/download/document_12753.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11668-government-gazette-of-the-state-of-new-south-wales-week-no-04-2008"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 46/2008",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12680",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/894c199d-e7a7-4941-b40a-bf2581af151d/resource/5a497be3-c1c2-4d91-9dac-2d9b7125cf4d/download/document_12680.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11626-government-gazette-of-the-state-of-new-south-wales-week-no-46-2008"
+  },
+  {
+   "title": "Sydney Catchment Authority Annual Report 2010-2011",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 13974",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/2ebd4488-6ebd-4979-842b-fe3036df1ed1/resource/89b70f86-df57-4cd0-9892-fe04a55800af/download/document_13974.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-13259-sydney-catchment-authority-annual-report-2010-2011"
+  },
+  {
+   "title": "Privacy NSW Annual Report 2004-05",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 10816",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/6ffd329b-29f1-4fc8-8d18-4fd02044298c/resource/36200b51-0004-43ed-850f-96a31b43f8df/download/document_10816.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-9921-privacy-nsw-annual-report-2004-05"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 13/2006",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12878",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/3c556e48-167a-442a-98d4-35fec8e46ba0/resource/4462a58a-ded1-404f-9479-e57d11771d5d/download/document_12878.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11763-government-gazette-of-the-state-of-new-south-wales-week-no-13-2006"
+  },
+  {
+   "title": "NSW Child Death Review Team Annual Report 2013",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "CDRT Annual Report Oct13 web 14876",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/d57d4cb3-080d-4c0d-bb2d-acb115d7de31/resource/8c8ff4d8-c6f8-4b31-be47-fc585305012d/download/cdrt_annual_report_oct13_web_14876.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-14642-nsw-child-death-review-team-annual-report-2013"
+  },
+  {
+   "title": "NSW Trade & Investment Annual Report 2012-13",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 13688",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/f5f9ae9f-b624-4d83-996d-b38aa3112634/resource/67cf624e-c03f-464e-81eb-952a85d32102/download/document_13688.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-12928-nsw-trade-investment-annual-report-2012-13"
+  },
+  {
+   "title": "NSW Environmental Trust Annual Report 2009-10",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 10623",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/0cf12159-aef4-4b37-8f24-694e97f76f00/resource/71f921cf-9309-451c-83e5-8965a33c0ce5/download/document_10623.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-9743-nsw-environmental-trust-annual-report-2009-10"
+  },
+  {
+   "title": "New South Wales Department of Primary Industries Annual Report 2005-06",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 11269",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/622887da-2f92-4cc6-b906-ef285cecf259/resource/866aa6fe-18e3-4d54-8012-a37397229373/download/document_11269.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-10339-new-south-wales-department-of-primary-industries-annual-report-2005-06"
+  },
+  {
+   "title": "NSW Office of Environment & Heritage Annual Report 2014-15 (incorporating the Annual Report for the Heritage Council of NSW 2014-15)",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "OEH Annual Report 2014 15   30102015 Final 15258",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/8fc51292-e00f-46ff-9852-3e2672a6d027/resource/7e1650e5-f194-467d-9a6b-06a64bddfe6e/download/oeh_annual_report_2014_15___30102015_final_15258.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-15038-nsw-office-of-environment-heritage-annual-report-2014-15-incorporating-the-annual-r"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 44/2006",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12828",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/37a9f104-40e9-405e-81aa-277a20085514/resource/a68b5614-f2c9-4122-a36c-970e9159435e/download/document_12828.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11732-government-gazette-of-the-state-of-new-south-wales-week-no-44-2006"
+  },
+  {
+   "title": "NSW Department of Primary Industries Annual Report 2004-05",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 11537",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/6ba3ee7a-e804-4426-88bf-ccdf8ade08b6/resource/43ecd54e-17e7-4619-b68e-2fbdb4b5fc67/download/document_11537.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-10591-nsw-department-of-primary-industries-annual-report-2004-05"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 35/2006",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12838",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/329cd364-6b66-48fe-91e7-bae1e55442eb/resource/aa462977-136f-4809-a022-79db56bfe39e/download/document_12838.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11741-government-gazette-of-the-state-of-new-south-wales-week-no-35-2006"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 06/2007",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12808",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/e3940a49-8d56-4c66-b4c1-bb7936ab7beb/resource/0745f046-c8e8-45eb-b5ea-4af02d027745/download/document_12808.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11718-government-gazette-of-the-state-of-new-south-wales-week-no-06-2007"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 51/2006",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12816",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/1332efbb-ef08-4bc2-9eb2-f92174b6d0e5/resource/6dd70fce-e053-46d1-9378-4f5297be9190/download/document_12816.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11725-government-gazette-of-the-state-of-new-south-wales-week-no-51-2006"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 27/2008",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12702",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/54728abd-ba8e-47a4-8430-6d56183a551f/resource/4c674a4b-febc-408a-b0bd-9764acc85386/download/document_12702.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11645-government-gazette-of-the-state-of-new-south-wales-week-no-27-2008"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 43/2005",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12907",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/d628cc35-d406-4097-af60-81c4e248cb27/resource/e45bf399-ff42-4804-82c3-e400b103e931/download/document_12907.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11785-government-gazette-of-the-state-of-new-south-wales-week-no-43-2005"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 38/2001",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 13171",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/ca6b2941-44e2-45b7-b70d-afab9c0ab337/resource/f58b40f7-f65f-4447-9d06-68d60db7a6dd/download/document_13171.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11999-government-gazette-of-the-state-of-new-south-wales-week-no-38-2001"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 14/2006",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12877",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/93fa77a9-3888-4698-8656-c628c120748b/resource/6aa9bb16-2a2f-4908-b16f-558bd0bfa7de/download/document_12877.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11762-government-gazette-of-the-state-of-new-south-wales-week-no-14-2006"
+  },
+  {
+   "title": "Forests NSW Annual Report 2006-07",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 11210",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/9efe5ee9-e190-4ff3-8af8-3181633ecb76/resource/747b7afa-657d-42a2-8dc8-d26596cec505/download/document_11210.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-10285-forests-nsw-annual-report-2006-07"
+  }
+ ],
+ "eu": []
+}
