@@ -210,7 +210,7 @@
 /* Map rundown: the essay, split out of the wire so the two can be read and
    collapsed separately. It inherits the wire's styling by sharing every rule
    below, and sits above it. */
-#rundownPanel{position:fixed;left:14px;top:70px;width:300px;z-index:1000;
+#rundownPanel{position:fixed;left:14px;top:70px;width:var(--sidepanel-w);z-index:1000;
   background:rgba(8,12,27,0.97);border:1px solid rgba(120,140,180,0.30);
   border-radius:7px;box-shadow:0 6px 22px rgba(0,0,0,.5);overflow:hidden;
   font-size:11.5px;color:#c3c9d9;}
@@ -223,8 +223,19 @@
 #rundownPanel .help-head{padding:9px 12px;font-size:12px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:#e6eefc;}
 #rundownPanel .help-head span:first-child{font-size:12px;font-weight:700;color:#e6eefc;}
 /* Same width as the How to use this map panel, which is 270px. */
-#rundownPanel{width:270px;}
-#wirePanel{width:270px;}
+/* One width for both. They were set in different rules and drifted apart;
+   the wire's is also overwritten at runtime from the rundown's own box. */
+/* One number, in one place, for both. The rundown and the wire are a single
+   column read top to bottom, and a column whose two boxes are different widths
+   reads as two unrelated things stacked by accident. Previous attempts set the
+   width in four rules across two hundred lines - 300 here, 270 immediately
+   after it, 300 again in the wire's own block, and a fourth written at runtime
+   from whichever box happened to be measured first. They drifted, which is
+   what the comment above this one was already complaining about.
+   Everything now derives from --sidepanel-w, and the guard rule at the end of
+   the document holds it against anything that tries to write a width later. */
+:root{--sidepanel-w:300px;}
+#rundownPanel,#wirePanel{width:var(--sidepanel-w);}
 /* The two panels were put in one flex column so that collapsing the rundown
    pulled the wire up. That closed a gap and bought a worse fault: the wire is
    the panel being read, and it moved under the reader every time the rundown
@@ -237,7 +248,7 @@
   font-size:12px;font-weight:700;color:#e6eefc;letter-spacing:.2px;}
 #rundownPanel .help-tog,#wirePanel .help-tog{font-size:15px;line-height:1;
   color:#98a2c1;}
-#wirePanel{position:fixed;left:14px;top:70px;width:300px;z-index:1000;background:rgba(8,12,27,0.97);border:1px solid var(--accent-soft);border-radius:10px;box-shadow:0 4px 22px rgba(0,0,0,0.45);overflow:hidden;bottom:18px;max-height:none;display:flex;flex-direction:column;transition:bottom .22s ease,max-height .22s ease;}
+#wirePanel{position:fixed;left:14px;top:70px;width:var(--sidepanel-w);z-index:1000;background:rgba(8,12,27,0.97);border:1px solid var(--accent-soft);border-radius:10px;box-shadow:0 4px 22px rgba(0,0,0,0.45);overflow:hidden;bottom:18px;max-height:none;display:flex;flex-direction:column;transition:bottom .22s ease,max-height .22s ease;}
 /* the wire owns the whole column until a unit is opened, then yields the lower half */
 body.info-open #wirePanel{bottom:auto;max-height:calc(50vh - 58px);}
 /* collapsed: shrink to the header instead of holding the full column open */
@@ -254,11 +265,25 @@ body.info-open #wirePanel{bottom:auto;max-height:calc(50vh - 58px);}
    starts at 70px, its header is about 34px, and its body is capped at 36vh
    below - so 70 + 34 + 36vh, plus a 9px gap. 42vh was measured against a
    layout where the panels shared a column and could push each other. */
-#wirePanel{top:calc(113px + 36vh) !important;}
+/* A STARTING top, not a fixed one. This used to carry !important, which is the
+   whole of both faults reported against this column.
+   First: 113px + 36vh is an ESTIMATE of where the rundown ends - 70px of offset
+   plus "about 34px" of header plus the body cap - and it is wrong by the
+   header's real height and by the panel's two borders. The sidebar on the other
+   side of the map puts a real 9px between the help panel and the index because
+   flex `gap` measures the box; this guessed at it and landed a few pixels out,
+   so the two columns did not match.
+   Second, and worse: !important beat the inline top that pjPlaceWire writes
+   after measuring the rundown, so the wire could not move at all. Collapsing
+   the rundown left the wire sitting where the full-height rundown used to end,
+   with a hole above it, while every other panel on this map closes up.
+   Without !important the measured value wins the moment the script runs, and
+   this stays as the pre-script fallback so nothing overlaps on first paint. */
+#wirePanel{top:calc(113px + 36vh);}
 #rundownPanel .wire-body{max-height:36vh;}
 @media (max-height:760px){
   #rundownPanel .wire-body{max-height:28vh;}
-  #wirePanel{top:calc(113px + 28vh) !important;} }
+  #wirePanel{top:calc(113px + 28vh);} }
 @media (max-width:900px){ #wirePanel{display:none;} }
 #wirePanel.collapsed .wire-body{display:none;}
 #wirePanel .help-tog::before{content:"\25B4";}
@@ -529,25 +554,35 @@ function pjReport(which, data){
   <div class="proj-size"><span class="ps-lab">Release scale &mdash; select any</span><span class="ps-pill on" data-ms="all">All</span><span class="ps-pill" data-ms="3">Medium <i>multi-site trial</i></span><span class="ps-pill" data-ms="4">Large <i>regional / multi-season</i></span><span class="ps-pill" data-ms="5">Largest <i>commercial cultivation</i></span></div><div class="proj-size proj-phase"><span class="ps-lab">Consent phase &mdash; select any</span><span class="ps-pill on" data-ph="pre">In review <i>pre-consent &middot; applied / notified / under assessment</i></span><span class="ps-pill on" data-ph="post">Consented <i>post-consent &middot; approved / planted / marketed</i></span></div>
   <div class="proj-search"><input id="projQ" type="search" placeholder="Search releases by organism, trait or applicant…" autocomplete="off"><span id="projQn"></span></div>
   <div class="proj-time"><span class="ps-lab">Filing recency — dated registers</span><span class="pt-pill on" data-tw="0">All ages</span><span class="pt-pill" data-tw="30">≤30d</span><span class="pt-pill" data-tw="90">≤90d</span><span class="pt-pill" data-tw="180">≤6mo</span><span class="pt-pill" data-tw="365">≤1yr</span><label class="pt-und"><input type="checkbox" id="pjUndated" checked> Include undated</label></div><div class="lp-detail collapsed"><div class="lp-detail-head" onclick="this.parentNode.classList.toggle('collapsed')"><span class="lp-car">&#9662;</span> Where this data comes from &amp; what's not (yet) in it</div><div class="lp-detail-body">
-<b class="hl-sec">Where the live-releases data comes from</b><br>
-    <b>Right now this layer is the United States only.</b> That is not the intention and it is not hidden here: it is what has actually been harvested. Every dot comes from the two public data files that APHIS Biotechnology Regulatory Services publishes and updates each business day, in the public domain. Nothing else currently feeds it.<br><br>
-    <b>What is kept, and what is thrown away.</b> Only records with a release component survive — an import permit or an interstate movement permit is not an environmental release, and most rows in the source are one of those. Only records that were never authorised are dropped — withdrawn, denied, void, returned, cancelled. <span id="dropShare"></span> Everything that was granted stays, including permits that have since lapsed, because a trial that ran in 1994 happened whether or not the paperwork is still in date. Lapsed ones are marked and the “Show dormant / defunct” switch controls them.<br><br>
-    
-    <b class="hl-sec">Why the rest of the world is not here yet</b><br>
-    Almost all of this is state-published — biosafety law in most countries requires a public register. The gaps are not gaps in publication but in <b>machine-readable</b> publication, and each one has a specific reason:<br>
-    &bull; <b>Australia — OGTR.</b> The best release register in the world: every licence, every risk assessment, and published locations for active crop field-trial sites. It <b>cannot be harvested</b> — ogtr.gov.au disallows automated access in its robots.txt. Read it by hand; it is worth the time, and it is in the index.<br>
-    &bull; <b>The Biosafety Clearing-House.</b> The global spine under the Cartagena Protocol, and the only genuinely cross-national record. Its website is a JavaScript application that returns nothing to a fetcher — but the page fills itself from a search endpoint at api.cbd.int, and that endpoint does answer. So this one is reachable after all, and a harvester for it is written and waiting on a run. Until then the country directory here comes from the Secretariat’s national focal point list, which is published as a PDF.<br>
-    &bull; <b>EU, Canada, Brazil, Argentina, India, New Zealand and the rest.</b> Real registers, named in the index with what each holds. None publishes a bulk file of the kind APHIS does; most are search forms over a database, and several are PDF minutes.<br>
-    &bull; <b>Contained use is under-recorded everywhere.</b> Most laboratory work is notified rather than licensed, and notifications are rarely published individually. This layer will always under-count how much engineering is happening relative to how much is being released.<br>
-    &bull; <b>Gene-edited organisms are increasingly invisible by design.</b> Where a jurisdiction has moved editing techniques outside registration — as the EU has now legislated for one class of them — there is no record to harvest. An absence of dots means the law stopped requiring one. This is the largest structural gap and it is growing.<br>
-    &bull; <b>An edited organism cannot be followed from country to country.</b> An organism made by inserting a gene from another species is given an international serial number, and that number follows it everywhere — every regulator that rules on it files under the same string, which is why this map keeps telling you to write it down. An organism made by editing its own genes gets no number, because the system was built around insertions and there is nothing for it to name. In Canada’s register, the one harvestable place still listing both kinds side by side, <b>not one of the 27 approved edited products carries an identifier, against 98 of 101 inserted ones that do.</b> So the kind of organism being written out of registration in one country after another is also the kind no country can follow between them: unregistered where it is grown, and unnameable everywhere else.<br>
-    &bull; <b>The human side is not a release register at all.</b> Germline work, embryo selection, and the in-vitro and assisted-reproduction industry are covered through clinical-trial registries, national fertility regulators and clinic reporting. None of that maps to a release dot, so it lives in the lenses and the index instead of being forced into a layer it does not fit.<br><br>
-    <b>&bull; <b>Facilities are a patchwork, and the pattern is legal rather than technical.</b> Fertility clinics are well covered where a regulator publishes a register — the UK, the US, China, India — and absent where none exists, which is most of the world. Animal research is worse: the United States and Canada publish registers, the UK publishes procedure counts without naming an establishment, and the EU publishes only totals. Maximum-containment laboratories have no register anywhere; the only global account is a research project, and it lists 69 BSL4 labs that no government is obliged to declare.<br>
-    &bull; <b>The industry layer is hand-built and always will be.</b> No register lists the companies in this field, so every entry here was found, read and written by hand. It is complete in the sense that no facet is empty, and incomplete in the sense that a hand-built list of 711 organisations cannot be the whole of an industry. Treat it as a map of the parts that matter rather than a census.<br>
-    &bull; <b>Regulatory regimes are read from law, not from a feed.</b> The 197 classifications here come from statutes and from Cartagena Protocol membership. Thirteen countries have no biosafety statute this map could find and are drawn as such; 41 dependencies and territories are not classified at all, because they are governed under someone else’s law.<br>
-    &bull; <b>Treaty membership is the one layer that is complete.</b> Five treaties, every party drawn, taken from the depositaries’ own ratification lists. If a country is not shaded it is not a party — that is a fact, not a gap, and it is the only place on this map where an absence can be read that way.<br>
-    &bull; <b>Ownership is only what the registers admit.</b> Where a regulator names a parent company this map records it; where a chain simply trades under one name across a dozen sites, that is recorded as an inference. What is not here is share registers: who actually owns these businesses is in company filings across dozens of jurisdictions, and reading those is a different project.<br><br>
-    No coverage percentage is claimed.</b> No dataset holds the true global count of releases, so any figure would be invented. What can be said honestly is the shape of the sample, which is what this panel does. Treat an empty area as unharvested, never as clean.<br></div></div>
+<b class="hl-sec">How people have changed this, and where the levers are</b><br>
+    Every mechanism below is one that has already worked somewhere, and most of them are on this map as entries you can click. None of it is a recommendation; it is a record of what has been done and under which law.<br><br>
+    <b>1. Declaring a place GM-free.</b> Roughly 200 declarations across 15 countries are drawn on this map, and they were made in four different ways. <b>National or regional law</b> is the strongest: Austria, and later the whole EU opt-out mechanism, came from a member state invoking a safeguard clause against an approved variety and winning — that fight is why Article 26b exists, and any EU member can now refuse cultivation on its own territory without disputing the science. <b>Sub-national ordinance</b> works where farming is a local competence: several US counties passed cultivation bans by ballot measure, and the ones that survived did so where state law had not pre-empted them, which is the first thing to check anywhere. <b>Voluntary grower agreements</b> need no legislature at all — neighbouring farms contract with each other, which is how most European regions were declared, and it holds because the contract is between the people who would otherwise be liable to each other for drift. <b>Certification</b> is the quietest and often the fastest: organic and biodynamic standards exclude engineered material outright, so a region that certifies has made itself GM-free by private contract, and a positive test costs the grower the price premium rather than a fine.<br><br>
+    <b>2. Contesting a particular release.</b> The window is narrower than people expect and it opens before approval, not after. Under the Cartagena Protocol a party must file its decision publicly and, for most first imports, run a public comment period — that is what the Biosafety Clearing-House records exist for, and comments filed in that window are on the record in a way that objections afterwards are not. In the United States the equivalent is the Federal Register notice for a petition for deregulation. After approval the routes are judicial: the Philippines revoked the Golden Rice and Bt eggplant approvals in 2024 through a constitutional environmental remedy that citizens can invoke directly — the only case anywhere of a court withdrawing a granted biosafety approval at the public’s request. Elsewhere it usually requires showing procedural failure rather than disagreement with the outcome. Write down the authorisation number: it is the one string that identifies the decision in every filing about it.<br><br>
+    <b>3. The levers that are not government at all.</b> Several things on this map have moved more ground than any law. <b>Buyers.</b> A food manufacturer or supermarket declining engineered ingredients changes what growers plant in its supply chain, with no consultation and no appeal — that mechanism, not legislation, is what moved European acreage. <b>Insurers.</b> If no reinsurer will write cover for a release, it does not happen regardless of what a regulator permits. <b>Certifiers.</b> Organic and biodynamic bodies set standards their members must meet, and withdrawal costs more than most penalties. <b>Litigation.</b> One case — StarLink maize in 2000 — remains the reference for who pays when an engineered organism turns up where it was not approved, and the glyphosate verdicts are the only mechanism that has extracted money from this industry at scale.<br><br>
+    <b>4. Where the argument is actually being decided now.</b> Not in biosafety law, which is being narrowed, but in three places beside it. <b>Seed law:</b> UPOV’s 1991 act restricts replanting seed from your own harvest and the 1978 act does not; countries move between them through trade agreements, and 17 remain on the older act. <b>Trade law:</b> the WTO treats a health measure as justified only if scientifically supported, so a national restriction can be challenged by another country as a trade barrier. <b>Definitions:</b> around forty countries have moved gene-edited organisms outside registration entirely, which removes the permit, the file and the comment period in one step — there is nothing left to object to. That is why the definitional fight matters more than any single approval.<br><br>
+    <b class="hl-sec">Where this data comes from</b><br>
+    Nearly everything here is state-published: biosafety law in most countries requires a public register, medicines regulators publish trial sponsors, and fertility regulators publish licensed clinics. Very little of it is published in a form a machine can read. That single fact shapes every layer on this map, and it is the reason the coverage is uneven in the particular ways set out below.<br><br>
+    <b>What is on the map, and where each layer came from.</b><br>
+    &bull; <b>Releases — 22,163 records.</b> Almost all from APHIS, which publishes two files updated each business day, in the public domain. Alongside them, 51 country records from the Biosafety Clearing-House and five Australian OGTR licences transcribed by hand.<br>
+    &bull; <b>Facilities — 20,679 records.</b> Fertility clinics from the national registers that publish one; animal facilities from USDA APHIS, the Canadian Council on Animal Care, AAALAC and Farm Transparency; maximum-containment laboratories from Global BioLabs.<br>
+    &bull; <b>Clinical trials — 2,231 sponsors</b> for gene and cell therapy, from the trial registries.<br>
+    &bull; <b>Industry — 711 organisations</b>, hand-built, because no register lists them.<br>
+    &bull; <b>Regimes, treaties and zones</b>, read from statutes and from the depositaries’ ratification lists rather than harvested from a feed.<br><br>
+    <b class="hl-sec">What each layer leaves out, and why</b><br>
+    &bull; <b>Releases are almost entirely American, and that is a publishing fact.</b> APHIS is the only regulator on Earth that puts its whole register in a bulk file. Australia’s OGTR holds more — every licence, every risk assessment, and site locations for active field trials — and disallows automated access in its robots.txt, so it has to be read by hand. The EU, Canada, Brazil, Argentina, India and New Zealand all hold real registers; none publishes a bulk file, most are search forms over a database, and several are PDF minutes.<br>
+    &bull; <b>The Biosafety Clearing-House can be read after all.</b> The register established under the Cartagena Protocol is the only genuinely cross-national record of its kind. Its website returns nothing to a fetcher, but the page fills itself from a search endpoint at api.cbd.int, and that endpoint answers. A harvester is written and waiting on a run; until then the country directory here comes from the Secretariat’s focal point list, published as a PDF.<br>
+    &bull; <b>Contained laboratory work is under-recorded everywhere.</b> Most of it is notified rather than licensed, and notifications are rarely published record by record. Every layer here will under-count how much engineering is happening relative to how much is released.<br>
+    &bull; <b>Gene-edited organisms are increasingly outside registration.</b> Where a jurisdiction has moved editing out of its registration requirement — around forty have — no record is created, so there is nothing to harvest. An absence of dots there means the law stopped requiring one. This is the largest structural gap on the map and it is growing.<br>
+    &bull; <b>An edited organism cannot be followed from country to country.</b> An organism made by inserting a gene from another species is issued an international serial number, and every regulator that rules on it files under that same string, which is why this map repeats the instruction to write the number down. An organism made by editing its own genes is issued nothing, because the identifier system was built around insertions. Canada’s register is the one harvestable place listing both kinds side by side: none of the 27 approved edited products carries an identifier, against 98 of the 101 inserted ones.<br>
+    &bull; <b>Facilities are a patchwork, and the pattern is legal rather than technical.</b> Fertility clinics are well covered where a regulator publishes a register — the UK, the US, China, India — and absent where none exists, which is most of the world. Animal research is thinner: the US and Canada publish registers, the UK publishes procedure counts without naming the establishment, and the EU publishes only totals. Maximum-containment laboratories have no register in any jurisdiction; the only global account is a research project, and it lists 69 BSL4 laboratories no government is obliged to declare. Where a register gives a mailing city rather than a street, the marker sits at that city and says so.<br>
+    &bull; <b>The human side is here, but not as releases.</b> Germline work, embryo selection and assisted reproduction never produced a release dot, so they are carried as clinics and sponsors. What is still absent is germline research itself, which no country requires to be registered publicly, and embryo screening, which happens inside those clinics and is reported by none of them.<br>
+    &bull; <b>The industry layer is hand-built and will stay that way.</b> No register lists the companies in this field, so every entry was found, read and written by hand. No facet is empty, but 711 organisations is not a census of an industry — read it as a map of its significant parts.<br>
+    &bull; <b>Regulatory regimes are read from law.</b> The 197 classifications come from statutes and Cartagena Protocol membership. Thirteen countries have no biosafety statute this map could find and are drawn as such. Forty-one dependencies are not classified at all, because they are governed under another country’s law — fifteen under the United Kingdom, seven under France, six under the United States, three each under the Netherlands and New Zealand, two each under Denmark and Australia, one each under Norway, Finland and Morocco. A decision taken in London or Paris applies in places that never appear in a register of their own.<br>
+    &bull; <b>Treaty membership is the one complete layer.</b> Five treaties, every party drawn, from the depositaries’ own ratification lists. A country that is not shaded is not a party. This is the only layer where an absence can be read as information rather than as a gap in harvesting.<br>
+    &bull; <b>Ownership is only what the registers admit.</b> Where a regulator names a parent company, that is recorded; where a chain simply trades under one name across a dozen sites, that is recorded as an inference. Share registers are not here: who actually owns these businesses sits in company filings across dozens of jurisdictions, and reading those is a separate project.<br><br>
+    <b class="hl-sec">What is kept and what is dropped</b><br>
+    In the release layer a record is kept only if it has a release component — an import or interstate movement permit is not an environmental release, and most rows in the source are one of those. A record is dropped only if the authorisation was never granted: withdrawn, denied, void, returned, cancelled. <span id="dropShare"></span> Everything granted is kept, including permits that have since lapsed, because a trial that ran in 1994 took place whether or not the paperwork is still in date. Lapsed records are marked, and the “Show dormant / defunct” switch controls whether they are drawn. In the facility layers nothing is dropped; a register’s own uncertainty travels with the record instead.<br><br>
+    <b>No coverage percentage is claimed.</b> No dataset holds the true global count of anything on this map, so any percentage would be invented. What can be stated honestly is the shape of the sample, which is what this panel sets out. An empty area means nothing has been harvested there, not that nothing is happening there.<br></div></div>
   <div id="projSrcBox" class="proj-src-box"></div>
   <div id="projTypeBox" class="proj-src-box"></div>
   <div id="overlayBox" class="proj-src-box"></div>
@@ -3224,7 +3259,14 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
     // because that is what five capped 30px glyphs need to stop touching -
     // tested, not guessed. Beyond that a ring is wider than most countries and
     // the overlap is the lesser fault.
-    return Math.min((R + 2.5) / Math.sin(Math.PI / n), 54);
+    // 54 was measured against four glyphs. With the centroid snap feeding this
+    // function the real count - releases, sponsors, biosafety filings, clinics
+    // and animal facilities all reach the same national coordinate, and
+    // industry rows join them in a capital city - n runs to five, six and seven,
+    // and the ring the chord arithmetic asks for at n=7 with two capped 30px
+    // glyphs is 77. Capping below what the geometry needs is the same as not
+    // fanning: the rosette closes and the markers touch again.
+    return Math.min((R + 3.5) / Math.sin(Math.PI / n), 78);
   }
   // Scaling this to the drawn radius made every marker move as the map zoomed,
   // because the radius changes with zoom: a dot appeared in one place at world
@@ -3384,6 +3426,87 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
     }
   }
 
+  // Round 87. pjNatSnap above only moves a group when a hierarchy country
+  // marker already exists for it AND every record in the group names that
+  // country and nothing narrower. Most countries fail one of those tests, and
+  // the four national layers then sit a degree or two apart: the biosafety
+  // filing puts Germany at one national centroid, the sponsor list at another,
+  // the clinic register at a third, the animal register at a fourth. A degree
+  // is a few pixels at world zoom and a fraction of one at continental zoom, so
+  // the exact-coordinate fan below never sees them as one place while the
+  // circles - up to 30px each - cover each other completely. Clicking resolved
+  // to whichever held the most records, so four of the seven layers had markers
+  // that could be seen and not opened.
+  //
+  // This pass groups by PLACE rather than by coordinate. Every group whose
+  // records are all imprecise and which resolves to the same place name gets
+  // that place's one coordinate, which is what each of them is already
+  // claiming: not a location, a country. The fan then puts them on a ring
+  // measured in pixels, so they hold apart at every zoom.
+  //
+  // What it will not touch: anything with a real coordinate (precise !== false
+  // anywhere in the group), anything whose place string reads as a street
+  // rather than a place, and anything more than 5 degrees from the anchor -
+  // which is what keeps Georgia the state away from Georgia the country.
+  function pjCentroidKey(g){
+    var i, p, st, nm = '';
+    if(!g.m || !g.m.length) return null;
+    for(i = 0; i < g.m.length; i++){
+      p = g.m[i].p;
+      if(!p || p.precise !== false) return null;   // a real address stays where it is
+      st = String(p.state || '').trim();
+      if(!st) return null;
+      // A register that files "CO, MN, NE" is filing a permit, not a place. The
+      // coordinate belongs to the first state named, which is what pjCluTitle
+      // already assumes.
+      st = (st.split(',')[0] || '').trim();
+      // House numbers, street names and the em-dashed "City — Street" form the
+      // industry rows use are addresses, not places to be pooled.
+      if(!st || st.length > 40 || /\d/.test(st) ||
+         st.indexOf('\u2014') >= 0 || st.indexOf('/') >= 0) return null;
+      st = pjPlaceName(st, p.source).toLowerCase();
+      if(!nm) nm = st; else if(st !== nm) return null;
+    }
+    return nm || null;
+  }
+  function pjCentroidSnap(out){
+    var bag = {}, i, g, key, raw;
+    for(i = 0; i < out.length; i++){
+      g = out[i];
+      if(g.hier){
+        raw = String((g.m[0] && g.m[0].p && g.m[0].p.state) || '').trim();
+        raw = (raw.split(',')[0] || '').trim();
+        key = raw ? pjPlaceName(raw, g.m[0].p && g.m[0].p.source).toLowerCase() : '';
+      } else {
+        key = pjCentroidKey(g);
+      }
+      if(!key) continue;
+      (bag[key] || (bag[key] = [])).push(g);
+    }
+    Object.keys(bag).forEach(function(key){
+      var list = bag[key], j, best = null, a, gg;
+      if(list.length < 2) return;            // alone on its place: nothing to separate from
+      // The anchor is the hierarchy marker where there is one - it IS the
+      // country, and the rest are claiming to be the country. Otherwise it is
+      // the group carrying the most records, so the largest glyph holds its
+      // position and the small ones come to it rather than the other way round.
+      for(j = 0; j < list.length; j++){
+        if(list[j].hier){ best = list[j]; break; }
+        if(!best || (list[j].total || list[j].n || 0) > (best.total || best.n || 0)) best = list[j];
+      }
+      a = [best.la, best.lo];
+      for(j = 0; j < list.length; j++){
+        gg = list[j];
+        if(Math.abs(gg.la - a[0]) > 5 || Math.abs(gg.lo - a[1]) > 5) continue;
+        gg.la = a[0]; gg.lo = a[1];
+        // `snapped` is what tells pjCluPt to fan in pixels rather than degrees.
+        // A degree ring shrinks to nothing on screen as you zoom out, which is
+        // exactly the zoom where these markers were covering each other.
+        if(!gg.hier) gg.snapped = key;
+      }
+    });
+  }
+
   function pjClusters(z){
     if(_pjClu) return _pjClu;   // zoom-invariant: built once per filter change
     var cells = {}, out = [], pts = _pjPts || [], i, g;
@@ -3512,6 +3635,12 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
     // Country markers first, so the ones that are the same country end up on
     // the same coordinate before anything is grouped.
     pjNatSnap(out);
+    // Then the general case: everything that is a centroid for the same place,
+    // whatever kind it is and whether or not a hierarchy marker exists for it,
+    // onto that place's one coordinate. Without this the four national layers
+    // sit a degree or two apart and the exact-coordinate fan below sees four
+    // separate places where there is one.
+    pjCentroidSnap(out);
     // Slot assignment for the fan. Everything drawn on one coordinate shares a
     // ring, so no two glyphs are ever concentric. The order is fixed by kind
     // rather than by whatever order the points arrived in, so a given register
@@ -4814,7 +4943,13 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       +'<b>What these records leave out</b></div>'
       +'<div class="ot-note ot-foldbody" data-foldbody="leaveout" style="display:none">'
       +'US permits are '+pct('aphis')+'% of this layer, decisions filed by every other country '
-      +pct('bch')+'%, Canada '+pct('cfia')+'%, Australia '+pct('ogtr')+'%. Some sources here are fully harvested and others are only partly in, because a run can fail or a register can change its pages between runs. An empty area means nothing has been collected there yet, never that there is nothing there. '
+      +pct('bch')+'%, Canada '+pct('cfia')+'%, Australia '+pct('ogtr')+'%, because '
+      +'APHIS is the only regulator on Earth that publishes its whole register as a '
+      +'file a machine can read. Every other country requires a search form to be '
+      +'filled in by hand, one record at a time. That is a difference in how the '
+      +'data is published, not in how much engineering is happening: an empty area '
+      +'means nothing has been collected there yet, never that there is nothing '
+      +'there. '
       +'<b>Contained laboratory and glasshouse work appears nowhere at all</b> \u2014 most countries '
       +'exempt it or merely require notification, so it generates no public record in any register '
       +'on this map. Food and feed approvals sit with separate agencies in most countries and are '
@@ -7867,6 +8002,94 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // top edge a function of the rundown's height, so the feed slid up and down
   // whenever the panel above it changed size. If this is ever tried again, the
   // thing to preserve is that the wire does not move while it is being read.
+  // The wire follows the rundown, without a shared column.
+  //
+  // A flex column was tried and removed, for a good reason: it made the wire's
+  // top a function of the rundown's height, so the feed slid up and down while
+  // it was being read. But collapsing the rundown then left a hole where it had
+  // been, which is not how any other panel on this map behaves.
+  //
+  // So the wire is repositioned only when the rundown is COLLAPSED or EXPANDED,
+  // and on resize - never while its content changes. It scoots up when the
+  // panel above is pulled up, and holds still the rest of the time.
+  try{
+    (function(){
+      var rp=document.getElementById('rundownPanel'),
+          wp=document.getElementById('wirePanel');
+      if(!rp || !wp) return;
+      var _last = null;
+      function place(){
+        try{
+          var r=rp.getBoundingClientRect();
+          _last = {top:r.top, left:r.left, bottom:r.bottom};
+          // The gap is READ from the sidebar rather than repeated here. The
+          // help panel and the index on the other side of the map are a flex
+          // column with a `gap`, and that gap is the one this column has to
+          // match. Writing the number twice is how they came apart: the sidebar
+          // said 9 and this said 9, and then the CSS estimate that used to win
+          // over this line said something else entirely.
+          var gap = 9, sb = document.getElementById('sidebar');
+          if(sb){
+            var gv = parseFloat(getComputedStyle(sb).rowGap || getComputedStyle(sb).gap);
+            if(gv === gv && gv >= 0) gap = gv;   // NaN-safe
+          }
+          wp.style.top = Math.round(r.bottom + gap) + 'px';
+          wp.style.left = Math.round(r.left) + 'px';
+          // No width written here. This line copied the rundown's measured box
+          // onto the wire, which made the wire's width depend on whatever the
+          // rundown's width happened to be at the moment it was measured - a
+          // drag, a collapse or a stylesheet that had not applied yet each gave
+          // a different answer, and the two boxes ended up different widths.
+          // Both now take --sidepanel-w from the stylesheet and neither is
+          // measured from the other.
+        }catch(e){}
+      }
+      var head=rp.querySelector('.help-head');
+      if(head) head.addEventListener('click', function(){ setTimeout(place, 0); });
+      window.addEventListener('resize', place);
+      // A click on the header is not the only way the rundown changes height,
+      // and it fires before the class that changes it. A ResizeObserver watches
+      // the box itself, so the wire follows a collapse, an expand, a viewport
+      // that crosses the 760px breakpoint and anything else that resizes the
+      // panel above - which is what the sidebar's flex column does for free and
+      // what this column was missing.
+      //
+      // The old objection to a shared column - that the feed slid up and down
+      // while it was being read - does not apply. The rundown's body is capped
+      // at a fixed vh and its content is static, so its height changes only
+      // when the reader collapses it, which is exactly when the wire should
+      // move.
+      try{
+        if(window.ResizeObserver){
+          var ro = new ResizeObserver(function(){ place(); });
+          ro.observe(rp);
+        }
+      }catch(e){}
+      // A drag moves the rundown without resizing it, so the observer above
+      // never sees it. The wire follows it there too, once the drag is over.
+      //
+      // But a pointer release happens on every click on the page, and the wire
+      // is draggable in its own right: repositioning on every mouseup would
+      // snap it straight back under the rundown the moment the reader let go of
+      // it. So this fires only when the rundown's own box has actually changed
+      // since the last time the wire was placed against it.
+      function placeIfMoved(){
+        try{
+          var r = rp.getBoundingClientRect();
+          if(!_last || Math.abs(r.top - _last.top) > 0.5 ||
+             Math.abs(r.left - _last.left) > 0.5 ||
+             Math.abs(r.bottom - _last.bottom) > 0.5) place();
+        }catch(e){}
+      }
+      ['mouseup','touchend'].forEach(function(ev){
+        document.addEventListener(ev, function(){ setTimeout(placeIfMoved, 0); });
+      });
+      // and once the panel has been laid out
+      setTimeout(place, 0); setTimeout(place, 400);
+      window.pjPlaceWire = place;
+    })();
+  }catch(e){}
+
   // Anything still holding a panelColumn from an earlier session is unwrapped.
   try{
     (function(){
@@ -7918,7 +8141,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-17 23:48";
+  var BUILD = "BUILD-2026-08-18 19:32";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
@@ -7949,5 +8172,17 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   setTimeout(function(){ clearInterval(t); stamp(); }, 12000);
 })();
 </script>
+<style>
+/* Last rule in the document, and the only one carrying !important on this
+   property. The rundown and the wire are one column and read as one column
+   only if they are the same width. Several things in this file write a width
+   onto these boxes at runtime - the drag handler pins the measured width so
+   the panel does not reflow mid-drag, and the wire's placer used to copy the
+   rundown's box - and an inline style beats every ordinary rule above. This
+   holds both to --sidepanel-w whatever else has been written, so the two can
+   never come apart again. The drag handler keeps working: it writes left and
+   top, which this says nothing about. */
+#rundownPanel,#wirePanel{width:var(--sidepanel-w) !important;}
+</style>
 </body>
 </html>
