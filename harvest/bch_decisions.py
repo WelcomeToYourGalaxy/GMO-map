@@ -129,8 +129,18 @@ def pick(row, *names):
     return ""
 
 
-COUNTRY_FIELDS = ("government_s", "government", "country_s", "countries_ss",
-                  "government_en_s", "owner_s", "jurisdiction_s")
+# The field discovery run settled this. The index stores the country in three
+# usable shapes and the one this list was reading first, government_s, holds a
+# two-letter code rather than a name - which is why 2,867 of 2,918 decisions
+# were dropped as having no country. The English name is government_EN_s, with
+# a capital EN; the lowercase spelling that used to be tried does not exist.
+#
+# The code field is kept, last, because a code is still a country: it is mapped
+# through ISO2 rather than discarded.
+COUNTRY_FIELDS = ("government_EN_s", "country_EN_s", "government_EN_t",
+                  "country_EN_t", "countryRegions_EN_ss",
+                  "government_s", "country_s", "government_REL_ss",
+                  "countries_ss", "owner_s", "jurisdiction_s")
 
 
 def iso2(row):

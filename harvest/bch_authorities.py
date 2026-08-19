@@ -38,13 +38,26 @@ API = "https://api.cbd.int/api/v2013/index"
 
 # The record types worth asking for. The first two are the target; the rest are
 # listed so the discovery pass can show what else is there.
+# What the discovery run showed, and why this file now does less than it was
+# written to do.
+#
+# The three schemas it was built around do not exist. What exists is `contact`,
+# with 11,150 records - and they are PEOPLE. title_EN_s on a contact is a
+# person's name, not an office: the Zimbabwe sample returned an individual and
+# their work email address.
+#
+# Publishing a list of named officials and their addresses is not what this map
+# is for, and it is not made acceptable by the source being public. So the
+# authority harvest stops here rather than proceeding with what is technically
+# available. The competent authorities in resources.json stay hand-written.
+#
+# The discovery pass is kept, because it is what established this, and because
+# it found the field that repairs bch_decisions.py: government_EN_s.
 SCHEMAS = [
-    "biosafetyCompetentNationalAuthority",
-    "biosafetyNationalFocalPoint",
-    "nationalFocalPoint",
     "contact",
     "biosafetyLaw",
     "biosafetyDecision",
+    "modifiedOrganism",
 ]
 
 # Field names seen or plausible for country, in preference order. The discovery
@@ -113,6 +126,15 @@ def first(doc, names):
 
 
 def harvest():
+    print("The authority harvest is deliberately not run.\n"
+          "  The BCH holds contacts as named individuals with work email\n"
+          "  addresses, not as offices. Publishing those is not what this map\n"
+          "  is for. Run --discover to inspect the schema; the competent\n"
+          "  authorities on the map stay hand-written and checked.")
+    return
+
+
+def _harvest_disabled():
     found = {}
     for sc in ("biosafetyCompetentNationalAuthority", "biosafetyNationalFocalPoint"):
         start, total = 0, 1
