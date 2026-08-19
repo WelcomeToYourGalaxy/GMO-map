@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Live Global Genetic Frontlines Map</title>
+<title>Pre-Birth Rights!</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
@@ -365,6 +365,55 @@ body.info-open #indexPanel{ position:static !important; left:auto !important;
   #infoPanel{ left:0 !important; right:0 !important; top:auto !important;
     bottom:0 !important; width:auto !important; }
 }
+/* The index lives inside Lens & filters, at the bottom of its body. It is a way
+   of browsing the same filters, so it belongs with them rather than floating as
+   a fourth box. */
+#controls #indexPanel{position:static !important;left:auto !important;
+  top:auto !important;width:auto !important;max-height:none !important;
+  min-height:0 !important;background:transparent !important;border:0 !important;
+  box-shadow:none !important;backdrop-filter:none !important;
+  margin-top:8px;border-top:1px solid rgba(120,140,180,.22) !important;
+  border-radius:0 !important;}
+#controls #indexPanel #idxList{max-height:30vh;}
+#controls #indexPanel #idxBody{padding:6px 0 2px;}
+body.info-open #controls #indexPanel{position:static !important;
+  left:auto !important;top:auto !important;bottom:auto !important;
+  width:auto !important;}
+/* THE UNIT PANEL
+ *
+ * Clicking a country or a sub-unit opens this, in the space the index used to
+ * occupy under How to use this map. It carries every resource for that unit,
+ * grouped by what a person is trying to do.
+ *
+ * It is not in the record popups any more. A resource belongs to a PLACE, not
+ * to a permit: putting the same eight categories on all 22,000 markers answered
+ * a question nobody had asked at that moment, and buried the record itself.
+ */
+#unitPanel{position:fixed;left:12px;top:64px;width:300px;z-index:1002;
+  max-height:calc(100vh - 96px);display:flex;flex-direction:column;
+  background:rgba(8,12,27,0.96);border:1px solid rgba(120,140,180,.30);
+  border-radius:10px;backdrop-filter:blur(12px);
+  box-shadow:0 6px 22px rgba(0,0,0,.5);overflow:hidden;}
+#unitPanel.collapsed{display:none;}
+#unitHead{flex:0 0 auto;display:flex;justify-content:space-between;
+  align-items:center;padding:10px 12px;cursor:pointer;font-size:13px;
+  font-weight:700;color:#e6eefc;border-bottom:1px solid rgba(120,140,180,.22);}
+.unit-tog{font-size:11px;color:#98a2c1;}
+#unitBody{flex:1 1 auto;overflow-y:auto;padding:4px 12px 12px;
+  scrollbar-width:thin;}
+#unitBody .pj-act{margin-top:0;padding:0;background:none;border:0;}
+#unitBody .pj-act-h{display:none;}
+/* Guide buttons are a title and nothing else. The descriptions were a
+   paragraph each in a rail 266px wide, which made two guides fill the column
+   and pushed everything below them off screen. The guides themselves say what
+   they contain. */
+#guidesBody .guide-btn{display:block;padding:7px 10px;margin:4px 0;
+  border-radius:6px;background:rgba(74,93,47,.16);
+  border-left:2px solid rgba(122,150,80,.7);
+  color:#dfe7f5;text-decoration:none;font-size:11px;font-weight:600;
+  line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#guidesBody .guide-btn:hover{background:rgba(74,93,47,.28);color:#fff;}
+#guidesBody .gb-k,#guidesBody .gb-d{display:none;}
 </style>
 <style>
 .pjm-pin{ background:none!important; border:none!important; filter:drop-shadow(0 2px 3px rgba(0,0,0,0.55)); }
@@ -479,64 +528,28 @@ function pjReport(which, data){
     <div class="wire-foot"><span id="wireSrc"></span><span class="wire-refresh" onclick="loadWire(true)">&#8635; refresh</span></div>
   </div>
 </div>
-<div id="indexPanel">
-  <div id="idxHead"><span id="idxTitle">Index <b id="idxCount">0</b></span><span id="idxToggle">−</span></div>
-  <div id="idxBody">
-    <div id="idxStatsBar"><span><b id="countryCount">0</b> places</span><span><b id="trackerCount">0</b> shown</span><span><b id="defunctCount">0</b> dormant</span></div>
-    <div id="idxControls">
-      <div class="idx-ce"><span onclick="document.querySelectorAll('#idxBody .idx-grp').forEach(function(g){g.classList.add('collapsed');})">Collapse all</span><span onclick="document.querySelectorAll('#idxBody .idx-grp').forEach(function(g){g.classList.remove('collapsed');})">Expand all</span></div>
-      <select id="idxSort" class="idxSel" title="Sort within groups"><option value="az">Sort: A → Z</option><option value="za">Sort: Z → A</option></select>
-      <select id="idxGroup" class="idxSel" title="Group by">
-        <option value="country">Group: Country</option>
-        <option value="level">Group: Level</option>
-        <option value="lens">Group: Lens</option>
-        <option value="srctype">Group: Source type</option>
-        <option value="srckind">Group: Source kind</option>
-        <option value="media">Group: Media type</option>
-        <option value="trust">Group: Trust level</option>
-        <option value="voice">Group: Voice</option>
-        <option value="none">Group: None</option>
-      </select>
-      <select id="idxSub" class="idxSel" title="Then by">
-        <option value="lens">then Lens</option>
-        <option value="none">then &mdash;</option>
-        <option value="level">then Level</option>
-        <option value="country">then Country</option>
-        <option value="srctype">then Source type</option>
-        <option value="srckind">then Source kind</option>
-        <option value="media">then Media type</option>
-        <option value="trust">then Trust level</option>
-        <option value="voice">then Voice</option>
-      </select>
-      <input id="idxSearch" type="text" placeholder="Filter…" autocomplete="off">
-    </div>
-    <div id="idxList"></div>
-  </div>
-</div>
+
 </div>
 
-<div id="header"><h1 id="title">Live Global Genetic Frontlines Map</h1><div class="subtitle" id="subtitle"></div></div>
+<div id="header"><h1 id="title">Pre-Birth Rights!</h1><div class="subtitle" id="subtitle"></div></div>
 <div id="map"></div>
 <div id="vign" aria-hidden="true"></div>
 <div id="gbLoad">Loading…</div>
 <div id="infoPanel"><div id="infoDrag" title="Drag to move"></div><div id="infoClose" onclick="hideInfoPanel()">×</div><div id="infoBody"></div></div>
 <div id="guidePanel" aria-hidden="true"><div id="guideHead"><span id="guideTitle"></span><button id="guideClose" onclick="_closeGuide()" title="Close">×</button></div><div id="guideBody"></div></div>
 <div id="rightbar">
-<div id="guidesPanel">
+<div id="guidesPanel" class="open">
   <div id="guidesHead" onclick="document.getElementById('guidesPanel').classList.toggle('open')">
     <span>Guides &mdash; what to actually do</span><span class="guides-tog">&#9662;</span></div>
   <div id="guidesBody">
-    <a class="guide-btn" href="#" onclick="openGuide(&#39;guides/how-to-stop-a-release.pdf&#39;,&#39;How to stop a release&#39;);return false;">
-      <span class="gb-k">Guide 1 &middot; 28 pages</span>
-      <span class="gb-t">How to stop a release</span>
-      <span class="gb-d">One application, from finding it to filing against it. Find it, document it, organise, file it, publish it — five steps that run at once rather than in order, each making the next credible. Includes where the tilt shows: who paid for the studies, who moved between the regulator and the industry, what was blacked out, and what your regulator is legally permitted to consider before you write a word.</span>
-    </a>
-    <a class="guide-btn" href="#" onclick="openGuide(&#39;guides/how-to-change-the-industry.pdf&#39;,&#39;How to change the industry&#39;);return false;">
-      <span class="gb-k">Guide 2 &middot; 26 pages</span>
-      <span class="gb-t">How to change the industry</span>
-      <span class="gb-d">The rules rather than the permit. The four permit stages and the deadline on each, how far regulatory capture usually reaches, and what sits outside it — courts, information law, parliaments and auditors, local government, trade partners. Underneath everything: whether the thing is legally a GMO at all, because redraw that definition and every door above closes at once.</span>
-    </a>
+    <a class="guide-btn" href="#" onclick="openGuide(&#39;guides/how-to-stop-a-release.pdf&#39;,&#39;How to stop a release&#39;);return false;">How to stop a release</a>
+    <a class="guide-btn" href="#" onclick="openGuide(&#39;guides/how-to-change-the-industry.pdf&#39;,&#39;How to change the industry&#39;);return false;">How to change the industry</a>
   </div>
+</div>
+<div id="unitPanel" class="collapsed">
+  <div id="unitHead" onclick="document.getElementById('unitPanel').classList.toggle('collapsed')">
+    <span id="unitTitle">Resources</span><span class="unit-tog">&#9662;</span></div>
+  <div id="unitBody"></div>
 </div>
 <div id="controls">
   <div id="ctlHead" onclick="document.getElementById('controls').classList.toggle('collapsed')"><span>Lens &amp; filters</span><span id="ctlTog">&#9662;</span></div>
@@ -578,7 +591,42 @@ function pjReport(which, data){
   <div class="filter-tip"><span class="tl">Try combining filters</span><b>Records &amp; data + Official</b> &mdash; the state’s own biosafety record only, no watchdog or journalism voices. <b>Biosafety &amp; Contamination + Interpretive</b> &mdash; the independent scientists re-reading the dossiers the regulator accepted. <b>Any lens + Investigative journalism</b> &mdash; just the newsrooms working that beat. <b>Any lens + Official + Records &amp; data</b> &mdash; only the primary registers and dockets you can cite directly in a submission.</div>
   <div class="best-wrap"><div class="ctl-title">Best sources</div><div class="best-hint">Filter the whole map to standout sources by quality.</div><div id="bestPills"></div></div>
   <label class="f-status"><input type="checkbox" id="histToggle" checked> Show dormant / defunct</label>
+  
+<div id="indexPanel">
+  <div id="idxHead"><span id="idxTitle">Index <b id="idxCount">0</b></span><span id="idxToggle">−</span></div>
+  <div id="idxBody">
+    <div id="idxStatsBar"><span><b id="countryCount">0</b> places</span><span><b id="trackerCount">0</b> shown</span><span><b id="defunctCount">0</b> dormant</span></div>
+    <div id="idxControls">
+      <div class="idx-ce"><span onclick="document.querySelectorAll('#idxBody .idx-grp').forEach(function(g){g.classList.add('collapsed');})">Collapse all</span><span onclick="document.querySelectorAll('#idxBody .idx-grp').forEach(function(g){g.classList.remove('collapsed');})">Expand all</span></div>
+      <select id="idxSort" class="idxSel" title="Sort within groups"><option value="az">Sort: A → Z</option><option value="za">Sort: Z → A</option></select>
+      <select id="idxGroup" class="idxSel" title="Group by">
+        <option value="country">Group: Country</option>
+        <option value="level">Group: Level</option>
+        <option value="lens">Group: Lens</option>
+        <option value="srctype">Group: Source type</option>
+        <option value="srckind">Group: Source kind</option>
+        <option value="media">Group: Media type</option>
+        <option value="trust">Group: Trust level</option>
+        <option value="voice">Group: Voice</option>
+        <option value="none">Group: None</option>
+      </select>
+      <select id="idxSub" class="idxSel" title="Then by">
+        <option value="lens">then Lens</option>
+        <option value="none">then &mdash;</option>
+        <option value="level">then Level</option>
+        <option value="country">then Country</option>
+        <option value="srctype">then Source type</option>
+        <option value="srckind">then Source kind</option>
+        <option value="media">then Media type</option>
+        <option value="trust">then Trust level</option>
+        <option value="voice">then Voice</option>
+      </select>
+      <input id="idxSearch" type="text" placeholder="Filter…" autocomplete="off">
+    </div>
+    <div id="idxList"></div>
   </div>
+</div>
+</div>
 </div>
 <div id="gbCrumb"></div>
 
@@ -1395,6 +1443,9 @@ function _regimeBox(iso){
        and is caught for that reason. Split here instead, on the subheadings it
        already emits: each becomes its own fold, and if the markup ever changes
        the whole thing falls back to a single category rather than breaking. */
+    /* The resources used to be appended to this write-up. They now open in
+       their own panel, so the country box stays a country box. */
+    try{ if(window.pjOpenUnit) window.pjOpenUnit(name || iso, 'country'); }catch(e){}
     var out = '';
     try{
       var body = inner.replace(/^[\s\S]*?<div class="rgm-h">[^<]*<\/div>/, '');
@@ -1412,7 +1463,6 @@ function _regimeBox(iso){
     }catch(e){
       out = _regimeCat('WHAT THE LAW HERE COUNTS AS ENGINEERED', inner, true);
     }
-    try{ out += window.pjCountryResources(name || iso); }catch(e){}
     return out;
   }
   catch(e){
@@ -4120,6 +4170,29 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
   /* The country box calls this. Everything, including the consultations, because
      that is the one place a reader is asking about a country rather than a
      thing in it. */
+
+  /* Opened by a click on a country or a sub-unit. Everything for that place,
+     grouped by intention, in its own panel rather than inside a marker popup. */
+  window.pjOpenUnit = function(name, kindLabel){
+    try{
+      var el = document.getElementById('unitPanel'),
+          ti = document.getElementById('unitTitle'),
+          bd = document.getElementById('unitBody');
+      if(!el || !bd) return false;
+      var html = window.pjActNote({state: name, __wide: true});
+      if(!html){
+        bd.innerHTML = '<div class="res-conf">Resources for this place have not '
+          + 'been written yet. The global entries \u2014 testing, the focal '
+          + 'point list, legal help \u2014 apply anywhere.</div>';
+      } else bd.innerHTML = html;
+      if(ti) ti.textContent = name + (kindLabel ? ' \u00b7 ' + kindLabel : '');
+      el.classList.remove('collapsed');
+      return true;
+    }catch(e){ return false; }
+  };
+  window.pjCloseUnit = function(){
+    try{ document.getElementById('unitPanel').classList.add('collapsed'); }catch(e){}
+  };
   window.pjCountryResources = function(countryName){
     return window.pjActNote({state: countryName, __wide: true});
   };
@@ -4192,8 +4265,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
               + 'acreage appears only on older records carried over from the '
               + 'system it replaced.</span>' : '')
          +'</div>':'')
-      +(function(){ try{ return window.pjActNote ? window.pjActNote(q) : ''; }
-                    catch(e){ return ''; } })()
+
       +(q.url?'<div class="d"><a href="'+q.url+'" target="_blank" style="color:#263f9d">Open source \u2192</a></div>':'')
       +pjDigHtml(q)
       +'<div class="pj-live" id="pjLiveBox"></div>'
@@ -4803,7 +4875,7 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
   <div id="tourNav"><button id="tourPrev" onclick="tourGo(_tourI-1)">&#8592; Back</button><span id="tourDots"></span><button id="tourNext" onclick="tourGo(_tourI+1)">Next &#8594;</button></div>
 </div></div>
 <style>
-.pj-kinds{display:flex;flex-direction:column;gap:4px;margin:5px 0 2px 6px;}.pj-kinds input{accent-color:#7fa8cc;width:13px;height:13px;cursor:pointer;}.pj-kinds label{display:flex;align-items:center;gap:6px;font-size:10.5px;color:#9aa8c0;cursor:pointer;}.pj-kinds label b{color:#c8d4e8;font-weight:700;}#guidesPanel{flex:0 0 auto;background:rgba(8,12,27,0.96);border:1px solid var(--accent-soft);border-radius:10px;box-shadow:0 4px 22px rgba(0,0,0,0.45);overflow:hidden;}#guidesHead{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 12px;cursor:pointer;font-size:11.5px;font-weight:700;color:#eaf1ff;letter-spacing:.2px;user-select:none;}#guidesHead:hover{background:rgba(127,168,204,0.10);}.guides-tog{font-size:11px;color:#7fa8cc;transition:transform .18s;}#guidesPanel.open .guides-tog{transform:rotate(180deg);}#guidesBody{display:none;padding:0 12px 12px;flex-direction:column;gap:8px;}#guidesPanel.open #guidesBody{display:flex;}.guide-btns{display:flex;flex-direction:column;gap:8px;margin:14px 0 4px;}.guide-btn{display:block;text-decoration:none;padding:11px 13px;border-radius:9px;background:rgba(127,168,204,0.10);border:1px solid rgba(127,168,204,0.42);transition:all .15s;}.guide-btn:hover{background:rgba(127,168,204,0.20);border-color:#9dc0dd;}.gb-k{display:block;font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#7fa8cc;margin-bottom:3px;}.gb-t{display:block;font-size:13px;font-weight:700;color:#eaf1ff;margin-bottom:4px;}.gb-d{display:block;font-size:11px;line-height:1.45;color:#a8b4cc;}#tourBtn{display:block;width:100%;margin:2px 0 10px;padding:9px 12px;background:rgba(8,12,27,0.96);color:#eaeeff;border:1px solid var(--accent-soft);border-radius:8px;font-weight:700;font-size:12.5px;cursor:pointer;text-align:left;letter-spacing:.2px;}
+.pj-kinds{display:flex;flex-direction:column;gap:4px;margin:5px 0 2px 6px;}.pj-kinds input{accent-color:#7fa8cc;width:13px;height:13px;cursor:pointer;}.pj-kinds label{display:flex;align-items:center;gap:6px;font-size:10.5px;color:#9aa8c0;cursor:pointer;}.pj-kinds label b{color:#c8d4e8;font-weight:700;}#guidesPanel{flex:0 0 auto;background:rgba(8,12,27,0.96);border:1px solid var(--accent-soft);border-radius:10px;box-shadow:0 4px 22px rgba(0,0,0,0.45);overflow:hidden;}#guidesHead{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 12px;cursor:pointer;font-size:11.5px;font-weight:700;color:#eaf1ff;letter-spacing:.2px;user-select:none;}#guidesHead:hover{background:rgba(127,168,204,0.10);}.guides-tog{font-size:11px;color:#7fa8cc;transition:transform .18s;}#guidesPanel.open .guides-tog{transform:rotate(180deg);}#guidesBody{display:none;padding:0 12px 10px;flex-direction:column;gap:0;}#guidesPanel.open #guidesBody{display:flex;}.guide-btns{display:flex;flex-direction:column;gap:8px;margin:14px 0 4px;}.guide-btn{display:block;text-decoration:none;padding:11px 13px;border-radius:9px;background:rgba(127,168,204,0.10);border:1px solid rgba(127,168,204,0.42);transition:all .15s;}.guide-btn:hover{background:rgba(127,168,204,0.20);border-color:#9dc0dd;}.gb-k{display:block;font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#7fa8cc;margin-bottom:3px;}.gb-t{display:block;font-size:13px;font-weight:700;color:#eaf1ff;margin-bottom:4px;}.gb-d{display:block;font-size:11px;line-height:1.45;color:#a8b4cc;}#tourBtn{display:block;width:100%;margin:2px 0 10px;padding:9px 12px;background:rgba(8,12,27,0.96);color:#eaeeff;border:1px solid var(--accent-soft);border-radius:8px;font-weight:700;font-size:12.5px;cursor:pointer;text-align:left;letter-spacing:.2px;}
 #tourBtn:hover{filter:brightness(1.12);}
 #tourPanel{display:none;position:fixed;inset:0;z-index:12000;pointer-events:none;}
 #tourPanel.open{display:block;}
@@ -8490,14 +8562,6 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   /* Move the index into the right-hand rail, under the lens filters. Done in
      script rather than markup because the index is built into the left sidebar
      by code that runs later, and moving the element keeps its handlers. */
-  try{
-    (function(){
-      var idx = document.getElementById('indexPanel'),
-          rail = document.getElementById('rightbar');
-      if(!idx || !rail || idx.parentNode === rail) return;
-      rail.appendChild(idx);
-    })();
-  }catch(e){}
   map.on('move zoom zoomend moveend resize viewreset', cover);
 
   // The flag the click handler reads. dragstart fires only for a real pan, so
@@ -8540,7 +8604,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-19 22:05";
+  var BUILD = "BUILD-2026-08-19 22:32";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
