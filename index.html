@@ -99,6 +99,17 @@
 .tier-tab.empty{opacity:0.4;}
 .tier-tab:hover:not(.active){color:var(--accent-hi);}
 
+/* The painted plate dissolves into the imagery at its southern edge rather
+   than stopping at one. The band is deep enough to read as weather rather than
+   as a cut, and narrow enough to leave the border art intact. */
+.plate-img{
+  -webkit-mask-image: linear-gradient(to bottom,
+      #000 0%, #000 86%, rgba(0,0,0,0.75) 93%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom,
+      #000 0%, #000 86%, rgba(0,0,0,0.75) 93%, rgba(0,0,0,0) 100%);
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+}
   #indexPanel{position:fixed;top:64px;left:12px;z-index:1001;width:254px;background:rgba(8,12,27,0.95);border:1px solid var(--accent-soft);border-radius:10px;backdrop-filter:blur(12px);box-shadow:0 4px 22px rgba(0,0,0,0.45);display:flex;flex-direction:column;max-height:calc(100vh - 200px);}
   #idxHead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 12px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.08);}
   #idxTitle{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#858d9f;white-space:nowrap;}
@@ -329,6 +340,31 @@ body.info-open.wire-up #indexPanel{top:122px !important;}
 .memb-sec{margin-top:10px;padding-top:8px;border-top:1px solid rgba(200,210,230,.12);}.memb-h{font-size:11px;font-weight:700;color:#2f47a0;margin-bottom:5px;}.memb-row{font-size:12px;margin:7px 0;}.memb-link{color:#26378a;font-weight:600;text-decoration:none;} .memb-link:hover{text-decoration:underline;} .memb-name{color:#c8cedf;font-weight:600;} .fac-jump{font-size:12px;margin:2px 0;cursor:pointer;color:#26378a;} .fac-jump:hover{text-decoration:underline;color:#1738c2;} .fac-back-wrap{margin:0 0 8px;} .fac-back{cursor:pointer;color:#98a2c1;font-size:12px;} .fac-back:hover{color:#ccd2e6;text-decoration:underline;} .memb-note-inline{font-size:10.5px;color:#8997ad;line-height:1.42;margin:2px 0 0;}.memb-note{font-size:10px;color:#8997ad;font-style:italic;margin-top:6px;line-height:1.4;}
 #sidebar>#helpPanel:not(.collapsed){flex:1 1 50%!important;min-height:0!important;display:flex;flex-direction:column;overflow:hidden;}#sidebar>#helpPanel.collapsed{flex:0 0 auto!important;}#sidebar>#helpPanel:not(.collapsed) .help-body{max-height:none!important;flex:1 1 auto;overflow-y:auto;}#sidebar>#indexPanel:not(.collapsed){flex:1 1 50%!important;min-height:0!important;}#rightbar>#controls:not(.collapsed){flex:1 1 50%!important;min-height:0!important;overflow-y:auto;}#rightbar>#controls.collapsed{flex:0 0 auto!important;overflow:hidden;}#rightbar>#legend:not(.collapsed){flex:1 1 50%!important;min-height:0!important;display:flex;flex-direction:column;overflow:hidden;}#rightbar>#legend.collapsed{flex:0 0 auto!important;}#rightbar>#legend:not(.collapsed) #legBody{max-height:none!important;flex:1 1 auto;overflow-y:auto;}
 #sidebar,#rightbar{height:calc(100vh - 90px)!important;max-height:calc(100vh - 90px)!important;}#sidebar>#helpPanel:not(.collapsed),#sidebar>#indexPanel:not(.collapsed),#rightbar>#controls,#rightbar>#legend:not(.collapsed){flex:1 1 50%!important;min-height:0!important;max-height:50%!important;overflow:hidden;display:flex;flex-direction:column;}#sidebar>#helpPanel:not(.collapsed) .help-body,#rightbar>#legend:not(.collapsed) #legBody,#rightbar>#controls{overflow-y:auto!important;max-height:none!important;flex:1 1 auto;}#sidebar>#indexPanel #idxBody{overflow-y:auto!important;flex:1 1 auto;min-height:0;}#sidebar>#indexPanel.collapsed{flex:0 0 auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;}
+/* PANEL LAYOUT
+ *
+ * The entries popup opens where the index used to be, on the left, because that
+ * is the widest clear space and the popup is the thing a reader has just asked
+ * for. The index moves into the right-hand rail, under the lens filters, since
+ * it is a way of browsing the same filters rather than a separate tool.
+ *
+ * Written as overrides at the end of the sheet rather than by editing the
+ * original rules, so the earlier layout is still readable and one line reverts
+ * any of it.
+ */
+#infoPanel{ left:12px !important; top:64px !important; width:300px !important;
+  max-height:calc(100vh - 96px) !important; }
+body.info-open #indexPanel{ position:static !important; left:auto !important;
+  top:auto !important; bottom:auto !important; width:auto !important;
+  max-height:none !important; }
+#rightbar #indexPanel{ position:static !important; left:auto !important;
+  top:auto !important; width:auto !important; flex:0 1 auto;
+  min-height:0 !important; max-height:46vh !important; }
+#rightbar #indexPanel .idx-body,#rightbar #indexPanel #idxList{
+  max-height:38vh; overflow:auto; }
+@media (max-width:640px){
+  #infoPanel{ left:0 !important; right:0 !important; top:auto !important;
+    bottom:0 !important; width:auto !important; }
+}
 </style>
 <style>
 .pjm-pin{ background:none!important; border:none!important; filter:drop-shadow(0 2px 3px rgba(0,0,0,0.55)); }
@@ -849,6 +885,14 @@ try{
   var _pp = map.getPane('plate');
   _pp.style.zIndex = 250;                              /* over tiles(200), under vectors(400) */
   _pp.style.pointerEvents = 'none';
+  /* The plate runs to -80.55 south while the imagery runs to -85.05, so the
+     bottom of the painted chart ended in a hard horizontal line across the
+     globe with satellite showing below it. The northern edge does not have this
+     problem because both end at the same latitude and the art was drawn to
+     finish there.
+     Faded with a mask instead of moving the edge: stretching the art down to
+     -85 would distort the border painting, and cropping it would lose the
+     southern border art entirely. */
   var _plates = [];
   try{
     _plates.push(L.imageOverlay(PLATE_IMG,
@@ -1320,8 +1364,57 @@ function _ovFeats(k,iso){
 // same set as the countries that file biosafety decisions. These are the eight
 // it does not carry. EU is not a country and is left unmatched deliberately.
 var _A2_EXTRA = {BF:'BFA', UY:'URY', CU:'CUB', SZ:'SWZ', SK:'SVK', BG:'BGR'};
+/* The country panel, as collapsible categories.
+ *
+ * The write-ups this map already had - what the law counts as engineered, the
+ * decisions filed under the Cartagena Protocol - are now sections a reader
+ * opens rather than a wall they scroll past, and the per-country resources sit
+ * underneath them in the same form. Same shape as a record popup, so the two
+ * read alike.
+ */
+function _regimeCat(label, inner, open){
+  if(!inner) return '';
+  return '<div class="res-cat' + (open ? ' open' : '') + '">'
+       + '<div class="res-head" onclick="this.parentNode.classList.toggle('
+       + '&quot;open&quot;)"><span class="res-car">\u25b8</span>'
+       + '<span class="res-lab">' + label + '</span></div>'
+       + '<div class="res-body">' + inner + '</div></div>';
+}
 function _regimeBox(iso){
-  try{ return _regimeBoxInner(iso); }
+  try{
+    var inner = _regimeBoxInner(iso);
+    var name = '';
+    try{
+      var rf = _ovFeats('regime', iso);
+      if(rf.length) name = rf[0].name || '';
+    }catch(e){}
+    /* The write-ups fold; the first is open, because a reader who clicked a
+       country wants to know what its law says before anything else. */
+    /* The inner builder emits one box with several h2 subheadings inside it.
+       Splitting it there would mean rewriting a function that has thrown before
+       and is caught for that reason. Split here instead, on the subheadings it
+       already emits: each becomes its own fold, and if the markup ever changes
+       the whole thing falls back to a single category rather than breaking. */
+    var out = '';
+    try{
+      var body = inner.replace(/^[\s\S]*?<div class="rgm-h">[^<]*<\/div>/, '');
+      var parts = body.split(/(?=<div class="rgm-h2">)/);
+      var lead = parts.shift() || '';
+      if(lead.replace(/<[^>]*>/g,'').trim())
+        out += _regimeCat('WHAT THE LAW HERE COUNTS AS ENGINEERED', lead, true);
+      parts.forEach(function(seg){
+        var m = seg.match(/<div class="rgm-h2">([\s\S]*?)<\/div>/);
+        var lab = m ? m[1].replace(/<[^>]*>/g,'').trim() : 'More';
+        var rest = m ? seg.slice(m.index + m[0].length) : seg;
+        out += _regimeCat(lab.toUpperCase(), rest, false);
+      });
+      if(!out) out = _regimeCat('WHAT THE LAW HERE COUNTS AS ENGINEERED', inner, true);
+    }catch(e){
+      out = _regimeCat('WHAT THE LAW HERE COUNTS AS ENGINEERED', inner, true);
+    }
+    try{ out += window.pjCountryResources(name || iso); }catch(e){}
+    return out;
+  }
   catch(e){
     // A write-up that throws used to take the whole country box with it, so the
     // symptom was a panel that did not open rather than a section that did not
@@ -1949,6 +2042,50 @@ function buildIndexData(){ INDEXDATA=[];
       lat:p.lat, lng:p.lng, source:src
     });
   });
+
+  /* Resource entries go into the index too. They were built as popup content
+     and are records like any other: a named body, a country, a lens, a
+     description and a link. Leaving them out of the index meant the only way
+     to find your own country's inspector was to already know where it was on
+     the map, which is backwards.
+     Level 'Resource' so they can be filtered in or out as a group; the lens is
+     taken from the entry's own tag so the existing lens buttons reach them. */
+  try{
+    var R = (typeof PJ_RES !== 'undefined' && PJ_RES) ? PJ_RES : null;
+    if(R){
+      var LENS = {TESTING:'rules', REGULATOR:'rules', COMPLAINT:'rules',
+                  CONSULTATION:'rules', CERTIFIER:'rules', LEGAL:'rules'};
+      var push = function(x, country, cat){
+        if(!x || !x.n) return;
+        INDEXDATA.push({
+          name: x.n, url: x.u || '', country: country || 'Worldwide', iso: '',
+          level: 'Resource',
+          lenses: [LENS[x.lens] || 'rules'],
+          tags: ['resource:' + cat, 'lens:' + String(x.lens || '').toLowerCase()],
+          kind: 'structured', voice: 'documentary', trust: x.conf ? 'medium' : 'high',
+          skind: 'resource', media: 'web',
+          desc: x.d || '', checked: null, lat: null, lng: null,
+          source: 'resource:' + cat
+        });
+      };
+      for(var g in (R.global || {}))
+        (R.global[g] || []).forEach(function(x){ push(x, 'Worldwide', g); });
+      for(var c in (R.countries || {}))
+        for(var k in R.countries[c])
+          (R.countries[c][k] || []).forEach(function(x){ push(x, c, k); });
+      var SN = R.subnational || {};
+      for(var cc in SN){
+        if(cc.charAt(0) === '_') continue;
+        for(var u in SN[cc]){
+          if(u.charAt(0) === '_') continue;
+          push(SN[cc][u], u + ', ' + cc, 'complain');
+        }
+        if(SN[cc]._generic) push(SN[cc]._generic, cc, 'complain');
+      }
+    }
+  }catch(e){
+    try{ console.warn('[map] resources not indexed:', e && e.message); }catch(_x){}
+  }
   return INDEXDATA;
 }
 
@@ -3829,85 +3966,202 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
    * the only geography a record reliably carries.
    */
   var PJ_ACT_GENERIC =
-    "<b>Anywhere.</b> Your national biosafety focal point is the named contact "
-    + "for this subject in your country \u2014 every party to the Cartagena "
-    + "Protocol has one, and the list is public. They hold the decisions filed "
-    + "for your country and can say which office takes a complaint. Test strips "
-    + "for the common traits cost a few pounds and are sold to anyone; a "
-    + "laboratory result is what turns an observation into evidence. If certified "
-    + "organic land is involved, the certifier acts faster than any regulator.";
+    '<div class="pj-act-r"><span class="pj-act-k">Test it yourself</span> '
+    + '<a href="https://www.envirologix.com/" target="_blank" rel="noopener">'
+    + 'EnviroLogix</a> \u00b7 <a href="https://www.romerlabs.com/" target="_blank" '
+    + 'rel="noopener">Romer Labs</a></div>'
+    + '<div class="pj-act-r"><span class="pj-act-k">Your authority</span> '
+    + '<a href="https://bch.cbd.int/about/contacts" target="_blank" rel="noopener">'
+    + 'Biosafety Clearing-House \u2014 national focal points</a></div>'
+    + '<div class="pj-act-r"><span class="pj-act-k">Where it is announced</span> '
+    + '<a href="https://bch.cbd.int/" target="_blank" rel="noopener">'
+    + 'BCH decisions and consultations</a></div>'
+    + '<div class="pj-act-r"><span class="pj-act-k">Who certifies</span> '
+    + '<a href="https://www.ifoam.bio/" target="_blank" rel="noopener">'
+    + 'IFOAM \u2014 find a certifier</a></div>';
 
-  var PJ_ACT = {
-    "United States":
-      "<b>Complaints go to your state department of agriculture</b>, not to "
-      + "Washington \u2014 the state employs the inspectors, can enter a field "
-      + "and issues the penalties. Quote the permit number. APHIS handles "
-      + "breaches of permit conditions and publishes enforcement actions; the "
-      + "EPA and the state lead agency handle herbicide drift, and reports must "
-      + "be made while residue is still detectable. Approvals are announced in "
-      + "the Federal Register with a 30\u201360 day comment window, and comments "
-      + "filed inside it must be addressed.",
-    "Canada":
-      "<b>The CFIA</b> handles plants with novel traits and publishes its "
-      + "decision documents; Health Canada handles novel foods. Provincial "
-      + "agriculture ministries hold pesticide applicator licensing and take "
-      + "drift complaints. Canada is one of very few places whose register lists "
-      + "edited and inserted-gene products side by side, which makes it the best "
-      + "place to check what an organism actually is.",
-    "United Kingdom":
-      "<b>DEFRA and ACRE</b> handle releases; the Health and Safety Executive "
-      + "holds contained-use notifications and, unusually, takes reports from "
-      + "the public about them. The Wildlife Incident Investigation Scheme will "
-      + "collect and test a dead animal or bee colony at public expense. Consult "
-      + "the Soil Association if certified land is involved.",
-    "Germany":
-      "<b>The Bundesamt f\u00fcr Verbraucherschutz und Lebensmittelsicherheit</b> "
-      + "runs the release register and publishes trial locations \u2014 in "
-      + "Germany down to the land parcel, which is more than most countries "
-      + "give. Ohne Gentechnik certification covers animal feed, which consumer "
-      + "labelling law does not.",
-    "France":
-      "<b>The Haut Conseil des biotechnologies</b> and the agriculture ministry "
-      + "handle authorisations, and trial locations are published under the EU "
-      + "deliberate release directive. Regional plant protection services "
-      + "(SRAL) take drift complaints and inspect.",
-    "Australia":
-      "<b>The OGTR</b> publishes every licence, the risk assessment, and the "
-      + "approved field sites \u2014 which few regulators do before a decision, "
-      + "and it is what makes a local objection possible. Consultation runs "
-      + "around 30 days. State agriculture departments handle spray complaints.",
-    "India":
-      "<b>The GEAC</b> decides releases and publishes its meeting minutes, which "
-      + "is where an approval first becomes visible. State biotechnology "
-      + "coordination committees have authority over releases in their state, "
-      + "and are closer than Delhi.",
-    "Brazil":
-      "<b>CTNBio</b> issues technical opinions and publishes approvals; IBAMA "
-      + "and state environment agencies handle environmental damage. Public "
-      + "hearings are held for some applications and are announced in the "
-      + "Di\u00e1rio Oficial.",
-    "China":
-      "<b>The Ministry of Agriculture and Rural Affairs</b> issues biosafety "
-      + "certificates and publishes lists of approved events. Provincial "
-      + "agriculture departments handle enforcement, and are the level at which "
-      + "unapproved planting has been acted on.",
-    "Japan":
-      "<b>The Ministry of Agriculture and the Ministry of the Environment</b> "
-      + "share responsibility under the Cartagena Law, and both publish "
-      + "approvals. Japan is a large importer and a small grower, so most "
-      + "questions here concern feed and food rather than fields."
+  /* THREE SLOTS, NOT ONE STRING.
+   *
+   * An action note answers three separate questions, and they come from three
+   * different places. Written as one paragraph they cannot be updated
+   * independently, which matters because the first is about to arrive as data:
+   * the Biosafety Clearing-House holds the competent authority for 172
+   * countries, and a harvester for it is written.
+   *
+   *   decides   who authorises a release  — BCH fills this when it runs
+   *   inspects  who takes a complaint and can enter land — not in BCH
+   *   notice    where an application appears, and for how long — not in BCH
+   *
+   * A slot left null is filled from the harvest if the harvest has it, and
+   * omitted if not. Nothing written by hand is overwritten: a typed `decides`
+   * wins over a harvested one, because somebody checked it.
+   */
+  /* RESOURCE ENTRIES IN THE POPUP.
+   *
+   * Written twice before and wrong both times: first as a paragraph, then as a
+   * row of links. What was wanted, and what the sibling map does, is ENTRIES -
+   * each with a name, a lens tag, its own description and a source link -
+   * grouped into collapsible categories with a count on each.
+   *
+   * They live in harvest/resources.json rather than here, so they can be added
+   * to without touching this file, and so the same records can be indexed and
+   * filtered by lens like anything else on the map.
+   *
+   * Country entries and global ones are merged per category: a reader in a
+   * country with two named bodies still gets the three strip suppliers and the
+   * focal point list, because those work anywhere.
+   */
+  var PJ_RES = null;
+  try{
+    fetch('harvest/resources.json')
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(d){
+        PJ_RES = d;
+        try{ if(window.pjRefreshPopup) window.pjRefreshPopup(); }catch(e){}
+        /* The index is built before this file arrives, so it has to be told. */
+        try{
+          if(typeof INDEXDATA !== 'undefined'){ INDEXDATA = []; }
+          if(typeof renderIndex === 'function') renderIndex();
+        }catch(e){}
+      })
+      .catch(function(e){
+        try{ console.warn('[map] resources.json not loaded:', e && e.message); }catch(_x){}
+      });
+  }catch(e){}
+
+  /* Some categories only belong on a release. A consultation window is about a
+     decision being taken; on a fertility clinic or a company it is noise, and
+     noise in a popup is how a reader learns to stop opening them. Testing,
+     complaints, certification and legal help are shown everywhere, because they
+     apply whatever the reader is looking at.
+     'wide' is the country box, which gets everything. */
+  /* Consultations open now, from harvest/consultations.json.
+   *
+   * The one thing on this map that expires. It is shown with a closing date and
+   * a countdown, and it is NOT shown at all if the file is older than three
+   * weeks: a window that has since shut, presented as open, sends somebody to
+   * write a comment nobody has to read. Stale is worse than absent here in a
+   * way it is not anywhere else on this map. */
+  var PJ_CONS = null;
+  try{
+    fetch('harvest/consultations.json')
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(d){ PJ_CONS = d; })
+      .catch(function(){});
+  }catch(e){}
+
+  function _consRows(country){
+    try{
+      if(!PJ_CONS || !PJ_CONS.consultations) return null;
+      var gen = new Date(PJ_CONS.generated + 'T00:00:00');
+      var ageDays = (Date.now() - gen.getTime()) / 86400000;
+      if(!(ageDays >= 0) || ageDays > 21) return null;      /* stale: say nothing */
+      var today = new Date(); today.setHours(0,0,0,0);
+      var out = [];
+      PJ_CONS.consultations.forEach(function(c){
+        var close = new Date(c.closes + 'T00:00:00');
+        var days = Math.round((close - today) / 86400000);
+        if(days < 0) return;
+        if(country && c.country && c.country !== country &&
+           c.country !== 'European Union') return;
+        out.push({
+          n: c.title,
+          lens: days <= 14 ? 'CLOSES IN ' + days + ' DAY' + (days === 1 ? '' : 'S')
+                           : 'OPEN',
+          u: c.url,
+          d: c.agency + ' \u00b7 comments close ' + c.closes
+             + (days <= 14 ? '. That is soon: a late comment does not have to be '
+                           + 'read.' : '.')
+        });
+      });
+      out.sort(function(a, b){ return a.d < b.d ? -1 : 1; });
+      return out.slice(0, 12);
+    }catch(e){ return null; }
+  }
+
+  function _resFor(state, kind){
+    if(!PJ_RES) return null;
+    var st = String(state || ''), key = null;
+    for(var c in PJ_RES.countries){ if(st.indexOf(c) >= 0){ key = c; break; } }
+    var own = key ? PJ_RES.countries[key] : {};
+    /* Sub-national. Almost every national complaint entry on this map points
+       down a level without naming it - "your state department of agriculture"
+       is true and not usable. If the record's location names a state, province
+       or Land this map knows, that body is put FIRST in the complaint list,
+       because it is the one that can actually enter a field. */
+    var sub = null;
+    try{
+      var SN = PJ_RES.subnational && key ? PJ_RES.subnational[key] : null;
+      if(SN){
+        for(var u in SN){
+          if(u.charAt(0) === '_') continue;
+          if(st.indexOf(u) >= 0){ sub = SN[u]; break; }
+        }
+        if(!sub && SN._generic) sub = SN._generic;
+      }
+    }catch(e){}
+    var wide = (kind === 'wide' || kind === 'release' || kind === 'decision');
+    var out = [];
+    for(var i = 0; i < PJ_RES.categories.length; i++){
+      var cat = PJ_RES.categories[i];
+      if(cat.scope === 'release' && !wide) continue;
+      var rows = (own[cat.k] || []).concat(PJ_RES.global[cat.k] || []);
+      if(cat.k === 'complain' && sub) rows = [sub].concat(rows);
+      /* Live windows first, then the venues where the next one will appear. */
+      if(cat.k === 'open'){
+        var live = _consRows(key);
+        if(live && live.length) rows = live.concat(rows);
+      }
+      if(rows.length) out.push({label: cat.label, k: cat.k, rows: rows});
+    }
+    return {country: key, cats: out};
+  }
+
+  /* The country box calls this. Everything, including the consultations, because
+     that is the one place a reader is asking about a country rather than a
+     thing in it. */
+  window.pjCountryResources = function(countryName){
+    return window.pjActNote({state: countryName, __wide: true});
   };
-
   window.pjActNote = function(q){
     try{
-      var st = String((q && q.state) || '');
-      var key = null;
-      for(var k in PJ_ACT){ if(st.indexOf(k) >= 0){ key = k; break; } }
-      var body = key ? PJ_ACT[key] : PJ_ACT_GENERIC;
-      return '<div class="pj-act"><div class="pj-act-h">What you can do about '
-        + 'this</div>' + body + '<div class="pj-act-f">Four guides cover this in '
-        + 'full: finding out what is near you, who takes a complaint, objecting '
-        + 'before a decision, and declaring a place GM-free.</div></div>';
+      /* Only the country box gets the wide set. A release record has its own
+         centroid and its own popup, and putting the country's consultations on
+         every one of 22,000 permits is not information, it is repetition. */
+      var _kd = '';
+      try{ _kd = (q && q.__wide) ? 'wide' : 'record'; }catch(e){}
+      var r = _resFor(q && q.state, _kd);
+      if(!r || !r.cats.length) return '';
+      var h = '<div class="pj-act"><div class="pj-act-h">What you can do about '
+            + 'this</div>';
+      r.cats.forEach(function(c, ci){
+        var id = 'res-' + c.k + '-' + (Math.random()*1e6|0);
+        h += '<div class="res-cat">'
+          +  '<div class="res-head" onclick="this.parentNode.classList.toggle('
+          +  '&quot;open&quot;)"><span class="res-car">\u25b8</span>'
+          +  '<span class="res-lab">' + c.label + '</span>'
+          +  '<span class="res-n">' + c.rows.length + '</span></div>'
+          +  '<div class="res-body">';
+        c.rows.forEach(function(x){
+          h += '<div class="res-card">'
+            +  '<div class="res-name">' + _esc(x.n) + '</div>'
+            +  (x.lens ? '<span class="res-lens">' + _esc(x.lens) + '</span>' : '')
+            +  '<div class="res-d">' + _esc(x.d || '') + '</div>'
+            /* A name taken from a pattern rather than checked says so. The
+               alternative is an unverified name sitting beside a verified one
+               and looking identical, which is how a reader stops trusting all
+               of them. */
+            +  (x.conf ? '<div class="res-conf">' + _esc(x.conf) + '</div>' : '')
+            +  (x.u ? '<a class="res-src" href="' + x.u + '" target="_blank" '
+                    + 'rel="noopener">Visit source \u2197</a>' : '')
+            +  '</div>';
+        });
+        h += '</div></div>';
+      });
+      h += '<div class="pj-act-f">Four guides cover how to use these: finding '
+        +  'out what is near you, who takes a complaint, objecting before a '
+        +  'decision, and declaring a place GM-free.</div></div>';
+      return h;
     }catch(e){ return ''; }
   };
 
@@ -4906,7 +5160,39 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 .subj-def{display:block;font-size:9.5px;line-height:1.45;color:#8d99b4;margin:1px 0 3px 18px;font-weight:400;}
 .pj-act{margin-top:8px;padding:7px 9px;border-radius:5px;background:rgba(74,93,47,0.14);border-left:2px solid rgba(122,150,80,0.75);font-size:9.6px;line-height:1.5;color:#c9d3e4;}
 .pj-act-h{font-weight:700;font-size:10px;color:#dfe7f5;margin-bottom:3px;}
+.res-cat{border-top:1px solid rgba(120,140,180,.22);}
+.res-head{display:flex;align-items:center;gap:6px;padding:5px 0;cursor:pointer;font-size:9.4px;letter-spacing:.4px;text-transform:uppercase;color:#c3d0e6;}
+.res-car{font-size:8px;color:#8fa4c6;transition:transform .12s;}
+.res-cat.open .res-car{transform:rotate(90deg);}
+.res-lab{flex:1 1 auto;}
+.res-n{flex:0 0 auto;min-width:15px;text-align:center;font-size:8.5px;color:#9fb0cf;background:rgba(120,140,180,.18);border-radius:3px;padding:1px 4px;}
+.res-body{display:none;padding:2px 0 6px 10px;}
+.res-cat.open .res-body{display:block;}
+.res-card{margin:5px 0;padding:6px 8px;border-radius:5px;background:rgba(74,93,47,.16);border-left:2px solid rgba(122,150,80,.6);}
+.res-name{font-weight:700;font-size:10px;color:#dfe7f5;}
+.res-lens{display:inline-block;margin:3px 0;font-size:7.8px;letter-spacing:.5px;padding:1px 5px;border-radius:3px;color:#bcd6a8;background:rgba(122,150,80,.22);}
+.res-d{font-size:9.3px;line-height:1.5;color:#c3c9d9;margin-top:2px;}
+.res-conf{margin-top:3px;font-size:8.4px;line-height:1.4;color:#93866a;font-style:italic;}
+.res-src{display:inline-block;margin-top:4px;font-size:9px;color:#bcd6a8;text-decoration:none;border-bottom:1px dotted rgba(188,214,168,.5);}
 .pj-act-f{margin-top:5px;font-size:9px;color:#94a1ba;}
+.pj-act-r{margin:2px 0;}
+.pa-sec{border-top:1px solid rgba(120,140,180,.22);}
+.pa-head{display:flex;align-items:center;gap:5px;padding:6px 2px;cursor:pointer;font-size:9.4px;letter-spacing:.4px;font-weight:700;color:#c6d2e6;}
+.pa-head:hover{color:#e6eefc;}
+.pa-car{font-size:8px;color:#8fa4c6;}
+.pa-n{margin-left:auto;min-width:15px;text-align:center;font-size:8.5px;font-weight:600;color:#9fb0cf;background:rgba(120,140,180,.18);border-radius:3px;padding:1px 4px;}
+.pa-body{display:none;padding:0 0 6px;}
+.pa-body.open{display:block;}
+.pa-card{margin:5px 0;padding:7px 8px;border-radius:5px;background:rgba(74,93,47,0.12);border:1px solid rgba(122,150,80,0.35);}
+.pa-nm{font-weight:700;font-size:10px;color:#dfe7f5;}
+.pa-tag{display:inline-block;margin:3px 0;padding:1px 5px;border-radius:3px;font-size:8px;letter-spacing:.5px;color:#a9c48e;background:rgba(122,150,80,.18);}
+.pa-d{font-size:9.3px;line-height:1.45;color:#c3cddf;margin-top:2px;}
+.pa-src{display:inline-block;margin-top:4px;font-size:9px;color:#bcd6a8;text-decoration:none;}
+.pa-src:hover{color:#dff0d0;}
+.pj-act-k{display:inline-block;min-width:104px;color:#9fb0cf;font-weight:600;}
+.pj-act a{color:#bcd6a8;text-decoration:none;border-bottom:1px dotted rgba(188,214,168,.5);}
+.pj-act a:hover{color:#dff0d0;}
+.pj-act-x{color:#94a1ba;}
 .d-note{display:block;font-size:9.5px;line-height:1.45;color:#8d99b4;margin-top:3px;padding-left:7px;border-left:2px solid rgba(120,140,180,.35);}
 .ot-area{width:13px;height:8px;border-radius:2px;opacity:.6;}
 </style>
@@ -8200,6 +8486,18 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       col.remove();
     })();
   }catch(e){}
+
+  /* Move the index into the right-hand rail, under the lens filters. Done in
+     script rather than markup because the index is built into the left sidebar
+     by code that runs later, and moving the element keeps its handlers. */
+  try{
+    (function(){
+      var idx = document.getElementById('indexPanel'),
+          rail = document.getElementById('rightbar');
+      if(!idx || !rail || idx.parentNode === rail) return;
+      rail.appendChild(idx);
+    })();
+  }catch(e){}
   map.on('move zoom zoomend moveend resize viewreset', cover);
 
   // The flag the click handler reads. dragstart fires only for a real pan, so
@@ -8242,7 +8540,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-19 18:39";
+  var BUILD = "BUILD-2026-08-19 22:05";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
