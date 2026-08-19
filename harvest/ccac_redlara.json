@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-18",
+ "generated": "2026-08-19",
  "note": "CCAC certified institutions (Canada) and REDLARA accredited centres (Latin America). Both voluntary accreditation, not state registers.",
  "projects": [
   {
@@ -10426,32 +10426,6 @@
    ],
    "url": "https://redlara.com/centro.asp?USIM5=348",
    "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://www.latidfertilitycenter.com/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
-   "checked": ""
-  },
-  {
-   "name": "ViaFERT Clínica de Fertilidad en Sinaloa",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 24.7979,
-   "lng": -107.39339,
-   "state": "Culiacán, México",
-   "precise": false,
-   "addr_grade": "centroid",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "REDLARA accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://redlara.com/centro.asp?USIM5=349",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.viafert.com. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {

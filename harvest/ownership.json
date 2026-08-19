@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-18",
+ "generated": "2026-08-19",
  "note": "Ownership as the registers state it, plus chains visible in the names themselves. Company filings are not read here, so this shows trading relationships rather than share ownership.",
  "groups": [
   {
@@ -361,13 +361,6 @@
      "source": "aaalac_facilities.json"
     },
     {
-     "name": "Tibor Rubin VA Medical Center, Veterans Affairs Long Beach Healthcare System",
-     "lat": 33.76902,
-     "lng": -118.1916,
-     "where": "LONG BEACH, CA, UNITED STATES",
-     "source": "aaalac_facilities.json"
-    },
-    {
      "name": "Veterans Affairs Boston Healthcare System",
      "lat": 42.35883,
      "lng": -71.05783,
@@ -379,6 +372,13 @@
      "lat": 29.95614,
      "lng": -90.07339,
      "where": "NEW ORLEANS, LA, UNITED STATES",
+     "source": "aaalac_facilities.json"
+    },
+    {
+     "name": "Tibor Rubin VA Medical Center, Veterans Affairs Long Beach Healthcare System",
+     "lat": 33.76902,
+     "lng": -118.1916,
+     "where": "LONG BEACH, CA, UNITED STATES",
      "source": "aaalac_facilities.json"
     },
     {
@@ -740,7 +740,7 @@
    ]
   },
   {
-   "owner": "Care Fertility",
+   "owner": "CARE Fertility",
    "basis": "inferred from the site's own name",
    "sites": 26,
    "countries": [
@@ -962,13 +962,6 @@
      "source": "aaalac_facilities.json"
     },
     {
-     "name": "Charles River Laboratories - St. Constant",
-     "lat": 45.3903,
-     "lng": -73.57113,
-     "where": "ST. CONSTANT, QUEBEC, CANADA",
-     "source": "aaalac_facilities.json"
-    },
-    {
      "name": "Charles River Laboratories, Research Models and Services - Germany GmbH",
      "lat": 49.10609,
      "lng": 8.85968,
@@ -980,6 +973,13 @@
      "lat": 45.72487,
      "lng": 9.41591,
      "where": "CALCO (LC), ITALY",
+     "source": "aaalac_facilities.json"
+    },
+    {
+     "name": "Charles River Laboratories - St. Constant",
+     "lat": 45.3903,
+     "lng": -73.57113,
+     "where": "ST. CONSTANT, QUEBEC, CANADA",
      "source": "aaalac_facilities.json"
     },
     {
@@ -1700,77 +1700,6 @@
      "lng": -67.08236,
      "where": "Canada",
      "source": "ccac_redlara.json"
-    }
-   ]
-  },
-  {
-   "owner": "TFP ",
-   "basis": "inferred from the site's own name",
-   "sites": 8,
-   "countries": [
-    "BT3 9JQ",
-    "CM2 8FR",
-    "G51 4FD",
-    "NW1 6ER",
-    "SL6 4BY",
-    "United Kingdom"
-   ],
-   "members": [
-    {
-     "name": "TFP Belfast Fertility",
-     "lat": 54.63196,
-     "lng": -5.89379,
-     "where": "Edgewater Business Park, Edgewater House, Edgewater Road, Belfast, BT3 9JQ",
-     "source": "hfea_clinics.json"
-    },
-    {
-     "name": "TFP Boston Place Fertility",
-     "lat": 51.5234,
-     "lng": -0.16248,
-     "where": "16-20 Boston Place, London, NW1 6ER",
-     "source": "hfea_clinics.json"
-    },
-    {
-     "name": "TFP GCRM Fertility",
-     "lat": 55.85967,
-     "lng": -4.3505,
-     "where": "GCRM Fertility, 21 Fifty Pitches Way, Glasgow, G51 4FD",
-     "source": "hfea_clinics.json"
-    },
-    {
-     "name": "TFP Nurture Fertility",
-     "lat": 52.91743,
-     "lng": -1.30175,
-     "where": "The East Midlands Fertility Centre, Bostocks Lane, Sandiacre, Nottingham, NG10 5QG, United Kingdom",
-     "source": "hfea_clinics.json"
-    },
-    {
-     "name": "TFP Oxford Fertility",
-     "lat": 51.73367,
-     "lng": -1.205,
-     "where": "Institute of Reproductive Sciences, Oxford Business Park North, Oxford, Oxfordshire, OX4 2HW, United Kingdom",
-     "source": "hfea_clinics.json"
-    },
-    {
-     "name": "TFP Simply Fertility",
-     "lat": 51.70817,
-     "lng": 0.50173,
-     "where": "Essex Healthcare Park, West Hanningfield Road, Great Baddow, Essex, Chelmsford, CM2 8FR",
-     "source": "hfea_clinics.json"
-    },
-    {
-     "name": "TFP Thames Valley Fertility",
-     "lat": 51.50829,
-     "lng": -0.73551,
-     "where": "Clarion House, Ground Floor, Norreys Drive, Maidenhead, Berkshire, SL6 4BY",
-     "source": "hfea_clinics.json"
-    },
-    {
-     "name": "TFP Wessex Fertility",
-     "lat": 54.0,
-     "lng": -2.55,
-     "where": "Unit 9, Berrywood Business Village, Tollbar Way, Southampton, Hampshire, S030 2UN, United Kingdom",
-     "source": "hfea_clinics.json"
     }
    ]
   },
@@ -3673,7 +3602,7 @@
    ]
   },
   {
-   "owner": "CITMER",
+   "owner": "Citmer",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
