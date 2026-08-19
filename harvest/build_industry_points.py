@@ -38,6 +38,132 @@ SRC = ROOT / "harvest" / "industry_source.json"
 # Positions stay marked approximate. A corporate headquarters is a registered
 # address, not where the work happens, and a street number does not change that.
 PLACES = {
+    # ---- ind70: the cases -------------------------------------------------
+    "Bablok v. Freistaat Bayern — pollen in honey": (49.6115, 6.1325, "Luxembourg — Court of Justice of the European Union"),
+    "Monsanto v. Schmeiser — liable for a plant you did not buy": (45.423, -75.7, "Ottawa — Supreme Court of Canada"),
+    "Bowman v. Monsanto — planting saved seed is making a copy": (38.8906, -77.0044, "Washington DC — Supreme Court of the United States"),
+    # ---- ind69: after the trial ends -------------------------------------
+    "Post-harvest monitoring — the obligation that outlasts the trial": (38.8482, -77.0418, "Riverdale, Maryland — APHIS Biotechnology Regulatory Services"),
+    "Reporting an incident — the duty on the permit holder": (38.8484, -77.0416, "Riverdale, Maryland — APHIS compliance"),
+    "Financial assurance — the bond nobody required": (38.8942, -77.0228, "Washington DC — EPA enforcement"),
+    "Who inherits the obligation": (38.8992, -77.0248, "Washington DC — SEC EDGAR"),
+    "Emergency measures — withdrawing an approved organism": (50.8438, 4.3818, "Brussels — European Commission, health and food safety"),
+    # ---- ind68: the paper trail outside biosafety law --------------------
+    "EU deliberate release register — trial locations": (50.8437, 4.3812, "Brussels — European Commission, GMO registers"),
+    "Plant passports and phytosanitary certificates": (50.844, 4.3818, "Brussels — DG Health and Food Safety, plant health"),
+    "Pesticide discharge permits near water": (38.8948, -77.0228, "Washington DC — EPA, NPDES programme"),
+    "Environmental impact assessment — the document, and commenting on it": (38.8955, -77.0385, "Washington DC — Council on Environmental Quality"),
+    # ---- ind67: tracing who is behind an application ---------------------
+    "Corporate registries — tracing an applicant": (51.522, -0.093, "Cardiff and London — Companies House"),
+    "OpenCorporates — across jurisdictions at once": (51.524, -0.087, "London — OpenCorporates"),
+    "Lobbying and political donation records": (38.9075, -77.044, "Washington DC — OpenSecrets, 1300 L Street NW"),
+    "Revolving door records": (38.9078, -77.0442, "Washington DC — OpenSecrets revolving door database"),
+    "Declarations of interest — the people on the panel": (44.4945, 11.3435, "Parma — EFSA, Via Carlo Magno 1A"),
+    # ---- ind66: the other permissions a release needs --------------------
+    "Fish and Wildlife Service — permits for releases into wild populations": (38.879, -77.174, "Falls Church, Virginia — US Fish and Wildlife Service"),
+    "Endangered Species Act consultation": (38.8795, -77.1745, "Falls Church, Virginia — Ecological Services"),
+    "Tribal consultation": (38.894, -77.043, "Washington DC — Bureau of Indian Affairs, 1849 C Street NW"),
+    "Transboundary notification — telling the country next door": (45.504, -73.5675, "Montreal — CBD Secretariat"),
+    # ---- ind65: going over the regulator's head -------------------------
+    "Ombudsman — complaining about the handling, not the decision": (51.497, -0.131, "London — Ombudsman Association"),
+    "Petitions and parliamentary committees": (51.4995, -0.1248, "London — Palace of Westminster"),
+    "State attorneys general": (38.905, -77.037, "Washington DC — National Association of Attorneys General"),
+    "Investor-state dispute settlement": (38.899, -77.0425, "Washington DC — ICSID, World Bank"),
+    # ---- ind64: getting a local measure onto the table --------------------
+    "Open meetings and public records laws": (38.906, -77.042, "Washington DC — National Freedom of Information Coalition"),
+    "Citizen initiative and referendum": (39.3085, -123.8, "Mendocino County, California — the 2004 ballot measure"),
+    "Zoning and agricultural districts": (41.879, -87.63, "Chicago — American Planning Association"),
+    "Model ordinances and drafting help": (38.904, -77.037, "Washington DC — Center for Food Safety"),
+    "Coexistence compensation funds": (55.676, 12.568, "Copenhagen — Danish Agricultural Agency"),
+    # ---- ind63: the boundary, and the four ways it leaks -----------------
+    "DriftWatch — mapping sensitive sites before spraying": (40.423, -86.921, "West Lafayette, Indiana — FieldWatch"),
+    "Neighbour notification before planting": (38.8864, -77.0324, "Washington DC — USDA National Organic Program"),
+    "Shared harvest equipment — the commonest route": (42.027, -93.646, "Ames, Iowa — Iowa State Extension"),
+    "Haulage, storage and the elevator bin": (38.9012, -77.0402, "Washington DC — National Grain and Feed Association"),
+    "Seed purity thresholds — what is already in the bag": (50.8435, 4.3815, "Brussels — European Commission, plant reproductive material"),
+    # ---- ind63: getting in, and getting out ------------------------------
+    "Expanded access — treatment outside a trial": (39.0355, -76.9825, "Silver Spring, Maryland — FDA"),
+    "Natural history studies — the study before the trial": (39.0005, -77.1015, "Bethesda, Maryland — NIH rare disease programmes"),
+    "Crowdfunding a therapy — and what it costs": (37.779, -122.419, "San Francisco — the platforms most of this runs on"),
+    "Genetic discrimination — what GINA does and does not cover": (38.8935, -77.017, "Washington DC — EEOC, 131 M Street NE"),
+    "Withdrawing consent from a biobank": (53.467, -2.234, "Stockport — UK Biobank"),
+    # ---- ind62: what a grower switches to --------------------------------
+    "Open Source Seed Initiative": (43.075, -89.406, "Madison, Wisconsin — University of Wisconsin"),
+    "Seed cleaners and conditioners": (39.048, -95.678, "Topeka, Kansas — Association of Official Seed Certifying Agencies"),
+    "Independent variety trials": (38.8872, -77.0308, "Washington DC — USDA NIFA, extension trial network"),
+    "Participatory plant breeding": (51.986, 5.663, "Wageningen — Plant Research"),
+    "FAO agroecology programme": (41.8885, 12.4885, "Rome — FAO, Viale delle Terme di Caracalla"),
+    # ---- ind61: the contract, not the law --------------------------------
+    "Grower technology agreements": (38.8862, -77.0322, "Washington DC — USDA Agricultural Marketing Service"),
+    "Agricultural lenders — conditions on the loan": (38.883, -77.108, "McLean, Virginia — Farm Credit Administration"),
+    "Farm leases — the landowner’s term": (41.878, -93.098, "Iowa — where most cropland is rented"),
+    "Retailer sourcing specifications": (51.51, -0.118, "London — British Retail Consortium"),
+    # ---- ind60: food rules that reach back to the field -----------------
+    "Geographical indications — varieties fixed by place": (44.8, 10.328, "Parma — the consortia that write the specifications"),
+    "Ohne Gentechnik — the feed declaration": (52.521, 13.413, "Berlin — Verband Lebensmittel ohne Gentechnik"),
+    "Farmers markets and box schemes — rules written by the sellers": (38.8865, -77.0325, "Washington DC — USDA Agricultural Marketing Service"),
+    "Seed libraries and swaps": (39.739, -104.99, "Denver — the seed library network"),
+    # ---- ind59: incident schemes and the certifier route -----------------
+    "Wildlife Incident Investigation Scheme": (53.477, -2.245, "Bootle — HSE Chemicals Regulation Division"),
+    "Bee kill incident reporting": (38.8945, -77.023, "Washington DC — EPA Office of Pesticide Programs"),
+    "Requesting an animal facility inspection": (38.8485, -77.042, "Riverdale, Maryland — APHIS Animal Care"),
+    "Complaining to a certifier": (38.886, -77.032, "Washington DC — USDA Agricultural Marketing Service"),
+    # ---- ind58: the human side, from the patient end ---------------------
+    "FDA MedWatch — reporting an adverse event yourself": (39.035, -76.982, "Silver Spring, Maryland — FDA, 10903 New Hampshire Avenue"),
+    "Research ethics committees — lay membership and correspondence": (51.5, -0.124, "London — Health Research Authority"),
+    "Data protection authorities — rights over your own genetic data": (50.841, 4.38, "Brussels — European Data Protection Board"),
+    "Being sued over seed — Schmeiser and Bowman": (52.133, -106.67, "Saskatchewan — the Schmeiser farm, and the US Supreme Court"),
+    # ---- ind57: redress without a regulator ------------------------------
+    "Small claims and private nuisance": (38.893, -77.009, "United States — state small claims courts"),
+    "USDA Agricultural Mediation Program": (38.8878, -77.0328, "Washington DC — USDA, 1400 Independence Avenue SW"),
+    "Grain elevators and handlers — rejection at delivery": (38.901, -77.04, "Washington DC — National Grain and Feed Association"),
+    "Trading standards and consumer protection authorities": (38.899, -77.033, "Washington DC — FTC, 600 Pennsylvania Avenue NW"),
+    # ---- ind56: citizen science, consent, protected land -----------------
+    "iNaturalist — recording where a plant actually was": (37.77, -122.466, "San Francisco — California Academy of Sciences"),
+    "Cooperative extension and plant clinics": (38.887, -77.0305, "Washington DC — USDA NIFA, 805 Pennsylvania Avenue"),
+    "Free, prior and informed consent — indigenous lands": (46.224, 6.14, "Geneva — UN Human Rights, Palais des Nations"),
+    "Protected area managers — refusing a release on managed land": (46.447, 6.228, "Gland, Switzerland — IUCN, Rue Mauverney 28"),
+    "ENSSER — independent scientific review": (52.52, 13.405, "Berlin — network secretariat"),
+    # ---- ind55: land control and institutional purchasing ---------------
+    "Land trusts and conservation easements": (38.907, -77.039, "Washington DC — Land Trust Alliance, 1250 H Street NW"),
+    "Water utilities — catchment land conditions": (41.934, -74.382, "Catskill watershed, New York — the largest such programme"),
+    "School and hospital food procurement": (38.8875, -77.033, "Washington DC — USDA Food and Nutrition Service"),
+    "Shareholder resolutions": (38.899, -77.025, "Washington DC — SEC, 100 F Street NE"),
+    "Allotments and community growing land": (52.63, 1.297, "Norwich — National Allotment Society"),
+    # ---- ind54: beekeepers and the local council -------------------------
+    "Beekeepers — the Bablok ruling and pollen in honey": (49.611, 6.132, "Luxembourg — Court of Justice of the European Union"),
+    "Beekeeping associations — registered hive locations": (37.687, -97.33, "Wichita, Kansas — American Beekeeping Federation"),
+    "County and municipal cultivation ordinances": (39.308, -123.799, "Mendocino County, California — the 2004 measure"),
+    "Public land and procurement decisions": (38.8875, -77.0325, "Washington DC — USDA, 1400 Independence Avenue SW"),
+    # ---- ind53: consultation venues, for Guide 3 -------------------------
+    "Federal Register — biotechnology notices and comment periods": (38.893, -77.011, "Washington DC — 800 North Capitol Street NW"),
+    "Regulations.gov — filing a comment and reading the response": (38.8895, -77.009, "Washington DC — eRulemaking Program"),
+    "EFSA — public consultations on GMO applications": (44.494, 11.343, "Parma — Via Carlo Magno 1A"),
+    "OGTR — consultation on licence applications": (-35.308, 149.124, "Canberra — Department of Health, Scarborough House"),
+    "Biosafety Clearing-House — decisions and consultations": (45.5035, -73.567, "Montreal — CBD Secretariat, 413 Saint-Jacques Street"),
+    "Consulting on the rule rather than the organism": (50.843, 4.382, "Brussels — European Commission, Rue de la Loi 200"),
+    # ---- ind52: self-testing, for Guide 1 --------------------------------
+    "EnviroLogix — QuickStix strip tests": (43.69, -70.305, "Portland, Maine — 500 Riverside Industrial Parkway"),
+    "Romer Labs — AgraStrip GMO tests": (48.216, 16.245, "Getzersdorf, Austria — Erber Campus 1"),
+    "Agdia — ImmunoStrip field tests": (41.67, -85.97, "Elkhart, Indiana — 52642 County Road 1"),
+    "Which trait to test for — reading a seed tag": (38.848, -77.0415, "Riverdale, Maryland — USDA APHIS"),
+    "Volunteer plants — where material actually leaves a field": (44.058, -123.087, "Willamette Valley, Oregon — the bentgrass case"),
+    # ---- ind51: lookup tools and the GM-free regions network -------------
+    "OECD BioTrack — unique identifier database": (48.87, 2.274, "Paris — OECD, 2 rue André Pascal"),
+    "FAO GM Foods Platform": (41.888, 12.489, "Rome — FAO, Viale delle Terme di Caracalla"),
+    "GMO Free Regions network": (48.208, 16.373, "Vienna — network secretariat"),
+    "EPA — plant-incorporated protectant registrations": (38.8945, -77.0225, "Washington DC — 1200 Pennsylvania Avenue NW"),
+    # ---- ind50: testing and complaint channels ---------------------------
+    "Genetic ID / Eurofins — public GMO testing": (41.661, -91.53, "Fairfield, Iowa — 501 North Orchard Street"),
+    "State seed laboratories — sample submission": (38.904, -77.043, "Washington DC — AOSA, national directory"),
+    "Chain of custody — why an untraceable sample fails": (38.887, -77.03, "Washington DC — USDA APHIS Biotechnology"),
+    "USDA APHIS — biotechnology compliance complaints": (38.848, -77.041, "Riverdale, Maryland — 4700 River Road"),
+    "EPA — pesticide misuse and drift reporting": (38.894, -77.022, "Washington DC — 1200 Pennsylvania Avenue NW"),
+    "State departments of agriculture — the body that actually inspects": (38.902, -77.035, "Washington DC — NASDA, 4350 North Fairfax Drive"),
+    "OSHA — pesticide exposure at work": (38.893, -77.018, "Washington DC — 200 Constitution Avenue NW"),
+    "Accredited GMO laboratories — European Network of GMO Laboratories": (45.81, 8.627, "Ispra, Italy — EC Joint Research Centre"),
+    "Health and Safety Executive — GMO contained use notifications": (53.476, -2.244, "Bootle — Redgrave Court"),
+    "Biosafety Clearing-House — national focal points": (45.503, -73.566, "Montreal — 413 Saint-Jacques Street"),
     # ---- ind49: BWC declarations, variola inspections, Interpol ----------
     "BWC confidence-building measures — annual declarations": (46.227, 6.14, "Geneva — Palais des Nations, BWC Implementation Support Unit"),
     "WHO — variola virus repository inspections": (46.232, 6.14, "Geneva — Avenue Appia 20"),

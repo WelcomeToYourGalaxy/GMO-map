@@ -1304,7 +1304,7 @@
   "trust": "record",
   "name": "Office of the Gene Technology Regulator — GMO Record",
   "url": "https://www.ogtr.gov.au/what-weve-approved/gmo-record",
-  "desc": "Australia’s regulator, and the only one in the world that publishes where field trials actually are. Every other release record on this map sits at a state or country centroid because the register gives no location; Australia gives coordinates, licence conditions and risk assessments. It shows that publishing sites is possible and that everyone else has chosen not to.",
+  "desc": "Australia’s regulator, and one of the few that publishes where field trials actually are — EU member states do too, under the deliberate release directive, in several countries down to the parcel. Every other release record on this map sits at a state or country centroid because the register gives no location; Australia gives coordinates, licence conditions and risk assessments. It shows that publishing sites is possible and that everyone else has chosen not to.",
   "tags": [
    "rules:regulators",
    "rules:standards"
@@ -10989,6 +10989,864 @@
    "rules:regulators",
    "money:defence",
    "wild:microbes"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Genetic ID / Eurofins — public GMO testing",
+  "url": "https://www.eurofinsus.com/food-testing/",
+  "desc": "Accepts samples from anyone, not only from commercial clients. A PCR test on seed, grain or leaf tissue costs on the order of a hundred to a few hundred dollars and returns whether engineered material is present and often which event it is. That result is the difference between saying a neighbour’s crop reached your field and being able to show it. Ask for the event identification rather than a presence-or-absence screen: knowing WHICH trait is what ties the material to a particular seed and a particular grower.",
+  "tags": [
+   "rules:standards",
+   "synthesis:seq",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "State seed laboratories — sample submission",
+  "url": "https://www.aosaseed.com/",
+  "desc": "Most US states run an official seed testing laboratory, and the Association of Official Seed Analysts lists them. Charges are modest and a result from an official laboratory carries weight with a state agriculture department that a private test may not. If a formal complaint is intended, test here first — the enforcement body is more likely to act on a laboratory it already recognises.",
+  "tags": [
+   "rules:standards",
+   "rules:regulators",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "USDA APHIS — biotechnology compliance complaints",
+  "url": "https://www.aphis.usda.gov/aphis/ourfocus/biotechnology/compliance-and-inspections",
+  "desc": "Takes reports that a permit holder has broken the conditions of a release: planting outside the authorised area, failing to maintain isolation distances, leaving volunteers standing after harvest. It has an inspection service and it publishes enforcement actions, so a report can end in a penalty. What it will not do is reconsider whether the release should have been approved — for that the window was the comment period. Quote the permit number; without it a report is hard to route and easy to lose.",
+  "tags": [
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "EPA — pesticide misuse and drift reporting",
+  "url": "https://www.epa.gov/pesticide-incidents",
+  "desc": "Herbicide drift is the commonest real-world harm attached to engineered crops, because tolerance traits exist to be sprayed. Reports go first to the state lead agency, usually the department of agriculture, which inspects and can fine; the EPA holds the national incident record. Report while the damage is fresh: symptoms fade, and residue on foliage is detectable for a limited period.",
+  "tags": [
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "State departments of agriculture — the body that actually inspects",
+  "url": "https://www.nasda.org/about/member-directory/",
+  "desc": "Almost every enforceable complaint about a crop in the United States is handled by a state department of agriculture rather than by a federal agency. They employ the inspectors, they can enter a field, and they issue the penalties. Sending a report to Washington first is the commonest reason an account of harm goes nowhere.",
+  "tags": [
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "OSHA — pesticide exposure at work",
+  "url": "https://www.osha.gov/workers/file-complaint",
+  "desc": "A worker exposed while applying or working around these chemicals can file, and the complaint can be made anonymously. Retaliation for filing is itself unlawful and separately actionable. Farmworkers have the highest exposure of anyone in this system and the least standing in any approval process, so this is one of the few routes that reaches them directly.",
+  "tags": [
+   "rules:regulators",
+   "rules:influence"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Accredited GMO laboratories — European Network of GMO Laboratories",
+  "url": "https://gmo-crl.jrc.ec.europa.eu/ENGL/",
+  "desc": "The EU reference network for GMO detection, which publishes the validated methods national laboratories use and lists them by country. A result from an ENGL laboratory is the standard evidence in an EU enforcement action, so this is where to start in Europe rather than a general food laboratory.",
+  "tags": [
+   "rules:standards",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Health and Safety Executive — GMO contained use notifications",
+  "url": "https://www.hse.gov.uk/biosafety/gmo/",
+  "desc": "Holds the notifications for every laboratory in Britain working with genetically modified organisms, and investigates complaints about how that work is contained. It is one of the few places anywhere that contained laboratory use is reportable by the public at all — most countries publish nothing about it and take no reports.",
+  "tags": [
+   "rules:regulators",
+   "wild:microbes"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Biosafety Clearing-House — national focal points",
+  "url": "https://bch.cbd.int/about/contacts",
+  "desc": "Every party to the Cartagena Protocol must name a national focal point, and the list is public. That office is the correspondent for biosafety in its country: it receives notifications, it files decisions, and it is the address for a question about a release that nobody else will answer. For most of the world it is the only named biosafety contact that exists.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "OECD BioTrack — unique identifier database",
+  "url": "https://biotrack.oecd.org/",
+  "desc": "Where the international serial number on an engineered organism can be looked up. This map repeatedly says to write that identifier down; this is what it is for. Enter it and the database returns the organism, the applicant, the trait and which countries have ruled on it — the single string that ties a decision in one jurisdiction to the same organism in another. It only covers organisms carrying an inserted gene, because that is what the numbering system was built around, so an edited organism will not be found here and that absence is itself the answer.",
+  "tags": [
+   "rules:standards",
+   "rules:regulators",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "FAO GM Foods Platform",
+  "url": "https://www.fao.org/food/food-safety-quality/gm-foods-platform/en/",
+  "desc": "Countries post their food safety approvals here voluntarily, so it is the closest thing to a single place to ask whether a given engineered organism has been cleared for food anywhere. Useful in the ordinary case of wanting to know whether something in the food supply has been assessed by anyone at all. Voluntary means incomplete: an absence here means no country chose to post it, not that no country approved it.",
+  "tags": [
+   "rules:standards",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "GMO Free Regions network",
+  "url": "https://www.gmo-free-regions.org/",
+  "desc": "The network of European regions that have declared themselves free of engineered cultivation, and the practical route for anywhere considering it. It holds what the regions that succeeded actually did: which legal instrument they used, what the coexistence rules require, and how the voluntary grower agreements were written. Most of the roughly 200 declarations on this map came through this network rather than through national legislation, which makes it the working example of the mechanism rather than a description of it.",
+  "tags": [
+   "rules:associations",
+   "rules:influence",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "EPA — plant-incorporated protectant registrations",
+  "url": "https://www.epa.gov/regulation-biotechnology-under-tsca-and-fifra/overview-plant-incorporated-protectants",
+  "desc": "A plant engineered to produce its own insecticide is regulated by the EPA as a pesticide, not by USDA as a crop — the pesticide is the plant. That is why Bt maize carries a registration number and a label with use restrictions, and why resistance management requirements are enforceable against the grower. Anyone trying to find out what a specific engineered crop is permitted to do, or what a grower is obliged to do around it, will find more here than in the release permit.",
+  "tags": [
+   "rules:regulators",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "EnviroLogix — QuickStix strip tests",
+  "url": "https://www.envirologix.com/",
+  "desc": "The strips most widely used at grain elevators, sold to anyone in packs of twenty-five or fifty at a few pounds each. Crush tissue or seed in water, dip the strip, read it in five to ten minutes. Strips are trait-specific: the common ones are CP4 EPSPS for glyphosate tolerance and the Bt proteins Cry1Ab, Cry1F and Cry1Ac. Combs testing several traits at once cost a little more. It finds a protein, so it cannot find a gene-edited organism, which usually has no novel protein for a strip to bind, and it will not work on cooked or refined material.",
+  "tags": [
+   "rules:standards",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Romer Labs — AgraStrip GMO tests",
+  "url": "https://www.romerlabs.com/",
+  "desc": "Strip tests and the extraction kits that go with them — tubes, buffer and a grinder, so a sample is prepared the same way every time. Sold internationally, which matters because the trait to test for differs by region: what is planted in Brazil is not what is planted in Spain. Same limit as any strip: it reads a protein, in fresh tissue or whole seed only.",
+  "tags": [
+   "rules:standards",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Agdia — ImmunoStrip field tests",
+  "url": "https://www.agdia.com/",
+  "desc": "Field test strips sold mainly to growers and plant clinics, including for engineered traits. Their catalogue is the most useful of the three for someone testing a small number of samples rather than a lorry, because it sells in small quantities and prices are published rather than quoted.",
+  "tags": [
+   "rules:standards",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Federal Register — biotechnology notices and comment periods",
+  "url": "https://www.federalregister.gov/",
+  "desc": "Where US petitions for deregulation, permit notices and environmental assessments are announced, with a comment period usually of thirty to sixty days. Comments filed inside it are part of the record and the agency must address them; comments after it are correspondence. It offers email alerts filtered by subject, which is the practical answer to the fact that thirty days is short if you hear on day twenty-eight.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Regulations.gov — filing a comment and reading the response",
+  "url": "https://www.regulations.gov/",
+  "desc": "The portal where a US comment is actually submitted, and where every other comment on the same docket can be read. That second part is the useful one: the agency’s response to comments is published here, so it is possible to see whether a point landed and how it was answered. Cite the docket number in the first line.",
+  "tags": [
+   "rules:regulators",
+   "rules:influence"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "EFSA — public consultations on GMO applications",
+  "url": "https://www.efsa.europa.eu/en/consultations",
+  "desc": "Every European assessment is published in full, with the panel’s reasoning, and opened for comment, typically for thirty days. It is the most detailed public record of regulatory assessment anywhere, which also makes it the easiest to comment on usefully: the document states what was assessed, so a comment can address what was not.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "OGTR — consultation on licence applications",
+  "url": "https://www.ogtr.gov.au/",
+  "desc": "Publishes each application, the risk assessment and risk management plan, and the proposed field sites, which few regulators publish before a decision, then invites comment for around thirty days. Knowing the sites before the decision is what makes a local objection possible at all, and few regulators provide it at that stage — though EU member states do publish trial locations under the deliberate release directive.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Biosafety Clearing-House — decisions and consultations",
+  "url": "https://bch.cbd.int/",
+  "desc": "Every party to the Cartagena Protocol must file its decisions here, and for most first imports intended for release a public consultation is required before that decision is taken. For countries with no national notice venue of their own, this is the only place an application becomes visible in advance. It is also where to check what a neighbouring country has decided about the same organism.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Beekeepers — the Bablok ruling and pollen in honey",
+  "url": "https://curia.europa.eu/",
+  "desc": "A Bavarian beekeeper found engineered maize pollen in his honey from a trial planted several kilometres away, and in 2011 the European Court of Justice held that the honey could not be sold without authorisation covering it. It is the clearest legal recognition anywhere that a person can be harmed by a release on land they neither own nor farm. Beekeepers consequently have standing in consultations that neighbours often lack, and a hive is also a sampling device: pollen collected from a colony records what was flowering within a few kilometres, which no single field visit can.",
+  "tags": [
+   "rules:influence",
+   "wild:drives",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "Beekeeping associations — registered hive locations",
+  "url": "https://www.abfnet.org/",
+  "desc": "Most jurisdictions ask beekeepers to register hive locations, and applicators are often required to check that register and give notice before spraying. That makes a registered hive one of very few things a private person can put on a public record that a grower is obliged to work around — and an unregistered one has no such effect, which is the practical point.",
+  "tags": [
+   "rules:associations",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "iNaturalist — recording where a plant actually was",
+  "url": "https://www.inaturalist.org/",
+  "desc": "A dated, located, photographed observation, held publicly and permanently by somebody other than you. That is what turns a volunteer plant in a ditch from a thing you saw into a record that can be cited, checked and counted with everybody else’s. It cannot identify an engineered plant — nothing visual can — but it fixes the species, the place and the date, which is the part a strip test does not give you and the part a complaint needs. Photograph the plant, note the trait if you tested, and say so in the description.",
+  "tags": [
+   "wild:drives",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Cooperative extension and plant clinics",
+  "url": "https://www.nifa.usda.gov/about-nifa/how-we-work/extension",
+  "desc": "Every US state runs an extension service with plant clinics that identify specimens, diagnose damage and answer questions, usually free or for a few dollars. They are the most underused resource in this whole field: staffed by people who know local cropping, obliged to help the public, and able to say whether damage to your plants looks like herbicide drift — which is the question most people cannot answer alone. Equivalent services exist in most countries under agriculture ministries.",
+  "tags": [
+   "rules:regulators",
+   "seed:germplasm",
+   "money:public"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "ENSSER — independent scientific review",
+  "url": "https://ensser.org/",
+  "desc": "A network of scientists who publish assessments of engineered organisms independently of applicants and regulators. Useful to a person for one specific purpose: a comment in a consultation carries further if it cites published work rather than only local observation, and this is where to look for a scientific counter-argument that has been through review. Its members have also acted as expert witnesses, which is the other place it matters.",
+  "tags": [
+   "rules:influence",
+   "rules:associations"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "USDA Agricultural Mediation Program",
+  "url": "https://www.farmers.gov/working-with-us/mediation",
+  "desc": "Free or nearly free mediation between farmers and neighbours, lenders and agencies, funded federally and run by the states. It is faster than a court, produces a written agreement, and does not require either side to be found at fault. For a dispute between neighbouring growers — which is what most drift is — it is usually the first thing to try, because a court case between people who will farm beside each other for thirty years has costs a judgment does not settle.",
+  "tags": [
+   "rules:regulators",
+   "rules:influence"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "Grain elevators and handlers — rejection at delivery",
+  "url": "https://www.ngfa.org/",
+  "desc": "The elevator tests a load with the same strip a person can buy, and rejects it on the spot if the result is wrong for the contract. That single decision does more to enforce separation than any regulator: it happens within minutes, it costs the grower the price difference or the whole load, and there is no appeal. If your crop was rejected on a test, the rejection record is evidence of what was in it and where it came from — ask for it in writing, because it is the strongest document most growers will ever hold about their own harvest.",
+  "tags": [
+   "seed:distribution",
+   "rules:standards",
+   "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Trading standards and consumer protection authorities",
+  "url": "https://www.ftc.gov/",
+  "desc": "Where a product is labelled non-GM, organic or free of something and is not, that is a consumer protection matter rather than a biosafety one — and the bodies that handle it are far more used to acting on a complaint from a member of the public than any agriculture department. A false claim is easier to prove than harm, and the penalties attach to the seller who made it.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "FDA MedWatch — reporting an adverse event yourself",
+  "url": "https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program",
+  "desc": "A patient, a relative or a carer can file a report directly, without a doctor and without permission. This matters more for gene and cell therapies than for ordinary medicines, because so few people have received any one of them: with a few hundred patients treated worldwide, a single well-described report is a measurable fraction of everything known about that product. The equivalents are the Yellow Card scheme in the UK and EudraVigilance in the EU. Reports are public in aggregate, so it is also where to look before consenting to something.",
+  "tags": [
+   "clinical:therapy",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Research ethics committees — lay membership and correspondence",
+  "url": "https://www.hra.nhs.uk/about-us/committees-and-services/res-and-recs/",
+  "desc": "Every clinical trial must be approved by an ethics committee, and those committees are required to include lay members — people from outside medicine and science, appointed as members of the public. Vacancies are advertised and the role is open to anyone. A committee will also accept correspondence about a study it approved. It is the only body in the medical half of this map with a seat reserved for someone with no professional interest in the answer.",
+  "tags": [
+   "clinical:trials",
+   "rules:regulators",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Data protection authorities — rights over your own genetic data",
+  "url": "https://edpb.europa.eu/about-edpb/about-edpb/members_en",
+  "desc": "Under the GDPR and comparable laws elsewhere, genetic data is a special category: you can demand a copy of what an organisation holds about you, require it to be corrected, and in most circumstances require it to be deleted — and complain to a regulator that can fine, without going to court. This is the strongest right an ordinary person has anywhere on this map, and it applies to consumer testing companies, biobanks and clinics alike. It became concrete when a company holding fifteen million genomes filed for bankruptcy and its database was listed as a saleable asset.",
+  "tags": [
+   "synthesis:seq",
+   "repro:screening",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Being sued over seed — Schmeiser and Bowman",
+  "url": "https://scc-csc.lexum.com/",
+  "desc": "Two decisions define what a patent on a self-replicating organism means for the person growing it. In Canada, Monsanto v. Schmeiser held in 2004 that a farmer infringed by having the patented plant in his field, whatever the route by which it arrived, though he owed no damages having gained no benefit. In the United States, Bowman v. Monsanto held in 2013 that planting saved seed is making a new copy, not using a purchased one. Together they mean a grower can be liable for a plant they did not buy and did not want. It is the one place in this whole field where an ordinary person is the defendant, and worth knowing before it happens rather than after.",
+  "tags": [
+   "rules:ip",
+   "seed:traits",
+   "editing:patents"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Wildlife Incident Investigation Scheme",
+  "url": "https://www.hse.gov.uk/pesticides/reducing-environmental-impact/wildlife.htm",
+  "desc": "Report a dead wild animal, pet or bee colony you believe was poisoned by pesticide, and the state collects the carcass and pays for the analysis. Results are published annually and feed into whether an approval is kept. It is one of very few schemes anywhere where a member of the public triggers a laboratory test at public expense rather than their own, and the reason it matters here is that herbicide-tolerant crops exist to be sprayed — the spraying is the part with a body count.",
+  "tags": [
+   "rules:regulators",
+   "wild:drives"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Bee kill incident reporting",
+  "url": "https://www.epa.gov/pollinator-protection/report-bee-kill-or-bee-kill-incident",
+  "desc": "A reported bee kill is among the incident types most likely to be investigated, because the loss is visible, datable and belongs to somebody who can be identified. State agriculture departments hold registers of hive locations and can match a kill to applications nearby. For anyone trying to establish what is being sprayed in an area, a hive is both the evidence and the standing.",
+  "tags": [
+   "rules:regulators",
+   "livestock:livestock"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "Ohne Gentechnik — the feed declaration",
+  "url": "https://www.ohnegentechnik.org/",
+  "desc": "Most engineered material is eaten by animals, and no label follows it through a cow: milk, meat and eggs from animals fed engineered soy are labelled nowhere in the world as a matter of law. This German scheme is the largest of the few private answers to that, certifying that livestock were fed without it, and it covers a substantial share of German dairy. It reaches the part of the supply chain that consumer labelling law does not touch at all, which is where most of the volume actually is.",
+  "tags": [
+   "rules:standards",
+   "livestock:livestock",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "other",
+  "type": "institutional",
+  "trust": "medium",
+  "name": "Agricultural lenders — conditions on the loan",
+  "url": "https://www.farmcreditnetwork.com/",
+  "desc": "Most cropping is financed, and a lender can require particular practices as a condition of credit — including which crops, which insurance, and increasingly which environmental standards. It is a private decision made by a credit committee, and it decides what gets planted more directly than any approval does. Farm Credit institutions in the United States are cooperatively owned by their borrowers, which means the people bound by those conditions also elect the board that sets them.",
+  "tags": [
+   "money:markets",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "Open Source Seed Initiative",
+  "url": "https://osseeds.org/",
+  "desc": "Releases varieties under a pledge that they and anything bred from them stay free to use, save and breed with — the seed equivalent of an open source licence, and the direct counter to the technology agreement a patented seed comes with. Several hundred varieties are released this way. It is small against the commercial seed market and it is the only mechanism that puts a variety permanently beyond enclosure rather than merely outside it for now.",
+  "tags": [
+   "seed:germplasm",
+   "rules:ip",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "FAO agroecology programme",
+  "url": "https://www.fao.org/agroecology/en/",
+  "desc": "The UN food agency’s work on farming systems built around biological processes rather than purchased inputs. Its relevance here is narrow and real: most engineered traits exist to make an input work better, so a system that uses fewer inputs has less use for them. It is the only body at that level treating this as an agronomic question rather than a regulatory one.",
+  "tags": [
+   "seed:germplasm",
+   "money:public",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "DriftWatch — mapping sensitive sites before spraying",
+  "url": "https://driftwatch.org/",
+  "desc": "A public register where beekeepers, organic growers and others map their sites so applicators can see them before spraying. Used across many US states, free to register, and checked by commercial applicators as a matter of routine. Registering costs an afternoon and does two things at once: it may prevent the drift, and if drift happens anyway it establishes that the applicator could have known. That second effect is what makes it worth doing even where nobody checks it.",
+  "tags": [
+   "rules:standards",
+   "seed:distribution"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "State attorneys general",
+  "url": "https://www.naag.org/",
+  "desc": "The one public office that can bring a case on behalf of residents rather than waiting for a resident to bring one. They have sued over pesticide labelling, consumer claims and environmental damage, and they take complaints from the public through consumer protection divisions that are used to hearing from ordinary people. Where a single person’s loss is too small to litigate but the same thing happened to hundreds, this is the office that can act on the pattern.",
+  "tags": [
+   "rules:regulators",
+   "rules:ip",
+   "rules:influence"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Fish and Wildlife Service — permits for releases into wild populations",
+  "url": "https://www.fws.gov/service/permits",
+  "desc": "Putting an animal into a wild population needs a permit from the wildlife agency, separate from anything a biosafety regulator says. That covers engineered insects intended to suppress a wild population, and anything proposed for conservation — an engineered chestnut, a resistant ferret, a drive against island predators. The agency’s question is about the wild population rather than about the technology, and it is a question local knowledge can answer.",
+  "tags": [
+   "wild:drives",
+   "deextinct:rescue",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Corporate registries — tracing an applicant",
+  "url": "https://find-and-update.company-information.service.gov.uk/",
+  "desc": "An application often arrives from a name with no history. A corporate registry gives the directors, the registered address, the accounts and, in many countries, the ultimate owner — free, immediately, no request needed. The UK register is fully open; most European ones are; the United States files at state level, so start with the state named on the application. The useful detail is usually the shared address or the shared director rather than the ownership chain, because a subsidiary set up for one trial tends to share both with its parent.",
+  "tags": [
+   "money:markets",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "OpenCorporates — across jurisdictions at once",
+  "url": "https://opencorporates.com/",
+  "desc": "The same lookup across dozens of national registers in one search, which is what you need when a company operates under different names in different countries — the normal arrangement in this industry. It is also the practical answer to a change of name, which otherwise breaks a trail entirely.",
+  "tags": [
+   "money:markets",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "Lobbying and political donation records",
+  "url": "https://www.opensecrets.org/",
+  "desc": "In the United States, lobbying spending and political donations are filed quarterly and published, searchable by company and by recipient — including which specific bills were lobbied on. The EU transparency register does the equivalent for Brussels, and most national parliaments keep one. It is a lookup rather than an accusation: what it establishes is who was in the room and what they were asking for, before a rule changed.",
+  "tags": [
+   "rules:influence",
+   "money:markets"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "Revolving door records",
+  "url": "https://www.opensecrets.org/revolving-door/",
+  "desc": "Tracks people who moved between a regulator and the industry it regulates, in both directions, from public filings. It matters here for a specific reason: the decisions on this map are made by small committees in small fields where the people qualified to assess an application are frequently the people who have worked on one. That is not itself wrongdoing, and it is the sort of thing a reader is entitled to know before weighing an assessment.",
+  "tags": [
+   "rules:influence",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Declarations of interest — the people on the panel",
+  "url": "https://open.efsa.europa.eu/",
+  "desc": "Every member of a scientific panel assessing an application must file a declaration of interests, and in the EU those declarations are published alongside the panel’s opinion, naming past employers, funding and consultancies. Most regulators worldwide have an equivalent requirement and a good many publish it. It is the most direct answer to ‘who decided this and what else are they involved in’, and it sits one click from the assessment itself.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards",
+   "rules:influence"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "EU deliberate release register — trial locations",
+  "url": "https://webgate.ec.europa.eu/fip/GMO_Registers/",
+  "desc": "The EU directive on deliberate release requires member states to make the location of every field trial public, and the registers do — in several countries down to the municipality or the land parcel, which is more precise than the state-level information the United States publishes. Some member states publish an online map. Anyone in Europe asking whether a trial is near them has a better answer available than this map has previously suggested, and it is the national competent authority that holds it.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Post-harvest monitoring — the obligation that outlasts the trial",
+  "url": "https://www.aphis.usda.gov/biotechnology/permits-notifications-petitions/permits",
+  "desc": "A release permit does not end at harvest. It typically requires the site to be monitored for volunteers for one to several seasons afterwards, with the land left fallow or planted to something that makes volunteers visible, and the results reported. This is the part of a trial a neighbour lives beside, and it is knowable: the permit states the monitoring period, and the permit is public. If a site was cropped normally the season after a trial, that is a specific and checkable question to ask.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Reporting an incident — the duty on the permit holder",
+  "url": "https://www.aphis.usda.gov/biotechnology/compliance-and-inspections/incident",
+  "desc": "Permit conditions require the holder to notify the regulator when something goes wrong — material found outside the site, a containment failure, a mislabelled shipment — usually within days. It is self-reporting, which means it works when the holder tells and not otherwise. Most of the unauthorised releases on record were found by somebody else and reported afterwards, which is the argument for the monitoring in Guide 1 rather than an argument about anyone's honesty.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Financial assurance — the bond nobody required",
+  "url": "https://www.epa.gov/enforcement/financial-responsibility",
+  "desc": "Mining, landfill and oil operations must post a bond so that clean-up is funded if the operator disappears. Biotechnology releases generally do not. A permit holder can be dissolved, sold or made bankrupt while the monitoring obligation still has years to run, and in most jurisdictions no money was set aside against it. Where an obligation has no funded successor it becomes nobody's, and there is no register anywhere that counts how many sites are in that position.",
+  "tags": [
+   "rules:regulators",
+   "money:markets",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Who inherits the obligation",
+  "url": "https://www.sec.gov/edgar/searchedgar/companysearch",
+  "desc": "Companies in this field are bought, renamed and merged constantly, and the permits go with them — the obligation transfers to the successor, which is why an old trial may now be the responsibility of a company that never applied for it. Corporate filings are how that chain is traced, and it is worth tracing before writing to anybody, because a letter to a company that no longer holds the permit gets no answer and costs a season.",
+  "tags": [
+   "money:markets",
+   "rules:regulators",
+   "rules:ip"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Emergency measures — withdrawing an approved organism",
+  "url": "https://food.ec.europa.eu/plants/genetically-modified-organisms/gmo-authorisation_en",
+  "desc": "A member state can suspend or prohibit an already-authorised organism on its territory where new information indicates a risk, and must notify the Commission with its reasons. It has been used, and the safeguard clause invoked this way is what eventually produced the EU opt-out. Two things make it hard: it needs new information rather than a change of mind, and the burden of assembling that information falls on the state invoking it — which is where independent published work matters more than correspondence.",
+  "tags": [
+   "rules:regulators",
+   "rules:standards"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Bablok v. Freistaat Bayern — pollen in honey",
+  "url": "https://curia.europa.eu/juris/liste.jsf?num=C-442/09",
+  "desc": "A Bavarian beekeeper found engineered maize pollen in his honey from a trial planted several kilometres away, and in 2011 the European Court of Justice held that the honey could not lawfully be sold without an authorisation covering it. It is the clearest legal recognition anywhere that a person can be harmed by a release on land they neither own nor farm, and it gave beekeepers standing in consultations that neighbours often lack. The burden landed on the beekeeper rather than on the grower, which is the part usually left out of accounts of it.",
+  "tags": [
+   "rules:cases",
+   "rules:ip",
+   "wild:drives"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Monsanto v. Schmeiser — liable for a plant you did not buy",
+  "url": "https://scc-csc.lexum.com/scc-csc/scc-csc/en/item/2147/index.do",
+  "desc": "The Supreme Court of Canada held in 2004 that a farmer infringed a patent by having the patented plant in his field, whatever the route by which it arrived, though he owed no damages having gained no benefit from it. The finding that matters is the first half: presence is infringement, and how it got there does not answer the claim. Every argument about drift liability since has been conducted in the shadow of it.",
+  "tags": [
+   "rules:cases",
+   "rules:ip",
+   "seed:traits"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "name": "Bowman v. Monsanto — planting saved seed is making a copy",
+  "url": "https://www.supremecourt.gov/opinions/12pdf/11-796_c07d.pdf",
+  "desc": "The US Supreme Court held unanimously in 2013 that planting seed saved from a patented crop makes a new infringing copy rather than using a purchased one, so the usual rule that a patent is exhausted on first sale does not protect the grower. It is the decision that makes a seed patent effectively perpetual across generations of a self-replicating organism, and it is why the technology agreement a grower signs is enforceable rather than decorative.",
+  "tags": [
+   "rules:cases",
+   "rules:ip",
+   "seed:licensees"
   ],
   "checked": "2026-07-31"
  }
