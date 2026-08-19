@@ -38,6 +38,13 @@ SRC = ROOT / "harvest" / "industry_source.json"
 # Positions stay marked approximate. A corporate headquarters is a registered
 # address, not where the work happens, and a street number does not change that.
 PLACES = {
+    # ---- ind71: the rest of the case law ----------------------------------
+    "Diamond v. Chakrabarty — a living organism can be patented": (38.8907, -77.0043, "Washington DC — Supreme Court of the United States"),
+    "Association for Molecular Pathology v. Myriad — a gene as found cannot be": (38.8908, -77.0045, "Washington DC — Supreme Court of the United States"),
+    "Johnson v. Monsanto — the first glyphosate verdict": (37.7793, -122.4192, "San Francisco — Superior Court of California"),
+    "Confédération paysanne — editing is genetic modification": (49.612, 6.133, "Luxembourg — Court of Justice of the European Union"),
+    "EC — Biotech — caution as a trade barrier": (46.2225, 6.14, "Geneva — World Trade Organization"),
+    "Monsanto v. Nuziveedu — a seed patent in India": (28.6225, 77.2395, "New Delhi — Supreme Court of India"),
     # ---- ind70: the cases -------------------------------------------------
     "Bablok v. Freistaat Bayern — pollen in honey": (49.6115, 6.1325, "Luxembourg — Court of Justice of the European Union"),
     "Monsanto v. Schmeiser — liable for a plant you did not buy": (45.423, -75.7, "Ottawa — Supreme Court of Canada"),

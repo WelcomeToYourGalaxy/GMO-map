@@ -1,0 +1,4211 @@
+{
+ "note": "Per-country resource entries shown in the record popup, grouped into collapsible categories with a count each. Every entry is a record with its own description and source link, tagged by lens, so they can be toggled and indexed like anything else on the map. Written per country because the answer differs per country; the guides carry the explanation, these carry the resources. Categories marked scope=release are only shown on release and biosafety-decision records and in the country box, because a consultation window is about a decision being made — on a clinic or a company record it is noise. The rest are shown everywhere, because testing, complaining and certification apply whatever the reader is looking at.",
+ "categories": [
+  {
+   "k": "test",
+   "label": "TEST IT YOURSELF",
+   "scope": "any"
+  },
+  {
+   "k": "decides",
+   "label": "WHO AUTHORISES A RELEASE",
+   "scope": "release"
+  },
+  {
+   "k": "complain",
+   "label": "WHO TAKES A COMPLAINT",
+   "scope": "any"
+  },
+  {
+   "k": "notice",
+   "label": "WHERE AN APPLICATION IS ANNOUNCED",
+   "scope": "release"
+  },
+  {
+   "k": "certify",
+   "label": "WHO CERTIFIES, AND WHAT A POSITIVE TEST COSTS",
+   "scope": "any"
+  },
+  {
+   "k": "legal",
+   "label": "LEGAL HELP, IN THIS FIELD SPECIFICALLY",
+   "scope": "any"
+  },
+  {
+   "k": "open",
+   "label": "CONSULTATIONS OPEN NOW",
+   "scope": "release"
+  }
+ ],
+ "global": {
+  "test": [
+   {
+    "n": "EnviroLogix QuickStix",
+    "lens": "TESTING",
+    "u": "https://www.envirologix.com/",
+    "d": "Lateral flow strips, the same format as a pregnancy test. Crush tissue or seed in water, dip, read in five to ten minutes. Sold to anyone, a few pounds each, in packs. Strips are trait-specific, so know which trait to look for before buying."
+   },
+   {
+    "n": "Romer Labs AgraStrip",
+    "lens": "TESTING",
+    "u": "https://www.romerlabs.com/",
+    "d": "Strips plus the extraction kits that go with them, sold internationally — which matters because the trait to test for differs by region."
+   },
+   {
+    "n": "Agdia ImmunoStrip",
+    "lens": "TESTING",
+    "u": "https://www.agdia.com/",
+    "d": "Sells in small quantities with published prices, which makes it the most usable of the three for someone testing a handful of samples rather than a lorry."
+   }
+  ],
+  "decides": [
+   {
+    "n": "Biosafety Clearing-House — national focal points",
+    "lens": "REGULATOR",
+    "u": "https://bch.cbd.int/about/contacts",
+    "d": "Every party to the Cartagena Protocol must name a contact for biosafety, and the list is public. For most of the world it is the only named biosafety contact that exists, and it holds the decisions filed for that country."
+   }
+  ],
+  "notice": [
+   {
+    "n": "Biosafety Clearing-House — decisions and consultations",
+    "lens": "CONSULTATION",
+    "u": "https://bch.cbd.int/",
+    "d": "Parties file their decisions here, and for most first imports for release a public consultation is required beforehand. For countries with no notice venue of their own, this is the only place an application becomes visible in advance."
+   }
+  ],
+  "certify": [
+   {
+    "n": "IFOAM — Organics International",
+    "lens": "CERTIFIER",
+    "u": "https://www.ifoam.bio/",
+    "d": "The global umbrella for organic standards, which exclude engineered material by definition in every member scheme. Use it to find the certifier operating where you are: a positive test costs an operator the certification and the price premium immediately, without a hearing."
+   }
+  ],
+  "legal": [
+   {
+    "n": "Center for Food Safety — legal programme",
+    "lens": "LEGAL",
+    "u": "https://www.centerforfoodsafety.org/",
+    "d": "Has brought most of the significant US litigation in this field, including the cases that vacated approvals for engineered alfalfa and sugar beet pending fuller environmental review. Takes information from the public and publishes model ordinance text for local measures."
+   },
+   {
+    "n": "Testbiotech",
+    "lens": "LEGAL",
+    "u": "https://www.testbiotech.org/",
+    "d": "Files formal objections to EU approvals and requests internal review of Commission decisions — a specific legal mechanism most people do not know exists. Its published objections are the template for anyone drafting one."
+   },
+   {
+    "n": "ClientEarth",
+    "lens": "LEGAL",
+    "u": "https://www.clientearth.org/",
+    "d": "Environmental lawyers who litigate on process rather than on the technology: whether an assessment was adequate, whether a consultation was real, whether access to documents was refused lawfully. That is the ground on which these cases are usually won."
+   },
+   {
+    "n": "Public Patent Foundation — OSGATA v. Monsanto",
+    "lens": "LEGAL",
+    "u": "https://www.osgata.org/",
+    "d": "Brought the case in which organic and conventional growers sought protection from patent claims over seed that arrived on their land without them planting it. The court declined jurisdiction on the strength of a binding commitment not to sue over trace presence, which is now the operative assurance."
+   }
+  ],
+  "open": [
+   {
+    "n": "Federal Register — open comment periods",
+    "lens": "CONSULTATION",
+    "u": "https://www.federalregister.gov/documents/search?conditions%5Bterm%5D=genetically+engineered",
+    "d": "US notices with a comment window, searchable and subscribable by email. Thirty to sixty days, and a comment filed inside it must be addressed in the decision. Subscribe rather than check: thirty days is short if you hear on day twenty-eight."
+   },
+   {
+    "n": "EFSA public consultations",
+    "lens": "CONSULTATION",
+    "u": "https://www.efsa.europa.eu/en/consultations",
+    "d": "Every European assessment is published in full with the panel's reasoning and opened for comment, typically for thirty days. The document states what was assessed, which makes it possible to comment on what was not."
+   },
+   {
+    "n": "OGTR — applications open for comment",
+    "lens": "CONSULTATION",
+    "u": "https://www.ogtr.gov.au/what-weve-approved",
+    "d": "Australia publishes each application, the risk assessment plan and the proposed field sites, then invites comment for around thirty days. Knowing the sites before the decision is what makes a local objection possible."
+   }
+  ]
+ },
+ "countries": {
+  "United States": {
+   "decides": [
+    {
+     "n": "USDA APHIS Biotechnology Regulatory Services",
+     "lens": "REGULATOR",
+     "u": "https://www.aphis.usda.gov/biotechnology",
+     "d": "Authorises releases and publishes the permit and notification files daily, searchable by state, crop and organism. It gives the states a release is authorised in and never the coordinates."
+    },
+    {
+     "n": "EPA — plant-incorporated protectants",
+     "lens": "REGULATOR",
+     "u": "https://www.epa.gov/regulation-biotechnology-under-tsca-and-fifra",
+     "d": "A plant engineered to make its own insecticide is regulated as a pesticide, not as a crop. Registration documents state what the grower is obliged to do around it, which the release permit does not."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Your state department of agriculture",
+     "lens": "COMPLAINT",
+     "u": "https://www.nasda.org/about/member-directory/",
+     "d": "The state employs the inspectors, can enter a field and issues the penalties. Sending an account to Washington first is the commonest reason it goes nowhere. Quote the permit number."
+    },
+    {
+     "n": "EPA pesticide incident reporting",
+     "lens": "COMPLAINT",
+     "u": "https://www.epa.gov/pesticide-incidents",
+     "d": "Drift reports go first to the state lead agency, which inspects and can fine; the EPA holds the national record. Report while residue is still detectable."
+    },
+    {
+     "n": "OSHA — exposure at work",
+     "lens": "COMPLAINT",
+     "u": "https://www.osha.gov/workers/file-complaint",
+     "d": "A worker exposed while applying or working around these chemicals can file, anonymously if they choose, and retaliation for filing is separately unlawful."
+    }
+   ],
+   "notice": [
+    {
+     "n": "Regulations.gov — file a comment, read the response",
+     "lens": "CONSULTATION",
+     "u": "https://www.regulations.gov/",
+     "d": "Where a US comment is submitted and where every other comment on the docket can be read, including the agency's published response to them."
+    }
+   ],
+   "certify": [
+    {
+     "n": "USDA Organic Integrity Database",
+     "lens": "CERTIFIER",
+     "u": "https://organic.ams.usda.gov/integrity/",
+     "d": "Search any certified operation and find its certifier. Certifiers must investigate complaints about operations they certify, and can suspend certification without a court or a regulator."
+    }
+   ],
+   "test": [
+    {
+     "n": "State seed laboratories",
+     "lens": "TESTING",
+     "u": "https://www.aosaseed.com/",
+     "d": "Most states run an official seed testing laboratory. Charges are modest, and an enforcement body is likelier to act on a result from a laboratory it already recognises."
+    }
+   ]
+  },
+  "United Kingdom": {
+   "decides": [
+    {
+     "n": "DEFRA — GM releases",
+     "lens": "REGULATOR",
+     "u": "https://www.gov.uk/government/collections/genetically-modified-organisms",
+     "d": "Decides releases on advice from ACRE, and holds the public register of applications and consents."
+    }
+   ],
+   "complain": [
+    {
+     "n": "HSE — GMO contained use",
+     "lens": "COMPLAINT",
+     "u": "https://www.hse.gov.uk/biosafety/gmo/",
+     "d": "Holds notifications for every laboratory in Britain working with engineered organisms and investigates complaints about containment — one of very few places where contained use is reportable by the public at all."
+    },
+    {
+     "n": "Wildlife Incident Investigation Scheme",
+     "lens": "COMPLAINT",
+     "u": "https://www.hse.gov.uk/pesticides/reducing-environmental-impact/wildlife.htm",
+     "d": "Report a dead animal, pet or bee colony you believe was poisoned by pesticide and the state collects the carcass and pays for the analysis. Results are published and feed into whether an approval is kept."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Soil Association",
+     "lens": "CERTIFIER",
+     "u": "https://www.soilassociation.org/",
+     "d": "Certifies organic production in the UK, and organic standards exclude engineered material outright. A positive test costs the grower the certification and the price premium with it."
+    }
+   ]
+  },
+  "Canada": {
+   "decides": [
+    {
+     "n": "CFIA — plants with novel traits",
+     "lens": "REGULATOR",
+     "u": "https://inspection.canada.ca/en/plant-varieties/plants-novel-traits",
+     "d": "Authorises plants with novel traits and publishes a decision document for each. Canada is one of very few registers listing edited and inserted-gene products side by side, which makes it the best place to check what an organism actually is."
+    },
+    {
+     "n": "Health Canada — novel foods",
+     "lens": "REGULATOR",
+     "u": "https://www.canada.ca/en/health-canada/services/food-nutrition/genetically-modified-foods-other-novel-foods.html",
+     "d": "Assesses anything sold as food and publishes the decisions."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Provincial agriculture ministries",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Hold pesticide applicator licensing and take drift complaints. As in the US, the province inspects and the federal body sets the rules."
+    },
+    {
+     "n": "CFIA complaints and enforcement",
+     "lens": "COMPLAINT",
+     "u": "https://inspection.canada.ca/en/about-cfia/contact-us",
+     "d": "Takes reports about permitted activities and publishes enforcement outcomes."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Canada Organic Regime",
+     "lens": "CERTIFIER",
+     "u": "https://inspection.canada.ca/en/organic-products",
+     "d": "Organic standards exclude engineered material; the CFIA lists accredited certifiers, and a positive test costs the operator the certification."
+    }
+   ]
+  },
+  "Germany": {
+   "decides": [
+    {
+     "n": "BVL — Bundesamt für Verbraucherschutz",
+     "lens": "REGULATOR",
+     "u": "https://www.bvl.bund.de/",
+     "d": "Runs the release register and publishes trial locations — in Germany down to the land parcel, which is more than most countries give."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Länder authorities",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "The states inspect and enforce; the federal office authorises. A complaint goes to the Land, not to Berlin."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Ohne Gentechnik",
+     "lens": "CERTIFIER",
+     "u": "https://www.ohnegentechnik.org/",
+     "d": "Certifies that livestock were fed without engineered feed — the part of the supply chain consumer labelling law does not touch, and where most of the volume is."
+    },
+    {
+     "n": "Bioland",
+     "lens": "CERTIFIER",
+     "u": "https://www.bioland.de/",
+     "d": "The largest German organic association; its standard excludes engineered material outright."
+    }
+   ]
+  },
+  "France": {
+   "decides": [
+    {
+     "n": "Ministère de l’Agriculture (France)",
+     "lens": "REGULATOR",
+     "u": "https://agriculture.gouv.fr/",
+     "d": "Authorises releases; trial locations are published under the EU deliberate release directive."
+    },
+    {
+     "n": "ANSES",
+     "lens": "REGULATOR",
+     "u": "https://www.anses.fr/",
+     "d": "Assesses risk and publishes its opinions."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Services régionaux de l’alimentation (SRAL)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "The regional service inspects and takes drift complaints."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Agence Bio",
+     "lens": "CERTIFIER",
+     "u": "https://www.agencebio.org/",
+     "d": "Holds the register of certified operators and the list of certifying bodies."
+    }
+   ]
+  },
+  "Spain": {
+   "decides": [
+    {
+     "n": "Ministerio de Agricultura",
+     "lens": "REGULATOR",
+     "u": "https://www.mapa.gob.es/",
+     "d": "Authorises on advice from the Comisión Nacional de Bioseguridad. Spain grows more engineered maize than the rest of the EU combined, so this is the one member state where cultivation is the live question."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Autonomous community agriculture departments",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Aragón and Catalonia hold most of the area; the community inspects, not Madrid."
+    }
+   ],
+   "certify": [
+    {
+     "n": "CAAE",
+     "lens": "CERTIFIER",
+     "u": "https://www.caae.es/",
+     "d": "One of the largest organic certifiers in Spain."
+    }
+   ]
+  },
+  "Australia": {
+   "decides": [
+    {
+     "n": "Office of the Gene Technology Regulator",
+     "lens": "REGULATOR",
+     "u": "https://www.ogtr.gov.au/",
+     "d": "Licenses every dealing with an engineered organism, and publishes the licence, the risk assessment and the approved field sites — which few regulators do before a decision."
+    }
+   ],
+   "complain": [
+    {
+     "n": "State agriculture departments",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "The state, not the federal agency, employs the inspectors who can enter a field and issue penalties. Find yours before writing anything."
+    },
+    {
+     "n": "OGTR compliance",
+     "lens": "COMPLAINT",
+     "u": "https://www.ogtr.gov.au/",
+     "d": "Inspects licensed sites and publishes monitoring reports."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Australian Certified Organic",
+     "lens": "CERTIFIER",
+     "u": "https://aco.net.au/",
+     "d": "Certifies to a standard excluding engineered material."
+    }
+   ]
+  },
+  "India": {
+   "decides": [
+    {
+     "n": "Genetic Engineering Appraisal Committee",
+     "lens": "REGULATOR",
+     "u": "https://geacindia.gov.in/",
+     "d": "Decides releases under the environment ministry and publishes its meeting minutes, which is where an approval first becomes visible."
+    }
+   ],
+   "complain": [
+    {
+     "n": "State biotechnology coordination committees",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Have authority over releases in their state and are closer than Delhi."
+    }
+   ],
+   "certify": [
+    {
+     "n": "NPOP — APEDA organic",
+     "lens": "CERTIFIER",
+     "u": "https://apeda.gov.in/apedawebsite/organic/",
+     "d": "The national organic programme and its accredited certifiers."
+    }
+   ]
+  },
+  "Brazil": {
+   "decides": [
+    {
+     "n": "CTNBio",
+     "lens": "REGULATOR",
+     "u": "https://www.gov.br/mcti/pt-br/composicao/conselhos/ctnbio",
+     "d": "Issues the technical opinion that authorises a release, and publishes approvals."
+    }
+   ],
+   "complain": [
+    {
+     "n": "IBAMA",
+     "lens": "COMPLAINT",
+     "u": "https://www.gov.br/ibama/",
+     "d": "Handles environmental damage and enforcement."
+    },
+    {
+     "n": "State environment agencies",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Handle environmental damage locally, and are usually quicker to inspect than the federal body."
+    }
+   ],
+   "notice": [
+    {
+     "n": "Diário Oficial da União",
+     "lens": "CONSULTATION",
+     "u": "https://www.in.gov.br/",
+     "d": "Where approvals and hearings are announced."
+    }
+   ],
+   "certify": [
+    {
+     "n": "MAPA — organic certification",
+     "lens": "CERTIFIER",
+     "u": "https://www.gov.br/agricultura/",
+     "d": "Holds the register of certifying bodies."
+    }
+   ]
+  },
+  "Netherlands": {
+   "decides": [
+    {
+     "n": "COGEM",
+     "lens": "REGULATOR",
+     "u": "https://cogem.net/",
+     "d": "Advises on releases and publishes its advice."
+    },
+    {
+     "n": "Rijksoverheid — GGO vergunningen",
+     "lens": "REGULATOR",
+     "u": "https://www.rijksoverheid.nl/",
+     "d": "The ministry authorises."
+    }
+   ],
+   "complain": [
+    {
+     "n": "NVWA",
+     "lens": "COMPLAINT",
+     "u": "https://www.nvwa.nl/",
+     "d": "Inspects and takes complaints on food and plant safety."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Skal Biocontrole",
+     "lens": "CERTIFIER",
+     "u": "https://www.skal.nl/",
+     "d": "The Dutch organic certifier; tell them if certified land is affected."
+    }
+   ]
+  },
+  "Denmark": {
+   "decides": [
+    {
+     "n": "Miljøstyrelsen",
+     "lens": "REGULATOR",
+     "u": "https://mst.dk/",
+     "d": "Authorises releases."
+    },
+    {
+     "n": "Landbrugsstyrelsen",
+     "lens": "REGULATOR",
+     "u": "https://lbst.dk/",
+     "d": "Handles cultivation and coexistence."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Landbrugsstyrelsen — coexistence",
+     "lens": "COMPLAINT",
+     "u": "https://lbst.dk/",
+     "d": "Also administers the compensation fund that pays a grower whose crop loses its non-GM or organic status because of a neighbour, financed by a levy on engineered cultivation. Very few countries have one."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Økologisk Landsforening",
+     "lens": "CERTIFIER",
+     "u": "https://okologi.dk/",
+     "d": "The Danish organic association."
+    }
+   ]
+  },
+  "Japan": {
+   "decides": [
+    {
+     "n": "MAFF — Cartagena Law",
+     "lens": "REGULATOR",
+     "u": "https://www.maff.go.jp/e/",
+     "d": "Authorises agricultural releases."
+    },
+    {
+     "n": "Ministry of the Environment",
+     "lens": "REGULATOR",
+     "u": "https://www.env.go.jp/en/",
+     "d": "Shares responsibility for environmental release."
+    }
+   ],
+   "notice": [
+    {
+     "n": "J-BCH — Japan Biosafety Clearing-House",
+     "lens": "CONSULTATION",
+     "u": "https://www.bch.biodic.go.jp/english/",
+     "d": "Japan's national node; approvals and decisions are published here."
+    }
+   ],
+   "certify": [
+    {
+     "n": "JAS organic",
+     "lens": "CERTIFIER",
+     "u": "https://www.maff.go.jp/e/policies/standard/",
+     "d": "The Japanese organic standard and its registered certifiers."
+    }
+   ]
+  },
+  "China": {
+   "decides": [
+    {
+     "n": "Ministry of Agriculture and Rural Affairs",
+     "lens": "REGULATOR",
+     "u": "http://www.moa.gov.cn/",
+     "d": "Issues biosafety certificates and publishes lists of approved events. China approved its first domestic maize and soy for planting in 2023 after more than a decade in which food-crop approvals were effectively frozen, so the list is worth checking rather than assumed."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Provincial agriculture departments",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Handle enforcement, and are the level at which unapproved planting has actually been acted on — several provinces have destroyed unauthorised maize."
+    }
+   ],
+   "certify": [
+    {
+     "n": "China Organic Product Certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "The national organic standard excludes engineered material; certification is issued through accredited bodies under CNCA."
+    }
+   ]
+  },
+  "Italy": {
+   "decides": [
+    {
+     "n": "Ministero della Salute",
+     "lens": "REGULATOR",
+     "u": "https://www.salute.gov.it/",
+     "d": "Authorises on advice from the interministerial commission. Italy has used the EU cultivation opt-out, so the live questions here concern imports and feed rather than fields."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Regional phytosanitary services",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "The regions inspect and take drift complaints."
+    }
+   ],
+   "certify": [
+    {
+     "n": "AIAB",
+     "lens": "CERTIFIER",
+     "u": "https://aiab.it/",
+     "d": "The Italian organic association."
+    },
+    {
+     "n": "ICEA",
+     "lens": "CERTIFIER",
+     "u": "https://icea.bio/",
+     "d": "One of the larger Italian certifiers, operating internationally."
+    }
+   ]
+  },
+  "Poland": {
+   "decides": [
+    {
+     "n": "Ministerstwo Klimatu i Środowiska",
+     "lens": "REGULATOR",
+     "u": "https://www.gov.pl/web/klimat",
+     "d": "Authorises releases. National law prohibits the cultivation of engineered crops, so a release here would be a contained or research matter rather than a field."
+    }
+   ],
+   "complain": [
+    {
+     "n": "PIORiN — plant health and seed inspection",
+     "lens": "COMPLAINT",
+     "u": "https://www.gov.pl/web/piorin",
+     "d": "Inspects seed and plant health, and is the body that would act on unauthorised planting."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Ekogwarancja",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "One of the Polish organic certifiers."
+    }
+   ]
+  },
+  "Sweden": {
+   "decides": [
+    {
+     "n": "Jordbruksverket — Swedish Board of Agriculture",
+     "lens": "REGULATOR",
+     "u": "https://jordbruksverket.se/",
+     "d": "Authorises releases of engineered plants and publishes the applications."
+    }
+   ],
+   "complain": [
+    {
+     "n": "County administrative boards",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "The county board inspects locally and takes complaints."
+    }
+   ],
+   "certify": [
+    {
+     "n": "KRAV",
+     "lens": "CERTIFIER",
+     "u": "https://www.krav.se/",
+     "d": "The Swedish organic standard, stricter than the EU organic baseline and dominant in Swedish retail."
+    }
+   ]
+  },
+  "Austria": {
+   "decides": [
+    {
+     "n": "Bundesministerium für Gesundheit",
+     "lens": "REGULATOR",
+     "u": "https://www.sozialministerium.at/",
+     "d": "Authorises releases. Austria invoked the safeguard clause against an EU-approved variety and defended it for years — that fight is why the EU cultivation opt-out exists at all."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Länder authorities",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "The states inspect, and several have declared themselves GM-free through regional law and grower agreements."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Austria Bio Garantie",
+     "lens": "CERTIFIER",
+     "u": "https://www.abg.at/",
+     "d": "The largest Austrian certifier; the organic share of farmland here is among the highest in Europe, which is itself a coexistence constraint."
+    }
+   ]
+  },
+  "Switzerland": {
+   "decides": [
+    {
+     "n": "Federal Office for the Environment (FOEN)",
+     "lens": "REGULATOR",
+     "u": "https://www.bafu.admin.ch/",
+     "d": "Authorises releases. Switzerland has extended its moratorium on growing engineered crops repeatedly since 2005 while continuing to import engineered feed and to host some of the largest agricultural biotechnology companies in the world."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Cantonal authorities",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "The canton inspects and enforces; the federal office authorises."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Bio Suisse — Knospe",
+     "lens": "CERTIFIER",
+     "u": "https://www.bio-suisse.ch/",
+     "d": "The Swiss organic label; its standard excludes engineered material and it covers most Swiss organic production."
+    }
+   ]
+  },
+  "Norway": {
+   "decides": [
+    {
+     "n": "Norwegian Environment Agency",
+     "lens": "REGULATOR",
+     "u": "https://www.miljodirektoratet.no/",
+     "d": "Authorises under the Gene Technology Act, which is unusual in requiring an applicant to show benefit to the community and sustainability, not only safety."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Mattilsynet — Norwegian Food Safety Authority",
+     "lens": "COMPLAINT",
+     "u": "https://www.mattilsynet.no/",
+     "d": "Inspects food, feed and aquaculture, and takes reports."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Debio",
+     "lens": "CERTIFIER",
+     "u": "https://debio.no/",
+     "d": "The Norwegian organic certifier."
+    }
+   ]
+  },
+  "New Zealand": {
+   "decides": [
+    {
+     "n": "Environmental Protection Authority (New Zealand)",
+     "lens": "REGULATOR",
+     "u": "https://www.epa.govt.nz/",
+     "d": "Decides applications under the HSNO Act and publishes them with a public submission period. New Zealand has permitted almost no outdoor release, so most of the register is contained laboratory work."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry for Primary Industries",
+     "lens": "COMPLAINT",
+     "u": "https://www.mpi.govt.nz/",
+     "d": "Handles biosecurity and unauthorised organisms, including material arriving in imported seed."
+    }
+   ],
+   "certify": [
+    {
+     "n": "BioGro NZ",
+     "lens": "CERTIFIER",
+     "u": "https://www.biogro.co.nz/",
+     "d": "The main New Zealand organic certifier."
+    }
+   ]
+  },
+  "South Africa": {
+   "decides": [
+    {
+     "n": "Department of Agriculture — GMO Act registrar",
+     "lens": "REGULATOR",
+     "u": "https://www.dalrrd.gov.za/",
+     "d": "Authorises releases under the GMO Act. South Africa is the only country in Africa where engineered maize is a staple eaten directly rather than fed to animals, which makes the food-crop question live rather than hypothetical here."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Provincial departments of agriculture",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspect and take complaints locally."
+    }
+   ],
+   "certify": [
+    {
+     "n": "SAOSO — South African Organic Sector Organisation",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Holds the national organic standard."
+    }
+   ]
+  },
+  "Argentina": {
+   "decides": [
+    {
+     "n": "CONABIA",
+     "lens": "REGULATOR",
+     "u": "https://www.argentina.gob.ar/agricultura/alimentos-y-bioeconomia/conabia",
+     "d": "The advisory commission that wrote Resolution 173/2015, which decided an edited organism carrying no foreign DNA is not a GMO and needs no biosafety approval. Chile, Brazil, Colombia, Paraguay and Honduras all adopted versions of it — more countries follow this text than any other on the subject."
+    }
+   ],
+   "complain": [
+    {
+     "n": "SENASA",
+     "lens": "COMPLAINT",
+     "u": "https://www.argentina.gob.ar/senasa",
+     "d": "The food and agricultural health service; inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Argencert / OIA",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Argentine organic certifiers, mostly serving the export market."
+    }
+   ]
+  },
+  "Mexico": {
+   "decides": [
+    {
+     "n": "SENASICA / CIBIOGEM",
+     "lens": "REGULATOR",
+     "u": "https://www.gob.mx/cibiogem",
+     "d": "Handle permits and the inter-secretarial biosafety commission. Mexico sits inside the centre of origin for maize, where wild relatives and thousands of local varieties still grow, and has restricted engineered maize on that basis."
+    }
+   ],
+   "complain": [
+    {
+     "n": "PROFEPA",
+     "lens": "COMPLAINT",
+     "u": "https://www.gob.mx/profepa",
+     "d": "The federal environmental protection agency; takes citizen complaints about environmental damage and is obliged to respond."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Certimex",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "A Mexican organic certifier working with smallholder and indigenous producers."
+    }
+   ]
+  },
+  "Kenya": {
+   "decides": [
+    {
+     "n": "National Biosafety Authority",
+     "lens": "REGULATOR",
+     "u": "https://ke.biosafetyclearinghouse.net/",
+     "d": "Authorises releases and publishes decisions. Kenya lifted its ban on engineered crop imports in 2022 while a court challenge to that decision was still running, so the position has been contested rather than settled."
+    }
+   ],
+   "complain": [
+    {
+     "n": "KEPHIS — Plant Health Inspectorate",
+     "lens": "COMPLAINT",
+     "u": "https://www.kephis.go.ke/",
+     "d": "Inspects seed and plant health and is the body that acts on unauthorised material."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Kilimohai / EOA",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "East African organic mark and its certifiers."
+    }
+   ]
+  },
+  "Belgium": {
+   "decides": [
+    {
+     "n": "Belgian Biosafety Server",
+     "lens": "REGULATOR",
+     "u": "https://www.biosafety.be/",
+     "d": "The federal biosafety portal, which publishes applications, advice and the register. Authority is split between the federal level and the three regions, which is why a Belgian answer usually has two halves."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Regional agencies — Flanders, Wallonia, Brussels",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "The regions inspect and enforce; the federal level authorises."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Certisys",
+     "lens": "CERTIFIER",
+     "u": "https://www.certisys.eu/",
+     "d": "One of the main Belgian organic certifiers."
+    }
+   ]
+  },
+  "Ireland": {
+   "decides": [
+    {
+     "n": "EPA Ireland — GMO licensing",
+     "lens": "REGULATOR",
+     "u": "https://www.epa.ie/",
+     "d": "Licenses both contained use and deliberate release, and publishes the register — unusual in combining the two in one agency."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Department of Agriculture, Food and the Marine",
+     "lens": "COMPLAINT",
+     "u": "https://www.gov.ie/en/organisation/department-of-agriculture-food-and-the-marine/",
+     "d": "Inspects and enforces on seed and crops."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Irish Organic Association",
+     "lens": "CERTIFIER",
+     "u": "https://www.irishorganicassociation.ie/",
+     "d": "Certifies organic production in Ireland."
+    }
+   ]
+  },
+  "Portugal": {
+   "decides": [
+    {
+     "n": "DGAV — Direcção-Geral de Alimentação e Veterinária",
+     "lens": "REGULATOR",
+     "u": "https://www.dgav.pt/",
+     "d": "Authorises and holds the cultivation register. Portugal is one of only two EU states with commercial engineered maize, so its coexistence rules are among the few actually in use."
+    }
+   ],
+   "complain": [
+    {
+     "n": "DGAV — coexistence and neighbour notification",
+     "lens": "COMPLAINT",
+     "u": "https://www.dgav.pt/",
+     "d": "Portuguese coexistence rules require a grower to notify neighbours before planting, and to keep isolation distances. That notification is the document to ask for."
+    }
+   ],
+   "certify": [
+    {
+     "n": "SATIVA",
+     "lens": "CERTIFIER",
+     "u": "https://www.sativa.pt/",
+     "d": "A Portuguese organic certifier."
+    }
+   ]
+  },
+  "Greece": {
+   "decides": [
+    {
+     "n": "Ministry of Rural Development and Food",
+     "lens": "REGULATOR",
+     "u": "https://www.minagric.gr/",
+     "d": "Authorises. Greece has used the EU cultivation opt-out, so the questions here concern imports and feed."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Regional plant protection services",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "The region inspects and enforces; the ministry authorises."
+    }
+   ],
+   "certify": [
+    {
+     "n": "DIO",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "A Greek organic certifier."
+    }
+   ]
+  },
+  "Czech Republic": {
+   "decides": [
+    {
+     "n": "Ministerstvo životního prostředí",
+     "lens": "REGULATOR",
+     "u": "https://www.mzp.cz/",
+     "d": "Authorises releases and keeps the register."
+    }
+   ],
+   "complain": [
+    {
+     "n": "ÚKZÚZ — Central Institute for Supervising and Testing in Agriculture",
+     "lens": "COMPLAINT",
+     "u": "https://www.ukzuz.cz/",
+     "d": "Inspects seed and crops and runs the official testing laboratories."
+    }
+   ],
+   "certify": [
+    {
+     "n": "KEZ",
+     "lens": "CERTIFIER",
+     "u": "https://www.kez.cz/",
+     "d": "The largest Czech organic certifier."
+    }
+   ]
+  },
+  "Hungary": {
+   "decides": [
+    {
+     "n": "Agrárminisztérium",
+     "lens": "REGULATOR",
+     "u": "https://kormany.hu/agrarminiszterium",
+     "d": "Authorises. Hungary's constitution commits the country to agriculture free of engineered organisms, which is unusual — most prohibitions sit in statute rather than in a constitution."
+    }
+   ],
+   "complain": [
+    {
+     "n": "NÉBIH — National Food Chain Safety Office",
+     "lens": "COMPLAINT",
+     "u": "https://portal.nebih.gov.hu/",
+     "d": "Inspects and enforces, including seed testing for engineered content."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Biokontroll Hungária",
+     "lens": "CERTIFIER",
+     "u": "https://biokontroll.hu/",
+     "d": "The main Hungarian organic certifier."
+    }
+   ]
+  },
+  "Romania": {
+   "decides": [
+    {
+     "n": "Ministerul Mediului",
+     "lens": "REGULATOR",
+     "u": "http://www.mmediu.ro/",
+     "d": "Authorises releases."
+    }
+   ],
+   "complain": [
+    {
+     "n": "ANSVSA",
+     "lens": "COMPLAINT",
+     "u": "http://www.ansvsa.ro/",
+     "d": "The food safety authority; inspects and takes complaints."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Ecoinspect",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "A Romanian organic certifier."
+    }
+   ]
+  },
+  "Finland": {
+   "decides": [
+    {
+     "n": "Board for Gene Technology",
+     "lens": "REGULATOR",
+     "u": "https://geenitekniikanlautakunta.fi/en/",
+     "d": "A standing board rather than a ministry department, which publishes its decisions and minutes."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ruokavirasto — Finnish Food Authority",
+     "lens": "COMPLAINT",
+     "u": "https://www.ruokavirasto.fi/en/",
+     "d": "Inspects food, feed and seed, and runs the official testing."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Luomuliitto",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "The Finnish organic association."
+    }
+   ]
+  },
+  "Bulgaria": {
+   "decides": [
+    {
+     "n": "Ministry of Environment and Water",
+     "lens": "REGULATOR",
+     "u": "https://www.moew.government.bg/",
+     "d": "Authorises. National law prohibits the cultivation of engineered crops outright."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Bulgarian Food Safety Agency",
+     "lens": "COMPLAINT",
+     "u": "https://babh.government.bg/",
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Balkan Biocert",
+     "lens": "CERTIFIER",
+     "u": "https://balkanbiocert.com/",
+     "d": "A Bulgarian organic certifier working across the region."
+    }
+   ]
+  },
+  "Croatia": {
+   "decides": [
+    {
+     "n": "Ministarstvo gospodarstva i održivog razvoja",
+     "lens": "REGULATOR",
+     "u": "https://mingor.gov.hr/",
+     "d": "Authorises. Most Croatian counties have declared themselves GM-free, which was done by county decision rather than national law."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Državni inspektorat",
+     "lens": "COMPLAINT",
+     "u": "https://dirh.gov.hr/",
+     "d": "The state inspectorate."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Agribiocert",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "A Croatian organic certifier."
+    }
+   ]
+  },
+  "Russia": {
+   "decides": [
+    {
+     "n": "Rosselkhoznadzor",
+     "lens": "REGULATOR",
+     "u": "https://fsvps.gov.ru/",
+     "d": "Russia prohibits the cultivation and import of engineered crops for planting, with an exception for research. The register therefore records feed and food approvals rather than releases."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Rospotrebnadzor",
+     "lens": "COMPLAINT",
+     "u": "https://www.rospotrebnadzor.ru/",
+     "d": "Handles food safety and consumer complaints."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Roskachestvo organic register",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "The national organic standard and its register of certified producers."
+    }
+   ]
+  },
+  "Ukraine": {
+   "decides": [
+    {
+     "n": "Ministry of Environmental Protection",
+     "lens": "REGULATOR",
+     "u": "https://mepr.gov.ua/",
+     "d": "Authorises. Ukraine's registration system has long lagged actual planting, which is documented rather than alleged — surveys have repeatedly found unregistered engineered soy in the field."
+    }
+   ],
+   "complain": [
+    {
+     "n": "State Service on Food Safety and Consumer Protection",
+     "lens": "COMPLAINT",
+     "u": "https://dpss.gov.ua/",
+     "d": "Inspects and enforces on food, feed and seed."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Organic Standard",
+     "lens": "CERTIFIER",
+     "u": "https://organicstandard.ua/",
+     "d": "The main Ukrainian organic certifier."
+    }
+   ]
+  },
+  "Nigeria": {
+   "decides": [
+    {
+     "n": "National Biosafety Management Agency",
+     "lens": "REGULATOR",
+     "u": "https://nbma.gov.ng/",
+     "d": "Authorises releases and publishes decisions. Nigeria approved Bt cowpea in 2019 — the first engineered food crop released in sub-Saharan Africa, and one of very few anywhere developed by a public institute for a staple its own country eats."
+    }
+   ],
+   "complain": [
+    {
+     "n": "NAFDAC",
+     "lens": "COMPLAINT",
+     "u": "https://www.nafdac.gov.ng/",
+     "d": "Food and drug control; takes complaints on labelling and food safety."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Nigeria Organic Agriculture Network",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Holds the participatory guarantee scheme used by most Nigerian organic producers."
+    }
+   ]
+  },
+  "Ghana": {
+   "decides": [
+    {
+     "n": "National Biosafety Authority",
+     "lens": "REGULATOR",
+     "u": "https://nba.gov.gh/",
+     "d": "Authorises releases and runs the public consultation. Ghana approved Bt cowpea after Nigeria, following the same public-institute route."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant Protection and Regulatory Services Directorate",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and plant health."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Ghana Organic Agriculture Network",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Coordinates organic certification locally."
+    }
+   ]
+  },
+  "Ethiopia": {
+   "decides": [
+    {
+     "n": "Environmental Protection Authority (Ethiopia)",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Authorises under the biosafety proclamation, which was substantially relaxed in 2015 after being one of the strictest in Africa."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ethiopian Agricultural Authority",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Ethiopian organic certifiers",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Certification is mostly for export coffee and sesame."
+    }
+   ]
+  },
+  "Egypt": {
+   "decides": [
+    {
+     "n": "National Biosafety Committee",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles applications. Egypt is the largest wheat importer in the world, and its state tender specifications on engineered content set terms for exporters across several continents — a buyer decision that functions as regulation."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Agriculture — Central Administration for Plant Quarantine",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and enforces at the border."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Egyptian Center of Organic Agriculture",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "National organic body."
+    }
+   ]
+  },
+  "Bangladesh": {
+   "decides": [
+    {
+     "n": "National Committee on Biosafety",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Authorises. Bangladesh released Bt brinjal in 2013 — the first engineered food crop grown by smallholders in South Asia, and the most studied case of one."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Department of Agricultural Extension",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "The extension service is the practical contact for a grower."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Bangladesh organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Mostly export-facing."
+    }
+   ]
+  },
+  "Pakistan": {
+   "decides": [
+    {
+     "n": "National Biosafety Centre",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles approvals. Pakistan grows engineered cotton at scale, much of it from seed that entered the country before any approval — adoption preceding registration, as in Paraguay."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Provincial agriculture departments",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Seed inspection and enforcement is provincial."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Pakistan organic certifiers",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Small and export-oriented."
+    }
+   ]
+  },
+  "Indonesia": {
+   "decides": [
+    {
+     "n": "Biosafety Commission (KKH)",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Advises the ministries that authorise releases and food use."
+    },
+    {
+     "n": "Ministry of Agriculture (Indonesia)",
+     "lens": "REGULATOR",
+     "u": "https://www.pertanian.go.id/",
+     "d": "Issues the release decision."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Badan Karantina — quarantine agency",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed."
+    }
+   ],
+   "certify": [
+    {
+     "n": "LSO organic certifiers",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Accredited under the national organic standard."
+    }
+   ]
+  },
+  "Philippines": {
+   "decides": [
+    {
+     "n": "Department of Agriculture — Bureau of Plant Industry",
+     "lens": "REGULATOR",
+     "u": "https://buplant.da.gov.ph/",
+     "d": "Authorises releases. In 2024 the Court of Appeals revoked the approvals for Golden Rice and Bt eggplant through a constitutional environmental remedy citizens can invoke directly — the only case anywhere of a court withdrawing a granted biosafety approval at the public's request."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Bureau of Plant Industry — regional offices",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspect and enforce locally."
+    }
+   ],
+   "certify": [
+    {
+     "n": "OCCP — Organic Certification Center of the Philippines",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "The national organic certifier."
+    }
+   ]
+  },
+  "Vietnam": {
+   "decides": [
+    {
+     "n": "Ministry of Natural Resources and Environment",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Authorises environmental release; the agriculture ministry handles cultivation. Vietnam approved engineered maize in 2014 and grows a modest area while importing several million tonnes of engineered maize and soy each year for feed."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant Protection Department",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Vietnam organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "National standard, largely export-facing."
+    }
+   ]
+  },
+  "Thailand": {
+   "decides": [
+    {
+     "n": "Department of Agriculture (Thailand)",
+     "lens": "REGULATOR",
+     "u": "https://www.doa.go.th/",
+     "d": "Handles applications. Thailand permits field trials but has not authorised commercial cultivation, while remaining a large exporter of rice and a major feed importer."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Department of Agriculture — regional offices",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspect seed and crops."
+    }
+   ],
+   "certify": [
+    {
+     "n": "ACT — Organic Agriculture Certification Thailand",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "The main Thai organic certifier."
+    }
+   ]
+  },
+  "Republic of Korea": {
+   "decides": [
+    {
+     "n": "Rural Development Administration",
+     "lens": "REGULATOR",
+     "u": "https://www.rda.go.kr/",
+     "d": "Handles agricultural approvals; the food ministry handles food use. Korea is one of the largest importers of engineered maize and soy in the world and grows none commercially."
+    }
+   ],
+   "complain": [
+    {
+     "n": "MFDS — Ministry of Food and Drug Safety",
+     "lens": "COMPLAINT",
+     "u": "https://www.mfds.go.kr/",
+     "d": "Handles food labelling complaints, which is where most Korean disputes arise."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Korean organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Under the national environment-friendly agriculture scheme."
+    }
+   ]
+  },
+  "Turkey": {
+   "decides": [
+    {
+     "n": "Biosafety Board",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Authorises under the Biosafety Law. Turkey prohibits cultivation of engineered crops entirely while approving specific events for animal feed — one of the clearest splits between what may be grown and what may be imported."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Agriculture and Forestry",
+     "lens": "COMPLAINT",
+     "u": "https://www.tarimorman.gov.tr/",
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Turkish organic certifiers",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Accredited under the national organic regulation."
+    }
+   ]
+  },
+  "Chile": {
+   "decides": [
+    {
+     "n": "SAG — Servicio Agrícola y Ganadero",
+     "lens": "REGULATOR",
+     "u": "https://www.sag.gob.cl/",
+     "d": "Authorises. Chile permits engineered seed to be grown only for export multiplication, not for domestic planting — so a field of it here is producing seed for somebody else's country, which is a distinction most registers do not make."
+    }
+   ],
+   "complain": [
+    {
+     "n": "SAG regional offices",
+     "lens": "COMPLAINT",
+     "u": "https://www.sag.gob.cl/",
+     "d": "Inspect and enforce locally."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Chilean organic certifiers",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Accredited under the national organic law, largely for export fruit and wine."
+    }
+   ]
+  },
+  "Colombia": {
+   "decides": [
+    {
+     "n": "ICA — Instituto Colombiano Agropecuario",
+     "lens": "REGULATOR",
+     "u": "https://www.ica.gov.co/",
+     "d": "Authorises releases and publishes the resolutions. Colombia adopted a version of Argentina's Resolution 173, so edited organisms with no foreign DNA fall outside biosafety approval here."
+    }
+   ],
+   "complain": [
+    {
+     "n": "ICA regional offices",
+     "lens": "COMPLAINT",
+     "u": "https://www.ica.gov.co/",
+     "d": "Inspect seed and crops."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Colombian organic certifiers",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Under the national organic regulation."
+    }
+   ]
+  },
+  "Paraguay": {
+   "decides": [
+    {
+     "n": "SENAVE",
+     "lens": "REGULATOR",
+     "u": "https://www.senave.gov.py/",
+     "d": "The seed and plant health authority. Engineered soy arrived in Paraguay across the border and was widely planted before it was legal, so this office's task became regularising a situation rather than deciding one — adoption first, approval afterwards."
+    }
+   ],
+   "complain": [
+    {
+     "n": "SENAVE inspection",
+     "lens": "COMPLAINT",
+     "u": "https://www.senave.gov.py/",
+     "d": "Inspects seed and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Paraguayan organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Small, mostly export sesame and sugar."
+    }
+   ]
+  },
+  "Uruguay": {
+   "decides": [
+    {
+     "n": "Gabinete Nacional de Bioseguridad",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Authorises through an inter-ministerial cabinet rather than a single agency. Uruguay is unusual in maintaining a national coexistence and traceability system for engineered and non-engineered maize."
+    }
+   ],
+   "complain": [
+    {
+     "n": "MGAP — Ministerio de Ganadería, Agricultura y Pesca",
+     "lens": "COMPLAINT",
+     "u": "https://www.gub.uy/ministerio-ganaderia-agricultura-pesca/",
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Uruguayan organic certifiers",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Export-facing."
+    }
+   ]
+  },
+  "Bolivia": {
+   "decides": [
+    {
+     "n": "Comité Nacional de Bioseguridad",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Bolivia permits one engineered soy event and no others, while its constitution restricts engineered organisms — a narrow legal opening inside a broad prohibition."
+    }
+   ],
+   "complain": [
+    {
+     "n": "SENASAG",
+     "lens": "COMPLAINT",
+     "u": "https://www.senasag.gob.bo/",
+     "d": "Food and agricultural health service; inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "AOPEB",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "The Bolivian organic producers' association, which runs participatory certification."
+    }
+   ]
+  },
+  "Peru": {
+   "decides": [
+    {
+     "n": "Ministerio del Ambiente",
+     "lens": "REGULATOR",
+     "u": "https://www.gob.pe/minam",
+     "d": "Peru has a moratorium on the entry and release of engineered organisms, extended to 2035 — the longest in force anywhere, and grounded in protecting the country's crop diversity rather than in a safety finding."
+    }
+   ],
+   "complain": [
+    {
+     "n": "SENASA Peru",
+     "lens": "COMPLAINT",
+     "u": "https://www.gob.pe/senasa",
+     "d": "Inspects imports and seed."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Peruvian organic certifiers",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Largely for coffee, cacao and quinoa export."
+    }
+   ]
+  },
+  "Israel": {
+   "decides": [
+    {
+     "n": "Ministry of Agriculture — National Committee for Transgenic Plants",
+     "lens": "REGULATOR",
+     "u": "https://www.gov.il/en/departments/ministry_of_agriculture",
+     "d": "Authorises field trials. Israel permits research and trials but no commercial cultivation, while hosting a substantial plant biotechnology sector — and it approved cultivated meat earliest of anywhere."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant Protection and Inspection Services",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Israel Bio-Organic Agriculture Association",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "The national organic body."
+    }
+   ]
+  },
+  "Saudi Arabia": {
+   "decides": [
+    {
+     "n": "Saudi Food and Drug Authority",
+     "lens": "REGULATOR",
+     "u": "https://www.sfda.gov.sa/",
+     "d": "Handles food and feed approvals and labelling. Saudi Arabia imports nearly all its grain, so the questions here are about what arrives rather than what is grown."
+    }
+   ],
+   "complain": [
+    {
+     "n": "SFDA inspection",
+     "lens": "COMPLAINT",
+     "u": "https://www.sfda.gov.sa/",
+     "d": "Takes food safety and labelling complaints."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Saudi organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Under the national organic agriculture programme."
+    }
+   ]
+  },
+  "United Arab Emirates": {
+   "decides": [
+    {
+     "n": "Ministry of Climate Change and Environment",
+     "lens": "REGULATOR",
+     "u": "https://www.moccae.gov.ae/",
+     "d": "Handles biosafety and food import approvals. The Emirati Genome Programme sequences the whole national population with the data held by the state, which is the more consequential genetic question here."
+    }
+   ],
+   "complain": [
+    {
+     "n": "MOCCAE inspection",
+     "lens": "COMPLAINT",
+     "u": "https://www.moccae.gov.ae/",
+     "d": "Inspects imports and takes complaints."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Emirates organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Under the national organic standard."
+    }
+   ]
+  },
+  "Malaysia": {
+   "decides": [
+    {
+     "n": "Department of Biosafety",
+     "lens": "REGULATOR",
+     "u": "https://www.biosafety.nre.gov.my/",
+     "d": "Authorises under the Biosafety Act and publishes applications with a public comment period — which is more than most of the region provides."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Department of Agriculture (Malaysia)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "JAKIM — halal certification",
+     "lens": "CERTIFIER",
+     "u": "https://www.halal.gov.my/",
+     "d": "Certifies halal status for food sold to around two billion people, and its rulings cover enzymes, gelatine and cultured products made with engineered organisms — a question no food regulator answers and this one must."
+    }
+   ]
+  },
+  "Singapore": {
+   "decides": [
+    {
+     "n": "Singapore Food Agency",
+     "lens": "REGULATOR",
+     "u": "https://www.sfa.gov.sg/",
+     "d": "Assesses novel foods, and was the first authority anywhere to approve cultivated meat for sale, in 2020. A city-state importing most of its food has reasons a farming country does not."
+    }
+   ],
+   "complain": [
+    {
+     "n": "GMAC — Genetic Modification Advisory Committee",
+     "lens": "REGULATOR",
+     "u": "https://www.gmac.gov.sg/",
+     "d": "Advises on release and contained use."
+    }
+   ],
+   "certify": [
+    {
+     "n": "SFA inspection",
+     "lens": "COMPLAINT",
+     "u": "https://www.sfa.gov.sg/",
+     "d": "Takes food safety complaints."
+    }
+   ]
+  },
+  "Taiwan": {
+   "decides": [
+    {
+     "n": "Food and Drug Administration",
+     "lens": "REGULATOR",
+     "u": "https://www.fda.gov.tw/",
+     "d": "Approves food use and requires labelling. Taiwan permits no commercial cultivation of engineered crops and prohibits them in school meals, which is an unusual and specific restriction."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Council of Agriculture — inspection",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and crops."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Taiwan organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Under the national organic agriculture act."
+    }
+   ]
+  },
+  "Uganda": {
+   "decides": [
+    {
+     "n": "National Council for Science and Technology",
+     "lens": "REGULATOR",
+     "u": "https://www.uncst.go.ug/",
+     "d": "Approves confined field trials. Uganda has run trials for years — banana, cassava, maize — without a biosafety law in force, because successive bills were passed by parliament and not signed. Research proceeds; commercialisation cannot."
+    }
+   ],
+   "complain": [
+    {
+     "n": "MAAIF — Ministry of Agriculture",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and crops."
+    }
+   ],
+   "certify": [
+    {
+     "n": "NOGAMU",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "The Ugandan organic movement, which runs certification for the export market."
+    }
+   ]
+  },
+  "Tanzania": {
+   "decides": [
+    {
+     "n": "National Environment Management Council",
+     "lens": "REGULATOR",
+     "u": "https://www.nemc.or.tz/",
+     "d": "Authorises. Tanzania halted its trials in 2018 and ordered material destroyed, having previously operated a strict liability rule that made researchers personally liable for any damage — which is why almost nobody applied."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Tanzania Plant Health and Pesticides Authority",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "TOAM",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "The Tanzanian organic agriculture movement."
+    }
+   ]
+  },
+  "Zambia": {
+   "decides": [
+    {
+     "n": "National Biosafety Authority",
+     "lens": "REGULATOR",
+     "u": "https://www.nba.co.zm/",
+     "d": "Authorises. Zambia refused engineered maize as food aid during the 2002 famine, which remains the most cited instance of a country declining it under emergency conditions and is still the reference point in African debate."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Zambia Environmental Management Agency",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Handles environmental complaints."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Organic Producers and Processors Association of Zambia",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "National organic body."
+    }
+   ]
+  },
+  "Zimbabwe": {
+   "decides": [
+    {
+     "n": "National Biotechnology Authority",
+     "lens": "REGULATOR",
+     "u": "https://www.nba.ac.zw/",
+     "d": "Authorises and runs the testing laboratory. Zimbabwe requires imported grain to be milled before distribution so it cannot be planted, which is a practical answer to the food-aid question Zambia answered by refusal."
+    }
+   ],
+   "complain": [
+    {
+     "n": "NBA inspection",
+     "lens": "COMPLAINT",
+     "u": "https://www.nba.ac.zw/",
+     "d": "Tests imports and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Zimbabwe organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Small and export-facing."
+    }
+   ]
+  },
+  "Burkina Faso": {
+   "decides": [
+    {
+     "n": "Agence Nationale de Biosécurité",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Authorises. Burkina Faso grew Bt cotton at scale and then withdrew it in 2016 because the fibre was shorter and worth less — the only case of a country abandoning a commercial engineered crop for quality reasons rather than safety or politics. Target Malaria's gene-drive mosquito work continues here."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministère de l’Agriculture (Burkina Faso)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "CNABio",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "The national organic council."
+    }
+   ]
+  },
+  "Sudan": {
+   "decides": [
+    {
+     "n": "National Biosafety Council",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Authorises. Sudan grows Bt cotton commercially, one of the few African countries doing so."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Agriculture inspection (Sudan)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and crops."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Sudanese organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Mostly gum arabic and sesame for export."
+    }
+   ]
+  },
+  "Morocco": {
+   "decides": [
+    {
+     "n": "Ministère de l’Agriculture (Morocco)",
+     "lens": "REGULATOR",
+     "u": "https://www.agriculture.gov.ma/",
+     "d": "Handles approvals. Morocco has no commercial engineered cultivation and is a substantial exporter of fruit and vegetables to the EU, which shapes what it permits."
+    }
+   ],
+   "complain": [
+    {
+     "n": "ONSSA",
+     "lens": "COMPLAINT",
+     "u": "https://www.onssa.gov.ma/",
+     "d": "The food safety office; inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Moroccan organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Under the national organic law, largely export-facing."
+    }
+   ]
+  },
+  "Algeria": {
+   "decides": [
+    {
+     "n": "Ministry of Agriculture and Rural Development",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Algeria prohibits the import and cultivation of engineered seed outright, one of the more absolute positions in the region."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Direction des services agricoles",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Provincial agricultural services inspect."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Algerian organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Small and mostly for dates and olive oil."
+    }
+   ]
+  },
+  "Tunisia": {
+   "decides": [
+    {
+     "n": "Ministère de l’Agriculture (Tunisia)",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles approvals. Tunisia has no commercial cultivation; imported feed is the practical question."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Direction Générale de la Santé Végétale",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Plant health inspection."
+    }
+   ],
+   "certify": [
+    {
+     "n": "CTAB — Centre Technique de l’Agriculture Biologique",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "The national organic technical centre."
+    }
+   ]
+  },
+  "Serbia": {
+   "decides": [
+    {
+     "n": "Ministry of Agriculture (Serbia)",
+     "lens": "REGULATOR",
+     "u": "https://www.minpolj.gov.rs/",
+     "d": "Serbia prohibits the cultivation and trade of engineered crops under its GMO law, which has been a live issue in its EU accession talks because the prohibition is stricter than EU law permits."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Phytosanitary inspection",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and crops."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Serbia Organica",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "The national organic association."
+    }
+   ]
+  },
+  "Belarus": {
+   "decides": [
+    {
+     "n": "National Coordination Biosafety Centre",
+     "lens": "REGULATOR",
+     "u": "https://biosafety.org.by/",
+     "d": "Authorises and runs the national biosafety clearing-house node, which is more complete than most in the region."
+    }
+   ],
+   "complain": [
+    {
+     "n": "State Inspectorate for Seed Production",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Belarusian organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Under the organic production law."
+    }
+   ]
+  },
+  "Kazakhstan": {
+   "decides": [
+    {
+     "n": "Ministry of Ecology and Natural Resources",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Kazakhstan has a BSL4 laboratory and a substantial biological research sector, so containment rather than cultivation is the live question here."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Agriculture inspection (Kazakhstan)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and imports."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Kazakh organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Under the organic production law, largely for grain export."
+    }
+   ]
+  },
+  "Slovenia": {
+   "decides": [
+    {
+     "n": "Ministrstvo za naravne vire in prostor",
+     "lens": "REGULATOR",
+     "u": "https://www.gov.si/",
+     "d": "Authorises. Slovenia has no commercial cultivation and much of the country is covered by regional GM-free agreements made between growers rather than by national prohibition."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Uprava za varno hrano",
+     "lens": "COMPLAINT",
+     "u": "https://www.gov.si/",
+     "d": "Food safety administration; inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Slovenian organic certifiers",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Accredited under the national organic scheme."
+    }
+   ]
+  },
+  "Slovakia": {
+   "decides": [
+    {
+     "n": "Ministerstvo pôdohospodárstva",
+     "lens": "REGULATOR",
+     "u": "https://www.mpsr.sk/",
+     "d": "Authorises releases and holds the register."
+    }
+   ],
+   "complain": [
+    {
+     "n": "ÚKSÚP",
+     "lens": "COMPLAINT",
+     "u": "https://www.uksup.sk/",
+     "d": "The central control and testing institute; inspects seed and crops."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Naturalis SK",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "A Slovak organic certifier."
+    }
+   ]
+  },
+  "Lithuania": {
+   "decides": [
+    {
+     "n": "Aplinkos ministerija",
+     "lens": "REGULATOR",
+     "u": "https://am.lrv.lt/",
+     "d": "Authorises releases."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Valstybinė augalininkystės tarnyba",
+     "lens": "COMPLAINT",
+     "u": "https://vatzum.lrv.lt/",
+     "d": "The state plant service; inspects seed."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Ekoagros",
+     "lens": "CERTIFIER",
+     "u": "https://www.ekoagros.lt/",
+     "d": "The Lithuanian organic certifier."
+    }
+   ]
+  },
+  "Latvia": {
+   "decides": [
+    {
+     "n": "Ministry of Environmental Protection",
+     "lens": "REGULATOR",
+     "u": "https://www.varam.gov.lv/",
+     "d": "Authorises releases."
+    },
+    {
+     "n": "State Plant Protection Service",
+     "lens": "REGULATOR",
+     "u": "https://www.vaad.gov.lv/",
+     "d": "Handles the cultivation register; most Latvian municipalities have declared themselves GM-free."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Food and Veterinary Service",
+     "lens": "COMPLAINT",
+     "u": "https://www.pvd.gov.lv/",
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Latvian organic certifiers",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Accredited under the national scheme."
+    }
+   ]
+  },
+  "Estonia": {
+   "decides": [
+    {
+     "n": "Ministry of Climate",
+     "lens": "REGULATOR",
+     "u": "https://kliimaministeerium.ee/",
+     "d": "Authorises releases."
+    },
+    {
+     "n": "Agriculture and Food Board",
+     "lens": "REGULATOR",
+     "u": "https://pta.agri.ee/",
+     "d": "Holds the cultivation register and the coexistence rules."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Agriculture and Food Board — inspection",
+     "lens": "COMPLAINT",
+     "u": "https://pta.agri.ee/",
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Estonian organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Under the state organic scheme."
+    }
+   ]
+  },
+  "Luxembourg": {
+   "decides": [
+    {
+     "n": "Ministère de l’Environnement (Luxembourg)",
+     "lens": "REGULATOR",
+     "u": "https://environnement.public.lu/",
+     "d": "Authorises. Luxembourg has declared itself GM-free in practice and hosts Eurofins, the largest food testing network in the world, which runs much of Europe's commercial GMO detection."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Administration des services techniques de l’agriculture",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Luxembourg organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Under the national organic scheme."
+    }
+   ]
+  },
+  "Iceland": {
+   "decides": [
+    {
+     "n": "Environment Agency of Iceland",
+     "lens": "REGULATOR",
+     "u": "https://ust.is/",
+     "d": "Authorises. Iceland has permitted contained barley production for pharmaceutical proteins — molecular farming in greenhouses rather than fields, which is the form this takes where outdoor release is impractical."
+    }
+   ],
+   "complain": [
+    {
+     "n": "MAST — Icelandic Food and Veterinary Authority",
+     "lens": "COMPLAINT",
+     "u": "https://www.mast.is/",
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Vottunarstofan Tún",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "The Icelandic organic certifier."
+    }
+   ]
+  },
+  "Cyprus": {
+   "decides": [
+    {
+     "n": "Ministry of Agriculture, Rural Development and Environment",
+     "lens": "REGULATOR",
+     "u": "https://www.moa.gov.cy/",
+     "d": "Authorises. Cyprus requires labelling of GM food at retail more strictly than the EU baseline, including in restaurants."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Department of Agriculture (Cyprus)",
+     "lens": "COMPLAINT",
+     "u": "https://www.moa.gov.cy/",
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Cypriot organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Under the national organic scheme."
+    }
+   ]
+  },
+  "Malta": {
+   "decides": [
+    {
+     "n": "Environment and Resources Authority",
+     "lens": "REGULATOR",
+     "u": "https://era.org.mt/",
+     "d": "Authorises releases."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Malta Competition and Consumer Affairs Authority",
+     "lens": "COMPLAINT",
+     "u": "https://mccaa.org.mt/",
+     "d": "Handles food labelling complaints."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Maltese organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Under the national organic scheme."
+    }
+   ]
+  },
+  "Costa Rica": {
+   "decides": [
+    {
+     "n": "Comisión Técnica Nacional de Bioseguridad",
+     "lens": "REGULATOR",
+     "u": "https://www.sfe.go.cr/",
+     "d": "Authorises. Costa Rica permits engineered crops to be grown for seed export while not authorising them for domestic cultivation — so it hosts the production of a crop its own farmers may not plant. Several cantons have declared themselves GM-free."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Servicio Fitosanitario del Estado",
+     "lens": "COMPLAINT",
+     "u": "https://www.sfe.go.cr/",
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Eco-LOGICA",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "A Costa Rican organic certifier."
+    }
+   ]
+  },
+  "Cuba": {
+   "decides": [
+    {
+     "n": "CENSA / Comisión Nacional de Bioseguridad",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Authorises. Cuba develops its own engineered crops through state institutes rather than importing them, which is a route no other country in the region takes."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministerio de la Agricultura",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Cuban organic and agroecological programmes",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Largely state-run and domestic rather than export-certified."
+    }
+   ]
+  },
+  "Venezuela": {
+   "decides": [
+    {
+     "n": "Ministerio de Ecosocialismo",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Venezuela's seed law prohibits engineered seed outright and was written with substantial public participation — one of the few seed laws anywhere drafted that way."
+    }
+   ],
+   "complain": [
+    {
+     "n": "INSAI",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "The agricultural health institute; inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Venezuelan agroecology networks",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Participatory rather than third-party certification."
+    }
+   ]
+  },
+  "Sri Lanka": {
+   "decides": [
+    {
+     "n": "National Biosafety Focal Point — Ministry of Environment",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Sri Lanka attempted a nationwide switch to organic farming in 2021 by banning agrochemical imports outright; the resulting yield collapse and reversal is the most cited case anywhere of what happens when input systems change without transition."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Department of Agriculture (Sri Lanka)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and crops."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Sri Lanka organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Largely for tea and spice export."
+    }
+   ]
+  },
+  "Nepal": {
+   "decides": [
+    {
+     "n": "Ministry of Forests and Environment",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Nepal prohibits the import of engineered seed, and the practical question here is what crosses the open border with India rather than what is authorised."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant Quarantine and Pesticide Management Centre",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports at the border."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Nepal organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Participatory schemes, mostly domestic."
+    }
+   ]
+  },
+  "Myanmar": {
+   "decides": [
+    {
+     "n": "Ministry of Agriculture, Livestock and Irrigation",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles approvals. Myanmar grows engineered cotton, much of it from seed that arrived without formal approval — the same adoption-before-registration pattern seen in Pakistan and Paraguay."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant Protection Division",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and crops."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Myanmar organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Small and export-facing."
+    }
+   ]
+  },
+  "Cambodia": {
+   "decides": [
+    {
+     "n": "Ministry of Environment (Cambodia)",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety under the Cartagena Protocol; there is no commercial cultivation."
+    }
+   ],
+   "complain": [
+    {
+     "n": "General Directorate of Agriculture",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and imports."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Cambodian organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Participatory schemes for rice and pepper."
+    }
+   ]
+  },
+  "Laos": {
+   "decides": [
+    {
+     "n": "Ministry of Natural Resources and Environment",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety; no commercial cultivation is authorised."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Department of Agriculture (Laos)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and imports."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Lao organic agriculture",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Participatory certification, largely domestic."
+    }
+   ]
+  },
+  "Papua New Guinea": {
+   "decides": [
+    {
+     "n": "Conservation and Environment Protection Authority",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Papua New Guinea holds extraordinary crop and forest diversity and very little regulatory capacity, which is the combination the Cartagena Protocol was written for."
+    }
+   ],
+   "complain": [
+    {
+     "n": "National Agriculture Quarantine and Inspection Authority",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports."
+    }
+   ],
+   "certify": [
+    {
+     "n": "PNG organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Mostly coffee and cocoa for export."
+    }
+   ]
+  },
+  "Fiji": {
+   "decides": [
+    {
+     "n": "Ministry of Agriculture — Biosecurity Authority of Fiji",
+     "lens": "REGULATOR",
+     "u": "https://www.baf.com.fj/",
+     "d": "Handles biosafety and biosecurity together, which is common across the Pacific: island states treat an engineered organism as an import question first."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Biosecurity Authority of Fiji",
+     "lens": "COMPLAINT",
+     "u": "https://www.baf.com.fj/",
+     "d": "Inspects imports and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Pacific Organic Standard",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "A regional standard used across the Pacific islands."
+    }
+   ]
+  },
+  "Jamaica": {
+   "decides": [
+    {
+     "n": "National Environment and Planning Agency",
+     "lens": "REGULATOR",
+     "u": "https://www.nepa.gov.jm/",
+     "d": "Handles biosafety."
+    },
+    {
+     "n": "Ministry of Agriculture (Jamaica)",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles seed and crop approvals."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant Quarantine Division",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Jamaica Organic Agriculture Movement",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "National organic body."
+    }
+   ]
+  },
+  "Trinidad and Tobago": {
+   "decides": [
+    {
+     "n": "Ministry of Planning and Development",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety under the Cartagena Protocol."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Agriculture — plant quarantine",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Trinidad and Tobago organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Small, mostly cocoa."
+    }
+   ]
+  },
+  "Panama": {
+   "decides": [
+    {
+     "n": "Comisión Nacional de Bioseguridad",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Authorises. Panama grows engineered maize on a modest scale and its position matters disproportionately because of what transits the canal."
+    }
+   ],
+   "complain": [
+    {
+     "n": "MIDA — Ministerio de Desarrollo Agropecuario",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Panamanian organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Small and export-facing."
+    }
+   ]
+  },
+  "Ecuador": {
+   "decides": [
+    {
+     "n": "Ministerio del Ambiente",
+     "lens": "REGULATOR",
+     "u": "https://www.ambiente.gob.ec/",
+     "d": "Ecuador's constitution declares the country free of engineered seed and crops — one of only a handful of constitutions anywhere addressing this directly, alongside Hungary's."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Agrocalidad",
+     "lens": "COMPLAINT",
+     "u": "https://www.agrocalidad.gob.ec/",
+     "d": "The agricultural quality agency; inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Ecuadorian organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Largely for banana, cacao and coffee export."
+    }
+   ]
+  },
+  "Guatemala": {
+   "decides": [
+    {
+     "n": "MAGA — Ministerio de Agricultura",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles approvals. Guatemala sits inside the centre of origin for maize, where wild relatives and thousands of local varieties still grow, so gene flow here is a different question from gene flow in a field in Iowa."
+    }
+   ],
+   "complain": [
+    {
+     "n": "VISAR — plant and animal health",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and imports."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Guatemalan organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Mostly coffee and cardamom."
+    }
+   ]
+  },
+  "Honduras": {
+   "decides": [
+    {
+     "n": "SENASA Honduras",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Authorises. Honduras was the first Central American country to permit engineered maize commercially, and adopted a version of Argentina's Resolution 173 on edited organisms."
+    }
+   ],
+   "complain": [
+    {
+     "n": "SENASA inspection",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and crops."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Honduran organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Mostly coffee for export."
+    }
+   ]
+  },
+  "Cameroon": {
+   "decides": [
+    {
+     "n": "Ministry of Environment — National Biosafety Committee",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles approvals. Cameroon's agricultural research institute holds germplasm collections for crops grown across central Africa that exist nowhere else, which is what benefit-sharing arrangements are written about."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Agriculture inspection (Cameroon)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and imports."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Cameroon organic networks",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Participatory certification, largely domestic."
+    }
+   ]
+  },
+  "Côte d’Ivoire": {
+   "decides": [
+    {
+     "n": "Agence Nationale de Biosécurité",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles approvals. Côte d’Ivoire has a BSL4 laboratory under construction — one of only three high-containment facilities in Africa — while scoring among the lowest on biorisk governance of any country with one."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministère de l’Agriculture (Côte d’Ivoire)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Ivorian organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Cocoa and cashew for export."
+    }
+   ]
+  },
+  "Senegal": {
+   "decides": [
+    {
+     "n": "Autorité Nationale de Biosécurité",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles approvals under the biosafety law. Senegal signed the Nagoya–Kuala Lumpur liability protocol but has not ratified it, which is the commonest position in the region."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Direction de la Protection des Végétaux",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Plant protection; inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Senegalese organic networks",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Participatory certification."
+    }
+   ]
+  },
+  "Mali": {
+   "decides": [
+    {
+     "n": "Comité National de Biosécurité",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles approvals. Mali is a party to the Nagoya–Kuala Lumpur liability protocol, unlike most of its neighbours, so damage from a release has an agreed remedy framework here."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Office de Protection des Végétaux",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects and enforces."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Malian organic cotton networks",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Organic cotton certification for export."
+    }
+   ]
+  },
+  "Mozambique": {
+   "decides": [
+    {
+     "n": "Ministry of Land and Environment",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Mozambique has run confined trials of drought-tolerant maize and its regulations were revised in 2014 to permit them."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Agriculture inspection (Mozambique)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and imports."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Mozambican organic networks",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Small and export-facing."
+    }
+   ]
+  },
+  "Malawi": {
+   "decides": [
+    {
+     "n": "Environmental Affairs Department",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Authorises. Malawi approved Bt cotton for commercial planting in 2018, one of the few African countries to do so, and is a party to the Nagoya–Kuala Lumpur liability protocol."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Agriculture inspection (Malawi)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and crops."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Malawi organic networks",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Groundnut and coffee for export."
+    }
+   ]
+  },
+  "Namibia": {
+   "decides": [
+    {
+     "n": "Biosafety Council",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Authorises under the Biosafety Act. Namibia requires labelling of GM food and its rules are among the more developed in southern Africa outside South Africa."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Agriculture inspection (Namibia)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Namibian Organic Association",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "National organic body."
+    }
+   ]
+  },
+  "Botswana": {
+   "decides": [
+    {
+     "n": "Department of Waste Management and Pollution Control",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Botswana imports most of its grain from South Africa, so what arrives is the practical question rather than what is grown."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Agriculture inspection (Botswana)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Botswana organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Very small."
+    }
+   ]
+  },
+  "Rwanda": {
+   "decides": [
+    {
+     "n": "Rwanda Environment Management Authority",
+     "lens": "REGULATOR",
+     "u": "https://www.rema.gov.rw/",
+     "d": "Handles biosafety. Rwanda has run confined trials of engineered potato and cassava through its agricultural research board."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Rwanda Agriculture Board",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and crops."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Rwanda organic networks",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Coffee and tea for export."
+    }
+   ]
+  },
+  "Jordan": {
+   "decides": [
+    {
+     "n": "Ministry of Environment (Jordan)",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Jordan imports nearly all its grain, and its labelling requirements are the practical point for a consumer."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Jordan Food and Drug Administration",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Handles food labelling and safety complaints."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Jordanian organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Small and export-facing."
+    }
+   ]
+  },
+  "Lebanon": {
+   "decides": [
+    {
+     "n": "Ministry of Environment (Lebanon)",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Lebanon has no biosafety law in force and imports most of its food, which makes the labelling and import questions the only live ones."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Agriculture inspection (Lebanon)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Lebanese organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Small, largely for olive oil and wine."
+    }
+   ]
+  },
+  "Georgia": {
+   "decides": [
+    {
+     "n": "Ministry of Environmental Protection and Agriculture",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Georgia sits inside a centre of origin for wheat and grape, holding hundreds of endemic varieties, which is the reason its position matters beyond its size."
+    }
+   ],
+   "complain": [
+    {
+     "n": "National Food Agency",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects food, feed and seed."
+    }
+   ],
+   "certify": [
+    {
+     "n": "Georgian organic certification",
+     "lens": "CERTIFIER",
+     "u": null,
+     "d": "Elkana and the biological farming association."
+    }
+   ]
+  },
+  "Armenia": {
+   "decides": [
+    {
+     "n": "Ministry of Environment (Armenia)",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety; no commercial cultivation is authorised."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Food Safety Inspectorate",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and food."
+    }
+   ]
+  },
+  "Azerbaijan": {
+   "decides": [
+    {
+     "n": "Ministry of Ecology and Natural Resources",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Food Safety Agency",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and food labelling."
+    }
+   ]
+  },
+  "Moldova": {
+   "decides": [
+    {
+     "n": "Ministry of Environment (Moldova)",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Moldova is a party to the Nagoya–Kuala Lumpur liability protocol, which most of its neighbours are not."
+    }
+   ],
+   "complain": [
+    {
+     "n": "National Food Safety Agency",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects and enforces."
+    }
+   ]
+  },
+  "Albania": {
+   "decides": [
+    {
+     "n": "Ministry of Tourism and Environment",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Albania prohibits the cultivation of engineered crops and is a party to the liability protocol."
+    }
+   ],
+   "complain": [
+    {
+     "n": "National Food Authority",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects food and imports."
+    }
+   ]
+  },
+  "Bosnia and Herzegovina": {
+   "decides": [
+    {
+     "n": "Council of Ministers — Food Safety Agency",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety, split across the entities, which makes a single national answer difficult."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Food Safety Agency inspection",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects and enforces."
+    }
+   ]
+  },
+  "North Macedonia": {
+   "decides": [
+    {
+     "n": "Ministry of Environment and Physical Planning",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Food and Veterinary Agency",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects and enforces."
+    }
+   ]
+  },
+  "Montenegro": {
+   "decides": [
+    {
+     "n": "Ministry of Ecology",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Montenegro declared itself a GM-free country in its own law, which very few states have done at national level."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Administration for Food Safety",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects and enforces."
+    }
+   ]
+  },
+  "Iraq": {
+   "decides": [
+    {
+     "n": "Ministry of Environment (Iraq)",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Iraq sits inside the Fertile Crescent, the centre of origin for wheat and barley, and its seed collections were largely destroyed during the war — duplicates held at ICARDA are what survived."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Agriculture inspection (Iraq)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed."
+    }
+   ]
+  },
+  "Iran": {
+   "decides": [
+    {
+     "n": "National Biosafety Council",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Authorises. Iran approved engineered rice for cultivation in 2004, briefly making it the first country anywhere to grow an engineered staple food crop commercially, before the programme was halted."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant Protection Organization",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and crops."
+    }
+   ]
+  },
+  "Oman": {
+   "decides": [
+    {
+     "n": "Environment Authority",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety; imports are the practical question."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Agriculture inspection (Oman)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports."
+    }
+   ]
+  },
+  "Qatar": {
+   "decides": [
+    {
+     "n": "Ministry of Environment and Climate Change",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Qatar imports nearly all its food and runs a national genome programme, which is the more consequential genetic question here."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Public Health",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Handles food safety and labelling."
+    }
+   ]
+  },
+  "Kuwait": {
+   "decides": [
+    {
+     "n": "Environment Public Authority",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Public Authority for Food and Nutrition",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and handles labelling."
+    }
+   ]
+  },
+  "Bahrain": {
+   "decides": [
+    {
+     "n": "Supreme Council for Environment",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Health — food control",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Handles food safety and labelling."
+    }
+   ]
+  },
+  "Mongolia": {
+   "decides": [
+    {
+     "n": "Ministry of Environment and Tourism",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Mongolia's law prohibits engineered organisms in food production, and its pastoral system means feed imports are the practical exposure."
+    }
+   ],
+   "complain": [
+    {
+     "n": "General Agency for Specialized Inspection",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and food."
+    }
+   ]
+  },
+  "Uzbekistan": {
+   "decides": [
+    {
+     "n": "State Committee for Ecology",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Uzbekistan is one of the largest cotton producers in the world and does not authorise engineered varieties, which is unusual at that scale."
+    }
+   ],
+   "complain": [
+    {
+     "n": "State Plant Quarantine Inspection",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and imports."
+    }
+   ]
+  },
+  "Samoa": {
+   "decides": [
+    {
+     "n": "Ministry of Natural Resources and Environment",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety and biosecurity together, which is the Pacific pattern: an island state treats an engineered organism as an import question first, because almost everything arrives by ship. Samoa is a party to the Cartagena Protocol and has no commercial cultivation.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "National quarantine and biosecurity service (Samoa)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects arriving cargo and seed, which is where an unauthorised organism would be found.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Vanuatu": {
+   "decides": [
+    {
+     "n": "Department of Environmental Protection and Conservation",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety and biosecurity together, which is the Pacific pattern: an island state treats an engineered organism as an import question first, because almost everything arrives by ship. Vanuatu has no biosafety statute this map could find, so the focal point is the whole of the answer.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "National quarantine and biosecurity service (Vanuatu)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects arriving cargo and seed, which is where an unauthorised organism would be found.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Solomon Islands": {
+   "decides": [
+    {
+     "n": "Ministry of Environment, Climate Change and Disaster Management",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety and biosecurity together, which is the Pacific pattern: an island state treats an engineered organism as an import question first, because almost everything arrives by ship.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "National quarantine and biosecurity service (Solomon Islands)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects arriving cargo and seed, which is where an unauthorised organism would be found.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Tonga": {
+   "decides": [
+    {
+     "n": "Ministry of Agriculture, Food and Forests",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety and biosecurity together, which is the Pacific pattern: an island state treats an engineered organism as an import question first, because almost everything arrives by ship.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "National quarantine and biosecurity service (Tonga)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects arriving cargo and seed, which is where an unauthorised organism would be found.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Kiribati": {
+   "decides": [
+    {
+     "n": "Ministry of Environment, Lands and Agricultural Development",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety and biosecurity together, which is the Pacific pattern: an island state treats an engineered organism as an import question first, because almost everything arrives by ship.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "National quarantine and biosecurity service (Kiribati)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects arriving cargo and seed, which is where an unauthorised organism would be found.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Palau": {
+   "decides": [
+    {
+     "n": "Ministry of Agriculture, Fisheries and the Environment",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety and biosecurity together, which is the Pacific pattern: an island state treats an engineered organism as an import question first, because almost everything arrives by ship.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "National quarantine and biosecurity service (Palau)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects arriving cargo and seed, which is where an unauthorised organism would be found.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Marshall Islands": {
+   "decides": [
+    {
+     "n": "Environmental Protection Authority (Marshall Islands)",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety and biosecurity together, which is the Pacific pattern: an island state treats an engineered organism as an import question first, because almost everything arrives by ship.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "National quarantine and biosecurity service (Marshall Islands)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects arriving cargo and seed, which is where an unauthorised organism would be found.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Micronesia": {
+   "decides": [
+    {
+     "n": "Department of Environment, Climate Change and Emergency Management",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety and biosecurity together, which is the Pacific pattern: an island state treats an engineered organism as an import question first, because almost everything arrives by ship.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "National quarantine and biosecurity service (Micronesia)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects arriving cargo and seed, which is where an unauthorised organism would be found.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Tuvalu": {
+   "decides": [
+    {
+     "n": "Ministry of Natural Resources",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety and biosecurity together, which is the Pacific pattern: an island state treats an engineered organism as an import question first, because almost everything arrives by ship. Tuvalu has no biosafety statute this map could find.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "National quarantine and biosecurity service (Tuvalu)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects arriving cargo and seed, which is where an unauthorised organism would be found.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Nauru": {
+   "decides": [
+    {
+     "n": "Department of Commerce, Industry and Environment",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety and biosecurity together, which is the Pacific pattern: an island state treats an engineered organism as an import question first, because almost everything arrives by ship.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "National quarantine and biosecurity service (Nauru)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects arriving cargo and seed, which is where an unauthorised organism would be found.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Barbados": {
+   "decides": [
+    {
+     "n": "Ministry of Environment and National Beautification",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety through the environment ministry, with plant quarantine doing the practical inspection. Caribbean states import most of their food, so labelling and what arrives at the port are the live questions rather than cultivation.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant quarantine service (Barbados)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed at the port of entry.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Bahamas": {
+   "decides": [
+    {
+     "n": "Department of Environmental Planning and Protection",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety through the environment ministry, with plant quarantine doing the practical inspection. Caribbean states import most of their food, so labelling and what arrives at the port are the live questions rather than cultivation.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant quarantine service (Bahamas)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed at the port of entry.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Saint Lucia": {
+   "decides": [
+    {
+     "n": "Ministry of Sustainable Development",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety through the environment ministry, with plant quarantine doing the practical inspection. Caribbean states import most of their food, so labelling and what arrives at the port are the live questions rather than cultivation.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant quarantine service (Saint Lucia)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed at the port of entry.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Grenada": {
+   "decides": [
+    {
+     "n": "Ministry of Climate Resilience and the Environment",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety through the environment ministry, with plant quarantine doing the practical inspection. Caribbean states import most of their food, so labelling and what arrives at the port are the live questions rather than cultivation.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant quarantine service (Grenada)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed at the port of entry.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Antigua and Barbuda": {
+   "decides": [
+    {
+     "n": "Department of Environment",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety through the environment ministry, with plant quarantine doing the practical inspection. Caribbean states import most of their food, so labelling and what arrives at the port are the live questions rather than cultivation. Antigua and Barbuda signed the Nagoya–Kuala Lumpur liability protocol and has not ratified it.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant quarantine service (Antigua and Barbuda)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed at the port of entry.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Dominica": {
+   "decides": [
+    {
+     "n": "Ministry of Environment, Rural Modernisation and Kalinago Upliftment",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety through the environment ministry, with plant quarantine doing the practical inspection. Caribbean states import most of their food, so labelling and what arrives at the port are the live questions rather than cultivation.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant quarantine service (Dominica)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed at the port of entry.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Saint Vincent and the Grenadines": {
+   "decides": [
+    {
+     "n": "Ministry of Agriculture and the Environment",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety through the environment ministry, with plant quarantine doing the practical inspection. Caribbean states import most of their food, so labelling and what arrives at the port are the live questions rather than cultivation.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant quarantine service (Saint Vincent and the Grenadines)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed at the port of entry.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Belize": {
+   "decides": [
+    {
+     "n": "Department of the Environment",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety through the environment ministry, with plant quarantine doing the practical inspection. Caribbean states import most of their food, so labelling and what arrives at the port are the live questions rather than cultivation. Belize has declared itself GM-free by cabinet decision, which is unusual for a mainland state.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant quarantine service (Belize)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed at the port of entry.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Guyana": {
+   "decides": [
+    {
+     "n": "Environmental Protection Agency",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety through the environment ministry, with plant quarantine doing the practical inspection. Caribbean states import most of their food, so labelling and what arrives at the port are the live questions rather than cultivation.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant quarantine service (Guyana)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed at the port of entry.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Suriname": {
+   "decides": [
+    {
+     "n": "Ministry of Spatial Planning and Environment",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety through the environment ministry, with plant quarantine doing the practical inspection. Caribbean states import most of their food, so labelling and what arrives at the port are the live questions rather than cultivation.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ],
+   "complain": [
+    {
+     "n": "Plant quarantine service (Suriname)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed at the port of entry.",
+     "conf": "name unverified — the pattern is right, the department may have been renamed"
+    }
+   ]
+  },
+  "Haiti": {
+   "decides": [
+    {
+     "n": "Ministry of Agriculture, Natural Resources and Rural Development",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "In 2010, after the earthquake, Monsanto offered several hundred tonnes of hybrid seed as a donation and Haitian peasant organisations publicly burned it, arguing it would displace local varieties and create dependency on purchased seed. It remains the most direct rejection of donated seed anywhere, and it was made by farmers rather than by a government."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Service de Protection Végétale",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Plant protection; inspects imports and seed."
+    }
+   ]
+  },
+  "Bhutan": {
+   "decides": [
+    {
+     "n": "Bhutan Agriculture and Food Regulatory Authority",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Bhutan has a national policy of moving to fully organic agriculture, which excludes engineered material by definition rather than by biosafety decision — the only country to have set that as a national goal."
+    }
+   ],
+   "complain": [
+    {
+     "n": "BAFRA inspection",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports, food and seed."
+    }
+   ]
+  },
+  "Gabon": {
+   "decides": [
+    {
+     "n": "Ministère de l’Environnement (Gabon)",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Gabon hosts one of only three high-containment BSL4 laboratories in Africa, at the Franceville medical research centre, while scoring among the lowest of any country with one on biorisk governance."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Agriculture inspection (Gabon)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed."
+    }
+   ]
+  },
+  "Democratic Republic of the Congo": {
+   "decides": [
+    {
+     "n": "Ministère de l’Environnement (Democratic Republic of the Congo)",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety and is a party to the Nagoya–Kuala Lumpur liability protocol. The country holds the second largest tropical forest on Earth and very little regulatory capacity, which is the combination the Protocol was written for."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Service National de Quarantaine",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports."
+    }
+   ]
+  },
+  "Angola": {
+   "decides": [
+    {
+     "n": "Ministry of Environment (Angola)",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Angola formerly refused engineered food aid unless milled, following Zimbabwe's approach rather than Zambia's outright refusal."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Ministry of Agriculture inspection (Angola)",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed."
+    }
+   ]
+  },
+  "Madagascar": {
+   "decides": [
+    {
+     "n": "Ministry of Environment and Sustainable Development",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Madagascar's endemic biodiversity is among the highest on Earth and largely found nowhere else, which makes any deliberate release a different order of question here."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Service de la Protection des Végétaux",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed."
+    }
+   ]
+  },
+  "Benin": {
+   "decides": [
+    {
+     "n": "Ministère du Cadre de Vie",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Benin operated a formal moratorium on engineered crops for a decade, one of the few African states to legislate a time-limited prohibition rather than simply not deciding."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Direction de la Production Végétale",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and crops."
+    }
+   ]
+  },
+  "Togo": {
+   "decides": [
+    {
+     "n": "Ministère de l’Environnement (Togo)",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety and is a party to the Nagoya–Kuala Lumpur liability protocol, unlike most of its neighbours."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Direction de la Protection des Végétaux",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed."
+    }
+   ]
+  },
+  "Niger": {
+   "decides": [
+    {
+     "n": "Ministère de l’Environnement (Niger)",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Niger holds important pearl millet and cowpea landraces adapted to the Sahel that exist in no commercial breeding programme."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Direction Générale de la Protection des Végétaux",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and imports."
+    }
+   ]
+  },
+  "Nicaragua": {
+   "decides": [
+    {
+     "n": "MARENA — Ministerio del Ambiente",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. Nicaragua permits no commercial cultivation and its seed law protects farmer varieties, which is the position most of Central America has moved away from."
+    }
+   ],
+   "complain": [
+    {
+     "n": "IPSA — Instituto de Protección y Sanidad Agropecuaria",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and imports."
+    }
+   ]
+  },
+  "El Salvador": {
+   "decides": [
+    {
+     "n": "Ministerio de Medio Ambiente",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety. El Salvador's seed procurement programme buys from domestic smallholder cooperatives rather than international suppliers, which was challenged as a trade barrier and survived."
+    }
+   ],
+   "complain": [
+    {
+     "n": "MAG — Ministerio de Agricultura",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects seed and crops."
+    }
+   ]
+  },
+  "Dominican Republic": {
+   "decides": [
+    {
+     "n": "Ministerio de Medio Ambiente",
+     "lens": "REGULATOR",
+     "u": null,
+     "d": "Handles biosafety; there is no commercial cultivation."
+    }
+   ],
+   "complain": [
+    {
+     "n": "Departamento de Sanidad Vegetal",
+     "lens": "COMPLAINT",
+     "u": null,
+     "d": "Inspects imports and seed."
+    }
+   ]
+  }
+ },
+ "subnational": {
+  "_note": "Matched on the location string of whatever the reader has open, so a record in Iowa shows Iowa's inspector rather than the national one. This is the level that employs the people who can enter a field, and almost every national entry on this map points down to it without naming it.",
+  "United States": {
+   "_pattern": "state department of agriculture",
+   "_generic": {
+    "n": "Your state department of agriculture",
+    "lens": "COMPLAINT",
+    "u": "https://www.nasda.org/about/member-directory/",
+    "d": "Employs the inspectors, can enter a field and issues the penalties. Find yours in the directory; sending a report to Washington first is the commonest reason it goes nowhere."
+   },
+   "Iowa": {
+    "n": "Iowa Department of Agriculture and Land Stewardship",
+    "lens": "COMPLAINT",
+    "u": "https://iowaagriculture.gov/",
+    "d": "Pesticide Bureau takes drift complaints and inspects. Iowa plants more engineered maize and soy than any other state, so this is the busiest such office in the country."
+   },
+   "Illinois": {
+    "n": "Illinois Department of Agriculture",
+    "lens": "COMPLAINT",
+    "u": "https://agr.illinois.gov/",
+    "d": "Bureau of Environmental Programs handles pesticide misuse complaints and licensing."
+   },
+   "Nebraska": {
+    "n": "Nebraska Department of Agriculture",
+    "lens": "COMPLAINT",
+    "u": "https://nda.nebraska.gov/",
+    "d": "Pesticide programme takes drift reports and inspects applicators."
+   },
+   "Minnesota": {
+    "n": "Minnesota Department of Agriculture",
+    "lens": "COMPLAINT",
+    "u": "https://www.mda.state.mn.us/",
+    "d": "Runs an incident response programme for pesticide drift and spills, and publishes its enforcement actions."
+   },
+   "Indiana": {
+    "n": "Office of Indiana State Chemist",
+    "lens": "COMPLAINT",
+    "u": "https://www.oisc.purdue.edu/",
+    "d": "Unusually, Indiana's pesticide regulator sits at Purdue rather than in a department, and it publishes case outcomes."
+   },
+   "Kansas": {
+    "n": "Kansas Department of Agriculture",
+    "lens": "COMPLAINT",
+    "u": "https://agriculture.ks.gov/",
+    "d": "Pesticide and fertilizer programme takes complaints and inspects."
+   },
+   "Missouri": {
+    "n": "Missouri Department of Agriculture",
+    "lens": "COMPLAINT",
+    "u": "https://agriculture.mo.gov/",
+    "d": "Bureau of Pesticide Control. Missouri was the centre of the dicamba drift complaints, which ran to thousands of reports in a single season."
+   },
+   "Arkansas": {
+    "n": "Arkansas State Plant Board",
+    "lens": "COMPLAINT",
+    "u": "https://www.agriculture.arkansas.gov/plant-industries/",
+    "d": "The board that restricted dicamba use after a season of drift complaints, and the clearest case of a state body acting against a federally registered product."
+   },
+   "California": {
+    "n": "California Department of Pesticide Regulation",
+    "lens": "COMPLAINT",
+    "u": "https://www.cdpr.ca.gov/",
+    "d": "Runs its own registration regime alongside the federal one and publishes a full pesticide use report — the most detailed public record of what is sprayed anywhere in the United States."
+   },
+   "Texas": {
+    "n": "Texas Department of Agriculture",
+    "lens": "COMPLAINT",
+    "u": "https://www.texasagriculture.gov/",
+    "d": "Handles pesticide complaints and applicator licensing."
+   },
+   "North Dakota": {
+    "n": "North Dakota Department of Agriculture",
+    "lens": "COMPLAINT",
+    "u": "https://www.ndda.nd.gov/",
+    "d": "Pesticide programme; North Dakota grows most of the US canola and a large share of the soy."
+   },
+   "South Dakota": {
+    "n": "South Dakota Department of Agriculture and Natural Resources",
+    "lens": "COMPLAINT",
+    "u": "https://danr.sd.gov/",
+    "d": "Handles pesticide complaints and inspection."
+   },
+   "Wisconsin": {
+    "n": "Wisconsin Department of Agriculture, Trade and Consumer Protection",
+    "lens": "COMPLAINT",
+    "u": "https://datcp.wi.gov/",
+    "d": "Agricultural resource management division takes drift complaints."
+   },
+   "Ohio": {
+    "n": "Ohio Department of Agriculture",
+    "lens": "COMPLAINT",
+    "u": "https://agri.ohio.gov/",
+    "d": "Pesticide and fertilizer regulation section."
+   },
+   "Michigan": {
+    "n": "Michigan Department of Agriculture and Rural Development",
+    "lens": "COMPLAINT",
+    "u": "https://www.michigan.gov/mdard",
+    "d": "Pesticide and plant pest management division."
+   },
+   "Oregon": {
+    "n": "Oregon Department of Agriculture",
+    "lens": "COMPLAINT",
+    "u": "https://www.oregon.gov/oda/",
+    "d": "Handles pesticide complaints, and holds the record of the creeping bentgrass escape — engineered grass found outside its trial site and still being managed two decades later."
+   },
+   "Washington": {
+    "n": "Washington State Department of Agriculture",
+    "lens": "COMPLAINT",
+    "u": "https://agr.wa.gov/",
+    "d": "Pesticide management division takes drift complaints."
+   },
+   "Hawaii": {
+    "n": "Hawaii Department of Agriculture",
+    "lens": "COMPLAINT",
+    "u": "https://hdoa.hawaii.gov/",
+    "d": "Hawaii hosts most US seed-corn winter nurseries, so more engineered field trials happen here per acre than anywhere else in the country, and county-level restrictions have repeatedly been litigated."
+   },
+   "Puerto Rico": {
+    "n": "Puerto Rico Department of Agriculture",
+    "lens": "COMPLAINT",
+    "u": null,
+    "d": "Puerto Rico is the other major winter nursery site for seed corn, and is a US territory rather than a state, so federal rules apply with no state legislature above the department."
+   }
+  },
+  "Germany": {
+   "_pattern": "Land authority",
+   "_generic": {
+    "n": "Your Land authority",
+    "lens": "COMPLAINT",
+    "u": null,
+    "d": "The federal office authorises; the Land inspects and enforces. A complaint goes to the Land, not to Berlin."
+   },
+   "Bavaria": {
+    "n": "Bayerisches Landesamt für Gesundheit und Lebensmittelsicherheit",
+    "lens": "COMPLAINT",
+    "u": "https://www.lgl.bayern.de/",
+    "d": "Bavaria declared itself GM-free and was the state where the Bablok honey case arose."
+   },
+   "Baden-Württemberg": {
+    "n": "Regierungspräsidien Baden-Württemberg",
+    "lens": "COMPLAINT",
+    "u": null,
+    "d": "The regional councils inspect and enforce."
+   },
+   "Lower Saxony": {
+    "n": "Niedersächsisches Landesamt für Verbraucherschutz",
+    "lens": "COMPLAINT",
+    "u": "https://www.laves.niedersachsen.de/",
+    "d": "Lower Saxony holds much of Germany's arable land and its seed industry."
+   },
+   "Saxony-Anhalt": {
+    "n": "Landesanstalt für Landwirtschaft und Gartenbau",
+    "lens": "COMPLAINT",
+    "u": null,
+    "d": "Saxony-Anhalt was where most German engineered maize trials took place before cultivation ended."
+   }
+  },
+  "Spain": {
+   "_pattern": "autonomous community",
+   "_generic": {
+    "n": "Your autonomous community agriculture department",
+    "lens": "COMPLAINT",
+    "u": null,
+    "d": "The community inspects and enforces, not Madrid."
+   },
+   "Aragón": {
+    "n": "Departamento de Agricultura, Ganadería y Medio Ambiente de Aragón",
+    "lens": "COMPLAINT",
+    "u": "https://www.aragon.es/",
+    "d": "Aragón plants more engineered maize than any other region in the European Union."
+   },
+   "Catalonia": {
+    "n": "Departament d’Acció Climàtica, Alimentació i Agenda Rural",
+    "lens": "COMPLAINT",
+    "u": "https://agricultura.gencat.cat/",
+    "d": "Catalonia is the second largest area of engineered maize in the EU."
+   },
+   "Extremadura": {
+    "n": "Consejería de Agricultura de Extremadura",
+    "lens": "COMPLAINT",
+    "u": null,
+    "d": "Inspects and enforces locally."
+   },
+   "Andalucía": {
+    "n": "Consejería de Agricultura, Pesca, Agua y Desarrollo Rural",
+    "lens": "COMPLAINT",
+    "u": null,
+    "d": "Andalucía holds the largest organic area in Spain, which makes coexistence the live question here."
+   }
+  },
+  "India": {
+   "_pattern": "State Biotechnology Coordination Committee",
+   "_generic": {
+    "n": "Your State Biotechnology Coordination Committee",
+    "lens": "COMPLAINT",
+    "u": null,
+    "d": "State committees have authority over releases in their state under the 1989 rules, and are closer than Delhi. Several states have refused trials the GEAC approved."
+   },
+   "Maharashtra": {
+    "n": "Maharashtra State Biotechnology Coordination Committee",
+    "lens": "COMPLAINT",
+    "u": null,
+    "d": "Maharashtra grows the largest area of Bt cotton in India and has seen unapproved herbicide-tolerant cotton planted at scale."
+   },
+   "Gujarat": {
+    "n": "Gujarat State Biotechnology Coordination Committee",
+    "lens": "COMPLAINT",
+    "u": null,
+    "d": "A major Bt cotton state."
+   },
+   "Telangana": {
+    "n": "Telangana State Biotechnology Coordination Committee",
+    "lens": "COMPLAINT",
+    "u": null,
+    "d": "Much of India's cotton seed production happens here, so seed rather than crop is the question."
+   },
+   "Kerala": {
+    "n": "Kerala State Biotechnology Coordination Committee",
+    "lens": "COMPLAINT",
+    "u": null,
+    "d": "Kerala declared itself an organic state and has refused engineered crop trials outright."
+   }
+  }
+ }
+}
