@@ -569,7 +569,7 @@ function pjReport(which, data){
     &bull; <b>Industry — 711 organisations</b>, hand-built, because no register lists them.<br>
     &bull; <b>Regimes, treaties and zones</b>, read from statutes and from the depositaries’ ratification lists rather than harvested from a feed.<br><br>
     <b class="hl-sec">What each layer leaves out, and why</b><br>
-    &bull; <b>Releases are almost entirely American, and that is a publishing fact.</b> APHIS is the only regulator on Earth that puts its whole register in a bulk file. Australia’s OGTR holds more — every licence, every risk assessment, and site locations for active field trials — and disallows automated access in its robots.txt, so it has to be read by hand. The EU, Canada, Brazil, Argentina, India and New Zealand all hold real registers; none publishes a bulk file, most are search forms over a database, and several are PDF minutes.<br>
+    &bull; <b>Releases are almost entirely American, and that is a publishing fact.</b> APHIS is the only regulator on Earth that puts its whole register in a bulk file a machine can read — which is a different thing from publishing the most. EU member states publish trial locations to the municipality or the parcel under the deliberate release directive, and Australia’s OGTR holds more — every licence, every risk assessment, and site locations for active field trials — and disallows automated access in its robots.txt, so it has to be read by hand. The EU, Canada, Brazil, Argentina, India and New Zealand all hold real registers; none publishes a bulk file, most are search forms over a database, and several are PDF minutes.<br>
     &bull; <b>The Biosafety Clearing-House can be read after all.</b> The register established under the Cartagena Protocol is the only genuinely cross-national record of its kind. Its website returns nothing to a fetcher, but the page fills itself from a search endpoint at api.cbd.int, and that endpoint answers. A harvester is written and waiting on a run; until then the country directory here comes from the Secretariat’s focal point list, published as a PDF.<br>
     &bull; <b>Contained laboratory work is under-recorded everywhere.</b> Most of it is notified rather than licensed, and notifications are rarely published record by record. Every layer here will under-count how much engineering is happening relative to how much is released.<br>
     &bull; <b>Gene-edited organisms are increasingly outside registration.</b> Where a jurisdiction has moved editing out of its registration requirement — around forty have — no record is created, so there is nothing to harvest. An absence of dots there means the law stopped requiring one. This is the largest structural gap on the map and it is growing.<br>
@@ -680,6 +680,7 @@ try{ window.SUBDEF = {
  'money:philanthropy':'Foundations funding the work through grants.',
  'money:defence':'Military and security funding of biotechnology.',
  'rules:regulators':'The agencies that approve releases and keep the registers.',
+    'rules:cases':'Court decisions that settled a question, and are still the answer.',
  'rules:standards':'Bodies setting standards, and issuing the identifiers organisms are tracked by.',
  'rules:associations':'Trade associations, and the lobbying done through them.',
  'rules:influence':'Industry-funded bodies that publish information about the industry.',
@@ -3815,6 +3816,101 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
     else if(keys.length > 2) where += ' and ' + (keys.length - 1) + ' other places';
     return where + ' \u2014 ' + g.total.toLocaleString() + ' record' + (g.total === 1 ? '' : 's');
   }
+
+  /* WHAT YOU CAN DO HERE
+   *
+   * A record tells a reader what is happening. It did not tell them what they
+   * can do about it, and the answer is different in every country: which office
+   * takes a complaint, whether a consultation window exists, who tests a sample.
+   * Written per country and attached to the record, so it arrives at the moment
+   * somebody is looking at the thing rather than in a panel they have to find.
+   *
+   * The country is read off the record's own location string, because that is
+   * the only geography a record reliably carries.
+   */
+  var PJ_ACT_GENERIC =
+    "<b>Anywhere.</b> Your national biosafety focal point is the named contact "
+    + "for this subject in your country \u2014 every party to the Cartagena "
+    + "Protocol has one, and the list is public. They hold the decisions filed "
+    + "for your country and can say which office takes a complaint. Test strips "
+    + "for the common traits cost a few pounds and are sold to anyone; a "
+    + "laboratory result is what turns an observation into evidence. If certified "
+    + "organic land is involved, the certifier acts faster than any regulator.";
+
+  var PJ_ACT = {
+    "United States":
+      "<b>Complaints go to your state department of agriculture</b>, not to "
+      + "Washington \u2014 the state employs the inspectors, can enter a field "
+      + "and issues the penalties. Quote the permit number. APHIS handles "
+      + "breaches of permit conditions and publishes enforcement actions; the "
+      + "EPA and the state lead agency handle herbicide drift, and reports must "
+      + "be made while residue is still detectable. Approvals are announced in "
+      + "the Federal Register with a 30\u201360 day comment window, and comments "
+      + "filed inside it must be addressed.",
+    "Canada":
+      "<b>The CFIA</b> handles plants with novel traits and publishes its "
+      + "decision documents; Health Canada handles novel foods. Provincial "
+      + "agriculture ministries hold pesticide applicator licensing and take "
+      + "drift complaints. Canada is one of very few places whose register lists "
+      + "edited and inserted-gene products side by side, which makes it the best "
+      + "place to check what an organism actually is.",
+    "United Kingdom":
+      "<b>DEFRA and ACRE</b> handle releases; the Health and Safety Executive "
+      + "holds contained-use notifications and, unusually, takes reports from "
+      + "the public about them. The Wildlife Incident Investigation Scheme will "
+      + "collect and test a dead animal or bee colony at public expense. Consult "
+      + "the Soil Association if certified land is involved.",
+    "Germany":
+      "<b>The Bundesamt f\u00fcr Verbraucherschutz und Lebensmittelsicherheit</b> "
+      + "runs the release register and publishes trial locations \u2014 in "
+      + "Germany down to the land parcel, which is more than most countries "
+      + "give. Ohne Gentechnik certification covers animal feed, which consumer "
+      + "labelling law does not.",
+    "France":
+      "<b>The Haut Conseil des biotechnologies</b> and the agriculture ministry "
+      + "handle authorisations, and trial locations are published under the EU "
+      + "deliberate release directive. Regional plant protection services "
+      + "(SRAL) take drift complaints and inspect.",
+    "Australia":
+      "<b>The OGTR</b> publishes every licence, the risk assessment, and the "
+      + "approved field sites \u2014 which few regulators do before a decision, "
+      + "and it is what makes a local objection possible. Consultation runs "
+      + "around 30 days. State agriculture departments handle spray complaints.",
+    "India":
+      "<b>The GEAC</b> decides releases and publishes its meeting minutes, which "
+      + "is where an approval first becomes visible. State biotechnology "
+      + "coordination committees have authority over releases in their state, "
+      + "and are closer than Delhi.",
+    "Brazil":
+      "<b>CTNBio</b> issues technical opinions and publishes approvals; IBAMA "
+      + "and state environment agencies handle environmental damage. Public "
+      + "hearings are held for some applications and are announced in the "
+      + "Di\u00e1rio Oficial.",
+    "China":
+      "<b>The Ministry of Agriculture and Rural Affairs</b> issues biosafety "
+      + "certificates and publishes lists of approved events. Provincial "
+      + "agriculture departments handle enforcement, and are the level at which "
+      + "unapproved planting has been acted on.",
+    "Japan":
+      "<b>The Ministry of Agriculture and the Ministry of the Environment</b> "
+      + "share responsibility under the Cartagena Law, and both publish "
+      + "approvals. Japan is a large importer and a small grower, so most "
+      + "questions here concern feed and food rather than fields."
+  };
+
+  window.pjActNote = function(q){
+    try{
+      var st = String((q && q.state) || '');
+      var key = null;
+      for(var k in PJ_ACT){ if(st.indexOf(k) >= 0){ key = k; break; } }
+      var body = key ? PJ_ACT[key] : PJ_ACT_GENERIC;
+      return '<div class="pj-act"><div class="pj-act-h">What you can do about '
+        + 'this</div>' + body + '<div class="pj-act-f">Four guides cover this in '
+        + 'full: finding out what is near you, who takes a complaint, objecting '
+        + 'before a decision, and declaring a place GM-free.</div></div>';
+    }catch(e){ return ''; }
+  };
+
   function pjPopupHtml(q){
     var dl="";
     if(q.deadline){ var dd=Math.ceil((new Date(q.deadline)-new Date())/86400000);
@@ -3842,6 +3938,8 @@ try{ document.querySelectorAll('#helpPanel .help-body, #wirePanel .wire-body, #r
               + 'acreage appears only on older records carried over from the '
               + 'system it replaced.</span>' : '')
          +'</div>':'')
+      +(function(){ try{ return window.pjActNote ? window.pjActNote(q) : ''; }
+                    catch(e){ return ''; } })()
       +(q.url?'<div class="d"><a href="'+q.url+'" target="_blank" style="color:#263f9d">Open source \u2192</a></div>':'')
       +pjDigHtml(q)
       +'<div class="pj-live" id="pjLiveBox"></div>'
@@ -4806,6 +4904,9 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
    redaction on a trait description. Small, indented, and beside the thing it
    qualifies rather than in a panel the reader does not have open. */
 .subj-def{display:block;font-size:9.5px;line-height:1.45;color:#8d99b4;margin:1px 0 3px 18px;font-weight:400;}
+.pj-act{margin-top:8px;padding:7px 9px;border-radius:5px;background:rgba(74,93,47,0.14);border-left:2px solid rgba(122,150,80,0.75);font-size:9.6px;line-height:1.5;color:#c9d3e4;}
+.pj-act-h{font-weight:700;font-size:10px;color:#dfe7f5;margin-bottom:3px;}
+.pj-act-f{margin-top:5px;font-size:9px;color:#94a1ba;}
 .d-note{display:block;font-size:9.5px;line-height:1.45;color:#8d99b4;margin-top:3px;padding-left:7px;border-left:2px solid rgba(120,140,180,.35);}
 .ot-area{width:13px;height:8px;border-radius:2px;opacity:.6;}
 </style>
@@ -6081,7 +6182,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     if(p && p.source) srcs[String(p.source).split(':')[0]] = 1;
     var bits = [];
     if(srcs.aphis){
-      bits.push('<b>APHIS names the states a permit covers, never the sites</b> \u2014 there is no point data to place, only a state. One permit can cover several states, so a record counted here may name others. <b>Australia\u2019s OGTR is the only regulator in the world that publishes the actual locations of field trials.</b>');
+      bits.push('<b>APHIS names the states a permit covers, never the sites</b> \u2014 there is no point data to place, only a state. One permit can cover several states, so a record counted here may name others. <b>Australia\u2019s OGTR publishes the actual locations of field trials, and EU member states publish theirs under the deliberate release directive \u2014 in several countries down to the municipality or the parcel. The United States is the outlier here, not the norm.</b>');
     }
     if(srcs.bch){
       bits.push('<b>Decisions filed under the Cartagena Protocol apply to a whole country</b> '
@@ -6092,7 +6193,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
       bits.push('<b>Trial sponsors are placed at their country</b>, not at the hospitals running the trials. No register in this dataset publishes coordinates, so there is no point data to place \u2014 only the country.');
     }
     if(srcs.ogtr){
-      bits.push('<b>These are real sites.</b> Australia\u2019s OGTR is the only regulator in the world that publishes them.');
+      bits.push('<b>These are real sites.</b> Australia\u2019s OGTR publishes trial locations, as do EU member states under the deliberate release directive. Most other registers publish a state or a country and no more.');
     }
     if(!bits.length){
       bits.push('No register in this dataset publishes coordinates, so there is no point data to place \u2014 only the country, and sometimes the state.');
@@ -8141,7 +8242,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-18 19:32";
+  var BUILD = "BUILD-2026-08-19 18:39";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||

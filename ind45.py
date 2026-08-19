@@ -96,9 +96,6 @@ IND45["CHN"] += [
 ]
 
 # ============================================ TESTING AND CERTIFICATION =======
-IND45["CHE"] = [
-]
-
 IND45["GBR"] = [
  e("Intertek",
    "https://www.intertek.com/",

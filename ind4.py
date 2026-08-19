@@ -88,7 +88,7 @@ IND4["DNK"] = [
 # ========================================================== AUSTRALIA =========
 IND4["AUS"] = [
  e("Office of the Gene Technology Regulator \u2014 GMO Record", "https://www.ogtr.gov.au/what-weve-approved/gmo-record",
-   "Australia’s regulator, and the only one in the world that publishes where field trials actually are. Every other release record on this map sits at a state or country centroid because the register gives no location; Australia gives coordinates, licence conditions and risk assessments. It shows that publishing sites is possible and that everyone else has chosen not to.",
+   "Australia’s regulator, and one of the few that publishes where field trials actually are — EU member states do too, under the deliberate release directive, in several countries down to the parcel. Every other release record on this map sits at a state or country centroid because the register gives no location; Australia gives coordinates, licence conditions and risk assessments. It shows that publishing sites is possible and that everyone else has chosen not to.",
    ["rules:regulators","rules:standards"], base=REGI),
  e("Nufarm", "https://nufarm.com/",
    "An Australian agrochemical company, and one of the largest generic producers of off-patent herbicides including glyphosate. Once a patent lapses the chemistry does not disappear — it gets cheaper, and generic manufacturers expand the market the original patent holder created. The traits engineered to survive these herbicides remain valuable long after the herbicide itself stops being anyone’s exclusive property.",
