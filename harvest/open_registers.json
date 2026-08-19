@@ -1784,18 +1784,6 @@
    "url": "https://data.gov.au/data/dataset/nsw-3-16341-nsw-child-death-review-team-report-2015"
   },
   {
-   "title": "State Forests of New South Wales Research and Development Report 2001/02",
-   "org": "NSW Government",
-   "files": [
-    {
-     "name": "document 10596",
-     "format": "PDF",
-     "url": "https://data.nsw.gov.au/data/dataset/85cc39c8-472a-45a3-a330-2bf3a0d35b04/resource/7aaa4a4a-f5bd-453a-859e-f1b2452e5c55/download/document_10596.pdf"
-    }
-   ],
-   "url": "https://data.gov.au/data/dataset/nsw-3-9716-state-forests-of-new-south-wales-research-and-development-report-2001-02"
-  },
-  {
    "title": "Government Gazette of the State of New South Wales Week No. 31/2007",
    "org": "NSW Government",
    "files": [
@@ -1806,6 +1794,18 @@
     }
    ],
    "url": "https://data.gov.au/data/dataset/nsw-3-11693-government-gazette-of-the-state-of-new-south-wales-week-no-31-2007"
+  },
+  {
+   "title": "State Forests of New South Wales Research and Development Report 2001/02",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 10596",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/85cc39c8-472a-45a3-a330-2bf3a0d35b04/resource/7aaa4a4a-f5bd-453a-859e-f1b2452e5c55/download/document_10596.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-9716-state-forests-of-new-south-wales-research-and-development-report-2001-02"
   },
   {
    "title": "Government Gazette of the State of New South Wales Week No. 32/2007",
@@ -2037,18 +2037,6 @@
    "url": "https://data.gov.au/data/dataset/nsw-3-15112-nsw-child-death-review-team-annual-report-2014"
   },
   {
-   "title": "NSW Environmental Trust Annual Report 2007-08",
-   "org": "NSW Government",
-   "files": [
-    {
-     "name": "document 12226",
-     "format": "PDF",
-     "url": "https://data.nsw.gov.au/data/dataset/e72aab15-38b2-4b33-ad0b-02495882ac0e/resource/0fa066bd-c36a-43be-9e65-893ccf7fb194/download/document_12226.pdf"
-    }
-   ],
-   "url": "https://data.gov.au/data/dataset/nsw-3-11205-nsw-environmental-trust-annual-report-2007-08"
-  },
-  {
    "title": "Government Gazette of the State of New South Wales Week No. 27/2011",
    "org": "NSW Government",
    "files": [
@@ -2059,6 +2047,18 @@
     }
    ],
    "url": "https://data.gov.au/data/dataset/nsw-3-11488-government-gazette-of-the-state-of-new-south-wales-week-no-27-2011"
+  },
+  {
+   "title": "NSW Environmental Trust Annual Report 2007-08",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12226",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/e72aab15-38b2-4b33-ad0b-02495882ac0e/resource/0fa066bd-c36a-43be-9e65-893ccf7fb194/download/document_12226.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11205-nsw-environmental-trust-annual-report-2007-08"
   },
   {
    "title": "NSW Trade & Investment 2013-14 Annual Report",
@@ -2097,18 +2097,6 @@
    "url": "https://data.gov.au/data/dataset/nsw-3-10357-privacy-nsw-annual-report-2005-06"
   },
   {
-   "title": "Botanic Gardens Trust Annual Report 2005-2006",
-   "org": "NSW Government",
-   "files": [
-    {
-     "name": "document 10630",
-     "format": "PDF",
-     "url": "https://data.nsw.gov.au/data/dataset/b69b310a-ad76-4023-a4b0-920b5173d0d3/resource/2c9e9a23-f8d4-4d02-bc2f-9862fd0211c6/download/document_10630.pdf"
-    }
-   ],
-   "url": "https://data.gov.au/data/dataset/nsw-3-9750-botanic-gardens-trust-annual-report-2005-2006"
-  },
-  {
    "title": "Government Gazette of the State of New South Wales Week No. 04/2008",
    "org": "NSW Government",
    "files": [
@@ -2119,6 +2107,18 @@
     }
    ],
    "url": "https://data.gov.au/data/dataset/nsw-3-11668-government-gazette-of-the-state-of-new-south-wales-week-no-04-2008"
+  },
+  {
+   "title": "Botanic Gardens Trust Annual Report 2005-2006",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 10630",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/b69b310a-ad76-4023-a4b0-920b5173d0d3/resource/2c9e9a23-f8d4-4d02-bc2f-9862fd0211c6/download/document_10630.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-9750-botanic-gardens-trust-annual-report-2005-2006"
   },
   {
    "title": "Government Gazette of the State of New South Wales Week No. 46/2008",
@@ -2169,18 +2169,6 @@
    "url": "https://data.gov.au/data/dataset/nsw-3-11763-government-gazette-of-the-state-of-new-south-wales-week-no-13-2006"
   },
   {
-   "title": "NSW Child Death Review Team Annual Report 2013",
-   "org": "NSW Government",
-   "files": [
-    {
-     "name": "CDRT Annual Report Oct13 web 14876",
-     "format": "PDF",
-     "url": "https://data.nsw.gov.au/data/dataset/d57d4cb3-080d-4c0d-bb2d-acb115d7de31/resource/8c8ff4d8-c6f8-4b31-be47-fc585305012d/download/cdrt_annual_report_oct13_web_14876.pdf"
-    }
-   ],
-   "url": "https://data.gov.au/data/dataset/nsw-3-14642-nsw-child-death-review-team-annual-report-2013"
-  },
-  {
    "title": "NSW Trade & Investment Annual Report 2012-13",
    "org": "NSW Government",
    "files": [
@@ -2191,6 +2179,18 @@
     }
    ],
    "url": "https://data.gov.au/data/dataset/nsw-3-12928-nsw-trade-investment-annual-report-2012-13"
+  },
+  {
+   "title": "NSW Child Death Review Team Annual Report 2013",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "CDRT Annual Report Oct13 web 14876",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/d57d4cb3-080d-4c0d-bb2d-acb115d7de31/resource/8c8ff4d8-c6f8-4b31-be47-fc585305012d/download/cdrt_annual_report_oct13_web_14876.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-14642-nsw-child-death-review-team-annual-report-2013"
   },
   {
    "title": "NSW Environmental Trust Annual Report 2009-10",
