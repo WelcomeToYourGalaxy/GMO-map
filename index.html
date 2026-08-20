@@ -542,7 +542,9 @@ function pjReport(which, data){
   <div id="guidesHead" onclick="document.getElementById('guidesPanel').classList.toggle('open')">
     <span>Guides &mdash; what to actually do</span><span class="guides-tog">&#9662;</span></div>
   <div id="guidesBody">
+    <a class="guide-btn" href="#" onclick="openGuide(&#39;guides/how-to-test-for-escaped-gmos.pdf&#39;,&#39;How to test for escaped GMOs&#39;);return false;">How to test for escaped GMOs</a>
     <a class="guide-btn" href="#" onclick="openGuide(&#39;guides/how-to-stop-a-release.pdf&#39;,&#39;How to stop a release&#39;);return false;">How to stop a release</a>
+    <a class="guide-btn" href="#" onclick="openGuide(&#39;guides/how-to-make-a-gmo-free-zone.pdf&#39;,&#39;How to make a GMO-free zone&#39;);return false;">How to make a GMO-free zone</a>
     <a class="guide-btn" href="#" onclick="openGuide(&#39;guides/how-to-change-the-industry.pdf&#39;,&#39;How to change the industry&#39;);return false;">How to change the industry</a>
   </div>
 </div>
@@ -8604,7 +8606,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-19 22:32";
+  var BUILD = "BUILD-2026-08-20 21:35";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
