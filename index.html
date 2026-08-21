@@ -173,6 +173,8 @@
 #consPanel .help-head{padding:9px 12px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:#e6eefc;font-size:12px;flex:0 0 auto;}
 #consPanel .help-body{padding:2px 12px 11px;line-height:1.5;color:#c3c9d9;max-height:34vh;overflow-y:auto;scrollbar-width:thin;flex:1 1 auto;min-height:0;}
 #consPanel.collapsed{flex:0 0 auto;}
+#consPanel .help-tog::before{content:"\2212";}
+#consPanel.collapsed .help-tog::before{content:"+";}
 #consPanel.collapsed .help-body{display:none;}
 .cons-note{font-size:10px;color:#8d97ad;font-style:italic;line-height:1.5;padding:4px 0;}
 .cons-lead{font-size:10px;color:#96a2ba;line-height:1.5;padding:2px 0 5px;}
@@ -401,7 +403,13 @@ body.info-open #controls #indexPanel{position:static !important;
 #sidebar>#unitPanel{position:static!important;left:auto!important;
   top:auto!important;width:auto!important;flex:1 1 auto!important;
   min-height:0!important;max-height:none!important;}
-#unitPanel.collapsed{display:none;}
+#unitPanel.closed{display:none;}
+#unitPanel.collapsed #unitBody{display:none;}
+#unitPanel.collapsed{flex:0 0 auto!important;}
+#unitPanel .unit-tog::before{content:"\25be";}
+#unitPanel.collapsed .unit-tog::before{content:"\25b8";}
+#unitClose{cursor:pointer;color:#98a2c1;font-size:15px;line-height:1;margin-left:8px;}
+#unitClose:hover{color:#e6eefc;}
 #unitHead{flex:0 0 auto;display:flex;justify-content:space-between;
   align-items:center;padding:10px 12px;cursor:pointer;font-size:13px;
   font-weight:700;color:#e6eefc;border-bottom:1px solid rgba(120,140,180,.22);}
@@ -485,15 +493,16 @@ function pjReport(which, data){
      pjBuildConsPanel() from harvest/consultations.json and the venue rows in
      harvest/resources.json. -->
 <div id="consPanel">
-  <div class="help-head" onclick="document.getElementById(&#39;consPanel&#39;).classList.toggle(&#39;collapsed&#39;)"><span>Consultations open now</span><span class="help-tog">&minus;</span></div>
+  <div class="help-head" title="Click to collapse · drag to move"><span>Consultations open now</span><span class="help-tog"></span></div>
   <div class="help-body" id="consBody"><div class="cons-note">Checking for open comment windows…</div></div>
 </div>
 <!-- The unit resources panel moved here from the right rail. It was fixed at
      left:12px/top:64px, which is on top of the Map rundown; in this column it
      opens under the consultations box and clear of the wire. -->
-<div id="unitPanel" class="collapsed">
-  <div id="unitHead" onclick="document.getElementById(&#39;unitPanel&#39;).classList.toggle(&#39;collapsed&#39;)">
-    <span id="unitTitle">Resources</span><span class="unit-tog">&#9662;</span></div>
+<div id="unitPanel" class="closed">
+  <div id="unitHead" title="Click to collapse">
+    <span id="unitTitle">Resources</span><span class="unit-tog"></span>
+    <span id="unitClose" title="Close">&times;</span></div>
   <div id="unitBody"></div>
 </div>
 <div id="rundownPanel">
@@ -632,8 +641,7 @@ function pjReport(which, data){
 <div id="legend">
   <div id="legHead"><span>Map key</span><span id="legTog" onclick="document.getElementById('legend').classList.toggle('collapsed')" title="Show / hide the map key">&#9662;</span></div>
   <div id="legBody">
-  <div class="leg-read"><b class="hl-sec">Reading the markers</b><br>Zoomed out you are looking at a painted world plate. Between zoom 3 and zoom 5 it cross-fades to the live satellite imagery underneath.<br><br><b>Shape says what kind of record it is; colour says what kind of thing.</b><br>&bull; <b>Diamond</b> — a documented case of spread or cross-breeding, placed where the material was found.<br>&bull; <b>Circle</b> — everything else, read by colour: gold and its neighbours for industry bodies (the swatches under <i>Entity type</i> below split them into companies, ministries, institutes, funds, registers and the rest), olive for a release authorisation, blue for a national biosafety decision, blue-violet for a clinical trial sponsor, pink for a fertility clinic, teal for an animal facility.<br>&bull; <b>Numbered circle</b> — several records at one point, sized by how many. Click it for the list, which filters and sorts. A white ring means more than one kind is under it. These form wherever records share a coordinate and break apart as you zoom in.<br><br><b>Filled</b> means a real coordinate. <b>A hollow ring</b> means the source published none — most do not — so the marker sits at a fallback point for that country, state or city. A dense group of hollow rings is missing data in the source, not a failed pull. A corporate headquarters is always hollow: it is an office, and the laboratories, plants and fields the company runs are somewhere else entirely.<br><br>A country marker is a container. Clicking it breaks the country into its states and clicking it again puts them back.</div>
-  <label class="f-status"><input type="checkbox" id="projChk" checked> All map points</label><div class="pj-kinds"><label><input type="checkbox" class="pj-kind" data-kind="industry" checked> <b>Industry</b> — every entity in it</label><label><input type="checkbox" class="pj-kind" data-kind="escape" checked> <b>Spread &amp; drift</b> — what got out</label><label><input type="checkbox" class="pj-kind" data-kind="release" checked> <b>Releases</b> — authorisations</label><label><input type="checkbox" class="pj-kind" data-kind="biosafety" checked> <b>Biosafety decisions</b> — national rulings</label><label><input type="checkbox" class="pj-kind" data-kind="clinical" checked> <b>Clinical trials</b> — gene &amp; cell therapy sponsors</label><label><input type="checkbox" class="pj-kind" data-kind="repro" checked> <b>Fertility clinics</b> — licensed and approved</label><label><input type="checkbox" class="pj-kind" data-kind="animals" checked> <b>Animal facilities</b> — registered and accredited</label></div><div class="ot-head">Release records</div><div class="pj-otypes" id="relBox"></div><div class="ot-head">What they work on</div><div class="pj-otypes" id="subjBox"></div><div class="ot-head">Entity type</div><div class="pj-otypes" id="otBox"></div><div class="ot-head">Shaded areas</div><div class="pj-otypes" id="regBox"></div><div class="ot-head">GM zones</div><div class="pj-otypes" id="ovBox"></div>
+  <label class="f-status"><input type="checkbox" id="projChk" checked> All map points</label><div class="pj-kinds"><label><input type="checkbox" class="pj-kind" data-kind="industry" checked> <b>Industry</b> — every entity in it</label><div class="kind-note"><b>Filled</b> means a real coordinate. <b>A hollow ring</b> means the source published none — most do not — so the marker sits at a fallback point for that country, state or city. A corporate headquarters is always hollow: it is an office, and the laboratories, plants and fields the company runs are somewhere else entirely.</div><label><input type="checkbox" class="pj-kind" data-kind="escape" checked> <b>Spread &amp; drift</b> — what got out</label><label><input type="checkbox" class="pj-kind" data-kind="release" checked> <b>Releases</b> — authorisations</label><label><input type="checkbox" class="pj-kind" data-kind="biosafety" checked> <b>Biosafety decisions</b> — national rulings</label><label><input type="checkbox" class="pj-kind" data-kind="clinical" checked> <b>Clinical trials</b> — gene &amp; cell therapy sponsors</label><label><input type="checkbox" class="pj-kind" data-kind="repro" checked> <b>Fertility clinics</b> — licensed and approved</label><label><input type="checkbox" class="pj-kind" data-kind="animals" checked> <b>Animal facilities</b> — registered and accredited</label></div><div class="ot-head">Release records</div><div class="pj-otypes" id="relBox"></div><div class="ot-head">What they work on</div><div class="pj-otypes" id="subjBox"></div><div class="ot-head">Entity type</div><div class="pj-otypes" id="otBox"></div><div class="ot-head">Shaded areas</div><div class="pj-otypes" id="regBox"></div><div class="ot-head">GM zones</div><div class="pj-otypes" id="ovBox"></div>
   <div class="proj-size"><span class="ps-lab">Release scale &mdash; select any</span><span class="ps-pill on" data-ms="all">All</span><span class="ps-pill" data-ms="3">Medium <i>multi-site trial</i></span><span class="ps-pill" data-ms="4">Large <i>regional / multi-season</i></span><span class="ps-pill" data-ms="5">Largest <i>commercial cultivation</i></span></div><div class="proj-size proj-phase"><span class="ps-lab">Consent phase &mdash; select any</span><span class="ps-pill on" data-ph="pre">In review <i>pre-consent &middot; applied / notified / under assessment</i></span><span class="ps-pill on" data-ph="post">Consented <i>post-consent &middot; approved / planted / marketed</i></span></div>
   <div class="proj-search"><input id="projQ" type="search" placeholder="Search releases by organism, trait or applicant…" autocomplete="off"><span id="projQn"></span></div>
   <div class="proj-time"><span class="ps-lab">Filing recency — dated registers</span><span class="pt-pill on" data-tw="0">All ages</span><span class="pt-pill" data-tw="30">≤30d</span><span class="pt-pill" data-tw="90">≤90d</span><span class="pt-pill" data-tw="180">≤6mo</span><span class="pt-pill" data-tw="365">≤1yr</span><label class="pt-und"><input type="checkbox" id="pjUndated" checked> Include undated</label></div><div class="lp-detail collapsed"><div class="lp-detail-head" onclick="this.parentNode.classList.toggle('collapsed')"><span class="lp-car">&#9662;</span> Where this data comes from &amp; what's not (yet) in it</div><div class="lp-detail-body">
@@ -2614,6 +2622,13 @@ document.getElementById('subBox').addEventListener('click',e=>{ const c=e.target
  function up(){ on=false; document.removeEventListener("mousemove",move); document.removeEventListener("mouseup",up); document.removeEventListener("touchmove",move); document.removeEventListener("touchend",up); }
  hdl.style.cursor="move"; hdl.addEventListener("mousedown",down); hdl.addEventListener("touchstart",down,{passive:false});
 })();
+/* The unit panel header: collapse on the bar, close on the cross. Bound here
+   rather than inline so the cross can stop the event before the bar sees it. */
+(function(){ var p=document.getElementById("unitPanel"), hd=document.getElementById("unitHead"),
+             x=document.getElementById("unitClose"); if(!p||!hd)return;
+ hd.addEventListener("click",function(){ p.classList.toggle("collapsed"); if(window._reflowInfo)_reflowInfo(); });
+ if(x) x.addEventListener("click",function(e){ e.stopPropagation(); p.classList.add("closed"); if(window._reflowInfo)_reflowInfo(); });
+})();
 (function(){ var p=document.getElementById("consPanel"), hdl=p&&p.querySelector(".help-head"); if(!p||!hdl)return;
  var sx,sy,sl,st,on=false,moved=false;
  function down(e){ var ev=e.touches?e.touches[0]:e; var r=p.getBoundingClientRect(); on=true; moved=false; sl=r.left; st=r.top; sx=ev.clientX; sy=ev.clientY; document.addEventListener("mousemove",move); document.addEventListener("mouseup",up); document.addEventListener("touchmove",move,{passive:false}); document.addEventListener("touchend",up); }
@@ -4115,6 +4130,103 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
       });
   }catch(e){}
 
+  /* IS THIS CONSULTATION ABOUT THIS SUBJECT AT ALL
+   *
+   * The feed is a docket scrape, and a docket scrape returns the whole docket:
+   * grazing permits, port fees, airworthiness directives. Presented in a box on
+   * this map, an unrelated rulemaking is not merely noise - it implies this map
+   * has an opinion about grazing permits.
+   *
+   * So nothing is listed unless it matches on subject. An allow-list, not a
+   * stop-list: the things this map covers are a short, nameable set, and the
+   * things it does not are unbounded. A row that matches nothing is dropped,
+   * and the count of what was dropped goes to the console so the terms can be
+   * checked against a real file rather than guessed at.
+   *
+   * The durable fix belongs in harvest/consultations.json - this filter is
+   * reading a file that should not have contained those rows. It stays here
+   * regardless, because the map cannot assume what a future harvester writes.
+   */
+  var PJ_CONS_TERMS = [
+    'genetic', 'genetically', 'genome', 'genomic', 'transgen', 'gmo',
+    'living modified', 'biosafety', 'biotechnolog', 'bioengineered',
+    'crispr', 'gene edit', 'gene-edit', 'genome edit', 'gene drive',
+    'recombinant', 'engineered organism', 'intentional genomic alteration',
+    'plant-incorporated protectant', 'plant incorporated protectant',
+    'biopesticide', 'plant pest', 'deliberate release', 'novel food',
+    'novel trait', 'cisgenic', 'intragenic', 'mutagenesis',
+    'synthetic biology', 'gene therapy', 'cell therapy', 'germline',
+    'embryo', 'in vitro fertil', 'assisted reproduct', 'clone', 'cloning',
+    'plant variety', 'upov', 'seed', 'cultivar', 'pollen', 'landrace'
+  ];
+  /* Short forms need a word boundary. 'gm' inside 'alignment' and 'lmo' inside
+     'filmore' are the kind of match that puts a fisheries notice on this map. */
+  var PJ_CONS_WORDS = /\b(gm|gmos?|lmos?|genes?|bt|ge)\b/i;
+  /* A body whose entire remit is this subject. Its consultations qualify on the
+     agency alone - OGTR does not publish anything that is off-topic here, and a
+     licence application titled "DIR 200" matches no term in the list above. */
+  var PJ_CONS_AGENCIES = [
+    'ogtr', 'gene technology regulator', 'ctnbio', 'cibiogem', 'geac',
+    'biosafety', 'aphis biotechnology', 'brs', 'efsa', 'gmo panel',
+    'biotechnology regulatory', 'nbma', 'clearing-house', 'clearing house'
+  ];
+  function _consOnTopic(c){
+    try{
+      var hay = ((c && (c.title || c.n)) || '') + ' ' + ((c && c.agency) || '')
+              + ' ' + ((c && (c.summary || c.d || c.docket || c.topic)) || '')
+              + ' ' + [].concat((c && c.tags) || []).join(' ');
+      hay = hay.toLowerCase();
+      var ag = String((c && c.agency) || '').toLowerCase();
+      for(var i = 0; i < PJ_CONS_AGENCIES.length; i++)
+        if(ag.indexOf(PJ_CONS_AGENCIES[i]) >= 0) return true;
+      for(i = 0; i < PJ_CONS_TERMS.length; i++)
+        if(hay.indexOf(PJ_CONS_TERMS[i]) >= 0) return true;
+      return PJ_CONS_WORDS.test(hay);
+    }catch(e){ return false; }
+  }
+
+  /* WHICH COUNTRY IS THIS
+   *
+   * The panel grouped into "United States" and "Worldwide", which is not a
+   * geography, it is what happens when most rows carry no usable country and
+   * the fallback swallows them. A consultation always has an agency, and an
+   * agency always has a jurisdiction, so the country is read off the agency
+   * where the record does not state one usably.
+   */
+  var PJ_CONS_BUCKET = /^(worldwide|global|international|rest of world|other|various|multiple|n\/?a|unknown|-)?$/i;
+  var PJ_CONS_AGENCY_COUNTRY = [
+    ['United States',   /\b(aphis|usda|us ?fda|\bfda\b|\bepa\b|\bnih\b|federal register|regulations\.gov|animal and plant health|food and drug administration|environmental protection agency|department of agriculture)\b/i],
+    ['European Union',  /\b(efsa|european commission|european food safety|dg sante|european union|ec\b)/i],
+    ['United Kingdom',  /\b(acre|defra|\bhse\b|food standards agency|health and safety executive|united kingdom|\buk\b)\b/i],
+    ['Australia',       /\b(ogtr|gene technology regulator|daff|australia)\b/i],
+    ['Australia & New Zealand', /\b(fsanz|food standards australia)\b/i],
+    ['New Zealand',     /\b(epa nz|nzepa|new zealand)\b/i],
+    ['Canada',          /\b(cfia|health canada|canadian food inspection|canada)\b/i],
+    ['Brazil',          /\b(ctnbio|mctic|anvisa|brazil|brasil)\b/i],
+    ['Mexico',          /\b(cibiogem|senasica|cofepris|conahcyt|mexico|m\u00e9xico)\b/i],
+    ['India',           /\b(geac|\bdbt\b|fssai|india)\b/i],
+    ['Japan',           /\b(maff|mhlw|japan)\b/i],
+    ['China',           /\b(nmpa|\bmara\b|china)\b/i],
+    ['Argentina',       /\b(conabia|senasa|inase|argentina)\b/i],
+    ['Kenya',           /\b(kenya)\b/i],
+    ['Nigeria',         /\b(nbma|nigeria)\b/i],
+    ['Ghana',           /\b(ghana)\b/i],
+    ['South Africa',    /\b(dalrrd|south africa)\b/i],
+    ['Philippines',     /\b(philippin|\bda-bpi\b)\b/i],
+    ['Worldwide',       /\b(clearing-house|clearing house|\bbch\b|secretariat of the convention|codex|\bfao\b|\bwho\b|\boecd\b)\b/i]
+  ];
+  function _consCountry(c){
+    try{
+      var stated = String((c && c.country) || '').trim();
+      if(stated && !PJ_CONS_BUCKET.test(stated)) return stated;
+      var hay = String((c && c.agency) || '') + ' ' + String((c && (c.title || c.n)) || '');
+      for(var i = 0; i < PJ_CONS_AGENCY_COUNTRY.length; i++)
+        if(PJ_CONS_AGENCY_COUNTRY[i][1].test(hay)) return PJ_CONS_AGENCY_COUNTRY[i][0];
+      return 'Country not stated';
+    }catch(e){ return 'Worldwide'; }
+  }
+  window._pjConsDropped = 0;
+
   function _consRows(country, cap){
     try{
       if(!PJ_CONS || !PJ_CONS.consultations) return null;
@@ -4122,18 +4234,20 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
       var ageDays = (Date.now() - gen.getTime()) / 86400000;
       if(!(ageDays >= 0) || ageDays > 21) return null;      /* stale: say nothing */
       var today = new Date(); today.setHours(0,0,0,0);
-      var out = [];
+      var out = [], dropped = 0;
       PJ_CONS.consultations.forEach(function(c){
         var close = new Date(c.closes + 'T00:00:00');
         var days = Math.round((close - today) / 86400000);
         if(days < 0) return;
-        if(country && c.country && c.country !== country &&
-           c.country !== 'European Union') return;
+        /* Off-subject rows are dropped before anything else looks at them. */
+        if(!_consOnTopic(c)){ dropped++; return; }
+        var co = _consCountry(c);
+        if(country && co !== country && co !== 'European Union') return;
         out.push({
           n: c.title,
           /* The country travels with the row. The panel groups on it, and a
              row that does not know where it is cannot be grouped. */
-          co: c.country || 'Worldwide',
+          co: co,
           days: days,
           lens: days <= 14 ? 'CLOSES IN ' + days + ' DAY' + (days === 1 ? '' : 'S')
                            : 'OPEN',
@@ -4143,7 +4257,20 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
                            + 'read.' : '.')
         });
       });
-      out.sort(function(a, b){ return (a.days - b.days) || (a.n < b.n ? -1 : 1); });
+      /* Worldwide first, then by closing date. A reader whose own country has
+         nothing open can still file at the Clearing-House, so that should not
+         sit below a national item they cannot use. */
+      out.sort(function(a, b){
+        var aw = /worldwide|clearing-house/i.test((a.co || '') + ' ' + (a.d || '')) ? 1 : 0;
+        var bw = /worldwide|clearing-house/i.test((b.co || '') + ' ' + (b.d || '')) ? 1 : 0;
+        if(aw !== bw) return bw - aw;
+        return (a.days - b.days) || (a.n < b.n ? -1 : 1);
+      });
+      window._pjConsDropped = dropped;
+      if(dropped) try{ console.log('[map] consultations: ' + out.length
+        + ' on subject, ' + dropped + ' dropped as unrelated. If that number is '
+        + 'large the harvester is scraping a whole docket - fix it there, not '
+        + 'in PJ_CONS_TERMS.'); }catch(e){}
       return out.slice(0, cap || 12);
     }catch(e){ return null; }
   }
@@ -4179,7 +4306,20 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
          be found by a reader who already knew which country to click. It is its
          own panel now, every country at once, sorted by what closes soonest. */
       if(cat.k === 'open') continue;
-      var rows = (own[cat.k] || []).concat(PJ_RES.global[cat.k] || []);
+      /* A global entry that names an `only` list is not global: the Center for
+         Food Safety litigates in US federal courts and Testbiotech objects to
+         EU approvals, and showing either under Russia was an extrapolation
+         rather than a resource. */
+      var glob = (PJ_RES.global[cat.k] || []).filter(function(x){
+        if(!x.only) return true;
+        var allow = (typeof x.only === 'string')
+          ? ((PJ_RES.regions || {})[x.only] || []) : x.only;
+        return key && allow.indexOf(key) >= 0;
+      });
+      /* Worldwide first: a reader anywhere can use a strip test or the focal
+         point list, and those should not sit below a national item. */
+      glob.sort(function(a, b){ return (b.ww ? 1 : 0) - (a.ww ? 1 : 0); });
+      var rows = (own[cat.k] || []).concat(glob);
       if(cat.k === 'complain' && sub) rows = [sub].concat(rows);
       if(rows.length) out.push({label: cat.label, k: cat.k, rows: rows});
     }
@@ -4205,12 +4345,27 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
           + 'point list, legal help \u2014 apply anywhere.</div>';
       } else bd.innerHTML = html;
       if(ti) ti.textContent = name + (kindLabel ? ' \u00b7 ' + kindLabel : '');
+      /* Opening a new place un-collapses as well as un-hides: a reader who
+         folded the last one still asked to see this one. */
+      el.classList.remove('closed');
       el.classList.remove('collapsed');
       return true;
     }catch(e){ return false; }
   };
+  /* Clicking away closes it. A panel that only shuts through its own button
+     stays open over the next country a reader looks at, which makes it look
+     like that country's resources. */
+  try{
+    map.on('click', function(){
+      try{
+        var el = document.getElementById('unitPanel');
+        if(el && !el.classList.contains('collapsed')) el.classList.add('collapsed');
+      }catch(e){}
+    });
+  }catch(e){}
+
   window.pjCloseUnit = function(){
-    try{ document.getElementById('unitPanel').classList.add('collapsed'); }catch(e){}
+    try{ document.getElementById('unitPanel').classList.add('closed'); }catch(e){}
   };
   window.pjCountryResources = function(countryName){
     return window.pjActNote({state: countryName, __wide: true});
@@ -4250,10 +4405,13 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
          PJ_RES.global.open.length)
         bucket('Worldwide').push.apply(bucket('Worldwide'), PJ_RES.global.open);
     }catch(e){}
+    /* Two headings are not places and belong under the ones that are, whatever
+       their dates say: Worldwide is a real scope, Country not stated is a gap in
+       the source. Everything else sorts by what closes soonest. */
+    function rank(k){ return k === 'Country not stated' ? 2 : (k === 'Worldwide' ? 1 : 0); }
     var keys = Object.keys(by).sort(function(a, b){
+      if(rank(a) !== rank(b)) return rank(a) - rank(b);
       if(order[a] !== order[b]) return order[a] - order[b];
-      if(a === 'Worldwide') return 1;
-      if(b === 'Worldwide') return -1;
       return a < b ? -1 : 1;
     });
     return {keys: keys, by: by, soonest: order};
@@ -4276,12 +4434,17 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
       g.keys.forEach(function(k){
         g.by[k].forEach(function(r){ if(r && r.days != null) nLive++; });
       });
+      var drop = window._pjConsDropped || 0;
       var h = '<div class="cons-lead">' + (nLive
         ? nLive + ' comment window' + (nLive === 1 ? '' : 's') + ' open, soonest '
           + 'first. Under each country, the live windows come before the venues '
           + 'where the next one will be announced.'
-        : 'No window is open right now. Listed below is where each country '
-          + 'announces the next one.') + '</div>';
+        : 'No window on this subject is open right now. Listed below is where '
+          + 'each country announces the next one.')
+        + (drop ? ' ' + drop + ' other window' + (drop === 1 ? ' was' : 's were')
+                  + ' open at these agencies on subjects this map does not cover, '
+                  + 'and are not listed.' : '')
+        + '</div>';
       g.keys.forEach(function(k){
         var rows = g.by[k], soon = g.soonest[k] <= 14;
         h += '<div class="res-cat' + (soon ? ' open' : '') + '">'
@@ -4343,9 +4506,7 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
         });
         h += '</div></div>';
       });
-      h += '<div class="pj-act-f">Four guides cover how to use these: finding '
-        +  'out what is near you, who takes a complaint, objecting before a '
-        +  'decision, and declaring a place GM-free.</div></div>';
+      h += '</div>';
       return h;
     }catch(e){ return ''; }
   };
@@ -5408,7 +5569,6 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 .res-d{font-size:9.3px;line-height:1.5;color:#c3c9d9;margin-top:2px;}
 .res-conf{margin-top:3px;font-size:8.4px;line-height:1.4;color:#93866a;font-style:italic;}
 .res-src{display:inline-block;margin-top:4px;font-size:9px;color:#bcd6a8;text-decoration:none;border-bottom:1px dotted rgba(188,214,168,.5);}
-.pj-act-f{margin-top:5px;font-size:9px;color:#94a1ba;}
 .pj-act-r{margin:2px 0;}
 .pa-sec{border-top:1px solid rgba(120,140,180,.22);}
 .pa-head{display:flex;align-items:center;gap:5px;padding:6px 2px;cursor:pointer;font-size:9.4px;letter-spacing:.4px;font-weight:700;color:#c6d2e6;}
@@ -5472,10 +5632,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 </script>
 <style>.kc-tot{display:block;margin:3px 0 2px 17px;opacity:.7;font-style:italic;}
 .kcount{color:#7d8ba1;font-size:9.5px;margin-left:3px;}
-.leg-read{font-size:10.5px;line-height:1.5;color:#aeb8cb;padding:2px 0 9px;
-  margin-bottom:7px;border-bottom:1px solid rgba(127,168,204,0.20);}
-.leg-read b{color:#d3dcec;} .leg-read .hl-sec{color:#9dc0dd;font-size:10.5px;
-  letter-spacing:.3px;text-transform:uppercase;}
+.kind-note{margin:2px 0 5px 17px;font-size:9.5px;line-height:1.5;color:#8e99ae;}
+.kind-note b{color:#b3bece;font-weight:600;}
 .ctl-read{font-size:10.5px;line-height:1.5;color:#aeb8cb;padding:2px 0 8px;
   margin-bottom:6px;border-bottom:1px solid rgba(127,168,204,0.20);}
 .ctl-read b{color:#d3dcec;}</style>
@@ -8826,7 +8984,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-20 21:35";
+  var BUILD = "BUILD-2026-08-20 23:34";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
