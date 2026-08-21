@@ -658,7 +658,7 @@ function pjReport(which, data){
       <select id="idxSort" class="idxSel" title="Sort within groups"><option value="az">Sort: A → Z</option><option value="za">Sort: Z → A</option></select>
       <select id="idxGroup" class="idxSel" title="Group by">
         <option value="level">Group: Record type</option>
-        <option value="country">Group: Stated place</option>
+        <option value="country">Group: Country</option>
         <option value="lens">Group: Lens</option>
         <option value="srctype">Group: Source type</option>
         <option value="srckind">Group: Source kind</option>
@@ -669,9 +669,10 @@ function pjReport(which, data){
       </select>
       <select id="idxSub" class="idxSel" title="Then by">
         <option value="lens">then Lens</option>
+        <option value="place">then Place within it</option>
         <option value="none">then &mdash;</option>
         <option value="level">then Record type</option>
-        <option value="country">then Stated place</option>
+        <option value="country">then Country</option>
         <option value="srctype">then Source type</option>
         <option value="srckind">then Source kind</option>
         <option value="media">then Media type</option>
@@ -733,11 +734,11 @@ try{ window.DOMAINS = DOMAINS; window.DMAP = DMAP; }catch(e){}
    own. Nothing was dropped; it was distributed. */
 try{ window.SUBJDEF = {
  "animals": "Three trades on one row: living animals sold to laboratories as reagents, animals engineered to be farmed or kept, and animals rebuilt as proxies for species already gone.",
- "humans": "Genetic engineering applied to people. On one side, therapies that largely work but reach almost nobody \u2014 developed in good part with public money and priced beyond every health system outside a handful of wealthy countries. On the other, assisted reproduction: not genetic modification in the technical sense, but the same logic and increasingly the same techniques, and the one part of this map where the customer is the person being engineered for, which changes the ethics without removing them.",
+ "humans": "Genetic engineering applied to people. On one side, therapies that largely work but reach almost nobody \u2014 developed in good part with public money and priced beyond every health system outside a handful of wealthy countries. On the other, assisted reproduction: not genetic modification in the technical sense, but the same logic and increasingly the same techniques.",
  "microbes": "The supply chain almost nobody maps, and the layer where capability actually lives: a handful of firms write most of the DNA every engineered organism starts from.",
  "money": "Who pays, and what they are paying for.",
- "plants": "The commercial centre. Four firms own most of the world\u2019s engineered crop traits and a controlling share of its commercial seed, and everything downstream on this map rests on decisions taken here.",
- "rules": "The machinery that authorises the industry and argues for it. Carried here as part of the industry rather than as a check on it, because in practice the relationship is closer than the diagram suggests.",
+ "plants": "The commercial centre. Four firms own most of the world\u2019s engineered crop traits and a controlling share of its commercial seed.",
+ "rules": "The machinery that authorises the industry and argues for it. Carried here as part of the industry rather than as a check on it: the register is kept by the same body that grants the approval, the risk assessment a regulator rules on is filed by the applicant it is ruling on, and a trade association\u2019s position is what reaches the legislative record while the member firms behind it stay unnamed there.",
  "tools": "The firms that make the tools everyone else uses, and increasingly the products too \u2014 alongside the contractors who do the work the company named on the permit does not.",
  "wild": "Organisms engineered specifically to be released into the open and, in some cases, to spread on their own."
 }; }catch(e){}
@@ -2252,8 +2253,87 @@ function locateEntry(e){
   if(e.iso&&_openUnitByIso(e.iso)) return;
   window.open(e.url,'_blank','noopener'); }
 function _esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;'); }
-function _grpKeys(r,dim){ if(dim==='country')return[r.country||'\u2014']; if(dim==='level')return[r.level||'\u2014']; if(dim==='lens')return (r.lenses&&r.lenses.length)?r.lenses:['\u2014']; if(dim==='srctype')return[KINDLABEL[r.kind||'structured']||'\u2014']; if(dim==='srckind')return[SKINDLABEL[r.skind||'other']||'\u2014']; if(dim==='media')return[MEDIALABEL[r.media||'web']||'\u2014']; if(dim==='trust')return[TIERLABEL[r.trust||'high']||'\u2014']; if(dim==='voice')return[VOICELABEL[r.voice||'interpretive']||'\u2014']; return['']; }
-function _grpCmp(dim){ if(dim==='level')return function(a,b){ var la=(LEVELORDER[a]==null?9:LEVELORDER[a]), lb=(LEVELORDER[b]==null?9:LEVELORDER[b]); return (la-lb)||a.localeCompare(b); }; return function(a,b){ return a.localeCompare(b); }; }
+/* THE INDEX'S PLACE AXIS
+   Records carry no country field. `r.country` is filled from `p.state`, which
+   is whatever string the source published: "Jefferson County, Oregon, USA" for
+   a release, "Accra" for a ministry, "Monheim am Rhein - Alfred-Nobel-Strasse 50"
+   for a company head office. Grouped raw that gave ~500 headings of one, half
+   of them street addresses and half bare city names with no country attached.
+   So the country is derived from the coordinate, against the same world
+   boundaries the map already draws, and the stated string becomes the level
+   BELOW it. Nothing is guessed: a point that falls in no polygon, and a string
+   that names no country, group under "Place not established". */
+var _IDXC=null, _IDXC_N=0;
+function _idxBB(g){ var b=[180,90,-180,-90];
+  (function walk(a){ if(typeof a[0]==='number'){ if(a[0]<b[0])b[0]=a[0]; if(a[1]<b[1])b[1]=a[1];
+      if(a[0]>b[2])b[2]=a[0]; if(a[1]>b[3])b[3]=a[1]; return; }
+    for(var i=0;i<a.length;i++) walk(a[i]); })(g.coordinates);
+  return b; }
+function _idxCountries(){
+  try{ if(typeof geojsonLayer==='undefined'||!geojsonLayer) return []; }catch(e){ return []; }
+  if(_IDXC) return _IDXC;
+  var out=[];
+  try{ geojsonLayer.eachLayer(function(l){ var f=l.feature; if(!f||!f.geometry)return;
+    var nm=(f.properties&&f.properties.name)||NUM2A3[f.id]||''; if(!nm)return;
+    out.push({n:nm,g:f.geometry,b:_idxBB(f.geometry)}); }); }catch(e){}
+  if(out.length){ _IDXC=out; _IDXC_N=out.length; }
+  return out; }
+/* Two-letter codes are what the registers file; they are not place names to a
+   reader who has not memorised them. */
+var _IDXST={AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',
+ CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',FL:'Florida',
+ GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',
+ KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',
+ MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',
+ NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',
+ ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',
+ RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',
+ UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',
+ WI:'Wisconsin',WY:'Wyoming',PR:'Puerto Rico',VI:'US Virgin Islands',GU:'Guam',
+ AS:'American Samoa',MP:'Northern Mariana Islands'};
+var _IDXALIAS={'usa':'United States of America','us':'United States of America',
+ 'u.s.':'United States of America','u.s.a.':'United States of America',
+ 'united states':'United States of America','uk':'United Kingdom',
+ 'u.k.':'United Kingdom','great britain':'United Kingdom','england':'United Kingdom',
+ 'scotland':'United Kingdom','wales':'United Kingdom','northern ireland':'United Kingdom',
+ 'south korea':'Republic of Korea','russia':'Russian Federation',
+ 'worldwide':'Worldwide','global':'Worldwide'};
+function _idxNameSet(){ var m={}; _idxCountries().forEach(function(c){ m[c.n.toLowerCase()]=c.n; }); return m; }
+function _idxCountryOf(r){
+  if(r._ctry) return r._ctry;
+  var cs=_idxCountries(), nm='';
+  if(cs.length && typeof r.lat==='number' && typeof r.lng==='number'){
+    var x=r.lng, y=r.lat;
+    for(var i=0;i<cs.length;i++){ var b=cs[i].b;
+      if(x<b[0]||x>b[2]||y<b[1]||y>b[3]) continue;
+      if(gbInPoly([x,y],cs[i].g)){ nm=cs[i].n; break; } } }
+  if(!nm){ /* the street address after an em dash carries commas of its own, so
+              it comes off BEFORE the string is split on commas */
+    var parts=String(r.country||'').split('\u2014')[0].split(',');
+    var tail=(parts[parts.length-1]||'').trim().toLowerCase();
+    var known=cs.length?_idxNameSet():{};
+    nm = known[tail] || _IDXALIAS[tail] || ''; }
+  if(!nm) nm='Place not established';
+  if(cs.length) r._ctry=nm;
+  return nm; }
+function _idxPlaceOf(r){
+  var raw=String(r.country||'').trim(); if(!raw) return '\u2014';
+  raw=raw.split('\u2014')[0].trim();                 /* drop the street address */
+  var parts=raw.split(',').map(function(t){ return t.trim(); }).filter(Boolean);
+  var ctry=_idxCountryOf(r), known=_idxCountries().length?_idxNameSet():{};
+  while(parts.length>1){ var t=parts[parts.length-1].toLowerCase();
+    if(known[t]===ctry || _IDXALIAS[t]===ctry) parts.pop(); else break; }
+  parts=parts.map(function(t){
+    var u=t.toUpperCase();
+    if(_IDXST[u]) return _IDXST[u];
+    return t.replace(/\s+([A-Z]{2})$/,function(m,c){ return _IDXST[c]?(', '+_IDXST[c]):m; }); });
+  var out=parts.join(', ');
+  return out && out.toLowerCase()!==String(ctry).toLowerCase() ? out : '\u2014'; }
+function _grpKeys(r,dim){ if(dim==='country')return[_idxCountryOf(r)]; if(dim==='place')return[_idxPlaceOf(r)]; if(dim==='level')return[r.level||'\u2014']; if(dim==='lens')return (r.lenses&&r.lenses.length)?r.lenses:['\u2014']; if(dim==='srctype')return[KINDLABEL[r.kind||'structured']||'\u2014']; if(dim==='srckind')return[SKINDLABEL[r.skind||'other']||'\u2014']; if(dim==='media')return[MEDIALABEL[r.media||'web']||'\u2014']; if(dim==='trust')return[TIERLABEL[r.trust||'high']||'\u2014']; if(dim==='voice')return[VOICELABEL[r.voice||'interpretive']||'\u2014']; return['']; }
+function _grpCmp(dim){ if(dim==='country'||dim==='place')return function(a,b){
+    var au=(a==='Place not established'||a==='\u2014')?1:0, bu=(b==='Place not established'||b==='\u2014')?1:0;
+    return (au-bu)||a.localeCompare(b); };
+  if(dim==='level')return function(a,b){ var la=(LEVELORDER[a]==null?9:LEVELORDER[a]), lb=(LEVELORDER[b]==null?9:LEVELORDER[b]); return (la-lb)||a.localeCompare(b); }; return function(a,b){ return a.localeCompare(b); }; }
 function _rowHTML(r,i){ const tags=r.lenses.map(l=>'<span class="idx-lens">'+_esc(l)+'</span>').join('');
   var d=(r.desc||'').trim(), has=_hasUrl(r.url);
   var link=has?('<a class="idx-visit" href="'+_esc(_href(r.url))+'" target="_blank" rel="noopener">Visit source ↗</a>'):'';
@@ -2330,7 +2410,12 @@ function renderIndex(){ if(!INDEXDATA.length) buildIndexData();
   box.querySelectorAll('.idx-grp-head').forEach(function(hd){ hd.style.cursor='pointer'; hd.onclick=function(e){ e.stopPropagation(); this.parentNode.classList.toggle('collapsed'); }; });
 }
 function initIndex(){ buildIndexData();
-  document.getElementById('idxGroup').addEventListener('change',renderIndex);
+  document.getElementById('idxGroup').addEventListener('change',function(){
+    /* Country grouping is only useful two levels deep: the country, then the
+       places named inside it. Set the second axis to match when it is picked. */
+    var sub=document.getElementById('idxSub');
+    if(this.value==='country' && sub && sub.value!=='place') sub.value='place';
+    renderIndex(); });
   document.getElementById('idxSub').addEventListener('change',renderIndex); var _isEl=document.getElementById('idxSort'); if(_isEl)_isEl.addEventListener('change',renderIndex);
   document.getElementById('idxSearch').addEventListener('input',renderIndex);
   document.getElementById('idxHead').addEventListener('click',function(e){ const p=document.getElementById('indexPanel'); if(p._wasDrag){ p._wasDrag=false; return; } const c=p.classList.toggle('collapsed'); document.getElementById('idxToggle').textContent=c?'+':'\u2212'; });
@@ -2825,6 +2910,19 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
      here, in the third. So the index was always built before a single record
      existed, and nothing rebuilt it afterwards. Rebuild once now that the seed
      is in scope, and again when the fetched set replaces it. */
+  /* The country axis needs the world polygons, which arrive by fetch after the
+     index has already drawn once. Clear the per-row cache and redraw when they
+     do, then stop looking. */
+  (function(){ var t=setInterval(function(){
+      var n=0; try{ n=(typeof _idxCountries==='function')?_idxCountries().length:0; }catch(e){}
+      if(!n) return;
+      clearInterval(t);
+      try{ (window.pjRows()||[]).forEach(function(x){ delete x._ctry; }); }catch(e){}
+      try{ if(typeof INDEXDATA!=='undefined') INDEXDATA.forEach(function(x){ delete x._ctry; }); }catch(e){}
+      try{ if(window.pjRefreshIndex) window.pjRefreshIndex(); }catch(e){}
+    },900);
+    setTimeout(function(){ clearInterval(t); },40000);
+  })();
   window.pjRefreshIndex = function(){
     try{ if(typeof INDEXDATA!=='undefined') INDEXDATA.length = 0; }catch(e){}
     try{ if(typeof renderIndex==='function') renderIndex(); }catch(e){}
@@ -9382,5 +9480,24 @@ body.info-open #legend #indexPanel{position:static!important;left:auto!important
 #legend #indexPanel #idxBody{padding:8px 0 0!important;}
 #legend #idxControls{margin-bottom:6px;}
 </style>
+<script>
+/* THE FOOT OF THE MAP KEY, in a fixed order.
+   Three passes in this file insert and move blocks inside #legBody, so the tail
+   was whatever the last one to run left behind. It is stated here instead:
+   everything else, then the provenance fold, then the navigation line, then the
+   index. Runs every tick rather than latching, because a later pass moving one
+   of them back costs nothing to undo and cannot be got wrong. */
+(function(){
+  function go(){
+    var leg=document.getElementById('legBody'); if(!leg) return;
+    var det=leg.querySelector('.lp-detail'),
+        nav=leg.querySelector('.ctl-read'),
+        idx=document.getElementById('indexPanel');
+    if(!det||!nav||!idx) return;
+    [det,nav,idx].forEach(function(el){ if(el.parentNode!==leg||el.nextSibling) leg.appendChild(el); });
+  }
+  var t=setInterval(go,700); setTimeout(function(){ clearInterval(t); },30000);
+})();
+</script>
 </body>
 </html>
