@@ -59,6 +59,25 @@
    "checked": ""
   },
   {
+   "name": "BE — 20 biosafety decisions filed",
+   "source": "bch:decision",
+   "type": "National biosafety decisions",
+   "lat": 50.5,
+   "lng": 4.5,
+   "state": "BE",
+   "precise": false,
+   "impact": 2,
+   "company": "",
+   "size": "20 decisions",
+   "status": "Filed 2009–2026",
+   "phase": "post",
+   "date": "2026-05-12",
+   "lapsed": false,
+   "url": "https://bch.cbd.int/en/database/52000000cbd0800000049220",
+   "desc": "20 decisions on living modified organisms, filed by this country to the Biosafety Clearing-House, 2009–2026. The most recent are Permission to release of the transgenic potato line Julia variety in a specially equipped ; ACS-BN005-8 x ACS-BN003-6; Decision on the unauthorized import of living modified fish; Сertificate of State Registration of Genetically Engineered Goats; Decision on amendment to field trial B/BE/20/V1; Decision on field trial B/BE/20/V1. Article 20 of the Cartagena Protocol requires every party to file its release and market decisions there within fifteen days, and 173 parties are bound by it; the United States is not among them. A decision is a national instrument with no site to place, so this marker sits at the country centroid and holds all of them together rather than scattering them into a geography the source does not have. A country with no records here has not necessarily approved nothing — it may not have filed.",
+   "checked": ""
+  },
+  {
    "name": "VN — 24 biosafety decisions filed",
    "source": "bch:decision",
    "type": "National biosafety decisions",
@@ -116,7 +135,7 @@
    "checked": ""
   },
   {
-   "name": "CO — 323 biosafety decisions filed",
+   "name": "CO — 324 biosafety decisions filed",
    "source": "bch:decision",
    "type": "National biosafety decisions",
    "lat": 4.6,
@@ -125,13 +144,13 @@
    "precise": false,
    "impact": 3,
    "company": "",
-   "size": "323 decisions",
+   "size": "324 decisions",
    "status": "Filed 2000–2024",
    "phase": "post",
    "date": "2024-12-16",
    "lapsed": false,
    "url": "https://bch.cbd.int/en/database/52000000cbd08000000450b2",
-   "desc": "323 decisions on living modified organisms, filed by this country to the Biosafety Clearing-House, 2000–2024. The most recent are Resolución No.00019857 / 2024 - Algodón GHB614 x T-304-40 x GBH119 x COT102 - siembra; RESOLUCIÓN 2024052682/2024 - Soya 305423 x GTS 40-3-2 - consumo humano; RESOLUCIÓN 2024052683/2024 - Maíz Bt11 x MIR162 x MIR604 x GA21 - consumo humano; RESOLUCIÓN 2024037945/2024 CANOLA MON94100 consumo humano; RESOLUCIÓN 2024030750/2024 - MAÍZ TC1507 X MON810 X MIR604 X NK603 - consumo humano; RESOLUCIÓN 2024030751/2024 - MAÍZ TC1507 X 59122 X MON810 X MIR604 X NK603 - consumo human. Article 20 of the Cartagena Protocol requires every party to file its release and market decisions there within fifteen days, and 173 parties are bound by it; the United States is not among them. A decision is a national instrument with no site to place, so this marker sits at the country centroid and holds all of them together rather than scattering them into a geography the source does not have. A country with no records here has not necessarily approved nothing — it may not have filed.",
+   "desc": "324 decisions on living modified organisms, filed by this country to the Biosafety Clearing-House, 2000–2024. The most recent are Resolución No.00019857 / 2024 - Algodón GHB614 x T-304-40 x GBH119 x COT102 - siembra; RESOLUCIÓN 2024052682/2024 - Soya 305423 x GTS 40-3-2 - consumo humano; RESOLUCIÓN 2024052683/2024 - Maíz Bt11 x MIR162 x MIR604 x GA21 - consumo humano; RESOLUCIÓN 2024037945/2024 CANOLA MON94100 consumo humano; RESOLUCIÓN 2024030750/2024 - MAÍZ TC1507 X MON810 X MIR604 X NK603 - consumo humano; RESOLUCIÓN 2024030751/2024 - MAÍZ TC1507 X 59122 X MON810 X MIR604 X NK603 - consumo human. Article 20 of the Cartagena Protocol requires every party to file its release and market decisions there within fifteen days, and 173 parties are bound by it; the United States is not among them. A decision is a national instrument with no site to place, so this marker sits at the country centroid and holds all of them together rather than scattering them into a geography the source does not have. A country with no records here has not necessarily approved nothing — it may not have filed.",
    "checked": ""
   },
   {
@@ -287,25 +306,6 @@
    "checked": ""
   },
   {
-   "name": "BE — 10 biosafety decisions filed",
-   "source": "bch:decision",
-   "type": "National biosafety decisions",
-   "lat": 50.5,
-   "lng": 4.5,
-   "state": "BE",
-   "precise": false,
-   "impact": 2,
-   "company": "",
-   "size": "10 decisions",
-   "status": "Filed 2009–2025",
-   "phase": "post",
-   "date": "2025-09-23",
-   "lapsed": false,
-   "url": "https://bch.cbd.int/en/database/52000000cbd08000000099e1",
-   "desc": "10 decisions on living modified organisms, filed by this country to the Biosafety Clearing-House, 2009–2025. The most recent are ACS-BN005-8 x ACS-BN003-6; Decision on the unauthorized import of living modified fish; Decision on amendment to field trial B/BE/20/V1; Decision on field trial B/BE/20/V1; Decision on field trial B/BE/19/V1; Unauthorized imports of living modified fish in Belgium. Article 20 of the Cartagena Protocol requires every party to file its release and market decisions there within fifteen days, and 173 parties are bound by it; the United States is not among them. A decision is a national instrument with no site to place, so this marker sits at the country centroid and holds all of them together rather than scattering them into a geography the source does not have. A country with no records here has not necessarily approved nothing — it may not have filed.",
-   "checked": ""
-  },
-  {
    "name": "BF — 5 biosafety decisions filed",
    "source": "bch:decision",
    "type": "National biosafety decisions",
@@ -420,6 +420,25 @@
    "checked": ""
   },
   {
+   "name": "CA — 96 biosafety decisions filed",
+   "source": "bch:decision",
+   "type": "National biosafety decisions",
+   "lat": 56.1,
+   "lng": -106.3,
+   "state": "CA",
+   "precise": false,
+   "impact": 3,
+   "company": "",
+   "size": "96 decisions",
+   "status": "Filed 2004–2026",
+   "phase": "post",
+   "date": "2026-07-14",
+   "lapsed": false,
+   "url": "https://bch.cbd.int/en/database/52000000cbd080000000c089",
+   "desc": "96 decisions on living modified organisms, filed by this country to the Biosafety Clearing-House, 2004–2026. The most recent are Determination of the Safety of Pioneer Hi-Bred Production Ltd.'s Soybean (Glycine max (L.); ['Phosphinothricin N-acetyltransferase', 'Cry1Ab', 'Nopaline Synthase Gene Terminator', 'C; ['5-enolpyruvylshikimate-3-phosphate synthase gene', 'Rice actin 1 gene promoter', 'Rice a; ['Cry1F', 'Phosphinothricin N-acetyltransferase', 'Ubiquitin gene promoter', 'ORF25 PolyA ; ['Cry1A.105', \"5' untranslated leader from chlorophyll a/b-binding protein\", 'Rice actin 1; ['5-enolpyruvylshikimate-3-phosphate synthase', 'Optimized Transit Peptide', 'Ti plasmid l. Article 20 of the Cartagena Protocol requires every party to file its release and market decisions there within fifteen days, and 173 parties are bound by it; the United States is not among them. A decision is a national instrument with no site to place, so this marker sits at the country centroid and holds all of them together rather than scattering them into a geography the source does not have. A country with no records here has not necessarily approved nothing — it may not have filed.",
+   "checked": ""
+  },
+  {
    "name": "TR — 65 biosafety decisions filed",
    "source": "bch:decision",
    "type": "National biosafety decisions",
@@ -493,25 +512,6 @@
    "lapsed": false,
    "url": "https://bch.cbd.int/en/database/52000000cbd080000003f642",
    "desc": "31 decisions on living modified organisms, filed by this country to the Biosafety Clearing-House, 1996–2021. The most recent are Resolución N° 127/021 - Autorización para producción y uso comercial para consumo directo ; Resolución N° 135/021 - Autorización para realizar ensayos de investigación con maíz MON87; Resolución N° 130/021 - Autorización para realizar ensayos de investigación con maíz NK603; Resolución N° 128/021 - Autorización para la producción y uso comercial para consumo direc; Resolución N° 125/021 - Autorización para producción y uso comercial para consumo directo ; Resolución N° 136/021 - Autorización para producción y uso comercial para consumo directo . Article 20 of the Cartagena Protocol requires every party to file its release and market decisions there within fifteen days, and 173 parties are bound by it; the United States is not among them. A decision is a national instrument with no site to place, so this marker sits at the country centroid and holds all of them together rather than scattering them into a geography the source does not have. A country with no records here has not necessarily approved nothing — it may not have filed.",
-   "checked": ""
-  },
-  {
-   "name": "CA — 94 biosafety decisions filed",
-   "source": "bch:decision",
-   "type": "National biosafety decisions",
-   "lat": 56.1,
-   "lng": -106.3,
-   "state": "CA",
-   "precise": false,
-   "impact": 3,
-   "company": "",
-   "size": "94 decisions",
-   "status": "Filed 2004–2026",
-   "phase": "post",
-   "date": "2026-07-14",
-   "lapsed": false,
-   "url": "https://bch.cbd.int/en/database/52000000cbd080000000c089",
-   "desc": "94 decisions on living modified organisms, filed by this country to the Biosafety Clearing-House, 2004–2026. The most recent are Determination of the Safety of Pioneer Hi-Bred Production Ltd.'s Soybean (Glycine max (L.); ['Phosphinothricin N-acetyltransferase', 'Cry1Ab', 'Nopaline Synthase Gene Terminator', 'C; ['5-enolpyruvylshikimate-3-phosphate synthase gene', 'Rice actin 1 gene promoter', 'Rice a; ['Cry1F', 'Phosphinothricin N-acetyltransferase', 'Ubiquitin gene promoter', 'ORF25 PolyA ; ['Cry1A.105', \"5' untranslated leader from chlorophyll a/b-binding protein\", 'Rice actin 1; ['5-enolpyruvylshikimate-3-phosphate synthase', 'Optimized Transit Peptide', 'Ti plasmid l. Article 20 of the Cartagena Protocol requires every party to file its release and market decisions there within fifteen days, and 173 parties are bound by it; the United States is not among them. A decision is a national instrument with no site to place, so this marker sits at the country centroid and holds all of them together rather than scattering them into a geography the source does not have. A country with no records here has not necessarily approved nothing — it may not have filed.",
    "checked": ""
   },
   {
@@ -952,7 +952,7 @@
    "checked": ""
   },
   {
-   "name": "167 decisions with no country stated",
+   "name": "154 decisions with no country stated",
    "source": "bch:decision",
    "type": "Filed without a country field",
    "lat": 14.5,
@@ -961,13 +961,13 @@
    "precise": false,
    "impact": 2,
    "company": "",
-   "size": "167 decisions",
+   "size": "154 decisions",
    "status": "Country not stated in the record",
    "phase": "post",
    "date": "",
    "lapsed": false,
    "url": "https://bch.cbd.int/database/decisions",
-   "desc": "WHAT. 167 decisions filed to the Biosafety Clearing-House whose record carries no country field. WHERE IT SITS. **Nowhere. This marker is in the middle of the Atlantic because there is no ocean release and no country to place these in** — it is a visible parking space, not a location. WHY IT MATTERS. Dropping them would hide a gap in the source; putting them in a plausible country would be a fabrication. They are counted here so the total stays honest and the missing field stays visible.",
+   "desc": "WHAT. 154 decisions filed to the Biosafety Clearing-House whose record carries no country field. WHERE IT SITS. **Nowhere. This marker is in the middle of the Atlantic because there is no ocean release and no country to place these in** — it is a visible parking space, not a location. WHY IT MATTERS. Dropping them would hide a gap in the source; putting them in a plausible country would be a fabrication. They are counted here so the total stays honest and the missing field stays visible.",
    "checked": ""
   }
  ]
