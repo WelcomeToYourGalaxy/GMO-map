@@ -2204,7 +2204,7 @@ function buildIndexData(){ INDEXDATA=[];
      Level 'Resource' so they can be filtered in or out as a group; the lens is
      taken from the entry's own tag so the existing lens buttons reach them. */
   try{
-    var R = (typeof PJ_RES !== 'undefined' && PJ_RES) ? PJ_RES : null;
+    var R = window.PJ_RES || ((typeof PJ_RES !== 'undefined' && PJ_RES) ? PJ_RES : null);
     if(R){
       var LENS = {TESTING:'rules', REGULATOR:'rules', COMPLAINT:'rules',
                   CONSULTATION:'rules', CERTIFIER:'rules', LEGAL:'rules'};
@@ -2299,6 +2299,59 @@ var _IDXALIAS={'usa':'United States of America','us':'United States of America',
  'south korea':'Republic of Korea','russia':'Russian Federation',
  'worldwide':'Worldwide','global':'Worldwide'};
 function _idxNameSet(){ var m={}; _idxCountries().forEach(function(c){ m[c.n.toLowerCase()]=c.n; }); return m; }
+/* ONE SPELLING PER COUNTRY.
+   Two layers name countries differently and both now land in the index: the
+   world polygons carry Natural Earth's names, which are abbreviated for the
+   long ones ("Bosnia and Herz.", "Dem. Rep. Congo", "S. Sudan"), while
+   resources.json carries a clean hand-written set of 196. Left alone the same
+   country would head two groups, one of them abbreviated. The resource set is
+   the display set; everything else is mapped onto it. A name with no entry
+   here is passed through unchanged rather than guessed at. */
+var _IDXCANON=null;
+var _IDXCFIX={
+ 'united states of america':'United States','usa':'United States','us':'United States',
+ 'u.s.':'United States','u.s.a.':'United States',
+ 'united kingdom of great britain and northern ireland':'United Kingdom',
+ 'uk':'United Kingdom','u.k.':'United Kingdom','great britain':'United Kingdom',
+ 'england':'United Kingdom','scotland':'United Kingdom','wales':'United Kingdom',
+ 'northern ireland':'United Kingdom',
+ 'south korea':'Republic of Korea','korea, republic of':'Republic of Korea',
+ 'korea, rep.':'Republic of Korea','dem. rep. korea':'North Korea',
+ "korea, dem. people's rep.":'North Korea',
+ 'dem. rep. congo':'Democratic Republic of the Congo',
+ 'congo, dem. rep.':'Democratic Republic of the Congo',
+ 'congo':'Republic of the Congo','congo, rep.':'Republic of the Congo',
+ 'bosnia and herz.':'Bosnia and Herzegovina',
+ 'central african rep.':'Central African Republic',
+ 'dominican rep.':'Dominican Republic','eq. guinea':'Equatorial Guinea',
+ 's. sudan':'South Sudan','solomon is.':'Solomon Islands',
+ 'czechia':'Czech Republic','macedonia':'North Macedonia',
+ 'swaziland':'Eswatini','cape verde':'Cabo Verde','burma':'Myanmar',
+ 'east timor':'Timor-Leste','brunei darussalam':'Brunei','lao pdr':'Laos',
+ "lao people's democratic republic":'Laos','viet nam':'Vietnam',
+ 'syrian arab republic':'Syria','iran (islamic republic of)':'Iran',
+ 'russian federation':'Russia','t\u00fcrkiye':'Turkey','turkiye':'Turkey',
+ 'holy see':'Vatican City','vatican':'Vatican City',
+ 'united republic of tanzania':'Tanzania','the gambia':'Gambia',
+ 'the bahamas':'Bahamas','bolivia (plurinational state of)':'Bolivia',
+ 'venezuela (bolivarian republic of)':'Venezuela',
+ 'micronesia (federated states of)':'Micronesia',
+ 'fed. states of micronesia':'Micronesia',
+ "cote d'ivoire":'C\u00f4te d\u2019Ivoire',"c\u00f4te d'ivoire":'C\u00f4te d\u2019Ivoire',
+ 'ivory coast':'C\u00f4te d\u2019Ivoire',
+ 'moldova, republic of':'Moldova','republic of moldova':'Moldova',
+ 'global':'Worldwide'};
+function _idxCanonMap(){
+  if(_IDXCANON) return _IDXCANON;
+  var m={}, got=false;
+  try{ var R=window.PJ_RES; if(R&&R.countries){
+    for(var k in R.countries){ m[k.toLowerCase()]=k; got=true; } } }catch(e){}
+  for(var a in _IDXCFIX){ var t=_IDXCFIX[a]; m[a]=(m[t.toLowerCase()]||t); }
+  if(got) _IDXCANON=m;          /* only cache once the display set has arrived */
+  return m; }
+function _idxCanon(nm){
+  if(!nm) return nm;
+  return _idxCanonMap()[String(nm).toLowerCase()] || nm; }
 function _idxCountryOf(r){
   if(r._ctry) return r._ctry;
   var cs=_idxCountries(), nm='';
@@ -2312,12 +2365,18 @@ function _idxCountryOf(r){
     var parts=String(r.country||'').split('\u2014')[0].split(',');
     var tail=(parts[parts.length-1]||'').trim().toLowerCase();
     var known=cs.length?_idxNameSet():{};
-    nm = known[tail] || _IDXALIAS[tail] || ''; }
+    /* The stated string may already carry a name from the display set
+       ("Republic of Korea", "Czech Republic"), which the polygon names never
+       match because Natural Earth spells those differently. Check both. */
+    nm = known[tail] || _IDXALIAS[tail] || _idxCanonMap()[tail] || ''; }
   if(!nm) nm='Place not established';
+  nm=_idxCanon(nm);
   if(cs.length) r._ctry=nm;
   return nm; }
 function _idxPlaceOf(r){
-  var raw=String(r.country||'').trim(); if(!raw) return '\u2014';
+  /* "National" rather than a dash: a country's own regulator or inspectorate
+     is not a missing place, it is the whole country. */
+  var raw=String(r.country||'').trim(); if(!raw) return 'National';
   raw=raw.split('\u2014')[0].trim();                 /* drop the street address */
   var parts=raw.split(',').map(function(t){ return t.trim(); }).filter(Boolean);
   var ctry=_idxCountryOf(r), known=_idxCountries().length?_idxNameSet():{};
@@ -2328,11 +2387,14 @@ function _idxPlaceOf(r){
     if(_IDXST[u]) return _IDXST[u];
     return t.replace(/\s+([A-Z]{2})$/,function(m,c){ return _IDXST[c]?(', '+_IDXST[c]):m; }); });
   var out=parts.join(', ');
-  return out && out.toLowerCase()!==String(ctry).toLowerCase() ? out : '\u2014'; }
+  return out && out.toLowerCase()!==String(ctry).toLowerCase() ? out : 'National'; }
 function _grpKeys(r,dim){ if(dim==='country')return[_idxCountryOf(r)]; if(dim==='place')return[_idxPlaceOf(r)]; if(dim==='level')return[r.level||'\u2014']; if(dim==='lens')return (r.lenses&&r.lenses.length)?r.lenses:['\u2014']; if(dim==='srctype')return[KINDLABEL[r.kind||'structured']||'\u2014']; if(dim==='srckind')return[SKINDLABEL[r.skind||'other']||'\u2014']; if(dim==='media')return[MEDIALABEL[r.media||'web']||'\u2014']; if(dim==='trust')return[TIERLABEL[r.trust||'high']||'\u2014']; if(dim==='voice')return[VOICELABEL[r.voice||'interpretive']||'\u2014']; return['']; }
 function _grpCmp(dim){ if(dim==='country'||dim==='place')return function(a,b){
-    var au=(a==='Place not established'||a==='\u2014')?1:0, bu=(b==='Place not established'||b==='\u2014')?1:0;
-    return (au-bu)||a.localeCompare(b); };
+    /* Worldwide first - a resource anyone can use should not sit below a
+       national one they cannot - and anything unplaced last. */
+    function rank(x){ if(x==='Worldwide'||x==='National')return 0;
+      if(x==='Place not established'||x==='\u2014')return 2; return 1; }
+    return (rank(a)-rank(b))||a.localeCompare(b); };
   if(dim==='level')return function(a,b){ var la=(LEVELORDER[a]==null?9:LEVELORDER[a]), lb=(LEVELORDER[b]==null?9:LEVELORDER[b]); return (la-lb)||a.localeCompare(b); }; return function(a,b){ return a.localeCompare(b); }; }
 function _rowHTML(r,i){ const tags=r.lenses.map(l=>'<span class="idx-lens">'+_esc(l)+'</span>').join('');
   var d=(r.desc||'').trim(), has=_hasUrl(r.url);
@@ -4425,6 +4487,13 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
       .then(function(r){ return r.ok ? r.json() : null; })
       .then(function(d){
         PJ_RES = d;
+        /* `var PJ_RES` lives inside this IIFE, so buildIndexData() - which sits
+           in an earlier script block - could never see it. Its
+           `typeof PJ_RES !== 'undefined'` guard was false on every call and the
+           resource rows it is written to push were silently dropped: 196
+           countries with 2-16 entries each, none of them reaching the index.
+           Same fault as PJ_SEED in round 93, in the same function. */
+        try{ window.PJ_RES = d; }catch(e){}
         try{ if(window.pjRefreshPopup) window.pjRefreshPopup(); }catch(e){}
         try{ if(window.pjBuildConsPanel) window.pjBuildConsPanel(); }catch(e){}
         /* The index is built before this file arrives, so it has to be told. */
