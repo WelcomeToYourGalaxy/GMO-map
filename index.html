@@ -4157,11 +4157,23 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
     'novel trait', 'cisgenic', 'intragenic', 'mutagenesis',
     'synthetic biology', 'gene therapy', 'cell therapy', 'germline',
     'embryo', 'in vitro fertil', 'assisted reproduct', 'clone', 'cloning',
-    'plant variety', 'upov', 'seed', 'cultivar', 'pollen', 'landrace'
+    'plant variety', 'upov', 'seed', 'cultivar', 'pollen', 'landrace',
+    /* The WTO feed carries each notification's title as the member filed it,
+       and the members this source exists to reach are largely not Anglophone.
+       Without these, 'Reglamento sobre organismos vivos modificados' and
+       'Cadre de biosecurite' are dropped here after the harvester correctly
+       kept them, and the panel is quietly Anglophone while looking global.
+       Accented and unaccented spellings both appear in the file. */
+    'organismos vivos modificados', 'organismes vivants modifi',
+    'organismos geneticamente modificados', 'geneticamente modificad',
+    'gen\u00e9ticamente modificad', 'g\u00e9n\u00e9tiquement modifi',
+    'modificados geneticamente', 'transgen', 'transg\u00e9n',
+    'transg\u00eanic', 'bioseguridad', 'biosseguran', 'bioseguran',
+    'bios\u00e9curit', 'biosecurit', 'biotecnolog'
   ];
   /* Short forms need a word boundary. 'gm' inside 'alignment' and 'lmo' inside
      'filmore' are the kind of match that puts a fisheries notice on this map. */
-  var PJ_CONS_WORDS = /\b(gm|gmos?|lmos?|genes?|bt|ge)\b/i;
+  var PJ_CONS_WORDS = /\b(gm|gmos?|lmos?|genes?|bt|ge|ogm|ovm|vgm)\b/i;
   /* A body whose entire remit is this subject. Its consultations qualify on the
      agency alone - OGTR does not publish anything that is off-topic here, and a
      licence application titled "DIR 200" matches no term in the list above. */
@@ -4435,10 +4447,25 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
       if(!PJ_CONS && !PJ_RES) return false;
       var g = _consGroups();
       if(!g.keys.length){
-        host.innerHTML = '<div class="cons-note">No open comment window is '
-          + 'recorded right now. This box stays empty rather than showing a '
-          + 'window that has since shut \u2014 a closed consultation presented as '
-          + 'open sends somebody to write a comment nobody has to read.</div>';
+        /* Two different situations, and they were saying the same sentence.
+           "Nothing is open" is a claim about the world. "We could not fetch"
+           is a fact about this pipeline, and asserting the first on the
+           strength of the second tells a reader in a country with a window
+           closing on Friday that there is nothing to do. */
+        var reach = PJ_CONS && PJ_CONS.sources_reached,
+            tot   = PJ_CONS && PJ_CONS.sources_total;
+        host.innerHTML = '<div class="cons-note">'
+          + ((reach === 0 || (tot && reach != null && reach < tot))
+             ? 'Some sources could not be read on the last harvest'
+               + (tot ? ' (' + reach + ' of ' + tot + ' answered)' : '')
+               + ', so this list may be short. It is not a statement that '
+               + 'nothing is open \u2014 check the venues under each country '
+               + 'below.'
+             : 'No open comment window is recorded right now. This box stays '
+               + 'empty rather than showing a window that has since shut '
+               + '\u2014 a closed consultation presented as open sends '
+               + 'somebody to write a comment nobody has to read.')
+          + '</div>';
         return true;
       }
       var nLive = 0;
