@@ -43,7 +43,8 @@ jobs:
             timeout 12m python3 harvest/hfea_clinics.py || echo "!! hfea clinics failed - continuing"
             timeout 20m python3 harvest/aphis_animal_facilities.py || echo "!! aphis animal facilities failed - continuing"
             timeout 20m python3 harvest/china_nhc_art.py || echo "!! china nhc failed - continuing"
-            timeout 8m python3 harvest/consultations.py || echo "!! consultations failed - continuing"
+            # consultations.py moved to its own workflow: it expires, the rest
+            # of this job does not, and it runs daily rather than monthly.
           timeout 10m python3 harvest/bch_authorities.py --discover || echo "!! bch discover failed"
           timeout 10m python3 harvest/bch_authorities.py || echo "!! bch authorities failed - continuing"
           timeout 10m python3 harvest/open_registers.py || echo "!! open registers probe failed - continuing"

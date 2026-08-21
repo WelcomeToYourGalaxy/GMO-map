@@ -1,0 +1,70 @@
+name: Consultations feed
+
+# Split out of facilities.yml for one reason: everything else in that workflow
+# is a register that changes a few times a year, and this is the one thing on
+# the map that EXPIRES. A comment window is worthless the day after it closes,
+# and the map refuses to show this list at all once the file is three weeks
+# old - so a monthly harvest can leave it blank for a fortnight while the
+# facility registers it was riding along with have nothing new to say.
+#
+# It also runs in about a minute against that job's four hours, which is the
+# other half of the reason: there is no sense waiting for 1,140 AAALAC
+# organisations to find out whether a comment period opened yesterday.
+#
+# Daily, and it touches exactly one file.
+
+on:
+  schedule:
+    - cron: '23 5 * * *'          # daily, early
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: consultations
+  cancel-in-progress: false
+
+jobs:
+  consultations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Harvest open consultations
+        run: |
+          set +e
+          timeout 12m python3 harvest/consultations.py || \
+            echo "!! consultations failed - leaving the previous file in place"
+          set -e
+
+          # A failed run must not blank the file. If the harvester wrote
+          # nothing, the file on disk is the last good one and committing
+          # nothing is correct: a stale list is caught by the map's own
+          # three-week freshness check, but an EMPTY list would be read as
+          # "no consultations are open anywhere", which is a much worse lie.
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A --ignore-errors harvest/consultations.json
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+          else
+            git commit -m "consultations: refresh $(date -u +%Y-%m-%d)"
+            # Same reasoning as the other workflows: this is a generated file,
+            # so on a collision the newest run is simply right. reset --mixed
+            # moves the branch pointer and leaves the file on disk.
+            for i in 1 2 3; do
+              git push && exit 0
+              echo "push rejected; rebuilding on top of origin (attempt $i)"
+              git fetch origin main || true
+              git reset --mixed origin/main
+              git add -A --ignore-errors harvest/consultations.json
+              git commit -m "consultations: refresh $(date -u +%Y-%m-%d)" || true
+            done
+            echo "could not push after 3 attempts"
+            exit 1
+          fi
