@@ -4321,9 +4321,20 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
       glob.sort(function(a, b){ return (b.ww ? 1 : 0) - (a.ww ? 1 : 0); });
       var rows = (own[cat.k] || []).concat(glob);
       if(cat.k === 'complain' && sub) rows = [sub].concat(rows);
-      if(rows.length) out.push({label: cat.label, k: cat.k, rows: rows});
+      if(rows.length) out.push({label: cat.label, k: cat.k,
+                                domain: cat.domain || 'crops', rows: rows});
     }
-    return {country: key, cats: out};
+    /* Group by domain. Every category used to be about crops, so a reader
+       who clicked a fertility clinic got strip tests and organic certifiers. */
+    var _doms = (PJ_RES.domains || []), byDom = [], seen = {};
+    _doms.forEach(function(dm){
+      var kids = out.filter(function(c){ return (c.domain || 'crops') === dm.k; });
+      kids.forEach(function(c){ seen[c.k] = 1; });
+      if(kids.length) byDom.push({k: dm.k, label: dm.label, cats: kids});
+    });
+    var _rest = out.filter(function(c){ return !seen[c.k]; });
+    if(_rest.length) byDom.push({k:'other', label:'OTHER', cats: _rest});
+    return {country: key, cats: out, doms: byDom};
   }
 
   /* The country box calls this. Everything, including the consultations, because
@@ -4482,29 +4493,39 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
       if(!r || !r.cats.length) return '';
       var h = '<div class="pj-act"><div class="pj-act-h">What you can do about '
             + 'this</div>';
-      r.cats.forEach(function(c, ci){
-        var id = 'res-' + c.k + '-' + (Math.random()*1e6|0);
-        h += '<div class="res-cat">'
-          +  '<div class="res-head" onclick="this.parentNode.classList.toggle('
-          +  '&quot;open&quot;)"><span class="res-car">\u25b8</span>'
-          +  '<span class="res-lab">' + c.label + '</span>'
-          +  '<span class="res-n">' + c.rows.length + '</span></div>'
-          +  '<div class="res-body">';
-        c.rows.forEach(function(x){
-          h += '<div class="res-card">'
-            +  '<div class="res-name">' + _esc(x.n) + '</div>'
-            +  (x.lens ? '<span class="res-lens">' + _esc(x.lens) + '</span>' : '')
-            +  '<div class="res-d">' + _esc(x.d || '') + '</div>'
-            /* A name taken from a pattern rather than checked says so. The
-               alternative is an unverified name sitting beside a verified one
-               and looking identical, which is how a reader stops trusting all
-               of them. */
-            +  (x.conf ? '<div class="res-conf">' + _esc(x.conf) + '</div>' : '')
-            +  (x.u ? '<a class="res-src" href="' + x.u + '" target="_blank" '
-                    + 'rel="noopener">Visit source \u2197</a>' : '')
-            +  '</div>';
+      /* Domain first, category inside it. The first domain opens; the rest
+         fold, so a reader looking at a clinic does not scroll past seven crop
+         categories to reach it. */
+      (r.doms || [{label:'', cats: r.cats}]).forEach(function(dm, di){
+        var n = dm.cats.reduce(function(a, c){ return a + c.rows.length; }, 0);
+        if(dm.label){
+          h += '<div class="res-dom' + (di === 0 ? ' open' : '') + '">'
+            +  '<div class="res-dhead" onclick="this.parentNode.classList.toggle('
+            +  '&quot;open&quot;)"><span class="res-car">\u25b8</span>'
+            +  '<span class="res-dlab">' + dm.label + '</span>'
+            +  '<span class="res-n">' + n + '</span></div>'
+            +  '<div class="res-dbody">';
+        }
+        dm.cats.forEach(function(c){
+          h += '<div class="res-cat"><div class="res-head" onclick='
+            +  '"this.parentNode.classList.toggle(&quot;open&quot;)">'
+            +  '<span class="res-car">\u25b8</span>'
+            +  '<span class="res-lab">' + c.label + '</span>'
+            +  '<span class="res-n">' + c.rows.length + '</span></div>'
+            +  '<div class="res-body">';
+          c.rows.forEach(function(x){
+            h += '<div class="res-card"><div class="res-name">' + _esc(x.n)
+              +  '</div>'
+              +  (x.lens ? '<span class="res-lens">' + _esc(x.lens) + '</span>' : '')
+              +  '<div class="res-d">' + _esc(x.d || '') + '</div>'
+              +  (x.conf ? '<div class="res-conf">' + _esc(x.conf) + '</div>' : '')
+              +  (x.u ? '<a class="res-src" href="' + x.u + '" target="_blank" '
+                      + 'rel="noopener">Visit source \u2197</a>' : '')
+              +  '</div>';
+          });
+          h += '</div></div>';
         });
-        h += '</div></div>';
+        if(dm.label) h += '</div></div>';
       });
       h += '</div>';
       return h;
@@ -5553,6 +5574,12 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 .subj-def{display:block;font-size:9.5px;line-height:1.45;color:#8d99b4;margin:1px 0 3px 18px;font-weight:400;}
 .pj-act{margin-top:8px;padding:7px 9px;border-radius:5px;background:rgba(74,93,47,0.14);border-left:2px solid rgba(122,150,80,0.75);font-size:9.6px;line-height:1.5;color:#c9d3e4;}
 .pj-act-h{font-weight:700;font-size:10px;color:#dfe7f5;margin-bottom:3px;}
+.res-dom{border-top:1px solid rgba(120,140,180,.30);}
+.res-dhead{display:flex;align-items:center;gap:6px;padding:7px 0;cursor:pointer;font-size:9.8px;letter-spacing:.6px;text-transform:uppercase;font-weight:700;color:#dfe7f5;}
+.res-dom.open>.res-dhead .res-car{transform:rotate(90deg);}
+.res-dlab{flex:1 1 auto;}
+.res-dbody{display:none;padding-left:8px;}
+.res-dom.open>.res-dbody{display:block;}
 .res-cat{border-top:1px solid rgba(120,140,180,.22);}
 .res-head{display:flex;align-items:center;gap:6px;padding:5px 0;cursor:pointer;font-size:9.4px;letter-spacing:.4px;text-transform:uppercase;color:#c3d0e6;}
 .res-car{font-size:8px;color:#8fa4c6;transition:transform .12s;}
@@ -8984,7 +9011,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-20 23:34";
+  var BUILD = "BUILD-2026-08-21 00:50";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
