@@ -175,6 +175,57 @@ COUNTRY_FIELDS = ("government_EN_s", "country_EN_s", "government_EN_t",
                   "countries_ss", "owner_s", "jurisdiction_s")
 
 
+# The organism registry, used to resolve a decision title that carries only an
+# event code. About a quarter of BCH titles name no organism - they read
+# "Technical Opinion No. 293/2022" - and many of those carry the code.
+_ORG_REG = None
+
+
+def _org_registry():
+    global _ORG_REG
+    if _ORG_REG is None:
+        _ORG_REG = {}
+        try:
+            f = pathlib.Path(__file__).resolve().parent / "bch_organisms.json"
+            if f.exists():
+                _ORG_REG = json.loads(f.read_text(encoding="utf-8")).get(
+                    "organisms", {})
+        except Exception:
+            _ORG_REG = {}
+    return _ORG_REG
+
+
+def _norm_id(code):
+    """Must match bch_organisms.norm exactly, or every lookup misses and the
+    miss looks like the organism not being registered."""
+    if not code:
+        return ""
+    s = str(code).upper()
+    s = re.sub(r"[^A-Z0-9\u00d8\u00f8]", "", s)
+    s = s.replace("\u00d8", "0").replace("\u00f8", "0")
+    s = re.sub(r"(?<=[0-9])O", "0", s)
+    s = re.sub(r"O(?=[0-9])", "0", s)
+    return s
+
+
+_CODE_RE = re.compile(r"\b([A-Z]{2,4})[\s\-]?([0-9\u00d8O]{3,7})[\s\-]?([0-9])\b")
+
+
+def organism_from_registry(title):
+    """The organism behind an event code in a title, or nothing.
+
+    Nothing is the honest answer when the code is unknown: the record then says
+    the organism was not named, rather than carrying a guess.
+    """
+    m = _CODE_RE.search(str(title or "").upper())
+    if not m:
+        return None
+    rec = _org_registry().get(_norm_id("-".join(m.groups())))
+    if not rec:
+        return None
+    return rec.get("organism") or rec.get("name") or None
+
+
 def iso2(row):
     """The country that filed the decision, read from the field that states it.
 

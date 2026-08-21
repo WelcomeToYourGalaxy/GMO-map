@@ -126,12 +126,83 @@ def first(doc, names):
 
 
 def harvest():
-    print("The authority harvest is deliberately not run.\n"
-          "  The BCH holds contacts as named individuals with work email\n"
-          "  addresses, not as offices. Publishing those is not what this map\n"
-          "  is for. Run --discover to inspect the schema; the competent\n"
-          "  authorities on the map stay hand-written and checked.")
-    return
+    """Focal points only, office and country, no email addresses.
+
+    The first version of this file refused to run at all, on the ground that BCH
+    contact records are named individuals. That was an overcorrection. A national
+    focal point's details are published BY the Secretariat so that people can
+    contact them about biosafety; a map telling somebody to contact their focal
+    point is the intended use of that list, not a repurposing of it. They are
+    officials in a professional role.
+
+    What is worth avoiding is the side effect: pulling all 11,150 contact records
+    would assemble an address book nobody asked for. So this takes focal points
+    only, keeps the office and the country, and links to the BCH contact page
+    rather than reproducing the address. Same usefulness, no harvested mailing
+    list.
+    """
+    found, start, total = {}, 0, 1
+    while start < total:
+        try:
+            body = fetch(query("contact", rows=200, start=start))
+        except Exception as e:
+            print("  stopped at %d (%s)" % (start, str(e)[:44])); break
+        ds, total = docs(body)
+        if not ds:
+            break
+        for doc in ds:
+            # focal points only. The role fields name what the contact IS; a
+            # record that does not say is skipped rather than assumed.
+            role = " ".join(str(doc.get(k) or "") for k in
+                            ("contactType_s", "role_s", "jobTitle_EN_s",
+                             "organizationType_s", "type_s")).lower()
+            if "focal" not in role:
+                continue
+            country = first(doc, COUNTRY_FIELDS) or government_prefix(doc)
+            office = first(doc, ORG_FIELDS)
+            if not country:
+                continue
+            found.setdefault(country, {
+                "office": office or "National biosafety focal point",
+                "url": "https://bch.cbd.int/about/contacts",
+                "note": "Published by the Cartagena Protocol Secretariat and "
+                        "kept current. The contact page holds the current "
+                        "officer; this map records the office, not the person."})
+        start += len(ds)
+        time.sleep(0.4)
+
+    print("  focal points found: %d countries" % len(found))
+    if not found:
+        print("\nNo focal point records matched. Run --discover and check which "
+              "field names the contact's role \u2014 the country field is "
+              "government_EN_s or the prefix on grp_government_schema_s.",
+              file=sys.stderr)
+        return
+    OUT.write_text(json.dumps({"generated": time.strftime("%Y-%m-%d"),
+                               "note": "Offices and countries only. No email "
+                                       "addresses are harvested or written.",
+                               "authorities": found}, ensure_ascii=False,
+                              indent=1), encoding="utf-8")
+    print("wrote %s" % OUT.name)
+    merge(found)
+
+
+def government_prefix(doc):
+    """The country as an ISO2 code on the front of the grouping field, which is
+    how a BCH record carries it when no country field is present."""
+    for f in ("grp_government_schema_s", "grp_government_s"):
+        v = doc.get(f)
+        if isinstance(v, list):
+            v = v[0] if v else None
+        if v and "_" in str(v):
+            code = str(v).split("_", 1)[0].strip()
+            if len(code) == 2 and code.isalpha():
+                return code.upper()
+    return None
+
+
+ORG_FIELDS = ("organization_EN_s", "organization_s", "institution_EN_s",
+              "institution_s", "department_EN_s", "department_s")
 
 
 def _harvest_disabled():
@@ -188,8 +259,8 @@ def merge(found):
         typed = [r for r in rows if not r.get("conf")]
         if typed:
             continue                        # somebody checked this; leave it
-        entry = {"n": a["name"][:120], "lens": "REGULATOR",
-                 "u": a["url"] or None,
+        entry = {"n": (a.get("office") or a.get("name") or "")[:120], "lens": "REGULATOR",
+                 "u": a.get("url") or "https://bch.cbd.int/about/contacts",
                  "d": ("The competent national authority notified to the "
                        "Biosafety Clearing-House under the Cartagena Protocol. "
                        "It receives notifications, files the country's decisions "
