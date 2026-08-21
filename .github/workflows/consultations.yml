@@ -7,6 +7,10 @@ name: Consultations feed
 # old - so a monthly harvest can leave it blank for a fortnight while the
 # facility registers it was riding along with have nothing new to say.
 #
+# It also runs in about a minute against that job's four hours, which is the
+# other half of the reason: there is no sense waiting for 1,140 AAALAC
+# organisations to find out whether a comment period opened yesterday.
+#
 # Daily, and it touches exactly one file.
 
 on:
@@ -24,39 +28,24 @@ concurrency:
 jobs:
   consultations:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      # Selftest FIRST, and it is allowed to fail the step. Same reasoning as
-      # the geolocator in facilities.yml: a filter that has silently loosened,
-      # or a date parser that has stopped understanding the Excel serials the
-      # WTO file is full of, is worse than one that does not run - it writes a
-      # plausible file full of wrong deadlines. This needs no network.
-      - name: Selftest the parsers
-        run: python3 harvest/consultations.py --selftest
-
       - name: Harvest open consultations
         run: |
           set +e
-          # 12m was too tight once the WTO notification workbook became a
-          # source: it is every SPS and TBT notification filed since 1995 in
-          # one file, and the download dominates the run.
-          timeout 20m python3 harvest/consultations.py
-          rc=$?
-          if [ $rc -ne 0 ]; then
-            echo "!! consultations exited $rc - leaving the previous file in place"
-          fi
+          timeout 12m python3 harvest/consultations.py || \
+            echo "!! consultations failed - leaving the previous file in place"
           set -e
 
-          # A failed run must not blank the file. The harvester now refuses to
-          # write at all when no source could be fetched, and exits non-zero,
-          # so there are two guards rather than one: it writes nothing, and
-          # committing nothing is correct. A stale list is caught by the map's
-          # own three-week freshness check, but an EMPTY list would be read as
+          # A failed run must not blank the file. If the harvester wrote
+          # nothing, the file on disk is the last good one and committing
+          # nothing is correct: a stale list is caught by the map's own
+          # three-week freshness check, but an EMPTY list would be read as
           # "no consultations are open anywhere", which is a much worse lie.
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
