@@ -169,6 +169,107 @@ def listing(url, country, label):
     return uniq
 
 
+# ============================================ GLOBAL COVERAGE ================
+#
+# Three sources gave three countries, and every entry sat under "Worldwide"
+# because that is what a portal is. Two additions make this actually global,
+# and both are databases of INDIVIDUAL notices with deadlines rather than pages
+# to go and look at.
+#
+#   ePing / WTO TBT   Every WTO member must notify a draft technical regulation
+#                     before enforcing it, with a comment period attached. That
+#                     is 160-odd countries filing into one searchable database,
+#                     and it is frequently the earliest public sight of a rule -
+#                     including from countries whose own consultation pages are
+#                     decorative. Guide 2 calls it the one hardly anybody uses.
+#
+#   BCH consultations The Cartagena Protocol requires a party to consult the
+#                     public before most first release decisions, and the
+#                     Clearing-House carries those records.
+#
+# Each notice carries the notifying country, so the panel can group by country
+# instead of filing everything under Worldwide.
+
+EPING = "https://eping.wto.org/en/Search/IndexSearch"
+EPING_API = "https://epingalert.org/api/notifications"
+BCH_API = ("https://api.cbd.int/api/v2013/index?q=%2A%3A%2A"
+           "&fq=schema_s%3AbiosafetyDecision&rows=200&wt=json")
+
+GM_TERMS = re.compile(
+    r"genetic|engineered|bioengineer|transgenic|modified organism|"
+    r"living modified|biosafety|gene drive|new genomic|biotech", re.I)
+
+
+def eping():
+    """WTO technical regulation notifications, filtered to this subject.
+
+    The value here is coverage rather than depth: a notification from Kenya or
+    Peru or Viet Nam appears in the same database as one from the EU, with the
+    same fields and the same deadline, which no national portal gives.
+    """
+    out = []
+    for url in (EPING_API + "?keyword=genetically+modified&limit=100",
+                EPING_API + "?keyword=biosafety&limit=100"):
+        try:
+            d = json.loads(get(url))
+        except Exception as e:
+            print("  %-34s %s" % ("ePing / WTO TBT", str(e)[:44]))
+            return out
+        rows = d if isinstance(d, list) else (d.get("results") or d.get("data") or [])
+        for r in rows:
+            title = str(r.get("title") or r.get("productCovered") or "")
+            if not GM_TERMS.search(title):
+                continue
+            close = str(r.get("commentDeadline") or r.get("finalDateForComments") or "")[:10]
+            if not close or close < date.today().isoformat():
+                continue
+            out.append({"title": title[:200],
+                        "agency": "WTO TBT notification",
+                        "closes": close,
+                        "url": r.get("url") or EPING,
+                        "country": str(r.get("notifyingMember")
+                                       or r.get("member") or "").strip() or "Worldwide",
+                        "ref": r.get("symbol") or r.get("id")})
+    seen, uniq = set(), []
+    for r in out:
+        k = r.get("ref") or r["url"] + r["title"][:40]
+        if k in seen:
+            continue
+        seen.add(k); uniq.append(r)
+    print("  %-34s %d open" % ("ePing / WTO TBT", len(uniq)))
+    return uniq
+
+
+def bch_consultations():
+    """Decisions filed to the Clearing-House that are still open for comment."""
+    try:
+        d = json.loads(get(BCH_API))
+    except Exception as e:
+        print("  %-34s %s" % ("Biosafety Clearing-House", str(e)[:44]))
+        return []
+    docs = (d.get("response") or d).get("docs") or []
+    out, today = [], date.today().isoformat()
+    for doc in docs:
+        title = str(doc.get("title_EN_s") or doc.get("title_s") or "")
+        if not title:
+            continue
+        # the country is a prefix on the grouping field, not a field of its own
+        gov = ""
+        v = doc.get("grp_government_schema_s")
+        if isinstance(v, list):
+            v = v[0] if v else ""
+        if v and "_" in str(v):
+            gov = str(v).split("_", 1)[0].upper()
+        close = str(doc.get("commentDeadline_dt") or doc.get("deadline_dt") or "")[:10]
+        if not close or close < today:
+            continue
+        out.append({"title": title[:200], "agency": "Biosafety Clearing-House",
+                    "closes": close, "url": "https://bch.cbd.int/",
+                    "country": gov or "Worldwide"})
+    print("  %-34s %d open" % ("Biosafety Clearing-House", len(out)))
+    return out
+
+
 def main():
     dry = "--dry-run" in sys.argv
     print("Consultations open as of %s" % date.today().isoformat())
@@ -176,6 +277,8 @@ def main():
     rows += federal_register()
     rows += listing(EFSA, "European Union", "EFSA")
     rows += listing(OGTR, "Australia", "OGTR")
+    rows += eping()
+    rows += bch_consultations()
     rows.sort(key=lambda r: r["closes"])
 
     if not rows:
