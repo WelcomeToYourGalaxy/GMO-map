@@ -456,7 +456,13 @@ body.info-open #controls #indexPanel{position:static !important;
 .psrc-row{display:block;font-size:10px;color:#c3c9d9;margin:3px 0;line-height:1.3;cursor:pointer;}
 .psrc-empty{font-size:9.5px;color:#8994b4;line-height:1.4;padding:3px 0;}
 .psrc-l{font-weight:600;} .psrc-n{color:#7481ac;font-weight:400;}
-.psrc-d{display:block;color:#8997ad;margin-left:18px;font-size:9.5px;}
+.psrc-item{margin:3px 0;}
+.psrc-line{display:flex;align-items:flex-start;gap:4px;}
+.psrc-line .psrc-row{flex:1;margin:0;}
+.psrc-car{cursor:pointer;color:#7481ac;font-size:9px;line-height:1.4;padding:0 2px;user-select:none;transition:transform .15s;flex:0 0 auto;}
+.psrc-item.open .psrc-car{transform:rotate(180deg);}
+.psrc-d{display:none;color:#8997ad;margin-left:18px;font-size:9.5px;line-height:1.45;padding:2px 0 3px;}
+.psrc-item.open .psrc-d{display:block;}
 .hl-sec{display:inline-block;margin-top:2px;color:#7fa8cc;}
 .proj-search{margin:5px 0 2px 22px;max-width:236px;display:flex;align-items:center;gap:6px;}
 .proj-search input{flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);border-radius:5px;color:#d9deec;font-size:10.5px;padding:3px 6px;outline:none;}
@@ -642,19 +648,12 @@ function pjReport(which, data){
 <div id="legend">
   <div id="legHead"><span>Map key</span><span id="legTog" onclick="document.getElementById('legend').classList.toggle('collapsed')" title="Show / hide the map key">&#9662;</span></div>
   <div id="legBody">
-  <label class="f-status"><input type="checkbox" id="projChk" checked> All map points</label><div class="lg-n" style="margin:3px 0 6px;font-size:9px;line-height:1.45;"><b>Filled</b> means a real coordinate. <b>A hollow ring</b> means the source published none - most do not - so the marker sits at a fallback point for that country, state or city. A corporate headquarters is always hollow: it is an office, and the laboratories, plants and fields the company runs are somewhere else entirely.</div><div class="pj-kinds"><label><input type="checkbox" class="pj-kind" data-kind="industry" checked> <b>Industry</b> — every entity in it</label><label><input type="checkbox" class="pj-kind" data-kind="escape" checked> <b>Spread &amp; drift</b> — what got out</label><label><input type="checkbox" class="pj-kind" data-kind="release" checked> <b>Releases</b> — authorisations</label><label><input type="checkbox" class="pj-kind" data-kind="biosafety" checked> <b>Biosafety decisions</b> — national rulings</label><label><input type="checkbox" class="pj-kind" data-kind="clinical" checked> <b>Clinical trials</b> — gene &amp; cell therapy sponsors</label><label><input type="checkbox" class="pj-kind" data-kind="repro" checked> <b>Fertility clinics</b> — licensed and approved</label><label><input type="checkbox" class="pj-kind" data-kind="animals" checked> <b>Animal facilities</b> — registered and accredited</label></div><div class="ot-head">Release records</div><div class="pj-otypes" id="relBox"></div><div class="ot-head">What they work on</div><div class="pj-otypes" id="subjBox"></div><div class="ot-head">Entity type</div><div class="pj-otypes" id="otBox"></div><div class="ot-head">Shaded areas</div><div class="pj-otypes" id="regBox"></div><div class="ot-head">GM zones</div><div class="pj-otypes" id="ovBox"></div>
-  <div class="proj-size"><span class="ps-lab">Release scale &mdash; select any</span><span class="ps-pill on" data-ms="all">All</span><span class="ps-pill" data-ms="3">Medium <i>multi-site trial</i></span><span class="ps-pill" data-ms="4">Large <i>regional / multi-season</i></span><span class="ps-pill" data-ms="5">Largest <i>commercial cultivation</i></span></div><div class="proj-size proj-phase"><span class="ps-lab">Consent phase &mdash; select any</span><span class="ps-pill on" data-ph="pre">In review <i>pre-consent &middot; applied / notified / under assessment</i></span><span class="ps-pill on" data-ph="post">Consented <i>post-consent &middot; approved / planted / marketed</i></span></div>
-  <div class="lp-detail collapsed"><div class="lp-detail-head" onclick="this.parentNode.classList.toggle('collapsed')"><span class="lp-car">&#9662;</span> What is kept and what is dropped</div><div class="lp-detail-body" style="font-size:9px;line-height:1.45;">
+  <label class="f-status"><input type="checkbox" id="projChk" checked> All map points</label><div class="pj-kinds"><label><input type="checkbox" class="pj-kind" data-kind="industry" checked> <b>Industry</b> — every entity in it</label><label><input type="checkbox" class="pj-kind" data-kind="escape" checked> <b>Spread &amp; drift</b> — what got out</label><label><input type="checkbox" class="pj-kind" data-kind="release" checked> <b>Releases</b> — authorisations</label><label><input type="checkbox" class="pj-kind" data-kind="biosafety" checked> <b>Biosafety decisions</b> — national rulings</label><label><input type="checkbox" class="pj-kind" data-kind="clinical" checked> <b>Clinical trials</b> — gene &amp; cell therapy sponsors</label><label><input type="checkbox" class="pj-kind" data-kind="repro" checked> <b>Fertility clinics</b> — licensed and approved</label><label><input type="checkbox" class="pj-kind" data-kind="animals" checked> <b>Animal facilities</b> — registered and accredited</label></div><div class="ot-head">Release records</div><div class="pj-otypes" id="relBox"></div><div class="lp-detail collapsed"><div class="lp-detail-head" onclick="this.parentNode.classList.toggle('collapsed')"><span class="lp-car">&#9662;</span> What is kept and what is dropped</div><div class="lp-detail-body" style="font-size:9px;line-height:1.45;">
     In the release layer a record is kept only if it has a release component — an import or interstate movement permit is not an environmental release, and most rows in the source are one of those. A record is dropped only if the authorisation was never granted: withdrawn, denied, void, returned, cancelled. <span id="dropShare"></span> Everything granted is kept, including permits that have since lapsed, because a trial that ran in 1994 took place whether or not the paperwork is still in date. Lapsed records are marked, and the “Show dormant / defunct” switch controls whether they are drawn. In the facility layers nothing is dropped; a register’s own uncertainty travels with the record instead.<br><br>
-</div></div><div class="proj-search"><input id="projQ" type="search" placeholder="Search releases by organism, trait or applicant…" autocomplete="off"><span id="projQn"></span></div>
-  <div class="proj-time"><span class="ps-lab">Filing recency — dated registers</span><span class="pt-pill on" data-tw="0">All ages</span><span class="pt-pill" data-tw="30">≤30d</span><span class="pt-pill" data-tw="90">≤90d</span><span class="pt-pill" data-tw="180">≤6mo</span><span class="pt-pill" data-tw="365">≤1yr</span><label class="pt-und"><input type="checkbox" id="pjUndated" checked> Include undated</label></div><div class="lp-detail collapsed"><div class="lp-detail-head" onclick="this.parentNode.classList.toggle('collapsed')"><span class="lp-car">&#9662;</span> How people have changed this, and where the levers are</div><div class="lp-detail-body">
-    Every mechanism below is one that has already worked somewhere, and most of them are on this map as entries you can click. None of it is a recommendation; it is a record of what has been done and under which law.<br><br>
-    <b>1. Declaring a place GM-free.</b> Roughly 200 declarations across 15 countries are drawn on this map, and they were made in four different ways. <b>National or regional law</b> is the strongest: Austria, and later the whole EU opt-out mechanism, came from a member state invoking a safeguard clause against an approved variety and winning — that fight is why Article 26b exists, and any EU member can now refuse cultivation on its own territory without disputing the science. <b>Sub-national ordinance</b> works where farming is a local competence: several US counties passed cultivation bans by ballot measure, and the ones that survived did so where state law had not pre-empted them, which is the first thing to check anywhere. <b>Voluntary grower agreements</b> need no legislature at all — neighbouring farms contract with each other, which is how most European regions were declared, and it holds because the contract is between the people who would otherwise be liable to each other for drift. <b>Certification</b> is the quietest and often the fastest: organic and biodynamic standards exclude engineered material outright, so a region that certifies has made itself GM-free by private contract, and a positive test costs the grower the price premium rather than a fine.<br><br>
-    <b>2. Contesting a particular release.</b> The window is narrower than people expect and it opens before approval, not after. Under the Cartagena Protocol a party must file its decision publicly and, for most first imports, run a public comment period — that is what the Biosafety Clearing-House records exist for, and comments filed in that window are on the record in a way that objections afterwards are not. In the United States the equivalent is the Federal Register notice for a petition for deregulation. After approval the routes are judicial: the Philippines revoked the Golden Rice and Bt eggplant approvals in 2024 through a constitutional environmental remedy that citizens can invoke directly — the only case anywhere of a court withdrawing a granted biosafety approval at the public’s request. Elsewhere it usually requires showing procedural failure rather than disagreement with the outcome. Write down the authorisation number: it is the one string that identifies the decision in every filing about it.<br><br>
-    <b>3. The levers that are not government at all.</b> Several things on this map have moved more ground than any law. <b>Buyers.</b> A food manufacturer or supermarket declining engineered ingredients changes what growers plant in its supply chain, with no consultation and no appeal — that mechanism, not legislation, is what moved European acreage. <b>Insurers.</b> If no reinsurer will write cover for a release, it does not happen regardless of what a regulator permits. <b>Certifiers.</b> Organic and biodynamic bodies set standards their members must meet, and withdrawal costs more than most penalties. <b>Litigation.</b> One case — StarLink maize in 2000 — remains the reference for who pays when an engineered organism turns up where it was not approved, and the glyphosate verdicts are the only mechanism that has extracted money from this industry at scale.<br><br>
-    <b>4. Where the argument is actually being decided now.</b> Not in biosafety law, which is being narrowed, but in three places beside it. <b>Seed law:</b> UPOV’s 1991 act restricts replanting seed from your own harvest and the 1978 act does not; countries move between them through trade agreements, and 17 remain on the older act. <b>Trade law:</b> the WTO treats a health measure as justified only if scientifically supported, so a national restriction can be challenged by another country as a trade barrier. <b>Definitions:</b> around forty countries have moved gene-edited organisms outside registration entirely, which removes the permit, the file and the comment period in one step — there is nothing left to object to. That is why the definitional fight matters more than any single approval.<br><br>
-    </div></div>
-    <div class="lp-detail collapsed"><div class="lp-detail-head" onclick="this.parentNode.classList.toggle('collapsed')"><span class="lp-car">&#9662;</span> Where this data comes from &amp; what's not (yet) in it</div><div class="lp-detail-body">
+</div></div><div class="ot-head">What they work on</div><div class="pj-otypes" id="subjBox"></div><div class="ot-head">Entity type</div><div class="pj-otypes" id="otBox"></div><div class="lg-n" style="margin:3px 0 6px;font-size:9px;line-height:1.45;"><b>Filled</b> means a real coordinate. <b>A hollow ring</b> means the source published none - most do not - so the marker sits at a fallback point for that country, state or city. A corporate headquarters is always hollow: it is an office, and the laboratories, plants and fields the company runs are somewhere else entirely.</div><div class="ot-head">Shaded areas</div><div class="pj-otypes" id="regBox"></div><div class="ot-head">GM zones</div><div class="pj-otypes" id="ovBox"></div>
+  <div class="proj-size"><span class="ps-lab">Release scale &mdash; select any</span><span class="ps-pill on" data-ms="all">All</span><span class="ps-pill" data-ms="3">Medium <i>multi-site trial</i></span><span class="ps-pill" data-ms="4">Large <i>regional / multi-season</i></span><span class="ps-pill" data-ms="5">Largest <i>commercial cultivation</i></span></div><div class="proj-size proj-phase"><span class="ps-lab">Consent phase &mdash; select any</span><span class="ps-pill on" data-ph="pre">In review <i>pre-consent &middot; applied / notified / under assessment</i></span><span class="ps-pill on" data-ph="post">Consented <i>post-consent &middot; approved / planted / marketed</i></span></div>
+  <div class="proj-search"><input id="projQ" type="search" placeholder="Search releases by organism, trait or applicant…" autocomplete="off"><span id="projQn"></span></div>
+  <div class="proj-time"><span class="ps-lab">Filing recency — dated registers</span><span class="pt-pill on" data-tw="0">All ages</span><span class="pt-pill" data-tw="30">≤30d</span><span class="pt-pill" data-tw="90">≤90d</span><span class="pt-pill" data-tw="180">≤6mo</span><span class="pt-pill" data-tw="365">≤1yr</span><label class="pt-und"><input type="checkbox" id="pjUndated" checked> Include undated</label></div>    <div class="lp-detail collapsed"><div class="lp-detail-head" onclick="this.parentNode.classList.toggle('collapsed')"><span class="lp-car">&#9662;</span> Where this data comes from &amp; what's not (yet) in it</div><div class="lp-detail-body">
     Nearly everything here is state-published: biosafety law in most countries requires a public register, medicines regulators publish trial sponsors, and fertility regulators publish licensed clinics. Very little of it is published in a form a machine can read. That single fact shapes every layer on this map, and it is the reason the coverage is uneven in the particular ways set out below.<br><br>
     <b>What is on the map, and where each layer came from.</b><br>
     &bull; <b>Releases — 22,163 records.</b> Almost all from APHIS, which publishes two files updated each business day, in the public domain. Alongside them, 51 country records from the Biosafety Clearing-House and five Australian OGTR licences transcribed by hand.<br>
@@ -2904,12 +2903,32 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
       });
       ordered.forEach(function(s){ if(!counts[s.k]) return;
         if(s.cat!==lastCat){ h+='<div class="psrc-cat">'+s.cat+'</div>'; lastCat=s.cat; }
-        h+='<label class="psrc-row"><input type="checkbox" data-src="'+s.k+'" checked> <span class="psrc-l">'+s.label+' <span class="psrc-n">'+counts[s.k]+'</span></span><span class="psrc-d">'+s.desc+'</span></label>';
+        /* The description is a fold rather than a standing paragraph: with
+           fifteen-odd sources the list was several screens of prose and the
+           checkboxes - the thing the control is for - were buried in it.
+           The caret is its own element and NOT inside the <label>, because a
+           label forwards every click to its checkbox: one tap would have
+           opened the note and unticked the source at the same time. */
+        h+='<div class="psrc-item">'
+          +  '<div class="psrc-line">'
+          +    '<label class="psrc-row"><input type="checkbox" data-src="'+s.k+'" checked> '
+          +      '<span class="psrc-l">'+s.label+' <span class="psrc-n">'+counts[s.k]+'</span></span>'
+          +    '</label>'
+          +    '<span class="psrc-car" title="What this layer is, and what it leaves out">&#9662;</span>'
+          +  '</div>'
+          +  '<div class="psrc-d">'+s.desc+'</div>'
+          +'</div>';
       });
     }
     h+='</div>'; box.innerHTML=h;
     if(wasOpen) box.classList.add("open");
     if(nRows>0) box.setAttribute('data-built','1');
+    box.querySelectorAll('.psrc-car').forEach(function(c){
+      c.addEventListener('click',function(e){
+        e.preventDefault(); e.stopPropagation();
+        var it=c.closest('.psrc-item'); if(it) it.classList.toggle('open');
+      });
+    });
     box.querySelectorAll('input[data-src]').forEach(function(cb){
       cb.addEventListener("change",function(){ if(cb.checked)activeProjSrc.add(cb.dataset.src); else activeProjSrc.delete(cb.dataset.src); pjRender(); });
     });
@@ -5581,7 +5600,10 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   h+=row(ci(_c(_CLI,3,'#7b83ec')),'A clinical trial sponsor');
   h+=row(ci(_c(_REP,3,'#e24f97')),'A fertility clinic');
   h+=row(ci(_c(_ANI,3,'#1dbfae')),'An animal facility');
-  h+='<div class="lg-n"><b>Filled</b> means a real coordinate. <b>A hollow ring</b> means the source published none, so the marker sits at a fallback for that country, state or city. A company head office is always hollow — it is an office, and the laboratories and fields are elsewhere. A <b>numbered circle</b> is several records at one point, sized by how many; a white ring around it means more than one kind is under it.</div>';
+  /* The filled/hollow note lives ONCE, at the foot of the point toggles
+     above 'Shaded areas'. It used to render here as well and again in the
+     industry subject list, so the same paragraph appeared three times in
+     one box. */
   if(typeof OTC!=='undefined'&&typeof OTLABEL!=='undefined'){
     h+='<div class="lg-h">Industry entities, by type</div>';
     Object.keys(OTC).forEach(function(t){ h+=row(ci(OTC[t]),OTLABEL[t]); });
@@ -7952,19 +7974,10 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   };
   try{ window.PJ_SPEC_LABEL = L; window.PJ_SPEC_COLOUR = COL;
        window.PJ_SPEC_DESC = D;
-  /* The marker note, rendered at the foot of the Industry organism list. */
-  try{
-    document.addEventListener('DOMContentLoaded', function(){
-      setTimeout(function(){
-        try{
-          var host = document.querySelector('.pj-subj, #industrySubjects, .subj-list');
-          if(!host || !window.PJ_MARKER_NOTE) return;
-          if(host.querySelector('.ind-foot')) return;
-          host.insertAdjacentHTML('beforeend', window.PJ_MARKER_NOTE);
-        }catch(e){}
-      }, 900);
-    });
-  }catch(e){}
+  /* The marker-note injector that used to run here is gone: the note now sits
+     once, at the foot of the point toggles above "Shaded areas". It was also
+     being rendered by the legend builder, so the same paragraph appeared three
+     times in one box. PJ_MARKER_NOTE is left defined but unused. */
   /* Moved out of the Industry checkbox label and down here, under the organism list.
      Sitting beside the toggle it read as a note about the toggle; it is about
      every marker on the map, and it belongs where a reader is already looking
@@ -8385,7 +8398,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     head.className = 'ot-head'; head.textContent = 'Treaty membership';
     var note = document.createElement('div');
     note.className = 'ot-note';
-    note.innerHTML = 'Any number at once. A filled country is a party; a faint one has been checked and is not.';
+    note.innerHTML = '';
     var h = '';
     TREATY_DEFS.forEach(function(d){
       h += '<label title="'+d.label.replace(/"/g,'&quot;')+'">'
