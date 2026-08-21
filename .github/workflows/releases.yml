@@ -51,6 +51,13 @@ jobs:
             timeout 8m python3 harvest/fas_biotech.py       || echo "!! fas biotech failed - continuing"
             timeout 8m python3 harvest/treaties.py || echo "!! treaties failed - continuing"
             # last: it reads what the facility harvesters wrote
+            # The organism registry must run BEFORE the decisions harvester:
+            # it resolves a code-only decision title to its organism from that
+            # file, and without it every such title stays unnamed.
+            timeout 10m python3 harvest/bch_organisms.py   || echo "!! bch organisms failed - continuing"
+            timeout 8m  python3 harvest/eu_releases.py     || echo "!! eu releases failed - continuing"
+            timeout 8m  python3 harvest/latam_approvals.py || echo "!! latam approvals failed - continuing"
+            timeout 10m python3 harvest/isaaa_approvals.py || echo "!! isaaa approvals failed - continuing"
             timeout 14m python3 harvest/bch_decisions.py    || echo "!! bch decisions failed - continuing"
             timeout 8m python3 harvest/clinical_sponsors.py || echo "!! clinical sponsors failed - continuing"
             timeout 8m python3 harvest/aphis_releases.py || echo "!! aphis harvester failed - continuing"
@@ -67,7 +74,7 @@ jobs:
                      harvest/cfia_records.json harvest/industry_points.json \
                      harvest/register_records.json harvest/animal_facilities.json \
                      harvest/ogtr_trials.json \
-                     harvest/bch_decisions.json harvest/gmofree_zones.json harvest/fas_biotech.json \
+                     harvest/bch_organisms.json harvest/eu_releases.json harvest/latam_approvals.json harvest/isaaa_approvals.json harvest/bch_decisions.json harvest/gmofree_zones.json harvest/fas_biotech.json \
                      harvest/clinical_sponsors.json \
                      harvest/fertility_clinics.json \
                      harvest/cdc_art_clinics.json harvest/osm_facilities.json \
