@@ -4169,7 +4169,12 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
     'gen\u00e9ticamente modificad', 'g\u00e9n\u00e9tiquement modifi',
     'modificados geneticamente', 'transgen', 'transg\u00e9n',
     'transg\u00eanic', 'bioseguridad', 'biosseguran', 'bioseguran',
-    'bios\u00e9curit', 'biosecurit', 'biotecnolog'
+    /* 'biosecurit' unaccented was here and is deliberately gone. In English
+       it means pest and disease quarantine - mangosteen imports, entry-exit
+       animal inspection - and it let the first live run's fruit-import notices
+       through client-side. The accented French spelling is unambiguous and
+       stays. Matches the same correction in the harvester's SUBJECT list. */
+    'bios\u00e9curit', 'biotecnolog'
   ];
   /* Short forms need a word boundary. 'gm' inside 'alignment' and 'lmo' inside
      'filmore' are the kind of match that puts a fisheries notice on this map. */
@@ -4242,9 +4247,17 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
   function _consRows(country, cap){
     try{
       if(!PJ_CONS || !PJ_CONS.consultations) return null;
-      var gen = new Date(PJ_CONS.generated + 'T00:00:00');
+      /* 'T00:00:00Z', not 'T00:00:00'. Without the Z this is parsed as
+         LOCAL midnight, while the harvester stamps the runner's UTC date - so
+         for every reader west of UTC a file generated today is dated in their
+         own future for the rest of the evening, ageDays goes negative, and the
+         whole live list is thrown away as "stale". That is what left this
+         panel showing venues on the day of a successful harvest.
+         The negative tolerance covers any timezone (max offset 14h) and clock
+         skew; a file dated next month is still refused. */
+      var gen = new Date(PJ_CONS.generated + 'T00:00:00Z');
       var ageDays = (Date.now() - gen.getTime()) / 86400000;
-      if(!(ageDays >= 0) || ageDays > 21) return null;      /* stale: say nothing */
+      if(!(ageDays > -1.5) || ageDays > 21) return null;    /* stale: say nothing */
       var today = new Date(); today.setHours(0,0,0,0);
       var out = [], dropped = 0;
       PJ_CONS.consultations.forEach(function(c){
