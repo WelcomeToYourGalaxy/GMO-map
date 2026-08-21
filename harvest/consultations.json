@@ -1,113 +1,7 @@
 {
  "generated": "2026-08-21",
- "sources": [
-  {
-   "source": "ePing / WTO (SPS+TBT)",
-   "rows": 10,
-   "detail": "104868 rows scanned, 1041 on subject, 10 still open",
-   "kind": "feed"
-  },
-  {
-   "source": "Federal Register",
-   "rows": 2,
-   "detail": "",
-   "kind": "feed"
-  },
-  {
-   "source": "EFSA",
-   "rows": null,
-   "detail": "unreachable: HTTP Error 404: Not Found",
-   "kind": "feed"
-  },
-  {
-   "source": "OGTR",
-   "rows": 0,
-   "detail": "listing parsed but nothing carried a future date",
-   "kind": "feed"
-  },
-  {
-   "source": "Biosafety Clearing-House",
-   "rows": null,
-   "detail": "not a live-window source - see bch_note(); the BCH row stays a venue",
-   "kind": "note"
-  }
- ],
- "sources_reached": 3,
- "sources_total": 4,
- "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. `sources` records what each source returned, so an empty list can be told apart from a failed fetch.",
+ "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all.",
  "consultations": [
-  {
-   "title": "Mangosteen fruit from Malaysia: biosecurity import requirements draft report",
-   "agency": "WTO Regular notification notification",
-   "closes": "2026-08-24",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NAUS636.docx",
-   "country": "Australia",
-   "ref": "G/SPS/N/AUS/636"
-  },
-  {
-   "title": "Measures on the Quarantine and Administration of Entry-Exit Animals and Hereditary Substance of Animals",
-   "agency": "WTO Revision to Regular Notification notification",
-   "closes": "2026-08-30",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NCHN1354R1.docx",
-   "country": "China",
-   "ref": "G/SPS/N/CHN/1354/Rev.1"
-  },
-  {
-   "title": "Decrowned pineapples from India and Indonesia: biosecurity import requirements draft report",
-   "agency": "WTO Regular notification notification",
-   "closes": "2026-09-14",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NAUS638.docx",
-   "country": "Australia",
-   "ref": "G/SPS/N/AUS/638"
-  },
-  {
-   "title": "Draft Regulation of The Halal Product Assurance Organizing Agency (BPJPH) Number … of … on The Renewal of Halal Certificates",
-   "agency": "WTO Regular notification notification",
-   "closes": "2026-09-21",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/IDN189.docx",
-   "country": "Indonesia",
-   "ref": "G/TBT/N/IDN/189"
-  },
-  {
-   "title": "Draft Decree of the Halal Product Assurance Organizing Agency (BPJPH) No. … of 2026 on the Assessment of Halal Product Assurance System Implementation",
-   "agency": "WTO Regular notification notification",
-   "closes": "2026-09-21",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/IDN188.docx",
-   "country": "Indonesia",
-   "ref": "G/TBT/N/IDN/188"
-  },
-  {
-   "title": "Decreeamending and supplementing a number of articles of decrees in the field of forestry and forest protection; Nature and Biodiversity Conservation",
-   "agency": "WTO Regular notification notification",
-   "closes": "2026-09-22",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NVNM186.docx",
-   "country": "Viet Nam",
-   "ref": "G/SPS/N/VNM/186"
-  },
-  {
-   "title": "Draft Regulation of the Halal Product Assurance Organizing Body concerning Conformity Assurance of Foreign Halal Products Entering to Indonesia",
-   "agency": "WTO Regular notification notification",
-   "closes": "2026-09-28",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/IDN190.docx",
-   "country": "Indonesia",
-   "ref": "G/TBT/N/IDN/190"
-  },
-  {
-   "title": "Proposed amendments to the “Labelling Standards for Genetically Modified Foods”",
-   "agency": "WTO Addendum to Regular Notification notification",
-   "closes": "2026-10-04",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/KOR1345A1.docx",
-   "country": "Korea, Republic of",
-   "ref": "G/TBT/N/KOR/1345/Add.1"
-  },
-  {
-   "title": "Proposed amendments to the “Labelling Standards for Genetically Modified Foods”",
-   "agency": "WTO Addendum to Regular Notification notification",
-   "closes": "2026-10-06",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/KOR1345A2.docx",
-   "country": "Korea, Republic of",
-   "ref": "G/TBT/N/KOR/1345/Add.2"
-  },
   {
    "title": "U.S. Department of Agriculture, Agricultural Research Service: Availability of a Petition for a Determination of Nonregulated Status and Draft Plant Pest Risk Assessment for Early and Near-Continuous ",
    "agency": "Agriculture Department",
@@ -115,14 +9,6 @@
    "url": "https://www.federalregister.gov/documents/2026/08/14/2026-16623/us-department-of-agriculture-agricultural-research-service-availability-of-a-petition-for-a",
    "country": "United States",
    "ref": "2026-16623"
-  },
-  {
-   "title": "Draft Circular of the Minister of Agriculture and Environment Providing for the Quarantine of Animals and Animal Products",
-   "agency": "WTO Regular notification notification",
-   "closes": "2026-10-16",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NVNM190.docx",
-   "country": "Viet Nam",
-   "ref": "G/SPS/N/VNM/190"
   },
   {
    "title": "Pioneer Hi-Bred International, Inc.: Availability of a Petition for a Determination of Nonregulated Status and Draft Plant Pest Risk Assessment for Insect Resistant COR-23134-4 Soybean (Glycine max)",
