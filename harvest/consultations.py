@@ -36,8 +36,32 @@ OUT = HERE / "consultations.json"
 UA = "GMO-map/1.0 (public research map)"
 
 FR_API = "https://www.federalregister.gov/api/v1/documents.json"
-FR_TERMS = ["genetically engineered", "genetically modified organism",
-            "plant-incorporated protectant", "biotechnology regulatory services"]
+# A term search on the Federal Register is far too loose: "genetically
+# engineered" matches any notice that mentions it in passing, and most of what
+# came back was pesticide registration and chemical review with a single
+# incidental sentence. Two changes fix it.
+#
+# First, phrases that only appear when an engineered ORGANISM is the subject.
+# Second, a title test applied afterwards, because the API searches full text
+# and a document about this subject says so in its title.
+FR_TERMS = ["genetically engineered organism", "modified organism",
+            "petition for determination of nonregulated status",
+            "plant-incorporated protectant", "bioengineered food",
+            "gene drive", "genetically engineered animal"]
+
+# Applied to the title. A notice that passes the search and fails this is about
+# something else that mentioned the subject once.
+TITLE_OK = re.compile(
+    r"genetic|engineered|bioengineer|nonregulated status|"
+    r"plant-incorporated|gene drive|biotechnolog|transgenic|"
+    r"modified organism", re.I)
+
+# And notices that are about a chemical, which is a different subject even when
+# the crop it is sprayed on is engineered.
+TITLE_NO = re.compile(
+    r"tolerances?\b|pesticide product registration|registration review|"
+    r"inert ingredient|antimicrobial|residue|air quality|drinking water|"
+    r"significant new use|premanufacture notice", re.I)
 EFSA = "https://www.efsa.europa.eu/en/consultations"
 OGTR = "https://www.ogtr.gov.au/what-weve-approved/dealings-involving-intentional-release"
 
@@ -70,6 +94,9 @@ def federal_register():
         for r in d.get("results") or []:
             close = r.get("comments_close_on")
             if not close or close < today:
+                continue
+            title = r.get("title") or ""
+            if not TITLE_OK.search(title) or TITLE_NO.search(title):
                 continue
             ag = r.get("agencies") or []
             out.append({
@@ -121,6 +148,8 @@ def listing(url, country, label):
     for m in re.finditer(r'<a[^>]+href="([^"]+)"[^>]*>([^<]{15,160})</a>', html):
         href, title = m.group(1), re.sub(r"\s+", " ", m.group(2)).strip()
         if not re.search(r"consult|comment|submission|application", title, re.I):
+            continue
+        if not TITLE_OK.search(title) or TITLE_NO.search(title):
             continue
         window = html[m.start(): m.start() + 900]
         fut = [d for d in _dates(window) if today <= d <= today + timedelta(days=400)]

@@ -43,19 +43,22 @@
     "n": "EnviroLogix QuickStix",
     "lens": "TESTING",
     "u": "https://www.envirologix.com/",
-    "d": "Lateral flow strips, the same format as a pregnancy test. Crush tissue or seed in water, dip, read in five to ten minutes. Sold to anyone, a few pounds each, in packs. Strips are trait-specific, so know which trait to look for before buying."
+    "d": "Lateral flow strips, the same format as a pregnancy test. Crush tissue or seed in water, dip, read in five to ten minutes. Sold to anyone, a few pounds each, in packs. Strips are trait-specific, so know which trait to look for before buying.",
+    "ww": true
    },
    {
     "n": "Romer Labs AgraStrip",
     "lens": "TESTING",
     "u": "https://www.romerlabs.com/",
-    "d": "Strips plus the extraction kits that go with them, sold internationally — which matters because the trait to test for differs by region."
+    "d": "Strips plus the extraction kits that go with them, sold internationally — which matters because the trait to test for differs by region.",
+    "ww": true
    },
    {
     "n": "Agdia ImmunoStrip",
     "lens": "TESTING",
     "u": "https://www.agdia.com/",
-    "d": "Sells in small quantities with published prices, which makes it the most usable of the three for someone testing a handful of samples rather than a lorry."
+    "d": "Sells in small quantities with published prices, which makes it the most usable of the three for someone testing a handful of samples rather than a lorry.",
+    "ww": true
    }
   ],
   "decides": [
@@ -63,7 +66,8 @@
     "n": "Biosafety Clearing-House — national focal points",
     "lens": "REGULATOR",
     "u": "https://bch.cbd.int/about/contacts",
-    "d": "Every party to the Cartagena Protocol must name a contact for biosafety, and the list is public. For most of the world it is the only named biosafety contact that exists, and it holds the decisions filed for that country."
+    "d": "Every party to the Cartagena Protocol must name a contact for biosafety, and the list is public. For most of the world it is the only named biosafety contact that exists, and it holds the decisions filed for that country.",
+    "ww": true
    }
   ],
   "notice": [
@@ -71,7 +75,8 @@
     "n": "Biosafety Clearing-House — decisions and consultations",
     "lens": "CONSULTATION",
     "u": "https://bch.cbd.int/",
-    "d": "Parties file their decisions here, and for most first imports for release a public consultation is required beforehand. For countries with no notice venue of their own, this is the only place an application becomes visible in advance."
+    "d": "Parties file their decisions here, and for most first imports for release a public consultation is required beforehand. For countries with no notice venue of their own, this is the only place an application becomes visible in advance.",
+    "ww": true
    }
   ],
   "certify": [
@@ -79,7 +84,8 @@
     "n": "IFOAM — Organics International",
     "lens": "CERTIFIER",
     "u": "https://www.ifoam.bio/",
-    "d": "The global umbrella for organic standards, which exclude engineered material by definition in every member scheme. Use it to find the certifier operating where you are: a positive test costs an operator the certification and the price premium immediately, without a hearing."
+    "d": "The global umbrella for organic standards, which exclude engineered material by definition in every member scheme. Use it to find the certifier operating where you are: a positive test costs an operator the certification and the price premium immediately, without a hearing.",
+    "ww": true
    }
   ],
   "legal": [
@@ -87,25 +93,33 @@
     "n": "Center for Food Safety — legal programme",
     "lens": "LEGAL",
     "u": "https://www.centerforfoodsafety.org/",
-    "d": "Has brought most of the significant US litigation in this field, including the cases that vacated approvals for engineered alfalfa and sugar beet pending fuller environmental review. Takes information from the public and publishes model ordinance text for local measures."
+    "d": "Has brought most of the significant US litigation in this field, including the cases that vacated approvals for engineered alfalfa and sugar beet pending fuller environmental review. Takes information from the public and publishes model ordinance text for local measures.",
+    "only": [
+     "United States"
+    ]
    },
    {
     "n": "Testbiotech",
     "lens": "LEGAL",
     "u": "https://www.testbiotech.org/",
-    "d": "Files formal objections to EU approvals and requests internal review of Commission decisions — a specific legal mechanism most people do not know exists. Its published objections are the template for anyone drafting one."
+    "d": "Files formal objections to EU approvals and requests internal review of Commission decisions — a specific legal mechanism most people do not know exists. Its published objections are the template for anyone drafting one.",
+    "only": "EU"
    },
    {
     "n": "ClientEarth",
     "lens": "LEGAL",
     "u": "https://www.clientearth.org/",
-    "d": "Environmental lawyers who litigate on process rather than on the technology: whether an assessment was adequate, whether a consultation was real, whether access to documents was refused lawfully. That is the ground on which these cases are usually won."
+    "d": "Environmental lawyers who litigate on process rather than on the technology: whether an assessment was adequate, whether a consultation was real, whether access to documents was refused lawfully. That is the ground on which these cases are usually won.",
+    "only": "EEA"
    },
    {
     "n": "Public Patent Foundation — OSGATA v. Monsanto",
     "lens": "LEGAL",
     "u": "https://www.osgata.org/",
-    "d": "Brought the case in which organic and conventional growers sought protection from patent claims over seed that arrived on their land without them planting it. The court declined jurisdiction on the strength of a binding commitment not to sue over trace presence, which is now the operative assurance."
+    "d": "Brought the case in which organic and conventional growers sought protection from patent claims over seed that arrived on their land without them planting it. The court declined jurisdiction on the strength of a binding commitment not to sue over trace presence, which is now the operative assurance.",
+    "only": [
+     "United States"
+    ]
    }
   ],
   "open": [
@@ -113,19 +127,26 @@
     "n": "Federal Register — open comment periods",
     "lens": "CONSULTATION",
     "u": "https://www.federalregister.gov/documents/search?conditions%5Bterm%5D=genetically+engineered",
-    "d": "US notices with a comment window, searchable and subscribable by email. Thirty to sixty days, and a comment filed inside it must be addressed in the decision. Subscribe rather than check: thirty days is short if you hear on day twenty-eight."
+    "d": "US notices with a comment window, searchable and subscribable by email. Thirty to sixty days, and a comment filed inside it must be addressed in the decision. Subscribe rather than check: thirty days is short if you hear on day twenty-eight.",
+    "only": [
+     "United States"
+    ]
    },
    {
     "n": "EFSA public consultations",
     "lens": "CONSULTATION",
     "u": "https://www.efsa.europa.eu/en/consultations",
-    "d": "Every European assessment is published in full with the panel's reasoning and opened for comment, typically for thirty days. The document states what was assessed, which makes it possible to comment on what was not."
+    "d": "Every European assessment is published in full with the panel's reasoning and opened for comment, typically for thirty days. The document states what was assessed, which makes it possible to comment on what was not.",
+    "only": "EU"
    },
    {
     "n": "OGTR — applications open for comment",
     "lens": "CONSULTATION",
     "u": "https://www.ogtr.gov.au/what-weve-approved",
-    "d": "Australia publishes each application, the risk assessment plan and the proposed field sites, then invites comment for around thirty days. Knowing the sites before the decision is what makes a local objection possible."
+    "d": "Australia publishes each application, the risk assessment plan and the proposed field sites, then invites comment for around thirty days. Knowing the sites before the decision is what makes a local objection possible.",
+    "only": [
+     "Australia"
+    ]
    }
   ]
  },
@@ -4207,5 +4228,68 @@
     "d": "Kerala declared itself an organic state and has refused engineered crop trials outright."
    }
   }
+ },
+ "regions": {
+  "EU": [
+   "Austria",
+   "Belgium",
+   "Bulgaria",
+   "Croatia",
+   "Cyprus",
+   "Czech Republic",
+   "Denmark",
+   "Estonia",
+   "Finland",
+   "France",
+   "Germany",
+   "Greece",
+   "Hungary",
+   "Ireland",
+   "Italy",
+   "Latvia",
+   "Lithuania",
+   "Luxembourg",
+   "Malta",
+   "Netherlands",
+   "Poland",
+   "Portugal",
+   "Romania",
+   "Slovakia",
+   "Slovenia",
+   "Spain",
+   "Sweden"
+  ],
+  "EEA": [
+   "Austria",
+   "Belgium",
+   "Bulgaria",
+   "Croatia",
+   "Cyprus",
+   "Czech Republic",
+   "Denmark",
+   "Estonia",
+   "Finland",
+   "France",
+   "Germany",
+   "Greece",
+   "Hungary",
+   "Ireland",
+   "Italy",
+   "Latvia",
+   "Lithuania",
+   "Luxembourg",
+   "Malta",
+   "Netherlands",
+   "Poland",
+   "Portugal",
+   "Romania",
+   "Slovakia",
+   "Slovenia",
+   "Spain",
+   "Sweden",
+   "Norway",
+   "Iceland",
+   "Switzerland"
+  ]
  }
 }
