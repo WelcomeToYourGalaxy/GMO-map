@@ -474,6 +474,43 @@ body.info-open #controls #indexPanel{position:static !important;
 .pj-date{color:#98a2c1;}
 .approx-badge{font-size:10px;color:#305488;background:rgba(230,192,121,0.12);border:1px dashed rgba(230,192,121,0.5);border-radius:4px;padding:2px 5px;margin:0 0 5px;display:inline-block;}</style>
 <script>
+/* A NULL-SAFE LOOKUP FOR ELEMENTS THAT NO LONGER EXIST.
+ *
+ * Deleting the Lens & filters box removed #domainPills and #subBox, and code
+ * still writes to them. `null.innerHTML = ''` throws during the first script
+ * run, and everything after it - including the line that adds the tile layers -
+ * never runs. The symptom is a blank blue map with working panels, because the
+ * panels are markup and the tiles are script.
+ *
+ * Nineteen ids are referenced and absent, most of them from earlier removals.
+ * Guarding each call site would mean finding all of them; this makes the lookup
+ * return a harmless stand-in instead, so a missing panel degrades to doing
+ * nothing rather than taking the map down with it.
+ *
+ * It is a safety net, not a licence: an id that should exist and does not is
+ * still a bug, and the console lists them once so they can be fixed properly.
+ */
+(function(){
+  var GONE = {domainPills:1, subBox:1, domainDesc:1, intentHint:1, bestPills:1,
+              levelPills:1, mediaPills:1, skindPills:1, srcPills:1, trustPills:1,
+              voicePills:1, panelColumn:1, angleHint:1, legActive:1,
+              histToggle:1, facToggle:1, treatyBox:1, pjBuild:1};
+  var seen = {}, real = document.getElementById.bind(document);
+  document.getElementById = function(id){
+    var el = real(id);
+    if(el || !GONE[id]) return el;
+    if(!seen[id]){
+      seen[id] = 1;
+      try{ console.warn('[map] #' + id + ' is referenced and not in the markup;'
+        + ' returning a stand-in so the boot continues'); }catch(e){}
+    }
+    var stub = document.createElement('div');
+    stub.id = id;
+    stub.__missing = true;
+    return stub;
+  };
+})();
+
 // Says which file the map actually read and whether it holds grouped markers.
 // Five rounds passed with a correct harvest sitting in a file the map never
 // opened, and nothing on screen or in the console said so.
@@ -878,16 +915,20 @@ function applyAccent(){ const d=DMAP[domain], r=document.documentElement.style;
      facet just chosen. #domainDesc, inside the lens box, still updates - that
      is the place where a description of the current lens belongs. */
   var _dd=document.getElementById('domainDesc'); if(_dd) _dd.textContent=d.desc; }
-function renderPills(){ const b=document.getElementById('domainPills'); b.innerHTML='';
+function renderPills(){ const b=document.getElementById('domainPills');
+  if(!b) return;   /* the pills were removed with the Lens & filters box */
+  b.innerHTML='';
   function prow(key,label,desc,accent){ const r=document.createElement('div'); r.className='subrow'; const p=document.createElement('span'); p.className='dpill'; p.textContent=label; p.dataset.key=key;
     if(key===domain){ p.style.background='#7fa8cc'; p.style.color='#0b1220'; p.style.borderColor='#9dc0dd'; } const sd=document.createElement('span'); sd.className='sd'; sd.textContent=desc||''; r.appendChild(p); r.appendChild(sd); b.appendChild(r); }
   prow('all','All lenses',DMAP['all'].desc,DMAP['all'].accent);
   DOMAINS.forEach(d=>prow(d.key,d.label,d.desc,d.accent)); }
-function renderSubs(){ const b=document.getElementById('subBox'); b.innerHTML='';
+function renderSubs(){ const b=document.getElementById('subBox');
+  if(!b) return;
+  b.innerHTML='';
   DMAP[domain].subs.forEach(s=>{ const tag=domain+':'+s[0]; const row=document.createElement('div'); row.className='subrow';
     const c=document.createElement('span'); c.className='chip'+(activeSubs.has(tag)?' on':''); c.textContent=s[1]; c.dataset.tag=tag;
     const sd=document.createElement('span'); sd.className='sd'; sd.textContent=s[2]; row.appendChild(c); row.appendChild(sd); b.appendChild(row); }); }
-document.getElementById('domainPills').addEventListener('click',e=>{ const p=e.target.closest('.dpill'); if(!p)return; domain=p.dataset.key; hideInfoPanel(); resetSubs(); applyAccent(); renderPills(); renderSubs(); rebuild(); });
+(document.getElementById('domainPills')||{addEventListener:function(){}}).addEventListener('click',e=>{ const p=e.target.closest('.dpill'); if(!p)return; domain=p.dataset.key; hideInfoPanel(); resetSubs(); applyAccent(); renderPills(); renderSubs(); rebuild(); });
 document.getElementById('subBox').addEventListener('click',e=>{ const c=e.target.closest('.chip'); if(!c)return; const tag=c.dataset.tag;
   if(activeSubs.has(tag)){ if(activeSubs.size>1){activeSubs.delete(tag); c.classList.remove('on');} } else { activeSubs.add(tag); c.classList.add('on'); } rebuild(); });
 function kindCounts(){ const m={structured:0,institution:0,journalism:0,commentary:0};
@@ -2643,7 +2684,7 @@ async function loadLaws(){ if(LAWS_LOADED||LAWS_LOADING) return;
     if(st) st.textContent=''; if(typeof rebuild==='function') rebuild(); console.log('Legislation layer: merged '+n+' law records.');
   }catch(err){ if(st) st.textContent=''; console.warn('Law layer failed:',err);
     alert('Could not load the legislation layer.\n'+err); } finally{ LAWS_LOADING=false; } }
-document.getElementById('domainPills').addEventListener('click',e=>{ const p=e.target.closest('.dpill'); if(!p)return; domain=p.dataset.key; hideInfoPanel(); resetSubs(); applyAccent(); 
+(document.getElementById('domainPills')||{addEventListener:function(){}}).addEventListener('click',e=>{ const p=e.target.closest('.dpill'); if(!p)return; domain=p.dataset.key; hideInfoPanel(); resetSubs(); applyAccent(); 
 renderPills(); renderSubs(); rebuild(); if(domain==='law' && !LAWS_LOADED) loadLaws(); });
 document.getElementById('subBox').addEventListener('click',e=>{ const c=e.target.closest('.chip'); if(!c)return; const tag=c.dataset.tag;
   if(activeSubs.has(tag)){ if(activeSubs.size>1){activeSubs.delete(tag); c.classList.remove('on');} } else { activeSubs.add(tag); c.classList.add('on'); } rebuild(); });
@@ -9252,7 +9293,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-21 20:08";
+  var BUILD = "BUILD-2026-08-21 23:27";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
