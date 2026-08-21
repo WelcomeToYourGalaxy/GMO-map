@@ -783,6 +783,25 @@ try{ window.SUBDEF = {
  'cro:regulatory':'Consultancies hired to get an application through a regulator.'
 }; }catch(e){}
 let domain='all', activeSubs=new Set(), showHistorical=true;
+/* Mirrored onto window on every change. `let` does not create a window
+   property, so the project layer - a separate script block with its own scope -
+   could not see `domain` at all: its lens test was wrapped in
+   `typeof domain !== 'undefined'` and silently never ran. The international
+   icons filtered because they are built in THIS scope; nothing else did.
+   pjLens() is the accessor every other scope should use. */
+window.__lens = {domain:'all', subs:[]};
+function pjSyncLens(){
+  try{
+    window.__lens.domain = domain;
+    window.__lens.subs = Array.from(activeSubs || []);
+  }catch(e){}
+}
+window.pjLens = function(){
+  try{ return (window.__lens && window.__lens.domain) || 'all'; }catch(e){ return 'all'; }
+};
+window.pjLensSubs = function(){
+  try{ return (window.__lens && window.__lens.subs) || []; }catch(e){ return []; }
+};
 function resetSubs(){ activeSubs=new Set(DMAP[domain].subs.map(s=>domain+':'+s[0])); }
 resetSubs();
 function hexA(h,a){ const n=parseInt(h.slice(1),16); return `rgba(${(n>>16)&255},${(n>>8)&255},${n&255},${a})`; }
@@ -2113,7 +2132,8 @@ function toggleCourts(on){ courtVisible=(on===undefined)?!courtVisible:on; if(!_
   var _pane=(map.getPane&&map.getPane('facPane')); if(_pane){ _pane.style.display=courtVisible?'':'none'; }
   if(_facLayer._cv){ _facLayer._cv.style.display=courtVisible?'':'none'; }
   if(_facLayer._draw)_facLayer._draw(); }
-function rebuild(){ if(!window.__ready){ updateStats(); return; }
+function rebuild(){ pjSyncLens();
+  if(!window.__ready){ updateStats(); return; }
   try{ if(typeof pjOn!=='undefined' && pjOn && typeof pjRender==='function') pjRender(); }catch(_e){}
   tagLevels();
   geojsonLayer.setStyle(window.__baseStyle);
@@ -3398,14 +3418,16 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
     // a facet is chosen - a facet is a claim about the industry, not about a permit.
     try{
       var _tg = p.tags || [];
-      if(typeof domain!=='undefined' && domain && domain!=='all'){
+      var _dom = (window.pjLens ? window.pjLens() : 'all');
+      if(_dom && _dom !== 'all'){
         var _hit=false;
-        for(var _i=0;_i<_tg.length;_i++){ if(String(_tg[_i]).split(':')[0]===domain){_hit=true;break;} }
+        for(var _i=0;_i<_tg.length;_i++){ if(String(_tg[_i]).split(':')[0]===_dom){_hit=true;break;} }
         if(!_hit) return false;
       }
-      if(typeof activeSubs!=='undefined' && activeSubs && activeSubs.size){
+      var _subs = (window.pjLensSubs ? window.pjLensSubs() : []);
+      if(_subs.length){
         var _sub=false;
-        for(var _j=0;_j<_tg.length;_j++){ if(activeSubs.has(_tg[_j])){_sub=true;break;} }
+        for(var _j=0;_j<_tg.length;_j++){ if(_subs.indexOf(_tg[_j])>=0){_sub=true;break;} }
         if(!_sub) return false;
       }
     }catch(e){}
@@ -9244,7 +9266,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-21 04:47";
+  var BUILD = "BUILD-2026-08-21 04:51";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
