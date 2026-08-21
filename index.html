@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pre-Birth Rights</title>
+<title>Pre-Birth Rights!</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
@@ -548,7 +548,7 @@ function pjReport(which, data){
 
 </div>
 
-<div id="header"><h1 id="title">Pre-Birth Rights</h1><div class="subtitle" id="subtitle"></div></div>
+<div id="header"><h1 id="title">Pre-Birth Rights!</h1><div class="subtitle" id="subtitle"></div></div>
 <div id="map"></div>
 <div id="vign" aria-hidden="true"></div>
 <div id="gbLoad">Loading…</div>
@@ -557,7 +557,7 @@ function pjReport(which, data){
 <div id="rightbar">
 <div id="guidesPanel" class="open">
   <div id="guidesHead" onclick="document.getElementById('guidesPanel').classList.toggle('open')">
-    <span>Guides</span><span class="guides-tog">&#9662;</span></div>
+    <span>Guides &mdash; what to actually do</span><span class="guides-tog">&#9662;</span></div>
   <div id="guidesBody">
     <a class="guide-btn" href="#" onclick="openGuide(&#39;guides/how-to-test-for-escaped-gmos.pdf&#39;,&#39;How to test for escaped GMOs in your area&#39;);return false;">How to test for escaped GMOs in your area</a>
     <a class="guide-btn" href="#" onclick="openGuide(&#39;guides/how-to-stop-a-release.pdf&#39;,&#39;How to stop a GMO release in your area&#39;);return false;">How to stop a GMO release in your area</a>
@@ -565,49 +565,7 @@ function pjReport(which, data){
     <a class="guide-btn" href="#" onclick="openGuide(&#39;guides/how-to-change-the-industry.pdf&#39;,&#39;How to change the industry&#39;);return false;">How to change the industry</a>
   </div>
 </div>
-<div id="controls" style="display:none!important" aria-hidden="true">
-  <div id="ctlHead" onclick="document.getElementById('controls').classList.toggle('collapsed')"><span>Lens &amp; filters</span><span id="ctlTog">&#9662;</span></div>
-  <div id="ctlBody">
-  <div class="ctl-title">What are you trying to do?</div>
-  <select id="intentSel" onchange="applyIntent(this.value)">
-    <option value="">Jump to a part of the industry.</option>
-    <option value="" disabled>── MAKING THE ORGANISM ──</option>
-    <option value="nav-seed">Seed & traits — who owns the crops</option>
-    <option value="nav-edit">Gene editing & synthetic biology — the tools</option>
-    <option value="nav-synth">DNA synthesis & sequencing — the supply chain</option>
-    <option value="nav-cro">Contract research & manufacturing — who does the work</option>
-    <option value="" disabled>── WHAT IT IS DONE TO ──</option>
-    <option value="nav-anim">Laboratory animals — bred as reagents</option>
-    <option value="nav-live">Livestock, aquaculture & pets</option>
-    <option value="nav-wild">Insects, microbes & open release</option>
-    <option value="nav-deex">De-extinction & conservation biotech</option>
-    <option value="" disabled>── APPLIED TO PEOPLE ──</option>
-    <option value="nav-clin">Human clinical & therapeutic</option>
-    <option value="nav-repro">Assisted reproduction</option>
-    <option value="" disabled>── WHAT DRIVES IT ──</option>
-    <option value="nav-money">Money & backers</option>
-    <option value="nav-rules">Rules, records & advocacy</option>
-    <option value="" disabled>── ──</option>
-    <option value="all">Show everything</option>
-  </select>
-  <div id="intentHint"></div>
 
-  <div id="angleHint"></div>
-  <div class="ctl-title">Lens</div><div id="domainPills"></div>
-  <div class="domain-desc" id="domainDesc"></div>
-  <div class="sub-wrap" id="subFilterWrap" style="margin-top:9px;"><div id="subBox"></div></div>
-  <div class="src-wrap"><div class="ctl-title">Source type</div><div id="srcPills"></div></div>
-  <div class="skind-wrap"><div class="ctl-title">Source kind</div><div id="skindPills"></div></div>
-  <div class="media-wrap"><div class="ctl-title">Government level</div><div id="levelPills"></div></div>
-  <div class="media-wrap"><div class="ctl-title">Media type</div><div id="mediaPills"></div></div>
-  <div class="trust-wrap"><div class="ctl-title">Trust level</div><div id="trustPills"></div></div>
-  <div class="voice-wrap"><div class="ctl-title">Voice</div><div id="voicePills"></div></div>
-  <div class="filter-tip"><span class="tl">Try combining filters</span><b>Records &amp; data + Official</b> &mdash; the state’s own biosafety record only, no watchdog or journalism voices. <b>Biosafety &amp; Contamination + Interpretive</b> &mdash; the independent scientists re-reading the dossiers the regulator accepted. <b>Any lens + Investigative journalism</b> &mdash; just the newsrooms working that beat. <b>Any lens + Official + Records &amp; data</b> &mdash; only the primary registers and dockets you can cite directly in a submission.</div>
-  <div class="best-wrap"><div class="ctl-title">Best sources</div><div class="best-hint">Filter the whole map to standout sources by quality.</div><div id="bestPills"></div></div>
-  <label class="f-status"><input type="checkbox" id="histToggle" checked> Show dormant / defunct</label>
-  
-</div>
-</div>
 <div id="gbCrumb"></div>
 
 <div id="legend">
@@ -638,17 +596,7 @@ function pjReport(which, data){
     &bull; <b>Ownership is only what the registers admit.</b> Where a regulator names a parent company, that is recorded; where a chain simply trades under one name across a dozen sites, that is recorded as an inference. Share registers are not here: who actually owns these businesses sits in company filings across dozens of jurisdictions, and reading those is a separate project.<br><br>
 </div></div>
 
-  <div id="projTypeBox" class="proj-src-box">  <div id="srcFold" class="res-dom">
-    <div class="res-dhead" onclick="this.parentNode.classList.toggle('open')">
-      <span class="res-car">&#9656;</span>
-      <span class="res-dlab">Search by data source</span>
-      <span class="res-n" id="srcCount"></span></div>
-    <div class="res-dbody"><div id="projSrcBox" class="proj-src-box"></div></div>
-  </div>
-</div>
-  <div id="overlayBox" class="proj-src-box"></div>
-  <div id="facFilter" style="display:none;"></div>
-  <div class="ctl-read" style="font-size:9px;line-height:1.45;">Countries carry web resources. Click one to open its resources box, and click again inside to descend a level. Click any area outside of the region, or the unit’s name in the top-centre row, to go back up.</div>
+  <div id="projTypeBox" class="proj-src-box">    <div class="ctl-read" style="font-size:9px;line-height:1.5;color:#93a1bb;margin:10px 0 6px;padding-top:8px;border-top:1px solid rgba(120,140,180,.22);">Countries carry web resources. Click one to open its resources box, and click again inside to descend a level. Click any area outside of the region, or the unit’s name in the top-centre row, to go back up.</div>
 <div id="indexPanel">
   <div id="idxHead"><span id="idxTitle">Index <b id="idxCount">0</b></span><span id="idxToggle">−</span></div>
   <div id="idxBody">
@@ -657,8 +605,8 @@ function pjReport(which, data){
       <div class="idx-ce"><span onclick="document.querySelectorAll('#idxBody .idx-grp').forEach(function(g){g.classList.add('collapsed');})">Collapse all</span><span onclick="document.querySelectorAll('#idxBody .idx-grp').forEach(function(g){g.classList.remove('collapsed');})">Expand all</span></div>
       <select id="idxSort" class="idxSel" title="Sort within groups"><option value="az">Sort: A → Z</option><option value="za">Sort: Z → A</option></select>
       <select id="idxGroup" class="idxSel" title="Group by">
-        <option value="level">Group: Record type</option>
         <option value="country">Group: Country</option>
+        <option value="level">Group: Level</option>
         <option value="lens">Group: Lens</option>
         <option value="srctype">Group: Source type</option>
         <option value="srckind">Group: Source kind</option>
@@ -669,9 +617,8 @@ function pjReport(which, data){
       </select>
       <select id="idxSub" class="idxSel" title="Then by">
         <option value="lens">then Lens</option>
-        <option value="place">then Place within it</option>
         <option value="none">then &mdash;</option>
-        <option value="level">then Record type</option>
+        <option value="level">then Level</option>
         <option value="country">then Country</option>
         <option value="srctype">then Source type</option>
         <option value="srckind">then Source kind</option>
@@ -684,6 +631,16 @@ function pjReport(which, data){
     <div id="idxList"></div>
   </div>
 </div>
+<div id="srcFold" class="res-dom">
+    <div class="res-dhead" onclick="this.parentNode.classList.toggle('open')">
+      <span class="res-car">&#9656;</span>
+      <span class="res-dlab">Search by data source</span>
+      <span class="res-n" id="srcCount"></span></div>
+    <div class="res-dbody"><div id="projSrcBox" class="proj-src-box"></div></div>
+  </div>
+</div>
+  <div id="overlayBox" class="proj-src-box"></div>
+  <div id="facFilter" style="display:none;"></div>
   </div>
 </div>
 </div>
@@ -727,78 +684,61 @@ SUBLABEL['clinical:cro']='Clinical trial CROs';
    "vectors", "models", "drives", "synbio", "cdmo" and "repos" came from. The
    labels existed the whole time. */
 try{ window.SUBLABEL = SUBLABEL; }catch(e){}
-try{ window.DOMAINS = DOMAINS; window.DMAP = DMAP; }catch(e){}
-/* One line per category in "What they work on". The twelve lens paragraphs
-   were folded into these and into window.SUBDEF below, so the argument each
-   lens carried now sits on the row it is about rather than in a box of its
-   own. Nothing was dropped; it was distributed. */
-try{ window.SUBJDEF = {
- "animals": "Three trades on one row: living animals sold to laboratories as reagents, animals engineered to be farmed or kept, and animals rebuilt as proxies for species already gone.",
- "humans": "Genetic engineering applied to people. On one side, therapies that largely work but reach almost nobody \u2014 developed in good part with public money and priced beyond every health system outside a handful of wealthy countries. On the other, assisted reproduction: not genetic modification in the technical sense, but the same logic and increasingly the same techniques.",
- "microbes": "The supply chain almost nobody maps, and the layer where capability actually lives: a handful of firms write most of the DNA every engineered organism starts from.",
- "money": "Who pays, and what they are paying for.",
- "plants": "The commercial centre. Four firms own most of the world\u2019s engineered crop traits and a controlling share of its commercial seed.",
- "rules": "The machinery that authorises the industry and argues for it. Carried here as part of the industry rather than as a check on it: the register is kept by the same body that grants the approval, the risk assessment a regulator rules on is filed by the applicant it is ruling on, and a trade association\u2019s position is what reaches the legislative record while the member firms behind it stay unnamed there.",
- "tools": "The firms that make the tools everyone else uses, and increasingly the products too \u2014 alongside the contractors who do the work the company named on the permit does not.",
- "wild": "Organisms engineered specifically to be released into the open and, in some cases, to spread on their own."
-}; }catch(e){}
 
 /* What each of these is, in one line. Written for a reader who has not met the
    word before, which is most readers: the tag names are trade shorthand. */
 try{ window.SUBDEF = {
- 'cro:field':"Contractors who plant, manage and report the trial plots for whoever holds the permit.",
- 'wild:viral':"Engineered viruses used as carriers, and the vaccines built from them.",
- 'seed:traits':"Firms that develop the trait itself, then license it into other companies\u2019 varieties.",
- 'seed:germplasm':"Breeding stock \u2014 the seed lines and parent material new varieties are bred from.",
- 'seed:majors':"Bayer, Corteva, Syngenta and BASF, holding most of the world\u2019s commercial seed and trait patents. They license the traits to each other and to smaller breeders, and three of the four also sell the herbicide the trait is designed to tolerate.",
- 'seed:licensees':"Regional breeders selling varieties built on traits licensed from someone else \u2014 how a handful of trait owners reach fields they never plant.",
- 'seed:distribution':"The dealers and retailers that move seed from breeder to field.",
- 'editing:agtech':"Companies applying gene editing to crops rather than inserting genes from another species \u2014 the route by which an organism leaves the registration system, in one jurisdiction after another.",
- 'deextinct:trees':"Engineered forest trees \u2014 chestnut, poplar, eucalyptus \u2014 intended for planting outdoors.",
- 'animals:models':"Repositories that hold engineered laboratory strains and ship them to order. The trade in transgenic mouse lines alone runs to millions of animals a year.",
- 'animals:breeders':"Firms that breed and supply laboratory animals \u2014 an industrial supply business selling living animals as reagents, and among the largest parts of this map by volume of life consumed.",
- 'animals:primates':"Suppliers of monkeys for research, and the facilities holding them.",
- 'animals:services':"Contractors that build a bespoke engineered animal to a client\u2019s specification.",
- 'livestock:livestock':"Gene-edited farm animals \u2014 cattle, pigs, poultry. Some jurisdictions have decided an edited animal is not a regulated article at all.",
- 'livestock:cloning':"Commercial cloning of animals \u2014 livestock, and horses and dogs cloned to order.",
- 'livestock:aqua':"Engineered fish and shellfish bred for farming, fast-growing salmon among them.",
- 'livestock:pets':"Companion and ornamental animals sold as engineered products. Glowing fish are already in tanks worldwide, and this side of the trade operates almost entirely outside biosafety oversight.",
- 'deextinct:rescue':"Engineering a wild population to keep a species going rather than to farm it.",
- 'deextinct:biobank':"Frozen tissue, cells and gametes banked from wild species for use later.",
- 'deextinct:ventures':"Companies funded to bring back an extinct animal. What they produce is a proxy rather than a restoration, and it is intellectual property. The deeper effect is on argument rather than ecology: if extinction can be presented as reversible, the cost of causing it drops, and that reframing is doing work in policy long before any animal exists.",
- 'clinical:therapy':"Companies making gene and cell therapies for patients, approved and priced in the millions per dose.",
- 'clinical:trials':"Organisations running registered trials of those therapies.",
- 'clinical:vectors':"Manufacturers of the viruses used to carry engineered genes into cells.",
- 'clinical:germline':"Work on embryos and inherited changes rather than on one patient\u2019s own cells.",
- 'repro:clinics':"Fertility clinic chains, and the groups that own them \u2014 consolidating under private equity.",
- 'repro:banks':"Sperm, egg and embryo banks.",
- 'repro:surrogacy':"Surrogacy agencies, including those arranging it across borders.",
- 'repro:screening':"Testing embryos before transfer and choosing between them on the results, which has moved from screening for specific disorders towards scoring embryos on traits.",
- 'wild:insects':"Insects engineered to be released outdoors \u2014 sterile-insect and self-limiting mosquito programmes, moths, flies.",
- 'wild:microbes':"Engineered soil and crop microbes and biopesticides, applied at field scale.",
- 'wild:drives':"Engineered inheritance built to spread itself through a wild population, overriding the normal odds. A drive organism cannot respect a border or a permit, which is why the rules for them are being argued over before any has been released.",
- 'editing:synbio':"Organisms rebuilt as manufacturing platforms \u2014 yeast, bacteria, algae.",
- 'synthesis:synth':"Firms that synthesise DNA to order from a sequence file. Every engineered organism begins here, and writing a genome is the constraint. Screening of what gets made is largely voluntary, and a substantial share of global capacity sits outside the industry\u2019s own screening consortium.",
- 'synthesis:seq':"Sequencing machines and services \u2014 reading DNA rather than writing it, now cheap enough to be trivial.",
- 'synthesis:reagents':"The enzymes, kits and reagents everyone else in the industry buys.",
- 'synthesis:repos':"Repositories that distribute plasmids and engineered strains to laboratories.",
- 'cro:cdmo':"Contract manufacturers that make the biological product for the company selling it.",
- 'editing:platform':"Owners of the editing tools themselves, licensed out to everyone else. CRISPR and its successors turned genetic modification from a specialist capability into a licensable platform.",
- 'editing:patents':"Holders of the foundational patents on the editing techniques, who collect from work they had no part in.",
- 'rules:ip':"Patent and plant-variety offices \u2014 where ownership of living material is granted.",
- 'cro:cro':"The laboratories other firms hire to run the work, including the studies a regulator reads. The firm named on a permit is frequently not the firm doing the work, and the contractor answers to the client rather than to the public.",
- 'clinical:cro':"Contractors running the clinical studies for a therapy\u2019s sponsor.",
- 'money:vc':"Venture capital and private equity funding the sector. A fund needs an exit, which sets the timeline and rewards speed and scale over caution.",
- 'money:markets':"Listed companies and the investors holding them.",
- 'money:public':"Government research funders. Public money pays for a great deal of the underlying science, which then becomes private property.",
- 'money:philanthropy':"Foundations funding the work through grants, and among the largest funders of deployment in low-income countries.",
- 'money:defence':"Military and security funding of biotechnology, which sits outside civilian biosafety oversight entirely.",
- 'rules:regulators':"The agencies that approve releases and keep the registers.",
+ 'seed:traits':'Firms that develop the trait itself, then license it into other companies\u2019 varieties.',
+ 'seed:germplasm':'Breeding stock \u2014 the seed lines and parent material new varieties are bred from.',
+ 'seed:majors':'The four firms holding most of the world\u2019s commercial seed and trait patents.',
+ 'seed:licensees':'Regional breeders selling varieties built on traits licensed from someone else.',
+ 'seed:distribution':'The dealers and retailers that move seed from breeder to field.',
+ 'editing:agtech':'Companies applying gene editing to crops rather than inserting genes from another species.',
+ 'deextinct:trees':'Engineered forest trees \u2014 chestnut, poplar, eucalyptus \u2014 intended for planting outdoors.',
+ 'animals:models':'Repositories that hold engineered laboratory strains and ship them to order.',
+ 'animals:breeders':'Firms that breed and supply laboratory animals.',
+ 'animals:primates':'Suppliers of monkeys for research, and the facilities holding them.',
+ 'animals:services':'Contractors that build a bespoke engineered animal to a client\u2019s specification.',
+ 'livestock:livestock':'Gene-edited farm animals \u2014 cattle, pigs, poultry.',
+ 'livestock:cloning':'Commercial cloning of animals, mostly livestock and pets.',
+ 'livestock:aqua':'Engineered fish and shellfish bred for farming.',
+ 'livestock:pets':'Companion and ornamental animals sold as engineered products.',
+ 'deextinct:rescue':'Engineering a wild population to keep a species going rather than to farm it.',
+ 'deextinct:biobank':'Frozen tissue, cells and gametes banked from wild species for use later.',
+ 'deextinct:ventures':'Companies funded to bring back an extinct animal.',
+ 'clinical:therapy':'Companies making gene and cell therapies for patients.',
+ 'clinical:trials':'Organisations running registered trials of those therapies.',
+ 'clinical:vectors':'Manufacturers of the viruses used to carry engineered genes into cells.',
+ 'clinical:germline':'Work on embryos and inherited changes rather than on one patient\u2019s own cells.',
+ 'repro:clinics':'Fertility clinic chains, and the groups that own them.',
+ 'repro:banks':'Sperm, egg and embryo banks.',
+ 'repro:surrogacy':'Surrogacy agencies, including those arranging it across borders.',
+ 'repro:screening':'Testing embryos before transfer, and choosing between them on the results.',
+ 'wild:insects':'Engineered insects released outdoors \u2014 mosquitoes, moths, flies.',
+ 'wild:microbes':'Engineered soil and crop microbes applied to fields.',
+ 'wild:drives':'Engineered inheritance built to spread itself through a wild population.',
+ 'editing:synbio':'Organisms rebuilt as manufacturing platforms \u2014 yeast, bacteria, algae.',
+ 'synthesis:synth':'Firms that synthesise DNA to order from a sequence file.',
+ 'synthesis:seq':'Sequencing machines and services \u2014 reading DNA rather than writing it.',
+ 'synthesis:reagents':'The enzymes, kits and reagents everyone else in the industry buys.',
+ 'synthesis:repos':'Repositories that distribute plasmids and engineered strains to laboratories.',
+ 'cro:cdmo':'Contract manufacturers that make biological products for other companies.',
+ 'editing:platform':'Owners of the editing tools themselves, licensed out to everyone else.',
+ 'editing:patents':'Holders of the foundational patents on the editing techniques.',
+ 'rules:ip':'Patent and plant-variety offices \u2014 where ownership of an organism is granted.',
+ 'cro:cro':'The laboratories other firms hire to run the work.',
+ 'clinical:cro':'Contract organisations that run clinical trials on a sponsor\u2019s behalf.',
+ 'money:vc':'Venture capital and private equity funding the sector.',
+ 'money:markets':'Listed companies and the investors holding them.',
+ 'money:public':'Government research funders.',
+ 'money:philanthropy':'Foundations funding the work through grants.',
+ 'money:defence':'Military and security funding of biotechnology.',
+ 'rules:regulators':'The agencies that approve releases and keep the registers.',
     'rules:cases':'Court decisions that settled a question, and are still the answer.',
- 'rules:standards':"Bodies setting standards, and issuing the identifiers organisms are tracked by.",
- 'rules:associations':"Trade associations, which do the industry\u2019s public arguing so individual firms need not.",
- 'rules:influence':"Industry-funded bodies that publish information about the industry.",
- 'cro:regulatory':"Consultancies hired to get an application through a regulator."
+ 'rules:standards':'Bodies setting standards, and issuing the identifiers organisms are tracked by.',
+ 'rules:associations':'Trade associations, and the lobbying done through them.',
+ 'rules:influence':'Industry-funded bodies that publish information about the industry.',
+ 'cro:regulatory':'Consultancies hired to get an application through a regulator.'
 }; }catch(e){}
 let domain='all', activeSubs=new Set(), showHistorical=true;
 /* Mirrored onto window on every change. `let` does not create a window
@@ -2204,7 +2144,7 @@ function buildIndexData(){ INDEXDATA=[];
      Level 'Resource' so they can be filtered in or out as a group; the lens is
      taken from the entry's own tag so the existing lens buttons reach them. */
   try{
-    var R = window.PJ_RES || ((typeof PJ_RES !== 'undefined' && PJ_RES) ? PJ_RES : null);
+    var R = (typeof PJ_RES !== 'undefined' && PJ_RES) ? PJ_RES : null;
     if(R){
       var LENS = {TESTING:'rules', REGULATOR:'rules', COMPLAINT:'rules',
                   CONSULTATION:'rules', CERTIFIER:'rules', LEGAL:'rules'};
@@ -2253,149 +2193,8 @@ function locateEntry(e){
   if(e.iso&&_openUnitByIso(e.iso)) return;
   window.open(e.url,'_blank','noopener'); }
 function _esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;'); }
-/* THE INDEX'S PLACE AXIS
-   Records carry no country field. `r.country` is filled from `p.state`, which
-   is whatever string the source published: "Jefferson County, Oregon, USA" for
-   a release, "Accra" for a ministry, "Monheim am Rhein - Alfred-Nobel-Strasse 50"
-   for a company head office. Grouped raw that gave ~500 headings of one, half
-   of them street addresses and half bare city names with no country attached.
-   So the country is derived from the coordinate, against the same world
-   boundaries the map already draws, and the stated string becomes the level
-   BELOW it. Nothing is guessed: a point that falls in no polygon, and a string
-   that names no country, group under "Place not established". */
-var _IDXC=null, _IDXC_N=0;
-function _idxBB(g){ var b=[180,90,-180,-90];
-  (function walk(a){ if(typeof a[0]==='number'){ if(a[0]<b[0])b[0]=a[0]; if(a[1]<b[1])b[1]=a[1];
-      if(a[0]>b[2])b[2]=a[0]; if(a[1]>b[3])b[3]=a[1]; return; }
-    for(var i=0;i<a.length;i++) walk(a[i]); })(g.coordinates);
-  return b; }
-function _idxCountries(){
-  try{ if(typeof geojsonLayer==='undefined'||!geojsonLayer) return []; }catch(e){ return []; }
-  if(_IDXC) return _IDXC;
-  var out=[];
-  try{ geojsonLayer.eachLayer(function(l){ var f=l.feature; if(!f||!f.geometry)return;
-    var nm=(f.properties&&f.properties.name)||NUM2A3[f.id]||''; if(!nm)return;
-    out.push({n:nm,g:f.geometry,b:_idxBB(f.geometry)}); }); }catch(e){}
-  if(out.length){ _IDXC=out; _IDXC_N=out.length; }
-  return out; }
-/* Two-letter codes are what the registers file; they are not place names to a
-   reader who has not memorised them. */
-var _IDXST={AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',
- CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',FL:'Florida',
- GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',
- KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',
- MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',
- NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',
- ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',
- RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',
- UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',
- WI:'Wisconsin',WY:'Wyoming',PR:'Puerto Rico',VI:'US Virgin Islands',GU:'Guam',
- AS:'American Samoa',MP:'Northern Mariana Islands'};
-var _IDXALIAS={'usa':'United States of America','us':'United States of America',
- 'u.s.':'United States of America','u.s.a.':'United States of America',
- 'united states':'United States of America','uk':'United Kingdom',
- 'u.k.':'United Kingdom','great britain':'United Kingdom','england':'United Kingdom',
- 'scotland':'United Kingdom','wales':'United Kingdom','northern ireland':'United Kingdom',
- 'south korea':'Republic of Korea','russia':'Russian Federation',
- 'worldwide':'Worldwide','global':'Worldwide'};
-function _idxNameSet(){ var m={}; _idxCountries().forEach(function(c){ m[c.n.toLowerCase()]=c.n; }); return m; }
-/* ONE SPELLING PER COUNTRY.
-   Two layers name countries differently and both now land in the index: the
-   world polygons carry Natural Earth's names, which are abbreviated for the
-   long ones ("Bosnia and Herz.", "Dem. Rep. Congo", "S. Sudan"), while
-   resources.json carries a clean hand-written set of 196. Left alone the same
-   country would head two groups, one of them abbreviated. The resource set is
-   the display set; everything else is mapped onto it. A name with no entry
-   here is passed through unchanged rather than guessed at. */
-var _IDXCANON=null;
-var _IDXCFIX={
- 'united states of america':'United States','usa':'United States','us':'United States',
- 'u.s.':'United States','u.s.a.':'United States',
- 'united kingdom of great britain and northern ireland':'United Kingdom',
- 'uk':'United Kingdom','u.k.':'United Kingdom','great britain':'United Kingdom',
- 'england':'United Kingdom','scotland':'United Kingdom','wales':'United Kingdom',
- 'northern ireland':'United Kingdom',
- 'south korea':'Republic of Korea','korea, republic of':'Republic of Korea',
- 'korea, rep.':'Republic of Korea','dem. rep. korea':'North Korea',
- "korea, dem. people's rep.":'North Korea',
- 'dem. rep. congo':'Democratic Republic of the Congo',
- 'congo, dem. rep.':'Democratic Republic of the Congo',
- 'congo':'Republic of the Congo','congo, rep.':'Republic of the Congo',
- 'bosnia and herz.':'Bosnia and Herzegovina',
- 'central african rep.':'Central African Republic',
- 'dominican rep.':'Dominican Republic','eq. guinea':'Equatorial Guinea',
- 's. sudan':'South Sudan','solomon is.':'Solomon Islands',
- 'czechia':'Czech Republic','macedonia':'North Macedonia',
- 'swaziland':'Eswatini','cape verde':'Cabo Verde','burma':'Myanmar',
- 'east timor':'Timor-Leste','brunei darussalam':'Brunei','lao pdr':'Laos',
- "lao people's democratic republic":'Laos','viet nam':'Vietnam',
- 'syrian arab republic':'Syria','iran (islamic republic of)':'Iran',
- 'russian federation':'Russia','t\u00fcrkiye':'Turkey','turkiye':'Turkey',
- 'holy see':'Vatican City','vatican':'Vatican City',
- 'united republic of tanzania':'Tanzania','the gambia':'Gambia',
- 'the bahamas':'Bahamas','bolivia (plurinational state of)':'Bolivia',
- 'venezuela (bolivarian republic of)':'Venezuela',
- 'micronesia (federated states of)':'Micronesia',
- 'fed. states of micronesia':'Micronesia',
- "cote d'ivoire":'C\u00f4te d\u2019Ivoire',"c\u00f4te d'ivoire":'C\u00f4te d\u2019Ivoire',
- 'ivory coast':'C\u00f4te d\u2019Ivoire',
- 'moldova, republic of':'Moldova','republic of moldova':'Moldova',
- 'global':'Worldwide'};
-function _idxCanonMap(){
-  if(_IDXCANON) return _IDXCANON;
-  var m={}, got=false;
-  try{ var R=window.PJ_RES; if(R&&R.countries){
-    for(var k in R.countries){ m[k.toLowerCase()]=k; got=true; } } }catch(e){}
-  for(var a in _IDXCFIX){ var t=_IDXCFIX[a]; m[a]=(m[t.toLowerCase()]||t); }
-  if(got) _IDXCANON=m;          /* only cache once the display set has arrived */
-  return m; }
-function _idxCanon(nm){
-  if(!nm) return nm;
-  return _idxCanonMap()[String(nm).toLowerCase()] || nm; }
-function _idxCountryOf(r){
-  if(r._ctry) return r._ctry;
-  var cs=_idxCountries(), nm='';
-  if(cs.length && typeof r.lat==='number' && typeof r.lng==='number'){
-    var x=r.lng, y=r.lat;
-    for(var i=0;i<cs.length;i++){ var b=cs[i].b;
-      if(x<b[0]||x>b[2]||y<b[1]||y>b[3]) continue;
-      if(gbInPoly([x,y],cs[i].g)){ nm=cs[i].n; break; } } }
-  if(!nm){ /* the street address after an em dash carries commas of its own, so
-              it comes off BEFORE the string is split on commas */
-    var parts=String(r.country||'').split('\u2014')[0].split(',');
-    var tail=(parts[parts.length-1]||'').trim().toLowerCase();
-    var known=cs.length?_idxNameSet():{};
-    /* The stated string may already carry a name from the display set
-       ("Republic of Korea", "Czech Republic"), which the polygon names never
-       match because Natural Earth spells those differently. Check both. */
-    nm = known[tail] || _IDXALIAS[tail] || _idxCanonMap()[tail] || ''; }
-  if(!nm) nm='Place not established';
-  nm=_idxCanon(nm);
-  if(cs.length) r._ctry=nm;
-  return nm; }
-function _idxPlaceOf(r){
-  /* "National" rather than a dash: a country's own regulator or inspectorate
-     is not a missing place, it is the whole country. */
-  var raw=String(r.country||'').trim(); if(!raw) return 'National';
-  raw=raw.split('\u2014')[0].trim();                 /* drop the street address */
-  var parts=raw.split(',').map(function(t){ return t.trim(); }).filter(Boolean);
-  var ctry=_idxCountryOf(r), known=_idxCountries().length?_idxNameSet():{};
-  while(parts.length>1){ var t=parts[parts.length-1].toLowerCase();
-    if(known[t]===ctry || _IDXALIAS[t]===ctry) parts.pop(); else break; }
-  parts=parts.map(function(t){
-    var u=t.toUpperCase();
-    if(_IDXST[u]) return _IDXST[u];
-    return t.replace(/\s+([A-Z]{2})$/,function(m,c){ return _IDXST[c]?(', '+_IDXST[c]):m; }); });
-  var out=parts.join(', ');
-  return out && out.toLowerCase()!==String(ctry).toLowerCase() ? out : 'National'; }
-function _grpKeys(r,dim){ if(dim==='country')return[_idxCountryOf(r)]; if(dim==='place')return[_idxPlaceOf(r)]; if(dim==='level')return[r.level||'\u2014']; if(dim==='lens')return (r.lenses&&r.lenses.length)?r.lenses:['\u2014']; if(dim==='srctype')return[KINDLABEL[r.kind||'structured']||'\u2014']; if(dim==='srckind')return[SKINDLABEL[r.skind||'other']||'\u2014']; if(dim==='media')return[MEDIALABEL[r.media||'web']||'\u2014']; if(dim==='trust')return[TIERLABEL[r.trust||'high']||'\u2014']; if(dim==='voice')return[VOICELABEL[r.voice||'interpretive']||'\u2014']; return['']; }
-function _grpCmp(dim){ if(dim==='country'||dim==='place')return function(a,b){
-    /* Worldwide first - a resource anyone can use should not sit below a
-       national one they cannot - and anything unplaced last. */
-    function rank(x){ if(x==='Worldwide'||x==='National')return 0;
-      if(x==='Place not established'||x==='\u2014')return 2; return 1; }
-    return (rank(a)-rank(b))||a.localeCompare(b); };
-  if(dim==='level')return function(a,b){ var la=(LEVELORDER[a]==null?9:LEVELORDER[a]), lb=(LEVELORDER[b]==null?9:LEVELORDER[b]); return (la-lb)||a.localeCompare(b); }; return function(a,b){ return a.localeCompare(b); }; }
+function _grpKeys(r,dim){ if(dim==='country')return[r.country||'\u2014']; if(dim==='level')return[r.level||'\u2014']; if(dim==='lens')return (r.lenses&&r.lenses.length)?r.lenses:['\u2014']; if(dim==='srctype')return[KINDLABEL[r.kind||'structured']||'\u2014']; if(dim==='srckind')return[SKINDLABEL[r.skind||'other']||'\u2014']; if(dim==='media')return[MEDIALABEL[r.media||'web']||'\u2014']; if(dim==='trust')return[TIERLABEL[r.trust||'high']||'\u2014']; if(dim==='voice')return[VOICELABEL[r.voice||'interpretive']||'\u2014']; return['']; }
+function _grpCmp(dim){ if(dim==='level')return function(a,b){ var la=(LEVELORDER[a]==null?9:LEVELORDER[a]), lb=(LEVELORDER[b]==null?9:LEVELORDER[b]); return (la-lb)||a.localeCompare(b); }; return function(a,b){ return a.localeCompare(b); }; }
 function _rowHTML(r,i){ const tags=r.lenses.map(l=>'<span class="idx-lens">'+_esc(l)+'</span>').join('');
   var d=(r.desc||'').trim(), has=_hasUrl(r.url);
   var link=has?('<a class="idx-visit" href="'+_esc(_href(r.url))+'" target="_blank" rel="noopener">Visit source ↗</a>'):'';
@@ -2412,33 +2211,18 @@ function _rowHTML(r,i){ const tags=r.lenses.map(l=>'<span class="idx-lens">'+_es
 function _grpGuide(dim,items){ if(dim!=='country'||!items||!items.length) return '';
   for(var i=0;i<items.length;i++){ var iso=items[i]&&items[i].iso; if(iso&&_GUIDES[iso]) return _usGuide(iso); }
   return ''; }
-const _IDXV={kind:new Set(KINDS.map(k=>k[0])),voice:new Set(VOICES.map(v=>v[0])),
-  trust:new Set(TIERS.map(t=>t[0])),skind:new Set(SKINDS.map(k=>k[0])),
-  media:new Set(MEDIA.map(m=>m[0])),level:new Set(LEVELS.map(l=>l[0]))};
 function renderIndex(){ if(!INDEXDATA.length) buildIndexData();
   let g1=document.getElementById('idxGroup').value, g2=document.getElementById('idxSub').value;
   if(g1==='none'&&g2!=='none'){ g1=g2; g2='none'; }
   if(g1===g2) g2='none';
   const q=(document.getElementById('idxSearch').value||'').trim().toLowerCase();
   let rows=INDEXDATA.slice();
-  /* A filter must only remove rows it actually governs. Every one of these
-     six used to drop any row whose value was not in its own pill vocabulary,
-     and since round 73 the index rows are map points: their `level` is
-     Organisation / Release authorisation / Spread / Resource, and the level
-     pills list Municipal / County / State / National / International. No
-     overlap, so the level filter removed EVERY row and the index rendered
-     "No matches" whatever was typed in the search box. `trust:'record'` was
-     doing the same thing more quietly, dropping 106 primary records because
-     the trust pills only know high / medium / low.
-     _idxKeep asks whether the value is one this filter has a control for; if
-     it is not, the filter has no opinion and the row passes. */
-  function _idxKeep(sel, vocab, v){ return !vocab.has(v) || sel.has(v); }
-  rows=rows.filter(r=>_idxKeep(activeKinds,  _IDXV.kind,  r.kind||'structured'));
-  rows=rows.filter(r=>_idxKeep(activeVoices, _IDXV.voice, r.voice||'interpretive'));
-  rows=rows.filter(r=>_idxKeep(activeTrust,  _IDXV.trust, r.trust||'high'));
-  rows=rows.filter(r=>_idxKeep(activeSkinds, _IDXV.skind, r.skind||'other'));
-  rows=rows.filter(r=>_idxKeep(activeMedia,  _IDXV.media, r.media||'web'));
-  rows=rows.filter(r=>_idxKeep(activeLevels, _IDXV.level, r.level||'National'));
+  rows=rows.filter(r=>activeKinds.has(r.kind||'structured'));
+  rows=rows.filter(r=>activeVoices.has(r.voice||'interpretive'));
+  rows=rows.filter(r=>activeTrust.has(r.trust||'high'));
+  rows=rows.filter(r=>activeSkinds.has(r.skind||'other'));
+  rows=rows.filter(r=>activeMedia.has(r.media||'web'));
+  rows=rows.filter(r=>activeLevels.has(r.level||'National'));
   rows=rows.filter(r=>_angleOk(r));
   if(q) rows=rows.filter(r=>(r.name||'').toLowerCase().includes(q)||(r.country||'').toLowerCase().includes(q)||(r.lenses||[]).join(' ').toLowerCase().includes(q));
   document.getElementById('idxCount').textContent=rows.length;
@@ -2472,12 +2256,7 @@ function renderIndex(){ if(!INDEXDATA.length) buildIndexData();
   box.querySelectorAll('.idx-grp-head').forEach(function(hd){ hd.style.cursor='pointer'; hd.onclick=function(e){ e.stopPropagation(); this.parentNode.classList.toggle('collapsed'); }; });
 }
 function initIndex(){ buildIndexData();
-  document.getElementById('idxGroup').addEventListener('change',function(){
-    /* Country grouping is only useful two levels deep: the country, then the
-       places named inside it. Set the second axis to match when it is picked. */
-    var sub=document.getElementById('idxSub');
-    if(this.value==='country' && sub && sub.value!=='place') sub.value='place';
-    renderIndex(); });
+  document.getElementById('idxGroup').addEventListener('change',renderIndex);
   document.getElementById('idxSub').addEventListener('change',renderIndex); var _isEl=document.getElementById('idxSort'); if(_isEl)_isEl.addEventListener('change',renderIndex);
   document.getElementById('idxSearch').addEventListener('input',renderIndex);
   document.getElementById('idxHead').addEventListener('click',function(e){ const p=document.getElementById('indexPanel'); if(p._wasDrag){ p._wasDrag=false; return; } const c=p.classList.toggle('collapsed'); document.getElementById('idxToggle').textContent=c?'+':'\u2212'; });
@@ -2972,19 +2751,6 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
      here, in the third. So the index was always built before a single record
      existed, and nothing rebuilt it afterwards. Rebuild once now that the seed
      is in scope, and again when the fetched set replaces it. */
-  /* The country axis needs the world polygons, which arrive by fetch after the
-     index has already drawn once. Clear the per-row cache and redraw when they
-     do, then stop looking. */
-  (function(){ var t=setInterval(function(){
-      var n=0; try{ n=(typeof _idxCountries==='function')?_idxCountries().length:0; }catch(e){}
-      if(!n) return;
-      clearInterval(t);
-      try{ (window.pjRows()||[]).forEach(function(x){ delete x._ctry; }); }catch(e){}
-      try{ if(typeof INDEXDATA!=='undefined') INDEXDATA.forEach(function(x){ delete x._ctry; }); }catch(e){}
-      try{ if(window.pjRefreshIndex) window.pjRefreshIndex(); }catch(e){}
-    },900);
-    setTimeout(function(){ clearInterval(t); },40000);
-  })();
   window.pjRefreshIndex = function(){
     try{ if(typeof INDEXDATA!=='undefined') INDEXDATA.length = 0; }catch(e){}
     try{ if(typeof renderIndex==='function') renderIndex(); }catch(e){}
@@ -3068,7 +2834,7 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
     }catch(e){ pjCanvas=L.canvas({padding:0.5}); }
     return pjCanvas;
   }
-  var PJ_SRC=[{"k": "bch", "cat": "Global registries", "label": "Biosafety Clearing-House — LMO decisions", "desc": "Every final decision a Cartagena Protocol party has filed on the domestic use, import or release of a living modified organism, plus the risk assessment lodged with it. The only genuinely cross-national record of its kind. Mostly country-level (dashed rings) — the BCH records a decision, not a field."}, {"k": "ogtr", "cat": "Global registries", "label": "Australia — OGTR GMO Record & field-trial sites", "desc": "The most detailed release register in the world: every licence for a dealing involving intentional release (DIR) and not involving release (DNIR), the risk assessment and risk management plan for each, and — uniquely — published locations for active crop field-trial sites. Site-level where the trial is active."}, {"k": "aphis", "cat": "National release registers", "label": "United States — USDA APHIS releases & notifications", "desc": "Release records come from whoever publishes them, and the balance here is not a finding about the world. The United States genuinely runs more field trials than anyone — 54,903 legacy permit rows against Canada's 128 approvals — so its dominance is partly real. But the rest is a harvest artefact, not an absence: the Cartagena filing holds decisions from 173 countries and this map fetches only a slice of them, and Australia's register is one of the best in the world and has not completed a run here yet. Treat every non-US figure as a floor. **Contained laboratory and glasshouse work is the one real gap** — most countries exempt it or require only notification, so it generates no public record anywhere. Food and feed approvals usually sit with a separate agency and appear only where the country filed them."}, {"k": "cfia", "cat": "National release registers", "label": "Canada — CFIA plants with novel traits", "desc": "Every plant with a novel trait authorised in Canada, with the decision document for each. The one harvestable register that lists edited and inserted-gene products side by side, which makes it the best place anywhere to check what an organism actually is."}, {"k": "eu_release", "cat": "National release registers", "label": "European Union — deliberate release registers", "desc": "Member states must publish the location of every field trial under the deliberate release directive, several of them to the municipality or the land parcel. Germany's Standortregister is the most precise release register in the world."}, {"k": "clinical_sponsor", "cat": "Human & clinical", "label": "ClinicalTrials.gov — gene & cell therapy sponsors", "desc": "Lead sponsors of registered gene and cell therapy trials, from ClinicalTrials.gov, one point per organisation at its most frequent trial location. The only facet here with a near-complete public register, because registration is required for essentially every interventional trial run in or submitted to the United States — which also means trials run entirely outside that orbit may never appear, and China is under-represented against its actual programme."}, {"k": "animals_facility", "cat": "Facilities", "label": "Animal facility registers — APHIS, CCAC, AAALAC", "desc": "Animal research and breeding facilities from the registers that name them: USDA APHIS certificates, the Canadian Council on Animal Care, AAALAC accreditation. The UK publishes procedure counts and names no establishment; the EU publishes totals only."}, {"k": "repro_facility", "cat": "Facilities", "label": "Fertility clinic registers — CDC, HFEA, NHC, NARTSR", "desc": "Clinics from the national registers that publish one: the CDC's annual ART surveillance, the UK's HFEA licensed clinic list, China's National Health Commission approved institutions, India's national ART registry. Absent where no register exists, which is most of the world."}, {"k": "biolabs", "cat": "Facilities", "label": "Global BioLabs — maximum-containment laboratories", "desc": "The 118 BSL3+ and BSL4 laboratories the Global BioLabs project could identify, with national biorisk governance scores. No government anywhere is obliged to declare these, so a research project is the only global account there is — and it found 61 of the 69 BSL4 facilities it counts."}, {"k": "escape", "cat": "Spread, drift & contamination", "label": "Documented spread, drift & unauthorised releases", "desc": "Engineered material found where it was not authorised — in a wild population, a food supply, an export consignment or a commercial field. Hand-compiled: the GM Contamination Register logged 396 incidents across 63 countries between 1997 and 2013 and then stopped, and nothing replaced it. Every one of these was found and reported, which is a different thing from every one that happened."}, {"k": "escape_register", "cat": "Spread, drift & contamination", "label": "GM Contamination Register archive, 1997–2013", "desc": "The GM Contamination Register archive, 1997 to 2013. No longer maintained and not replaced, so it is a closed record rather than a feed — and the absence of anything after 2013 is a fact about monitoring, not about contamination."}, {"k": "industry", "cat": "Hand-built", "label": "Industry register — compiled by hand", "desc": "No register anywhere lists the companies, institutes, funders and regulators in this field, so all 779 entries were found, read and written by hand from company filings, regulator pages, court records and trade association material. It is one dataset, not fourteen: the seed, editing, synthesis and other groupings are facets of it, filtered with the lens buttons rather than here. No facet is empty, and a hand-built list is not a census — read it as a map of the industry's significant parts."}, {"k": "curated", "cat": "Hand-built", "label": "Curated records", "desc": "Individually researched records that no feed produces, added where a fact belongs on the map and no register carries it."}]
+  var PJ_SRC=[{"k": "bch", "cat": "Global registries", "label": "Biosafety Clearing-House — LMO decisions (in country boxes)", "desc": "Every final decision a Cartagena Protocol party has filed on the domestic use, import or release of a living modified organism, plus the risk assessment lodged with it. The only genuinely cross-national record of its kind. Mostly country-level (dashed rings) — the BCH records a decision, not a field. These are not drawn as map markers: a decision applies to a whole country, so a dot at a centroid stood for something with no location. They appear instead inside each country box, under Decisions filed to the Cartagena Protocol — 51 countries have one, and the rest carry the note that nothing has been filed."}, {"k": "ogtr", "cat": "Global registries", "label": "Australia — OGTR GMO Record & field-trial sites", "desc": "The most detailed release register in the world: every licence for a dealing involving intentional release (DIR) and not involving release (DNIR), the risk assessment and risk management plan for each, and — uniquely — published locations for active crop field-trial sites. Site-level where the trial is active."}, {"k": "aphis", "cat": "National release registers", "label": "United States — USDA APHIS releases & notifications", "desc": "Release records come from whoever publishes them, and the balance here is not a finding about the world. The United States genuinely runs more field trials than anyone — 54,903 legacy permit rows against Canada's 128 approvals — so its dominance is partly real. But the rest is a harvest artefact, not an absence: the Cartagena filing holds decisions from 173 countries and this map fetches only a slice of them, and Australia's register is one of the best in the world and has not completed a run here yet. Treat every non-US figure as a floor. **Contained laboratory and glasshouse work is the one real gap** — most countries exempt it or require only notification, so it generates no public record anywhere. Food and feed approvals usually sit with a separate agency and appear only where the country filed them."}, {"k": "cfia", "cat": "National release registers", "label": "Canada — CFIA plants with novel traits", "desc": "Every plant with a novel trait authorised in Canada, with the decision document for each. The one harvestable register that lists edited and inserted-gene products side by side, which makes it the best place anywhere to check what an organism actually is."}, {"k": "eu_release", "cat": "National release registers", "label": "European Union — deliberate release registers", "desc": "Member states must publish the location of every field trial under the deliberate release directive, several of them to the municipality or the land parcel. Germany's Standortregister is the most precise release register in the world."}, {"k": "clinical_sponsor", "cat": "Human & clinical", "label": "ClinicalTrials.gov — gene & cell therapy sponsors", "desc": "Lead sponsors of registered gene and cell therapy trials, from ClinicalTrials.gov, one point per organisation at its most frequent trial location. The only facet here with a near-complete public register, because registration is required for essentially every interventional trial run in or submitted to the United States — which also means trials run entirely outside that orbit may never appear, and China is under-represented against its actual programme."}, {"k": "animals_facility", "cat": "Facilities", "label": "Animal facility registers — APHIS, CCAC, AAALAC", "desc": "Animal research and breeding facilities from the registers that name them: USDA APHIS certificates, the Canadian Council on Animal Care, AAALAC accreditation. The UK publishes procedure counts and names no establishment; the EU publishes totals only."}, {"k": "repro_facility", "cat": "Facilities", "label": "Fertility clinic registers — CDC, HFEA, NHC, NARTSR", "desc": "Clinics from the national registers that publish one: the CDC's annual ART surveillance, the UK's HFEA licensed clinic list, China's National Health Commission approved institutions, India's national ART registry. Absent where no register exists, which is most of the world."}, {"k": "biolabs", "cat": "Facilities", "label": "Global BioLabs — maximum-containment laboratories", "desc": "The 118 BSL3+ and BSL4 laboratories the Global BioLabs project could identify, with national biorisk governance scores. No government anywhere is obliged to declare these, so a research project is the only global account there is — and it found 61 of the 69 BSL4 facilities it counts."}, {"k": "escape", "cat": "Spread, drift & contamination", "label": "Documented spread, drift & unauthorised releases", "desc": "Engineered material found where it was not authorised — in a wild population, a food supply, an export consignment or a commercial field. Hand-compiled: the GM Contamination Register logged 396 incidents across 63 countries between 1997 and 2013 and then stopped, and nothing replaced it. Every one of these was found and reported, which is a different thing from every one that happened."}, {"k": "escape_register", "cat": "Spread, drift & contamination", "label": "GM Contamination Register archive, 1997–2013", "desc": "The GM Contamination Register archive, 1997 to 2013. No longer maintained and not replaced, so it is a closed record rather than a feed — and the absence of anything after 2013 is a fact about monitoring, not about contamination."}, {"k": "industry", "cat": "Hand-built", "label": "Industry register — compiled by hand", "desc": "No register anywhere lists the companies, institutes, funders and regulators in this field, so all 779 entries were found, read and written by hand from company filings, regulator pages, court records and trade association material. It is one dataset, not fourteen: the seed, editing, synthesis and other groupings are facets of it, filtered with the lens buttons rather than here. No facet is empty, and a hand-built list is not a census — read it as a map of the industry's significant parts."}, {"k": "curated", "cat": "Hand-built", "label": "Curated records", "desc": "Individually researched records that no feed produces, added where a fact belongs on the map and no register carries it."}]
   function pjAge(d){ try{ var n=Math.floor((new Date()-new Date(d))/86400000);
     if(isNaN(n)||n<0) return "";
     if(n<=7) return " \u00b7 new this week";
@@ -3587,7 +3353,28 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
   function pjHasDate(p){ if(!p||!p.date)return false; var t=new Date(p.date).getTime(); return !isNaN(t); }
   function pjAgeDays(p){ return Math.floor((Date.now()-new Date(p.date).getTime())/86400000); }
   var pjKinds=new Set(["industry","escape","release","biosafety","clinical","repro","animals"]);
+  /* BIOSAFETY DECISIONS ARE NOT DRAWN AS MARKERS.
+   *
+   * They were on the map twice: as 51 country-level dots, and inside each
+   * country box under "Decisions filed to the Cartagena Protocol". The country
+   * box is the better place - a decision applies to a whole country, so a dot
+   * at a centroid was always a stand-in for a thing with no location.
+   *
+   * The records are NOT deleted. The country box reads the same records to
+   * build its section, so removing them from the data would empty both. They
+   * are excluded from the drawing pass only.
+   *
+   * Worth knowing: 51 countries have a decision filed, not 196. The rest show
+   * the "nothing filed" note in the same section, which is a fact about the
+   * Clearing-House rather than about them.
+   */
+  function pjIsDecision(p){
+    try{ return String((p && p.source) || '').toLowerCase().indexOf('bch') === 0; }
+    catch(e){ return false; }
+  }
+
   function pjPasses(p){
+    if(pjIsDecision(p)) return false;
     if(p.lat==null||p.lng==null) return false;
     if(!pjKinds.has(pjKind(p))) return false;
     // The source checkboxes updated activeProjSrc and repainted the canvas, and
@@ -4487,13 +4274,6 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
       .then(function(r){ return r.ok ? r.json() : null; })
       .then(function(d){
         PJ_RES = d;
-        /* `var PJ_RES` lives inside this IIFE, so buildIndexData() - which sits
-           in an earlier script block - could never see it. Its
-           `typeof PJ_RES !== 'undefined'` guard was false on every call and the
-           resource rows it is written to push were silently dropped: 196
-           countries with 2-16 entries each, none of them reaching the index.
-           Same fault as PJ_SEED in round 93, in the same function. */
-        try{ window.PJ_RES = d; }catch(e){}
         try{ if(window.pjRefreshPopup) window.pjRefreshPopup(); }catch(e){}
         try{ if(window.pjBuildConsPanel) window.pjBuildConsPanel(); }catch(e){}
         /* The index is built before this file arrives, so it has to be told. */
@@ -7318,12 +7098,9 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     box.dataset.built='1';
     var h='';
     Object.keys(window.PJ_SUBJ).forEach(function(k){
-      var cd=(window.SUBJDEF&&window.SUBJDEF[k])||'';
       h+='<label><input type="checkbox" data-subj="'+k+'" checked>'
         +'<span class="ot-dot" style="background:'+window.PJ_SUBJ[k].colour+'"></span>'
-        +window.PJ_SUBJ[k].label+'<span class="kcount" data-sc="'+k+'"></span>'
-        +(cd?'<span class="cat-def">'+cd+'</span>':'')
-        +'</label>';
+        +window.PJ_SUBJ[k].label+'<span class="kcount" data-sc="'+k+'"></span></label>';
     });
     box.innerHTML=h;
     box.addEventListener('change',function(e){
@@ -7737,6 +7514,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
            + ((window.PJ_SPEC_LABEL&&window.PJ_SPEC_LABEL[g])||g)
            + ((window.PJ_SPEC_DESC&&window.PJ_SPEC_DESC[g])
                ? '<span class="subj-def">'+window.PJ_SPEC_DESC[g]+'</span>' : '')
+           + ((window.PJ_LENS_DESC&&window.PJ_LENS_DESC[g])
+               ? '<span class="subj-def">'+window.PJ_LENS_DESC[g]+'</span>' : '')
            + '<span class="kcount"> ('+counts[g]+')</span></label>';
     }).join('');
   }
@@ -8245,6 +8024,11 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   };
   try{ window.PJ_SPEC_LABEL = L; window.PJ_SPEC_COLOUR = COL;
        window.PJ_SPEC_DESC = D;
+  /* The lens descriptions, moved out of the Lens & filters box when it was
+     removed. They belong beside the facet they describe rather than in a
+     separate control: a reader opening the Industry list is already asking
+     what these groupings are. */
+  try{ window.PJ_LENS_DESC = {"seed": "The commercial centre. Four firms — Bayer, Corteva, Syngenta and BASF — own most of the world's engineered crop traits and a controlling share of its commercial seed. They sell the seed, license the traits to each other and to smaller breeders, and in three of four cases also sell the herbicide the trait is designed to tolerate. Everything downstream on this map depends on decisions made here.", "editing": "The firms that make the tools everyone else uses, and increasingly the products too. CRISPR and its successors turned genetic modification from a specialist capability into a licensable platform, and the companies holding the foundational patents collect from work they had no part in. This is also where the regulatory escape happens: organisms made by editing rather than transgene insertion are being moved outside registration in one jurisdiction after another.", "synthesis": "The supply chain almost nobody maps, and the layer where capability actually lives. Every engineered organism begins as ordered DNA, and a handful of companies make most of it. Sequencing has collapsed in price to the point where reading a genome is trivial; writing one is the constraint, and these firms are the constraint. Screening of what gets synthesised is largely voluntary, and a substantial share of global capacity sits outside the industry's own screening consortium.", "cro": "The invisible middle. Most companies with an engineered product do not run their own trials, their own animal work or their own manufacturing — they buy it. Contract research organisations run the studies that regulators read, contract manufacturers make the product, and field-trial services plant and manage the plots. The firm named on a permit is frequently not the firm doing the work, and the contractor is accountable to the client rather than to the public.", "animals": "An industrial supply business selling living animals as reagents. A large and growing share of research animals are genetically altered, bred to order, shipped worldwide and killed at the end of a protocol. The trade in transgenic mouse lines alone runs to millions of animals a year. It is the least visible facet of the whole industry and among the largest by volume of life consumed.", "livestock": "Engineering applied to animals people eat, farm or keep. Gene-edited cattle and pigs, fast-growing salmon, cloned horses and dogs sold to order, and glowing ornamental fish already in tanks worldwide. Regulatory treatment varies enormously — some jurisdictions have decided edited livestock is not a regulated article at all — and the commercial pet side operates almost entirely outside biosafety oversight.", "wild": "Organisms engineered specifically to be released into the open and, in some cases, to spread on their own. Sterile-insect and self-limiting mosquito programmes, agricultural microbes and biopesticides applied at field scale, and gene drives — designed to override normal inheritance and push a trait through a wild population. A drive organism cannot respect a border or a permit, which is why the rules for them are being argued over before any has been released.", "deextinct": "Venture-funded work to rebuild lost species, or engineer living ones to survive what is being done to them. The organisms produced are proxies rather than restorations, and they are intellectual property. The deeper effect is on argument rather than ecology: if extinction can be presented as reversible, the cost of causing it drops, and that reframing is doing work in policy long before any animal exists.", "clinical": "Genetic engineering applied to people. Gene and cell therapies now approved and priced in the millions per dose, viral vector manufacturing, and the editing of somatic cells to treat disease. Much of it is medicine that works. The industry question is who it reaches: a therapy priced beyond every health system outside a handful of wealthy countries is a technology developed largely with public money and delivered to almost nobody.", "repro": "Not genetic modification in the technical sense, but the same logic and increasingly the same techniques applied to human reproduction. Clinic chains consolidating under private equity, gamete and embryo banks, and preimplantation genetic testing that has moved from screening for specific disorders towards scoring embryos on traits. It is the one facet where the customer is the person being engineered for, which changes the ethics without removing them.", "money": "Who pays, and what they are paying for. Venture capital and private equity set the timeline — a fund needs an exit, which rewards speed and scale over caution. Public research money funds a great deal of the underlying science, which then becomes private property. Philanthropy is among the largest funders of deployment in low-income countries. Defence agencies fund work that sits outside civilian biosafety oversight entirely.", "rules": "The machinery that authorises the industry and argues for it. National regulators and the registers they keep; the patent offices where ownership of living material is granted; the standards bodies and identifier systems; and the trade associations that do the industry's public arguing so individual firms need not. Included here as part of the industry rather than as a check on it, because in practice the relationship is closer than the diagram suggests."}; }catch(e){}
   /* The marker-note injector that used to run here is gone: the note now sits
      once, at the foot of the point toggles above "Shaded areas". It was also
      being rendered by the legend builder, so the same paragraph appeared three
@@ -9468,7 +9252,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-21 04:51";
+  var BUILD = "BUILD-2026-08-21 20:08";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
@@ -9511,62 +9295,5 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
    top, which this says nothing about. */
 #rundownPanel,#wirePanel{width:var(--sidepanel-w) !important;}
 </style>
-<style>
-/* ROUND 94 - the Lens & filters box is gone.
-   Its two survivors move into the map key: the navigation line and the index,
-   in that order, at the foot of the key body. Written last in the file so these
-   beat the #rightbar #indexPanel rules set for the old column. */
-#controls{display:none!important;}
-#legend .ctl-read{margin:12px 6px 0;padding-top:9px;
-  border-top:1px solid rgba(120,140,180,.22);color:#8f9db4;}
-#legend #indexPanel{position:static!important;left:auto!important;top:auto!important;
-  bottom:auto!important;width:auto!important;max-height:none!important;
-  min-height:0!important;background:transparent!important;border:0!important;
-  box-shadow:none!important;backdrop-filter:none!important;
-  margin:8px 0 0!important;border-radius:0!important;}
-#legend #indexPanel #idxBody{padding:6px 0 2px;}
-#legend #indexPanel #idxList{max-height:30vh!important;overflow:auto;}
-body.info-open #legend #indexPanel{position:static!important;left:auto!important;
-  top:auto!important;bottom:auto!important;width:auto!important;}
-/* One line under each category, in the same shape as the .grp-def lines the
-   sub-rows already carry, so a category reads like the rows beneath it. */
-#subjBox label{flex-wrap:wrap;align-items:flex-start;}
-.cat-def{flex-basis:100%;font-size:9.5px;font-weight:400;color:#7d87a6;
-  line-height:1.45;margin:2px 0 4px 19px;}
-/* The map key fills the rail under the guides box. The rail needs a definite
-   height for that: with only a max-height it is content-sized, and flex:1
-   has nothing to grow into. */
-#rightbar{height:calc(100vh - 86px)!important;max-height:calc(100vh - 86px)!important;}
-#rightbar>#guidesPanel{flex:0 0 auto!important;}
-#rightbar>#legend:not(.collapsed){flex:1 1 auto!important;min-height:0!important;
-  max-height:none!important;display:flex;flex-direction:column;overflow:hidden;}
-#rightbar>#legend:not(.collapsed) #legBody{flex:1 1 auto!important;
-  max-height:none!important;min-height:0!important;overflow-y:auto!important;}
-#rightbar>#legend.collapsed{flex:0 0 auto!important;}
-/* One scrollbar, not two: the key body already scrolls, so the index grows
-   inside it instead of opening a second scrolling box near the bottom. */
-#legend #indexPanel #idxList{max-height:none!important;overflow:visible!important;}
-#legend #indexPanel #idxBody{padding:8px 0 0!important;}
-#legend #idxControls{margin-bottom:6px;}
-</style>
-<script>
-/* THE FOOT OF THE MAP KEY, in a fixed order.
-   Three passes in this file insert and move blocks inside #legBody, so the tail
-   was whatever the last one to run left behind. It is stated here instead:
-   everything else, then the provenance fold, then the navigation line, then the
-   index. Runs every tick rather than latching, because a later pass moving one
-   of them back costs nothing to undo and cannot be got wrong. */
-(function(){
-  function go(){
-    var leg=document.getElementById('legBody'); if(!leg) return;
-    var det=leg.querySelector('.lp-detail'),
-        nav=leg.querySelector('.ctl-read'),
-        idx=document.getElementById('indexPanel');
-    if(!det||!nav||!idx) return;
-    [det,nav,idx].forEach(function(el){ if(el.parentNode!==leg||el.nextSibling) leg.appendChild(el); });
-  }
-  var t=setInterval(go,700); setTimeout(function(){ clearInterval(t); },30000);
-})();
-</script>
 </body>
 </html>
