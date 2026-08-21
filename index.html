@@ -641,7 +641,7 @@ function pjReport(which, data){
 <div id="legend">
   <div id="legHead"><span>Map key</span><span id="legTog" onclick="document.getElementById('legend').classList.toggle('collapsed')" title="Show / hide the map key">&#9662;</span></div>
   <div id="legBody">
-  <label class="f-status"><input type="checkbox" id="projChk" checked> All map points</label><div class="pj-kinds"><label><input type="checkbox" class="pj-kind" data-kind="industry" checked> <b>Industry</b> — every entity in it</label><div class="kind-note"><b>Filled</b> means a real coordinate. <b>A hollow ring</b> means the source published none — most do not — so the marker sits at a fallback point for that country, state or city. A corporate headquarters is always hollow: it is an office, and the laboratories, plants and fields the company runs are somewhere else entirely.</div><label><input type="checkbox" class="pj-kind" data-kind="escape" checked> <b>Spread &amp; drift</b> — what got out</label><label><input type="checkbox" class="pj-kind" data-kind="release" checked> <b>Releases</b> — authorisations</label><label><input type="checkbox" class="pj-kind" data-kind="biosafety" checked> <b>Biosafety decisions</b> — national rulings</label><label><input type="checkbox" class="pj-kind" data-kind="clinical" checked> <b>Clinical trials</b> — gene &amp; cell therapy sponsors</label><label><input type="checkbox" class="pj-kind" data-kind="repro" checked> <b>Fertility clinics</b> — licensed and approved</label><label><input type="checkbox" class="pj-kind" data-kind="animals" checked> <b>Animal facilities</b> — registered and accredited</label></div><div class="ot-head">Release records</div><div class="pj-otypes" id="relBox"></div><div class="ot-head">What they work on</div><div class="pj-otypes" id="subjBox"></div><div class="ot-head">Entity type</div><div class="pj-otypes" id="otBox"></div><div class="ot-head">Shaded areas</div><div class="pj-otypes" id="regBox"></div><div class="ot-head">GM zones</div><div class="pj-otypes" id="ovBox"></div>
+  <label class="f-status"><input type="checkbox" id="projChk" checked> All map points</label><div class="pj-kinds"><label><input type="checkbox" class="pj-kind" data-kind="industry" checked> <b>Industry</b> — every entity in it</label><label><input type="checkbox" class="pj-kind" data-kind="escape" checked> <b>Spread &amp; drift</b> — what got out</label><label><input type="checkbox" class="pj-kind" data-kind="release" checked> <b>Releases</b> — authorisations</label><label><input type="checkbox" class="pj-kind" data-kind="biosafety" checked> <b>Biosafety decisions</b> — national rulings</label><label><input type="checkbox" class="pj-kind" data-kind="clinical" checked> <b>Clinical trials</b> — gene &amp; cell therapy sponsors</label><label><input type="checkbox" class="pj-kind" data-kind="repro" checked> <b>Fertility clinics</b> — licensed and approved</label><label><input type="checkbox" class="pj-kind" data-kind="animals" checked> <b>Animal facilities</b> — registered and accredited</label></div><div class="ot-head">Release records</div><div class="pj-otypes" id="relBox"></div><div class="ot-head">What they work on</div><div class="pj-otypes" id="subjBox"></div><div class="ot-head">Entity type</div><div class="pj-otypes" id="otBox"></div><div class="ot-head">Shaded areas</div><div class="pj-otypes" id="regBox"></div><div class="ot-head">GM zones</div><div class="pj-otypes" id="ovBox"></div>
   <div class="proj-size"><span class="ps-lab">Release scale &mdash; select any</span><span class="ps-pill on" data-ms="all">All</span><span class="ps-pill" data-ms="3">Medium <i>multi-site trial</i></span><span class="ps-pill" data-ms="4">Large <i>regional / multi-season</i></span><span class="ps-pill" data-ms="5">Largest <i>commercial cultivation</i></span></div><div class="proj-size proj-phase"><span class="ps-lab">Consent phase &mdash; select any</span><span class="ps-pill on" data-ph="pre">In review <i>pre-consent &middot; applied / notified / under assessment</i></span><span class="ps-pill on" data-ph="post">Consented <i>post-consent &middot; approved / planted / marketed</i></span></div>
   <div class="proj-search"><input id="projQ" type="search" placeholder="Search releases by organism, trait or applicant…" autocomplete="off"><span id="projQn"></span></div>
   <div class="proj-time"><span class="ps-lab">Filing recency — dated registers</span><span class="pt-pill on" data-tw="0">All ages</span><span class="pt-pill" data-tw="30">≤30d</span><span class="pt-pill" data-tw="90">≤90d</span><span class="pt-pill" data-tw="180">≤6mo</span><span class="pt-pill" data-tw="365">≤1yr</span><label class="pt-und"><input type="checkbox" id="pjUndated" checked> Include undated</label></div><div class="lp-detail collapsed"><div class="lp-detail-head" onclick="this.parentNode.classList.toggle('collapsed')"><span class="lp-car">&#9662;</span> Where this data comes from &amp; what's not (yet) in it</div><div class="lp-detail-body">
@@ -4266,6 +4266,17 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
         if(aw !== bw) return bw - aw;
         return (a.days - b.days) || (a.n < b.n ? -1 : 1);
       });
+      /* Group by the notifying country. Every entry used to sit under
+         Worldwide because every source was a portal; ePing and the
+         Clearing-House carry the country on each notice, so a reader can now
+         see their own. Worldwide stays first, because a notice anyone can
+         comment on should not sit below one they cannot. */
+      out.sort(function(a, b){
+        var aw = (a.co === 'Worldwide') ? 1 : 0, bw = (b.co === 'Worldwide') ? 1 : 0;
+        if(aw !== bw) return bw - aw;
+        if((a.co || '') !== (b.co || '')) return (a.co || '') < (b.co || '') ? -1 : 1;
+        return a.days - b.days;
+      });
       window._pjConsDropped = dropped;
       if(dropped) try{ console.log('[map] consultations: ' + out.length
         + ' on subject, ' + dropped + ' dropped as unrelated. If that number is '
@@ -4321,20 +4332,9 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
       glob.sort(function(a, b){ return (b.ww ? 1 : 0) - (a.ww ? 1 : 0); });
       var rows = (own[cat.k] || []).concat(glob);
       if(cat.k === 'complain' && sub) rows = [sub].concat(rows);
-      if(rows.length) out.push({label: cat.label, k: cat.k,
-                                domain: cat.domain || 'crops', rows: rows});
+      if(rows.length) out.push({label: cat.label, k: cat.k, rows: rows});
     }
-    /* Group by domain. Every category used to be about crops, so a reader
-       who clicked a fertility clinic got strip tests and organic certifiers. */
-    var _doms = (PJ_RES.domains || []), byDom = [], seen = {};
-    _doms.forEach(function(dm){
-      var kids = out.filter(function(c){ return (c.domain || 'crops') === dm.k; });
-      kids.forEach(function(c){ seen[c.k] = 1; });
-      if(kids.length) byDom.push({k: dm.k, label: dm.label, cats: kids});
-    });
-    var _rest = out.filter(function(c){ return !seen[c.k]; });
-    if(_rest.length) byDom.push({k:'other', label:'OTHER', cats: _rest});
-    return {country: key, cats: out, doms: byDom};
+    return {country: key, cats: out};
   }
 
   /* The country box calls this. Everything, including the consultations, because
@@ -4493,39 +4493,29 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
       if(!r || !r.cats.length) return '';
       var h = '<div class="pj-act"><div class="pj-act-h">What you can do about '
             + 'this</div>';
-      /* Domain first, category inside it. The first domain opens; the rest
-         fold, so a reader looking at a clinic does not scroll past seven crop
-         categories to reach it. */
-      (r.doms || [{label:'', cats: r.cats}]).forEach(function(dm, di){
-        var n = dm.cats.reduce(function(a, c){ return a + c.rows.length; }, 0);
-        if(dm.label){
-          h += '<div class="res-dom' + (di === 0 ? ' open' : '') + '">'
-            +  '<div class="res-dhead" onclick="this.parentNode.classList.toggle('
-            +  '&quot;open&quot;)"><span class="res-car">\u25b8</span>'
-            +  '<span class="res-dlab">' + dm.label + '</span>'
-            +  '<span class="res-n">' + n + '</span></div>'
-            +  '<div class="res-dbody">';
-        }
-        dm.cats.forEach(function(c){
-          h += '<div class="res-cat"><div class="res-head" onclick='
-            +  '"this.parentNode.classList.toggle(&quot;open&quot;)">'
-            +  '<span class="res-car">\u25b8</span>'
-            +  '<span class="res-lab">' + c.label + '</span>'
-            +  '<span class="res-n">' + c.rows.length + '</span></div>'
-            +  '<div class="res-body">';
-          c.rows.forEach(function(x){
-            h += '<div class="res-card"><div class="res-name">' + _esc(x.n)
-              +  '</div>'
-              +  (x.lens ? '<span class="res-lens">' + _esc(x.lens) + '</span>' : '')
-              +  '<div class="res-d">' + _esc(x.d || '') + '</div>'
-              +  (x.conf ? '<div class="res-conf">' + _esc(x.conf) + '</div>' : '')
-              +  (x.u ? '<a class="res-src" href="' + x.u + '" target="_blank" '
-                      + 'rel="noopener">Visit source \u2197</a>' : '')
-              +  '</div>';
-          });
-          h += '</div></div>';
+      r.cats.forEach(function(c, ci){
+        var id = 'res-' + c.k + '-' + (Math.random()*1e6|0);
+        h += '<div class="res-cat">'
+          +  '<div class="res-head" onclick="this.parentNode.classList.toggle('
+          +  '&quot;open&quot;)"><span class="res-car">\u25b8</span>'
+          +  '<span class="res-lab">' + c.label + '</span>'
+          +  '<span class="res-n">' + c.rows.length + '</span></div>'
+          +  '<div class="res-body">';
+        c.rows.forEach(function(x){
+          h += '<div class="res-card">'
+            +  '<div class="res-name">' + _esc(x.n) + '</div>'
+            +  (x.lens ? '<span class="res-lens">' + _esc(x.lens) + '</span>' : '')
+            +  '<div class="res-d">' + _esc(x.d || '') + '</div>'
+            /* A name taken from a pattern rather than checked says so. The
+               alternative is an unverified name sitting beside a verified one
+               and looking identical, which is how a reader stops trusting all
+               of them. */
+            +  (x.conf ? '<div class="res-conf">' + _esc(x.conf) + '</div>' : '')
+            +  (x.u ? '<a class="res-src" href="' + x.u + '" target="_blank" '
+                    + 'rel="noopener">Visit source \u2197</a>' : '')
+            +  '</div>';
         });
-        if(dm.label) h += '</div></div>';
+        h += '</div></div>';
       });
       h += '</div>';
       return h;
@@ -5571,15 +5561,10 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 /* The caveat that travels with a value: scale on a release record, the CBI
    redaction on a trait description. Small, indented, and beside the thing it
    qualifies rather than in a panel the reader does not have open. */
+.ind-foot{display:block;margin:8px 0 2px;padding:7px 9px;border-radius:5px;background:rgba(120,140,180,.10);border-left:2px solid rgba(120,140,180,.35);font-size:9.4px;line-height:1.5;color:#a9b6cd;}
 .subj-def{display:block;font-size:9.5px;line-height:1.45;color:#8d99b4;margin:1px 0 3px 18px;font-weight:400;}
 .pj-act{margin-top:8px;padding:7px 9px;border-radius:5px;background:rgba(74,93,47,0.14);border-left:2px solid rgba(122,150,80,0.75);font-size:9.6px;line-height:1.5;color:#c9d3e4;}
 .pj-act-h{font-weight:700;font-size:10px;color:#dfe7f5;margin-bottom:3px;}
-.res-dom{border-top:1px solid rgba(120,140,180,.30);}
-.res-dhead{display:flex;align-items:center;gap:6px;padding:7px 0;cursor:pointer;font-size:9.8px;letter-spacing:.6px;text-transform:uppercase;font-weight:700;color:#dfe7f5;}
-.res-dom.open>.res-dhead .res-car{transform:rotate(90deg);}
-.res-dlab{flex:1 1 auto;}
-.res-dbody{display:none;padding-left:8px;}
-.res-dom.open>.res-dbody{display:block;}
 .res-cat{border-top:1px solid rgba(120,140,180,.22);}
 .res-head{display:flex;align-items:center;gap:6px;padding:5px 0;cursor:pointer;font-size:9.4px;letter-spacing:.4px;text-transform:uppercase;color:#c3d0e6;}
 .res-car{font-size:8px;color:#8fa4c6;transition:transform .12s;}
@@ -7797,7 +7782,26 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
                  + "and clinical trials."
   };
   try{ window.PJ_SPEC_LABEL = L; window.PJ_SPEC_COLOUR = COL;
-       window.PJ_SPEC_DESC = D; }catch(e){}
+       window.PJ_SPEC_DESC = D;
+  /* The marker note, rendered at the foot of the Industry organism list. */
+  try{
+    document.addEventListener('DOMContentLoaded', function(){
+      setTimeout(function(){
+        try{
+          var host = document.querySelector('.pj-subj, #industrySubjects, .subj-list');
+          if(!host || !window.PJ_MARKER_NOTE) return;
+          if(host.querySelector('.ind-foot')) return;
+          host.insertAdjacentHTML('beforeend', window.PJ_MARKER_NOTE);
+        }catch(e){}
+      }, 900);
+    });
+  }catch(e){}
+  /* Moved out of the Industry checkbox label and down here, under the organism list.
+     Sitting beside the toggle it read as a note about the toggle; it is about
+     every marker on the map, and it belongs where a reader is already looking
+     at what the markers mean. */
+  try{ window.PJ_MARKER_NOTE = '<div class="ind-foot"><b>Filled</b> means a real coordinate. <b>A hollow ring</b> means the source published none — most do not — so the marker sits at a fallback point for that country, state or city. A corporate headquarters is always hollow: it is an office, and the laboratories, plants and fields the company runs are somewhere else entirely.</div>'; }catch(e){}
+ }catch(e){}
   window.pjSpeciesOn = null;   // null = filter not applied
 
   window.pjSpeciesPasses = function(p){
@@ -9011,7 +9015,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-21 00:50";
+  var BUILD = "BUILD-2026-08-21 01:41";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
