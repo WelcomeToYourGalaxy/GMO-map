@@ -177,13 +177,6 @@
 #consPanel.collapsed .help-tog::before{content:"+";}
 #consPanel.collapsed .help-body{display:none;}
 .cons-note{font-size:10px;color:#8d97ad;font-style:italic;line-height:1.5;padding:4px 0;}
-  /* Consultation rows reuse the wire's item styling so the two feeds read the
-     same way. Only the deadline needs anything extra. */
-  .cons-item{padding-left:7px;border-left:2px solid transparent;}
-  .cons-soon{border-left-color:#e8823c;background:rgba(200,110,50,.10);}
-  .cons-item .res-lens{margin-left:6px;vertical-align:middle;}
-  .cons-urgent{color:#ffcfa8;background:rgba(200,110,50,.30);}
-  .cons-cat .wire-cat-body{padding-left:2px;}
 .cons-lead{font-size:10px;color:#96a2ba;line-height:1.5;padding:2px 0 5px;}
 #indexPanel{position:static !important;left:auto !important;top:auto !important;width:auto !important;max-height:none !important;flex:1 1 auto;min-height:320px;}
 .tracker-item .tracker-name{cursor:pointer;}
@@ -485,6 +478,7 @@ function pjReport(which, data){
     console.log('[map] loaded '+which+': '+rows.length+' records, '+grouped+' grouped place markers'
       +(grouped?'':'   <-- NOT GROUPED: this file predates the grouping change'));
     window.pjLoadedFrom={file:which, rows:rows.length, grouped:grouped};
+    try{ if(window.pjRefreshIndex) window.pjRefreshIndex(); }catch(e){}
   }catch(e){}
   return data;
 }
@@ -648,7 +642,7 @@ function pjReport(which, data){
 <div id="legend">
   <div id="legHead"><span>Map key</span><span id="legTog" onclick="document.getElementById('legend').classList.toggle('collapsed')" title="Show / hide the map key">&#9662;</span></div>
   <div id="legBody">
-  <label class="f-status"><input type="checkbox" id="projChk" checked> All map points</label><div class="pj-kinds"><label><input type="checkbox" class="pj-kind" data-kind="industry" checked> <b>Industry</b> — every entity in it</label><label><input type="checkbox" class="pj-kind" data-kind="escape" checked> <b>Spread &amp; drift</b> — what got out</label><label><input type="checkbox" class="pj-kind" data-kind="release" checked> <b>Releases</b> — authorisations</label><label><input type="checkbox" class="pj-kind" data-kind="biosafety" checked> <b>Biosafety decisions</b> — national rulings</label><label><input type="checkbox" class="pj-kind" data-kind="clinical" checked> <b>Clinical trials</b> — gene &amp; cell therapy sponsors</label><label><input type="checkbox" class="pj-kind" data-kind="repro" checked> <b>Fertility clinics</b> — licensed and approved</label><label><input type="checkbox" class="pj-kind" data-kind="animals" checked> <b>Animal facilities</b> — registered and accredited</label></div><div class="ot-head">Release records</div><div class="pj-otypes" id="relBox"></div><div class="ot-head">What they work on</div><div class="pj-otypes" id="subjBox"></div><div class="ot-head">Entity type</div><div class="pj-otypes" id="otBox"></div><div class="ot-head">Shaded areas</div><div class="pj-otypes" id="regBox"></div><div class="ot-head">GM zones</div><div class="pj-otypes" id="ovBox"></div>
+  <label class="f-status"><input type="checkbox" id="projChk" checked> All map points</label><div class="lg-n" style="margin:3px 0 6px;"><b>Filled</b> means a real coordinate. <b>A hollow ring</b> means the source published none \u2014 most do not \u2014 so the marker sits at a fallback point for that country, state or city. A corporate headquarters is always hollow: it is an office, and the laboratories, plants and fields the company runs are somewhere else entirely.</div><div class="pj-kinds"><label><input type="checkbox" class="pj-kind" data-kind="industry" checked> <b>Industry</b> — every entity in it</label><label><input type="checkbox" class="pj-kind" data-kind="escape" checked> <b>Spread &amp; drift</b> — what got out</label><label><input type="checkbox" class="pj-kind" data-kind="release" checked> <b>Releases</b> — authorisations</label><label><input type="checkbox" class="pj-kind" data-kind="biosafety" checked> <b>Biosafety decisions</b> — national rulings</label><label><input type="checkbox" class="pj-kind" data-kind="clinical" checked> <b>Clinical trials</b> — gene &amp; cell therapy sponsors</label><label><input type="checkbox" class="pj-kind" data-kind="repro" checked> <b>Fertility clinics</b> — licensed and approved</label><label><input type="checkbox" class="pj-kind" data-kind="animals" checked> <b>Animal facilities</b> — registered and accredited</label></div><div class="ot-head">Release records</div><div class="pj-otypes" id="relBox"></div><div class="ot-head">What they work on</div><div class="pj-otypes" id="subjBox"></div><div class="ot-head">Entity type</div><div class="pj-otypes" id="otBox"></div><div class="ot-head">Shaded areas</div><div class="pj-otypes" id="regBox"></div><div class="ot-head">GM zones</div><div class="pj-otypes" id="ovBox"></div>
   <div class="proj-size"><span class="ps-lab">Release scale &mdash; select any</span><span class="ps-pill on" data-ms="all">All</span><span class="ps-pill" data-ms="3">Medium <i>multi-site trial</i></span><span class="ps-pill" data-ms="4">Large <i>regional / multi-season</i></span><span class="ps-pill" data-ms="5">Largest <i>commercial cultivation</i></span></div><div class="proj-size proj-phase"><span class="ps-lab">Consent phase &mdash; select any</span><span class="ps-pill on" data-ph="pre">In review <i>pre-consent &middot; applied / notified / under assessment</i></span><span class="ps-pill on" data-ph="post">Consented <i>post-consent &middot; approved / planted / marketed</i></span></div>
   <div class="proj-search"><input id="projQ" type="search" placeholder="Search releases by organism, trait or applicant…" autocomplete="off"><span id="projQn"></span></div>
   <div class="proj-time"><span class="ps-lab">Filing recency — dated registers</span><span class="pt-pill on" data-tw="0">All ages</span><span class="pt-pill" data-tw="30">≤30d</span><span class="pt-pill" data-tw="90">≤90d</span><span class="pt-pill" data-tw="180">≤6mo</span><span class="pt-pill" data-tw="365">≤1yr</span><label class="pt-und"><input type="checkbox" id="pjUndated" checked> Include undated</label></div><div class="lp-detail collapsed"><div class="lp-detail-head" onclick="this.parentNode.classList.toggle('collapsed')"><span class="lp-car">&#9662;</span> Where this data comes from &amp; what's not (yet) in it</div><div class="lp-detail-body">
@@ -827,7 +821,29 @@ function _dom(u){ return (u||'').replace(/^https?:\/\//i,'').replace(/^www\./i,'
 const BEST_POPULAR=new Set(['opencorporates.com','icij.org','offshoreleaks.icij.org','opensecrets.org','whatdotheyknow.com','opensanctions.org','aleph.occrp.org','occrp.org','littlesis.org','gleif.org','search.gleif.org','openownership.org','register.openownership.org','usaspending.gov','integritywatch.eu','lobbyfacts.eu','transparency.org','followthemoney.org','muckrock.com','propublica.org','wikileaks.org','sunlightfoundation.com']);
 const BEST_HELPFUL=new Set(['gijn.org','information-commissioners.org','cia.gov','foia.gov','rti-rating.org','freedominfo.org','alaveteli.org','right2info.org','access-info.org','worldlii.org','eur-lex.europa.eu']);
 const bestMode=new Set();
-function isBest(t){ if(bestMode.has('authoritative') && voiceOf(t)==='official' && trustOf(t)==='high') return true;
+/* THE QUALITY TOGGLES FILTERED AN EMPTY SET.
+   Best sources, trust and voice all run through trackerVisible(), which reads
+   trackerData - and trackerData ships {} because those entries became map
+   points in round 44. So the toggles were wired, fired, and repainted a layer
+   with nothing in it. Round 73 fixed lens and sub-filter the same way and this
+   set was missed. Published on window because pjPasses lives in a later block
+   and cannot see these names directly. */
+window.pjQualityPasses = function(p){
+  try{
+    if(typeof activeTrust!=='undefined' && activeTrust.size && !activeTrust.has(p.trust||'high')) return false;
+    if(typeof activeVoices!=='undefined' && activeVoices.size && !activeVoices.has(p.voice||'interpretive')) return false;
+    if(bestMode.size){
+      var d=''; try{ d=String(p.url||'').split('/')[2]||''; d=d.replace(/^www\./,''); }catch(e){}
+      var hit=false;
+      if(bestMode.has('authoritative') && (p.voice||'')==='official' && (p.trust||'')==='record') hit=true;
+      if(!hit && bestMode.has('popular') && typeof BEST_POPULAR!=='undefined' && BEST_POPULAR.has(d)) hit=true;
+      if(!hit && bestMode.has('helpful') && typeof BEST_HELPFUL!=='undefined' && BEST_HELPFUL.has(d)) hit=true;
+      if(!hit) return false;
+    }
+  }catch(e){}
+  return true;
+};
+function isBest(t){ if(bestMode.has('authoritative') && voiceOf(t)==='official' && trustOf(t)==='record') return true;
   var d=_dom(t.url);
   if(bestMode.has('popular') && BEST_POPULAR.has(d)) return true;
   if(bestMode.has('helpful') && (BEST_HELPFUL.has(d) || (t.tags||[]).some(function(x){return x.indexOf(':directory')>=0;}))) return true;
@@ -861,18 +877,26 @@ function countryActive(iso){ return flatVis(iso).some(t=>statusOf(t)==='active')
 
 function applyAccent(){ const d=DMAP[domain], r=document.documentElement.style;
   r.setProperty('--accent',d.accent); r.setProperty('--accent-hi',d.hi); r.setProperty('--accent-soft',hexA(d.accent,0.24));
-  /* The map key was rebuilt and #legActive went with it, but this line stayed.
-     A null here threw before renderPills() on every lens click, before
-     rebuild(), and - because it sits one statement above initIndex() in the
-     start-up line - before the index search box was ever bound. Every lookup
-     in this function is now guarded: applyAccent runs on every interaction,
-     and a colour swatch is not worth taking the controls down with it. */
+  /* NULL-SAFE, and this is not cosmetic caution.
+     #legActive was removed from the map key when the key was rebuilt around the
+     kind checkboxes, and this line kept dereferencing it. It threw a TypeError
+     every time it ran, which is:
+       - at the end of block 1, where the very next statement is initIndex() -
+         so the index was never built or wired, and the search box did nothing;
+       - inside the lens-pill click handler, before renderPills/renderSubs/
+         rebuild() - so a lens button changed `domain` and then died, leaving
+         the map unchanged and the pill styled from whatever ran last;
+       - inside applyIntent(), whose try/catch swallowed it and blanked the
+         hint - so "What are you trying to do?" appeared to do nothing at all.
+     One missing element, four dead controls. Guarded rather than restored,
+     because the accent is carried by the CSS variables set above; the swatch
+     was only ever a mirror of them. */
   var _la=document.getElementById('legActive'); if(_la) _la.style.background=d.accent;
   var _st=document.getElementById('subtitle'); if(_st) _st.textContent=d.desc;
   var _dd=document.getElementById('domainDesc'); if(_dd) _dd.textContent=d.desc; }
 function renderPills(){ const b=document.getElementById('domainPills'); b.innerHTML='';
   function prow(key,label,desc,accent){ const r=document.createElement('div'); r.className='subrow'; const p=document.createElement('span'); p.className='dpill'; p.textContent=label; p.dataset.key=key;
-    if(key===domain) p.classList.add('on'); const sd=document.createElement('span'); sd.className='sd'; sd.textContent=desc||''; r.appendChild(p); r.appendChild(sd); b.appendChild(r); }
+    if(key===domain){ p.style.background='#7fa8cc'; p.style.color='#0b1220'; p.style.borderColor='#9dc0dd'; } const sd=document.createElement('span'); sd.className='sd'; sd.textContent=desc||''; r.appendChild(p); r.appendChild(sd); b.appendChild(r); }
   prow('all','All lenses',DMAP['all'].desc,DMAP['all'].accent);
   DOMAINS.forEach(d=>prow(d.key,d.label,d.desc,d.accent)); }
 function renderSubs(){ const b=document.getElementById('subBox'); b.innerHTML='';
@@ -1369,43 +1393,6 @@ map.on('dragstart',function(){ gbDragging=true; if(gbPanT){clearTimeout(gbPanT);
 map.on('dragend',function(){ gbDragging=false; gbDragEndTime=Date.now(); });
 function gbSchedClear(latlng){ if(gbPanT)clearTimeout(gbPanT); gbPanT=setTimeout(function(){ gbPanT=null; gbPanClear(latlng); },520); }
 function gbFitCountry(feat){ if(!feat)return; try{ gbFitTime=Date.now(); const p=gbFitPad(map.getSize()); p.maxZoom=6; map.fitBounds(gbSaneBounds(feat),p); }catch(e){} }
-/* Centre a unit in the map area the reader can actually see - the space to the
-   right of the resources box on a wide window, the space above it on a narrow
-   one. Centring in the full window would put the country the reader just
-   clicked behind the panel that opened because they clicked it.
-
-   Run twice: once immediately, and once after the panel has settled, because
-   showInfoPanel reflows the card on a 240ms timer and the reserve this depends
-   on is not final until it has. */
-function gbCentreUnit(bounds){
-  if(!bounds) return;
-  function once(){
-    try{
-      if(gbDragging) return;
-      var card=document.getElementById('infoPanel');
-      var open=!!(card&&card.classList.contains('open'));
-      var sz=map.getSize(), c=bounds.getCenter?bounds.getCenter():bounds;
-      var pt=map.latLngToContainerPoint(c);
-      var wantX=sz.x/2, wantY=sz.y/2;
-      if(open){
-        var cr=card.getBoundingClientRect(), mr=document.getElementById('map').getBoundingClientRect();
-        if(window.innerWidth<=640){
-          /* the card sits along the bottom: centre in the strip above it */
-          var top=Math.max(0,Math.min(sz.y,cr.top-mr.top));
-          wantY=Math.max(70,top/2);
-        } else {
-          /* the card sits along the left: centre in the strip beside it */
-          var right=Math.max(0,Math.min(sz.x,cr.right-mr.left));
-          wantX=right+(sz.x-right)/2;
-        }
-      }
-      var dx=pt.x-wantX, dy=pt.y-wantY;
-      if(Math.abs(dx)>8||Math.abs(dy)>8){ gbFitTime=Date.now(); map.panBy([dx,dy],{animate:true,duration:0.45}); }
-    }catch(e){}
-  }
-  once(); setTimeout(once,320);
-}
-function gbCentreCountry(feat){ if(!feat)return; try{ gbCentreUnit(gbSaneBounds(feat)); }catch(e){} }
 function gbToWorld(){ gbClear(); map.closePopup(); hideInfoPanel(); map.setZoom(Math.max(3,map.getZoom()-2)); renderCrumb(); }
 function deactivate(){ gbToWorld(); }
 function _pbEsc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
@@ -1504,6 +1491,12 @@ function _regimeBox(iso){
     /* The resources used to be appended to this write-up. They now open in
        their own panel, so the country box stays a country box. */
     try{ if(window.pjOpenUnit) window.pjOpenUnit(name || iso, 'country'); }catch(e){}
+    /* Centre the clicked country. Opening the resources box on a country whose
+       shape is half off-screen leaves the reader looking at a panel about a
+       place they cannot see. Prefer the drawn geometry, which is exact; fall
+       back to the average of that country's own points when the shape is not
+       loaded. Guarded so a failure here never stops the box from opening. */
+    try{ if(window.pjCentreUnit) window.pjCentreUnit(name || iso); }catch(e){}
     var out = '';
     try{
       var body = inner.replace(/^[\s\S]*?<div class="rgm-h">[^<]*<\/div>/, '');
@@ -1685,7 +1678,6 @@ function gbEnterCountry(iso,feat,latlng){ gbClear(); gbNav={iso:iso,feat:feat,ad
   body = body.replace('</div>','</div>'+_extra,1);
   showInfoPanel(body);
   gbFitCountry(feat);
-  gbCentreCountry(feat);
   /* card clearance is handled by the fit's left reserve (gbFitPad) in one animation; no secondary pan */
   gbShow(true); }
 function gbLoadAdm4(cb){ if(gbNav.adm4){cb(true);return;} fetchLevel(gbNav.iso,'ADM4').then(geo=>{ const fs=geo.features||[],byLevel={},lv={};
@@ -1971,8 +1963,6 @@ fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json').then(r=>r
       try{ var _nv=natVis(a3), _nm=(trackerData[a3]&&trackerData[a3].name)||(f.properties&&f.properties.name)||a3;
         var _b=_nv.length?popHTML(_nm,_nv,'country',''):(trackerData[a3]?countryNoDataHTML(a3,_nm,''):('<div class="popup-country">'+_nm+'</div>'));
         _b=_b.replace('</div>','</div>'+_usGuide(a3)+_regimeBox(a3),1); showInfoPanel(_b);
-        /* this path reopened the box without touching the map at all */
-        gbCentreCountry(f);
       }catch(e){}
       return; }
     if(!a3){
@@ -2076,7 +2066,7 @@ const FacilityLayer=L.Layer.extend({
 function buildBestPills(){ var box=document.getElementById('bestPills'); if(!box)return;
   var opts=[['authoritative','Most authoritative'],['popular','Most popular'],['helpful','Most helpful']];
   box.innerHTML=opts.map(function(o){return '<span class="best-pill" data-bk="'+o[0]+'">'+o[1]+'</span>';}).join('');
-  box.querySelectorAll('.best-pill').forEach(function(el){ el.addEventListener('click',function(){ var k=this.getAttribute('data-bk'); if(bestMode.has(k)){bestMode.delete(k);this.classList.remove('on');} else {bestMode.add(k);this.classList.add('on');} rebuild(); if(typeof renderIndex==='function') renderIndex(); }); });
+  box.querySelectorAll('.best-pill').forEach(function(el){ el.addEventListener('click',function(){ var k=this.getAttribute('data-bk'); if(bestMode.has(k)){bestMode.delete(k);this.classList.remove('on');} else {bestMode.add(k);this.classList.add('on');} rebuild(); }); });
 }
 var FACDESC={
  mi:'Ministry &amp; agency headquarters — the biosafety authority, the agriculture ministry, the food-safety agency. These are the bodies that receive an application, run the assessment and sign the consent. Records requests go here, and so does correspondence that later becomes evidence of what a regulator knew and when.',
@@ -2136,8 +2126,15 @@ let INDEXDATA=[]; const CENTROIDS={};
 function _tierLabel(t){ if(!t) return 'State'; return t.charAt(0).toUpperCase()+t.slice(1); }
 function _lensesOf(tr){ const s=[]; (tr.tags||[]).forEach(t=>{const k=t.split(':')[0]; if(LENSLABEL[k]&&s.indexOf(LENSLABEL[k])<0)s.push(LENSLABEL[k]);}); return s; }
 function buildIndexData(){ INDEXDATA=[];
-  var rows = (typeof pjData!=='undefined' && pjData && pjData.projects) ? pjData.projects
-           : ((typeof PJ_SEED!=='undefined' && PJ_SEED.projects) || []);
+  /* window.pjRows() first: pjData and PJ_SEED both live inside the map IIFE and
+     are not visible from this block. The two `typeof` tests below are kept for
+     the case where this file is ever un-wrapped, but they are not what works. */
+  var rows = [];
+  try{ if(typeof window.pjRows==='function') rows = window.pjRows()||[]; }catch(e){}
+  if(!rows.length){
+    rows = (typeof pjData!=='undefined' && pjData && pjData.projects) ? pjData.projects
+         : ((typeof PJ_SEED!=='undefined' && PJ_SEED.projects) || []);
+  }
   rows.forEach(function(p){
     var src=String(p.source||'');
     var isInd=src.indexOf('industry')===0, isEsc=src.indexOf('spread')===0;
@@ -2203,8 +2200,7 @@ function buildIndexData(){ INDEXDATA=[];
 function buildCentroids(){ try{ if(typeof geojsonLayer==='undefined'||!geojsonLayer) return; geojsonLayer.eachLayer(l=>{ const id=l.feature&&l.feature.id; const a3=NUM2A3[id]; if(a3&&!CENTROIDS[a3]){ try{CENTROIDS[a3]=l.getBounds().getCenter();}catch(e){} } }); }catch(e){} }
 function _findCountryFeat(iso){ var found=null; try{ geojsonLayer.eachLayer(function(l){ if(found)return; var f=l.feature; if(f&&NUM2A3[f.id]===iso) found=f; }); }catch(e){} return found; }
 function _openUnitByIso(iso){ if(!iso)return false; var ll=CENTROIDS[iso]; if(!ll)return false; var f=_findCountryFeat(iso);
-  function go(){ map.closePopup(); map.flyTo(ll,4,{duration:0.7}); if(f&&typeof baseClick==='function'){ try{ baseClick(f,ll); }catch(e){} }
-    if(f) setTimeout(function(){ try{ gbCentreCountry(f); }catch(e){} }, 780); }
+  function go(){ map.closePopup(); map.flyTo(ll,4,{duration:0.7}); if(f&&typeof baseClick==='function'){ try{ baseClick(f,ll); }catch(e){} } }
   if(window.gbNav&&typeof gbToWorld==='function'){ gbToWorld(); setTimeout(go,280); } else { go(); }
   return true; }
 function locateEntry(e){
@@ -2236,28 +2232,12 @@ function renderIndex(){ if(!INDEXDATA.length) buildIndexData();
   if(g1===g2) g2='none';
   const q=(document.getElementById('idxSearch').value||'').trim().toLowerCase();
   let rows=INDEXDATA.slice();
-  /* A filter may only remove what it can also put back. buildIndexData writes
-     levels of its own - Organisation, Spread, Release authorisation, Resource -
-     and none of the five in LEVELS, so activeLevels.has() was false for every
-     row and the whole index came out empty however it was searched. The same
-     mismatch hits resource rows on voice ('documentary') and media ('web').
-
-     A value outside a filter's own vocabulary therefore passes: there is no
-     pill offering it, so no reader can be looking at a list that is missing it
-     on purpose. Values inside the vocabulary filter exactly as before. */
-  const _pass=(set,vocab)=>(v,dflt)=>{ const k=v||dflt; return vocab.has(k)?set.has(k):true; };
-  const _kOK=_pass(activeKinds,  new Set(KINDS.map(k=>k[0])));
-  const _vOK=_pass(activeVoices, new Set(VOICES.map(v=>v[0])));
-  const _tOK=_pass(activeTrust,  new Set(TIERS.map(t=>t[0])));
-  const _sOK=_pass(activeSkinds, new Set(SKINDS.map(k=>k[0])));
-  const _mOK=_pass(activeMedia,  new Set(MEDIA.map(m=>m[0])));
-  const _lOK=_pass(activeLevels, new Set(LEVELS.map(l=>l[0])));
-  rows=rows.filter(r=>_kOK(r.kind,'structured'));
-  rows=rows.filter(r=>_vOK(r.voice,'interpretive'));
-  rows=rows.filter(r=>_tOK(r.trust,'high'));
-  rows=rows.filter(r=>_sOK(r.skind,'other'));
-  rows=rows.filter(r=>_mOK(r.media,'web'));
-  rows=rows.filter(r=>_lOK(r.level,'National'));
+  rows=rows.filter(r=>activeKinds.has(r.kind||'structured'));
+  rows=rows.filter(r=>activeVoices.has(r.voice||'interpretive'));
+  rows=rows.filter(r=>activeTrust.has(r.trust||'high'));
+  rows=rows.filter(r=>activeSkinds.has(r.skind||'other'));
+  rows=rows.filter(r=>activeMedia.has(r.media||'web'));
+  rows=rows.filter(r=>activeLevels.has(r.level||'National'));
   rows=rows.filter(r=>_angleOk(r));
   if(q) rows=rows.filter(r=>(r.name||'').toLowerCase().includes(q)||(r.country||'').toLowerCase().includes(q)||(r.lenses||[]).join(' ').toLowerCase().includes(q));
   document.getElementById('idxCount').textContent=rows.length;
@@ -2782,6 +2762,33 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
     ngo:"NGOs & campaigns",fund:"Funds & foundations",registry:"Registers & databases"};
   var pjTypes=new Set(Object.keys(OTC));
   try{window.OTC=OTC;window.OTLABEL=OTLABEL;window.pjTypes=pjTypes;}catch(e){}
+  /* initIndex() runs at the end of the FIRST script block; PJ_SEED is declared
+     here, in the third. So the index was always built before a single record
+     existed, and nothing rebuilt it afterwards. Rebuild once now that the seed
+     is in scope, and again when the fetched set replaces it. */
+  window.pjRefreshIndex = function(){
+    try{ if(typeof INDEXDATA!=='undefined') INDEXDATA.length = 0; }catch(e){}
+    try{ if(typeof renderIndex==='function') renderIndex(); }catch(e){}
+  };
+  /* THE INDEX COULD NOT SEE THE RECORDS.
+     PJ_SEED is declared with `var` inside this IIFE, so it is function-scoped
+     and invisible to buildIndexData(), which lives in an earlier script block.
+     That function tested `typeof PJ_SEED!=='undefined'`, got 'undefined', and
+     silently fell back to an empty array - so the index panel held nothing and
+     the search box filtered nothing, which is exactly what it looked like.
+     `window.pjDataRef`, which several other blocks read, is never assigned
+     anywhere, so those fall back to [] too.
+     A live accessor rather than a snapshot: pjData is filled by a fetch that
+     resolves after this line, so publishing the value here would freeze the
+     seed set in place and drop every harvested record. */
+  try{
+    window.pjRows = function(){
+      try{ if(typeof pjData!=='undefined' && pjData && pjData.projects) return pjData.projects; }catch(e){}
+      try{ if(typeof PJ_SEED!=='undefined' && PJ_SEED && PJ_SEED.projects) return PJ_SEED.projects; }catch(e){}
+      return [];
+    };
+    setTimeout(window.pjRefreshIndex, 0);
+  }catch(e){}
   try{window.pjRefresh=function(){ if(pjOn&&pjData) pjRender(); };}catch(e){}
   try{Object.defineProperty(window,'pjDataRef',{get:function(){return pjData;}});}catch(e){}
 
@@ -3242,6 +3249,42 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
     return '<div class="approx-badge">' + a[0] + ' \u2014 ' + a[1] + '</div>';
   }
   try{ window.pjAddrGrade=_addrGrade; }catch(e){}
+  /* Used when a country's resources box opens. */
+  window.pjCentreUnit = function(name){
+    if(!name) return false;
+    var m = null;
+    try{
+      /* The drawn country layer, if the drilldown has it. */
+      if(typeof geojsonLayer!=='undefined' && geojsonLayer && geojsonLayer.eachLayer){
+        geojsonLayer.eachLayer(function(l){
+          var pn = l && l.feature && l.feature.properties &&
+                   (l.feature.properties.name || l.feature.properties.NAME);
+          if(!m && pn && String(pn) === String(name)) m = l;
+        });
+      }
+    }catch(e){}
+    try{
+      if(m && m.getBounds){
+        var b = m.getBounds();
+        if(b && b.isValid && b.isValid()){
+          map.fitBounds(b, {padding:[60,60], maxZoom:6, animate:true});
+          return true;
+        }
+      }
+    }catch(e){}
+    /* No geometry: average this country's own records. */
+    try{
+      var rows = (window.pjRows && window.pjRows()) || [], la=0, lo=0, n=0;
+      rows.forEach(function(r){
+        if(r.lat==null||r.lng==null) return;
+        var hay = String(r.state||'') + ' ' + String(r.country||'');
+        if(hay.indexOf(name) < 0) return;
+        la+=r.lat; lo+=r.lng; n++;
+      });
+      if(n){ map.flyTo([la/n, lo/n], Math.max(map.getZoom(), 4), {duration:0.6}); return true; }
+    }catch(e){}
+    return false;
+  };
   function pjIcon(impact, precise){
     var c=PC[impact]||"#13202e";
     if(precise===false){
@@ -3273,6 +3316,7 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
     // the box and left every one of its markers on the map.
     if(typeof activeProjSrc !== 'undefined' && activeProjSrc.size
        && !activeProjSrc.has(pjSrcGroup(String(p.source||'')))) return false;
+    if(typeof window!=='undefined' && window.pjQualityPasses && !window.pjQualityPasses(p)) return false;
     if(typeof window!=='undefined' && window.pjRelPasses && !window.pjRelPasses(p)) return false;
     if(typeof window!=='undefined' && window.pjLevelPasses && !window.pjLevelPasses(p)) return false;
     if(typeof window!=='undefined' && window.pjSubjPasses && !window.pjSubjPasses(p)) return false;
@@ -4228,11 +4272,28 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
     'novel trait', 'cisgenic', 'intragenic', 'mutagenesis',
     'synthetic biology', 'gene therapy', 'cell therapy', 'germline',
     'embryo', 'in vitro fertil', 'assisted reproduct', 'clone', 'cloning',
-    'plant variety', 'upov', 'seed', 'cultivar', 'pollen', 'landrace'
+    'plant variety', 'upov', 'seed', 'cultivar', 'pollen', 'landrace',
+    /* The WTO feed carries each notification's title as the member filed it,
+       and the members this source exists to reach are largely not Anglophone.
+       Without these, 'Reglamento sobre organismos vivos modificados' and
+       'Cadre de biosecurite' are dropped here after the harvester correctly
+       kept them, and the panel is quietly Anglophone while looking global.
+       Accented and unaccented spellings both appear in the file. */
+    'organismos vivos modificados', 'organismes vivants modifi',
+    'organismos geneticamente modificados', 'geneticamente modificad',
+    'gen\u00e9ticamente modificad', 'g\u00e9n\u00e9tiquement modifi',
+    'modificados geneticamente', 'transgen', 'transg\u00e9n',
+    'transg\u00eanic', 'bioseguridad', 'biosseguran', 'bioseguran',
+    /* 'biosecurit' unaccented was here and is deliberately gone. In English
+       it means pest and disease quarantine - mangosteen imports, entry-exit
+       animal inspection - and it let the first live run's fruit-import notices
+       through client-side. The accented French spelling is unambiguous and
+       stays. Matches the same correction in the harvester's SUBJECT list. */
+    'bios\u00e9curit', 'biotecnolog'
   ];
   /* Short forms need a word boundary. 'gm' inside 'alignment' and 'lmo' inside
      'filmore' are the kind of match that puts a fisheries notice on this map. */
-  var PJ_CONS_WORDS = /\b(gm|gmos?|lmos?|genes?|bt|ge)\b/i;
+  var PJ_CONS_WORDS = /\b(gm|gmos?|lmos?|genes?|bt|ge|ogm|ovm|vgm)\b/i;
   /* A body whose entire remit is this subject. Its consultations qualify on the
      agency alone - OGTR does not publish anything that is off-topic here, and a
      licence application titled "DIR 200" matches no term in the list above. */
@@ -4301,9 +4362,17 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
   function _consRows(country, cap){
     try{
       if(!PJ_CONS || !PJ_CONS.consultations) return null;
-      var gen = new Date(PJ_CONS.generated + 'T00:00:00');
+      /* 'T00:00:00Z', not 'T00:00:00'. Without the Z this is parsed as
+         LOCAL midnight, while the harvester stamps the runner's UTC date - so
+         for every reader west of UTC a file generated today is dated in their
+         own future for the rest of the evening, ageDays goes negative, and the
+         whole live list is thrown away as "stale". That is what left this
+         panel showing venues on the day of a successful harvest.
+         The negative tolerance covers any timezone (max offset 14h) and clock
+         skew; a file dated next month is still refused. */
+      var gen = new Date(PJ_CONS.generated + 'T00:00:00Z');
       var ageDays = (Date.now() - gen.getTime()) / 86400000;
-      if(!(ageDays >= 0) || ageDays > 21) return null;      /* stale: say nothing */
+      if(!(ageDays > -1.5) || ageDays > 21) return null;    /* stale: say nothing */
       var today = new Date(); today.setHours(0,0,0,0);
       var out = [], dropped = 0;
       PJ_CONS.consultations.forEach(function(c){
@@ -4506,54 +4575,68 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
       if(!PJ_CONS && !PJ_RES) return false;
       var g = _consGroups();
       if(!g.keys.length){
-        host.innerHTML = '<div class="cons-note">No open comment window is '
-          + 'recorded right now. This box stays empty rather than showing a '
-          + 'window that has since shut \u2014 a closed consultation presented as '
-          + 'open sends somebody to write a comment nobody has to read.</div>';
+        /* Two different situations, and they were saying the same sentence.
+           "Nothing is open" is a claim about the world. "We could not fetch"
+           is a fact about this pipeline, and asserting the first on the
+           strength of the second tells a reader in a country with a window
+           closing on Friday that there is nothing to do. */
+        var reach = PJ_CONS && PJ_CONS.sources_reached,
+            tot   = PJ_CONS && PJ_CONS.sources_total;
+        host.innerHTML = '<div class="cons-note">'
+          + ((reach === 0 || (tot && reach != null && reach < tot))
+             ? 'Some sources could not be read on the last harvest'
+               + (tot ? ' (' + reach + ' of ' + tot + ' answered)' : '')
+               + ', so this list may be short. It is not a statement that '
+               + 'nothing is open \u2014 check the venues under each country '
+               + 'below.'
+             : 'No open comment window is recorded right now. This box stays '
+               + 'empty rather than showing a window that has since shut '
+               + '\u2014 a closed consultation presented as open sends '
+               + 'somebody to write a comment nobody has to read.')
+          + '</div>';
         return true;
       }
       var nLive = 0;
       g.keys.forEach(function(k){
         g.by[k].forEach(function(r){ if(r && r.days != null) nLive++; });
       });
-      var drop = window._pjConsDropped || 0;
-      var h = '<div class="cons-lead">' + (nLive
-        ? nLive + ' comment window' + (nLive === 1 ? '' : 's') + ' open, soonest '
-          + 'first. Under each country, the live windows come before the venues '
-          + 'where the next one will be announced.'
-        : 'No window on this subject is open right now. Listed below is where '
-          + 'each country announces the next one.')
-        + (drop ? ' ' + drop + ' other window' + (drop === 1 ? ' was' : 's were')
-                  + ' open at these agencies on subjects this map does not cover, '
-                  + 'and are not listed.' : '')
-        + '</div>';
-      /* Rendered as the wire renders a headline: the title is the link, the
-         agency and the closing date sit under it in the meta line. The country
-         grouping stays - a comment window is only useful to someone who can
-         file in that jurisdiction, so it cannot become one flat list the way
-         the wire is. Countries with something closing inside a fortnight stay
-         expanded; the rest collapse. */
+      /* The lead line is gone at the user's request. The count it carried is
+         already visible as the per-country tally on each group head, and the
+         dropped-window note belonged in the console rather than the panel. */
+      var h = '';
       g.keys.forEach(function(k){
         var rows = g.by[k], soon = g.soonest[k] <= 14;
-        h += '<div class="wire-cat cons-cat' + (soon ? '' : ' collapsed') + '">'
-          +  '<div class="wire-cat-h" onclick="this.parentNode.classList.toggle('
-          +  '&quot;collapsed&quot;)"><span class="wire-cat-caret">\u25b8</span>'
-          +  '<span class="wire-cat-lb">' + _esc(k) + '</span>'
-          +  '<span class="wire-cat-ct">' + rows.length + '</span></div>'
-          +  '<div class="wire-cat-body">';
+        h += '<div class="res-cat' + (soon ? ' open' : '') + '">'
+          +  '<div class="res-head" onclick="this.parentNode.classList.toggle('
+          +  '&quot;open&quot;)"><span class="res-car">\u25b8</span>'
+          +  '<span class="res-lab">' + _esc(k) + '</span>'
+          +  '<span class="res-n">' + rows.length + '</span></div>'
+          +  '<div class="res-body">';
         rows.forEach(function(x){
-          var urgent = (x && x.days != null && x.days <= 14);
-          var badge  = x.lens ? '<span class="res-lens' + (urgent ? ' cons-urgent' : '')
-                                + '">' + _esc(x.lens) + '</span>' : '';
-          var meta   = _esc(x.d || '') + (x.conf ? ' \u00b7 ' + _esc(x.conf) : '');
-          var inner  = '<span class="wire-h">' + _esc(x.n) + badge + '</span>'
-                     + (meta ? '<span class="wire-m">' + meta + '</span>' : '');
-          /* A venue with no URL is still worth listing, but it is not a link. */
-          h += x.u
-            ? '<a class="wire-item cons-item' + (urgent ? ' cons-soon' : '') + '" href="'
-              + x.u + '" target="_blank" rel="noopener">' + inner + '</a>'
-            : '<div class="wire-item cons-item' + (urgent ? ' cons-soon' : '') + '">'
-              + inner + '</div>';
+          /* Rendered like a wire item - headline, then one grey meta line -
+             because a comment window reads as news and the reader already
+             knows that shape from the feed above. The country grouping stays:
+             the wire is a flat stream, this is not, because which country a
+             window belongs to decides whether you can file in it at all. */
+          if(x && x.days != null){
+            var _d = x.days === 0 ? 'closes today'
+                   : x.days === 1 ? 'closes tomorrow'
+                   : 'closes in ' + x.days + ' days';
+            h += '<a class="wire-item cons-wire' + (x.days <= 14 ? ' res-soon' : '')
+              +  '" href="' + (x.u || '#') + '" target="_blank" rel="noopener">'
+              +  '<span class="wire-h">' + _esc(x.n) + '</span>'
+              +  '<span class="wire-m">' + _esc(x.d || '') + ' \u00b7 ' + _d + '</span>'
+              +  '</a>';
+            return;
+          }
+          h += '<div class="res-card">'
+            +  '<div class="res-name">' + _esc(x.n) + '</div>'
+            +  (x.lens ? '<span class="res-lens">' + _esc(x.lens) + '</span>' : '')
+            +  '<div class="res-d">' + _esc(x.d || '') + '</div>'
+            +  (x.conf ? '<div class="res-conf">' + _esc(x.conf) + '</div>' : '')
+            +  (x.u ? '<a class="res-src" href="' + x.u + '" target="_blank" '
+                    + 'rel="noopener">Visit source \u2197</a>' : '')
+            +  '</div>';
         });
         h += '</div></div>';
       });
@@ -7865,24 +7948,16 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
        window.PJ_SPEC_DESC = D;
   /* The marker note, rendered at the foot of the Industry organism list. */
   try{
-    /* None of .pj-subj, #industrySubjects or .subj-list exists in this
-       document, so this note has been rendering nowhere. The organism list is
-       built into #subjBox, and it is built by an 800ms poller - a single
-       timeout can easily fire before it. Poll for it the same way, append once
-       at the foot, and stop. */
-    (function(){
-      var t = setInterval(function(){
+    document.addEventListener('DOMContentLoaded', function(){
+      setTimeout(function(){
         try{
-          var host = document.getElementById('subjBox');
+          var host = document.querySelector('.pj-subj, #industrySubjects, .subj-list');
           if(!host || !window.PJ_MARKER_NOTE) return;
-          if(!host.children.length) return;          /* subject tree not built yet */
-          if(host.querySelector('.ind-foot')){ clearInterval(t); return; }
+          if(host.querySelector('.ind-foot')) return;
           host.insertAdjacentHTML('beforeend', window.PJ_MARKER_NOTE);
-          clearInterval(t);
         }catch(e){}
-      }, 700);
-      setTimeout(function(){ clearInterval(t); }, 30000);
-    })();
+      }, 900);
+    });
   }catch(e){}
   /* Moved out of the Industry checkbox label and down here, under the organism list.
      Sitting beside the toggle it read as a note about the toggle; it is about
