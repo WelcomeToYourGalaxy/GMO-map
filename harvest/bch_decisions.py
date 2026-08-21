@@ -137,6 +137,38 @@ def pick(row, *names):
 #
 # The code field is kept, last, because a code is still a country: it is mapped
 # through ISO2 rather than discarded.
+# THE COUNTRY IS A PREFIX, NOT A FIELD.
+#
+# Two rounds were spent on this. The discovery run showed government_EN_s on a
+# CONTACT record and that field was added here - and the count stayed at 51,
+# because a DECISION record does not carry it. What a decision record carries
+# is:
+#
+#     grp_government_schema_s        za_biosafetyDecision
+#
+# The country is the ISO2 code glued to the front of the schema name. No field
+# on the record holds it on its own, which is why every field-name guess failed
+# and why 2,854 of 2,905 decisions were dropped as having no country.
+GOV_PREFIX_FIELDS = ("grp_government_schema_s", "grp_government_s",
+                     "government_schema_s")
+
+
+def government_from_prefix(doc):
+    """Pull the ISO2 code off the front of the grouping field."""
+    for f in GOV_PREFIX_FIELDS:
+        v = doc.get(f)
+        if isinstance(v, list):
+            v = v[0] if v else None
+        if not v:
+            continue
+        s = str(v)
+        if "_" in s:
+            code = s.split("_", 1)[0].strip().lower()
+            if len(code) == 2 and code.isalpha():
+                return code.upper()
+    return None
+
+
 COUNTRY_FIELDS = ("government_EN_s", "country_EN_s", "government_EN_t",
                   "country_EN_t", "countryRegions_EN_ss",
                   "government_s", "country_s", "government_REL_ss",
@@ -154,6 +186,11 @@ def iso2(row):
     than guess, because a decision placed in the wrong country is worse than a
     decision that is absent.
     """
+    # The prefix first: it is on nearly every record, and the named fields are
+    # on almost none.
+    _p = government_from_prefix(row)
+    if _p:
+        return _p
     for f in COUNTRY_FIELDS:
         for k, v in row.items():
             if str(k).lower() != f:
