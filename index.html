@@ -557,7 +557,7 @@ function pjReport(which, data){
 <div id="rightbar">
 <div id="guidesPanel" class="open">
   <div id="guidesHead" onclick="document.getElementById('guidesPanel').classList.toggle('open')">
-    <span>Guides &mdash; what to actually do</span><span class="guides-tog">&#9662;</span></div>
+    <span>Guides</span><span class="guides-tog">&#9662;</span></div>
   <div id="guidesBody">
     <a class="guide-btn" href="#" onclick="openGuide(&#39;guides/how-to-test-for-escaped-gmos.pdf&#39;,&#39;How to test for escaped GMOs in your area&#39;);return false;">How to test for escaped GMOs in your area</a>
     <a class="guide-btn" href="#" onclick="openGuide(&#39;guides/how-to-stop-a-release.pdf&#39;,&#39;How to stop a GMO release in your area&#39;);return false;">How to stop a GMO release in your area</a>
@@ -657,8 +657,8 @@ function pjReport(which, data){
       <div class="idx-ce"><span onclick="document.querySelectorAll('#idxBody .idx-grp').forEach(function(g){g.classList.add('collapsed');})">Collapse all</span><span onclick="document.querySelectorAll('#idxBody .idx-grp').forEach(function(g){g.classList.remove('collapsed');})">Expand all</span></div>
       <select id="idxSort" class="idxSel" title="Sort within groups"><option value="az">Sort: A → Z</option><option value="za">Sort: Z → A</option></select>
       <select id="idxGroup" class="idxSel" title="Group by">
-        <option value="country">Group: Country</option>
-        <option value="level">Group: Level</option>
+        <option value="level">Group: Record type</option>
+        <option value="country">Group: Stated place</option>
         <option value="lens">Group: Lens</option>
         <option value="srctype">Group: Source type</option>
         <option value="srckind">Group: Source kind</option>
@@ -670,8 +670,8 @@ function pjReport(which, data){
       <select id="idxSub" class="idxSel" title="Then by">
         <option value="lens">then Lens</option>
         <option value="none">then &mdash;</option>
-        <option value="level">then Level</option>
-        <option value="country">then Country</option>
+        <option value="level">then Record type</option>
+        <option value="country">then Stated place</option>
         <option value="srctype">then Source type</option>
         <option value="srckind">then Source kind</option>
         <option value="media">then Media type</option>
@@ -727,61 +727,77 @@ SUBLABEL['clinical:cro']='Clinical trial CROs';
    labels existed the whole time. */
 try{ window.SUBLABEL = SUBLABEL; }catch(e){}
 try{ window.DOMAINS = DOMAINS; window.DMAP = DMAP; }catch(e){}
+/* One line per category in "What they work on". The twelve lens paragraphs
+   were folded into these and into window.SUBDEF below, so the argument each
+   lens carried now sits on the row it is about rather than in a box of its
+   own. Nothing was dropped; it was distributed. */
+try{ window.SUBJDEF = {
+ "animals": "Three trades on one row: living animals sold to laboratories as reagents, animals engineered to be farmed or kept, and animals rebuilt as proxies for species already gone.",
+ "humans": "Genetic engineering applied to people. On one side, therapies that largely work but reach almost nobody \u2014 developed in good part with public money and priced beyond every health system outside a handful of wealthy countries. On the other, assisted reproduction: not genetic modification in the technical sense, but the same logic and increasingly the same techniques, and the one part of this map where the customer is the person being engineered for, which changes the ethics without removing them.",
+ "microbes": "The supply chain almost nobody maps, and the layer where capability actually lives: a handful of firms write most of the DNA every engineered organism starts from.",
+ "money": "Who pays, and what they are paying for.",
+ "plants": "The commercial centre. Four firms own most of the world\u2019s engineered crop traits and a controlling share of its commercial seed, and everything downstream on this map rests on decisions taken here.",
+ "rules": "The machinery that authorises the industry and argues for it. Carried here as part of the industry rather than as a check on it, because in practice the relationship is closer than the diagram suggests.",
+ "tools": "The firms that make the tools everyone else uses, and increasingly the products too \u2014 alongside the contractors who do the work the company named on the permit does not.",
+ "wild": "Organisms engineered specifically to be released into the open and, in some cases, to spread on their own."
+}; }catch(e){}
 
 /* What each of these is, in one line. Written for a reader who has not met the
    word before, which is most readers: the tag names are trade shorthand. */
 try{ window.SUBDEF = {
- 'seed:traits':'Firms that develop the trait itself, then license it into other companies\u2019 varieties.',
- 'seed:germplasm':'Breeding stock \u2014 the seed lines and parent material new varieties are bred from.',
- 'seed:majors':'The four firms holding most of the world\u2019s commercial seed and trait patents.',
- 'seed:licensees':'Regional breeders selling varieties built on traits licensed from someone else.',
- 'seed:distribution':'The dealers and retailers that move seed from breeder to field.',
- 'editing:agtech':'Companies applying gene editing to crops rather than inserting genes from another species.',
- 'deextinct:trees':'Engineered forest trees \u2014 chestnut, poplar, eucalyptus \u2014 intended for planting outdoors.',
- 'animals:models':'Repositories that hold engineered laboratory strains and ship them to order.',
- 'animals:breeders':'Firms that breed and supply laboratory animals.',
- 'animals:primates':'Suppliers of monkeys for research, and the facilities holding them.',
- 'animals:services':'Contractors that build a bespoke engineered animal to a client\u2019s specification.',
- 'livestock:livestock':'Gene-edited farm animals \u2014 cattle, pigs, poultry.',
- 'livestock:cloning':'Commercial cloning of animals, mostly livestock and pets.',
- 'livestock:aqua':'Engineered fish and shellfish bred for farming.',
- 'livestock:pets':'Companion and ornamental animals sold as engineered products.',
- 'deextinct:rescue':'Engineering a wild population to keep a species going rather than to farm it.',
- 'deextinct:biobank':'Frozen tissue, cells and gametes banked from wild species for use later.',
- 'deextinct:ventures':'Companies funded to bring back an extinct animal.',
- 'clinical:therapy':'Companies making gene and cell therapies for patients.',
- 'clinical:trials':'Organisations running registered trials of those therapies.',
- 'clinical:vectors':'Manufacturers of the viruses used to carry engineered genes into cells.',
- 'clinical:germline':'Work on embryos and inherited changes rather than on one patient\u2019s own cells.',
- 'repro:clinics':'Fertility clinic chains, and the groups that own them.',
- 'repro:banks':'Sperm, egg and embryo banks.',
- 'repro:surrogacy':'Surrogacy agencies, including those arranging it across borders.',
- 'repro:screening':'Testing embryos before transfer, and choosing between them on the results.',
- 'wild:insects':'Engineered insects released outdoors \u2014 mosquitoes, moths, flies.',
- 'wild:microbes':'Engineered soil and crop microbes applied to fields.',
- 'wild:drives':'Engineered inheritance built to spread itself through a wild population.',
- 'editing:synbio':'Organisms rebuilt as manufacturing platforms \u2014 yeast, bacteria, algae.',
- 'synthesis:synth':'Firms that synthesise DNA to order from a sequence file.',
- 'synthesis:seq':'Sequencing machines and services \u2014 reading DNA rather than writing it.',
- 'synthesis:reagents':'The enzymes, kits and reagents everyone else in the industry buys.',
- 'synthesis:repos':'Repositories that distribute plasmids and engineered strains to laboratories.',
- 'cro:cdmo':'Contract manufacturers that make biological products for other companies.',
- 'editing:platform':'Owners of the editing tools themselves, licensed out to everyone else.',
- 'editing:patents':'Holders of the foundational patents on the editing techniques.',
- 'rules:ip':'Patent and plant-variety offices \u2014 where ownership of an organism is granted.',
- 'cro:cro':'The laboratories other firms hire to run the work.',
- 'clinical:cro':'Contract organisations that run clinical trials on a sponsor\u2019s behalf.',
- 'money:vc':'Venture capital and private equity funding the sector.',
- 'money:markets':'Listed companies and the investors holding them.',
- 'money:public':'Government research funders.',
- 'money:philanthropy':'Foundations funding the work through grants.',
- 'money:defence':'Military and security funding of biotechnology.',
- 'rules:regulators':'The agencies that approve releases and keep the registers.',
+ 'cro:field':"Contractors who plant, manage and report the trial plots for whoever holds the permit.",
+ 'wild:viral':"Engineered viruses used as carriers, and the vaccines built from them.",
+ 'seed:traits':"Firms that develop the trait itself, then license it into other companies\u2019 varieties.",
+ 'seed:germplasm':"Breeding stock \u2014 the seed lines and parent material new varieties are bred from.",
+ 'seed:majors':"Bayer, Corteva, Syngenta and BASF, holding most of the world\u2019s commercial seed and trait patents. They license the traits to each other and to smaller breeders, and three of the four also sell the herbicide the trait is designed to tolerate.",
+ 'seed:licensees':"Regional breeders selling varieties built on traits licensed from someone else \u2014 how a handful of trait owners reach fields they never plant.",
+ 'seed:distribution':"The dealers and retailers that move seed from breeder to field.",
+ 'editing:agtech':"Companies applying gene editing to crops rather than inserting genes from another species \u2014 the route by which an organism leaves the registration system, in one jurisdiction after another.",
+ 'deextinct:trees':"Engineered forest trees \u2014 chestnut, poplar, eucalyptus \u2014 intended for planting outdoors.",
+ 'animals:models':"Repositories that hold engineered laboratory strains and ship them to order. The trade in transgenic mouse lines alone runs to millions of animals a year.",
+ 'animals:breeders':"Firms that breed and supply laboratory animals \u2014 an industrial supply business selling living animals as reagents, and among the largest parts of this map by volume of life consumed.",
+ 'animals:primates':"Suppliers of monkeys for research, and the facilities holding them.",
+ 'animals:services':"Contractors that build a bespoke engineered animal to a client\u2019s specification.",
+ 'livestock:livestock':"Gene-edited farm animals \u2014 cattle, pigs, poultry. Some jurisdictions have decided an edited animal is not a regulated article at all.",
+ 'livestock:cloning':"Commercial cloning of animals \u2014 livestock, and horses and dogs cloned to order.",
+ 'livestock:aqua':"Engineered fish and shellfish bred for farming, fast-growing salmon among them.",
+ 'livestock:pets':"Companion and ornamental animals sold as engineered products. Glowing fish are already in tanks worldwide, and this side of the trade operates almost entirely outside biosafety oversight.",
+ 'deextinct:rescue':"Engineering a wild population to keep a species going rather than to farm it.",
+ 'deextinct:biobank':"Frozen tissue, cells and gametes banked from wild species for use later.",
+ 'deextinct:ventures':"Companies funded to bring back an extinct animal. What they produce is a proxy rather than a restoration, and it is intellectual property. The deeper effect is on argument rather than ecology: if extinction can be presented as reversible, the cost of causing it drops, and that reframing is doing work in policy long before any animal exists.",
+ 'clinical:therapy':"Companies making gene and cell therapies for patients, approved and priced in the millions per dose.",
+ 'clinical:trials':"Organisations running registered trials of those therapies.",
+ 'clinical:vectors':"Manufacturers of the viruses used to carry engineered genes into cells.",
+ 'clinical:germline':"Work on embryos and inherited changes rather than on one patient\u2019s own cells.",
+ 'repro:clinics':"Fertility clinic chains, and the groups that own them \u2014 consolidating under private equity.",
+ 'repro:banks':"Sperm, egg and embryo banks.",
+ 'repro:surrogacy':"Surrogacy agencies, including those arranging it across borders.",
+ 'repro:screening':"Testing embryos before transfer and choosing between them on the results, which has moved from screening for specific disorders towards scoring embryos on traits.",
+ 'wild:insects':"Insects engineered to be released outdoors \u2014 sterile-insect and self-limiting mosquito programmes, moths, flies.",
+ 'wild:microbes':"Engineered soil and crop microbes and biopesticides, applied at field scale.",
+ 'wild:drives':"Engineered inheritance built to spread itself through a wild population, overriding the normal odds. A drive organism cannot respect a border or a permit, which is why the rules for them are being argued over before any has been released.",
+ 'editing:synbio':"Organisms rebuilt as manufacturing platforms \u2014 yeast, bacteria, algae.",
+ 'synthesis:synth':"Firms that synthesise DNA to order from a sequence file. Every engineered organism begins here, and writing a genome is the constraint. Screening of what gets made is largely voluntary, and a substantial share of global capacity sits outside the industry\u2019s own screening consortium.",
+ 'synthesis:seq':"Sequencing machines and services \u2014 reading DNA rather than writing it, now cheap enough to be trivial.",
+ 'synthesis:reagents':"The enzymes, kits and reagents everyone else in the industry buys.",
+ 'synthesis:repos':"Repositories that distribute plasmids and engineered strains to laboratories.",
+ 'cro:cdmo':"Contract manufacturers that make the biological product for the company selling it.",
+ 'editing:platform':"Owners of the editing tools themselves, licensed out to everyone else. CRISPR and its successors turned genetic modification from a specialist capability into a licensable platform.",
+ 'editing:patents':"Holders of the foundational patents on the editing techniques, who collect from work they had no part in.",
+ 'rules:ip':"Patent and plant-variety offices \u2014 where ownership of living material is granted.",
+ 'cro:cro':"The laboratories other firms hire to run the work, including the studies a regulator reads. The firm named on a permit is frequently not the firm doing the work, and the contractor answers to the client rather than to the public.",
+ 'clinical:cro':"Contractors running the clinical studies for a therapy\u2019s sponsor.",
+ 'money:vc':"Venture capital and private equity funding the sector. A fund needs an exit, which sets the timeline and rewards speed and scale over caution.",
+ 'money:markets':"Listed companies and the investors holding them.",
+ 'money:public':"Government research funders. Public money pays for a great deal of the underlying science, which then becomes private property.",
+ 'money:philanthropy':"Foundations funding the work through grants, and among the largest funders of deployment in low-income countries.",
+ 'money:defence':"Military and security funding of biotechnology, which sits outside civilian biosafety oversight entirely.",
+ 'rules:regulators':"The agencies that approve releases and keep the registers.",
     'rules:cases':'Court decisions that settled a question, and are still the answer.',
- 'rules:standards':'Bodies setting standards, and issuing the identifiers organisms are tracked by.',
- 'rules:associations':'Trade associations, and the lobbying done through them.',
- 'rules:influence':'Industry-funded bodies that publish information about the industry.',
- 'cro:regulatory':'Consultancies hired to get an application through a regulator.'
+ 'rules:standards':"Bodies setting standards, and issuing the identifiers organisms are tracked by.",
+ 'rules:associations':"Trade associations, which do the industry\u2019s public arguing so individual firms need not.",
+ 'rules:influence':"Industry-funded bodies that publish information about the industry.",
+ 'cro:regulatory':"Consultancies hired to get an application through a regulator."
 }; }catch(e){}
 let domain='all', activeSubs=new Set(), showHistorical=true;
 /* Mirrored onto window on every change. `let` does not create a window
@@ -2254,18 +2270,33 @@ function _rowHTML(r,i){ const tags=r.lenses.map(l=>'<span class="idx-lens">'+_es
 function _grpGuide(dim,items){ if(dim!=='country'||!items||!items.length) return '';
   for(var i=0;i<items.length;i++){ var iso=items[i]&&items[i].iso; if(iso&&_GUIDES[iso]) return _usGuide(iso); }
   return ''; }
+const _IDXV={kind:new Set(KINDS.map(k=>k[0])),voice:new Set(VOICES.map(v=>v[0])),
+  trust:new Set(TIERS.map(t=>t[0])),skind:new Set(SKINDS.map(k=>k[0])),
+  media:new Set(MEDIA.map(m=>m[0])),level:new Set(LEVELS.map(l=>l[0]))};
 function renderIndex(){ if(!INDEXDATA.length) buildIndexData();
   let g1=document.getElementById('idxGroup').value, g2=document.getElementById('idxSub').value;
   if(g1==='none'&&g2!=='none'){ g1=g2; g2='none'; }
   if(g1===g2) g2='none';
   const q=(document.getElementById('idxSearch').value||'').trim().toLowerCase();
   let rows=INDEXDATA.slice();
-  rows=rows.filter(r=>activeKinds.has(r.kind||'structured'));
-  rows=rows.filter(r=>activeVoices.has(r.voice||'interpretive'));
-  rows=rows.filter(r=>activeTrust.has(r.trust||'high'));
-  rows=rows.filter(r=>activeSkinds.has(r.skind||'other'));
-  rows=rows.filter(r=>activeMedia.has(r.media||'web'));
-  rows=rows.filter(r=>activeLevels.has(r.level||'National'));
+  /* A filter must only remove rows it actually governs. Every one of these
+     six used to drop any row whose value was not in its own pill vocabulary,
+     and since round 73 the index rows are map points: their `level` is
+     Organisation / Release authorisation / Spread / Resource, and the level
+     pills list Municipal / County / State / National / International. No
+     overlap, so the level filter removed EVERY row and the index rendered
+     "No matches" whatever was typed in the search box. `trust:'record'` was
+     doing the same thing more quietly, dropping 106 primary records because
+     the trust pills only know high / medium / low.
+     _idxKeep asks whether the value is one this filter has a control for; if
+     it is not, the filter has no opinion and the row passes. */
+  function _idxKeep(sel, vocab, v){ return !vocab.has(v) || sel.has(v); }
+  rows=rows.filter(r=>_idxKeep(activeKinds,  _IDXV.kind,  r.kind||'structured'));
+  rows=rows.filter(r=>_idxKeep(activeVoices, _IDXV.voice, r.voice||'interpretive'));
+  rows=rows.filter(r=>_idxKeep(activeTrust,  _IDXV.trust, r.trust||'high'));
+  rows=rows.filter(r=>_idxKeep(activeSkinds, _IDXV.skind, r.skind||'other'));
+  rows=rows.filter(r=>_idxKeep(activeMedia,  _IDXV.media, r.media||'web'));
+  rows=rows.filter(r=>_idxKeep(activeLevels, _IDXV.level, r.level||'National'));
   rows=rows.filter(r=>_angleOk(r));
   if(q) rows=rows.filter(r=>(r.name||'').toLowerCase().includes(q)||(r.country||'').toLowerCase().includes(q)||(r.lenses||[]).join(' ').toLowerCase().includes(q));
   document.getElementById('idxCount').textContent=rows.length;
@@ -7118,42 +7149,16 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
     var box=document.getElementById('subjBox');
     if(!box || box.dataset.built || !window.PJ_SUBJ) return;
     box.dataset.built='1';
-    // The twelve lens descriptions used to live in the Lens & filters box, which
-    // has been removed. They belong here: these eight categories are BUILT from
-    // the lens sub-tags above, so every lens already has an exact home among
-    // them. Folded shut by default - a paragraph each would otherwise push the
-    // treaty and zone controls off the panel.
-    var LENSFOR={plants:['seed'],
-                 animals:['animals','livestock','deextinct'],
-                 humans:['clinical','repro'],
-                 wild:['wild'],
-                 microbes:['synthesis'],
-                 tools:['editing','cro'],
-                 money:['money'],
-                 rules:['rules']};
-    function lensNotes(k){
-      var ks=LENSFOR[k]||[], D=window.DMAP||{}, out='';
-      ks.forEach(function(lk){
-        var d=D[lk]; if(!d||!d.desc) return;
-        out+='<div class="lens-note"><span class="ln-t">'+d.label+'</span>'
-           + '<div class="ln-b">'+d.desc+'</div></div>';
-      });
-      return out;
-    }
     var h='';
     Object.keys(window.PJ_SUBJ).forEach(function(k){
+      var cd=(window.SUBJDEF&&window.SUBJDEF[k])||'';
       h+='<label><input type="checkbox" data-subj="'+k+'" checked>'
         +'<span class="ot-dot" style="background:'+window.PJ_SUBJ[k].colour+'"></span>'
-        +window.PJ_SUBJ[k].label+'<span class="kcount" data-sc="'+k+'"></span></label>'
-        +lensNotes(k);
+        +window.PJ_SUBJ[k].label+'<span class="kcount" data-sc="'+k+'"></span>'
+        +(cd?'<span class="cat-def">'+cd+'</span>':'')
+        +'</label>';
     });
     box.innerHTML=h;
-    box.addEventListener('click',function(e){
-      var t=e.target;
-      if(!t||!t.classList||!t.classList.contains('ln-t')) return;
-      e.preventDefault(); e.stopPropagation();
-      t.parentNode.classList.toggle('open');
-    });
     box.addEventListener('change',function(e){
       var k=e.target.dataset&&e.target.dataset.subj; if(!k)return;
       e.target.checked?window.pjSubjOn.add(k):window.pjSubjOn.delete(k);
@@ -9356,15 +9361,26 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
 #legend #indexPanel #idxList{max-height:30vh!important;overflow:auto;}
 body.info-open #legend #indexPanel{position:static!important;left:auto!important;
   top:auto!important;bottom:auto!important;width:auto!important;}
-/* A lens description under the category it belongs to. Closed until asked for. */
-.lens-note{margin:1px 0 5px 21px;}
-.lens-note .ln-t{display:block;font-size:9.5px;font-weight:700;letter-spacing:.2px;
-  color:#7fa8cc;cursor:pointer;}
-.lens-note .ln-t::before{content:"\25b8\00a0";}
-.lens-note.open .ln-t::before{content:"\25be\00a0";}
-.lens-note .ln-b{display:none;}
-.lens-note.open .ln-b{display:block;font-size:9.5px;line-height:1.5;color:#8f9db4;
-  margin:3px 0 0;padding:2px 0 2px 7px;border-left:1px solid rgba(120,140,180,.28);}
+/* One line under each category, in the same shape as the .grp-def lines the
+   sub-rows already carry, so a category reads like the rows beneath it. */
+#subjBox label{flex-wrap:wrap;align-items:flex-start;}
+.cat-def{flex-basis:100%;font-size:9.5px;font-weight:400;color:#7d87a6;
+  line-height:1.45;margin:2px 0 4px 19px;}
+/* The map key fills the rail under the guides box. The rail needs a definite
+   height for that: with only a max-height it is content-sized, and flex:1
+   has nothing to grow into. */
+#rightbar{height:calc(100vh - 86px)!important;max-height:calc(100vh - 86px)!important;}
+#rightbar>#guidesPanel{flex:0 0 auto!important;}
+#rightbar>#legend:not(.collapsed){flex:1 1 auto!important;min-height:0!important;
+  max-height:none!important;display:flex;flex-direction:column;overflow:hidden;}
+#rightbar>#legend:not(.collapsed) #legBody{flex:1 1 auto!important;
+  max-height:none!important;min-height:0!important;overflow-y:auto!important;}
+#rightbar>#legend.collapsed{flex:0 0 auto!important;}
+/* One scrollbar, not two: the key body already scrolls, so the index grows
+   inside it instead of opening a second scrolling box near the bottom. */
+#legend #indexPanel #idxList{max-height:none!important;overflow:visible!important;}
+#legend #indexPanel #idxBody{padding:8px 0 0!important;}
+#legend #idxControls{margin-bottom:6px;}
 </style>
 </body>
 </html>
