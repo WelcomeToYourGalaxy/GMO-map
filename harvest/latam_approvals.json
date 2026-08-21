@@ -1,0 +1,26 @@
+{
+ "generated": "2026-08-21",
+ "note": "National approvals. Country-level: neither register publishes planting locations. Titles are not translated.",
+ "approvals": [
+  {
+   "country": "Brazil",
+   "register": "CTNBio approved products",
+   "id": "",
+   "id_key": "",
+   "crop": "maize",
+   "trait": "",
+   "title": "Plantas Plantas Subpastas : Algodão , Cana , Eucalipto , Feijão , Milho , Mais &raquo;",
+   "precision": "country"
+  },
+  {
+   "country": "Brazil",
+   "register": "CTNBio approved products",
+   "id": "",
+   "id_key": "",
+   "crop": "wheat",
+   "trait": "",
+   "title": "Outros Subpastas : Parecer Técnico - Farinha de Trigo GM , Parecer Técnico nº - 5496 - 2017 , Parecer Técnico nº 261-470_2004 - Importação e Liberação Comercial de Enzimas - Processo 01200.00374 , Parecer Técnico nº 5827 - 2018 , Parecer Té",
+   "precision": "country"
+  }
+ ]
+}
