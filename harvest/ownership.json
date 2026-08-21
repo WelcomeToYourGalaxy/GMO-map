@@ -4328,7 +4328,7 @@
    ]
   },
   {
-   "owner": "Ingenes",
+   "owner": "INGENES",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
@@ -61992,9 +61992,9 @@
    "countries": [],
    "members": [
     {
-     "name": "Клиника Малинов",
-     "lat": 42.67522,
-     "lng": 23.28944,
+     "name": "СБАЛГАР „Д-р Малинов“",
+     "lat": 42.67524,
+     "lng": 23.28947,
      "where": "",
      "source": "osm_facilities.json"
     }
