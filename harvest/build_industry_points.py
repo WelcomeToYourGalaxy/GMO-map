@@ -38,6 +38,13 @@ SRC = ROOT / "harvest" / "industry_source.json"
 # Positions stay marked approximate. A corporate headquarters is a registered
 # address, not where the work happens, and a street number does not change that.
 PLACES = {
+    # ---- ind72: who grants the right, who pays, who advises --------------
+    "Community Plant Variety Office (CPVO)": (43.625, 3.87, "Angers, France — CPVO"),
+    "UPOV — the office behind the convention": (46.227, 6.137, "Geneva — UPOV, 34 chemin des Colombettes"),
+    "USDA Plant Variety Protection Office": (38.8865, -77.032, "Washington DC — USDA AMS"),
+    "Crop Trust": (50.718, 7.145, "Bonn — Platz der Vereinten Nationen"),
+    "National academies of science — advice to governments": (51.506, -0.132, "London — Royal Society, Carlton House Terrace"),
+    "EU Group of Chief Scientific Advisors": (50.8435, 4.381, "Brussels — European Commission"),
     # ---- ind71: the rest of the case law ----------------------------------
     "Diamond v. Chakrabarty — a living organism can be patented": (38.8907, -77.0043, "Washington DC — Supreme Court of the United States"),
     "Association for Molecular Pathology v. Myriad — a gene as found cannot be": (38.8908, -77.0045, "Washington DC — Supreme Court of the United States"),

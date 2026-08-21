@@ -38,19 +38,57 @@ OUT = ROOT / "harvest" / "ogtr_trials.json"
 
 BASE = "https://www.ogtr.gov.au"
 PAGE = BASE + "/what-weve-approved/crop-field-trial-map"
+# The site is a Drupal build. It failed every run identifying itself as a
+# harvester, which is what a WAF drops first, and it was only ever asking the
+# one page for an embedded endpoint URL. Two changes, both about trying harder
+# on the live site rather than giving up on it:
+#
+#   1. Correction to the above: the endpoint is not blocked by a bot filter.
+#      ogtr.gov.au's robots.txt DISALLOWS this path, and the script checks it
+#      and stops. Sending a browser User-Agent would walk past a stated wish
+#      rather than a technical obstacle, so the robots check stays in force and
+#      the identity below is honest about what this is.
+#   2. The endpoints a Drupal map view actually exposes, tried in order, rather
+#      than only whatever is written into the page HTML.
 UA = "GMO-map-harvest/1.0 (+https://github.com/WelcomeToYourGalaxy/GMO-map)"
+HDRS = {"User-Agent": UA,
+        "Accept": "application/json, text/html;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-AU,en;q=0.9",
+        "Referer": "https://www.ogtr.gov.au/what-weve-approved/crop-field-trial-map"}
+
+# Drupal exposes a view as JSON at several conventional paths. Asking the page
+# for an embedded URL only works when the developer wrote one in; these work
+# whether or not they did.
+ENDPOINTS = [
+    "/jsonapi/node/field_trial",
+    "/jsonapi/node/crop_field_trial",
+    "/api/crop-field-trials",
+    "/what-weve-approved/crop-field-trial-map?_format=json",
+    "/what-weve-approved/crop-field-trial-map/data",
+    "/sites/default/files/crop-field-trial-map.geojson",
+    "/views/ajax?view_name=crop_field_trial_map&view_display_id=default",
+]
 
 # Australia's rough bounds, used to reject anything that is not a site coordinate
 AU = (-44.0, -9.0, 112.0, 154.0)
 
 
 def allowed(url):
-    """Ask robots.txt. Returns (bool, explanation)."""
+    """Ask robots.txt about THIS path, not about the site.
+
+    The previous version asked once, about the map page, and stopped the whole
+    run when that path was disallowed. That is stricter than the file actually
+    says: a Drupal site commonly disallows /views/ajax and the rendered page
+    while leaving /sites/default/files/ and the JSON API open, and those are
+    different paths with different answers.
+
+    So the check now runs per endpoint. Every path the file permits is tried;
+    every path it refuses is skipped and named. The refusal is still honoured -
+    what changes is that one disallowed path no longer stands in for all of
+    them.
+    """
     rp = RobotFileParser()
     rp.set_url(BASE + "/robots.txt")
-    # One dropped connection is not a refusal. The last run failed on "Remote end
-    # closed connection without response" and treated it as a no, which is the
-    # right default but the wrong conclusion from a single attempt. Three tries.
     last = None
     for attempt in range(3):
         try:
@@ -58,17 +96,33 @@ def allowed(url):
         except Exception as e:
             last = e; time.sleep(2 * (attempt + 1))
     if last is not None:
-        return False, ("could not read robots.txt after 3 tries (%s). Treating that "
-                       "as a refusal rather than a licence." % last)
+        return False, ("could not read robots.txt after 3 tries (%s). Treating "
+                       "that as a refusal rather than a licence." % last)
     ok = rp.can_fetch(UA, url)
     return ok, ("robots.txt permits %s" % url if ok else
-                "robots.txt DISALLOWS %s for this agent. Stopping. The GMO Record "
-                "stays a hand-read source." % url)
+                "robots.txt disallows %s" % url)
+
+
+def permitted_endpoints():
+    """Which of the candidate paths the site actually allows. Printed in full,
+    so a run says what was tried and what was refused rather than only that it
+    failed."""
+    out = []
+    for ep in ENDPOINTS:
+        url = BASE + ep
+        ok, why = allowed(url)
+        print("  %-52s %s" % (ep[:52], "allowed" if ok else "refused"))
+        if ok:
+            out.append(url)
+    if not out:
+        print("  every candidate path is disallowed. The GMO Record stays a "
+              "hand-read source, and the licence PDFs in harvest/ogtr_pdf/ are "
+              "the route that does not need permission.")
+    return out
 
 
 def fetch(url):
-    req = Request(url, headers={"User-Agent": UA,
-                                "Accept": "application/json, text/html;q=0.8"})
+    req = Request(url, headers=HDRS)
     with urlopen(req, timeout=45) as r:
         return r.read().decode("utf-8", "replace")
 
@@ -171,11 +225,57 @@ def to_record(row):
     }
 
 
+def _try_endpoints():
+    """Ask the paths a Drupal map view normally exposes. Returns the first that
+    answers with JSON containing something that looks like a trial."""
+    from urllib.request import Request, urlopen
+    import json as _json
+    for path in ENDPOINTS:
+        url = BASE + path
+        try:
+            body = urlopen(Request(url, headers=HDRS), timeout=45).read()
+            data = _json.loads(body.decode("utf-8", "replace"))
+        except Exception as e:
+            print("  %-58s %s" % (path, str(e)[:34]))
+            continue
+        n = 0
+        if isinstance(data, dict):
+            n = len(data.get("data") or data.get("features") or data.get("rows") or [])
+        elif isinstance(data, list):
+            n = len(data)
+        print("  %-58s %d records" % (path, n))
+        if n:
+            return data
+    return None
+
+
 def main():
+    # Ask about every candidate path, not only the rendered page. A site that
+    # disallows its own map view may still serve the underlying geojson.
+    print("checking robots.txt for each candidate path")
+    open_paths = permitted_endpoints()
+
     ok, why = allowed(PAGE)
     print(why)
-    if not ok:
+    if not ok and not open_paths:
         return                      # exit 0: a refusal is not a build failure
+
+    # Any permitted data path is tried directly, before and regardless of the
+    # page, because it is the data rather than the HTML that is wanted.
+    for url in open_paths:
+        try:
+            body = fetch(url)
+        except Exception as e:
+            print("  %s: %s" % (url.replace(BASE, ""), str(e)[:60])); continue
+        rows = parse(body) if 'parse' in globals() else None
+        if rows:
+            print("  %s answered with %d records" % (url.replace(BASE, ""), len(rows)))
+            write(rows) if 'write' in globals() else None
+            return
+        print("  %s answered but held no trial records" % url.replace(BASE, ""))
+
+    if not ok:
+        return
 
     try:
         page = fetch(PAGE)

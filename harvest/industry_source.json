@@ -11945,5 +11945,101 @@
    "seed:traits"
   ],
   "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "Community Plant Variety Office (CPVO)",
+  "url": "https://cpvo.europa.eu/",
+  "desc": "Grants a single plant variety right valid across the whole European Union, and holds the register of them. A right granted here reaches 27 countries at once, which makes it the most concentrated seed-ownership decision anywhere: one office, one application, and what a farmer in any member state may do with a harvest changes. Its register is public and searchable by species, which is how to find out who owns a variety being grown near you.",
+  "tags": [
+   "rules:ip",
+   "seed:germplasm",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "UPOV — the office behind the convention",
+  "url": "https://www.upov.int/portal/index.html.en",
+  "desc": "Administers the plant variety convention that 80 members and 99 countries are bound by, and advises governments drafting national seed laws — which is the quieter and more consequential half of what it does. A country acceding to the 1991 act typically works from UPOV's own model provisions, so the text that criminalises seed exchange in one country is recognisably the text used in another.",
+  "tags": [
+   "rules:ip",
+   "rules:standards",
+   "seed:germplasm"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "USDA Plant Variety Protection Office",
+  "url": "https://www.ams.usda.gov/services/plant-variety-protection",
+  "desc": "Grants US plant variety certificates, which sit alongside utility patents on the same crops — and the two carry different rules. A variety certificate preserves a farmer's right to save seed for their own use; a utility patent does not, which is what Bowman v. Monsanto turned on. Which instrument covers a variety therefore decides what a grower may lawfully do, and the register says which.",
+  "tags": [
+   "rules:ip",
+   "seed:germplasm",
+   "rules:regulators"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "Crop Trust",
+  "url": "https://www.croptrust.org/",
+  "desc": "An endowment that funds the world's crop collections in perpetuity, including the Svalbard vault and the CGIAR genebanks. It exists because genebanks are funded in three-year grants and seed collections die in the gaps: a collection missed for one regeneration cycle is lost, and cannot be reconstituted from anywhere. It is the answer to who pays for the material every argument on this map about landraces and wild relatives depends on.",
+  "tags": [
+   "seed:germplasm",
+   "money:philanthropy",
+   "rules:associations"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "commentary",
+  "skind": "ngo",
+  "type": "institutional",
+  "trust": "low",
+  "name": "National academies of science — advice to governments",
+  "url": "https://royalsociety.org/",
+  "desc": "Academies are asked by governments for a position before a law is drafted, which is earlier and less visible than the regulatory assessment of any single application. Their reports are published and their working groups are named, so it is possible to see who advised and on what basis — and several national academies have taken positions on gene editing that their own regulators had not yet reached.",
+  "tags": [
+   "rules:influence",
+   "rules:standards",
+   "rules:associations"
+  ],
+  "checked": "2026-07-31"
+ },
+ {
+  "kind": "institution",
+  "voice": "official",
+  "skind": "igo",
+  "type": "institutional",
+  "trust": "high",
+  "name": "EU Group of Chief Scientific Advisors",
+  "url": "https://research-and-innovation.ec.europa.eu/strategy/support-policy-making/scientific-support-eu-policies/group-chief-scientific-advisors_en",
+  "desc": "Advises the European Commission before a proposal is written. Its 2018 opinion on new genomic techniques, published after the Court held that editing falls under the GMO directive, is the document the Commission's subsequent legislative proposal rests on. Reading it explains where that proposal came from better than the proposal does.",
+  "tags": [
+   "rules:influence",
+   "rules:standards",
+   "editing:agtech"
+  ],
+  "checked": "2026-07-31"
  }
 ]
