@@ -46,6 +46,8 @@ SCHEMAS = ("decision", "biosafetydecision", "dcs")
 
 # Country centroids for the parties that file most often. A decision is national
 # in scope, so a centroid is the honest position - there is no site to place.
+MISSING_CC = {}   # country code -> records dropped for want of a centroid
+
 C = {
  "AR":(-34.6,-58.4),"AT":(47.5,14.6),"AU":(-25.3,133.8),"BD":(23.7,90.4),"BE":(50.5,4.5),
  "BF":(12.2,-1.6),"BO":(-16.3,-63.6),"BR":(-14.2,-51.9),"BG":(42.7,25.5),"CA":(56.1,-106.3),
@@ -379,6 +381,18 @@ def to_record(row):
     link = (BASE + "/en/database/" + rid) if rid else pick(row, "url", "link", "href")
     if not link or not link.startswith("http"):
         link = BASE + "/en/database/?currentid=" + rid if rid else BASE + "/database/decisions"
+    # NOT C[cc]. This raised KeyError on the first country missing from the
+    # table and took the whole run down after 3,950 records had been read - and
+    # the table holds 67 countries, so about a hundred more would have followed.
+    # A record that cannot be sited already has a route: it goes to unplaced,
+    # which the caller handles and reports. MISSING_CC records which codes were
+    # asked for, so the log names what to add instead of leaving it to be found
+    # by the next crash. Do NOT fill this from animal_facilities.ST or
+    # aphis_releases.STATES: those are US STATE tables, where PA is Pennsylvania
+    # and DE is Delaware, and merging them would site Panama in Pennsylvania.
+    if cc not in C:
+        MISSING_CC[cc] = MISSING_CC.get(cc, 0) + 1
+        return None
     lat, lng = C[cc]
     return {
         "name": title[:180],
@@ -504,6 +518,7 @@ def main():
     # lie. So it goes to a marked spot in the mid-Atlantic, where no reader can
     # mistake it for a place, and the entry says why it is there.
     UNPLACED = (14.5, -38.0)
+    MISSING_CC.clear()
     out, unplaced_rows = [], []
     seen = set()
     for r in rows:
@@ -544,6 +559,17 @@ def main():
     print("  most-filed: %s" % ", ".join("%s %d" % kv for kv in by.most_common(6)))
     if unplaced_rows:
         print("  no country field, parked in the Atlantic: %d" % len(unplaced_rows))
+    if MISSING_CC:
+        # Named, not silent. Each of these is a country whose decisions were
+        # read and then dropped for want of a coordinate; the fix is to add
+        # the code to C, and this line says exactly which.
+        tot = sum(MISSING_CC.values())
+        print("  DROPPED for want of a centroid: %d records across %d countries"
+              % (tot, len(MISSING_CC)))
+        print("     add these to C: %s"
+              % " ".join("%s(%d)" % (k, v)
+                         for k, v in sorted(MISSING_CC.items(),
+                                            key=lambda kv: -kv[1])))
 
     if "--dry-run" in sys.argv:
         print("\ndry run \u2014 nothing written"); return
@@ -570,6 +596,23 @@ def selftest():
     ck("organism: cotton", organism_of("Approval of Herbicide Tolerant Cotton"), "cotton")
     ck("organism: mosquito", organism_of("Release of Aedes aegypti OX513A"), "mosquito / insect")
     ck("organism: none named", organism_of("Decision No. 42 of the Commission"), "")
+
+    # THE KeyError THAT KILLED A RUN AFTER 3,950 RECORDS. C holds 67 countries;
+    # the first decision from one of the other ~100 raised and took the whole
+    # harvest down. A country with no centroid must be dropped and NAMED.
+    _f = GOV_PREFIX_FIELDS[0]
+    def _row(code):
+        return {_f: ["%s_12345" % code], "title_EN_s": "Decision", "id": "abcdef123"}
+    MISSING_CC.clear()
+    ck("country missing from C returns None instead of raising",
+       to_record(_row("pa")), None)
+    ck("and the code is recorded so the log can name it",
+       dict(MISSING_CC), {"PA": 1})
+    to_record(_row("pa"))
+    ck("a second one is counted, not overwritten", dict(MISSING_CC), {"PA": 2})
+    ck("a country that IS in C is still sited",
+       (to_record(_row("br")) or {}).get("lat"), C["BR"][0])
+    MISSING_CC.clear()
 
     ck("outcome: prohibition beats approval wording",
        outcome_of("Application to approve X was rejected"), "Prohibited or rejected")

@@ -61,20 +61,28 @@ def slug(country):
 
 
 def website_for(country, get=None):
-    """The Website: line from a country's IPPC page, or "".
+    """(url, why) for a country's IPPC page. url is "" when there is none.
 
-    Returns "" on any failure rather than raising: one country's page being
-    unreachable must not cost the other 180.
+    THE FIRST VERSION OF THIS RETURNED "" ON EVERY FAILURE, and the run reported
+    "0 of 182 countries with a website on their page" - which reads as 182 pages
+    that simply have no Website line, and was in fact 182 requests that never
+    got a page. That is the same swallow as `|| echo` in the workflow, written
+    by hand: a silent zero is indistinguishable from a working zero.
+
+    So the reason comes back with the result. `why` is one of "ok", "no-line",
+    or "fetch:<error>", and the caller counts them separately and prints the
+    first few errors verbatim. A zero that says WHY it is zero is a diagnosis;
+    a bare zero is not.
     """
     try:
         text = (get or fetch)(COUNTRY_PAGE % slug(country))
-    except Exception:
-        return ""
+    except Exception as e:
+        return "", "fetch:%s: %s" % (type(e).__name__, str(e)[:70])
     m = WEB_LINE.search(text)
     if not m:
-        return ""
+        return "", "no-line"
     url = m.group(1).rstrip(".,;)\"'")
-    return url if url.lower().startswith("http") else "https://" + url
+    return (url if url.lower().startswith("http") else "https://" + url), "ok"
 
 # Columns that carry a person or their contact details. Dropped, never read.
 PERSONAL = {"prefix", "first name", "last name", "email", "e-mail",
@@ -203,15 +211,20 @@ def selftest():
             "Food Safety Agency Phone: +994 12 565 12 72 Email: someone@afsa.gov.az "
             "Website: http://www.afsa.gov.az Date contact registration: 02 Nov 2021")
     check("website read from the country page",
-          website_for("Azerbaijan", lambda u: PAGE), "http://www.afsa.gov.az")
+          website_for("Azerbaijan", lambda u: PAGE), ("http://www.afsa.gov.az", "ok"))
     check("bare www gets a scheme",
-          website_for("X", lambda u: "Website: www.example.gov.x"), "https://www.example.gov.x")
+          website_for("X", lambda u: "Website: www.example.gov.x"),
+          ("https://www.example.gov.x", "ok"))
     check("trailing punctuation stripped",
-          website_for("X", lambda u: "Website: http://a.gov.b."), "http://a.gov.b")
-    check("no Website line gives empty, not a guess",
-          website_for("X", lambda u: "Phone: +1 555 0100"), "")
-    def boom(u): raise OSError("unreachable")
-    check("an unreachable page costs nothing", website_for("X", boom), "")
+          website_for("X", lambda u: "Website: http://a.gov.b."), ("http://a.gov.b", "ok"))
+    check("no Website line gives empty AND says so",
+          website_for("X", lambda u: "Phone: +1 555 0100"), ("", "no-line"))
+    def boom(u): raise OSError("HTTP Error 403: Forbidden")
+    url, why = website_for("X", boom)
+    check("an unreachable page costs nothing", url, "")
+    # The distinction the run needed and did not have.
+    check("and is NOT reported as a page with no website", why.startswith("fetch"), True)
+    check("the error text is carried, not discarded", "403" in why, True)
     check("country slugged for the URL path", slug("C\u00f4te d'Ivoire"), "c-te-d-ivoire")
 
     print("\n%s" % ("all pass" if ok else "FAILURES ABOVE"))
@@ -236,15 +249,27 @@ def main():
         # One request per country against the IPPC country pages, which carry a
         # Website: line the CSV omits. Paced, and a failure on one country is
         # recorded as no website rather than taking the run down.
-        import time
-        got = 0
+        import collections, time
+        got, why = 0, collections.Counter()
+        errors = []
         for r in recs:
-            w = website_for(r["country"])
+            w, reason = website_for(r["country"])
+            why[reason.split(":")[0]] += 1
+            if reason.startswith("fetch") and len(errors) < 5:
+                errors.append("%s -> %s" % (r["country"], reason))
             if w:
                 r["website"] = w; got += 1
             time.sleep(0.5)
         print("  ippc      %5d of %d countries with a website on their page"
               % (got, len(recs)))
+        print("  ippc            pages read %d, no Website line %d, fetch failed %d"
+              % (why["ok"], why["no-line"], why["fetch"]))
+        for e in errors:
+            print("  ippc            %s" % e)
+        if why["fetch"] and not why["ok"]:
+            print("  ippc            EVERY request failed - this is not a source with no "
+                  "websites, it is a source that was never reached. Do not read the "
+                  "zero above as evidence about the IPPC pages.")
         scrub_check(recs)
     if "--print" in sys.argv:
         for r in recs[:20]:
