@@ -711,10 +711,10 @@
    ],
    "complain": [
     {
-     "n": "Provincial agriculture ministries",
+     "n": "Provincial ministries and the federal PMRA — drift complaints",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Hold pesticide applicator licensing and take drift complaints. As in the US, the province inspects and the federal body sets the rules."
+     "u": "https://www.canada.ca/en/health-canada/services/consumer-product-safety/reports-publications/pesticides-pest-management/corporate-plans-reports/pesticide-compliance-program-activity-report-2023-2024.html",
+     "d": "Both levels take a drift complaint, and the row is worth knowing because the federal route is the documented one. Provinces and territories licence commercial applicators, vendors and growers, issue permits for certain uses, and enforce their own pest control statutes with inspections, violation tickets and prosecutions. But Health Canada's Pest Management Regulatory Agency also inspects and investigates the sale, importation and use of pesticides through regional officers across the country, and it investigates drift, misapplication and misuse directly. Its own compliance report for 2023-24 records 133 agricultural users inspected nationally, of which 43 were carried out in response to complaints involving drift, with dicamba and 2,4-D users targeted specifically because of reported drift. So a complaint made federally is counted and published in a way a provincial one generally is not, and it is worth making in both places rather than choosing."
     },
     {
      "n": "CFIA complaints and enforcement",
@@ -823,8 +823,8 @@
     {
      "n": "Länder authorities",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "The states inspect and enforce; the federal office authorises. A complaint goes to the Land, not to Berlin."
+     "u": "https://www.bvl.bund.de/DE/Arbeitsbereiche/01_Lebensmittel/01_Aufgaben/01_WerMachtWas/01_Landesbehoerden/lm_vet_ueberw_node.html",
+     "d": "The states inspect and enforce; the federal office authorises. A complaint goes to the Land, not to Berlin. Most states run it in three tiers — a ministry coordinating, a regional authority supervising, and the district or city food and veterinary office doing the actual inspection — so the office that will visit a site is the district one. The link is the federal map of the sixteen state ministries."
     }
    ],
    "certify": [
@@ -883,18 +883,18 @@
    ],
    "an_inspect": [
     {
-     "n": "Länder animal welfare authorities",
+     "n": "Länder animal welfare authorities — 26 approving bodies",
      "lens": "ANIMALS",
-     "u": null,
-     "d": "Each Land licenses and inspects animal research; there is no federal register of establishments, and figures are reported centrally as totals."
+     "u": "https://www.bf3r.de/angebote/linklisten/behoerden/genehmigungsbehoerden/",
+     "d": "Each Land licenses and inspects animal research, and the fragmentation has been counted: a European Commission report found 26 different authorities competent to approve an animal experiment in Germany and 285 competent for inspections, against a single authority in France, the Netherlands, Estonia and Finland. Which body it is varies by state — often a Landesgesundheitsamt or a Regierungspräsidium — and each is advised by its own animal experiments commission under the Animal Welfare Act. There is still no federal register of establishments, and animal numbers are reported centrally only as totals. What IS federal, and is the way in, is the non-technical project summary: since the 2013 revision of the Act every approving authority must send the summary of an approved project to the federal institute within three months, and it is published about a month later, so an approved experiment can be read about in plain language nationally even though the licence sits in a Land. The federal centre for the protection of laboratory animals maintains the list of which authority covers which state."
     }
    ],
    "lab_oversight": [
     {
      "n": "Länder authorities — gentechnische Anlagen",
      "lens": "LABS",
-     "u": null,
-     "d": "Contained use is notified to the Land, which maintains the register; the federal register of genetic engineering facilities is public in outline."
+     "u": "https://www.bvl.bund.de/BCH/DE/NationaleKontaktstellen/NationaleKontaktstellen_node.html",
+     "d": "Contained use is notified to the Land, which approves it, inspects it and maintains the register; the federal register of genetic engineering facilities is public in outline. The Land also approves the facility itself, and for safety levels 3 and 4 must take an opinion from the central biosafety commission first. Release into the environment is not theirs — that is the federal office."
     }
    ]
   },
@@ -999,8 +999,8 @@
     {
      "n": "Autonomous community agriculture departments",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Aragón and Catalonia hold most of the area; the community inspects, not Madrid."
+     "u": "https://www.mapa.gob.es/es/agricultura/temas/biotecnologia/omg/legislacion/legislacion_espanola",
+     "d": "Aragón and Catalonia hold most of the area, and the community inspects rather than Madrid: Article 4 of Ley 9/2003 gives the autonomous communities the authorisation of confined use and of voluntary release for any purpose other than marketing, together with surveillance, control and the imposition of sanctions. The State keeps marketing authorisations, import and export, and anything intended for human or veterinary medicines. The point of entry is dated: under Article 25.4 of Real Decreto 178/2004 the competent authority must put the summary of a voluntary release application out to public information for 30 days, preferably before the 90-day limit for answering it expires, and the comments received must be taken into account in the report. Several communities have passed their own OMG decrees naming their competent bodies and, in Andalucía's case, creating a standing control committee."
     }
    ],
    "certify": [
@@ -1069,10 +1069,10 @@
    ],
    "complain": [
     {
-     "n": "State agriculture departments",
+     "n": "State and territory governments — statutory consultees",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "The state, not the federal agency, employs the inspectors who can enter a field and issue penalties. Find yours before writing anything."
+     "u": "https://www.genetechnology.gov.au/about-the-national-scheme/how-it-works/regulation",
+     "d": "On a licence application for environmental release the Gene Technology Regulator must consult the states and territories on the risk assessment and risk management plan, alongside relevant local councils, other Commonwealth agencies and the public — a statutory point of entry before the decision is made rather than after. Monitoring, compliance and enforcement under the Gene Technology Act 2000 sit with the Regulator, not with the state, so a breach is reported federally; the OGTR compliance line on this card is that route. The scheme is cooperative, underpinned by the Intergovernmental Gene Technology Agreement and corresponding state and territory legislation, and the states also sit on the Gene Technology Standing Committee and the Legislative and Governance Forum that oversee it."
     },
     {
      "n": "OGTR compliance",
@@ -1681,10 +1681,10 @@
    ],
    "complain": [
     {
-     "n": "Provincial agriculture departments",
+     "n": "Provincial agricultural administrative departments",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Handle enforcement, and are the level at which unapproved planting has actually been acted on — several provinces have destroyed unauthorised maize."
+     "d": "The province is not only the enforcement level, it holds approval power: under the GMO Regulations anyone producing or processing agricultural GMOs needs approval from the Ministry of Agriculture OR a provincial agricultural administrative department. Provinces have acted. Hainan's department checked Sanya, Lingshui and Ledong over five days in December 2013, examined 107 crop samples and destroyed nine unauthorised maize and cotton trials; roughly 73 hectares of unapproved maize were destroyed nationally across several areas in 2015; after state television found unapproved rice being grown at Wuhan the ministry ordered the local government to investigate and about eleven mu were burned. The limits show in the same record. Testing in Liaoning found 93 per cent of maize sampled from fields carried engineered material after a decade of unregulated planting, and researchers there expected the provincial government to play the finding down. And when Heilongjiang, which grows a tenth of the country's staple crops, wrote a ban on planting engineered maize, rice and soya into its provincial food safety regulations in 2016, it was the first provincial ban in China; central officials pressed it to fall into line and it lifted the ban six months later, revising the regulations to prohibit only illegal production and processing of edible engineered produce. A province can act against a planting; a province cannot hold a line the centre has not drawn."
     },
     {
      "n": "State Administration for Market Regulation",
@@ -1743,10 +1743,10 @@
    ],
    "an_inspect": [
     {
-     "n": "Provincial laboratory animal licensing",
+     "n": "Provincial departments of science and technology — laboratory animal licences",
      "lens": "ANIMALS",
      "u": null,
-     "d": "Facilities require a laboratory animal licence issued provincially; the licence lists are provincial rather than national."
+     "d": "A facility needs a laboratory animal licence and it is issued by the provincial department of science and technology, not by a national body: under the State Council statute of 1988 and the ministry regulations that followed, oversight sits with the national science and technology ministry, the provincial departments, and each institution's own animal care and use committee. Provinces implemented it through their own laws from 1996 onwards, beginning with Beijing, and those provincial rules cover licensing for both production and use of laboratory animals as well as quarantine, import and export, animal quality, staff training and biosafety. The consequence for anyone counting is that the licence lists are provincial rather than national: a total for China has to be assembled province by province, and what is published varies — Guangdong's monitoring institute publishes its own licence figures and rankings, most provinces publish nothing comparable. There is no national register of licensed facilities to read instead."
     }
    ],
    "lab_oversight": [
@@ -1987,10 +1987,10 @@
    ],
    "complain": [
     {
-     "n": "Länder authorities",
+     "n": "Länder authorities — Gentechnik-Vorsorgegesetze",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "The states inspect, and several have declared themselves GM-free through regional law and grower agreements."
+     "u": "https://www.verbrauchergesundheit.gv.at/Kommunikationsplattform--Oeffentliche-Gesundheit/gentechnik/rechtsvorschriften-in-oesterreich/gentechnikgesetz/Gentechnik_LaenderG.html",
+     "d": "Every one of the nine states has a Gentechnik-Vorsorgegesetz in force, or regulates planting under other state law, and these are the instrument the row refers to. They work in one of two ways: either an intended planting needs the state authority's permission, or it must be notified and the authority may forbid it. The stated purpose in both cases is coexistence — protecting organic and GM-free growing from contamination — rather than a prohibition in principle, which is how the state laws sit alongside EU rules. Cultivation measures are a state competence; the federal level splits GM work across three ministries, with the social affairs and consumer protection ministry leading and holding release and marketing applications. Upper Austria was one of the two founding regions of the European Network of GMO-free Regions in November 2003. Worth knowing for what comes next: the ministry's own analysis is that under the proposed EU regulation on new genomic techniques a blanket cultivation ban would no longer be possible and national measures would be limited to compulsory coexistence rules for category 2 plants — which in Austria would fall to these same state authorities."
     }
    ],
    "certify": [
@@ -2037,10 +2037,10 @@
    ],
    "complain": [
     {
-     "n": "Cantonal authorities",
+     "n": "BAFU — Kontaktstelle Biotechnologie des Bundes",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "The canton inspects and enforces; the federal office authorises."
+     "u": "https://www.bafu.admin.ch/de/kontaktstelle-biotechnologie-des-bundes",
+     "d": "The federal biotechnology contact point, and the address for this subject. Gene technology is one of the few fields the Confederation executes directly instead of leaving execution to the cantons, so unlike most Swiss environmental matters a complaint does not start at cantonal level. Release trials are authorised by the Federal Office for the Environment's biotechnology section, which also supervises them; cantonal specialist offices are consulted on an application and sit on the monitoring group, but they are not where it is decided. Questions where the risk is to people go to the Federal Office of Public Health instead, and agriculture-relevant gene technology law is overseen by the Federal Office for Agriculture. Cultivation of GMOs is prohibited in Switzerland under a moratorium that also covers products of new genomic techniques."
     },
     {
      "n": "Federal Food Safety and Veterinary Office",
@@ -2267,10 +2267,10 @@
    ],
    "complain": [
     {
-     "n": "Provincial departments of agriculture",
+     "n": "Registrar and inspectors under the GMO Act (national)",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Inspect and take complaints locally."
+     "u": "https://biosafety.org.za/working-with-gmos/compliance/gmo-compliance-resources-and-guidelines/",
+     "d": "Compliance for engineered organisms is national, not provincial. The GMO Act is administered by a Registrar seated in the national agriculture department, and it is inspectors appointed under the Act who check that permit conditions are being kept to; complaints under the agricultural inputs legislation are likewise addressed to the Registrar rather than to a province. Provinces run their own agriculture departments and matter for extension and land use, but a reader with an unapproved planting who starts at provincial level starts at the wrong door. The real weakness is stated by the national inspection service itself: it does not have permanent officials in every province, which is why it asks industry and farming communities to report through a structured complaints procedure rather than relying on its own presence. Two name changes sit on top of this. The department was the Department of Agriculture, Forestry and Fisheries until 2019, then the Department of Agriculture, Land Reform and Rural Development, and after the 2024 general election that department was split again into a Department of Agriculture and a Department of Land Reform and Rural Development — so DALRRD-era documents, forms and e-mail addresses name a body that no longer exists in that form."
     },
     {
      "n": "Department of Health — food control",
@@ -2327,8 +2327,14 @@
     {
      "n": "African Federation of Fertility Societies",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://affs-africa.org/",
      "d": "The regional federation, which sets standards and runs training where no statutory regulator exists. Most African fertility care is private and unlicensed, so a professional body is often the only body holding standards."
+    },
+    {
+     "n": "ANARA — African Network and Registry for ART",
+     "lens": "FERTILITY",
+     "u": "https://anara-africa.com/",
+     "d": "Collects cycle-by-cycle data from the ART centres that choose to submit it and publishes procedure counts, pregnancy and delivery rates and centre numbers by country. Reporting is voluntary and centre-led, so a country showing nothing may have clinics that have never submitted rather than no clinics. It does not license a clinic, inspect one, or take a complaint about one."
     }
    ],
    "cl_find": [
@@ -2483,7 +2489,7 @@
     {
      "n": "Certimex",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://certimexsc.com/",
      "d": "A Mexican organic certifier working with smallholder and indigenous producers."
     }
    ],
@@ -2615,8 +2621,14 @@
     {
      "n": "African Federation of Fertility Societies",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://affs-africa.org/",
      "d": "The regional federation, which sets standards and runs training where no statutory regulator exists. Most African fertility care is private and unlicensed, so a professional body is often the only body holding standards."
+    },
+    {
+     "n": "ANARA — African Network and Registry for ART",
+     "lens": "FERTILITY",
+     "u": "https://anara-africa.com/",
+     "d": "Collects cycle-by-cycle data from the ART centres that choose to submit it and publishes procedure counts, pregnancy and delivery rates and centre numbers by country. Reporting is voluntary and centre-led, so a country showing nothing may have clinics that have never submitted rather than no clinics. It does not license a clinic, inspect one, or take a complaint about one."
     }
    ],
    "cl_find": [
@@ -3372,8 +3384,14 @@
     {
      "n": "African Federation of Fertility Societies",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://affs-africa.org/",
      "d": "The regional federation, which sets standards and runs training where no statutory regulator exists. Most African fertility care is private and unlicensed, so a professional body is often the only body holding standards."
+    },
+    {
+     "n": "ANARA — African Network and Registry for ART",
+     "lens": "FERTILITY",
+     "u": "https://anara-africa.com/",
+     "d": "Collects cycle-by-cycle data from the ART centres that choose to submit it and publishes procedure counts, pregnancy and delivery rates and centre numbers by country. Reporting is voluntary and centre-led, so a country showing nothing may have clinics that have never submitted rather than no clinics. It does not license a clinic, inspect one, or take a complaint about one."
     }
    ],
    "cl_report": [
@@ -3452,8 +3470,14 @@
     {
      "n": "African Federation of Fertility Societies",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://affs-africa.org/",
      "d": "The regional federation, which sets standards and runs training where no statutory regulator exists. Most African fertility care is private and unlicensed, so a professional body is often the only body holding standards."
+    },
+    {
+     "n": "ANARA — African Network and Registry for ART",
+     "lens": "FERTILITY",
+     "u": "https://anara-africa.com/",
+     "d": "Collects cycle-by-cycle data from the ART centres that choose to submit it and publishes procedure counts, pregnancy and delivery rates and centre numbers by country. Reporting is voluntary and centre-led, so a country showing nothing may have clinics that have never submitted rather than no clinics. It does not license a clinic, inspect one, or take a complaint about one."
     }
    ],
    "cl_find": [
@@ -3520,10 +3544,10 @@
    ],
    "test": [
     {
-     "n": "East African regional laboratories",
+     "n": "KEPHIS — Kenya Plant Health Inspectorate Service",
      "lens": "TESTING",
-     "u": null,
-     "d": "KEPHIS in Kenya runs the regional detection capacity for East Africa, and accepts samples from neighbouring states."
+     "u": "https://kephis.go.ke/laboratory-services",
+     "d": "Kenya's plant health regulator and designated National Plant Protection Organization, whose plant quarantine section is the regional reference laboratory for COMESA and a centre of excellence for germplasm exchange, so it accepts samples from neighbouring states. Its laboratories cover molecular diagnosis by conventional and real-time PCR and LAMP, bacteriology, virology, analytical chemistry and seed testing, and it takes samples from farmers directly as well as from its own inspectors; the bacteriology laboratory is ISO/IEC 17025 accredited. It analyses and inspects: it does not authorise a GMO. Importing one is approved by Kenya's National Biosafety Authority, and KEPHIS issues the permit only after that approval."
     }
    ],
    "cl_report": [
@@ -3538,8 +3562,14 @@
     {
      "n": "African Federation of Fertility Societies",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://affs-africa.org/",
      "d": "The regional federation, which sets standards and runs training where no statutory regulator exists. Most African fertility care is private and unlicensed, so a professional body is often the only body holding standards."
+    },
+    {
+     "n": "ANARA — African Network and Registry for ART",
+     "lens": "FERTILITY",
+     "u": "https://anara-africa.com/",
+     "d": "Collects cycle-by-cycle data from the ART centres that choose to submit it and publishes procedure counts, pregnancy and delivery rates and centre numbers by country. Reporting is voluntary and centre-led, so a country showing nothing may have clinics that have never submitted rather than no clinics. It does not license a clinic, inspect one, or take a complaint about one."
     }
    ],
    "cl_find": [
@@ -3618,8 +3648,14 @@
     {
      "n": "African Federation of Fertility Societies",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://affs-africa.org/",
      "d": "The regional federation, which sets standards and runs training where no statutory regulator exists. Most African fertility care is private and unlicensed, so a professional body is often the only body holding standards."
+    },
+    {
+     "n": "ANARA — African Network and Registry for ART",
+     "lens": "FERTILITY",
+     "u": "https://anara-africa.com/",
+     "d": "Collects cycle-by-cycle data from the ART centres that choose to submit it and publishes procedure counts, pregnancy and delivery rates and centre numbers by country. Reporting is voluntary and centre-led, so a country showing nothing may have clinics that have never submitted rather than no clinics. It does not license a clinic, inspect one, or take a complaint about one."
     }
    ],
    "cl_find": [
@@ -3650,7 +3686,7 @@
     {
      "n": "Bangladesh Food Safety Authority",
      "lens": "COMPLAINT",
-     "u": null,
+     "u": "https://bfsa.gov.bd/",
      "d": "Handles food safety and labelling complaints."
     }
    ],
@@ -3698,7 +3734,7 @@
     {
      "n": "Asia Pacific Initiative on Reproduction (ASPIRE)",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://aspire-reproduction.org/",
      "d": "The regional society, which runs training and publishes regional data where national registers do not exist."
     }
    ],
@@ -3722,16 +3758,16 @@
    ],
    "complain": [
     {
-     "n": "Provincial agriculture departments",
+     "n": "Provincial agriculture and food departments — seed",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Seed inspection and enforcement is provincial."
+     "u": "https://mnfsr.gov.pk/",
+     "d": "Seed inspection and enforcement is provincial, and the provincial power over seed is real enough to have stopped movement between provinces. In late 2025 the Punjab Food Department blocked transport of certified wheat seed out of Rahim Yar Khan, a district supplying more than 60 per cent of the certified wheat seed used by other provinces; trucks stood at provincial borders for days, the Seed Association of Pakistan went to the Lahore High Court, and the department continued the blockade after the federal Ministry of National Food Security and Research had directed it to release the consignments. Federal inspection teams do work alongside provincial ones on fake seed, but the province holds the decision."
     },
     {
-     "n": "Provincial food authorities",
+     "n": "Provincial food authorities — Punjab (PFA) and Sindh (SFA)",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Food safety is provincial in Pakistan; Punjab and Sindh food authorities take labelling complaints."
+     "u": "https://pfa.gop.pk/",
+     "d": "Food safety is provincial in Pakistan and the two largest provinces run statutory authorities that take complaints from the public directly. The Punjab Food Authority was created by the Punjab Food Authority Act 2011 and sits under the provincial Food Department; the Sindh Food Authority was created by the Sindh Food Authority Act 2016, began operating in 2018 in Karachi and Larkana and has extended division by division since, reaching Sukkur and Benazirabad in 2023 — so coverage inside Sindh is recent and uneven rather than province-wide from the start. Punjab has since also stood up a separate Agriculture, Food and Drug Authority with its own complaint process. These bodies act on food as sold: labelling, hygiene and adulteration. None of them authorises a release."
     }
    ],
    "certify": [
@@ -3778,7 +3814,7 @@
     {
      "n": "Asia Pacific Initiative on Reproduction (ASPIRE)",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://aspire-reproduction.org/",
      "d": "The regional society, which runs training and publishes regional data where national registers do not exist."
     }
    ],
@@ -3796,8 +3832,8 @@
     {
      "n": "Biosafety Commission (KKH)",
      "lens": "REGULATOR",
-     "u": null,
-     "d": "Advises the ministries that authorise releases and food use."
+     "u": "https://indonesiabch.kemenlh.go.id/tentang-bkkhi/",
+     "d": "Assesses applications and issues a biosafety recommendation to the Minister of Environment and the other authorised ministers, who then take the decision on release and circulation — so the Commission does not itself authorise anything, and a recommendation is not the decision. Nineteen members drawn from government, universities and the public, appointed by presidential decision. Its plenary sittings and the products considered at them are posted to the Indonesia Biosafety Clearing-House."
     },
     {
      "n": "Ministry of Agriculture (Indonesia)",
@@ -3870,7 +3906,7 @@
     {
      "n": "Asia Pacific Initiative on Reproduction (ASPIRE)",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://aspire-reproduction.org/",
      "d": "The regional society, which runs training and publishes regional data where national registers do not exist."
     }
    ],
@@ -3950,7 +3986,7 @@
     {
      "n": "Asia Pacific Initiative on Reproduction (ASPIRE)",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://aspire-reproduction.org/",
      "d": "The regional society, which runs training and publishes regional data where national registers do not exist."
     }
    ],
@@ -4028,7 +4064,7 @@
     {
      "n": "Asia Pacific Initiative on Reproduction (ASPIRE)",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://aspire-reproduction.org/",
      "d": "The regional society, which runs training and publishes regional data where national registers do not exist."
     }
    ],
@@ -4098,7 +4134,7 @@
     {
      "n": "Asia Pacific Initiative on Reproduction (ASPIRE)",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://aspire-reproduction.org/",
      "d": "The regional society, which runs training and publishes regional data where national registers do not exist."
     }
    ],
@@ -4280,7 +4316,7 @@
     {
      "n": "Middle East Fertility Society",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://www.mefs.org/",
      "d": "The regional professional society, which publishes regional outcome data. Several states in the region restrict treatment to married couples and prohibit donation entirely, so what is lawful differs sharply across a short distance."
     }
    ],
@@ -4800,9 +4836,9 @@
    ],
    "notice": [
     {
-     "n": "Gulf Standards Organization notices",
+     "n": "GCC Standardization Organization notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.gso.org.sa/en/",
      "d": "Gulf states harmonise food standards and labelling regionally, so what is decided here follows a joint standard rather than a national application process.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -4819,7 +4855,7 @@
     {
      "n": "Middle East Fertility Society",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://www.mefs.org/",
      "d": "The regional professional society, which publishes regional outcome data. Several states in the region restrict treatment to married couples and prohibit donation entirely, so what is lawful differs sharply across a short distance."
     }
    ],
@@ -4871,9 +4907,9 @@
    ],
    "notice": [
     {
-     "n": "Gulf Standards Organization notices",
+     "n": "GCC Standardization Organization notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.gso.org.sa/en/",
      "d": "Gulf states harmonise food standards and labelling regionally, so what is decided here follows a joint standard rather than a national application process.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -4888,7 +4924,7 @@
     {
      "n": "Middle East Fertility Society",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://www.mefs.org/",
      "d": "The regional professional society, which publishes regional outcome data. Several states in the region restrict treatment to married couples and prohibit donation entirely, so what is lawful differs sharply across a short distance."
     }
    ],
@@ -4960,7 +4996,7 @@
     {
      "n": "Asia Pacific Initiative on Reproduction (ASPIRE)",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://aspire-reproduction.org/",
      "d": "The regional society, which runs training and publishes regional data where national registers do not exist."
     }
    ],
@@ -5138,8 +5174,14 @@
     {
      "n": "African Federation of Fertility Societies",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://affs-africa.org/",
      "d": "The regional federation, which sets standards and runs training where no statutory regulator exists. Most African fertility care is private and unlicensed, so a professional body is often the only body holding standards."
+    },
+    {
+     "n": "ANARA — African Network and Registry for ART",
+     "lens": "FERTILITY",
+     "u": "https://anara-africa.com/",
+     "d": "Collects cycle-by-cycle data from the ART centres that choose to submit it and publishes procedure counts, pregnancy and delivery rates and centre numbers by country. Reporting is voluntary and centre-led, so a country showing nothing may have clinics that have never submitted rather than no clinics. It does not license a clinic, inspect one, or take a complaint about one."
     }
    ],
    "cl_find": [
@@ -5210,8 +5252,14 @@
     {
      "n": "African Federation of Fertility Societies",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://affs-africa.org/",
      "d": "The regional federation, which sets standards and runs training where no statutory regulator exists. Most African fertility care is private and unlicensed, so a professional body is often the only body holding standards."
+    },
+    {
+     "n": "ANARA — African Network and Registry for ART",
+     "lens": "FERTILITY",
+     "u": "https://anara-africa.com/",
+     "d": "Collects cycle-by-cycle data from the ART centres that choose to submit it and publishes procedure counts, pregnancy and delivery rates and centre numbers by country. Reporting is voluntary and centre-led, so a country showing nothing may have clinics that have never submitted rather than no clinics. It does not license a clinic, inspect one, or take a complaint about one."
     }
    ],
    "cl_find": [
@@ -5354,8 +5402,14 @@
     {
      "n": "African Federation of Fertility Societies",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://affs-africa.org/",
      "d": "The regional federation, which sets standards and runs training where no statutory regulator exists. Most African fertility care is private and unlicensed, so a professional body is often the only body holding standards."
+    },
+    {
+     "n": "ANARA — African Network and Registry for ART",
+     "lens": "FERTILITY",
+     "u": "https://anara-africa.com/",
+     "d": "Collects cycle-by-cycle data from the ART centres that choose to submit it and publishes procedure counts, pregnancy and delivery rates and centre numbers by country. Reporting is voluntary and centre-led, so a country showing nothing may have clinics that have never submitted rather than no clinics. It does not license a clinic, inspect one, or take a complaint about one."
     }
    ]
   },
@@ -5364,8 +5418,8 @@
     {
      "n": "Agence Nationale de Biosécurité",
      "lens": "REGULATOR",
-     "u": null,
-     "d": "Authorises. Burkina Faso grew Bt cotton at scale and then withdrew it in 2016 because the fibre was shorter and worth less — the only case of a country abandoning a commercial engineered crop for quality reasons rather than safety or politics. Target Malaria's gene-drive mosquito work continues here."
+     "u": "https://anb.bf/",
+     "d": "The national competent authority for biosafety, a public scientific establishment under the ministry for scientific research. No GMO may be used in Burkina Faso without its prior authorisation, and it also carries out the inspections and audits that check whether an authorisation's conditions are being kept to. A decision runs through four bodies: the Comité Scientifique National de Biosécurité assesses the risk case by case and recommends, the Observatoire National de Biosécurité files its concerns, the ANB decides, and the public must be consulted before a release into the environment is authorised — so there is a stated point of entry rather than only an outcome. Burkina Faso grew Bt cotton at scale and withdrew it in 2016 because the fibre was shorter and worth less, the only case of a country abandoning a commercial engineered crop for quality reasons rather than safety or politics. Target Malaria's gene-drive mosquito work continues here, and the ANB has publicly backed the authorisations behind it. Its national biosafety laboratory is built as the UEMOA regional reference laboratory for GMO analysis, serving all eight member states."
     }
    ],
    "complain": [
@@ -5438,7 +5492,7 @@
     {
      "n": "Arab Network for Food Sovereignty",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://www.apnature.org/en/arab-network-food-sovereignty",
      "d": "Works across the Arab region on seed law and food sovereignty, including in the Fertile Crescent where the wild relatives of wheat and barley still grow."
     }
    ],
@@ -5446,8 +5500,14 @@
     {
      "n": "African Federation of Fertility Societies",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://affs-africa.org/",
      "d": "The regional federation, which sets standards and runs training where no statutory regulator exists. Most African fertility care is private and unlicensed, so a professional body is often the only body holding standards."
+    },
+    {
+     "n": "ANARA — African Network and Registry for ART",
+     "lens": "FERTILITY",
+     "u": "https://anara-africa.com/",
+     "d": "Collects cycle-by-cycle data from the ART centres that choose to submit it and publishes procedure counts, pregnancy and delivery rates and centre numbers by country. Reporting is voluntary and centre-led, so a country showing nothing may have clinics that have never submitted rather than no clinics. It does not license a clinic, inspect one, or take a complaint about one."
     }
    ]
   },
@@ -5546,7 +5606,7 @@
     {
      "n": "Arab Network for Food Sovereignty",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://www.apnature.org/en/arab-network-food-sovereignty",
      "d": "Works across the Arab region on seed law and food sovereignty, including in the Fertile Crescent where the wild relatives of wheat and barley still grow."
     }
    ]
@@ -5586,7 +5646,7 @@
     {
      "n": "Arab Network for Food Sovereignty",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://www.apnature.org/en/arab-network-food-sovereignty",
      "d": "Works across the Arab region on seed law and food sovereignty, including in the Fertile Crescent where the wild relatives of wheat and barley still grow."
     }
    ]
@@ -6282,7 +6342,7 @@
     {
      "n": "Asia Pacific Initiative on Reproduction (ASPIRE)",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://aspire-reproduction.org/",
      "d": "The regional society, which runs training and publishes regional data where national registers do not exist."
     }
    ]
@@ -6290,10 +6350,10 @@
   "Nepal": {
    "decides": [
     {
-     "n": "Ministry of Forests and Environment",
+     "n": "Ministry of Agriculture, Forest and Environment",
      "lens": "REGULATOR",
-     "u": null,
-     "d": "Handles biosafety. Nepal prohibits the import of engineered seed, and the practical question here is what crosses the open border with India rather than what is authorised."
+     "u": "https://mofe.gov.np/",
+     "d": "Holds biosafety. Nepal prohibits the import of engineered seed, and the practical question is what crosses the open border with India rather than what is authorised. Formed on 14 May 2026 by merging the Ministry of Forests and Environment with the Ministry of Agriculture and Livestock Development, so both predecessor names appear on documents and both predecessor sites may still be serving."
     }
    ],
    "complain": [
@@ -6336,7 +6396,7 @@
     {
      "n": "Asia Pacific Initiative on Reproduction (ASPIRE)",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://aspire-reproduction.org/",
      "d": "The regional society, which runs training and publishes regional data where national registers do not exist."
     }
    ]
@@ -6390,7 +6450,7 @@
     {
      "n": "Asia Pacific Initiative on Reproduction (ASPIRE)",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://aspire-reproduction.org/",
      "d": "The regional society, which runs training and publishes regional data where national registers do not exist."
     }
    ]
@@ -6412,10 +6472,10 @@
      "d": "Inspects seed and imports."
     },
     {
-     "n": "Camcontrol",
+     "n": "CCF — Consumer Protection, Competition and Fraud Repression Directorate-General",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Handles import inspection and food labelling."
+     "u": "https://www.ccfdg.gov.kh/en/about-ccf/",
+     "d": "Inspects imports and enforces labelling rules, and takes consumer complaints about the quality and safety of goods on sale. Renamed from Camcontrol by Sub-decree 38 of 16 March 2020 and raised to a directorate-general under the Ministry of Commerce, with branches in the capital and 25 provinces. It acts on what is being sold; it does not authorise a release or inspect a field."
     }
    ],
    "certify": [
@@ -6438,7 +6498,7 @@
     {
      "n": "Asia Pacific Initiative on Reproduction (ASPIRE)",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://aspire-reproduction.org/",
      "d": "The regional society, which runs training and publishes regional data where national registers do not exist."
     }
    ]
@@ -6478,7 +6538,7 @@
     {
      "n": "Asian Farmers' Association for Sustainable Rural Development",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://asianfarmers.org/afa/",
      "d": "A regional federation of national farmers' organisations, covering countries where no domestic organisation works on this subject specifically."
     }
    ]
@@ -6532,7 +6592,7 @@
     {
      "n": "Pacific Community (SPC) laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "The Pacific Community runs the regional plant health and testing capacity that individual island states do not maintain."
     }
    ],
@@ -6540,7 +6600,7 @@
     {
      "n": "Pacific Community — regional biosafety notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "Pacific island states handle biosafety largely through regional bodies and their Clearing-House filings rather than a national notice venue, because almost everything arrives as an import rather than an application.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -6579,7 +6639,7 @@
     {
      "n": "Pacific Organic Standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://lrd.spc.int/work-areas/markets-for-livelihoods/poetcom",
      "d": "A regional standard used across the Pacific islands."
     }
    ],
@@ -6587,7 +6647,7 @@
     {
      "n": "Pacific Network on Globalisation",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://pang.org.fj/",
      "d": "Works across the Pacific on trade agreements and their seed and biosafety provisions."
     }
    ],
@@ -6595,7 +6655,7 @@
     {
      "n": "Pacific Community (SPC) laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "The Pacific Community runs the regional plant health and testing capacity that individual island states do not maintain."
     }
    ],
@@ -6603,7 +6663,7 @@
     {
      "n": "Pacific Community — regional biosafety notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "Pacific island states handle biosafety largely through regional bodies and their Clearing-House filings rather than a national notice venue, because almost everything arrives as an import rather than an application.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -6618,10 +6678,10 @@
      "d": "Handles biosafety."
     },
     {
-     "n": "Ministry of Agriculture (Jamaica)",
+     "n": "Ministry of Agriculture, Fisheries and Mining",
      "lens": "REGULATOR",
-     "u": null,
-     "d": "Handles seed and crop approvals."
+     "u": "https://www.moa.gov.jm/",
+     "d": "Holds seed and crop approvals, and runs the plant quarantine service that inspects what arrives. Fisheries and mining sit in the same ministry, so an enquiry has to name the agency as well as the ministry to reach the right desk."
     }
    ],
    "complain": [
@@ -6666,7 +6726,7 @@
     {
      "n": "CARICOM regional laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://caricom.org/institutions/",
      "d": "Caribbean testing runs through regional facilities in Trinidad and Jamaica rather than one per island."
     }
    ]
@@ -6714,7 +6774,7 @@
     {
      "n": "CARICOM regional laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://caricom.org/institutions/",
      "d": "Caribbean testing runs through regional facilities in Trinidad and Jamaica rather than one per island."
     }
    ],
@@ -6744,10 +6804,10 @@
      "d": "Inspects and enforces."
     },
     {
-     "n": "AUPSA",
+     "n": "APA — Agencia Panameña de Alimentos",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Handles food import authorisation and labelling."
+     "u": "https://apa.gob.pa/",
+     "d": "Handles import, transit and transshipment paperwork for food for human and animal consumption, and replaced AUPSA under Law 206 of 30 March 2021. It processes the documents a consignment travels on; it does not authorise a release, and a complaint about a planting goes elsewhere."
     }
    ],
    "certify": [
@@ -7002,18 +7062,24 @@
    ],
    "test": [
     {
-     "n": "Central African regional laboratories",
+     "n": "CPAC — laboratoire sous-régional, secteur OGM (CEMAC)",
      "lens": "TESTING",
-     "u": null,
-     "d": "Detection capacity in Central Africa is limited; samples are normally sent to Cameroon's national laboratories or to a regional facility rather than to a West African one."
+     "u": "https://www.cpac-cemac.org/drupal-8.9.5/node/78",
+     "d": "The sub-regional laboratory for analysis of pesticides and pesticide residues in food in Central Africa, run under CEMAC. Its Biology Department carries an OGM/mycotoxins sector alongside veterinary, bacteriology, virology and biopesticides work, so detection capacity for engineered material exists here as one department of an institution built primarily for residue analysis rather than as a dedicated GMO laboratory. Accreditation across the sub-region is the weak point: the CEMAC and CEEAC laboratory mapping carried out under the EU-funded PACIE programme covered 47 testing laboratories in seven countries and found good technical competence but a general need for support to reach ISO/IEC 17025, so a result may not carry formal recognition. Samples otherwise go to Cameroon's national laboratories rather than to West Africa."
     }
    ],
    "fe_register": [
     {
      "n": "African Federation of Fertility Societies",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://affs-africa.org/",
      "d": "The regional federation, which sets standards and runs training where no statutory regulator exists. Most African fertility care is private and unlicensed, so a professional body is often the only body holding standards."
+    },
+    {
+     "n": "ANARA — African Network and Registry for ART",
+     "lens": "FERTILITY",
+     "u": "https://anara-africa.com/",
+     "d": "Collects cycle-by-cycle data from the ART centres that choose to submit it and publishes procedure counts, pregnancy and delivery rates and centre numbers by country. Reporting is voluntary and centre-led, so a country showing nothing may have clinics that have never submitted rather than no clinics. It does not license a clinic, inspect one, or take a complaint about one."
     }
    ]
   },
@@ -7036,8 +7102,8 @@
     {
      "n": "CODINORM",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Handles food labelling standards."
+     "u": "https://codinorm.ci/",
+     "d": "Draws up and publishes Ivorian standards and runs the national product certification mark, including the labelling standards a packaged food is sold under. It is a non-profit association of member firms and the State rather than a ministry, so it sets and certifies against standards; enforcement against a seller sits elsewhere."
     }
    ],
    "certify": [
@@ -7058,17 +7124,17 @@
    ],
    "test": [
     {
-     "n": "West African regional laboratories",
+     "n": "Laboratoire National de Biosécurité, Ouagadougou — UEMOA reference laboratory",
      "lens": "TESTING",
-     "u": null,
-     "d": "Detection capacity in West Africa is concentrated in Nigeria, Ghana and Burkina Faso; a sample from a smaller state is normally sent to one of them."
+     "u": "https://anb.bf/",
+     "d": "Designated as the reference laboratory for GMO analysis for the eight UEMOA states and as the central node of a sub-regional laboratory network. Operational since September 2019 at Kamboinsin, attached to Burkina Faso's Agence Nationale de Biosécurité, equipped for detection, identification and quantification of engineered organisms, serological and nucleic-acid analysis, and compositional analysis of food. The sub-regional network it anchors is still being formed, so this is the designated route rather than a demonstrated routine one and a sample crossing a border may have to be arranged case by case; detection capacity in the region in practice sits in Nigeria, Ghana and Burkina Faso. It analyses a sample and reports; it does not authorise a release and does not take a complaint."
     }
    ],
    "legal": [
     {
      "n": "COPAGEN — West African genetic heritage coalition",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://copagen.org/la-copagen/",
      "d": "A coalition working across West Africa on seed law, biosafety and the regional intellectual property office that legislates for seventeen states at once — which is why a campaign there reaches all of them."
     }
    ]
@@ -7108,7 +7174,7 @@
     {
      "n": "COPAGEN — Coalition pour la protection du patrimoine génétique africain",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://copagen.org/la-copagen/",
      "d": "The West African coalition on genetic heritage, which files on national biosafety decisions across the region."
     }
    ],
@@ -7122,10 +7188,10 @@
    ],
    "test": [
     {
-     "n": "West African regional laboratories",
+     "n": "Laboratoire National de Biosécurité, Ouagadougou — UEMOA reference laboratory",
      "lens": "TESTING",
-     "u": null,
-     "d": "Detection capacity in West Africa is concentrated in Nigeria, Ghana and Burkina Faso; a sample from a smaller state is normally sent to one of them."
+     "u": "https://anb.bf/",
+     "d": "Designated as the reference laboratory for GMO analysis for the eight UEMOA states and as the central node of a sub-regional laboratory network. Operational since September 2019 at Kamboinsin, attached to Burkina Faso's Agence Nationale de Biosécurité, equipped for detection, identification and quantification of engineered organisms, serological and nucleic-acid analysis, and compositional analysis of food. The sub-regional network it anchors is still being formed, so this is the designated route rather than a demonstrated routine one and a sample crossing a border may have to be arranged case by case; detection capacity in the region in practice sits in Nigeria, Ghana and Burkina Faso. It analyses a sample and reports; it does not authorise a release and does not take a complaint."
     }
    ]
   },
@@ -7158,7 +7224,7 @@
     {
      "n": "COPAGEN Mali",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://copagen.org/la-copagen/",
      "d": "The Malian chapter of the West African genetic heritage coalition; Mali is a party to the liability protocol."
     },
     {
@@ -7178,10 +7244,10 @@
    ],
    "test": [
     {
-     "n": "West African regional laboratories",
+     "n": "Laboratoire National de Biosécurité, Ouagadougou — UEMOA reference laboratory",
      "lens": "TESTING",
-     "u": null,
-     "d": "Detection capacity in West Africa is concentrated in Nigeria, Ghana and Burkina Faso; a sample from a smaller state is normally sent to one of them."
+     "u": "https://anb.bf/",
+     "d": "Designated as the reference laboratory for GMO analysis for the eight UEMOA states and as the central node of a sub-regional laboratory network. Operational since September 2019 at Kamboinsin, attached to Burkina Faso's Agence Nationale de Biosécurité, equipped for detection, identification and quantification of engineered organisms, serological and nucleic-acid analysis, and compositional analysis of food. The sub-regional network it anchors is still being formed, so this is the designated route rather than a demonstrated routine one and a sample crossing a border may have to be arranged case by case; detection capacity in the region in practice sits in Nigeria, Ghana and Burkina Faso. It analyses a sample and reports; it does not authorise a release and does not take a complaint."
     }
    ]
   },
@@ -7242,7 +7308,7 @@
     {
      "n": "SADC / regional reference laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://sadcrla.org/",
      "d": "Southern African testing runs through the South African accredited network and regional SADC laboratories; a sample from a neighbouring state is normally sent there rather than to Europe."
     }
    ]
@@ -7296,7 +7362,7 @@
     {
      "n": "SADC / regional reference laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://sadcrla.org/",
      "d": "Southern African testing runs through the South African accredited network and regional SADC laboratories; a sample from a neighbouring state is normally sent there rather than to Europe."
     }
    ]
@@ -7306,7 +7372,7 @@
     {
      "n": "Biosafety Council",
      "lens": "REGULATOR",
-     "u": null,
+     "u": "https://ncrst.na/what-we-do/innovation-technology-development/biotechnology/administration-of-biosafety-act-2/",
      "d": "Authorises under the Biosafety Act. Namibia requires labelling of GM food and its rules are among the more developed in southern Africa outside South Africa."
     }
    ],
@@ -7344,7 +7410,7 @@
     {
      "n": "SADC / regional reference laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://sadcrla.org/",
      "d": "Southern African testing runs through the South African accredited network and regional SADC laboratories; a sample from a neighbouring state is normally sent there rather than to Europe."
     }
    ],
@@ -7352,7 +7418,7 @@
     {
      "n": "African Centre for Biodiversity — regional work",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://acbio.org.za/",
      "d": "Files objections and publishes analysis across southern and eastern Africa, not only in South Africa, and is the most consistent objector in the region."
     }
    ]
@@ -7376,8 +7442,8 @@
     {
      "n": "Botswana Bureau of Standards",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Handles food labelling standards."
+     "u": "http://www.bobstandards.bw",
+     "d": "Writes Botswana's national standards and enforces the compulsory ones, which include cereals and grains for consumption and cattle and poultry feed — the products an engineered crop arrives in. It certifies against a standard and runs the testing laboratories; it does not authorise a release, and a compulsory standard is a trade requirement rather than a biosafety decision."
     }
    ],
    "certify": [
@@ -7400,7 +7466,7 @@
     {
      "n": "SADC / regional reference laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://sadcrla.org/",
      "d": "Southern African testing runs through the South African accredited network and regional SADC laboratories; a sample from a neighbouring state is normally sent there rather than to Europe."
     }
    ],
@@ -7408,7 +7474,7 @@
     {
      "n": "African Centre for Biodiversity — regional work",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://acbio.org.za/",
      "d": "Files objections and publishes analysis across southern and eastern Africa, not only in South Africa, and is the most consistent objector in the region."
     }
    ]
@@ -7454,10 +7520,10 @@
    ],
    "test": [
     {
-     "n": "East African regional laboratories",
+     "n": "KEPHIS — Kenya Plant Health Inspectorate Service",
      "lens": "TESTING",
-     "u": null,
-     "d": "KEPHIS in Kenya runs the regional detection capacity for East Africa, and accepts samples from neighbouring states."
+     "u": "https://kephis.go.ke/laboratory-services",
+     "d": "Kenya's plant health regulator and designated National Plant Protection Organization, whose plant quarantine section is the regional reference laboratory for COMESA and a centre of excellence for germplasm exchange, so it accepts samples from neighbouring states. Its laboratories cover molecular diagnosis by conventional and real-time PCR and LAMP, bacteriology, virology, analytical chemistry and seed testing, and it takes samples from farmers directly as well as from its own inspectors; the bacteriology laboratory is ISO/IEC 17025 accredited. It analyses and inspects: it does not authorise a GMO. Importing one is approved by Kenya's National Biosafety Authority, and KEPHIS issues the permit only after that approval."
     }
    ]
   },
@@ -7498,7 +7564,7 @@
     {
      "n": "Arab Network for Food Sovereignty",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://www.apnature.org/en/arab-network-food-sovereignty",
      "d": "Works across the Arab region on seed law and food sovereignty, including in the Fertile Crescent where the wild relatives of wheat and barley still grow."
     }
    ],
@@ -7506,7 +7572,7 @@
     {
      "n": "Middle East Fertility Society",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://www.mefs.org/",
      "d": "The regional professional society, which publishes regional outcome data. Several states in the region restrict treatment to married couples and prohibit donation entirely, so what is lawful differs sharply across a short distance."
     }
    ]
@@ -7554,7 +7620,7 @@
     {
      "n": "Arab Network for Food Sovereignty",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://www.apnature.org/en/arab-network-food-sovereignty",
      "d": "Works across the Arab region on seed law and food sovereignty, including in the Fertile Crescent where the wild relatives of wheat and barley still grow."
     }
    ],
@@ -7562,7 +7628,7 @@
     {
      "n": "Middle East Fertility Society",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://www.mefs.org/",
      "d": "The regional professional society, which publishes regional outcome data. Several states in the region restrict treatment to married couples and prohibit donation entirely, so what is lawful differs sharply across a short distance."
     }
    ]
@@ -7614,10 +7680,10 @@
    ],
    "test": [
     {
-     "n": "Regional laboratories in Kazakhstan and Uzbekistan",
+     "n": "No regional testing route established",
      "lens": "TESTING",
      "u": null,
-     "d": "Central Asian detection capacity is concentrated in the larger states."
+     "d": "No regional route for detecting engineered material was established for this country. The row previously pointed at laboratories in Kazakhstan and Uzbekistan, and that grouping does not hold here: the mechanism that shares testing capacity in this direction is membership of the Eurasian Economic Union, whose technical regulations let a laboratory accredited in one member state produce a result recognised in all of them, and this country is not a member. Searches for a designated laboratory for this purpose in the region returned facilities for dangerous human and animal pathogens, which is a different discipline from finding a transgene in seed. So the honest position is that where a sample goes from here has not been established, rather than that it goes east."
     }
    ]
   },
@@ -7634,14 +7700,14 @@
     {
      "n": "Food Safety Inspectorate",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Inspects imports and food."
+     "u": "https://snund.am/en/",
+     "d": "Inspects imported and domestic food and carries the veterinary and phytosanitary functions, assessing conformity against the applicable standards and imposing sanctions. Formed from the State Food Safety Service of the Ministry of Agriculture and renamed twice since 2010, so a document from before then names a body that no longer exists under that title."
     },
     {
      "n": "Food Safety Inspectorate — consumer line",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Handles labelling complaints."
+     "u": "https://snund.am/en/",
+     "d": "Takes labelling complaints, through the same Inspectorate rather than a separate office. It acts on what is on sale; it does not authorise a release and does not inspect a field."
     }
    ],
    "notice": [
@@ -7654,10 +7720,10 @@
    ],
    "test": [
     {
-     "n": "Regional laboratories in Kazakhstan and Uzbekistan",
+     "n": "EAEU accredited laboratories — conformity testing route",
      "lens": "TESTING",
      "u": null,
-     "d": "Central Asian detection capacity is concentrated in the larger states."
+     "d": "Armenia has been a member of the Eurasian Economic Union since January 2015, alongside Russia, Belarus, Kazakhstan and Kyrgyzstan, and conformity testing under the union's technical regulations is carried out in laboratories accredited in any member state with the result recognised across all five. That is the mechanism behind detection capacity sitting in the larger members rather than at home. Two limits are worth knowing before relying on it. It is a TRADE conformity route, built for placing a product on the market, not a public testing service a grower or a neighbour can simply send a field sample to. And no laboratory in the union was identified as a designated reference laboratory for detecting engineered material specifically; the reference facilities that surfaced in Kazakhstan are for dangerous human and animal pathogens, which is a different discipline from finding a transgene in seed."
     }
    ]
   },
@@ -7674,22 +7740,22 @@
     {
      "n": "Food Safety Agency",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Inspects imports and food labelling."
+     "u": "http://www.afsa.gov.az",
+     "d": "Holds food safety, veterinary and phytosanitary control across the whole chain — production, supply, packaging, storage, transport, import and export — and runs a network of sixteen laboratories in Baku and the regions that were transferred to it from other state bodies in 2018. It registers food businesses and issues certificates; it does not authorise an environmental release."
     },
     {
      "n": "Food Safety Agency — consumer line",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Handles labelling complaints."
+     "u": "http://www.afsa.gov.az",
+     "d": "Takes consumer complaints on a telephone line and by e-mail, through the same Agency rather than a separate office. It acts on what is on sale or arriving at the border; a complaint about a planting is not its subject."
     }
    ],
    "test": [
     {
-     "n": "Regional laboratories in Kazakhstan and Uzbekistan",
+     "n": "No regional testing route established",
      "lens": "TESTING",
      "u": null,
-     "d": "Central Asian detection capacity is concentrated in the larger states."
+     "d": "No regional route for detecting engineered material was established for this country. The row previously pointed at laboratories in Kazakhstan and Uzbekistan, and that grouping does not hold here: the mechanism that shares testing capacity in this direction is membership of the Eurasian Economic Union, whose technical regulations let a laboratory accredited in one member state produce a result recognised in all of them, and this country is not a member. Searches for a designated laboratory for this purpose in the region returned facilities for dangerous human and animal pathogens, which is a different discipline from finding a transgene in seed. So the honest position is that where a sample goes from here has not been established, rather than that it goes east."
     }
    ],
    "notice": [
@@ -7714,14 +7780,14 @@
     {
      "n": "National Food Safety Agency",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Inspects and enforces."
+     "u": "https://www.ansa.gov.md/",
+     "d": "Holds food safety, veterinary, plant protection and phytosanitary quarantine, seed control and the quality of primary produce, food and animal feed — the whole chain in one body. Formed in January 2013 by merging several separate control and supervision bodies, so a document from before then names a predecessor. It inspects and registers; an environmental release decision is not its subject."
     },
     {
      "n": "National Food Safety Agency — consumer line",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Handles labelling complaints."
+     "u": "https://www.ansa.gov.md/",
+     "d": "Takes complaints from the public on a free green line and by Viber during office hours, with a separate petitions desk and a dedicated anti-corruption line, all inside the same Agency. A petition has to be lodged at its Chișinău office or sent by e-mail under the administrative code; the telephone lines are for reporting, not for filing."
     }
    ],
    "notice": [
@@ -7734,10 +7800,10 @@
    ],
    "test": [
     {
-     "n": "Regional laboratories in Kazakhstan and Uzbekistan",
+     "n": "No regional testing route established",
      "lens": "TESTING",
      "u": null,
-     "d": "Central Asian detection capacity is concentrated in the larger states."
+     "d": "No regional route for detecting engineered material was established for this country. The row previously pointed at laboratories in Kazakhstan and Uzbekistan, and that grouping does not hold here: the mechanism that shares testing capacity in this direction is membership of the Eurasian Economic Union, whose technical regulations let a laboratory accredited in one member state produce a result recognised in all of them, and this country is not a member. Searches for a designated laboratory for this purpose in the region returned facilities for dangerous human and animal pathogens, which is a different discipline from finding a transgene in seed. So the honest position is that where a sample goes from here has not been established, rather than that it goes east."
     }
    ]
   },
@@ -7752,10 +7818,10 @@
    ],
    "complain": [
     {
-     "n": "National Food Authority",
+     "n": "AKU — Autoriteti Kombëtar i Ushqimit",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Inspects food and imports."
+     "u": "https://aku.gov.al/",
+     "d": "Inspects food and imports, under the Ministry of Agriculture and Rural Development, and it takes reports from the public through a free green line, an official e-mail address, its social accounts and a “Denonco” form on its own site. That route is counted rather than nominal: in 2019 it recorded 175 citizen reports received through those channels and answered, alongside 29,206 planned field inspections. The border is where its weight sits — the same year it carried out 68,245 checks at border inspection points, more than double its inland inspections, which matters in a country that prohibits cultivation of engineered crops and so meets them as imports rather than as plantings. It acts on food as it arrives and as it is sold; the release decision is the environment ministry's."
     }
    ],
    "notice": [
@@ -7772,16 +7838,16 @@
     {
      "n": "Council of Ministers — Food Safety Agency",
      "lens": "REGULATOR",
-     "u": null,
-     "d": "Handles biosafety, split across the entities, which makes a single national answer difficult."
+     "u": "https://fsa.gov.ba/en/",
+     "d": "Holds biosafety, split across the entities, which makes a single national answer difficult. The Agency was set up under the 2004 Law on Food and became fully operational in 2006 as part of harmonising with EU law and Codex. It ran a TAIEX expert mission in December 2019 to analyse the country's legislation on genetically modified organisms, which is the clearest public account of where that law stands."
     }
    ],
    "complain": [
     {
-     "n": "Food Safety Agency inspection",
+     "n": "Food Safety Agency of Bosnia and Herzegovina",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Inspects and enforces."
+     "u": "https://fsa.gov.ba/en/",
+     "d": "An independent state-level administrative organisation doing scientific risk assessment and expert opinion on food and animal feed, running the rapid alert system and the INFOSAN contact point, and coordinating with EFSA. It does NOT inspect: official controls at import and on the market are carried out by the competent inspection bodies, which sit at entity level, so a complaint about a specific sample goes to an entity inspectorate and not to Mostar."
     }
    ],
    "notice": [
@@ -7806,8 +7872,8 @@
     {
      "n": "Food and Veterinary Agency",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Inspects and enforces."
+     "u": "https://fva.gov.mk/en/fva",
+     "d": "An independent body of the government holding food and animal-feed safety, veterinary supervision, and control of the national reference and authorised laboratories. It is the country's contact point for EFSA, the EU rapid alert system and Codex, so a finding reported here travels beyond the country. It inspects what is on the market and in transit; it does not authorise a release."
     }
    ],
    "notice": [
@@ -7830,10 +7896,10 @@
    ],
    "complain": [
     {
-     "n": "Administration for Food Safety",
+     "n": "Directorate for Food Safety, Veterinary and Phytosanitary Affairs",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Inspects and enforces."
+     "u": "https://www.gov.me/en/directorate-for-food-safety-veterinary-and-phytosanitary-affairs",
+     "d": "Holds food safety, veterinary and phytosanitary inspection, and runs a standing consumers' channel through which a member of the public can put a question or an initiative directly to its inspectors. It acts on food and on plant and animal consignments; a release decision is taken elsewhere."
     }
    ],
    "notice": [
@@ -7880,7 +7946,7 @@
     {
      "n": "Arab Network for Food Sovereignty",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://www.apnature.org/en/arab-network-food-sovereignty",
      "d": "Works across the Arab region on seed law and food sovereignty, including in the Fertile Crescent where the wild relatives of wheat and barley still grow."
     }
    ],
@@ -7888,7 +7954,7 @@
     {
      "n": "Middle East Fertility Society",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://www.mefs.org/",
      "d": "The regional professional society, which publishes regional outcome data. Several states in the region restrict treatment to married couples and prohibit donation entirely, so what is lawful differs sharply across a short distance."
     }
    ]
@@ -7944,7 +8010,7 @@
     {
      "n": "Middle East Fertility Society",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://www.mefs.org/",
      "d": "The regional professional society, which publishes regional outcome data. Several states in the region restrict treatment to married couples and prohibit donation entirely, so what is lawful differs sharply across a short distance."
     }
    ]
@@ -7980,9 +8046,9 @@
    ],
    "notice": [
     {
-     "n": "Gulf Standards Organization notices",
+     "n": "GCC Standardization Organization notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.gso.org.sa/en/",
      "d": "Gulf states harmonise food standards and labelling regionally, so what is decided here follows a joint standard rather than a national application process.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -7991,7 +8057,7 @@
     {
      "n": "Middle East Fertility Society",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://www.mefs.org/",
      "d": "The regional professional society, which publishes regional outcome data. Several states in the region restrict treatment to married couples and prohibit donation entirely, so what is lawful differs sharply across a short distance."
     }
    ]
@@ -8027,9 +8093,9 @@
    ],
    "notice": [
     {
-     "n": "Gulf Standards Organization notices",
+     "n": "GCC Standardization Organization notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.gso.org.sa/en/",
      "d": "Gulf states harmonise food standards and labelling regionally, so what is decided here follows a joint standard rather than a national application process.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -8038,7 +8104,7 @@
     {
      "n": "Middle East Fertility Society",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://www.mefs.org/",
      "d": "The regional professional society, which publishes regional outcome data. Several states in the region restrict treatment to married couples and prohibit donation entirely, so what is lawful differs sharply across a short distance."
     }
    ]
@@ -8068,9 +8134,9 @@
    ],
    "notice": [
     {
-     "n": "Gulf Standards Organization notices",
+     "n": "GCC Standardization Organization notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.gso.org.sa/en/",
      "d": "Gulf states harmonise food standards and labelling regionally, so what is decided here follows a joint standard rather than a national application process.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -8079,7 +8145,7 @@
     {
      "n": "Middle East Fertility Society",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://www.mefs.org/",
      "d": "The regional professional society, which publishes regional outcome data. Several states in the region restrict treatment to married couples and prohibit donation entirely, so what is lawful differs sharply across a short distance."
     }
    ]
@@ -8109,9 +8175,9 @@
    ],
    "notice": [
     {
-     "n": "Gulf Standards Organization notices",
+     "n": "GCC Standardization Organization notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.gso.org.sa/en/",
      "d": "Gulf states harmonise food standards and labelling regionally, so what is decided here follows a joint standard rather than a national application process.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -8120,7 +8186,7 @@
     {
      "n": "Middle East Fertility Society",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://www.mefs.org/",
      "d": "The regional professional society, which publishes regional outcome data. Several states in the region restrict treatment to married couples and prohibit donation entirely, so what is lawful differs sharply across a short distance."
     }
    ]
@@ -8128,10 +8194,10 @@
   "Mongolia": {
    "decides": [
     {
-     "n": "Ministry of Environment and Tourism",
+     "n": "Ministry of Environment and Climate Change",
      "lens": "REGULATOR",
      "u": null,
-     "d": "Handles biosafety. Mongolia's law prohibits engineered organisms in food production, and its pastoral system means feed imports are the practical exposure."
+     "d": "Holds biosafety. Mongolia's law prohibits engineered organisms in food production, and its pastoral system means feed imports are the practical exposure. Renamed from the Ministry of Environment and Tourism, so a decision or statute from before the change names an office that no longer carries that title."
     },
     {
      "n": "Your Cartagena focal point — the current office",
@@ -8164,10 +8230,10 @@
    ],
    "test": [
     {
-     "n": "Regional laboratories in Kazakhstan and Uzbekistan",
+     "n": "No regional testing route established",
      "lens": "TESTING",
      "u": null,
-     "d": "Central Asian detection capacity is concentrated in the larger states."
+     "d": "No regional route for detecting engineered material was established for this country. The row previously pointed at laboratories in Kazakhstan and Uzbekistan, and that grouping does not hold here: the mechanism that shares testing capacity in this direction is membership of the Eurasian Economic Union, whose technical regulations let a laboratory accredited in one member state produce a result recognised in all of them, and this country is not a member. Searches for a designated laboratory for this purpose in the region returned facilities for dangerous human and animal pathogens, which is a different discipline from finding a transgene in seed. So the honest position is that where a sample goes from here has not been established, rather than that it goes east."
     }
    ],
    "notice": [
@@ -8183,7 +8249,7 @@
     {
      "n": "Asian Farmers' Association for Sustainable Rural Development",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://asianfarmers.org/afa/",
      "d": "A regional federation of national farmers' organisations, covering countries where no domestic organisation works on this subject specifically."
     }
    ],
@@ -8191,7 +8257,7 @@
     {
      "n": "Asia Pacific Initiative on Reproduction (ASPIRE)",
      "lens": "FERTILITY",
-     "u": null,
+     "u": "https://aspire-reproduction.org/",
      "d": "The regional society, which runs training and publishes regional data where national registers do not exist."
     }
    ]
@@ -8246,17 +8312,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "Pacific Community (SPC) laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "The Pacific Community runs the regional plant health and testing capacity that individual island states do not maintain."
     }
    ],
@@ -8264,7 +8330,7 @@
     {
      "n": "Pacific Organic Standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://lrd.spc.int/work-areas/markets-for-livelihoods/poetcom",
      "d": "A regional standard written for Pacific island production, used where no national certification body exists."
     }
    ],
@@ -8272,7 +8338,7 @@
     {
      "n": "Pacific Community — regional biosafety notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "Pacific island states handle biosafety largely through regional bodies and their Clearing-House filings rather than a national notice venue, because almost everything arrives as an import rather than an application.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -8281,7 +8347,7 @@
     {
      "n": "Pacific Network on Globalisation",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://pang.org.fj/",
      "d": "Works across the Pacific on trade agreements and the seed and biosafety provisions written into them, which is where island states are usually bound before any domestic debate happens."
     }
    ]
@@ -8304,17 +8370,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "Pacific Community (SPC) laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "The Pacific Community runs the regional plant health and testing capacity that individual island states do not maintain."
     }
    ],
@@ -8322,7 +8388,7 @@
     {
      "n": "Pacific Organic Standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://lrd.spc.int/work-areas/markets-for-livelihoods/poetcom",
      "d": "A regional standard written for Pacific island production, used where no national certification body exists."
     }
    ],
@@ -8330,7 +8396,7 @@
     {
      "n": "Pacific Community — regional biosafety notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "Pacific island states handle biosafety largely through regional bodies and their Clearing-House filings rather than a national notice venue, because almost everything arrives as an import rather than an application.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -8339,7 +8405,7 @@
     {
      "n": "Pacific Network on Globalisation",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://pang.org.fj/",
      "d": "Works across the Pacific on trade agreements and the seed and biosafety provisions written into them, which is where island states are usually bound before any domestic debate happens."
     }
    ]
@@ -8362,17 +8428,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "Pacific Community (SPC) laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "The Pacific Community runs the regional plant health and testing capacity that individual island states do not maintain."
     }
    ],
@@ -8380,7 +8446,7 @@
     {
      "n": "Pacific Organic Standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://lrd.spc.int/work-areas/markets-for-livelihoods/poetcom",
      "d": "A regional standard written for Pacific island production, used where no national certification body exists."
     }
    ],
@@ -8388,7 +8454,7 @@
     {
      "n": "Pacific Community — regional biosafety notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "Pacific island states handle biosafety largely through regional bodies and their Clearing-House filings rather than a national notice venue, because almost everything arrives as an import rather than an application.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -8397,7 +8463,7 @@
     {
      "n": "Pacific Network on Globalisation",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://pang.org.fj/",
      "d": "Works across the Pacific on trade agreements and the seed and biosafety provisions written into them, which is where island states are usually bound before any domestic debate happens."
     }
    ]
@@ -8420,17 +8486,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "Pacific Community (SPC) laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "The Pacific Community runs the regional plant health and testing capacity that individual island states do not maintain."
     }
    ],
@@ -8438,7 +8504,7 @@
     {
      "n": "Pacific Organic Standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://lrd.spc.int/work-areas/markets-for-livelihoods/poetcom",
      "d": "A regional standard written for Pacific island production, used where no national certification body exists."
     }
    ],
@@ -8446,7 +8512,7 @@
     {
      "n": "Pacific Community — regional biosafety notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "Pacific island states handle biosafety largely through regional bodies and their Clearing-House filings rather than a national notice venue, because almost everything arrives as an import rather than an application.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -8455,7 +8521,7 @@
     {
      "n": "Pacific Network on Globalisation",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://pang.org.fj/",
      "d": "Works across the Pacific on trade agreements and the seed and biosafety provisions written into them, which is where island states are usually bound before any domestic debate happens."
     }
    ]
@@ -8478,17 +8544,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "Pacific Community (SPC) laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "The Pacific Community runs the regional plant health and testing capacity that individual island states do not maintain."
     }
    ],
@@ -8496,7 +8562,7 @@
     {
      "n": "Pacific Organic Standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://lrd.spc.int/work-areas/markets-for-livelihoods/poetcom",
      "d": "A regional standard written for Pacific island production, used where no national certification body exists."
     }
    ],
@@ -8504,7 +8570,7 @@
     {
      "n": "Pacific Community — regional biosafety notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "Pacific island states handle biosafety largely through regional bodies and their Clearing-House filings rather than a national notice venue, because almost everything arrives as an import rather than an application.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -8513,7 +8579,7 @@
     {
      "n": "Pacific Network on Globalisation",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://pang.org.fj/",
      "d": "Works across the Pacific on trade agreements and the seed and biosafety provisions written into them, which is where island states are usually bound before any domestic debate happens."
     }
    ]
@@ -8536,17 +8602,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "Pacific Community (SPC) laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "The Pacific Community runs the regional plant health and testing capacity that individual island states do not maintain."
     }
    ],
@@ -8554,7 +8620,7 @@
     {
      "n": "Pacific Organic Standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://lrd.spc.int/work-areas/markets-for-livelihoods/poetcom",
      "d": "A regional standard written for Pacific island production, used where no national certification body exists."
     }
    ],
@@ -8562,7 +8628,7 @@
     {
      "n": "Pacific Community — regional biosafety notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "Pacific island states handle biosafety largely through regional bodies and their Clearing-House filings rather than a national notice venue, because almost everything arrives as an import rather than an application.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -8571,7 +8637,7 @@
     {
      "n": "Pacific Network on Globalisation",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://pang.org.fj/",
      "d": "Works across the Pacific on trade agreements and the seed and biosafety provisions written into them, which is where island states are usually bound before any domestic debate happens."
     }
    ]
@@ -8594,17 +8660,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "Pacific Community (SPC) laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "The Pacific Community runs the regional plant health and testing capacity that individual island states do not maintain."
     }
    ],
@@ -8612,7 +8678,7 @@
     {
      "n": "Pacific Organic Standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://lrd.spc.int/work-areas/markets-for-livelihoods/poetcom",
      "d": "A regional standard written for Pacific island production, used where no national certification body exists."
     }
    ],
@@ -8620,7 +8686,7 @@
     {
      "n": "Pacific Community — regional biosafety notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "Pacific island states handle biosafety largely through regional bodies and their Clearing-House filings rather than a national notice venue, because almost everything arrives as an import rather than an application.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -8629,7 +8695,7 @@
     {
      "n": "Pacific Network on Globalisation",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://pang.org.fj/",
      "d": "Works across the Pacific on trade agreements and the seed and biosafety provisions written into them, which is where island states are usually bound before any domestic debate happens."
     }
    ]
@@ -8652,17 +8718,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "Pacific Community (SPC) laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "The Pacific Community runs the regional plant health and testing capacity that individual island states do not maintain."
     }
    ],
@@ -8670,7 +8736,7 @@
     {
      "n": "Pacific Organic Standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://lrd.spc.int/work-areas/markets-for-livelihoods/poetcom",
      "d": "A regional standard written for Pacific island production, used where no national certification body exists."
     }
    ],
@@ -8678,7 +8744,7 @@
     {
      "n": "Pacific Community — regional biosafety notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "Pacific island states handle biosafety largely through regional bodies and their Clearing-House filings rather than a national notice venue, because almost everything arrives as an import rather than an application.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -8687,7 +8753,7 @@
     {
      "n": "Pacific Network on Globalisation",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://pang.org.fj/",
      "d": "Works across the Pacific on trade agreements and the seed and biosafety provisions written into them, which is where island states are usually bound before any domestic debate happens."
     }
    ]
@@ -8710,17 +8776,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "Pacific Community (SPC) laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "The Pacific Community runs the regional plant health and testing capacity that individual island states do not maintain."
     }
    ],
@@ -8728,7 +8794,7 @@
     {
      "n": "Pacific Organic Standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://lrd.spc.int/work-areas/markets-for-livelihoods/poetcom",
      "d": "A regional standard written for Pacific island production, used where no national certification body exists."
     }
    ],
@@ -8736,7 +8802,7 @@
     {
      "n": "Pacific Community — regional biosafety notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "Pacific island states handle biosafety largely through regional bodies and their Clearing-House filings rather than a national notice venue, because almost everything arrives as an import rather than an application.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -8745,7 +8811,7 @@
     {
      "n": "Pacific Network on Globalisation",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://pang.org.fj/",
      "d": "Works across the Pacific on trade agreements and the seed and biosafety provisions written into them, which is where island states are usually bound before any domestic debate happens."
     }
    ]
@@ -8768,17 +8834,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "Pacific Community (SPC) laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "The Pacific Community runs the regional plant health and testing capacity that individual island states do not maintain."
     }
    ],
@@ -8786,7 +8852,7 @@
     {
      "n": "Pacific Organic Standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://lrd.spc.int/work-areas/markets-for-livelihoods/poetcom",
      "d": "A regional standard written for Pacific island production, used where no national certification body exists."
     }
    ],
@@ -8794,7 +8860,7 @@
     {
      "n": "Pacific Community — regional biosafety notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://www.spc.int/",
      "d": "Pacific island states handle biosafety largely through regional bodies and their Clearing-House filings rather than a national notice venue, because almost everything arrives as an import rather than an application.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -8803,7 +8869,7 @@
     {
      "n": "Pacific Network on Globalisation",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://pang.org.fj/",
      "d": "Works across the Pacific on trade agreements and the seed and biosafety provisions written into them, which is where island states are usually bound before any domestic debate happens."
     }
    ]
@@ -8826,15 +8892,15 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     },
     {
      "n": "Barbados National Standards Institution",
      "lens": "COMPLAINT",
-     "u": null,
+     "u": "https://bnsibarbados.org/",
      "d": "Handles food labelling standards."
     }
    ],
@@ -8842,7 +8908,7 @@
     {
      "n": "CARICOM regional laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://caricom.org/institutions/",
      "d": "Caribbean testing runs through regional facilities in Trinidad and Jamaica rather than one per island."
     }
    ],
@@ -8850,7 +8916,7 @@
     {
      "n": "CARICOM regional organic standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://www.crosq.org/",
      "d": "The Caribbean regional organic standard; certification is administered regionally rather than island by island."
     }
    ],
@@ -8858,7 +8924,7 @@
     {
      "n": "OECS / CARICOM regional notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://oecs.org/",
      "d": "Eastern Caribbean states coordinate biosafety regionally; decisions appear in national gazettes and in the country's Clearing-House record.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -8890,17 +8956,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "CARICOM regional laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://caricom.org/institutions/",
      "d": "Caribbean testing runs through regional facilities in Trinidad and Jamaica rather than one per island."
     }
    ],
@@ -8908,7 +8974,7 @@
     {
      "n": "CARICOM regional organic standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://www.crosq.org/",
      "d": "The Caribbean regional organic standard; certification is administered regionally rather than island by island."
     }
    ],
@@ -8916,7 +8982,7 @@
     {
      "n": "OECS / CARICOM regional notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://oecs.org/",
      "d": "Eastern Caribbean states coordinate biosafety regionally; decisions appear in national gazettes and in the country's Clearing-House record.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -8948,17 +9014,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "CARICOM regional laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://caricom.org/institutions/",
      "d": "Caribbean testing runs through regional facilities in Trinidad and Jamaica rather than one per island."
     }
    ],
@@ -8966,7 +9032,7 @@
     {
      "n": "CARICOM regional organic standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://www.crosq.org/",
      "d": "The Caribbean regional organic standard; certification is administered regionally rather than island by island."
     }
    ],
@@ -8974,7 +9040,7 @@
     {
      "n": "OECS / CARICOM regional notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://oecs.org/",
      "d": "Eastern Caribbean states coordinate biosafety regionally; decisions appear in national gazettes and in the country's Clearing-House record.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -9006,17 +9072,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "CARICOM regional laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://caricom.org/institutions/",
      "d": "Caribbean testing runs through regional facilities in Trinidad and Jamaica rather than one per island."
     }
    ],
@@ -9024,7 +9090,7 @@
     {
      "n": "CARICOM regional organic standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://www.crosq.org/",
      "d": "The Caribbean regional organic standard; certification is administered regionally rather than island by island."
     }
    ],
@@ -9032,7 +9098,7 @@
     {
      "n": "OECS / CARICOM regional notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://oecs.org/",
      "d": "Eastern Caribbean states coordinate biosafety regionally; decisions appear in national gazettes and in the country's Clearing-House record.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -9051,7 +9117,7 @@
     {
      "n": "Department of Environment",
      "lens": "REGULATOR",
-     "u": null,
+     "u": "https://www.environment.gov.ag/contact",
      "d": "Handles biosafety through the environment ministry, with plant quarantine doing the practical inspection. Caribbean states import most of their food, so labelling and what arrives at the port are the live questions rather than cultivation. Antigua and Barbuda signed the Nagoya–Kuala Lumpur liability protocol and has not ratified it.",
      "conf": "Department name not verified from here. Small states reorganise ministries often — confirm the current office through the country’s Cartagena focal point, which is listed on the Clearing-House and is kept current."
     },
@@ -9064,17 +9130,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "CARICOM regional laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://caricom.org/institutions/",
      "d": "Caribbean testing runs through regional facilities in Trinidad and Jamaica rather than one per island."
     }
    ],
@@ -9082,7 +9148,7 @@
     {
      "n": "CARICOM regional organic standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://www.crosq.org/",
      "d": "The Caribbean regional organic standard; certification is administered regionally rather than island by island."
     }
    ],
@@ -9090,7 +9156,7 @@
     {
      "n": "OECS / CARICOM regional notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://oecs.org/",
      "d": "Eastern Caribbean states coordinate biosafety regionally; decisions appear in national gazettes and in the country's Clearing-House record.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -9122,17 +9188,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "CARICOM regional laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://caricom.org/institutions/",
      "d": "Caribbean testing runs through regional facilities in Trinidad and Jamaica rather than one per island."
     }
    ],
@@ -9140,7 +9206,7 @@
     {
      "n": "CARICOM regional organic standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://www.crosq.org/",
      "d": "The Caribbean regional organic standard; certification is administered regionally rather than island by island."
     }
    ],
@@ -9148,7 +9214,7 @@
     {
      "n": "OECS / CARICOM regional notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://oecs.org/",
      "d": "Eastern Caribbean states coordinate biosafety regionally; decisions appear in national gazettes and in the country's Clearing-House record.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -9180,17 +9246,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "CARICOM regional laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://caricom.org/institutions/",
      "d": "Caribbean testing runs through regional facilities in Trinidad and Jamaica rather than one per island."
     }
    ],
@@ -9198,7 +9264,7 @@
     {
      "n": "CARICOM regional organic standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://www.crosq.org/",
      "d": "The Caribbean regional organic standard; certification is administered regionally rather than island by island."
     }
    ],
@@ -9206,7 +9272,7 @@
     {
      "n": "OECS / CARICOM regional notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://oecs.org/",
      "d": "Eastern Caribbean states coordinate biosafety regionally; decisions appear in national gazettes and in the country's Clearing-House record.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -9225,7 +9291,7 @@
     {
      "n": "Department of the Environment",
      "lens": "REGULATOR",
-     "u": null,
+     "u": "https://doe.gov.bz/",
      "d": "Handles biosafety through the environment ministry, with plant quarantine doing the practical inspection. Caribbean states import most of their food, so labelling and what arrives at the port are the live questions rather than cultivation. Belize has declared itself GM-free by cabinet decision, which is unusual for a mainland state.",
      "conf": "Department name not verified from here. Small states reorganise ministries often — confirm the current office through the country’s Cartagena focal point, which is listed on the Clearing-House and is kept current."
     },
@@ -9238,10 +9304,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "notice": [
@@ -9256,7 +9322,7 @@
     {
      "n": "CARICOM regional laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://caricom.org/institutions/",
      "d": "Caribbean testing runs through regional facilities in Trinidad and Jamaica rather than one per island."
     }
    ],
@@ -9274,7 +9340,7 @@
     {
      "n": "Environmental Protection Agency",
      "lens": "REGULATOR",
-     "u": null,
+     "u": "https://epaguyana.org/",
      "d": "Handles biosafety through the environment ministry, with plant quarantine doing the practical inspection. Caribbean states import most of their food, so labelling and what arrives at the port are the live questions rather than cultivation.",
      "conf": "Department name not verified from here. Small states reorganise ministries often — confirm the current office through the country’s Cartagena focal point, which is listed on the Clearing-House and is kept current."
     },
@@ -9287,10 +9353,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     },
     {
      "n": "Guyana National Bureau of Standards",
@@ -9311,7 +9377,7 @@
     {
      "n": "CARICOM regional laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://caricom.org/institutions/",
      "d": "Caribbean testing runs through regional facilities in Trinidad and Jamaica rather than one per island."
     }
    ],
@@ -9319,7 +9385,7 @@
     {
      "n": "CARICOM regional organic standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://www.crosq.org/",
      "d": "The Caribbean regional organic standard; certification is administered regionally rather than island by island."
     }
    ],
@@ -9350,17 +9416,17 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and biosecurity service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving cargo, seed and plant material, which is where an unauthorised organism would be found in a state that imports almost everything. It is the working name rather than the legal one: ask the Cartagena focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving cargo, seed and plant material are inspected, which in a state that imports almost everything is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ],
    "test": [
     {
      "n": "CARICOM regional laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://caricom.org/institutions/",
      "d": "Caribbean testing runs through regional facilities in Trinidad and Jamaica rather than one per island."
     }
    ],
@@ -9368,7 +9434,7 @@
     {
      "n": "CARICOM regional organic standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://www.crosq.org/",
      "d": "The Caribbean regional organic standard; certification is administered regionally rather than island by island."
     }
    ],
@@ -9376,7 +9442,7 @@
     {
      "n": "OECS / CARICOM regional notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://oecs.org/",
      "d": "Eastern Caribbean states coordinate biosafety regionally; decisions appear in national gazettes and in the country's Clearing-House record.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -9431,7 +9497,7 @@
     {
      "n": "CARICOM regional laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://caricom.org/institutions/",
      "d": "Caribbean testing runs through regional facilities in Trinidad and Jamaica rather than one per island."
     }
    ],
@@ -9439,7 +9505,7 @@
     {
      "n": "CARICOM regional organic standard",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://www.crosq.org/",
      "d": "The Caribbean regional organic standard; certification is administered regionally rather than island by island."
     }
    ]
@@ -9449,7 +9515,7 @@
     {
      "n": "Bhutan Agriculture and Food Regulatory Authority",
      "lens": "REGULATOR",
-     "u": null,
+     "u": "https://www.bafra.gov.bt/",
      "d": "Bhutan has a national policy of moving to fully organic agriculture, which excludes engineered material by definition rather than by biosafety decision — the only country to have set that as a national goal."
     }
    ],
@@ -9457,7 +9523,7 @@
     {
      "n": "BAFRA inspection",
      "lens": "COMPLAINT",
-     "u": null,
+     "u": "https://www.bafra.gov.bt/",
      "d": "Inspects imports, food and seed."
     }
    ]
@@ -9487,10 +9553,10 @@
    ],
    "test": [
     {
-     "n": "Central African regional laboratories",
+     "n": "CPAC — laboratoire sous-régional, secteur OGM (CEMAC)",
      "lens": "TESTING",
-     "u": null,
-     "d": "Detection capacity in Central Africa is limited; samples are normally sent to Cameroon's national laboratories or to a regional facility rather than to a West African one."
+     "u": "https://www.cpac-cemac.org/drupal-8.9.5/node/78",
+     "d": "The sub-regional laboratory for analysis of pesticides and pesticide residues in food in Central Africa, run under CEMAC. Its Biology Department carries an OGM/mycotoxins sector alongside veterinary, bacteriology, virology and biopesticides work, so detection capacity for engineered material exists here as one department of an institution built primarily for residue analysis rather than as a dedicated GMO laboratory. Accreditation across the sub-region is the weak point: the CEMAC and CEEAC laboratory mapping carried out under the EU-funded PACIE programme covered 47 testing laboratories in seven countries and found good technical competence but a general need for support to reach ISO/IEC 17025, so a result may not carry formal recognition. Samples otherwise go to Cameroon's national laboratories rather than to West Africa."
     }
    ],
    "certify": [],
@@ -9537,10 +9603,10 @@
    ],
    "test": [
     {
-     "n": "Central African regional laboratories",
+     "n": "CPAC — laboratoire sous-régional, secteur OGM (CEMAC)",
      "lens": "TESTING",
-     "u": null,
-     "d": "Detection capacity in Central Africa is limited; samples are normally sent to Cameroon's national laboratories or to a regional facility rather than to a West African one."
+     "u": "https://www.cpac-cemac.org/drupal-8.9.5/node/78",
+     "d": "The sub-regional laboratory for analysis of pesticides and pesticide residues in food in Central Africa, run under CEMAC. Its Biology Department carries an OGM/mycotoxins sector alongside veterinary, bacteriology, virology and biopesticides work, so detection capacity for engineered material exists here as one department of an institution built primarily for residue analysis rather than as a dedicated GMO laboratory. Accreditation across the sub-region is the weak point: the CEMAC and CEEAC laboratory mapping carried out under the EU-funded PACIE programme covered 47 testing laboratories in seven countries and found good technical competence but a general need for support to reach ISO/IEC 17025, so a result may not carry formal recognition. Samples otherwise go to Cameroon's national laboratories rather than to West Africa."
     }
    ],
    "certify": [],
@@ -9583,7 +9649,7 @@
     {
      "n": "SADC / regional reference laboratories",
      "lens": "TESTING",
-     "u": null,
+     "u": "https://sadcrla.org/",
      "d": "Southern African testing runs through the South African accredited network and regional SADC laboratories; a sample from a neighbouring state is normally sent there rather than to Europe."
     }
    ],
@@ -9623,18 +9689,18 @@
    ],
    "complain": [
     {
-     "n": "Service de la Protection des Végétaux",
+     "n": "Direction de la Protection des Végétaux (DPV)",
      "lens": "COMPLAINT",
-     "u": null,
-     "d": "Inspects imports and seed."
+     "u": "https://www.minae.gov.mg/direction-de-la-protection-des-vegetaux-dpv/",
+     "d": "The competent authority for plant health and phytosanitary matters across the whole territory, inside the Ministry of Agriculture and Livestock. It contains three services and the one that inspects arriving material is the Service de l'Inspection et de la Quarantaine Végétale, so an enquiry has to name it. It also registers agropharmaceutical products. Formerly the Service de la Protection des Végétaux under the 1986 law, a title that now belongs to a sub-unit rather than to the authority."
     }
    ],
    "test": [
     {
-     "n": "Regional laboratories in southern Africa",
+     "n": "South African approved GMO testing laboratories (DALRRD / SANAS)",
      "lens": "TESTING",
      "u": null,
-     "d": "Madagascar has no national GMO detection capacity; samples are normally sent to the South African accredited network."
+     "d": "Madagascar has no national capacity to detect engineered material, so samples go to South Africa. That is a definite route rather than a vague one: the Department of Agriculture, Land Reform and Rural Development approves laboratories through its Directorate of Genetic Resources specifically for GMO testing of seed lots, and the South African National Accreditation System accredits them to ISO/IEC 17025, an accreditation recognised internationally through ILAC. Holders of that approval include SciCorp and GreenHill Laboratories; both are private companies, and testing is a paid service with no public route behind it. South Africa is the only country on the continent growing engineered crops commercially, which is why the detection capacity sits there."
     }
    ],
    "certify": [
@@ -9679,17 +9745,17 @@
    ],
    "test": [
     {
-     "n": "West African regional laboratories",
+     "n": "Laboratoire National de Biosécurité, Ouagadougou — UEMOA reference laboratory",
      "lens": "TESTING",
-     "u": null,
-     "d": "Detection capacity in West Africa is concentrated in Nigeria, Ghana and Burkina Faso; a sample from a smaller state is normally sent to one of them."
+     "u": "https://anb.bf/",
+     "d": "Designated as the reference laboratory for GMO analysis for the eight UEMOA states and as the central node of a sub-regional laboratory network. Operational since September 2019 at Kamboinsin, attached to Burkina Faso's Agence Nationale de Biosécurité, equipped for detection, identification and quantification of engineered organisms, serological and nucleic-acid analysis, and compositional analysis of food. The sub-regional network it anchors is still being formed, so this is the designated route rather than a demonstrated routine one and a sample crossing a border may have to be arranged case by case; detection capacity in the region in practice sits in Nigeria, Ghana and Burkina Faso. It analyses a sample and reports; it does not authorise a release and does not take a complaint."
     }
    ],
    "certify": [
     {
      "n": "COPAGEN / West African organic networks",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://copagen.org/la-copagen/",
      "d": "Certification in much of West and Central Africa runs through regional networks and participatory guarantee schemes rather than a national body."
     }
    ],
@@ -9697,7 +9763,7 @@
     {
      "n": "ECOWAS regional biosafety notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://ecowap.ecowas.int/ecowap-sector/2",
      "d": "West and Central African biosafety decisions are notified nationally and through regional bodies; the Clearing-House record is often the more findable of the two.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -9728,17 +9794,17 @@
    ],
    "test": [
     {
-     "n": "West African regional laboratories",
+     "n": "Laboratoire National de Biosécurité, Ouagadougou — UEMOA reference laboratory",
      "lens": "TESTING",
-     "u": null,
-     "d": "Detection capacity in West Africa is concentrated in Nigeria, Ghana and Burkina Faso; a sample from a smaller state is normally sent to one of them."
+     "u": "https://anb.bf/",
+     "d": "Designated as the reference laboratory for GMO analysis for the eight UEMOA states and as the central node of a sub-regional laboratory network. Operational since September 2019 at Kamboinsin, attached to Burkina Faso's Agence Nationale de Biosécurité, equipped for detection, identification and quantification of engineered organisms, serological and nucleic-acid analysis, and compositional analysis of food. The sub-regional network it anchors is still being formed, so this is the designated route rather than a demonstrated routine one and a sample crossing a border may have to be arranged case by case; detection capacity in the region in practice sits in Nigeria, Ghana and Burkina Faso. It analyses a sample and reports; it does not authorise a release and does not take a complaint."
     }
    ],
    "certify": [
     {
      "n": "COPAGEN / West African organic networks",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://copagen.org/la-copagen/",
      "d": "Certification in much of West and Central Africa runs through regional networks and participatory guarantee schemes rather than a national body."
     }
    ],
@@ -9746,7 +9812,7 @@
     {
      "n": "ECOWAS regional biosafety notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://ecowap.ecowas.int/ecowap-sector/2",
      "d": "West and Central African biosafety decisions are notified nationally and through regional bodies; the Clearing-House record is often the more findable of the two.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -9755,7 +9821,7 @@
     {
      "n": "COPAGEN — West African genetic heritage coalition",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://copagen.org/la-copagen/",
      "d": "A coalition working across West Africa on seed law, biosafety and the regional intellectual property office that legislates for seventeen states at once — which is why a campaign there reaches all of them."
     }
    ]
@@ -9785,17 +9851,17 @@
    ],
    "test": [
     {
-     "n": "West African regional laboratories",
+     "n": "Laboratoire National de Biosécurité, Ouagadougou — UEMOA reference laboratory",
      "lens": "TESTING",
-     "u": null,
-     "d": "Detection capacity in West Africa is concentrated in Nigeria, Ghana and Burkina Faso; a sample from a smaller state is normally sent to one of them."
+     "u": "https://anb.bf/",
+     "d": "Designated as the reference laboratory for GMO analysis for the eight UEMOA states and as the central node of a sub-regional laboratory network. Operational since September 2019 at Kamboinsin, attached to Burkina Faso's Agence Nationale de Biosécurité, equipped for detection, identification and quantification of engineered organisms, serological and nucleic-acid analysis, and compositional analysis of food. The sub-regional network it anchors is still being formed, so this is the designated route rather than a demonstrated routine one and a sample crossing a border may have to be arranged case by case; detection capacity in the region in practice sits in Nigeria, Ghana and Burkina Faso. It analyses a sample and reports; it does not authorise a release and does not take a complaint."
     }
    ],
    "certify": [
     {
      "n": "COPAGEN / West African organic networks",
      "lens": "CERTIFIER",
-     "u": null,
+     "u": "https://copagen.org/la-copagen/",
      "d": "Certification in much of West and Central Africa runs through regional networks and participatory guarantee schemes rather than a national body."
     }
    ],
@@ -9803,7 +9869,7 @@
     {
      "n": "ECOWAS regional biosafety notices",
      "lens": "CONSULTATION",
-     "u": null,
+     "u": "https://ecowap.ecowas.int/ecowap-sector/2",
      "d": "West and Central African biosafety decisions are notified nationally and through regional bodies; the Clearing-House record is often the more findable of the two.",
      "conf": "No national notice venue — this describes where decisions surface, not a page that announces them in advance. Check the country's Clearing-House record."
     }
@@ -9812,7 +9878,7 @@
     {
      "n": "COPAGEN — West African genetic heritage coalition",
      "lens": "LEGAL",
-     "u": null,
+     "u": "https://copagen.org/la-copagen/",
      "d": "A coalition working across West Africa on seed law, biosafety and the regional intellectual property office that legislates for seventeen states at once — which is why a campaign there reaches all of them."
     }
    ]
@@ -9930,10 +9996,10 @@
    ],
    "test": [
     {
-     "n": "Regional laboratories in the Caribbean",
+     "n": "No regional GMO testing laboratory — Caribbean",
      "lens": "TESTING",
      "u": null,
-     "d": "The Dominican Republic is not a CARICOM member; testing runs through national food laboratories or commercial services."
+     "d": "The Dominican Republic is not a CARICOM member, so testing runs through national food laboratories or commercial services rather than through any regional route. There is no regional detection laboratory to fall back on either: CARICOM's own Regional Biotechnology and Biosafety Policy treats the testing requirement as outstanding work, stating that laboratory facilities still need to be ESTABLISHED in the region and certified to international standards before member states can recognise each other's results. Regional institutes do related work — CARIRI in Trinidad and Tobago on food safety and microbiology, CARDI on agricultural research — but none is a designated detection laboratory for engineered material, so a sample goes to an accredited commercial laboratory, in practice outside the region."
     }
    ],
    "fe_register": [
@@ -9963,10 +10029,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -9988,10 +10054,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10013,10 +10079,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10025,7 +10091,7 @@
     {
      "n": "Environmental Protection Agency",
      "lens": "REGULATOR",
-     "u": null,
+     "u": "https://epa.gov.lr/about-epa/",
      "d": "Handles biosafety and is the office a question about a release goes to.",
      "conf": "Department name not verified from here — confirm the current office through the Cartagena focal point, which is kept current."
     },
@@ -10038,10 +10104,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10063,10 +10129,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10088,10 +10154,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10113,10 +10179,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10138,10 +10204,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10163,10 +10229,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10188,10 +10254,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10213,10 +10279,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10238,10 +10304,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10263,10 +10329,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10288,10 +10354,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10313,10 +10379,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10338,10 +10404,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10363,10 +10429,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10388,10 +10454,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10400,7 +10466,7 @@
     {
      "n": "Environment Authority",
      "lens": "REGULATOR",
-     "u": null,
+     "u": "https://eea.org.sz/",
      "d": "Handles biosafety and is the office a question about a release goes to. Eswatini approved Bt cotton for commercial planting, one of few African states to do so.",
      "conf": "Department name not verified from here — confirm the current office through the Cartagena focal point, which is kept current."
     },
@@ -10413,10 +10479,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10438,10 +10504,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10463,10 +10529,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10488,10 +10554,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10513,10 +10579,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10538,10 +10604,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10563,10 +10629,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10588,10 +10654,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10613,10 +10679,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10638,20 +10704,20 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
   "Kyrgyzstan": {
    "decides": [
     {
-     "n": "State Agency for Environmental Protection",
+     "n": "Ministry of Natural Resources, Ecology and Technical Supervision",
      "lens": "REGULATOR",
      "u": null,
-     "d": "Handles biosafety and is the office a question about a release goes to.",
+     "d": "Holds environmental protection, ecology and climate, and state control over environmental requirements including biological ones. Recorded as the legal successor of the State Committee on Ecology and Climate, which was itself formed on the base of the State Agency for Environmental Protection — so a document or decision from before those changes names an office that no longer exists under that name.",
      "conf": "Department name not verified from here — confirm the current office through the Cartagena focal point, which is kept current."
     },
     {
@@ -10663,10 +10729,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10688,20 +10754,20 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
   "Maldives": {
    "decides": [
     {
-     "n": "Ministry of Climate Change and Environment",
+     "n": "Ministry of Climate Change, Environment and Energy",
      "lens": "REGULATOR",
-     "u": null,
-     "d": "Handles biosafety and is the office a question about a release goes to.",
+     "u": "https://www.environment.gov.mv/v2/en/about-ministry",
+     "d": "Holds biosafety and is the office a question about a release goes to. The Environmental Protection Agency, the Meteorological Service and the Biosphere Reserve Office sit under it. Merged into the Ministry of Tourism in February 2025 and re-established as a separate ministry in April 2026, so documents from that period name the Ministry of Tourism and Environment instead.",
      "conf": "Department name not verified from here — confirm the current office through the Cartagena focal point, which is kept current."
     },
     {
@@ -10713,10 +10779,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10738,10 +10804,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10763,10 +10829,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10788,10 +10854,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10813,10 +10879,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10838,10 +10904,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10863,10 +10929,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10888,10 +10954,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10913,10 +10979,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   },
@@ -10938,10 +11004,10 @@
    ],
    "complain": [
     {
-     "n": "The national quarantine and plant health service",
+     "n": "No national office identified — quarantine and plant health",
      "lens": "COMPLAINT",
      "u": null,
-     "d": "Inspects arriving seed, plant material and cargo, which is where an unauthorised organism would be found. It is the working name rather than the legal one: ask the focal point for the current office."
+     "d": "No office has been confirmed by name for this country. The function is carried out somewhere: arriving seed, plant material and cargo are inspected, and that is where an organism never approved for release here would turn up. Which office holds it, under what legal name, was not established. This country's Cartagena Protocol focal point holds the current office and its contact details, and is the address to write to. Nothing here can tell you the office still exists under the name you might expect — several in this file have been merged or renamed since their statutes were written."
     }
    ]
   }

@@ -76,7 +76,29 @@ SOURCES = [
 ]
 
 # The identifier as the registers print it, including the slashed-O form.
-CODE_RE = re.compile(r"\b([A-Z]{2,4})[\s\-]?([0-9\u00d8O]{3,7})[\s\-]?([0-9])\b")
+# An OECD unique identifier is applicant code - event code - check digit.
+# Two forms, and the SECOND SEPARATOR is required in both - it is what keeps
+# this off ordinary prose, where a four-letter word followed by a few
+# characters and a digit is common:
+#   1. both separators present. The event segment MAY CONTAIN LETTERS, which
+#      many real identifiers do (BPS-BFLFK-2, SYN-\u00d8\u00d8\u00d8JG-2, KM-000H71-4).
+#      The old pattern allowed digits only there and missed all of them.
+#   2. first separator missing - then the event segment must START with a
+#      digit or \u00d8. Without that condition the pattern reads the line names in
+#      cells like "ATBT04-6: NMK-89761-6" as identifiers, which they are not.
+# Group 2 carries its leading separator when there is one; find_code strips it.
+CODE_RE = re.compile(
+    r"\b([A-Z]{2,4})"
+    # Hyphenated form admits LETTERS in the event segment (BPS-BFLFK-2).
+    # Space-separated and run-together forms keep the digits-only class:
+    # letters there matched "ANNEX II PART 4" and "feed use 3" as codes.
+    r"((?:\-[A-Z0-9\u00d8\u00f8]{3,7}\-)|(?:[\s\-]?[0-9\u00d8\u00f8O]{3,7}[\s\-]?))"
+    r"([0-9])\b")
+
+
+def _joincode(m):
+    """The three parts as the canonical hyphenated form."""
+    return "%s-%s-%s" % (m.group(1), m.group(2).strip(" -"), m.group(3))
 
 # Crops, in both languages, so a title can be read without translating it.
 CROPS = {
@@ -120,7 +142,7 @@ def norm_id(code):
 
 def find_code(text):
     m = CODE_RE.search(str(text or "").upper())
-    return "-".join(m.groups()) if m else ""
+    return _joincode(m) if m else ""
 
 
 def find_in(text, table):

@@ -59,8 +59,47 @@ DATE_RX = re.compile(r"([A-Z][a-z]+)\s+(\d{1,2})(?:st|nd|rd|th)?,?\s+(\d{4})")
 # MON-00179-5 or BCS-GH\u00d8\u00d824-7 (the register uses \u00d8 for zero, as the
 # standard does). Free text and repeated product names also appear in that
 # column, so match the shape instead of testing for non-empty.
-OECD_RX = re.compile(r"\b[A-Z][A-Z0-9]{1,3}-[A-Z0-9\u00d8]{4,7}-\d\b")
+#
+# Two forms, because the cell is typed by hand and one row drops the first
+# hyphen (DP2\u00d82216-6 for DP-2\u00d82216-6):
+#   1. both separators present - the event segment may contain letters, which
+#      most of this register's identifiers do (SYN-\u00d8\u00d8\u00d8JG-2, BPS-BFLFK-2).
+#   2. first separator missing - then the event segment must START with a digit
+#      or \u00d8. Without that condition the pattern reads the line names in cells
+#      like "ATBT04-6: NMK-89761-6" and "SPBT02-5: NMK-89576-1" as identifiers,
+#      which they are not. Measured against the live cells: form 2 gains
+#      DP2\u00d82216-6 and admits nothing else.
+#
+# "MON 94637" is deliberately NOT matched. The cell gives no check digit, so
+# where the event number ends cannot be determined from the string, and any
+# split is a guess. It falls through to the unmatched-cell printout below.
+OECD_RX = re.compile(
+    r"\b[A-Z]{2,4}"
+    r"(?:[\s\-][A-Z0-9\u00d8\u00f8]{3,7}|[\u00d8\u00f80-9][A-Z0-9\u00d8\u00f8]{2,6})"
+    r"[\s\-]\d\b")
 DD_RX = re.compile(r"(DD\d{2,4}-\d+)")
+
+
+def norm_id(code):
+    """One key for every spelling of an identifier.
+
+    Must agree CHARACTER FOR CHARACTER with bch_organisms.norm,
+    latam_approvals.norm_id and isaaa_approvals.norm_id. Four files now share
+    this; if one drifts, cross-register lookups miss silently and a miss reads
+    as the event not existing.
+
+    This register writes both spellings itself - MON-941\u00d8\u00d8-2 and ACS-BN008-2
+    are in the same column - so the raw strings do not compare even within one
+    file, let alone against another register.
+    """
+    if not code:
+        return ""
+    s = str(code).upper()
+    s = re.sub(r"[^A-Z0-9\u00d8\u00f8]", "", s)
+    s = s.replace("\u00d8", "0").replace("\u00f8", "0")
+    s = re.sub(r"(?<=[0-9])O", "0", s)
+    s = re.sub(r"O(?=[0-9])", "0", s)
+    return s
 
 
 _RETRIES = 4
@@ -171,6 +210,10 @@ def build(rows):
             "phase": "post",
             "date": when,
             "oecd": ids,              # list, possibly empty - never inferred from prose
+            # Plural where the other three registers write a scalar id_key: a
+            # CFIA row can approve several events at once (the Innate potato
+            # rows carry five). Same normalisation, same keys, one per id.
+            "id_keys": [norm_id(i) for i in ids],
             "oecd_raw": oecd,         # the cell as published, for auditing misses
             "transgenic": transgenic,
             "url": "https://inspection.canada.ca/en/plant-varieties/plants-novel-traits/approved-under-review",
@@ -179,7 +222,70 @@ def build(rows):
     return out
 
 
+def selftest():
+    """No network. Two things are being checked: that the identifier pattern
+    reads the forms this register actually publishes, and that the normaliser
+    has not drifted from the other three files that carry a copy of it."""
+    ok = True
+
+    def check(label, got, want):
+        nonlocal ok
+        good = got == want
+        ok = ok and good
+        print("  %-52s %s" % (label, "pass" if good else
+                              "FAIL got %r want %r" % (got, want)))
+
+    check("plain form", OECD_RX.findall("MON-00179-5"), ["MON-00179-5"])
+    check("slashed zero", OECD_RX.findall("MON-941\u00d8\u00d8-2"), ["MON-941\u00d8\u00d8-2"])
+    check("letters in the event segment",
+          OECD_RX.findall("BPS-BFLFK-2"), ["BPS-BFLFK-2"])
+    check("two-letter applicant code",
+          OECD_RX.findall("KM-000H71-4"), ["KM-000H71-4"])
+    check("several ids in one cell",
+          len(OECD_RX.findall("SPS-\u00d8\u00d8F1\u00d8-7, SPS-\u00d8\u00d8E12-8, SPS-\u00d8\u00d8\u00d8J3-4")), 3)
+    check("first hyphen dropped by the source",
+          OECD_RX.findall("DP2\u00d82216-6"), ["DP2\u00d82216-6"])
+    check("line name before an id is not itself an id",
+          OECD_RX.findall("ATBT04-6: NMK-89761-6"), ["NMK-89761-6"])
+    check("no check digit - split undetermined, so no id",
+          OECD_RX.findall("MON 94637"), [])
+    check("submission number is not an id",
+          OECD_RX.findall("14CS0851-01-14"), [])
+    check("N/A", OECD_RX.findall("N/A"), [])
+    check("Not assigned", OECD_RX.findall("Not assigned"), [])
+
+    check("official glyph normalises", norm_id("MON-877\u00d81-2"), "MON877012")
+    check("plain-O form gives the same key", norm_id("MON-87701-2"), "MON877012")
+    check("spaces give the same key", norm_id("MON 877\u00d81 2"), "MON877012")
+    check("empty is empty", norm_id(""), "")
+
+    # The drift check. A frozen constant only catches this file changing; this
+    # catches any of the four changing, which is the failure being guarded
+    # against. Missing siblings are reported, not passed over.
+    battery = ["MON-877\u00d81-2", "MON-87701-2", "MON 877\u00d81 2", "mon-877\u00f81-2",
+               "BPS-BFLFK-2", "SYN-\u00d8\u00d8\u00d8JG-2", "KM-000H71-4", "DP2\u00d82216-6", ""]
+    here = pathlib.Path(__file__).resolve().parent
+    if str(here) not in sys.path:
+        sys.path.insert(0, str(here))
+    for mod, fn in (("bch_organisms", "norm"), ("latam_approvals", "norm_id"),
+                    ("isaaa_approvals", "norm_id")):
+        try:
+            other = getattr(__import__(mod), fn)
+        except Exception as e:
+            ok = False
+            print("  %-52s FAIL could not import (%s)" % (mod + "." + fn, str(e)[:40]))
+            continue
+        mine = [norm_id(x) for x in battery]
+        check("agrees with %s.%s on %d forms" % (mod, fn, len(battery)),
+              [other(x) for x in battery], mine)
+
+    print("\n%s" % ("all pass" if ok else "FAILURES ABOVE"))
+    return 0 if ok else 1
+
+
 def main():
+    if "--selftest" in sys.argv:
+        sys.exit(selftest())
     try:
         text = fetch()
     except Exception as e:

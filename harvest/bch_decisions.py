@@ -77,12 +77,19 @@ def get(url, tries=3):
     raise last
 
 
+# The record types the Protocol produces. A decision is filed under
+# biosafetyDecision, but the same obligation has been met under several schema
+# names across the Protocol's twenty-five years, and a country that filed under
+# one and not another is invisible if only one is asked for.
+DECISION_SCHEMAS = ("biosafetyDecision", "decision", "nationalDecision",
+                    "biosafetyDecisionDomestic", "countryDecision")
+
+
 def endpoints():
     """Solr queries against the shared CBD index, then the old guesses as a
-    fallback. `schema_s` names the record type; the BCH decision schemas differ
-    slightly by era, so several are tried."""
+    fallback. `schema_s` names the record type."""
     q = []
-    for schema in ("biosafetyDecision", "decision", "nationalDecision"):
+    for schema in DECISION_SCHEMAS:
         q.append(API + "?" + urlencode({
             "q": "*:*", "fq": "schema_s:" + schema, "rows": 2000,
             "wt": "json", "sort": "createdDate_dt desc"}))
@@ -92,6 +99,26 @@ def endpoints():
         BASE + "/api/v2013/documents?schema=decision&format=json",
         BASE + "/rss/decisions.aspx",
     ]
+
+
+def schema_census():
+    """What record types the index actually holds, and how many of each.
+
+    Reconnaissance rather than harvest. DECISION_SCHEMAS above is a list of
+    guesses; this asks the index to enumerate its own schema_s values so the
+    guessing can stop. Printed by --schemas.
+    """
+    u = API + "?" + urlencode({"q": "*:*", "rows": 0, "wt": "json",
+                               "facet": "true", "facet.field": "schema_s",
+                               "facet.limit": 200})
+    try:
+        d = json.loads(get(u))
+    except Exception as e:
+        print("  schema census failed: %s" % str(e)[:60], file=sys.stderr)
+        return []
+    ff = (((d.get("facet_counts") or {}).get("facet_fields") or {})
+          .get("schema_s") or [])
+    return [(ff[i], ff[i + 1]) for i in range(0, len(ff) - 1, 2)]
 
 
 def rows_from(payload):
@@ -175,57 +202,6 @@ COUNTRY_FIELDS = ("government_EN_s", "country_EN_s", "government_EN_t",
                   "countries_ss", "owner_s", "jurisdiction_s")
 
 
-# The organism registry, used to resolve a decision title that carries only an
-# event code. About a quarter of BCH titles name no organism - they read
-# "Technical Opinion No. 293/2022" - and many of those carry the code.
-_ORG_REG = None
-
-
-def _org_registry():
-    global _ORG_REG
-    if _ORG_REG is None:
-        _ORG_REG = {}
-        try:
-            f = pathlib.Path(__file__).resolve().parent / "bch_organisms.json"
-            if f.exists():
-                _ORG_REG = json.loads(f.read_text(encoding="utf-8")).get(
-                    "organisms", {})
-        except Exception:
-            _ORG_REG = {}
-    return _ORG_REG
-
-
-def _norm_id(code):
-    """Must match bch_organisms.norm exactly, or every lookup misses and the
-    miss looks like the organism not being registered."""
-    if not code:
-        return ""
-    s = str(code).upper()
-    s = re.sub(r"[^A-Z0-9\u00d8\u00f8]", "", s)
-    s = s.replace("\u00d8", "0").replace("\u00f8", "0")
-    s = re.sub(r"(?<=[0-9])O", "0", s)
-    s = re.sub(r"O(?=[0-9])", "0", s)
-    return s
-
-
-_CODE_RE = re.compile(r"\b([A-Z]{2,4})[\s\-]?([0-9\u00d8O]{3,7})[\s\-]?([0-9])\b")
-
-
-def organism_from_registry(title):
-    """The organism behind an event code in a title, or nothing.
-
-    Nothing is the honest answer when the code is unknown: the record then says
-    the organism was not named, rather than carrying a guess.
-    """
-    m = _CODE_RE.search(str(title or "").upper())
-    if not m:
-        return None
-    rec = _org_registry().get(_norm_id("-".join(m.groups())))
-    if not rec:
-        return None
-    return rec.get("organism") or rec.get("name") or None
-
-
 def iso2(row):
     """The country that filed the decision, read from the field that states it.
 
@@ -256,6 +232,132 @@ def iso2(row):
     return m.group(1) if m and m.group(1) in C else ""
 
 
+# The panel's type dropdown filters on a record's `type`, which is how the
+# APHIS layer's "<organism>, environmental release" turns that control into an
+# organism filter for free. Every decision here carried the SAME constant type,
+# so for 3,072 non-US records the dropdown had exactly one entry and did
+# nothing. The organism is named in the decision's own title; where it is not,
+# the record says so rather than being assigned one.
+ORGANISM = [
+    ("maize", r"\bmaize\b|\bcorn\b|zea mays"),
+    ("soybean", r"soy\s?bean|glycine max|\bsoya\b"),
+    ("cotton", r"\bcotton\b|gossypium"),
+    ("canola / oilseed rape", r"canola|oilseed rape|brassica napus"),
+    ("rice", r"\brice\b|oryza"),
+    ("potato", r"\bpotato\b|solanum tuberosum"),
+    ("wheat", r"\bwheat\b|triticum"),
+    ("sugar beet", r"sugar\s?beet|beta vulgaris"),
+    ("alfalfa", r"alfalfa|lucerne|medicago"),
+    ("papaya", r"papaya|carica"),
+    ("eggplant / brinjal", r"eggplant|brinjal|aubergine|solanum melongena"),
+    ("apple", r"\bapple\b|malus"),
+    ("carnation", r"carnation|dianthus"),
+    ("poplar / tree", r"poplar|eucalyptus|populus|\bpine\b|chestnut"),
+    ("salmon / fish", r"salmon|tilapia|\bfish\b"),
+    ("mosquito / insect", r"mosquito|aedes|anopheles|\bmoth\b|\binsect\b|fruit fly"),
+    ("micro-organism", r"micro-?organism|bacteri|yeast|fungus|rhizobium|\bvirus\b"),
+    ("vaccine", r"vaccin"),
+    ("livestock", r"\bcattle\b|\bpig\b|\bswine\b|poultry|\bsheep\b|\bgoat\b"),
+]
+_ORG = [(lbl, re.compile(pat, re.I)) for lbl, pat in ORGANISM]
+
+
+# Roughly a quarter of decision titles name no organism at all - they are
+# "Technical Opinion No. 293/2022" or "Decision 42 of the Commission". Many of
+# those DO carry the OECD unique identifier of the organism, which is the key
+# the BCH registry of modified organisms is built on. So before giving up, the
+# event code in the title is looked up in bch_organisms.json. That reads the
+# answer out of the same source rather than guessing it: if the file is absent
+# or the code is not in it, the record says the organism was not named.
+# Matches bch_organisms.CODE_RE. The second separator is required, which is
+# what keeps this off ordinary prose; the first may be absent only when the
+# event segment starts with a digit or \u00d8. Unicode dashes are accepted here
+# because decision titles are typeset text rather than a database cell.
+_DASH = "\\-\u2010-\u2015"
+_SEP = "\\s" + _DASH
+_OECD_IN_TITLE = re.compile(
+    r"\b([A-Z]{2,4})"
+    # Letters in the event segment only in the HYPHENATED form (_DASH, which
+    # includes the unicode dashes typeset titles use). The space-separated and
+    # run-together forms keep the digits-only class: letters there matched
+    # "ANNEX II PART 4" as an identifier.
+    r"((?:[" + _DASH + r"][A-Z0-9\u00d8\u00f8]{3,7}[" + _DASH + r"])|(?:[\s\-]?[0-9\u00d8\u00f8O]{3,7}[\s\-]?))"
+    r"([0-9])\b")
+_ORGDB = None
+
+
+def _orgdb():
+    """{normalised OECD identifier: organism} from bch_organisms.json."""
+    global _ORGDB
+    if _ORGDB is not None:
+        return _ORGDB
+    _ORGDB = {}
+    fp = pathlib.Path(__file__).resolve().parent / "bch_organisms.json"
+    try:
+        data = json.loads(fp.read_text(encoding="utf-8")).get("organisms") or {}
+        # bch_organisms.py writes a DICT keyed on the normalised identifier.
+        # The list branch is kept for an older file; iterating a dict as a list
+        # yields its keys, and .get on a string raises into the except below,
+        # which is how this returned an empty registry without saying so.
+        items = data.items() if isinstance(data, dict) else (
+            ((r.get("key") or r.get("id"), r) for r in data))
+        for k, r in items:
+            nm = (r.get("organism") or r.get("species") or "") if isinstance(r, dict) else ""
+            if k and nm:
+                _ORGDB[_norm_id(k)] = nm
+    except Exception:
+        pass
+    return _ORGDB
+
+
+def _norm_id(s):
+    """Must agree CHARACTER FOR CHARACTER with bch_organisms.norm,
+    latam_approvals.norm_id, isaaa_approvals.norm_id and cfia_approvals.norm_id.
+    Five files carry a copy; if one drifts, cross-register lookups miss silently
+    and a miss reads as the event not existing."""
+    if not s:
+        return ""
+    t = str(s).upper()
+    t = re.sub(r"[^A-Z0-9\u00d8\u00f8]", "", t)
+    t = t.replace("\u00d8", "0").replace("\u00f8", "0")
+    t = re.sub(r"(?<=[0-9])O", "0", t)
+    t = re.sub(r"O(?=[0-9])", "0", t)
+    return t
+
+
+def organism_of(title):
+    for lbl, rx in _ORG:
+        if rx.search(title or ""):
+            return lbl
+    db = _orgdb()
+    if db:
+        for m in _OECD_IN_TITLE.finditer(title or ""):
+            hit = db.get(_norm_id(m.group(0)))
+            if hit:
+                return hit.lower()
+    return ""
+
+
+# A decision is not necessarily an approval. The Protocol requires the decision
+# to be filed, whatever it is, and a prohibition is the most interesting record
+# in the set. Read only from words the title states outright; anything else
+# stays "Filed to the Biosafety Clearing-House" rather than being guessed at.
+OUTCOME = [
+    ("Prohibited or rejected", r"prohibit|\bban\b|banned|reject|refus|denied|not approved"),
+    ("Withdrawn", r"withdraw|revoke|cancel"),
+    ("Approved", r"approv|authoris|authoriz|permit|consent|commercial release|placing on the market"),
+    ("Field trial", r"field trial|confined|experimental release"),
+]
+_OUT = [(lbl, re.compile(pat, re.I)) for lbl, pat in OUTCOME]
+
+
+def outcome_of(title):
+    for lbl, rx in _OUT:
+        if rx.search(title or ""):
+            return lbl
+    return ""
+
+
 def to_record(row):
     cc = iso2(row)
     if not cc:
@@ -281,11 +383,13 @@ def to_record(row):
     return {
         "name": title[:180],
         "source": "bch:decision",
-        "type": "National biosafety decision",
+        "type": ((organism_of(title) or "organism not named in the title")
+                 + ", national biosafety decision"),
         "lat": lat, "lng": lng, "state": cc,
         "precise": False, "impact": 2,
         "company": "", "size": "",
-        "status": pick(row, "status", "decision") or "Filed to the Biosafety Clearing-House",
+        "status": (pick(row, "status", "decision") or outcome_of(title)
+                   or "Filed to the Biosafety Clearing-House"),
         "phase": "post", "date": date,
         "lapsed": False,
         "url": link,
@@ -352,8 +456,42 @@ def main():
                 time.sleep(0.3)
             if len(got) >= total:
                 print("    paged to %d of %s - complete" % (len(got), total))
-        rows = got
-        break
+        # UNION, DO NOT STOP HERE.
+        #
+        # This used to `break` on the first endpoint that returned anything, so
+        # whichever schema answered first became the whole layer and every
+        # decision filed under a different record type was never asked for. The
+        # count looked healthy either way, which is exactly why it went
+        # unnoticed: 3,072 rows is a plausible number whether or not it is all
+        # of them. Each endpoint is now asked, and the results deduped on record
+        # id, with per-source counts printed so a schema that adds nothing is
+        # visible rather than assumed.
+        before = len(rows)
+        rows.extend(got)
+        print("    +%d (running total %d)" % (len(got), len(rows)))
+        if before and len(got) == 0:
+            print("    (this schema added nothing)")
+
+    # Dedupe across schemas: the same decision can be indexed under more than
+    # one record type, and two markers for one decision is worse than none.
+    if rows:
+        seen_ids, uniq = set(), []
+        for r in rows:
+            rid = ""
+            for f in ("id", "identifier_s", "recordid", "record_id", "uid"):
+                v = r.get(f)
+                if isinstance(v, list) and v:
+                    v = v[0]
+                if v:
+                    rid = str(v); break
+            k = rid or json.dumps(r, sort_keys=True)[:400]
+            if k in seen_ids:
+                continue
+            seen_ids.add(k); uniq.append(r)
+        if len(uniq) != len(rows):
+            print("  %d rows across all schemas, %d after deduping on record id"
+                  % (len(rows), len(uniq)))
+        rows = uniq
 
     if not rows:
         print("no BCH route returned records. The portal is a JavaScript application and "
@@ -376,82 +514,32 @@ def main():
         if k in seen: continue
         seen.add(k); out.append(rec)
 
-    # A national decision has no site - it applies to a whole country - so every
-    # record in a country lands on the same centroid. Several hundred markers
-    # stacked on one point is not a map; you cannot click past the top one.
+    # WHY THESE ARE NO LONGER AGGREGATED HERE.
     #
-    # So they are aggregated: ONE marker per country carrying the count, the
-    # date range, and the most recent decisions by name. The detail is in the
-    # entry rather than in hundreds of dots that cannot be separated, because
-    # spreading them into a ring would invent geography the source does not have.
-    from collections import Counter, defaultdict
-    grouped = defaultdict(list)
-    for r in out:
-        grouped[r["state"]].append(r)
-
-    agg = []
-    for cc, rs in grouped.items():
-        rs.sort(key=lambda x: x.get("date", ""), reverse=True)
-        dates = [x["date"][:4] for x in rs if x.get("date")]
-        span = ("%s\u2013%s" % (min(dates), max(dates))) if dates else ""
-        recent = "; ".join(x["name"][:90] for x in rs[:6])
-        agg.append({
-            "name": "%s \u2014 %d biosafety decision%s filed" % (cc, len(rs), "" if len(rs) == 1 else "s"),
-            "source": "bch:decision",
-            "type": "National biosafety decisions",
-            "lat": rs[0]["lat"], "lng": rs[0]["lng"], "state": cc,
-            "precise": False, "impact": 3 if len(rs) > 20 else 2,
-            "company": "", "size": "%d decisions" % len(rs),
-            "status": ("Filed %s" % span) if span else "Filed to the Biosafety Clearing-House",
-            "phase": "post", "date": rs[0].get("date", ""), "lapsed": False,
-            "url": rs[0]["url"],
-            # The three labelled sections said the same thing about every country
-            # with two numbers changed. Written as prose the country's own
-            # figures carry the paragraph instead.
-            "desc": ("%d decision%s on living modified organisms, filed by this country "
-                     "to the Biosafety Clearing-House%s. The most recent are %s. "
-                     "Article 20 of the Cartagena Protocol requires every party to file "
-                     "its release and market decisions there within fifteen days, and 173 "
-                     "parties are bound by it; the United States is not among them. "
-                     "A decision is a national instrument with no site to place, so this "
-                     "marker sits at the country centroid and holds all of them together "
-                     "rather than scattering them into a geography the source does not "
-                     "have. A country with no records here has not necessarily approved "
-                     "nothing \u2014 it may not have filed."
-                     % (len(rs), "" if len(rs) == 1 else "s",
-                        (", %s" % span) if span else "", recent or "not stated")),
-            "checked": "",
-        })
-    # NOTE: these country markers are merged again by aphis_releases.py, which
-    # groups every release record by coordinate regardless of which register it
-    # came from. That is the merge the map actually shows. This grouping only
-    # stops a country's decisions arriving as hundreds of identical points.
-    print("  grouped %d decisions into %d country markers" % (len(out), len(agg)))
-    out = agg
-
+    # This step used to collapse every country's decisions into ONE marker
+    # carrying a count and six titles in a paragraph, on the reasoning that a
+    # national decision has no site and several hundred pins on one centroid
+    # cannot be clicked past. The second half of that is true. The first half
+    # made it the wrong fix, and the file's own note said so: aphis_releases.py
+    # ALREADY groups every release record by coordinate, across all registers,
+    # into a place marker carrying records_total, dates[], sources[] and a
+    # per-record list the map's cluster panel can sort and filter.
+    #
+    # So aggregating here did not prevent a stack - the merge downstream
+    # prevents the stack anyway. What it did was throw away 3,072 individual
+    # decisions before the merge could see them, leaving 51 paragraphs where the
+    # United States has 22,111 browsable records. That IS the geographic
+    # imbalance on this map, and it is a formatting decision rather than a gap
+    # in the world.
+    #
+    # Individual records go out. The country marker the reader sees is built by
+    # the merge, identically to every other register, and each decision inside
+    # it keeps its own title, date, outcome, organism and link.
+    from collections import Counter
+    print("  %d decisions kept as individual records; aphis_releases.py groups "
+          "them by coordinate into one marker per country" % len(out))
     by = Counter(r["state"] for r in out)
-    if unplaced_rows:
-        agg.append({
-            "name": "%d decisions with no country stated" % len(unplaced_rows),
-            "source": "bch:decision", "type": "Filed without a country field",
-            "lat": UNPLACED[0], "lng": UNPLACED[1], "state": "\u2014",
-            "precise": False, "impact": 2, "company": "",
-            "size": "%d decisions" % len(unplaced_rows),
-            "status": "Country not stated in the record", "phase": "post",
-            "date": "", "lapsed": False, "url": BASE + "/database/decisions",
-            "desc": ("WHAT. %d decisions filed to the Biosafety Clearing-House whose record "
-                     "carries no country field. "
-                     "WHERE IT SITS. **Nowhere. This marker is in the middle of the Atlantic "
-                     "because there is no ocean release and no country to place these in** \u2014 it "
-                     "is a visible parking space, not a location. "
-                     "WHY IT MATTERS. Dropping them would hide a gap in the source; putting them "
-                     "in a plausible country would be a fabrication. They are counted here so the "
-                     "total stays honest and the missing field stays visible."
-                     % len(unplaced_rows)),
-            "checked": "",
-        })
-        out = agg
-        by = Counter(r["state"] for r in out)
+
     print("  usable: %d decisions across %d countries" % (len(out), len(by)))
     print("  most-filed: %s" % ", ".join("%s %d" % kv for kv in by.most_common(6)))
     if unplaced_rows:
@@ -468,5 +556,62 @@ def main():
     print("\nwrote %s" % OUT.name)
 
 
+# ============================================================ SELFTEST =======
+
+def selftest():
+    """No network. Drives the record builder with the shapes the API returns."""
+    fails = []
+
+    def ck(nm, got, want):
+        if got != want:
+            fails.append("%s: got %r want %r" % (nm, got, want))
+
+    ck("organism: maize", organism_of("Commercial release of corn event MON 87429"), "maize")
+    ck("organism: cotton", organism_of("Approval of Herbicide Tolerant Cotton"), "cotton")
+    ck("organism: mosquito", organism_of("Release of Aedes aegypti OX513A"), "mosquito / insect")
+    ck("organism: none named", organism_of("Decision No. 42 of the Commission"), "")
+
+    ck("outcome: prohibition beats approval wording",
+       outcome_of("Application to approve X was rejected"), "Prohibited or rejected")
+    ck("outcome: approval", outcome_of("Approval of herbicide tolerant maize (GA21)"), "Approved")
+    ck("outcome: trial", outcome_of("Confined field trial of Bt cowpea"), "Field trial")
+    ck("outcome: silent", outcome_of("Decision No. 42"), "")
+
+    row = {"title_s": "Commercial release of corn event MON 87429 - Technical Opinion 8035/2022",
+           "grp_government_schema_s": "br_biosafetyDecision",
+           "id": "52000000cbd080000000c041",
+           "meta_modifiedOn_dt": "2022-11-04T00:00:00Z"}
+    r = to_record(row)
+    ck("country from the schema prefix", r["state"], "BR")
+    ck("type carries the organism", r["type"], "maize, national biosafety decision")
+    ck("status carries the outcome", r["status"], "Approved")
+    ck("date parsed", r["date"], "2022-11-04")
+    ck("link is the record, not the list",
+       r["url"], "https://bch.cbd.int/en/database/52000000cbd080000000c041")
+    ck("source family", r["source"], "bch:decision")
+    ck("no country, no record", to_record({"title_s": "Some decision"}), None)
+
+    # THE POINT OF THIS ROUND: individual records survive to the merge.
+    rows = [dict(row, id="a%d" % i, title_s="Decision %d on maize" % i) for i in range(40)]
+    out = [x for x in (to_record(r) for r in rows) if x]
+    ck("40 rows stay 40 records", len(out), 40)
+    ck("all on one country centroid", len({(x["lat"], x["lng"]) for x in out}), 1)
+
+    if fails:
+        print("SELFTEST FAILED")
+        for f in fails:
+            print("  -", f)
+        return 1
+    print("selftest: all checks passed")
+    return 0
+
+
 if __name__ == "__main__":
+    if "--selftest" in sys.argv:
+        sys.exit(selftest())
+    if "--schemas" in sys.argv:
+        print("record types held in the CBD index:")
+        for name, n in sorted(schema_census(), key=lambda x: -x[1]):
+            print("  %-40s %d" % (name, n))
+        sys.exit(0)
     main()
