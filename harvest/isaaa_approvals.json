@@ -1,0 +1,11380 @@
+{
+ "generated": "2026-08-22",
+ "source": "ISAAA GM Approval Database",
+ "note": "Compiled by ISAAA, which exists to promote agricultural biotechnology and is funded in part by the companies whose products it counts. The underlying decision documents are public and checkable; the framing is not neutral. Counts here are not merged with the national registers, because where the two differ the difference is information.",
+ "unreachable": [
+  "Malawi",
+  "Mozambique",
+  "Ukraine"
+ ],
+ "countries": [
+  {
+   "country": "Argentina",
+   "declared_total": 128,
+   "events_parsed": 97,
+   "events": [
+    {
+     "id": "MON-ØØ163-7",
+     "id_key": "MON001637"
+    },
+    {
+     "id": "MON-ØØ179-5",
+     "id_key": "MON001795"
+    },
+    {
+     "id": "MON-ØØ1Ø1-8",
+     "id_key": "MON001018"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "BCS-GHB811-4",
+     "id_key": "BCSGHB8114"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "DP-Ø9814Ø-6",
+     "id_key": "DP0981406"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "SYN-EV176-9",
+     "id_key": "SYNEV1769"
+    },
+    {
+     "id": "DAS-01131-3",
+     "id_key": "DAS011313"
+    },
+    {
+     "id": "DP-910521-2",
+     "id_key": "DP9105212"
+    },
+    {
+     "id": "DP-202216-6",
+     "id_key": "DP2022166"
+    },
+    {
+     "id": "DAS-40278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "DAS-113-1",
+     "id_key": "DAS1131"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DP-20221-6",
+     "id_key": "DP202216"
+    },
+    {
+     "id": "DP-91052-1",
+     "id_key": "DP910521"
+    },
+    {
+     "id": "REN-ØØØ38-3",
+     "id_key": "REN000383"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-9480-4",
+     "id_key": "MON94804"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-94804-4",
+     "id_key": "MON948044"
+    },
+    {
+     "id": "MON-9537-9",
+     "id_key": "MON95379"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-95379-3",
+     "id_key": "MON953793"
+    },
+    {
+     "id": "MON-88017-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-8741-9",
+     "id_key": "MON87419"
+    },
+    {
+     "id": "MON-87419-8",
+     "id_key": "MON874198"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "ACS-ZMØØ2-1",
+     "id_key": "ACSZM0021"
+    },
+    {
+     "id": "TIC-AR233-5",
+     "id_key": "TICAR2335"
+    },
+    {
+     "id": "IND-10003-4",
+     "id_key": "IND100034"
+    },
+    {
+     "id": "IND-10015-7",
+     "id_key": "IND100157"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "COR-2313-4",
+     "id_key": "COR23134"
+    },
+    {
+     "id": "COR-23134-4",
+     "id_key": "COR231344"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "DAS-68416-4",
+     "id_key": "DAS684164"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-4440-6",
+     "id_key": "DAS44406"
+    },
+    {
+     "id": "DBN-08205-8",
+     "id_key": "DBN082058"
+    },
+    {
+     "id": "DBN-800-2",
+     "id_key": "DBN8002"
+    },
+    {
+     "id": "DBN-Ø8ØØ2-3",
+     "id_key": "DBN080023"
+    },
+    {
+     "id": "DBN-820-5",
+     "id_key": "DBN8205"
+    },
+    {
+     "id": "DBN-Ø82Ø5-4",
+     "id_key": "DBN082054"
+    },
+    {
+     "id": "DBN-900-4",
+     "id_key": "DBN9004"
+    },
+    {
+     "id": "DBN-Ø9ØØ4-6",
+     "id_key": "DBN090046"
+    },
+    {
+     "id": "DBN-0800-2",
+     "id_key": "DBN08002"
+    },
+    {
+     "id": "DBN-Ø9ØØ4-3",
+     "id_key": "DBN090043"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "IND-ØØ41Ø-5",
+     "id_key": "IND004105"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "TUC-873RH-7",
+     "id_key": "TUC873RH7"
+    },
+    {
+     "id": "IND-ØØ412-7",
+     "id_key": "IND004127"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Australia",
+   "declared_total": 162,
+   "events_parsed": 183,
+   "events": [
+    {
+     "id": "MON-ØØ1Ø1-8",
+     "id_key": "MON001018"
+    },
+    {
+     "id": "MON-ØØ163-7",
+     "id_key": "MON001637"
+    },
+    {
+     "id": "MON-ØØ179-5",
+     "id_key": "MON001795"
+    },
+    {
+     "id": "DP-Ø73496-4",
+     "id_key": "DP0734964"
+    },
+    {
+     "id": "NS-B5ØØ27-4",
+     "id_key": "NSB500274"
+    },
+    {
+     "id": "MON-ØØØ73-7",
+     "id_key": "MON000737"
+    },
+    {
+     "id": "ACS-BNØØ8-2",
+     "id_key": "ACSBN0082"
+    },
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "ACS-BNØØ7-1",
+     "id_key": "ACSBN0071"
+    },
+    {
+     "id": "BPS-BFLFK-2",
+     "id_key": "BPSBFLFK2"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "MON-9410-0",
+     "id_key": "MON94100"
+    },
+    {
+     "id": "MON-941ØØ-2",
+     "id_key": "MON941002"
+    },
+    {
+     "id": "ACS-BNØØ4-7",
+     "id_key": "ACSBN0047"
+    },
+    {
+     "id": "ACS-BNØØ1-4",
+     "id_key": "ACSBN0014"
+    },
+    {
+     "id": "ACS-BNØØ2-5",
+     "id_key": "ACSBN0025"
+    },
+    {
+     "id": "BCS-BNØ12-7",
+     "id_key": "BCSBN0127"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "ACS-BNØ11-5",
+     "id_key": "ACSBN0115"
+    },
+    {
+     "id": "FLO-Ø7442-4",
+     "id_key": "FL0074424"
+    },
+    {
+     "id": "FLO-11363-1",
+     "id_key": "FL0113631"
+    },
+    {
+     "id": "FLO-4Ø619-7",
+     "id_key": "FL0406197"
+    },
+    {
+     "id": "FLO-4Ø644-4",
+     "id_key": "FL0406444"
+    },
+    {
+     "id": "FLO-4Ø689-6",
+     "id_key": "FL0406896"
+    },
+    {
+     "id": "FLO-4Ø685-1",
+     "id_key": "FL0406851"
+    },
+    {
+     "id": "FLO-ØØØ15-2",
+     "id_key": "FL0000152"
+    },
+    {
+     "id": "FLO-ØØØ16-3",
+     "id_key": "FL0000163"
+    },
+    {
+     "id": "IFD-25958-3",
+     "id_key": "IFD259583"
+    },
+    {
+     "id": "IFD-264Ø7-2",
+     "id_key": "IFD264072"
+    },
+    {
+     "id": "FLO-ØØØØ4-9",
+     "id_key": "FL0000049"
+    },
+    {
+     "id": "FLO-ØØØ66-8",
+     "id_key": "FL0000668"
+    },
+    {
+     "id": "DAS-24236-5",
+     "id_key": "DAS242365"
+    },
+    {
+     "id": "DAS-21Ø23-5",
+     "id_key": "DAS210235"
+    },
+    {
+     "id": "DAS-81910-7",
+     "id_key": "DAS819107"
+    },
+    {
+     "id": "BXN-1021-1",
+     "id_key": "BXN10211"
+    },
+    {
+     "id": "BXN-1Ø211-9",
+     "id_key": "BXN102119"
+    },
+    {
+     "id": "BXN-1022-2",
+     "id_key": "BXN10222"
+    },
+    {
+     "id": "BXN-1Ø222-2",
+     "id_key": "BXN102222"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "MON-8870-1",
+     "id_key": "MON88701"
+    },
+    {
+     "id": "MON-887Ø1-3",
+     "id_key": "MON887013"
+    },
+    {
+     "id": "SYN-IR67B-1",
+     "id_key": "SYNIR67B1"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "MON-107-6",
+     "id_key": "MON1076"
+    },
+    {
+     "id": "MON-89924-2",
+     "id_key": "MON899242"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "MON-ØØ757-7",
+     "id_key": "MON007577"
+    },
+    {
+     "id": "MON-8870-2",
+     "id_key": "MON88702"
+    },
+    {
+     "id": "MON-887Ø2-4",
+     "id_key": "MON887024"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "DP-ØØ4114-3",
+     "id_key": "DP0041143"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "DP-Ø9814Ø-6",
+     "id_key": "DP0981406"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "SYN-EV176-9",
+     "id_key": "SYNEV1769"
+    },
+    {
+     "id": "DAS-113-1",
+     "id_key": "DAS1131"
+    },
+    {
+     "id": "DAS-Ø1131-3",
+     "id_key": "DAS011313"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "DKB-89614-9",
+     "id_key": "DKB896149"
+    },
+    {
+     "id": "DP-20221-6",
+     "id_key": "DP202216"
+    },
+    {
+     "id": "DP-2Ø2216-6",
+     "id_key": "DP2022166"
+    },
+    {
+     "id": "DP-2321-1",
+     "id_key": "DP23211"
+    },
+    {
+     "id": "DP-Ø23211-2",
+     "id_key": "DP0232112"
+    },
+    {
+     "id": "DP-5129-1",
+     "id_key": "DP51291"
+    },
+    {
+     "id": "DP-51291-2",
+     "id_key": "DP512912"
+    },
+    {
+     "id": "DP-91052-1",
+     "id_key": "DP910521"
+    },
+    {
+     "id": "DP-91Ø521-2",
+     "id_key": "DP9105212"
+    },
+    {
+     "id": "DP-91563-5",
+     "id_key": "DP915635"
+    },
+    {
+     "id": "DP-915635-4",
+     "id_key": "DP9156354"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "REN-ØØØ38-3",
+     "id_key": "REN000383"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8740-3",
+     "id_key": "MON87403"
+    },
+    {
+     "id": "MON-874Ø3-1",
+     "id_key": "MON874031"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-8741-9",
+     "id_key": "MON87419"
+    },
+    {
+     "id": "MON-87419-8",
+     "id_key": "MON874198"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8742-9",
+     "id_key": "MON87429"
+    },
+    {
+     "id": "MON-87429-9",
+     "id_key": "MON874299"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-9527-5",
+     "id_key": "MON95275"
+    },
+    {
+     "id": "MON-95275-7",
+     "id_key": "MON952757"
+    },
+    {
+     "id": "MON-9537-9",
+     "id_key": "MON95379"
+    },
+    {
+     "id": "MON-95379-3",
+     "id_key": "MON953793"
+    },
+    {
+     "id": "SYN-ØØØJG-2",
+     "id_key": "SYN000JG2"
+    },
+    {
+     "id": "SYN-ØØØ98-3",
+     "id_key": "SYN000983"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "NMK-8917Ø-9",
+     "id_key": "NMK891709"
+    },
+    {
+     "id": "NMK-89279-1",
+     "id_key": "NMK892791"
+    },
+    {
+     "id": "NMK-89761-6",
+     "id_key": "NMK897616"
+    },
+    {
+     "id": "NMK-89812-3",
+     "id_key": "NMK898123"
+    },
+    {
+     "id": "SPS-ØØE12-8",
+     "id_key": "SPS00E128"
+    },
+    {
+     "id": "SPS-ØØE56-7",
+     "id_key": "SPS00E567"
+    },
+    {
+     "id": "SPS-ØØF10-7",
+     "id_key": "SPS00F107"
+    },
+    {
+     "id": "SPS-ØØØZ6-5",
+     "id_key": "SPS000Z65"
+    },
+    {
+     "id": "SPS-ØØØJ3-4",
+     "id_key": "SPS000J34"
+    },
+    {
+     "id": "NMK-89653-6",
+     "id_key": "NMK896536"
+    },
+    {
+     "id": "NMK-89684-1",
+     "id_key": "NMK896841"
+    },
+    {
+     "id": "NMK-89185-6",
+     "id_key": "NMK891856"
+    },
+    {
+     "id": "NMK-89896-6",
+     "id_key": "NMK898966"
+    },
+    {
+     "id": "NMK-89935-9",
+     "id_key": "NMK899359"
+    },
+    {
+     "id": "NMK-8993Ø-4",
+     "id_key": "NMK899304"
+    },
+    {
+     "id": "NMK-89576-1",
+     "id_key": "NMK895761"
+    },
+    {
+     "id": "SPS-ØØØW8-4",
+     "id_key": "SPS000W84"
+    },
+    {
+     "id": "SPS-ØØX17-5",
+     "id_key": "SPS00X175"
+    },
+    {
+     "id": "SPS-ØØØY9-7",
+     "id_key": "SPS000Y97"
+    },
+    {
+     "id": "IR-00GR2E-5",
+     "id_key": "IR00GR2E5"
+    },
+    {
+     "id": "ACS-OSØØ2-5",
+     "id_key": "ACSOS0025"
+    },
+    {
+     "id": "IFD-524Ø1-4",
+     "id_key": "IFD524014"
+    },
+    {
+     "id": "GOR-73226-6",
+     "id_key": "GOR732266"
+    },
+    {
+     "id": "GOR-7324Ø-2",
+     "id_key": "GOR732402"
+    },
+    {
+     "id": "DD-Ø26ØØ5-3",
+     "id_key": "DD0260053"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "COR-2313-4",
+     "id_key": "COR23134"
+    },
+    {
+     "id": "COR-23134-4",
+     "id_key": "COR231344"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DAS-68416-4",
+     "id_key": "DAS684164"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "DP-35604-3",
+     "id_key": "DP356043"
+    },
+    {
+     "id": "DP-356Ø43-5",
+     "id_key": "DP3560435"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "IND-ØØ41Ø-5",
+     "id_key": "IND004105"
+    },
+    {
+     "id": "MON-9431-3",
+     "id_key": "MON94313"
+    },
+    {
+     "id": "MON-94313-8",
+     "id_key": "MON943138"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "MON-9463-7",
+     "id_key": "MON94637"
+    },
+    {
+     "id": "MON-94637-8",
+     "id_key": "MON946378"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "SY-GTSB77-8",
+     "id_key": "SYGTSB778"
+    },
+    {
+     "id": "KM-ØØØH71-4",
+     "id_key": "KM000H714"
+    },
+    {
+     "id": "KB-KWS2Ø1-6",
+     "id_key": "KBKWS2016"
+    },
+    {
+     "id": "NPS-01201-8",
+     "id_key": "NPS012018"
+    },
+    {
+     "id": "IND-ØØ412-7",
+     "id_key": "IND004127"
+    },
+    {
+     "id": "MON-7180-0",
+     "id_key": "MON71800"
+    },
+    {
+     "id": "MON-718ØØ-3",
+     "id_key": "MON718003"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Bangladesh",
+   "declared_total": 1,
+   "events_parsed": 1,
+   "events": [
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Bolivia",
+   "declared_total": 1,
+   "events_parsed": 2,
+   "events": [
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Brazil",
+   "declared_total": 155,
+   "events_parsed": 116,
+   "events": [
+    {
+     "id": "EMB-PVØ51-1",
+     "id_key": "EMBPV0511"
+    },
+    {
+     "id": "DAS-24236-5",
+     "id_key": "DAS242365"
+    },
+    {
+     "id": "DAS-21Ø23-5",
+     "id_key": "DAS210235"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "DAS-81910-7",
+     "id_key": "DAS819107"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "DAS-8191-0",
+     "id_key": "DAS81910"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-8870-1",
+     "id_key": "MON88701"
+    },
+    {
+     "id": "MON-887Ø1-3",
+     "id_key": "MON887013"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "BCS-GHB811-4",
+     "id_key": "BCSGHB8114"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-1594-7",
+     "id_key": "MON15947"
+    },
+    {
+     "id": "MON-15947-5",
+     "id_key": "MON159475"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "FGN-Ø4K22-1",
+     "id_key": "FGN04K221"
+    },
+    {
+     "id": "FGN-Ø2K32-9",
+     "id_key": "FGN02K329"
+    },
+    {
+     "id": "FGN-Ø8P82-7",
+     "id_key": "FGN08P827"
+    },
+    {
+     "id": "FGN-Ø3S19-5",
+     "id_key": "FGN03S195"
+    },
+    {
+     "id": "FGN-Ø5S24-3",
+     "id_key": "FGN05S243"
+    },
+    {
+     "id": "FGN-Ø1A21-5",
+     "id_key": "FGN01A215"
+    },
+    {
+     "id": "DP-32138-1",
+     "id_key": "DP321381"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "DP-ØØ4114-3",
+     "id_key": "DP0041143"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "DAS-113-1",
+     "id_key": "DAS1131"
+    },
+    {
+     "id": "DAS-Ø1131-3",
+     "id_key": "DAS011313"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "DP-20221-6",
+     "id_key": "DP202216"
+    },
+    {
+     "id": "DP-2Ø2216-6",
+     "id_key": "DP2022166"
+    },
+    {
+     "id": "DP-91052-1",
+     "id_key": "DP910521"
+    },
+    {
+     "id": "DP-91Ø521-2",
+     "id_key": "DP9105212"
+    },
+    {
+     "id": "EH-BRS913-2",
+     "id_key": "EHBRS9132"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-9480-4",
+     "id_key": "MON94804"
+    },
+    {
+     "id": "MON-9537-9",
+     "id_key": "MON95379"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-948Ø4-4",
+     "id_key": "MON948044"
+    },
+    {
+     "id": "MON-95379-3",
+     "id_key": "MON953793"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-8741-9",
+     "id_key": "MON87419"
+    },
+    {
+     "id": "MON-87419-8",
+     "id_key": "MON874198"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "MON-8742-9",
+     "id_key": "MON87429"
+    },
+    {
+     "id": "MON-87429-9",
+     "id_key": "MON874299"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-9527-5",
+     "id_key": "MON95275"
+    },
+    {
+     "id": "MON-95275-7",
+     "id_key": "MON952757"
+    },
+    {
+     "id": "SYN-ØØØ98-3",
+     "id_key": "SYN000983"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-4440-6",
+     "id_key": "DAS44406"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DAS-444Ø6-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "DAS-68416-4",
+     "id_key": "DAS684164"
+    },
+    {
+     "id": "DBN-800-2",
+     "id_key": "DBN8002"
+    },
+    {
+     "id": "DBN-Ø8ØØ2-3",
+     "id_key": "DBN080023"
+    },
+    {
+     "id": "DBN-900-4",
+     "id_key": "DBN9004"
+    },
+    {
+     "id": "DBN-Ø9ØØ4-6",
+     "id_key": "DBN090046"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "IND-ØØ41Ø-5",
+     "id_key": "IND004105"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-9431-3",
+     "id_key": "MON94313"
+    },
+    {
+     "id": "MON-9463-7",
+     "id_key": "MON94637"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "MON-94313-8",
+     "id_key": "MON943138"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-94637-8",
+     "id_key": "MON946378"
+    },
+    {
+     "id": "CTB-14117-5",
+     "id_key": "CTB141175"
+    },
+    {
+     "id": "CTC-92015-7",
+     "id_key": "CTC920157"
+    },
+    {
+     "id": "CTC-14117-4",
+     "id_key": "CTC141174"
+    },
+    {
+     "id": "CTC-75064-3",
+     "id_key": "CTC750643"
+    },
+    {
+     "id": "CTC-79005-2",
+     "id_key": "CTC790052"
+    },
+    {
+     "id": "CTC-91087-6",
+     "id_key": "CTC910876"
+    },
+    {
+     "id": "CTC-9320-9",
+     "id_key": "CTC93209"
+    },
+    {
+     "id": "CTC-932Ø9-4",
+     "id_key": "CTC932094"
+    },
+    {
+     "id": "CTC-95019-5",
+     "id_key": "CTC950195"
+    },
+    {
+     "id": "IND-ØØ412-7",
+     "id_key": "IND004127"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Burkina Faso",
+   "declared_total": 1,
+   "events_parsed": 3,
+   "events": [
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Canada",
+   "declared_total": 217,
+   "events_parsed": 209,
+   "events": [
+    {
+     "id": "MON-ØØ1Ø1-8",
+     "id_key": "MON001018"
+    },
+    {
+     "id": "MON-ØØ163-7",
+     "id_key": "MON001637"
+    },
+    {
+     "id": "MON-ØØ179-5",
+     "id_key": "MON001795"
+    },
+    {
+     "id": "OKA-NBØØ1-8",
+     "id_key": "OKANB0018"
+    },
+    {
+     "id": "OKA-NBØØ2-9",
+     "id_key": "OKANB0029"
+    },
+    {
+     "id": "OKA-NBØØ3-1",
+     "id_key": "OKANB0031"
+    },
+    {
+     "id": "CGN-89111-8",
+     "id_key": "CGN891118"
+    },
+    {
+     "id": "CGN-89465-2",
+     "id_key": "CGN894652"
+    },
+    {
+     "id": "DP-Ø61Ø61-7",
+     "id_key": "DP0610617"
+    },
+    {
+     "id": "DP-Ø73496-4",
+     "id_key": "DP0734964"
+    },
+    {
+     "id": "NS-B5ØØ27-4",
+     "id_key": "NSB500274"
+    },
+    {
+     "id": "MON-89249-2",
+     "id_key": "MON892492"
+    },
+    {
+     "id": "MON-ØØØ73-7",
+     "id_key": "MON000737"
+    },
+    {
+     "id": "ACS-BNØØ8-2",
+     "id_key": "ACSBN0082"
+    },
+    {
+     "id": "ACS-BNØØ7-1",
+     "id_key": "ACSBN0071"
+    },
+    {
+     "id": "BPS-BFLFK-2",
+     "id_key": "BPSBFLFK2"
+    },
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "MON-9410-0",
+     "id_key": "MON94100"
+    },
+    {
+     "id": "MON-941ØØ-2",
+     "id_key": "MON941002"
+    },
+    {
+     "id": "ACS-BNØØ4-7",
+     "id_key": "ACSBN0047"
+    },
+    {
+     "id": "ACS-BNØØ1-4",
+     "id_key": "ACSBN0014"
+    },
+    {
+     "id": "ACS-BNØØ2-5",
+     "id_key": "ACSBN0025"
+    },
+    {
+     "id": "BCS-BNØ12-7",
+     "id_key": "BCSBN0127"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "ACS-BNØ11-5",
+     "id_key": "ACSBN0115"
+    },
+    {
+     "id": "DAS-24236-5",
+     "id_key": "DAS242365"
+    },
+    {
+     "id": "DAS-21Ø23-5",
+     "id_key": "DAS210235"
+    },
+    {
+     "id": "DAS-81910-7",
+     "id_key": "DAS819107"
+    },
+    {
+     "id": "BXN-1021-5",
+     "id_key": "BXN10215"
+    },
+    {
+     "id": "BXN-1Ø215-4",
+     "id_key": "BXN102154"
+    },
+    {
+     "id": "BXN-1022-2",
+     "id_key": "BXN10222"
+    },
+    {
+     "id": "BXN-1Ø222-2",
+     "id_key": "BXN102222"
+    },
+    {
+     "id": "BXN-1022-4",
+     "id_key": "BXN10224"
+    },
+    {
+     "id": "BXN-1Ø224-4",
+     "id_key": "BXN102244"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "SYN-IR67B-1",
+     "id_key": "SYNIR67B1"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "MON-107-6",
+     "id_key": "MON1076"
+    },
+    {
+     "id": "MON-89924-2",
+     "id_key": "MON899242"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-169-8",
+     "id_key": "MON1698"
+    },
+    {
+     "id": "MON-89383-1",
+     "id_key": "MON893831"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "MON-ØØ757-7",
+     "id_key": "MON007577"
+    },
+    {
+     "id": "MON-8870-1",
+     "id_key": "MON88701"
+    },
+    {
+     "id": "MON-887Ø1-3",
+     "id_key": "MON887013"
+    },
+    {
+     "id": "MON-8870-2",
+     "id_key": "MON88702"
+    },
+    {
+     "id": "MON-887Ø2-4",
+     "id_key": "MON887024"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "CDC-FLØØ1-2",
+     "id_key": "CDCFL0012"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "DP-ØØ4114-3",
+     "id_key": "DP0041143"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "DP-Ø9814Ø-6",
+     "id_key": "DP0981406"
+    },
+    {
+     "id": "DP-411-4",
+     "id_key": "DP4114"
+    },
+    {
+     "id": "SYN-ØØØ98-3",
+     "id_key": "SYN000983"
+    },
+    {
+     "id": "MON-ØØ6Ø3-7",
+     "id_key": "MON006037"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "SYN-EV176-9",
+     "id_key": "SYNEV1769"
+    },
+    {
+     "id": "DAS-113-1",
+     "id_key": "DAS1131"
+    },
+    {
+     "id": "DAS-Ø1131-3",
+     "id_key": "DAS011313"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "DKB-89614-9",
+     "id_key": "DKB896149"
+    },
+    {
+     "id": "DKB-8979Ø-5",
+     "id_key": "DKB897905"
+    },
+    {
+     "id": "DP-20221-6",
+     "id_key": "DP202216"
+    },
+    {
+     "id": "DP-2Ø2216-6",
+     "id_key": "DP2022166"
+    },
+    {
+     "id": "DP-2321-1",
+     "id_key": "DP23211"
+    },
+    {
+     "id": "DP-Ø23211-2",
+     "id_key": "DP0232112"
+    },
+    {
+     "id": "DP-5129-1",
+     "id_key": "DP51291"
+    },
+    {
+     "id": "DP-51291-2",
+     "id_key": "DP512912"
+    },
+    {
+     "id": "DP-91052-1",
+     "id_key": "DP910521"
+    },
+    {
+     "id": "DP-91Ø521-2",
+     "id_key": "DP9105212"
+    },
+    {
+     "id": "DP-91563-5",
+     "id_key": "DP915635"
+    },
+    {
+     "id": "DP-915635-4",
+     "id_key": "DP9156354"
+    },
+    {
+     "id": "EH-BRS913-2",
+     "id_key": "EHBRS9132"
+    },
+    {
+     "id": "REN-ØØØ38-3",
+     "id_key": "REN000383"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-9480-4",
+     "id_key": "MON94804"
+    },
+    {
+     "id": "MON-948Ø4-4",
+     "id_key": "MON948044"
+    },
+    {
+     "id": "MON-8Ø2ØØ-7",
+     "id_key": "MON802007"
+    },
+    {
+     "id": "MON-8Ø9-2",
+     "id_key": "MON8092"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8740-3",
+     "id_key": "MON87403"
+    },
+    {
+     "id": "MON-874Ø3-1",
+     "id_key": "MON874031"
+    },
+    {
+     "id": "MON-8741-9",
+     "id_key": "MON87419"
+    },
+    {
+     "id": "MON-87419-8",
+     "id_key": "MON874198"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8742-9",
+     "id_key": "MON87429"
+    },
+    {
+     "id": "MON-87429-9",
+     "id_key": "MON874299"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-9527-5",
+     "id_key": "MON95275"
+    },
+    {
+     "id": "MON-95275-7",
+     "id_key": "MON952757"
+    },
+    {
+     "id": "MON-9537-9",
+     "id_key": "MON95379"
+    },
+    {
+     "id": "MON-95379-3",
+     "id_key": "MON953793"
+    },
+    {
+     "id": "ACS-ZMØØ1-9",
+     "id_key": "ACSZM0019"
+    },
+    {
+     "id": "SYN-ØØØJG-2",
+     "id_key": "SYN000JG2"
+    },
+    {
+     "id": "SYN-IR604-4",
+     "id_key": "SYNIR6044"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "ACS-ZMØØ2-1",
+     "id_key": "ACSZM0021"
+    },
+    {
+     "id": "TC-627-5",
+     "id_key": "TC6275"
+    },
+    {
+     "id": "DAS-Ø6275-8",
+     "id_key": "DAS062758"
+    },
+    {
+     "id": "VCO-01981-5",
+     "id_key": "VC0019815"
+    },
+    {
+     "id": "CUH-CP551-8",
+     "id_key": "CUHCP5518"
+    },
+    {
+     "id": "FDP-ØØ114-5",
+     "id_key": "FDP001145"
+    },
+    {
+     "id": "NMK-89367-8",
+     "id_key": "NMK893678"
+    },
+    {
+     "id": "NMK-89613-2",
+     "id_key": "NMK896132"
+    },
+    {
+     "id": "NMK-8917Ø-9",
+     "id_key": "NMK891709"
+    },
+    {
+     "id": "NMK-89279-1",
+     "id_key": "NMK892791"
+    },
+    {
+     "id": "NMK-89761-6",
+     "id_key": "NMK897616"
+    },
+    {
+     "id": "NMK-89812-3",
+     "id_key": "NMK898123"
+    },
+    {
+     "id": "NMK-89175-5",
+     "id_key": "NMK891755"
+    },
+    {
+     "id": "NMK-896Ø1-8",
+     "id_key": "NMK896018"
+    },
+    {
+     "id": "NMK-89167-6",
+     "id_key": "NMK891676"
+    },
+    {
+     "id": "NMK-89593-9",
+     "id_key": "NMK895939"
+    },
+    {
+     "id": "NMK-899Ø6-7",
+     "id_key": "NMK899067"
+    },
+    {
+     "id": "NMK-89675-1",
+     "id_key": "NMK896751"
+    },
+    {
+     "id": "SPS-ØØE12-8",
+     "id_key": "SPS00E128"
+    },
+    {
+     "id": "SPS-ØØF10-7",
+     "id_key": "SPS00F107"
+    },
+    {
+     "id": "SPS-ØØØZ6-5",
+     "id_key": "SPS000Z65"
+    },
+    {
+     "id": "SPS-ØØØJ3-4",
+     "id_key": "SPS000J34"
+    },
+    {
+     "id": "SPS-ØØJ55-2",
+     "id_key": "SPS00J552"
+    },
+    {
+     "id": "NMK-89653-6",
+     "id_key": "NMK896536"
+    },
+    {
+     "id": "NMK-89684-1",
+     "id_key": "NMK896841"
+    },
+    {
+     "id": "NMK-89185-6",
+     "id_key": "NMK891856"
+    },
+    {
+     "id": "NMK-89896-6",
+     "id_key": "NMK898966"
+    },
+    {
+     "id": "NMK-89935-9",
+     "id_key": "NMK899359"
+    },
+    {
+     "id": "NMK-8993Ø-4",
+     "id_key": "NMK899304"
+    },
+    {
+     "id": "NMK-89576-1",
+     "id_key": "NMK895761"
+    },
+    {
+     "id": "NMK-89724-5",
+     "id_key": "NMK897245"
+    },
+    {
+     "id": "SPS-ØØØW8-4",
+     "id_key": "SPS000W84"
+    },
+    {
+     "id": "SPS-ØØX17-5",
+     "id_key": "SPS00X175"
+    },
+    {
+     "id": "SPS-ØØØY9-7",
+     "id_key": "SPS000Y97"
+    },
+    {
+     "id": "IR-00GR2E-5",
+     "id_key": "IR00GR2E5"
+    },
+    {
+     "id": "ACS-OSØØ2-5",
+     "id_key": "ACSOS0025"
+    },
+    {
+     "id": "DD-Ø26ØØ5-3",
+     "id_key": "DD0260053"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "COR-2313-4",
+     "id_key": "COR23134"
+    },
+    {
+     "id": "COR-23134-4",
+     "id_key": "COR231344"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DAS-68416-4",
+     "id_key": "DAS684164"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "DP-35604-3",
+     "id_key": "DP356043"
+    },
+    {
+     "id": "DP-356Ø43-5",
+     "id_key": "DP3560435"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "IND-ØØ41Ø-5",
+     "id_key": "IND004105"
+    },
+    {
+     "id": "MON-9431-3",
+     "id_key": "MON94313"
+    },
+    {
+     "id": "MON-94313-8",
+     "id_key": "MON943138"
+    },
+    {
+     "id": "MON-9463-7",
+     "id_key": "MON94637"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8771-2",
+     "id_key": "MON87712"
+    },
+    {
+     "id": "MON-87712-4",
+     "id_key": "MON877124"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "MON-94637-8",
+     "id_key": "MON946378"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "SEM-ØCZW3-2",
+     "id_key": "SEM0CZW32"
+    },
+    {
+     "id": "SEM-ØZW2Ø-7",
+     "id_key": "SEM0ZW207"
+    },
+    {
+     "id": "KM-ØØØH71-4",
+     "id_key": "KM000H714"
+    },
+    {
+     "id": "KB-KWS2Ø1-6",
+     "id_key": "KBKWS2016"
+    },
+    {
+     "id": "ACS-BVØØ1-3",
+     "id_key": "ACSBV0013"
+    },
+    {
+     "id": "CTB-14117-5",
+     "id_key": "CTB141175"
+    },
+    {
+     "id": "CTC-75064-3",
+     "id_key": "CTC750643"
+    },
+    {
+     "id": "SYN-ØØØØF-1",
+     "id_key": "SYN0000F1"
+    },
+    {
+     "id": "CGN-89564-2",
+     "id_key": "CGN895642"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Chile",
+   "declared_total": 3,
+   "events_parsed": 4,
+   "events": [
+    {
+     "id": "MON-89249-2",
+     "id_key": "MON892492"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "China",
+   "declared_total": 91,
+   "events_parsed": 90,
+   "events": [
+    {
+     "id": "MON-ØØØ73-7",
+     "id_key": "MON000737"
+    },
+    {
+     "id": "ACS-BNØØ8-2",
+     "id_key": "ACSBN0082"
+    },
+    {
+     "id": "ACS-BNØØ7-1",
+     "id_key": "ACSBN0071"
+    },
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "ACS-BNØØ4-7",
+     "id_key": "ACSBN0047"
+    },
+    {
+     "id": "ACS-BNØØ1-4",
+     "id_key": "ACSBN0014"
+    },
+    {
+     "id": "ACS-BNØØ2-5",
+     "id_key": "ACSBN0025"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "ACS-BNØ11-5",
+     "id_key": "ACSBN0115"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "DP-ØØ4114-3",
+     "id_key": "DP0041143"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "SYN-EV176-9",
+     "id_key": "SYNEV1769"
+    },
+    {
+     "id": "BVLA-43010-1",
+     "id_key": "BVLA430101"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "DBN-950-1",
+     "id_key": "DBN9501"
+    },
+    {
+     "id": "DBN-Ø95Ø1-8",
+     "id_key": "DBN095018"
+    },
+    {
+     "id": "DBN-985-8",
+     "id_key": "DBN9858"
+    },
+    {
+     "id": "DBN-Ø9858-5",
+     "id_key": "DBN098585"
+    },
+    {
+     "id": "DBN-993-6",
+     "id_key": "DBN9936"
+    },
+    {
+     "id": "DBN-Ø9936-2",
+     "id_key": "DBN099362"
+    },
+    {
+     "id": "DP-20221-6",
+     "id_key": "DP202216"
+    },
+    {
+     "id": "DP-2Ø2216-6",
+     "id_key": "DP2022166"
+    },
+    {
+     "id": "LP-026-2",
+     "id_key": "LP0262"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "HZU-HHØØ1-9",
+     "id_key": "HZUHH0019"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DBN-800-2",
+     "id_key": "DBN8002"
+    },
+    {
+     "id": "DBN-Ø8ØØ2-3",
+     "id_key": "DBN080023"
+    },
+    {
+     "id": "DBN-900-4",
+     "id_key": "DBN9004"
+    },
+    {
+     "id": "DBN-Ø9ØØ4-6",
+     "id_key": "DBN090046"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "DP-35604-3",
+     "id_key": "DP356043"
+    },
+    {
+     "id": "DP-356Ø43-5",
+     "id_key": "DP3560435"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "KM-ØØØH71-4",
+     "id_key": "KM000H714"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Colombia",
+   "declared_total": 169,
+   "events_parsed": 119,
+   "events": [
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "FLO-11226-8",
+     "id_key": "FL0112268"
+    },
+    {
+     "id": "FLO-11351-7",
+     "id_key": "FL0113517"
+    },
+    {
+     "id": "FLO-114ØØ-2",
+     "id_key": "FL0114002"
+    },
+    {
+     "id": "IFD-199Ø7-9",
+     "id_key": "IFD199079"
+    },
+    {
+     "id": "IFD-25947-1",
+     "id_key": "IFD259471"
+    },
+    {
+     "id": "IFD-25958-3",
+     "id_key": "IFD259583"
+    },
+    {
+     "id": "IFD-264Ø7-2",
+     "id_key": "IFD264072"
+    },
+    {
+     "id": "FLO-11959-3",
+     "id_key": "FL0119593"
+    },
+    {
+     "id": "DAS-24236-5",
+     "id_key": "DAS242365"
+    },
+    {
+     "id": "DAS-21Ø23-5",
+     "id_key": "DAS210235"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "DAS-8191-0",
+     "id_key": "DAS81910"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "DAS-81910-7",
+     "id_key": "DAS819107"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-8870-1",
+     "id_key": "MON88701"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-887Ø1-3",
+     "id_key": "MON887013"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "BCS-GHB811-4",
+     "id_key": "BCSGHB8114"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "MON-8870-2",
+     "id_key": "MON88702"
+    },
+    {
+     "id": "MON-887Ø2-4",
+     "id_key": "MON887024"
+    },
+    {
+     "id": "CDC-FLØØ1-2",
+     "id_key": "CDCFL0012"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "DP-ØØ4114-3",
+     "id_key": "DP0041143"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "DAS-113-1",
+     "id_key": "DAS1131"
+    },
+    {
+     "id": "DAS-Ø1131-3",
+     "id_key": "DAS011313"
+    },
+    {
+     "id": "DP-20221-6",
+     "id_key": "DP202216"
+    },
+    {
+     "id": "DP-2Ø2216-6",
+     "id_key": "DP2022166"
+    },
+    {
+     "id": "DP-2321-1",
+     "id_key": "DP23211"
+    },
+    {
+     "id": "DP-Ø23211-2",
+     "id_key": "DP0232112"
+    },
+    {
+     "id": "DP-411-4",
+     "id_key": "DP4114"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "DP-91052-1",
+     "id_key": "DP910521"
+    },
+    {
+     "id": "DP-91Ø521-2",
+     "id_key": "DP9105212"
+    },
+    {
+     "id": "DP-91563-5",
+     "id_key": "DP915635"
+    },
+    {
+     "id": "DP-915635-4",
+     "id_key": "DP9156354"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "REN-ØØØ38-3",
+     "id_key": "REN000383"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8741-9",
+     "id_key": "MON87419"
+    },
+    {
+     "id": "MON-87419-8",
+     "id_key": "MON874198"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "SYN-ØØØ98-3",
+     "id_key": "SYN000983"
+    },
+    {
+     "id": "SYN-IR604-4",
+     "id_key": "SYNIR6044"
+    },
+    {
+     "id": "BCS-OSØØ3-7",
+     "id_key": "BCSOS0037"
+    },
+    {
+     "id": "ACS-OSØØ2-5",
+     "id_key": "ACSOS0025"
+    },
+    {
+     "id": "IFD-524Ø1-4",
+     "id_key": "IFD524014"
+    },
+    {
+     "id": "IFD-529Ø1-9",
+     "id_key": "IFD529019"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DAS-68416-4",
+     "id_key": "DAS684164"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-4440-6",
+     "id_key": "DAS44406"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "DP-35604-3",
+     "id_key": "DP356043"
+    },
+    {
+     "id": "DP-356Ø43-5",
+     "id_key": "DP3560435"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "IND-ØØ41Ø-5",
+     "id_key": "IND004105"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8771-2",
+     "id_key": "MON87712"
+    },
+    {
+     "id": "MON-87712-4",
+     "id_key": "MON877124"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "KM-ØØØH71-4",
+     "id_key": "KM000H714"
+    },
+    {
+     "id": "IND-ØØ412-7",
+     "id_key": "IND004127"
+    },
+    {
+     "id": "MON-7180-0",
+     "id_key": "MON71800"
+    },
+    {
+     "id": "MON-718ØØ-3",
+     "id_key": "MON718003"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Costa Rica",
+   "declared_total": 20,
+   "events_parsed": 21,
+   "events": [
+    {
+     "id": "DAS-24236-5",
+     "id_key": "DAS242365"
+    },
+    {
+     "id": "DAS-21Ø23-5",
+     "id_key": "DAS210235"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "DAS-81910-7",
+     "id_key": "DAS819107"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "SYN-IR67B-1",
+     "id_key": "SYNIR67B1"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "MON-8870-1",
+     "id_key": "MON88701"
+    },
+    {
+     "id": "MON-887Ø1-3",
+     "id_key": "MON887013"
+    },
+    {
+     "id": "VCO-01981-5",
+     "id_key": "VC0019815"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Egypt",
+   "declared_total": 1,
+   "events_parsed": 2,
+   "events": [
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Eswatini",
+   "declared_total": 2,
+   "events_parsed": 2,
+   "events": [
+    {
+     "id": "JKCH-194-7",
+     "id_key": "JKCH1947"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Ethiopia",
+   "declared_total": 2,
+   "events_parsed": 2,
+   "events": [
+    {
+     "id": "JKCH-194-7",
+     "id_key": "JKCH1947"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "European Union",
+   "declared_total": 173,
+   "events_parsed": 115,
+   "events": [
+    {
+     "id": "MON-ØØØ73-7",
+     "id_key": "MON000737"
+    },
+    {
+     "id": "ACS-BNØØ8-2",
+     "id_key": "ACSBN0082"
+    },
+    {
+     "id": "ACS-BNØØ7-1",
+     "id_key": "ACSBN0071"
+    },
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "MON-9410-0",
+     "id_key": "MON94100"
+    },
+    {
+     "id": "MON-941ØØ-2",
+     "id_key": "MON941002"
+    },
+    {
+     "id": "ACS-BNØØ4-7",
+     "id_key": "ACSBN0047"
+    },
+    {
+     "id": "ACS-BNØØ1-4",
+     "id_key": "ACSBN0014"
+    },
+    {
+     "id": "ACS-BNØØ2-5",
+     "id_key": "ACSBN0025"
+    },
+    {
+     "id": "FLO-11363-1",
+     "id_key": "FL0113631"
+    },
+    {
+     "id": "FLO-11226-8",
+     "id_key": "FL0112268"
+    },
+    {
+     "id": "FLO-4Ø644-4",
+     "id_key": "FL0406444"
+    },
+    {
+     "id": "IFD-25958-3",
+     "id_key": "IFD259583"
+    },
+    {
+     "id": "IFD-264Ø7-2",
+     "id_key": "IFD264072"
+    },
+    {
+     "id": "FLO-11959-3",
+     "id_key": "FL0119593"
+    },
+    {
+     "id": "FLO-11988-7",
+     "id_key": "FL0119887"
+    },
+    {
+     "id": "DAS-24236-5",
+     "id_key": "DAS242365"
+    },
+    {
+     "id": "DAS-21Ø23-5",
+     "id_key": "DAS210235"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "DP-ØØ4114-3",
+     "id_key": "DP0041143"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "SYN-IR6Ø4-4",
+     "id_key": "SYNIR6044"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "SYN-EV176-9",
+     "id_key": "SYNEV1769"
+    },
+    {
+     "id": "DP-20221-6",
+     "id_key": "DP202216"
+    },
+    {
+     "id": "DP-2Ø2216-6",
+     "id_key": "DP2022166"
+    },
+    {
+     "id": "DP-2321-1",
+     "id_key": "DP23211"
+    },
+    {
+     "id": "DP-Ø23211-2",
+     "id_key": "DP0232112"
+    },
+    {
+     "id": "DP-411-4",
+     "id_key": "DP4114"
+    },
+    {
+     "id": "DP-5129-1",
+     "id_key": "DP51291"
+    },
+    {
+     "id": "DP-51291-2",
+     "id_key": "DP512912"
+    },
+    {
+     "id": "DP-91563-5",
+     "id_key": "DP915635"
+    },
+    {
+     "id": "DP-915635-4",
+     "id_key": "DP9156354"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "MON-9480-4",
+     "id_key": "MON94804"
+    },
+    {
+     "id": "MON-94804-4",
+     "id_key": "MON948044"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8740-3",
+     "id_key": "MON87403"
+    },
+    {
+     "id": "MON-874Ø3-1",
+     "id_key": "MON874031"
+    },
+    {
+     "id": "MON-8741-9",
+     "id_key": "MON87419"
+    },
+    {
+     "id": "MON-87419-8",
+     "id_key": "MON874198"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-8742-9",
+     "id_key": "MON87429"
+    },
+    {
+     "id": "MON-87429-9",
+     "id_key": "MON874299"
+    },
+    {
+     "id": "MON-9537-9",
+     "id_key": "MON95379"
+    },
+    {
+     "id": "MON-95379-3",
+     "id_key": "MON953793"
+    },
+    {
+     "id": "SYN-ØØØ98-3",
+     "id_key": "SYN000983"
+    },
+    {
+     "id": "BPS-25271-9",
+     "id_key": "BPS252719"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "DAS-68416-4",
+     "id_key": "DAS684164"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-4440-6",
+     "id_key": "DAS44406"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "DP-35604-3",
+     "id_key": "DP356043"
+    },
+    {
+     "id": "DP-356Ø43-5",
+     "id_key": "DP3560435"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "KM-ØØØH71-4",
+     "id_key": "KM000H714"
+    },
+    {
+     "id": "KB-KWS2Ø1-6",
+     "id_key": "KBKWS2016"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Ghana",
+   "declared_total": 15,
+   "events_parsed": 24,
+   "events": [
+    {
+     "id": "AAT-7Ø9AA-4",
+     "id_key": "AAT709AA4"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "SYN-ØØØ98-3",
+     "id_key": "SYN000983"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Honduras",
+   "declared_total": 8,
+   "events_parsed": 10,
+   "events": [
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "ACS-OSØØ2-5",
+     "id_key": "ACSOS0025"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "India",
+   "declared_total": 11,
+   "events_parsed": 14,
+   "events": [
+    {
+     "id": "JKCH-194-7",
+     "id_key": "JKCH1947"
+    },
+    {
+     "id": "GTL-GFM311-7",
+     "id_key": "GTLGFM3117"
+    },
+    {
+     "id": "MLS-912-4",
+     "id_key": "MLS9124"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Indonesia",
+   "declared_total": 36,
+   "events_parsed": 49,
+   "events": [
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-9527-5",
+     "id_key": "MON95275"
+    },
+    {
+     "id": "MON-95275-7",
+     "id_key": "MON952757"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "MON-9431-3",
+     "id_key": "MON94313"
+    },
+    {
+     "id": "MON-94313-8",
+     "id_key": "MON943138"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Israel",
+   "declared_total": 0,
+   "events_parsed": 1,
+   "events": [
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Japan",
+   "declared_total": 220,
+   "events_parsed": 152,
+   "events": [
+    {
+     "id": "MON-ØØ1Ø1-8",
+     "id_key": "MON001018"
+    },
+    {
+     "id": "MON-ØØ163-7",
+     "id_key": "MON001637"
+    },
+    {
+     "id": "MON-ØØ179-5",
+     "id_key": "MON001795"
+    },
+    {
+     "id": "DP-Ø73496-4",
+     "id_key": "DP0734964"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "MON-89249-2",
+     "id_key": "MON892492"
+    },
+    {
+     "id": "MON-ØØØ73-7",
+     "id_key": "MON000737"
+    },
+    {
+     "id": "ACS-BNØØ8-2",
+     "id_key": "ACSBN0082"
+    },
+    {
+     "id": "BPS-BFLFK-2",
+     "id_key": "BPSBFLFK2"
+    },
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "MON-9410-0",
+     "id_key": "MON94100"
+    },
+    {
+     "id": "MON-941ØØ-2",
+     "id_key": "MON941002"
+    },
+    {
+     "id": "ACS-BNØØ4-7",
+     "id_key": "ACSBN0047"
+    },
+    {
+     "id": "ACS-BNØØ1-4",
+     "id_key": "ACSBN0014"
+    },
+    {
+     "id": "ACS-BNØØ2-5",
+     "id_key": "ACSBN0025"
+    },
+    {
+     "id": "BCS-BNØ12-7",
+     "id_key": "BCSBN0127"
+    },
+    {
+     "id": "ACS-BNØ11-5",
+     "id_key": "ACSBN0115"
+    },
+    {
+     "id": "FLO-Ø7442-4",
+     "id_key": "FL0074424"
+    },
+    {
+     "id": "FLO-11363-1",
+     "id_key": "FL0113631"
+    },
+    {
+     "id": "FLO-4Ø619-7",
+     "id_key": "FL0406197"
+    },
+    {
+     "id": "FLO-4Ø644-4",
+     "id_key": "FL0406444"
+    },
+    {
+     "id": "FLO-4Ø689-6",
+     "id_key": "FL0406896"
+    },
+    {
+     "id": "FLO-4Ø685-1",
+     "id_key": "FL0406851"
+    },
+    {
+     "id": "IFD-25958-3",
+     "id_key": "IFD259583"
+    },
+    {
+     "id": "IFD-264Ø7-2",
+     "id_key": "IFD264072"
+    },
+    {
+     "id": "DAS-24236-5",
+     "id_key": "DAS242365"
+    },
+    {
+     "id": "DAS-21Ø23-5",
+     "id_key": "DAS210235"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "DAS-81910-7",
+     "id_key": "DAS819107"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "DAS-8191-0",
+     "id_key": "DAS81910"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-8870-1",
+     "id_key": "MON88701"
+    },
+    {
+     "id": "MON-887Ø1-3",
+     "id_key": "MON887013"
+    },
+    {
+     "id": "SYN-IR67B-1",
+     "id_key": "SYNIR67B1"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "BCS-GHB811-4",
+     "id_key": "BCSGHB8114"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "MON-ØØ757-7",
+     "id_key": "MON007577"
+    },
+    {
+     "id": "MON-8870-2",
+     "id_key": "MON88702"
+    },
+    {
+     "id": "MON-887Ø2-4",
+     "id_key": "MON887024"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "DP-ØØ4114-3",
+     "id_key": "DP0041143"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "SYN-EV176-9",
+     "id_key": "SYNEV1769"
+    },
+    {
+     "id": "DKB-89614-9",
+     "id_key": "DKB896149"
+    },
+    {
+     "id": "DKB-8979Ø-5",
+     "id_key": "DKB897905"
+    },
+    {
+     "id": "DP-20221-6",
+     "id_key": "DP202216"
+    },
+    {
+     "id": "DP-2Ø2216-6",
+     "id_key": "DP2022166"
+    },
+    {
+     "id": "DP-2321-1",
+     "id_key": "DP23211"
+    },
+    {
+     "id": "DP-Ø23211-2",
+     "id_key": "DP0232112"
+    },
+    {
+     "id": "DP-411-4",
+     "id_key": "DP4114"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "DP-91052-1",
+     "id_key": "DP910521"
+    },
+    {
+     "id": "DP-91Ø521-2",
+     "id_key": "DP9105212"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "REN-ØØØ38-3",
+     "id_key": "REN000383"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8740-3",
+     "id_key": "MON87403"
+    },
+    {
+     "id": "MON-874Ø3-1",
+     "id_key": "MON874031"
+    },
+    {
+     "id": "MON-8741-9",
+     "id_key": "MON87419"
+    },
+    {
+     "id": "MON-87419-8",
+     "id_key": "MON874198"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-8742-9",
+     "id_key": "MON87429"
+    },
+    {
+     "id": "MON-87429-9",
+     "id_key": "MON874299"
+    },
+    {
+     "id": "MON-9537-9",
+     "id_key": "MON95379"
+    },
+    {
+     "id": "MON-95379-3",
+     "id_key": "MON953793"
+    },
+    {
+     "id": "SYN-ØØØJG-2",
+     "id_key": "SYN000JG2"
+    },
+    {
+     "id": "SYN-ØØØ98-3",
+     "id_key": "SYN000983"
+    },
+    {
+     "id": "SYN-IR604-4",
+     "id_key": "SYNIR6044"
+    },
+    {
+     "id": "ACS-ZMØØ2-1",
+     "id_key": "ACSZM0021"
+    },
+    {
+     "id": "TC-627-5",
+     "id_key": "TC6275"
+    },
+    {
+     "id": "DAS-Ø6275-8",
+     "id_key": "DAS062758"
+    },
+    {
+     "id": "CUH-CP551-8",
+     "id_key": "CUHCP5518"
+    },
+    {
+     "id": "NMK-89812-3",
+     "id_key": "NMK898123"
+    },
+    {
+     "id": "SPS-ØØE12-8",
+     "id_key": "SPS00E128"
+    },
+    {
+     "id": "SPS-ØØØZ6-5",
+     "id_key": "SPS000Z65"
+    },
+    {
+     "id": "NMK-89653-6",
+     "id_key": "NMK896536"
+    },
+    {
+     "id": "NMK-89684-1",
+     "id_key": "NMK896841"
+    },
+    {
+     "id": "NMK-89185-6",
+     "id_key": "NMK891856"
+    },
+    {
+     "id": "NMK-89896-6",
+     "id_key": "NMK898966"
+    },
+    {
+     "id": "NMK-89935-9",
+     "id_key": "NMK899359"
+    },
+    {
+     "id": "NMK-8993Ø-4",
+     "id_key": "NMK899304"
+    },
+    {
+     "id": "NMK-89576-1",
+     "id_key": "NMK895761"
+    },
+    {
+     "id": "SPS-ØØX17-5",
+     "id_key": "SPS00X175"
+    },
+    {
+     "id": "SPS-ØØØY9-7",
+     "id_key": "SPS000Y97"
+    },
+    {
+     "id": "IFD-524Ø1-4",
+     "id_key": "IFD524014"
+    },
+    {
+     "id": "IFD-529Ø1-9",
+     "id_key": "IFD529019"
+    },
+    {
+     "id": "DD-Ø26ØØ5-3",
+     "id_key": "DD0260053"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DAS-68416-4",
+     "id_key": "DAS684164"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DAS-4440-6",
+     "id_key": "DAS44406"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "DP-35604-3",
+     "id_key": "DP356043"
+    },
+    {
+     "id": "DP-356Ø43-5",
+     "id_key": "DP3560435"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "SY-GTSB77-8",
+     "id_key": "SYGTSB778"
+    },
+    {
+     "id": "KM-ØØØH71-4",
+     "id_key": "KM000H714"
+    },
+    {
+     "id": "ACS-BVØØ1-3",
+     "id_key": "ACSBV0013"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Kenya",
+   "declared_total": 2,
+   "events_parsed": 4,
+   "events": [
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Malaysia",
+   "declared_total": 69,
+   "events_parsed": 96,
+   "events": [
+    {
+     "id": "MON-ØØ1Ø1-8",
+     "id_key": "MON001018"
+    },
+    {
+     "id": "MON-ØØ163-7",
+     "id_key": "MON001637"
+    },
+    {
+     "id": "MON-ØØ179-5",
+     "id_key": "MON001795"
+    },
+    {
+     "id": "DP-Ø73496-4",
+     "id_key": "DP0734964"
+    },
+    {
+     "id": "MON-ØØØ73-7",
+     "id_key": "MON000737"
+    },
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "MON-9410-0",
+     "id_key": "MON94100"
+    },
+    {
+     "id": "MON-941ØØ-2",
+     "id_key": "MON941002"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "FLO-4Ø619-7",
+     "id_key": "FL0406197"
+    },
+    {
+     "id": "FLO-4Ø644-4",
+     "id_key": "FL0406444"
+    },
+    {
+     "id": "FLO-4Ø689-6",
+     "id_key": "FL0406896"
+    },
+    {
+     "id": "FLO-4Ø685-1",
+     "id_key": "FL0406851"
+    },
+    {
+     "id": "IFD-199Ø7-9",
+     "id_key": "IFD199079"
+    },
+    {
+     "id": "IFD-25947-1",
+     "id_key": "IFD259471"
+    },
+    {
+     "id": "IFD-25958-3",
+     "id_key": "IFD259583"
+    },
+    {
+     "id": "IFD-264Ø7-2",
+     "id_key": "IFD264072"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-8870-2",
+     "id_key": "MON88702"
+    },
+    {
+     "id": "MON-887Ø2-4",
+     "id_key": "MON887024"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "DP-20221-6",
+     "id_key": "DP202216"
+    },
+    {
+     "id": "DP-2Ø2216-6",
+     "id_key": "DP2022166"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8742-9",
+     "id_key": "MON87429"
+    },
+    {
+     "id": "MON-87429-9",
+     "id_key": "MON874299"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-9537-9",
+     "id_key": "MON95379"
+    },
+    {
+     "id": "MON-95379-3",
+     "id_key": "MON953793"
+    },
+    {
+     "id": "SYN-ØØØJG-2",
+     "id_key": "SYN000JG2"
+    },
+    {
+     "id": "SYN-ØØØ98-3",
+     "id_key": "SYN000983"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "SPS-ØØE12-8",
+     "id_key": "SPS00E128"
+    },
+    {
+     "id": "SPS-ØØX17-5",
+     "id_key": "SPS00X175"
+    },
+    {
+     "id": "SPS-ØØØY9-7",
+     "id_key": "SPS000Y97"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DAS-68416-4",
+     "id_key": "DAS684164"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "IND-ØØ41Ø-5",
+     "id_key": "IND004105"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "KM-ØØØH71-4",
+     "id_key": "KM000H714"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Mexico",
+   "declared_total": 191,
+   "events_parsed": 125,
+   "events": [
+    {
+     "id": "MON-ØØ1Ø1-8",
+     "id_key": "MON001018"
+    },
+    {
+     "id": "MON-ØØ163-7",
+     "id_key": "MON001637"
+    },
+    {
+     "id": "MON-ØØ179-5",
+     "id_key": "MON001795"
+    },
+    {
+     "id": "DP-Ø73496-4",
+     "id_key": "DP0734964"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "MON-ØØØ73-7",
+     "id_key": "MON000737"
+    },
+    {
+     "id": "ACS-BNØØ8-2",
+     "id_key": "ACSBN0082"
+    },
+    {
+     "id": "ACS-BNØØ7-1",
+     "id_key": "ACSBN0071"
+    },
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "ACS-BNØØ4-7",
+     "id_key": "ACSBN0047"
+    },
+    {
+     "id": "ACS-BNØØ1-4",
+     "id_key": "ACSBN0014"
+    },
+    {
+     "id": "DAS-24236-5",
+     "id_key": "DAS242365"
+    },
+    {
+     "id": "DAS-21Ø23-5",
+     "id_key": "DAS210235"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "DAS-8191-0",
+     "id_key": "DAS81910"
+    },
+    {
+     "id": "DAS-81910-7",
+     "id_key": "DAS819107"
+    },
+    {
+     "id": "BXN-1021-1",
+     "id_key": "BXN10211"
+    },
+    {
+     "id": "BXN-1Ø211-9",
+     "id_key": "BXN102119"
+    },
+    {
+     "id": "BXN-1021-5",
+     "id_key": "BXN10215"
+    },
+    {
+     "id": "BXN-1Ø215-4",
+     "id_key": "BXN102154"
+    },
+    {
+     "id": "BXN-1022-4",
+     "id_key": "BXN10224"
+    },
+    {
+     "id": "BXN-1Ø224-4",
+     "id_key": "BXN102244"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-8870-1",
+     "id_key": "MON88701"
+    },
+    {
+     "id": "MON-887Ø1-3",
+     "id_key": "MON887013"
+    },
+    {
+     "id": "SYN-IR67B-1",
+     "id_key": "SYNIR67B1"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "MON-169-8",
+     "id_key": "MON1698"
+    },
+    {
+     "id": "MON-89383-1",
+     "id_key": "MON893831"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "DP-ØØ4114-3",
+     "id_key": "DP0041143"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "DP-Ø9814Ø-6",
+     "id_key": "DP0981406"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "DP-411-4",
+     "id_key": "DP4114"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "REN-ØØØ38-3",
+     "id_key": "REN000383"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-8741-9",
+     "id_key": "MON87419"
+    },
+    {
+     "id": "MON-87419-8",
+     "id_key": "MON874198"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "SYN-ØØØJG-2",
+     "id_key": "SYN000JG2"
+    },
+    {
+     "id": "SYN-IR604-4",
+     "id_key": "SYNIR6044"
+    },
+    {
+     "id": "NMK-89367-8",
+     "id_key": "NMK893678"
+    },
+    {
+     "id": "NMK-89613-2",
+     "id_key": "NMK896132"
+    },
+    {
+     "id": "NMK-8917Ø-9",
+     "id_key": "NMK891709"
+    },
+    {
+     "id": "NMK-89279-1",
+     "id_key": "NMK892791"
+    },
+    {
+     "id": "NMK-89761-6",
+     "id_key": "NMK897616"
+    },
+    {
+     "id": "SPS-ØØE12-8",
+     "id_key": "SPS00E128"
+    },
+    {
+     "id": "SPS-ØØF10-7",
+     "id_key": "SPS00F107"
+    },
+    {
+     "id": "SPS-ØØØJ3-4",
+     "id_key": "SPS000J34"
+    },
+    {
+     "id": "NMK-89653-6",
+     "id_key": "NMK896536"
+    },
+    {
+     "id": "NMK-89684-1",
+     "id_key": "NMK896841"
+    },
+    {
+     "id": "NMK-89185-6",
+     "id_key": "NMK891856"
+    },
+    {
+     "id": "NMK-89896-6",
+     "id_key": "NMK898966"
+    },
+    {
+     "id": "NMK-89935-9",
+     "id_key": "NMK899359"
+    },
+    {
+     "id": "NMK-8993Ø-4",
+     "id_key": "NMK899304"
+    },
+    {
+     "id": "NMK-89576-1",
+     "id_key": "NMK895761"
+    },
+    {
+     "id": "NMK-89724-5",
+     "id_key": "NMK897245"
+    },
+    {
+     "id": "ACS-OSØØ2-5",
+     "id_key": "ACSOS0025"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DAS-68416-4",
+     "id_key": "DAS684164"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DAS-4440-6",
+     "id_key": "DAS44406"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "DP-35604-3",
+     "id_key": "DP356043"
+    },
+    {
+     "id": "DP-356Ø43-5",
+     "id_key": "DP3560435"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "KM-ØØØH71-4",
+     "id_key": "KM000H714"
+    },
+    {
+     "id": "SYN-ØØØØB-6",
+     "id_key": "SYN0000B6"
+    },
+    {
+     "id": "SYN-ØØØDA-9",
+     "id_key": "SYN000DA9"
+    },
+    {
+     "id": "SYN-ØØØØF-1",
+     "id_key": "SYN0000F1"
+    },
+    {
+     "id": "CGN-89564-2",
+     "id_key": "CGN895642"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Myanmar",
+   "declared_total": 1,
+   "events_parsed": 1,
+   "events": [
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "New Zealand",
+   "declared_total": 127,
+   "events_parsed": 161,
+   "events": [
+    {
+     "id": "MON-ØØ1Ø1-8",
+     "id_key": "MON001018"
+    },
+    {
+     "id": "MON-ØØ163-7",
+     "id_key": "MON001637"
+    },
+    {
+     "id": "MON-ØØ179-5",
+     "id_key": "MON001795"
+    },
+    {
+     "id": "DP-Ø73496-4",
+     "id_key": "DP0734964"
+    },
+    {
+     "id": "NS-B5ØØ27-4",
+     "id_key": "NSB500274"
+    },
+    {
+     "id": "MON-ØØØ73-7",
+     "id_key": "MON000737"
+    },
+    {
+     "id": "ACS-BNØØ8-2",
+     "id_key": "ACSBN0082"
+    },
+    {
+     "id": "ACS-BNØØ7-1",
+     "id_key": "ACSBN0071"
+    },
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "MON-9410-0",
+     "id_key": "MON94100"
+    },
+    {
+     "id": "MON-941ØØ-2",
+     "id_key": "MON941002"
+    },
+    {
+     "id": "ACS-BNØØ4-7",
+     "id_key": "ACSBN0047"
+    },
+    {
+     "id": "ACS-BNØØ1-4",
+     "id_key": "ACSBN0014"
+    },
+    {
+     "id": "ACS-BNØØ2-5",
+     "id_key": "ACSBN0025"
+    },
+    {
+     "id": "BCS-BNØ12-7",
+     "id_key": "BCSBN0127"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "ACS-BNØ11-5",
+     "id_key": "ACSBN0115"
+    },
+    {
+     "id": "DAS-24236-5",
+     "id_key": "DAS242365"
+    },
+    {
+     "id": "DAS-21Ø23-5",
+     "id_key": "DAS210235"
+    },
+    {
+     "id": "DAS-81910-7",
+     "id_key": "DAS819107"
+    },
+    {
+     "id": "BXN-1021-1",
+     "id_key": "BXN10211"
+    },
+    {
+     "id": "BXN-1Ø211-9",
+     "id_key": "BXN102119"
+    },
+    {
+     "id": "BXN-1022-2",
+     "id_key": "BXN10222"
+    },
+    {
+     "id": "BXN-1Ø222-2",
+     "id_key": "BXN102222"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "SYN-IR67B-1",
+     "id_key": "SYNIR67B1"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-107-6",
+     "id_key": "MON1076"
+    },
+    {
+     "id": "MON-89924-2",
+     "id_key": "MON899242"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "MON-ØØ757-7",
+     "id_key": "MON007577"
+    },
+    {
+     "id": "MON-8870-1",
+     "id_key": "MON88701"
+    },
+    {
+     "id": "MON-887Ø1-3",
+     "id_key": "MON887013"
+    },
+    {
+     "id": "MON-8870-2",
+     "id_key": "MON88702"
+    },
+    {
+     "id": "MON-887Ø2-4",
+     "id_key": "MON887024"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "DP-ØØ4114-3",
+     "id_key": "DP0041143"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "DP-Ø9814Ø-6",
+     "id_key": "DP0981406"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "SYN-EV176-9",
+     "id_key": "SYNEV1769"
+    },
+    {
+     "id": "DAS-113-1",
+     "id_key": "DAS1131"
+    },
+    {
+     "id": "DAS-Ø1131-3",
+     "id_key": "DAS011313"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "DKB-89614-9",
+     "id_key": "DKB896149"
+    },
+    {
+     "id": "DP-20221-6",
+     "id_key": "DP202216"
+    },
+    {
+     "id": "DP-2Ø2216-6",
+     "id_key": "DP2022166"
+    },
+    {
+     "id": "DP-2321-1",
+     "id_key": "DP23211"
+    },
+    {
+     "id": "DP-Ø23211-2",
+     "id_key": "DP0232112"
+    },
+    {
+     "id": "DP-5129-1",
+     "id_key": "DP51291"
+    },
+    {
+     "id": "DP-51291-2",
+     "id_key": "DP512912"
+    },
+    {
+     "id": "DP-91052-1",
+     "id_key": "DP910521"
+    },
+    {
+     "id": "DP-91Ø521-2",
+     "id_key": "DP9105212"
+    },
+    {
+     "id": "DP-91563-5",
+     "id_key": "DP915635"
+    },
+    {
+     "id": "DP-915635-4",
+     "id_key": "DP9156354"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "REN-ØØØ38-3",
+     "id_key": "REN000383"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8740-3",
+     "id_key": "MON87403"
+    },
+    {
+     "id": "MON-874Ø3-1",
+     "id_key": "MON874031"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-8741-9",
+     "id_key": "MON87419"
+    },
+    {
+     "id": "MON-87419-8",
+     "id_key": "MON874198"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8742-9",
+     "id_key": "MON87429"
+    },
+    {
+     "id": "MON-87429-9",
+     "id_key": "MON874299"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-9527-5",
+     "id_key": "MON95275"
+    },
+    {
+     "id": "MON-95275-7",
+     "id_key": "MON952757"
+    },
+    {
+     "id": "SYN-ØØØJG-2",
+     "id_key": "SYN000JG2"
+    },
+    {
+     "id": "SYN-ØØØ98-3",
+     "id_key": "SYN000983"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "NMK-8917Ø-9",
+     "id_key": "NMK891709"
+    },
+    {
+     "id": "NMK-89279-1",
+     "id_key": "NMK892791"
+    },
+    {
+     "id": "NMK-89761-6",
+     "id_key": "NMK897616"
+    },
+    {
+     "id": "NMK-89812-3",
+     "id_key": "NMK898123"
+    },
+    {
+     "id": "SPS-ØØE12-8",
+     "id_key": "SPS00E128"
+    },
+    {
+     "id": "SPS-ØØE56-7",
+     "id_key": "SPS00E567"
+    },
+    {
+     "id": "SPS-ØØF10-7",
+     "id_key": "SPS00F107"
+    },
+    {
+     "id": "SPS-ØØØZ6-5",
+     "id_key": "SPS000Z65"
+    },
+    {
+     "id": "SPS-ØØØJ3-4",
+     "id_key": "SPS000J34"
+    },
+    {
+     "id": "NMK-89653-6",
+     "id_key": "NMK896536"
+    },
+    {
+     "id": "NMK-89684-1",
+     "id_key": "NMK896841"
+    },
+    {
+     "id": "NMK-89185-6",
+     "id_key": "NMK891856"
+    },
+    {
+     "id": "NMK-89896-6",
+     "id_key": "NMK898966"
+    },
+    {
+     "id": "NMK-89935-9",
+     "id_key": "NMK899359"
+    },
+    {
+     "id": "NMK-8993Ø-4",
+     "id_key": "NMK899304"
+    },
+    {
+     "id": "NMK-89576-1",
+     "id_key": "NMK895761"
+    },
+    {
+     "id": "SPS-ØØØW8-4",
+     "id_key": "SPS000W84"
+    },
+    {
+     "id": "SPS-ØØX17-5",
+     "id_key": "SPS00X175"
+    },
+    {
+     "id": "SPS-ØØØY9-7",
+     "id_key": "SPS000Y97"
+    },
+    {
+     "id": "IR-00GR2E-5",
+     "id_key": "IR00GR2E5"
+    },
+    {
+     "id": "ACS-OSØØ2-5",
+     "id_key": "ACSOS0025"
+    },
+    {
+     "id": "DD-Ø26ØØ5-3",
+     "id_key": "DD0260053"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "COR-2313-4",
+     "id_key": "COR23134"
+    },
+    {
+     "id": "COR-23134-4",
+     "id_key": "COR231344"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DAS-68416-4",
+     "id_key": "DAS684164"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "DP-35604-3",
+     "id_key": "DP356043"
+    },
+    {
+     "id": "DP-356Ø43-5",
+     "id_key": "DP3560435"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "MON-9431-3",
+     "id_key": "MON94313"
+    },
+    {
+     "id": "MON-94313-8",
+     "id_key": "MON943138"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "SY-GTSB77-8",
+     "id_key": "SYGTSB778"
+    },
+    {
+     "id": "KM-ØØØH71-4",
+     "id_key": "KM000H714"
+    },
+    {
+     "id": "KB-KWS2Ø1-6",
+     "id_key": "KBKWS2016"
+    },
+    {
+     "id": "IND-ØØ412-7",
+     "id_key": "IND004127"
+    },
+    {
+     "id": "MON-7180-0",
+     "id_key": "MON71800"
+    },
+    {
+     "id": "MON-718ØØ-3",
+     "id_key": "MON718003"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Nigeria",
+   "declared_total": 33,
+   "events_parsed": 42,
+   "events": [
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "AAT-7Ø9AA-4",
+     "id_key": "AAT709AA4"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "DP-35604-3",
+     "id_key": "DP356043"
+    },
+    {
+     "id": "DP-356Ø43-5",
+     "id_key": "DP3560435"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "IND-ØØ412-7",
+     "id_key": "IND004127"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Norway",
+   "declared_total": 12,
+   "events_parsed": 15,
+   "events": [
+    {
+     "id": "FLO-Ø7442-4",
+     "id_key": "FL0074424"
+    },
+    {
+     "id": "FLO-11363-1",
+     "id_key": "FL0113631"
+    },
+    {
+     "id": "FLO-11226-8",
+     "id_key": "FL0112268"
+    },
+    {
+     "id": "FLO-11351-7",
+     "id_key": "FL0113517"
+    },
+    {
+     "id": "FLO-114ØØ-2",
+     "id_key": "FL0114002"
+    },
+    {
+     "id": "FLO-ØØØ15-2",
+     "id_key": "FL0000152"
+    },
+    {
+     "id": "FLO-ØØØ16-3",
+     "id_key": "FL0000163"
+    },
+    {
+     "id": "FLO-ØØØØ4-9",
+     "id_key": "FL0000049"
+    },
+    {
+     "id": "FLO-ØØØ66-8",
+     "id_key": "FL0000668"
+    },
+    {
+     "id": "FLO-11959-3",
+     "id_key": "FL0119593"
+    },
+    {
+     "id": "FLO-11988-7",
+     "id_key": "FL0119887"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Pakistan",
+   "declared_total": 53,
+   "events_parsed": 29,
+   "events": [
+    {
+     "id": "CGN-89111-8",
+     "id_key": "CGN891118"
+    },
+    {
+     "id": "CGN-89465-2",
+     "id_key": "CGN894652"
+    },
+    {
+     "id": "DP-Ø61Ø61-7",
+     "id_key": "DP0610617"
+    },
+    {
+     "id": "DP-Ø73496-4",
+     "id_key": "DP0734964"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "NS-B5ØØ27-4",
+     "id_key": "NSB500274"
+    },
+    {
+     "id": "MON-89249-2",
+     "id_key": "MON892492"
+    },
+    {
+     "id": "MON-ØØØ73-7",
+     "id_key": "MON000737"
+    },
+    {
+     "id": "ACS-BNØØ8-2",
+     "id_key": "ACSBN0082"
+    },
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "BPS-BFLFK-2",
+     "id_key": "BPSBFLFK2"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "MON-9410-0",
+     "id_key": "MON94100"
+    },
+    {
+     "id": "MON-941ØØ-2",
+     "id_key": "MON941002"
+    },
+    {
+     "id": "ACS-BNØØ4-7",
+     "id_key": "ACSBN0047"
+    },
+    {
+     "id": "ACS-BNØØ1-4",
+     "id_key": "ACSBN0014"
+    },
+    {
+     "id": "ACS-BNØØ2-5",
+     "id_key": "ACSBN0025"
+    },
+    {
+     "id": "BCS-BNØ12-7",
+     "id_key": "BCSBN0127"
+    },
+    {
+     "id": "ACS-BNØ11-5",
+     "id_key": "ACSBN0115"
+    },
+    {
+     "id": "GTL-GFM311-7",
+     "id_key": "GTLGFM3117"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Panama",
+   "declared_total": 1,
+   "events_parsed": 3,
+   "events": [
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Paraguay",
+   "declared_total": 50,
+   "events_parsed": 54,
+   "events": [
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "MON-9537-9",
+     "id_key": "MON95379"
+    },
+    {
+     "id": "MON-95379-3",
+     "id_key": "MON953793"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DAS-4440-6",
+     "id_key": "DAS44406"
+    },
+    {
+     "id": "DAS-444Ø6-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "IND-ØØ41Ø-5",
+     "id_key": "IND004105"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-9463-7",
+     "id_key": "MON94637"
+    },
+    {
+     "id": "MON-94637-8",
+     "id_key": "MON946378"
+    },
+    {
+     "id": "IND-ØØ412-7",
+     "id_key": "IND004127"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Philippines",
+   "declared_total": 141,
+   "events_parsed": 112,
+   "events": [
+    {
+     "id": "MON-ØØ1Ø1-8",
+     "id_key": "MON001018"
+    },
+    {
+     "id": "MON-ØØ163-7",
+     "id_key": "MON001637"
+    },
+    {
+     "id": "MON-ØØ179-5",
+     "id_key": "MON001795"
+    },
+    {
+     "id": "DP-Ø73496-4",
+     "id_key": "DP0734964"
+    },
+    {
+     "id": "MON-ØØØ73-7",
+     "id_key": "MON000737"
+    },
+    {
+     "id": "BPS-BFLFK-2",
+     "id_key": "BPSBFLFK2"
+    },
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "MON-9410-0",
+     "id_key": "MON94100"
+    },
+    {
+     "id": "MON-941ØØ-2",
+     "id_key": "MON941002"
+    },
+    {
+     "id": "BCS-BNØ12-7",
+     "id_key": "BCSBN0127"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "GTL-GFM311-7",
+     "id_key": "GTLGFM3117"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "MON-8870-1",
+     "id_key": "MON88701"
+    },
+    {
+     "id": "MON-887Ø1-3",
+     "id_key": "MON887013"
+    },
+    {
+     "id": "MON-8870-2",
+     "id_key": "MON88702"
+    },
+    {
+     "id": "MON-887Ø2-4",
+     "id_key": "MON887024"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "SYN-EV176-9",
+     "id_key": "SYNEV1769"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "DKB-89614-9",
+     "id_key": "DKB896149"
+    },
+    {
+     "id": "DKB-8979Ø-5",
+     "id_key": "DKB897905"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-8741-9",
+     "id_key": "MON87419"
+    },
+    {
+     "id": "MON-87419-8",
+     "id_key": "MON874198"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8742-9",
+     "id_key": "MON87429"
+    },
+    {
+     "id": "MON-87429-9",
+     "id_key": "MON874299"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-9537-9",
+     "id_key": "MON95379"
+    },
+    {
+     "id": "MON-95379-3",
+     "id_key": "MON953793"
+    },
+    {
+     "id": "SYN-ØØØJG-2",
+     "id_key": "SYN000JG2"
+    },
+    {
+     "id": "SYN-ØØØ98-3",
+     "id_key": "SYN000983"
+    },
+    {
+     "id": "NMK-89812-3",
+     "id_key": "NMK898123"
+    },
+    {
+     "id": "SPS-ØØE12-8",
+     "id_key": "SPS00E128"
+    },
+    {
+     "id": "NMK-89653-6",
+     "id_key": "NMK896536"
+    },
+    {
+     "id": "NMK-89684-1",
+     "id_key": "NMK896841"
+    },
+    {
+     "id": "NMK-89185-6",
+     "id_key": "NMK891856"
+    },
+    {
+     "id": "NMK-89896-6",
+     "id_key": "NMK898966"
+    },
+    {
+     "id": "NMK-89935-9",
+     "id_key": "NMK899359"
+    },
+    {
+     "id": "NMK-8993Ø-4",
+     "id_key": "NMK899304"
+    },
+    {
+     "id": "NMK-89576-1",
+     "id_key": "NMK895761"
+    },
+    {
+     "id": "SPS-ØØX17-5",
+     "id_key": "SPS00X175"
+    },
+    {
+     "id": "SPS-ØØØY9-7",
+     "id_key": "SPS000Y97"
+    },
+    {
+     "id": "IR-00GR2E-5",
+     "id_key": "IR00GR2E5"
+    },
+    {
+     "id": "ACS-OSØØ2-5",
+     "id_key": "ACSOS0025"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DAS-68416-4",
+     "id_key": "DAS684164"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DAS-4440-6",
+     "id_key": "DAS44406"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "DP-35604-3",
+     "id_key": "DP356043"
+    },
+    {
+     "id": "DP-356Ø43-5",
+     "id_key": "DP3560435"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "KM-ØØØH71-4",
+     "id_key": "KM000H714"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Republic of Korea",
+   "declared_total": 201,
+   "events_parsed": 133,
+   "events": [
+    {
+     "id": "MON-ØØ1Ø1-8",
+     "id_key": "MON001018"
+    },
+    {
+     "id": "MON-ØØ163-7",
+     "id_key": "MON001637"
+    },
+    {
+     "id": "MON-ØØ179-5",
+     "id_key": "MON001795"
+    },
+    {
+     "id": "DP-Ø73496-4",
+     "id_key": "DP0734964"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "MON-ØØØ73-7",
+     "id_key": "MON000737"
+    },
+    {
+     "id": "ACS-BNØØ8-2",
+     "id_key": "ACSBN0082"
+    },
+    {
+     "id": "ACS-BNØØ7-1",
+     "id_key": "ACSBN0071"
+    },
+    {
+     "id": "BPS-BFLFK-2",
+     "id_key": "BPSBFLFK2"
+    },
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "MON-9410-0",
+     "id_key": "MON94100"
+    },
+    {
+     "id": "MON-941ØØ-2",
+     "id_key": "MON941002"
+    },
+    {
+     "id": "ACS-BNØØ4-7",
+     "id_key": "ACSBN0047"
+    },
+    {
+     "id": "ACS-BNØØ1-4",
+     "id_key": "ACSBN0014"
+    },
+    {
+     "id": "ACS-BNØØ2-5",
+     "id_key": "ACSBN0025"
+    },
+    {
+     "id": "BCS-BNØ12-7",
+     "id_key": "BCSBN0127"
+    },
+    {
+     "id": "DAS-24236-5",
+     "id_key": "DAS242365"
+    },
+    {
+     "id": "DAS-21Ø23-5",
+     "id_key": "DAS210235"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "DAS-81910-7",
+     "id_key": "DAS819107"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "DAS-8191-0",
+     "id_key": "DAS81910"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-8870-1",
+     "id_key": "MON88701"
+    },
+    {
+     "id": "MON-887Ø1-3",
+     "id_key": "MON887013"
+    },
+    {
+     "id": "SYN-IR67B-1",
+     "id_key": "SYNIR67B1"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "BCS-GHB811-4",
+     "id_key": "BCSGHB8114"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "MON-ØØ757-7",
+     "id_key": "MON007577"
+    },
+    {
+     "id": "MON-8870-2",
+     "id_key": "MON88702"
+    },
+    {
+     "id": "MON-887Ø2-4",
+     "id_key": "MON887024"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "DP-ØØ4114-3",
+     "id_key": "DP0041143"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "DP-Ø9814Ø-6",
+     "id_key": "DP0981406"
+    },
+    {
+     "id": "DP-411-4",
+     "id_key": "DP4114"
+    },
+    {
+     "id": "SYN-ØØØ98-3",
+     "id_key": "SYN000983"
+    },
+    {
+     "id": "MON-ØØ6Ø3-7",
+     "id_key": "MON006037"
+    },
+    {
+     "id": "SYN-EV176-9",
+     "id_key": "SYNEV1769"
+    },
+    {
+     "id": "DKB-89614-9",
+     "id_key": "DKB896149"
+    },
+    {
+     "id": "DKB-8979Ø-5",
+     "id_key": "DKB897905"
+    },
+    {
+     "id": "DP-20221-6",
+     "id_key": "DP202216"
+    },
+    {
+     "id": "DP-2Ø2216-6",
+     "id_key": "DP2022166"
+    },
+    {
+     "id": "DP-2321-1",
+     "id_key": "DP23211"
+    },
+    {
+     "id": "DP-Ø23211-2",
+     "id_key": "DP0232112"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "DP-91563-5",
+     "id_key": "DP915635"
+    },
+    {
+     "id": "DP-915635-4",
+     "id_key": "DP9156354"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8740-3",
+     "id_key": "MON87403"
+    },
+    {
+     "id": "MON-874Ø3-1",
+     "id_key": "MON874031"
+    },
+    {
+     "id": "MON-8741-9",
+     "id_key": "MON87419"
+    },
+    {
+     "id": "MON-87419-8",
+     "id_key": "MON874198"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-8742-9",
+     "id_key": "MON87429"
+    },
+    {
+     "id": "MON-87429-9",
+     "id_key": "MON874299"
+    },
+    {
+     "id": "MON-9537-9",
+     "id_key": "MON95379"
+    },
+    {
+     "id": "MON-95379-3",
+     "id_key": "MON953793"
+    },
+    {
+     "id": "SYN-ØØØJG-2",
+     "id_key": "SYN000JG2"
+    },
+    {
+     "id": "SYN-IR604-4",
+     "id_key": "SYNIR6044"
+    },
+    {
+     "id": "VCO-01981-5",
+     "id_key": "VC0019815"
+    },
+    {
+     "id": "NMK-89812-3",
+     "id_key": "NMK898123"
+    },
+    {
+     "id": "NMK-89653-6",
+     "id_key": "NMK896536"
+    },
+    {
+     "id": "NMK-89684-1",
+     "id_key": "NMK896841"
+    },
+    {
+     "id": "NMK-89185-6",
+     "id_key": "NMK891856"
+    },
+    {
+     "id": "NMK-89896-6",
+     "id_key": "NMK898966"
+    },
+    {
+     "id": "NMK-89935-9",
+     "id_key": "NMK899359"
+    },
+    {
+     "id": "NMK-8993Ø-4",
+     "id_key": "NMK899304"
+    },
+    {
+     "id": "NMK-89576-1",
+     "id_key": "NMK895761"
+    },
+    {
+     "id": "SPS-ØØØY9-7",
+     "id_key": "SPS000Y97"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DAS-68416-4",
+     "id_key": "DAS684164"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DAS-4440-6",
+     "id_key": "DAS44406"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "DP-35604-3",
+     "id_key": "DP356043"
+    },
+    {
+     "id": "DP-356Ø43-5",
+     "id_key": "DP3560435"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "KM-ØØØH71-4",
+     "id_key": "KM000H714"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Russia",
+   "declared_total": 28,
+   "events_parsed": 36,
+   "events": [
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "SYN-ØØØJG-2",
+     "id_key": "SYN000JG2"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "ACS-OSØØ2-5",
+     "id_key": "ACSOS0025"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "KM-ØØØH71-4",
+     "id_key": "KM000H714"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Singapore",
+   "declared_total": 104,
+   "events_parsed": 93,
+   "events": [
+    {
+     "id": "MON-ØØ1Ø1-8",
+     "id_key": "MON001018"
+    },
+    {
+     "id": "MON-ØØ163-7",
+     "id_key": "MON001637"
+    },
+    {
+     "id": "MON-ØØ179-5",
+     "id_key": "MON001795"
+    },
+    {
+     "id": "MON-ØØØ73-7",
+     "id_key": "MON000737"
+    },
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "BCS-BNØ12-7",
+     "id_key": "BCSBN0127"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "BCS-GHB811-4",
+     "id_key": "BCSGHB8114"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "MON-8870-1",
+     "id_key": "MON88701"
+    },
+    {
+     "id": "MON-887Ø1-3",
+     "id_key": "MON887013"
+    },
+    {
+     "id": "MON-8870-2",
+     "id_key": "MON88702"
+    },
+    {
+     "id": "MON-887Ø2-4",
+     "id_key": "MON887024"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-8741-9",
+     "id_key": "MON87419"
+    },
+    {
+     "id": "MON-87419-8",
+     "id_key": "MON874198"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "MON-8742-9",
+     "id_key": "MON87429"
+    },
+    {
+     "id": "MON-87429-9",
+     "id_key": "MON874299"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-9537-9",
+     "id_key": "MON95379"
+    },
+    {
+     "id": "MON-95379-3",
+     "id_key": "MON953793"
+    },
+    {
+     "id": "SYN-ØØØJG-2",
+     "id_key": "SYN000JG2"
+    },
+    {
+     "id": "SYN-ØØØ98-3",
+     "id_key": "SYN000983"
+    },
+    {
+     "id": "SPS-ØØE12-8",
+     "id_key": "SPS00E128"
+    },
+    {
+     "id": "SPS-ØØX17-5",
+     "id_key": "SPS00X175"
+    },
+    {
+     "id": "SPS-ØØØY9-7",
+     "id_key": "SPS000Y97"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "DP-35604-3",
+     "id_key": "DP356043"
+    },
+    {
+     "id": "DP-356Ø43-5",
+     "id_key": "DP3560435"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "KM-ØØØH71-4",
+     "id_key": "KM000H714"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "South Africa",
+   "declared_total": 83,
+   "events_parsed": 71,
+   "events": [
+    {
+     "id": "DP-Ø73496-4",
+     "id_key": "DP0734964"
+    },
+    {
+     "id": "ACS-BNØØ7-1",
+     "id_key": "ACSBN0071"
+    },
+    {
+     "id": "ACS-BNØØ4-7",
+     "id_key": "ACSBN0047"
+    },
+    {
+     "id": "ACS-BNØØ1-4",
+     "id_key": "ACSBN0014"
+    },
+    {
+     "id": "ACS-BNØØ2-5",
+     "id_key": "ACSBN0025"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "MON-107-6",
+     "id_key": "MON1076"
+    },
+    {
+     "id": "MON-89924-2",
+     "id_key": "MON899242"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-169-8",
+     "id_key": "MON1698"
+    },
+    {
+     "id": "MON-89383-1",
+     "id_key": "MON893831"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "MON-ØØ757-7",
+     "id_key": "MON007577"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "DP-ØØ4114-3",
+     "id_key": "DP0041143"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "SYN-EV176-9",
+     "id_key": "SYNEV1769"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "ACS-ZMØØ2-1",
+     "id_key": "ACSZM0021"
+    },
+    {
+     "id": "ACS-OSØØ2-5",
+     "id_key": "ACSOS0025"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ4-2",
+     "id_key": "ACSGM0042"
+    },
+    {
+     "id": "ACS-GMØØ8-6",
+     "id_key": "ACSGM0086"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-4440-6",
+     "id_key": "DAS44406"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "DP-35604-3",
+     "id_key": "DP356043"
+    },
+    {
+     "id": "DP-356Ø43-5",
+     "id_key": "DP3560435"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Sudan",
+   "declared_total": 1,
+   "events_parsed": 2,
+   "events": [
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Switzerland",
+   "declared_total": 51,
+   "events_parsed": 58,
+   "events": [
+    {
+     "id": "BCS-BNØ12-7",
+     "id_key": "BCSBN0127"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "MON-ØØØ73-7",
+     "id_key": "MON000737"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "SYN-EV176-9",
+     "id_key": "SYNEV1769"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-8740-3",
+     "id_key": "MON87403"
+    },
+    {
+     "id": "MON-874Ø3-1",
+     "id_key": "MON874031"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "SYN-ØØØ98-3",
+     "id_key": "SYN000983"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Taiwan",
+   "declared_total": 171,
+   "events_parsed": 116,
+   "events": [
+    {
+     "id": "DP-Ø73496-4",
+     "id_key": "DP0734964"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "MON-ØØØ73-7",
+     "id_key": "MON000737"
+    },
+    {
+     "id": "BPS-BFLFK-2",
+     "id_key": "BPSBFLFK2"
+    },
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "MON-9410-0",
+     "id_key": "MON94100"
+    },
+    {
+     "id": "MON-941ØØ-2",
+     "id_key": "MON941002"
+    },
+    {
+     "id": "BCS-BNØ12-7",
+     "id_key": "BCSBN0127"
+    },
+    {
+     "id": "DAS-24236-5",
+     "id_key": "DAS242365"
+    },
+    {
+     "id": "DAS-21Ø23-5",
+     "id_key": "DAS210235"
+    },
+    {
+     "id": "DAS-81910-7",
+     "id_key": "DAS819107"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "MON-8870-1",
+     "id_key": "MON88701"
+    },
+    {
+     "id": "MON-887Ø1-3",
+     "id_key": "MON887013"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "BCS-GHB811-4",
+     "id_key": "BCSGHB8114"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-1594-7",
+     "id_key": "MON15947"
+    },
+    {
+     "id": "MON-15947-5",
+     "id_key": "MON159475"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "MON-8870-2",
+     "id_key": "MON88702"
+    },
+    {
+     "id": "MON-887Ø2-4",
+     "id_key": "MON887024"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "DP-ØØ4114-3",
+     "id_key": "DP0041143"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "SYN-EV176-9",
+     "id_key": "SYNEV1769"
+    },
+    {
+     "id": "DAS-113-1",
+     "id_key": "DAS1131"
+    },
+    {
+     "id": "DAS-Ø1131-3",
+     "id_key": "DAS011313"
+    },
+    {
+     "id": "DKB-89614-9",
+     "id_key": "DKB896149"
+    },
+    {
+     "id": "DKB-8979Ø-5",
+     "id_key": "DKB897905"
+    },
+    {
+     "id": "DP-20221-6",
+     "id_key": "DP202216"
+    },
+    {
+     "id": "DP-2Ø2216-6",
+     "id_key": "DP2022166"
+    },
+    {
+     "id": "DP-91052-1",
+     "id_key": "DP910521"
+    },
+    {
+     "id": "DP-91Ø521-2",
+     "id_key": "DP9105212"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "REN-ØØØ38-3",
+     "id_key": "REN000383"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8740-3",
+     "id_key": "MON87403"
+    },
+    {
+     "id": "MON-874Ø3-1",
+     "id_key": "MON874031"
+    },
+    {
+     "id": "MON-8741-9",
+     "id_key": "MON87419"
+    },
+    {
+     "id": "MON-87419-8",
+     "id_key": "MON874198"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-8742-9",
+     "id_key": "MON87429"
+    },
+    {
+     "id": "MON-87429-9",
+     "id_key": "MON874299"
+    },
+    {
+     "id": "MON-9527-5",
+     "id_key": "MON95275"
+    },
+    {
+     "id": "MON-95275-7",
+     "id_key": "MON952757"
+    },
+    {
+     "id": "MON-9537-9",
+     "id_key": "MON95379"
+    },
+    {
+     "id": "MON-95379-3",
+     "id_key": "MON953793"
+    },
+    {
+     "id": "SYN-ØØØJG-2",
+     "id_key": "SYN000JG2"
+    },
+    {
+     "id": "SYN-ØØØ98-3",
+     "id_key": "SYN000983"
+    },
+    {
+     "id": "SYN-IR604-4",
+     "id_key": "SYNIR6044"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DAS-68416-4",
+     "id_key": "DAS684164"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DAS-4440-6",
+     "id_key": "DAS44406"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "DP-35604-3",
+     "id_key": "DP356043"
+    },
+    {
+     "id": "DP-356Ø43-5",
+     "id_key": "DP3560435"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "MON-9431-3",
+     "id_key": "MON94313"
+    },
+    {
+     "id": "MON-94313-8",
+     "id_key": "MON943138"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "KM-ØØØH71-4",
+     "id_key": "KM000H714"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Thailand",
+   "declared_total": 53,
+   "events_parsed": 43,
+   "events": [
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "REN-ØØØ38-3",
+     "id_key": "REN000383"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "SYN-ØØØJG-2",
+     "id_key": "SYN000JG2"
+    },
+    {
+     "id": "SYN-ØØØ98-3",
+     "id_key": "SYN000983"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DAS-4440-6",
+     "id_key": "DAS44406"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Turkey",
+   "declared_total": 41,
+   "events_parsed": 42,
+   "events": [
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "DP-35604-3",
+     "id_key": "DP356043"
+    },
+    {
+     "id": "DP-356Ø43-5",
+     "id_key": "DP3560435"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "United States",
+   "declared_total": 226,
+   "events_parsed": 236,
+   "events": [
+    {
+     "id": "MON-ØØ1Ø1-8",
+     "id_key": "MON001018"
+    },
+    {
+     "id": "MON-ØØ163-7",
+     "id_key": "MON001637"
+    },
+    {
+     "id": "MON-ØØ179-5",
+     "id_key": "MON001795"
+    },
+    {
+     "id": "OKA-NBØØ1-8",
+     "id_key": "OKANB0018"
+    },
+    {
+     "id": "OKA-NBØØ2-9",
+     "id_key": "OKANB0029"
+    },
+    {
+     "id": "OKA-NBØØ3-1",
+     "id_key": "OKANB0031"
+    },
+    {
+     "id": "CGN-89111-8",
+     "id_key": "CGN891118"
+    },
+    {
+     "id": "CGN-89465-2",
+     "id_key": "CGN894652"
+    },
+    {
+     "id": "DP-Ø73496-4",
+     "id_key": "DP0734964"
+    },
+    {
+     "id": "NS-B5ØØ27-4",
+     "id_key": "NSB500274"
+    },
+    {
+     "id": "MON-89249-2",
+     "id_key": "MON892492"
+    },
+    {
+     "id": "MON-ØØØ73-7",
+     "id_key": "MON000737"
+    },
+    {
+     "id": "ACS-BNØØ8-2",
+     "id_key": "ACSBN0082"
+    },
+    {
+     "id": "ACS-BNØØ7-1",
+     "id_key": "ACSBN0071"
+    },
+    {
+     "id": "BPS-BFLFK-2",
+     "id_key": "BPSBFLFK2"
+    },
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "MON-9410-0",
+     "id_key": "MON94100"
+    },
+    {
+     "id": "MON-941ØØ-2",
+     "id_key": "MON941002"
+    },
+    {
+     "id": "ACS-BNØØ4-7",
+     "id_key": "ACSBN0047"
+    },
+    {
+     "id": "BCS-BNØ12-7",
+     "id_key": "BCSBN0127"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "ACS-BNØ11-5",
+     "id_key": "ACSBN0115"
+    },
+    {
+     "id": "ACS-BNØØ1-4",
+     "id_key": "ACSBN0014"
+    },
+    {
+     "id": "ACS-BNØØ2-5",
+     "id_key": "ACSBN0025"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "DD-Ø1951A-7",
+     "id_key": "DD01951A7"
+    },
+    {
+     "id": "DAS-24236-5",
+     "id_key": "DAS242365"
+    },
+    {
+     "id": "DAS-21Ø23-5",
+     "id_key": "DAS210235"
+    },
+    {
+     "id": "DAS-81910-7",
+     "id_key": "DAS819107"
+    },
+    {
+     "id": "BXN-1021-1",
+     "id_key": "BXN10211"
+    },
+    {
+     "id": "BXN-1Ø211-9",
+     "id_key": "BXN102119"
+    },
+    {
+     "id": "BXN-1021-5",
+     "id_key": "BXN10215"
+    },
+    {
+     "id": "BXN-1Ø215-4",
+     "id_key": "BXN102154"
+    },
+    {
+     "id": "BXN-1022-2",
+     "id_key": "BXN10222"
+    },
+    {
+     "id": "BXN-1Ø222-2",
+     "id_key": "BXN102222"
+    },
+    {
+     "id": "BXN-1022-4",
+     "id_key": "BXN10224"
+    },
+    {
+     "id": "BXN-1Ø224-4",
+     "id_key": "BXN102244"
+    },
+    {
+     "id": "SYN-IR1Ø2-7",
+     "id_key": "SYNIR1027"
+    },
+    {
+     "id": "SYN-IR67B-1",
+     "id_key": "SYNIR67B1"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "BCS-GH811-4",
+     "id_key": "BCSGH8114"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "MON-107-6",
+     "id_key": "MON1076"
+    },
+    {
+     "id": "MON-89924-2",
+     "id_key": "MON899242"
+    },
+    {
+     "id": "MON-144-5",
+     "id_key": "MON1445"
+    },
+    {
+     "id": "MON-Ø1445-2",
+     "id_key": "MON014452"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-169-8",
+     "id_key": "MON1698"
+    },
+    {
+     "id": "MON-89383-1",
+     "id_key": "MON893831"
+    },
+    {
+     "id": "MON-ØØ531-6",
+     "id_key": "MON005316"
+    },
+    {
+     "id": "MON-ØØ757-7",
+     "id_key": "MON007577"
+    },
+    {
+     "id": "MON-8870-1",
+     "id_key": "MON88701"
+    },
+    {
+     "id": "MON-887Ø1-3",
+     "id_key": "MON887013"
+    },
+    {
+     "id": "MON-8870-2",
+     "id_key": "MON88702"
+    },
+    {
+     "id": "MON-887Ø2-4",
+     "id_key": "MON887024"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "BCS-GHØØ3-6",
+     "id_key": "BCSGH0036"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "TAM-6627-4",
+     "id_key": "TAM66274"
+    },
+    {
+     "id": "TAM-66274-5",
+     "id_key": "TAM662745"
+    },
+    {
+     "id": "SMG-368ØØ-2",
+     "id_key": "SMG368002"
+    },
+    {
+     "id": "CDC-FLØØ1-2",
+     "id_key": "CDCFL0012"
+    },
+    {
+     "id": "DP-32138-1",
+     "id_key": "DP321381"
+    },
+    {
+     "id": "SYN-E3272-5",
+     "id_key": "SYNE32725"
+    },
+    {
+     "id": "DP-ØØ4114-3",
+     "id_key": "DP0041143"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "DAS-59122-7",
+     "id_key": "DAS591227"
+    },
+    {
+     "id": "PH-ØØØ676-7",
+     "id_key": "PH0006767"
+    },
+    {
+     "id": "PH-ØØØ678-9",
+     "id_key": "PH0006789"
+    },
+    {
+     "id": "PH-ØØØ68Ø-2",
+     "id_key": "PH0006802"
+    },
+    {
+     "id": "DP-Ø9814Ø-6",
+     "id_key": "DP0981406"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "SYN-EV176-9",
+     "id_key": "SYNEV1769"
+    },
+    {
+     "id": "ACS-ZMØØ4-3",
+     "id_key": "ACSZM0043"
+    },
+    {
+     "id": "DAS-4027-8",
+     "id_key": "DAS40278"
+    },
+    {
+     "id": "DAS-4Ø278-9",
+     "id_key": "DAS402789"
+    },
+    {
+     "id": "DBN-985-8",
+     "id_key": "DBN9858"
+    },
+    {
+     "id": "DBN-Ø9858-5",
+     "id_key": "DBN098585"
+    },
+    {
+     "id": "DBN-993-6",
+     "id_key": "DBN9936"
+    },
+    {
+     "id": "DBN-Ø9936-2",
+     "id_key": "DBN099362"
+    },
+    {
+     "id": "DKB-89614-9",
+     "id_key": "DKB896149"
+    },
+    {
+     "id": "DKB-8979Ø-5",
+     "id_key": "DKB897905"
+    },
+    {
+     "id": "DP-20221-6",
+     "id_key": "DP202216"
+    },
+    {
+     "id": "DP-2Ø2216-6",
+     "id_key": "DP2022166"
+    },
+    {
+     "id": "DP-5129-1",
+     "id_key": "DP51291"
+    },
+    {
+     "id": "DP-51291-2",
+     "id_key": "DP512912"
+    },
+    {
+     "id": "DP-91563-5",
+     "id_key": "DP915635"
+    },
+    {
+     "id": "DP-915635-4",
+     "id_key": "DP9156354"
+    },
+    {
+     "id": "EH-BRS913-2",
+     "id_key": "EHBRS9132"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "REN-ØØØ38-3",
+     "id_key": "REN000383"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-8010-0",
+     "id_key": "MON80100"
+    },
+    {
+     "id": "MON-8Ø2ØØ-7",
+     "id_key": "MON802007"
+    },
+    {
+     "id": "MON-8Ø9-2",
+     "id_key": "MON8092"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-ØØ863-5",
+     "id_key": "MON008635"
+    },
+    {
+     "id": "MON-8740-3",
+     "id_key": "MON87403"
+    },
+    {
+     "id": "MON-874Ø3-1",
+     "id_key": "MON874031"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-8741-9",
+     "id_key": "MON87419"
+    },
+    {
+     "id": "MON-87419-8",
+     "id_key": "MON874198"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8742-9",
+     "id_key": "MON87429"
+    },
+    {
+     "id": "MON-87429-9",
+     "id_key": "MON874299"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "ACS-ZMØØ1-9",
+     "id_key": "ACSZM0019"
+    },
+    {
+     "id": "ACS-ZMØØ5-4",
+     "id_key": "ACSZM0054"
+    },
+    {
+     "id": "SYN-ØØØJG-2",
+     "id_key": "SYN000JG2"
+    },
+    {
+     "id": "SYN-ØØØ98-3",
+     "id_key": "SYN000983"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "AGV-PY2Ø3-4",
+     "id_key": "AGVPY2034"
+    },
+    {
+     "id": "ACS-ZMØØ2-1",
+     "id_key": "ACSZM0021"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "TC-627-5",
+     "id_key": "TC6275"
+    },
+    {
+     "id": "DAS-Ø6275-8",
+     "id_key": "DAS062758"
+    },
+    {
+     "id": "VCO-01981-5",
+     "id_key": "VC0019815"
+    },
+    {
+     "id": "CUH-CP551-8",
+     "id_key": "CUHCP5518"
+    },
+    {
+     "id": "CUH-CP631-7",
+     "id_key": "CUHCP6317"
+    },
+    {
+     "id": "UFL-X17CP-6",
+     "id_key": "UFLX17CP6"
+    },
+    {
+     "id": "FDP-ØØ114-5",
+     "id_key": "FDP001145"
+    },
+    {
+     "id": "ARS-PLMC5-6",
+     "id_key": "ARSPLMC56"
+    },
+    {
+     "id": "BPS-A1Ø2Ø-5",
+     "id_key": "BPSA10205"
+    },
+    {
+     "id": "NMK-89367-8",
+     "id_key": "NMK893678"
+    },
+    {
+     "id": "NMK-89613-2",
+     "id_key": "NMK896132"
+    },
+    {
+     "id": "NMK-8917Ø-9",
+     "id_key": "NMK891709"
+    },
+    {
+     "id": "NMK-89279-1",
+     "id_key": "NMK892791"
+    },
+    {
+     "id": "NMK-89761-6",
+     "id_key": "NMK897616"
+    },
+    {
+     "id": "NMK-89812-3",
+     "id_key": "NMK898123"
+    },
+    {
+     "id": "NMK-89175-5",
+     "id_key": "NMK891755"
+    },
+    {
+     "id": "NMK-896Ø1-8",
+     "id_key": "NMK896018"
+    },
+    {
+     "id": "NMK-89167-6",
+     "id_key": "NMK891676"
+    },
+    {
+     "id": "NMK-89593-9",
+     "id_key": "NMK895939"
+    },
+    {
+     "id": "NMK-899Ø6-7",
+     "id_key": "NMK899067"
+    },
+    {
+     "id": "NMK-89675-1",
+     "id_key": "NMK896751"
+    },
+    {
+     "id": "SPS-ØØE12-8",
+     "id_key": "SPS00E128"
+    },
+    {
+     "id": "SPS-ØØE24-2",
+     "id_key": "SPS00E242"
+    },
+    {
+     "id": "SPS-ØØF10-7",
+     "id_key": "SPS00F107"
+    },
+    {
+     "id": "SPS-ØØF37-7",
+     "id_key": "SPS00F377"
+    },
+    {
+     "id": "SPS-ØØG11-9",
+     "id_key": "SPS00G119"
+    },
+    {
+     "id": "SPS-ØØØZ6-5",
+     "id_key": "SPS000Z65"
+    },
+    {
+     "id": "SPS-ØØH37-9",
+     "id_key": "SPS00H379"
+    },
+    {
+     "id": "SPS-ØØH50-4",
+     "id_key": "SPS00H504"
+    },
+    {
+     "id": "SPS-ØØØJ3-4",
+     "id_key": "SPS000J34"
+    },
+    {
+     "id": "SPS-ØØJ55-2",
+     "id_key": "SPS00J552"
+    },
+    {
+     "id": "SPS-ØØJ78-7",
+     "id_key": "SPS00J787"
+    },
+    {
+     "id": "NMK-89653-6",
+     "id_key": "NMK896536"
+    },
+    {
+     "id": "NMK-89684-1",
+     "id_key": "NMK896841"
+    },
+    {
+     "id": "NMK-89185-6",
+     "id_key": "NMK891856"
+    },
+    {
+     "id": "NMK-89896-6",
+     "id_key": "NMK898966"
+    },
+    {
+     "id": "NMK-89935-9",
+     "id_key": "NMK899359"
+    },
+    {
+     "id": "NMK-8993Ø-4",
+     "id_key": "NMK899304"
+    },
+    {
+     "id": "NMK-89576-1",
+     "id_key": "NMK895761"
+    },
+    {
+     "id": "NMK-89724-5",
+     "id_key": "NMK897245"
+    },
+    {
+     "id": "SPS-ØØØW8-4",
+     "id_key": "SPS000W84"
+    },
+    {
+     "id": "SPS-ØØX17-5",
+     "id_key": "SPS00X175"
+    },
+    {
+     "id": "SPS-ØØØY9-7",
+     "id_key": "SPS000Y97"
+    },
+    {
+     "id": "IR-00GR2E-5",
+     "id_key": "IR00GR2E5"
+    },
+    {
+     "id": "HZU-HHØØ1-9",
+     "id_key": "HZUHH0019"
+    },
+    {
+     "id": "ACS-OSØØ1-4",
+     "id_key": "ACSOS0014"
+    },
+    {
+     "id": "BCS-OSØØ3-7",
+     "id_key": "BCSOS0037"
+    },
+    {
+     "id": "ACS-OSØØ2-5",
+     "id_key": "ACSOS0025"
+    },
+    {
+     "id": "IFD-524Ø1-4",
+     "id_key": "IFD524014"
+    },
+    {
+     "id": "IFD-529Ø1-9",
+     "id_key": "IFD529019"
+    },
+    {
+     "id": "DD-Ø26ØØ5-3",
+     "id_key": "DD0260053"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ4-2",
+     "id_key": "ACSGM0042"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "ACS-GMØØ8-6",
+     "id_key": "ACSGM0086"
+    },
+    {
+     "id": "COR-2313-4",
+     "id_key": "COR23134"
+    },
+    {
+     "id": "COR-23134-4",
+     "id_key": "COR231344"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "DAS-68416-4",
+     "id_key": "DAS684164"
+    },
+    {
+     "id": "DAS-8141-9",
+     "id_key": "DAS81419"
+    },
+    {
+     "id": "DAS-81419-2",
+     "id_key": "DAS814192"
+    },
+    {
+     "id": "DP-30542-3",
+     "id_key": "DP305423"
+    },
+    {
+     "id": "DP-3Ø5423-1",
+     "id_key": "DP3054231"
+    },
+    {
+     "id": "DP-35604-3",
+     "id_key": "DP356043"
+    },
+    {
+     "id": "DP-356Ø43-5",
+     "id_key": "DP3560435"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "BCS-GM151-6",
+     "id_key": "BCSGM1516"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "ACS-GMØØ3-1",
+     "id_key": "ACSGM0031"
+    },
+    {
+     "id": "IND-ØØ41Ø-5",
+     "id_key": "IND004105"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8771-2",
+     "id_key": "MON87712"
+    },
+    {
+     "id": "MON-87712-4",
+     "id_key": "MON877124"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "SYN-ØØØH2-5",
+     "id_key": "SYN000H25"
+    },
+    {
+     "id": "ACS-GMØØ2-9",
+     "id_key": "ACSGM0029"
+    },
+    {
+     "id": "ACS-GMØØ1-8",
+     "id_key": "ACSGM0018"
+    },
+    {
+     "id": "SEM-ØCZW3-2",
+     "id_key": "SEM0CZW32"
+    },
+    {
+     "id": "SEM-ØZW2Ø-7",
+     "id_key": "SEM0ZW207"
+    },
+    {
+     "id": "SY-GTSB77-8",
+     "id_key": "SYGTSB778"
+    },
+    {
+     "id": "KM-ØØØH71-4",
+     "id_key": "KM000H714"
+    },
+    {
+     "id": "KB-KWS2Ø1-6",
+     "id_key": "KBKWS2016"
+    },
+    {
+     "id": "ACS-BVØØ1-3",
+     "id_key": "ACSBV0013"
+    },
+    {
+     "id": "CTB-14117-5",
+     "id_key": "CTB141175"
+    },
+    {
+     "id": "CTC-91087-6",
+     "id_key": "CTC910876"
+    },
+    {
+     "id": "CGN-89322-3",
+     "id_key": "CGN893223"
+    },
+    {
+     "id": "SYN-ØØØØB-6",
+     "id_key": "SYN0000B6"
+    },
+    {
+     "id": "SYN-ØØØDA-9",
+     "id_key": "SYN000DA9"
+    },
+    {
+     "id": "NPS-01201-8",
+     "id_key": "NPS012018"
+    },
+    {
+     "id": "SYN-ØØØØF-1",
+     "id_key": "SYN0000F1"
+    },
+    {
+     "id": "CGN-89564-2",
+     "id_key": "CGN895642"
+    },
+    {
+     "id": "IND-ØØ412-7",
+     "id_key": "IND004127"
+    },
+    {
+     "id": "MON-7180-0",
+     "id_key": "MON71800"
+    },
+    {
+     "id": "MON-718ØØ-3",
+     "id_key": "MON718003"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Uruguay",
+   "declared_total": 20,
+   "events_parsed": 23,
+   "events": [
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "BPS-CV127-9",
+     "id_key": "BPSCV1279"
+    },
+    {
+     "id": "DAS-44406-6",
+     "id_key": "DAS444066"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  },
+  {
+   "country": "Vietnam",
+   "declared_total": 37,
+   "events_parsed": 54,
+   "events": [
+    {
+     "id": "MON-ØØ179-5",
+     "id_key": "MON001795"
+    },
+    {
+     "id": "MON-ØØØ73-7",
+     "id_key": "MON000737"
+    },
+    {
+     "id": "MON-8830-2",
+     "id_key": "MON88302"
+    },
+    {
+     "id": "MON-883Ø2-9",
+     "id_key": "MON883029"
+    },
+    {
+     "id": "ACS-BNØØ5-8",
+     "id_key": "ACSBN0058"
+    },
+    {
+     "id": "ACS-BNØØ3-6",
+     "id_key": "ACSBN0036"
+    },
+    {
+     "id": "BCS-GHØØ5-8",
+     "id_key": "BCSGH0058"
+    },
+    {
+     "id": "BCS-GHØØ2-5",
+     "id_key": "BCSGH0025"
+    },
+    {
+     "id": "ACS-GHØØ1-3",
+     "id_key": "ACSGH0013"
+    },
+    {
+     "id": "MON-1598-5",
+     "id_key": "MON15985"
+    },
+    {
+     "id": "MON-15985-7",
+     "id_key": "MON159857"
+    },
+    {
+     "id": "MON-8891-3",
+     "id_key": "MON88913"
+    },
+    {
+     "id": "MON-88913-8",
+     "id_key": "MON889138"
+    },
+    {
+     "id": "BCS-GHØØ4-7",
+     "id_key": "BCSGH0047"
+    },
+    {
+     "id": "SYN-Ø53Ø7-1",
+     "id_key": "SYN053071"
+    },
+    {
+     "id": "SYN-BTØ11-1",
+     "id_key": "SYNBT0111"
+    },
+    {
+     "id": "MON-ØØØ21-9",
+     "id_key": "MON000219"
+    },
+    {
+     "id": "SYN-IR162-4",
+     "id_key": "SYNIR1624"
+    },
+    {
+     "id": "SYN-IR6Ø4-5",
+     "id_key": "SYNIR6045"
+    },
+    {
+     "id": "MON-ØØ81Ø-6",
+     "id_key": "MON008106"
+    },
+    {
+     "id": "MON-8741-1",
+     "id_key": "MON87411"
+    },
+    {
+     "id": "MON-87411-9",
+     "id_key": "MON874119"
+    },
+    {
+     "id": "MON-8742-7",
+     "id_key": "MON87427"
+    },
+    {
+     "id": "MON-87427-7",
+     "id_key": "MON874277"
+    },
+    {
+     "id": "MON-8746-0",
+     "id_key": "MON87460"
+    },
+    {
+     "id": "MON-8746Ø-4",
+     "id_key": "MON874604"
+    },
+    {
+     "id": "MON-8801-7",
+     "id_key": "MON88017"
+    },
+    {
+     "id": "MON-88Ø17-3",
+     "id_key": "MON880173"
+    },
+    {
+     "id": "MON-8903-4",
+     "id_key": "MON89034"
+    },
+    {
+     "id": "MON-89Ø34-3",
+     "id_key": "MON890343"
+    },
+    {
+     "id": "MON-ØØ6Ø3-6",
+     "id_key": "MON006036"
+    },
+    {
+     "id": "ACS-ZMØØ3-2",
+     "id_key": "ACSZM0032"
+    },
+    {
+     "id": "TC-150-7",
+     "id_key": "TC1507"
+    },
+    {
+     "id": "DAS-Ø15Ø7-1",
+     "id_key": "DAS015071"
+    },
+    {
+     "id": "ACS-GMØØ5-3",
+     "id_key": "ACSGM0053"
+    },
+    {
+     "id": "ACS-GMØØ6-4",
+     "id_key": "ACSGM0064"
+    },
+    {
+     "id": "FG-Ø72-2",
+     "id_key": "FG0722"
+    },
+    {
+     "id": "FG-Ø72-3",
+     "id_key": "FG0723"
+    },
+    {
+     "id": "MST-FGØ72-2",
+     "id_key": "MSTFG0722"
+    },
+    {
+     "id": "MON-Ø4Ø32-6",
+     "id_key": "MON040326"
+    },
+    {
+     "id": "MON-8770-1",
+     "id_key": "MON87701"
+    },
+    {
+     "id": "MON-877Ø1-2",
+     "id_key": "MON877012"
+    },
+    {
+     "id": "MON-8770-5",
+     "id_key": "MON87705"
+    },
+    {
+     "id": "MON-877Ø5-6",
+     "id_key": "MON877056"
+    },
+    {
+     "id": "MON-8770-8",
+     "id_key": "MON87708"
+    },
+    {
+     "id": "MON-877Ø8-9",
+     "id_key": "MON877089"
+    },
+    {
+     "id": "MON-8775-1",
+     "id_key": "MON87751"
+    },
+    {
+     "id": "MON-87751-7",
+     "id_key": "MON877517"
+    },
+    {
+     "id": "MON-8776-9",
+     "id_key": "MON87769"
+    },
+    {
+     "id": "MON-87769-7",
+     "id_key": "MON877697"
+    },
+    {
+     "id": "MON-8978-8",
+     "id_key": "MON89788"
+    },
+    {
+     "id": "MON-89788-1",
+     "id_key": "MON897881"
+    },
+    {
+     "id": "KM-ØØØH71-4",
+     "id_key": "KM000H714"
+    },
+    {
+     "id": "UA-1179856-2",
+     "id_key": "UA11798562"
+    }
+   ]
+  }
+ ]
+}

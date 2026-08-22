@@ -1,0 +1,514 @@
+[
+ {
+  "country": "Albania",
+  "name": "Ministry of Tourism and Environment — BCH national focal point",
+  "url": "http://www.mjedisi.gov.al/",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Bhutan",
+  "name": "Chief Regulatory and Quarantine Officer — BCH national focal point",
+  "url": "https://bfda.gov.bt/",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Costa Rica",
+  "name": "Servicio Fitosanitario del Estado (SFE) — BCH national focal point",
+  "url": "http://www.sfe.go.cr/SitePages/Inicio.aspx",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Cyprus",
+  "name": "Ministry of Agriculture, Rural Development and Environment — BCH national focal point",
+  "url": "https://www.moa.gov.cy/environment",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Denmark",
+  "name": "Ministry of Food, Agriculture and Fisheries — BCH national focal point",
+  "url": "https://lbst.dk/",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Guatemala",
+  "name": "Dirección de Valoración y Conservación de la Diversidad Biológica — BCH national focal point",
+  "url": "https://conap.gob.gt/",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Honduras",
+  "name": "Servicio Nacional de Sanidad e Inocuidad Agroalimentaria (SENASA) — BCH national focal point",
+  "url": "http://www.serna.gob.hn/",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Hungary",
+  "name": "Department of Biodiversity and Gene Conservation — BCH national focal point",
+  "url": "http://www.gmo.kormany.hu",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "India",
+  "name": "Ministry of Environment, Forest and Climate Change — BCH national focal point",
+  "url": "http://moef.gov.in/",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Kuwait",
+  "name": "Biodiversity Conservation Department — BCH national focal point",
+  "url": "https://epa.gov.kw/",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Latvia",
+  "name": "Department of Animal Health, Breeding, Protection and Food Safety — BCH national focal point",
+  "url": "https://www.zm.gov.lv/lv",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Lebanon",
+  "name": "Department of Conservation of Natural Wealth — BCH national focal point",
+  "url": "https://www.moe.gov.lb",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Lithuania",
+  "name": "Ministry of Environment of the Republic of Lithuania — BCH national focal point",
+  "url": "https://am.lrv.lt/",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Malaysia",
+  "name": "Ministry of Natural Resources and Environmental Sustainability — BCH national focal point",
+  "url": "http://www.biosafety.gov.my",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Micronesia (Federated States of)",
+  "name": "Department of Resources and Development — BCH national focal point",
+  "url": "http://www.fsmgov.org/ngovt.html",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Montenegro",
+  "name": "University of Montenegro, Biotechnical Faculty — BCH national focal point",
+  "url": "http://www.ubh.gov.me/uprava",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "North Macedonia",
+  "name": "Ministry of Environment and Physical Planning (MOEPP) — BCH national focal point",
+  "url": "http://www.moepp.gov.mk/",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Panama",
+  "name": "Ministerio de Ambiente — BCH national focal point",
+  "url": "https://miambiente.gob.pa/",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Philippines",
+  "name": "Department of Science and Technology (DOST) — BCH national focal point",
+  "url": "http://www.dost.gov.ph",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Portugal",
+  "name": "Environmental Risk Assessment and Emergencies Unit — BCH national focal point",
+  "url": "http://www.apambiente.pt",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Republic of Moldova",
+  "name": "Biodiversity Policies Department — BCH national focal point",
+  "url": "http://madrm.gov.md",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Romania",
+  "name": "Ministry of Environment, Waters and Forests — BCH national focal point",
+  "url": "https://mmediu.ro/",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "San Marino",
+  "name": "San Marino Naturalistic Center — BCH national focal point",
+  "url": "http://www.interni.segreteria.sm/index.php?id=218",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Serbia",
+  "name": "Plant Protection Directorate/Group for Plant Variety Protection and Biosafety — BCH national focal point",
+  "url": "http://www.uzb.minpolj.gov.rs",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Sierra Leone",
+  "name": "Environment Protection Agency (EPA-SL) — BCH national focal point",
+  "url": "https://epa.gov.sl/",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Singapore",
+  "name": "Scientific Services Division, Animal and Veterinary Service Cluster — BCH national focal point",
+  "url": "https://www.nparks.gov.sg",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Slovakia",
+  "name": "Department of Environmental Risk and Biosafety — BCH national focal point",
+  "url": "https://www.minzp.sk/",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "South Africa",
+  "name": "Department of Agriculture, Forestry and Fisheries (DAFF) — BCH national focal point",
+  "url": "http://www.daff.gov.za",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Spain",
+  "name": "Ministerio de Agricultura, Pesca y Alimentación (MAPA) — BCH national focal point",
+  "url": "https://www.mapa.gob.es/es/agricultura/temas/biotecnologia/om",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Ukraine",
+  "name": "Head of Division of Biosafety and Protection, Reproduction of Flora and — BCH national focal point",
+  "url": "https://me.gov.ua/",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "United Kingdom of Great Britain and Northern Ireland",
+  "name": "Department for Environment, Food and Rural Affairs (Defra) — BCH national focal point",
+  "url": "https://www.gov.uk/government/organisations/department-for-",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ },
+ {
+  "country": "Zambia",
+  "name": "Senior Biosafety Officer- Standards and Technical Liaison — BCH national focal point",
+  "url": "https://www.nbazambia.org.zm/",
+  "desc": "TODO write CAN / CAN'T / FOR. This is the office that files the country's records to the Biosafety Clearing-House under the Cartagena Protocol. It is not always the same body that decides approvals — check before describing it as the regulator.",
+  "tags": [
+   "projects:nepa",
+   "records:publications"
+  ],
+  "kind": "structured",
+  "voice": "official",
+  "skind": "database",
+  "type": "records-data",
+  "trust": "record",
+  "_source": "CBD BCH national focal point list"
+ }
+]
