@@ -266,10 +266,19 @@ def main():
               % (why["ok"], why["no-line"], why["fetch"]))
         for e in errors:
             print("  ippc            %s" % e)
-        if why["fetch"] and not why["ok"]:
-            print("  ippc            EVERY request failed - this is not a source with no "
-                  "websites, it is a source that was never reached. Do not read the "
-                  "zero above as evidence about the IPPC pages.")
+        # THIS CONDITION WAS WRONG THE FIRST TIME. It fired on "any fetch
+        # failure and no successes" and printed "EVERY request failed" for a run
+        # where 179 pages were read perfectly well and 3 returned 404. The
+        # distinction being drawn is whether the pages were REACHED, so compare
+        # failures against the total, not against successes.
+        if why["fetch"] >= 0.9 * len(recs):
+            print("  ippc            nearly every request failed - this is not a source "
+                  "with no websites, it is a source that was never reached.")
+        elif why["no-line"] >= 0.9 * len(recs):
+            print("  ippc            the pages WERE read and do not carry a Website line "
+                  "in their HTML. Measured at 179 of 182: the contact block a search "
+                  "engine shows is rendered client-side, so this route yields nothing "
+                  "by fetching. Drop --websites rather than pay 20 minutes a run for it.")
         scrub_check(recs)
     if "--print" in sys.argv:
         for r in recs[:20]:

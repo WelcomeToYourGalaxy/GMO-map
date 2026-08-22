@@ -49,6 +49,18 @@ SCHEMAS = ("decision", "biosafetydecision", "dcs")
 MISSING_CC = {}   # country code -> records dropped for want of a centroid
 
 C = {
+    # Added from a run's own DROPPED report: these 21 were asked for and had
+    # no coordinate, costing 171 records - 119 of them United States, which
+    # was simply absent from a table of 67 countries. Counts from that run in
+    # brackets. Do NOT source these from animal_facilities.ST or
+    # aphis_releases.STATES: those are US STATE tables.
+    "US":(39.8,-98.6),   "BY":(53.7,27.95),  "VA":(41.90,12.45),  # 119, 9, 9
+    "HN":(15.2,-86.2),   "PA":(8.5,-80.1),   "RW":(-1.94,29.87),  # 6, 4, 3
+    "AD":(42.55,1.60),   "MD":(47.4,28.4),   "ML":(17.6,-4.0),    # 3, 3, 2
+    "BB":(13.19,-59.54), "CM":(7.37,12.35),  "CV":(16.0,-24.0),   # 2, 1, 1
+    "GA":(-0.80,11.60),  "TN":(33.9,9.55),   "KM":(-11.65,43.33), # 1, 1, 1
+    "DZ":(28.03,1.66),   "LT":(55.17,23.88), "BJ":(9.31,2.32),    # 1, 1, 1
+    "LC":(13.90,-60.98), "SY":(34.80,39.00), "CY":(35.13,33.43),  # 1, 1, 1
  "AR":(-34.6,-58.4),"AT":(47.5,14.6),"AU":(-25.3,133.8),"BD":(23.7,90.4),"BE":(50.5,4.5),
  "BF":(12.2,-1.6),"BO":(-16.3,-63.6),"BR":(-14.2,-51.9),"BG":(42.7,25.5),"CA":(56.1,-106.3),
  "CH":(46.8,8.2),"CL":(-35.7,-71.5),"CN":(35.9,104.2),"CO":(4.6,-74.3),"CR":(9.7,-83.8),
@@ -604,14 +616,22 @@ def selftest():
     def _row(code):
         return {_f: ["%s_12345" % code], "title_EN_s": "Decision", "id": "abcdef123"}
     MISSING_CC.clear()
+    # Deliberately a code that is NOT a country. The first version of this test
+    # used "pa", which then became a real entry when Panama was added to C, and
+    # the test started passing for the wrong reason. This asserts the absence it
+    # depends on, so filling C later fails here instead of quietly hollowing the
+    # test out.
+    ck("the guard's test code is genuinely absent from C", "ZZ" in C, False)
     ck("country missing from C returns None instead of raising",
-       to_record(_row("pa")), None)
+       to_record(_row("zz")), None)
     ck("and the code is recorded so the log can name it",
-       dict(MISSING_CC), {"PA": 1})
-    to_record(_row("pa"))
-    ck("a second one is counted, not overwritten", dict(MISSING_CC), {"PA": 2})
+       dict(MISSING_CC), {"ZZ": 1})
+    to_record(_row("zz"))
+    ck("a second one is counted, not overwritten", dict(MISSING_CC), {"ZZ": 2})
     ck("a country that IS in C is still sited",
        (to_record(_row("br")) or {}).get("lat"), C["BR"][0])
+    ck("and the United States, which the table lacked entirely, is sited now",
+       (to_record(_row("us")) or {}).get("lat"), C["US"][0])
     MISSING_CC.clear()
 
     ck("outcome: prohibition beats approval wording",
