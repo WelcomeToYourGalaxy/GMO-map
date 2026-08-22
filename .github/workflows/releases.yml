@@ -21,12 +21,25 @@ jobs:
     # A ceiling on the whole job. Five harvesters were added without one and the
     # run went past two hours: nothing here is worth an unbounded wait, and a
     # job that never finishes also never commits what the earlier steps did get.
-    timeout-minutes: 86
+    # ARITHMETIC, check this every time a harvester is added. The per-step
+    # `timeout Nm` values below sum to 144 minutes. The whole sequence runs
+    # inside `for i in 1 2 3`, so the worst case is 3 x 144 = 432. The ceiling
+    # is set above that: a job cancelled partway commits NOTHING, which is worse
+    # than a slow one. It was 86 against a 112-minute sum, which is the state
+    # this comment exists to stop recurring.
+    timeout-minutes: 452
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      # bch_focal_points.py reads a PDF. There was no pip step in any workflow,
+      # so that import would have failed silently behind the `|| echo` below.
+      # Deliberately OUTSIDE the harvest step: if the install breaks, the run
+      # should stop and say so.
+      - name: Install harvester dependencies
+        run: pip install --no-input pypdf
 
       - name: Harvest and commit
         run: |
@@ -63,6 +76,19 @@ jobs:
             timeout 8m python3 harvest/aphis_releases.py || echo "!! aphis harvester failed - continuing"
             timeout 3m python3 harvest/build_regime.py || echo "!! regime overlay failed - continuing"
             timeout 2m python3 harvest/build_overlays.py || echo "!! overlay builder failed - continuing"
+            # The Secretariat's own focal-point list: institution + website per
+            # country, personal data stripped with an assertion in the script.
+            timeout 6m python3 harvest/bch_focal_points.py || echo "!! bch focal points failed - continuing"
+            # Gated merge. Never overwrites a link, never renames a row that
+            # names a real body, prints every row it holds back for review.
+            # IPPC Art. VIII.2 contact points: the NPPO each country has
+            # designated. Names a body; publishes no website. Runs BEFORE the
+            # merge so the merge can read it in the same pass.
+            # --websites adds one request per country against the IPPC country
+            # pages, which carry a Website: line the CSV extractor omits. That
+            # is ~180 paced requests, hence the larger timeout.
+            timeout 20m python3 harvest/ippc_contacts.py --websites || echo "!! ippc contacts failed - continuing"
+            timeout 6m python3 harvest/merge_directory.py || echo "!! directory merge failed - continuing"
             # --ignore-errors so a file a failed harvester never wrote does not
             # abort the step under bash -e on the first run.
             # `git add a.json b.json` ABORTS AND STAGES NOTHING if any one pathspec
@@ -82,7 +108,7 @@ jobs:
                      harvest/aphis_animal_facilities.json harvest/china_nhc_art.json \
                      harvest/ccac_redlara.json harvest/india_nartsr.json \
                      overlays/treaties.geojson harvest/ownership.json \
-                     harvest/_geocache.json \
+                     harvest/_geocache.json bch_stubs.json harvest/resources.json harvest/ippc_contacts.json \
                      harvest/animal_testing_facilities.json \
                      overlays/trials.geojson overlays/regime.geojson overlays/cultivation.geojson overlays/gmofree.geojson \
                      overlays/incidents.geojson; do
