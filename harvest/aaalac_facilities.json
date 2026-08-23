@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-21",
+ "generated": "2026-08-23",
  "note": "AAALAC International accredited organisations. Voluntary accreditation, not a register: absence means not accredited, not no animal research. City-level positions only.",
  "projects": [
   {
@@ -4683,12 +4683,12 @@
    "checked": ""
   },
   {
-   "name": "Charles River Laboratories, Research Models and Services - Germany GmbH",
+   "name": "Charles River Laboratories - St. Constant",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 49.10609,
-   "lng": 8.85968,
-   "state": "SULZFELD, GERMANY",
+   "lat": 45.3903,
+   "lng": -73.57113,
+   "state": "ST. CONSTANT, QUEBEC, CANADA",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -4735,12 +4735,12 @@
    "checked": ""
   },
   {
-   "name": "Charles River Laboratories - St. Constant",
+   "name": "Charles River Laboratories, Research Models and Services - Germany GmbH",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 45.3903,
-   "lng": -73.57113,
-   "state": "ST. CONSTANT, QUEBEC, CANADA",
+   "lat": 49.10609,
+   "lng": 8.85968,
+   "state": "SULZFELD, GERMANY",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -8193,6 +8193,32 @@
    "checked": ""
   },
   {
+   "name": "Tibor Rubin VA Medical Center, Veterans Affairs Long Beach Healthcare System",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 33.76902,
+   "lng": -118.1916,
+   "state": "LONG BEACH, CA, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Department of Veterans Affairs",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
    "name": "Veterans Affairs Boston Healthcare System",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -8225,32 +8251,6 @@
    "lat": 29.95614,
    "lng": -90.07339,
    "state": "NEW ORLEANS, LA, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Department of Veterans Affairs",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "Tibor Rubin VA Medical Center, Veterans Affairs Long Beach Healthcare System",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 33.76902,
-   "lng": -118.1916,
-   "state": "LONG BEACH, CA, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -19509,6 +19509,32 @@
    "lat": 44.1347,
    "lng": 0.66089,
    "state": "LAYRAC, FRANCE",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Primaco Indonesia",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": -6.19478,
+   "lng": 106.87819,
+   "state": "EAST JAKARTA,, DKI JAKARTA, INDONESIA",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,

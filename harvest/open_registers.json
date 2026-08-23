@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-21",
+ "generated": "2026-08-23",
  "bch": [
   {
    "name": "MON-877Ø1-2 - Insect resistant soybean",
@@ -2037,18 +2037,6 @@
    "url": "https://data.gov.au/data/dataset/nsw-3-15112-nsw-child-death-review-team-annual-report-2014"
   },
   {
-   "title": "NSW Environmental Trust Annual Report 2007-08",
-   "org": "NSW Government",
-   "files": [
-    {
-     "name": "document 12226",
-     "format": "PDF",
-     "url": "https://data.nsw.gov.au/data/dataset/e72aab15-38b2-4b33-ad0b-02495882ac0e/resource/0fa066bd-c36a-43be-9e65-893ccf7fb194/download/document_12226.pdf"
-    }
-   ],
-   "url": "https://data.gov.au/data/dataset/nsw-3-11205-nsw-environmental-trust-annual-report-2007-08"
-  },
-  {
    "title": "Government Gazette of the State of New South Wales Week No. 27/2011",
    "org": "NSW Government",
    "files": [
@@ -2059,6 +2047,18 @@
     }
    ],
    "url": "https://data.gov.au/data/dataset/nsw-3-11488-government-gazette-of-the-state-of-new-south-wales-week-no-27-2011"
+  },
+  {
+   "title": "NSW Environmental Trust Annual Report 2007-08",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12226",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/e72aab15-38b2-4b33-ad0b-02495882ac0e/resource/0fa066bd-c36a-43be-9e65-893ccf7fb194/download/document_12226.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11205-nsw-environmental-trust-annual-report-2007-08"
   },
   {
    "title": "NSW Trade & Investment 2013-14 Annual Report",
@@ -2097,18 +2097,6 @@
    "url": "https://data.gov.au/data/dataset/nsw-3-10357-privacy-nsw-annual-report-2005-06"
   },
   {
-   "title": "Botanic Gardens Trust Annual Report 2005-2006",
-   "org": "NSW Government",
-   "files": [
-    {
-     "name": "document 10630",
-     "format": "PDF",
-     "url": "https://data.nsw.gov.au/data/dataset/b69b310a-ad76-4023-a4b0-920b5173d0d3/resource/2c9e9a23-f8d4-4d02-bc2f-9862fd0211c6/download/document_10630.pdf"
-    }
-   ],
-   "url": "https://data.gov.au/data/dataset/nsw-3-9750-botanic-gardens-trust-annual-report-2005-2006"
-  },
-  {
    "title": "Government Gazette of the State of New South Wales Week No. 04/2008",
    "org": "NSW Government",
    "files": [
@@ -2119,6 +2107,18 @@
     }
    ],
    "url": "https://data.gov.au/data/dataset/nsw-3-11668-government-gazette-of-the-state-of-new-south-wales-week-no-04-2008"
+  },
+  {
+   "title": "Botanic Gardens Trust Annual Report 2005-2006",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 10630",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/b69b310a-ad76-4023-a4b0-920b5173d0d3/resource/2c9e9a23-f8d4-4d02-bc2f-9862fd0211c6/download/document_10630.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-9750-botanic-gardens-trust-annual-report-2005-2006"
   },
   {
    "title": "Government Gazette of the State of New South Wales Week No. 46/2008",

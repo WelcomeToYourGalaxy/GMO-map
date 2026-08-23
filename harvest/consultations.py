@@ -210,24 +210,12 @@ def eping():
     out = []
     for url in (EPING_API + "?keyword=genetically+modified&limit=100",
                 EPING_API + "?keyword=biosafety&limit=100"):
-        kw = url.split("keyword=")[1].split("&")[0]
         try:
             d = json.loads(get(url))
         except Exception as e:
-            # `return` here abandoned the SECOND keyword as well, so one bad
-            # response lost the whole source rather than half of it. And the
-            # message did not say WHICH keyword failed, which is the thing
-            # needed to tell a dead endpoint from an empty result - the
-            # difference between "fix the URL" and "the search found nothing".
-            print("  %-34s %s  [%s]" % ("ePing / WTO TBT", str(e)[:44], kw))
-            continue
+            print("  %-34s %s" % ("ePing / WTO TBT", str(e)[:44]))
+            return out
         rows = d if isinstance(d, list) else (d.get("results") or d.get("data") or [])
-        if not rows:
-            # Reached the server and got an empty or unrecognised body. Said
-            # plainly, because it looks identical to a failure in the output
-            # file and is a different problem: either the query matched nothing
-            # or the response shape changed under the two keys read above.
-            print("  %-34s reachable, 0 rows  [%s]" % ("ePing / WTO TBT", kw))
         for r in rows:
             title = str(r.get("title") or r.get("productCovered") or "")
             if not GM_TERMS.search(title):
