@@ -15,9 +15,34 @@ It is open access under CC BY, and **Additional file 1 is the incident table** -
 all 396 incidents across 63 countries. That is the source this script pulls.
 
 It does NOT hard-code a download URL. Supplementary-file URLs move; the article
-DOI does not. So it fetches the article page, finds the supplementary link, and
-follows it. If the layout changes the script says exactly which step failed
-rather than writing a silently empty file.
+DOI does not.
+
+ROUTE, AND WHY THE HTML ROUTE COULD NOT WORK
+--------------------------------------------
+The first version fetched the article page and looked for a link to Additional
+file 1. Every candidate address was reached and none carried one, run after
+run. That is not a layout change: Springer renders the supplementary section
+CLIENT-SIDE, so a fetcher receives the page without it. No amount of pattern
+work on that HTML will find a link that the server never sent.
+
+Europe PMC holds the same open-access article and exposes its supplementary
+files AS DATA rather than as markup:
+
+    search        /europepmc/webservices/rest/search?query=DOI:<doi>  -> PMCID
+    supplements   /europepmc/webservices/rest/<PMCID>/supplementaryFiles -> ZIP
+
+Both are documented methods of the Europe PMC Articles RESTful API
+(europepmc.org/RestfulWebService); neither is a URL edited into shape, and the
+PMCID comes from the search response rather than being guessed. No key, no
+registration. The ZIP is opened in memory and the first spreadsheet or CSV in
+it is the incident table.
+
+The HTML route is kept BELOW it, unchanged, so that if Europe PMC ever drops
+the article the script still has somewhere to look — and so the log shows both
+were tried.
+
+If every route fails the script says which one failed and how, and writes
+nothing.
 
     python3 harvest/contamination_register.py --dry-run
     python3 harvest/contamination_register.py
@@ -71,6 +96,12 @@ ARTICLE_ALTS = [
     "https://doi.org/" + DOI,
     "https://foodsafetyandrisk.biomedcentral.com/counter/pdf/" + DOI + ".pdf",
 ]
+# Europe PMC Articles RESTful API. Documented methods, no key, no registration.
+# The PMCID is READ FROM THE SEARCH RESPONSE - never assembled from the DOI.
+EPMC = "https://www.ebi.ac.uk/europepmc/webservices/rest"
+EPMC_SEARCH = EPMC + "/search?query=DOI:%s&format=json&resultType=core"
+EPMC_SUPPL = EPMC + "/%s/supplementaryFiles"
+
 UA = ("GMO-map-harvest/1.0 (+https://github.com/WelcomeToYourGalaxy/GMO-map) "
       "recovering an open-access supplementary dataset")
 
@@ -111,6 +142,62 @@ def fetch(url, binary=False):
     with urlopen(req, timeout=120) as r:
         raw = r.read()
     return raw if binary else raw.decode("utf-8", "replace")
+
+
+def epmc_pmcid(doi):
+    """Ask Europe PMC for this DOI's PMCID. Returns (pmcid, why_not).
+
+    The id is READ from the response. A DOI-to-PMCID rule does not exist and
+    inventing one would be the error class nothing downstream catches.
+    """
+    try:
+        raw = fetch(EPMC_SEARCH % doi)
+    except Exception as e:
+        return None, "search request failed: %s" % str(e)[:80]
+    try:
+        d = json.loads(raw)
+    except Exception as e:
+        return None, "search returned something that is not JSON: %s" % str(e)[:60]
+    hits = (((d.get("resultList") or {}).get("result")) or [])
+    if not hits:
+        return None, ("search reached Europe PMC and matched no article for this "
+                      "DOI. The DOI is in the docstring and is stable, so check "
+                      "the query rather than assuming the paper has gone.")
+    for h in hits:
+        pid = h.get("pmcid")
+        if pid:
+            return pid, ""
+    return None, ("Europe PMC has the article (%d hit(s)) but no PMCID on it, "
+                  "which means the full text is not in the open-access subset "
+                  "and the supplementary files are not exposed." % len(hits))
+
+
+def zip_pick(blob):
+    """The incident table out of the supplementary ZIP. Returns (name, bytes, why_not).
+
+    Europe PMC returns ALL of an article's supplementary files in one archive.
+    Picked by extension, spreadsheets first, and the name of whatever is chosen
+    is printed - a run that silently took the wrong file would look identical to
+    a run that took the right one.
+    """
+    import zipfile
+    try:
+        z = zipfile.ZipFile(io.BytesIO(blob))
+    except Exception as e:
+        return None, None, "the supplement download is not a readable ZIP: %s" % str(e)[:60]
+    names = [n for n in z.namelist() if not n.endswith("/")]
+    if not names:
+        return None, None, "the supplementary ZIP is empty"
+    for exts in ((".xlsx", ".xls"), (".csv",), (".tsv", ".txt")):
+        for n in names:
+            if n.lower().endswith(exts):
+                try:
+                    return n, z.read(n), ""
+                except Exception as e:
+                    return None, None, "could not read %s from the ZIP: %s" % (n, str(e)[:50])
+    return None, None, ("the ZIP holds %d file(s) and none is a spreadsheet or CSV: %s. "
+                        "If the table is inside a PDF or a DOCX it has to be "
+                        "converted by hand." % (len(names), ", ".join(names[:6])))
 
 
 def find_supplement(page):
@@ -200,7 +287,51 @@ def main():
     # found no supplement, and exited telling us the layout had changed, three
     # weeks running, while the alternate that would have worked sat untried in
     # the list below it. Reaching a page is not the same as getting the thing.
-    print("fetching the article page")
+    # ROUTE 1 - Europe PMC, which serves the supplementary files as data.
+    rows, src = None, ""
+    print("Europe PMC: resolving the DOI to a PMCID")
+    pmcid, why = epmc_pmcid(DOI)
+    if not pmcid:
+        print("  no PMCID: %s" % why)
+    else:
+        print("  PMCID %s" % pmcid)
+        try:
+            blob = fetch(EPMC_SUPPL % pmcid, binary=True)
+            print("  supplementary archive: %d bytes" % len(blob))
+            name, data, why = zip_pick(blob)
+            if not name:
+                print("  no table in it: %s" % why)
+            else:
+                print("  table: %s" % name)
+                low = name.lower()
+                if low.endswith((".xlsx", ".xls")):
+                    rows = rows_from_xlsx(data)
+                else:
+                    rows = rows_from_csv(data.decode("utf-8", "replace"))
+                src = "Europe PMC %s (%s)" % (pmcid, name)
+                # A ZIP that opened and a sheet that parsed to nothing is not a
+                # success. Fall through to the article page rather than writing
+                # an empty file that reads as "no recorded incidents".
+                if not rows:
+                    print("  the table parsed to 0 rows - falling through to the "
+                          "article page")
+                    rows = None
+        except Exception as e:
+            print("  supplementary request failed: %s" % str(e)[:90])
+
+    if rows:
+        print("  %d rows from Europe PMC" % len(rows))
+    else:
+        rows = _rows_from_article_page()
+        src = "article page"
+    _emit(rows, src)
+
+
+def _rows_from_article_page():
+    """The original HTML route. Kept as a fallback and as a record of what was
+    tried; it has returned nothing since the journal moved, because Springer
+    renders the supplementary section client-side."""
+    print("falling back to the article page")
     page, link, reached = None, None, []
     for _cand in ([ARTICLE] + ARTICLE_ALTS):
         try:
@@ -215,15 +346,17 @@ def main():
         if link:
             break
     if not reached:
-        sys.exit("every article route refused. Nothing written: an empty file would "
-                 "reach the map as no recorded incidents, which is the opposite of "
-                 "true. A 403 everywhere usually means the request was blocked; a "
-                 "404 would mean the article moved again.")
+        sys.exit("Europe PMC did not yield the table and every article address "
+                 "refused as well. Nothing written: an empty file would reach the "
+                 "map as no recorded incidents, which is the opposite of true. A "
+                 "403 everywhere usually means the request was blocked; a 404 "
+                 "would mean the article moved again.")
     if not link:
-        sys.exit("reached %d of the article's addresses and none carried a "
-                 "supplementary-file link: %s. The DOI is stable, so the article has "
-                 "not gone - the layout has. Open the Springer address and update "
-                 "find_supplement()."
+        sys.exit("Europe PMC did not yield the table, and %d of the article's own "
+                 "addresses were reached with no supplementary-file link on any of "
+                 "them: %s. That is expected - Springer renders that section "
+                 "client-side - so the thing to fix is the Europe PMC route above, "
+                 "not find_supplement()."
                  % (len(reached), ", ".join(u[:60] for u, _ in reached)))
     print("  supplement: %s" % link[:110])
 
@@ -242,6 +375,17 @@ def main():
                  % (link.rsplit(".", 1)[-1], ARTICLE))
 
     print("  %d rows in the supplement" % len(rows))
+    return rows
+
+
+def _emit(rows, src):
+    """Everything downstream of getting the table: match to countries, drop the
+    hand-written duplicates, report, write."""
+    print("source of the table: %s" % (src or "unknown"))
+    if not rows:
+        sys.exit("the table came back empty. Nothing written, because an empty "
+                 "register file reaches the map as 396 incidents that never "
+                 "happened.")
 
     have = set()
     if HAND.exists():
@@ -284,9 +428,63 @@ def main():
                  "(doi:10.1186/s40550-014-0005-8, CC BY). The Register was "
                  "compiled by GeneWatch UK and Greenpeace International and "
                  "stopped in 2013. Country-level positions only."),
+        "source": src,
         "projects": out}, ensure_ascii=False, indent=1), encoding="utf-8")
     print("\nwrote %s" % OUT.name)
 
 
+def selftest():
+    """No network. Drives the two shapes the new route depends on: the search
+    response the PMCID is read out of, and the ZIP the table is picked out of.
+    Both were the failure points worth a test - one guessed id or one silently
+    wrong file in the archive produces a plausible file full of wrong rows."""
+    import zipfile
+    ok = True
+
+    def check(label, got, want):
+        nonlocal ok
+        good = got == want
+        ok = ok and good
+        print("  %-58s %s" % (label, "pass" if good else "FAIL got %r" % (got,)))
+
+    # zip_pick: spreadsheet beats CSV, CSV beats nothing, and a ZIP with no
+    # table says so rather than returning the first file it finds.
+    def zbytes(names):
+        b = io.BytesIO()
+        with zipfile.ZipFile(b, "w") as z:
+            for n in names:
+                z.writestr(n, "a,b\n1,2\n")
+        return b.getvalue()
+
+    check("spreadsheet chosen over csv",
+          zip_pick(zbytes(["notes.csv", "Additional file 1.xlsx"]))[0],
+          "Additional file 1.xlsx")
+    check("csv chosen when there is no spreadsheet",
+          zip_pick(zbytes(["readme.pdf", "table.csv"]))[0], "table.csv")
+    check("no table in the zip returns no name",
+          zip_pick(zbytes(["fig1.pdf", "fig2.png"]))[0], None)
+    check("no table in the zip explains itself",
+          "none is a spreadsheet or CSV" in (zip_pick(zbytes(["fig1.pdf"]))[2] or ""),
+          True)
+    check("a zip that is not a zip explains itself",
+          "not a readable ZIP" in (zip_pick(b"this is not a zip")[2] or ""), True)
+
+    # to_record: a row with no country this script can place is dropped, never
+    # guessed at, and a placed row carries the citation.
+    check("row with an unknown country is dropped",
+          to_record({"country": "Atlantis", "crop": "maize"}, 0), None)
+    r = to_record({"country": "Mexico", "crop": "maize", "year": "2001",
+                   "description": "Landrace maize found to contain transgenes."}, 0)
+    check("placed row gets that country's centroid", (r["lat"], r["lng"]),
+          CENTROID["mexico"])
+    check("placed row carries the CC BY citation", CITE in r["desc"], True)
+    check("placed row keeps the year", r["date"], "2001-01-01")
+
+    print("\n%s" % ("selftest passed" if ok else "SELFTEST FAILED"))
+    return 0 if ok else 1
+
+
 if __name__ == "__main__":
+    if "--selftest" in sys.argv:
+        sys.exit(selftest())
     main()

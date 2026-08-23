@@ -152,8 +152,26 @@ def main():
     year, ds_id, name = found
     print("  newest series: %s (%s)" % (name, ds_id))
 
-    rows = json.loads(get("https://%s/resource/%s.json?$limit=5000" % (DOMAIN, ds_id)))
-    print("  %d clinic rows" % len(rows))
+    # $limit=5000 returned EXACTLY 5000 rows, which is the request cap and not
+    # the size of the table: 420 clinics x 12 rows each is 5,040, so the last
+    # clinic arrived in pieces and nothing said so. A response that is exactly
+    # the limit is the one case a single request cannot distinguish from a
+    # complete one, so page until a short page comes back.
+    rows, PAGE, off = [], 1000, 0
+    while True:
+        chunk = json.loads(get("https://%s/resource/%s.json?$limit=%d&$offset=%d"
+                               % (DOMAIN, ds_id, PAGE, off)))
+        rows.extend(chunk)
+        if len(chunk) < PAGE:
+            break
+        off += PAGE
+        if off > 200000:
+            print("  ! stopped paging at %d rows - that is far more than this "
+                  "table has ever held, so something is wrong with the offset "
+                  "rather than the data" % off, file=sys.stderr)
+            break
+        time.sleep(0.3)
+    print("  %d table rows in %d page(s)" % (len(rows), off // PAGE + 1))
     if not rows:
         print("  empty response — nothing written", file=sys.stderr)
         return
@@ -251,6 +269,49 @@ def main():
         })
         if len(out) % 50 == 0:
             time.sleep(0.5)
+
+    # THE DEDUPLICATION. It was never here.
+    #
+    # The comment on _clinicid/_year above says they are "stripped again after
+    # deduplication", and there was no deduplication and no stripping: both keys
+    # went into the map, and 5,000 records reached it for 420 clinics. That is
+    # why no collapse line was ever printed - there was nothing collapsing. The
+    # fix was believed deployed and was not in the file.
+    #
+    # The shape of the duplication: this table is one row PER CLINIC PER MEASURE,
+    # not one row per clinic. The twelve copies of a clinic are byte-identical in
+    # every field emitted here, because the fields that differ in the source -
+    # the question and its answer - are not read. So the first row of each
+    # (clinic, year) is kept and the rest are the same clinic said twelve times.
+    seen, uniq, collapsed = {}, [], 0
+    for rec in out:
+        k = (rec.get("_clinicid"), rec.get("_year"), rec["name"].lower(), rec["state"])
+        if k in seen:
+            collapsed += 1
+            continue
+        seen[k] = True
+        uniq.append(rec)
+    per = (float(len(out)) / len(uniq)) if uniq else 0
+    print("  deduplicated on (clinic id, year, name, place): %d rows -> %d clinics, "
+          "%d collapsed (%.1f rows per clinic)" % (len(out), len(uniq), collapsed, per))
+    if collapsed == 0 and len(out) > 1:
+        # Silence here used to mean the step was missing. Now it means the table
+        # changed shape, which is worth saying out loud rather than looking like
+        # a clean run.
+        print("  ! nothing collapsed. Either the table is now one row per clinic "
+              "- which would be a change worth knowing about - or _clinicid is "
+              "empty on every row and the key is not keying anything.")
+    if not any(r.get("_clinicid") for r in out):
+        print("  ! no row carried a clinic id, so the key fell back to name and "
+              "place alone. Two clinics of the same name in one city would merge.",
+              file=sys.stderr)
+    # Strip the keys. They exist to deduplicate and have no business on the map.
+    for rec in uniq:
+        rec.pop("_clinicid", None)
+        rec.pop("_year", None)
+    out = uniq
+    precise = sum(1 for r in out if r.get("precise"))
+    approx = len(out) - precise
 
     print("  %d clinics: %d placed at their address, %d at a state centroid"
           % (len(out), precise, approx))

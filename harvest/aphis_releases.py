@@ -518,6 +518,21 @@ def main():
     for r in records:
         k = norm_org(r["company"])
         orgs[k] = orgs.get(k, 0) + 1
+    # `records` is REBOUND to the merged place markers a few dozen lines below,
+    # and the applicant share was printed after that: a numerator counting
+    # release records over a denominator counting map markers, which is how the
+    # log came to read "27058 of 2746 records (985%)". Hold the number the
+    # counting was actually done over.
+    orgs_over = len(records)
+    # Make the check able to fail. orgs is built by one increment per record, so
+    # its values must sum to exactly orgs_over. If they do not, the counting is
+    # wrong somewhere upstream and no share printed below means anything - which
+    # is the state this whole block is here to stop being invisible.
+    _osum = sum(orgs.values())
+    if _osum != orgs_over:
+        print("  ! applicant counts sum to %d over %d records. They are built one "
+              "per record, so these must match; the shares below are not "
+              "trustworthy until they do." % (_osum, orgs_over), file=sys.stderr)
     # GROUP EVERY RELEASE RECORD BY PLACE, WHATEVER THE SOURCE.
     # Grouping each source separately left three markers stacked on one centroid
     # - one from APHIS, one from the Cartagena filing, one from CFIA - which is
@@ -637,10 +652,17 @@ def main():
     ranked = sorted(orgs.items(), key=lambda x: -x[1])
     print("top applicants (%d distinct, corporate groups merged):" % len(orgs))
     for o, c in ranked[:10]:
-        print("  %3d  %4.1f%%  %s" % (c, 100.0 * c / len(records), o[:56]))
+        print("  %3d  %4.1f%%  %s" % (c, 100.0 * c / orgs_over, o[:56]))
     top3 = sum(c for _, c in ranked[:3])
-    print("\ntop 3 applicants hold %d of %d records (%.0f%%)"
-          % (top3, len(records), 100.0 * top3 / len(records)))
+    print("\ntop 3 applicants hold %d of %d RELEASE RECORDS (%.0f%%) - not of the "
+          "%d place markers those records merge into"
+          % (top3, orgs_over, 100.0 * top3 / orgs_over, len(records)))
+    # A share over 100% means the two numbers are counting different things
+    # again. Say so rather than printing it as a fact.
+    if top3 > orgs_over:
+        print("  ! that is over 100%, which cannot be true of a share: the "
+              "numerator and the denominator are counting different things.",
+              file=sys.stderr)
 
     if "--dry-run" in sys.argv:
         print("\ndry run \u2014 nothing written")
