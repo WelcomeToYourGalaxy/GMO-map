@@ -70,7 +70,12 @@ jobs:
 
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A --ignore-errors harvest/ projects.json projects.json.gz overlays/ wire_geo.json
+          # ':(exclude)harvest/*.py' keeps the harvesters out of a data commit.
+          # 'harvest/' is a DIRECTORY pathspec: without the exclude it stages the
+          # .py files as well as the JSON they write, and a refresh run silently
+          # committed a stale copy of consultations.py over a patched one.
+          git add -A --ignore-errors harvest/ projects.json projects.json.gz \
+                                     overlays/ wire_geo.json ':(exclude)harvest/*.py'
           if git diff --cached --quiet; then
             echo "nothing changed"
           else
@@ -93,7 +98,8 @@ jobs:
               git fetch origin main || true
               git reset --mixed origin/main
               git add -A --ignore-errors harvest/ projects.json projects.json.gz \
-                                         overlays/ wire_geo.json
+                                         overlays/ wire_geo.json \
+                                         ':(exclude)harvest/*.py'
               if git diff --cached --quiet; then
                 echo "nothing left to commit after fetching"; exit 0
               fi
