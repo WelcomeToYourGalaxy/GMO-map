@@ -474,6 +474,26 @@ body.info-open #controls #indexPanel{position:static !important;
 .pj-date{color:#98a2c1;}
 .approx-badge{font-size:10px;color:#305488;background:rgba(230,192,121,0.12);border:1px dashed rgba(230,192,121,0.5);border-radius:4px;padding:2px 5px;margin:0 0 5px;display:inline-block;}</style>
 <script>
+/* Deleting a panel removes elements that code still writes to. `null.innerHTML`
+   throws during the first script run, and everything after it - including the
+   line that adds the tile layers - never runs. The symptom is a blank blue map
+   with working panels, because the panels are markup and the tiles are script.
+   A safety net, not a licence: each missing id is logged once. */
+(function(){
+  var GONE = {domainPills:1, subBox:1, domainDesc:1, intentHint:1, intentSel:1,
+              bestPills:1, levelPills:1, mediaPills:1, skindPills:1, srcPills:1,
+              trustPills:1, voicePills:1, subFilterWrap:1, angleHint:1,
+              histToggle:1, ctlBody:1, ctlHead:1, ctlTog:1, controls:1};
+  var seen={}, real=document.getElementById.bind(document);
+  document.getElementById=function(id){
+    var el=real(id);
+    if(el||!GONE[id]) return el;
+    if(!seen[id]){ seen[id]=1;
+      try{ console.warn('[map] #'+id+' referenced and absent; stand-in returned'); }catch(e){} }
+    var stub=document.createElement('div'); stub.id=id; stub.__missing=true; return stub;
+  };
+})();
+
 // Says which file the map actually read and whether it holds grouped markers.
 // Five rounds passed with a correct harvest sitting in a file the map never
 // opened, and nothing on screen or in the console said so.
@@ -565,49 +585,7 @@ function pjReport(which, data){
     <a class="guide-btn" href="#" onclick="openGuide(&#39;guides/how-to-change-the-industry.pdf&#39;,&#39;How to change the industry&#39;);return false;">How to change the industry</a>
   </div>
 </div>
-<div id="controls" style="display:none!important" aria-hidden="true">
-  <div id="ctlHead" onclick="document.getElementById('controls').classList.toggle('collapsed')"><span>Lens &amp; filters</span><span id="ctlTog">&#9662;</span></div>
-  <div id="ctlBody">
-  <div class="ctl-title">What are you trying to do?</div>
-  <select id="intentSel" onchange="applyIntent(this.value)">
-    <option value="">Jump to a part of the industry.</option>
-    <option value="" disabled>── MAKING THE ORGANISM ──</option>
-    <option value="nav-seed">Seed & traits — who owns the crops</option>
-    <option value="nav-edit">Gene editing & synthetic biology — the tools</option>
-    <option value="nav-synth">DNA synthesis & sequencing — the supply chain</option>
-    <option value="nav-cro">Contract research & manufacturing — who does the work</option>
-    <option value="" disabled>── WHAT IT IS DONE TO ──</option>
-    <option value="nav-anim">Laboratory animals — bred as reagents</option>
-    <option value="nav-live">Livestock, aquaculture & pets</option>
-    <option value="nav-wild">Insects, microbes & open release</option>
-    <option value="nav-deex">De-extinction & conservation biotech</option>
-    <option value="" disabled>── APPLIED TO PEOPLE ──</option>
-    <option value="nav-clin">Human clinical & therapeutic</option>
-    <option value="nav-repro">Assisted reproduction</option>
-    <option value="" disabled>── WHAT DRIVES IT ──</option>
-    <option value="nav-money">Money & backers</option>
-    <option value="nav-rules">Rules, records & advocacy</option>
-    <option value="" disabled>── ──</option>
-    <option value="all">Show everything</option>
-  </select>
-  <div id="intentHint"></div>
 
-  <div id="angleHint"></div>
-  <div class="ctl-title">Lens</div><div id="domainPills"></div>
-  <div class="domain-desc" id="domainDesc"></div>
-  <div class="sub-wrap" id="subFilterWrap" style="margin-top:9px;"><div id="subBox"></div></div>
-  <div class="src-wrap"><div class="ctl-title">Source type</div><div id="srcPills"></div></div>
-  <div class="skind-wrap"><div class="ctl-title">Source kind</div><div id="skindPills"></div></div>
-  <div class="media-wrap"><div class="ctl-title">Government level</div><div id="levelPills"></div></div>
-  <div class="media-wrap"><div class="ctl-title">Media type</div><div id="mediaPills"></div></div>
-  <div class="trust-wrap"><div class="ctl-title">Trust level</div><div id="trustPills"></div></div>
-  <div class="voice-wrap"><div class="ctl-title">Voice</div><div id="voicePills"></div></div>
-  <div class="filter-tip"><span class="tl">Try combining filters</span><b>Records &amp; data + Official</b> &mdash; the state’s own biosafety record only, no watchdog or journalism voices. <b>Biosafety &amp; Contamination + Interpretive</b> &mdash; the independent scientists re-reading the dossiers the regulator accepted. <b>Any lens + Investigative journalism</b> &mdash; just the newsrooms working that beat. <b>Any lens + Official + Records &amp; data</b> &mdash; only the primary registers and dockets you can cite directly in a submission.</div>
-  <div class="best-wrap"><div class="ctl-title">Best sources</div><div class="best-hint">Filter the whole map to standout sources by quality.</div><div id="bestPills"></div></div>
-  <label class="f-status"><input type="checkbox" id="histToggle" checked> Show dormant / defunct</label>
-  
-</div>
-</div>
 <div id="gbCrumb"></div>
 
 <div id="legend">
@@ -2416,7 +2394,32 @@ function _grpGuide(dim,items){ if(dim!=='country'||!items||!items.length) return
 const _IDXV={kind:new Set(KINDS.map(k=>k[0])),voice:new Set(VOICES.map(v=>v[0])),
   trust:new Set(TIERS.map(t=>t[0])),skind:new Set(SKINDS.map(k=>k[0])),
   media:new Set(MEDIA.map(m=>m[0])),level:new Set(LEVELS.map(l=>l[0]))};
-function renderIndex(){ if(!INDEXDATA.length) buildIndexData();
+function renderIndex(){
+  /* DO NOT REDRAW WHILE A MENU IS OPEN.
+   *
+   * The index is rebuilt by replacing its innerHTML, which destroys and
+   * recreates the <select> elements. A late data load - the tracker file has a
+   * fallback URL that resolves a second or two after the first - calls this
+   * again, and an open dropdown vanishes mid-click.
+   *
+   * So a redraw requested while one of the index controls has focus is
+   * deferred rather than dropped: it runs on blur, so the list is still
+   * refreshed, just not out from under the reader's hand. */
+  try{
+    var a = document.activeElement;
+    if(a && a.closest && a.closest('#idxControls')){
+      if(!renderIndex._pending){
+        renderIndex._pending = true;
+        a.addEventListener('blur', function once(){
+          a.removeEventListener('blur', once);
+          renderIndex._pending = false;
+          try{ renderIndex(); }catch(e){}
+        });
+      }
+      return;
+    }
+  }catch(e){}
+  if(!INDEXDATA.length) buildIndexData();
   let g1=document.getElementById('idxGroup').value, g2=document.getElementById('idxSub').value;
   if(g1==='none'&&g2!=='none'){ g1=g2; g2='none'; }
   if(g1===g2) g2='none';
@@ -3588,7 +3591,17 @@ try{ document.querySelectorAll('#consPanel .help-body, #unitPanel #unitBody, #wi
   function pjHasDate(p){ if(!p||!p.date)return false; var t=new Date(p.date).getTime(); return !isNaN(t); }
   function pjAgeDays(p){ return Math.floor((Date.now()-new Date(p.date).getTime())/86400000); }
   var pjKinds=new Set(["industry","escape","release","biosafety","clinical","repro","animals"]);
+  /* Biosafety decisions are not drawn as markers. They were on the map twice:
+     as 51 country-level dots and inside each country box. A decision applies to
+     a whole country, so a dot at a centroid stood for a thing with no location.
+     The records are NOT removed - the country box reads the same ones. */
+  function pjIsDecision(p){
+    try{ return String((p&&p.source)||'').toLowerCase().indexOf('bch')===0; }
+    catch(e){ return false; }
+  }
+
   function pjPasses(p){
+    if(pjIsDecision(p)) return false;
     if(p.lat==null||p.lng==null) return false;
     if(!pjKinds.has(pjKind(p))) return false;
     // The source checkboxes updated activeProjSrc and repainted the canvas, and
@@ -7738,6 +7751,8 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
            + ((window.PJ_SPEC_LABEL&&window.PJ_SPEC_LABEL[g])||g)
            + ((window.PJ_SPEC_DESC&&window.PJ_SPEC_DESC[g])
                ? '<span class="subj-def">'+window.PJ_SPEC_DESC[g]+'</span>' : '')
+           + ((window.PJ_LENS_DESC&&window.PJ_LENS_DESC[g])
+               ? '<span class="subj-def">'+window.PJ_LENS_DESC[g]+'</span>' : '')
            + '<span class="kcount"> ('+counts[g]+')</span></label>';
     }).join('');
   }
@@ -8246,6 +8261,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   };
   try{ window.PJ_SPEC_LABEL = L; window.PJ_SPEC_COLOUR = COL;
        window.PJ_SPEC_DESC = D;
+  try{ window.PJ_LENS_DESC = {"seed": "The commercial centre. Four firms — Bayer, Corteva, Syngenta and BASF — own most of the world's engineered crop traits and a controlling share of its commercial seed. They sell the seed, license the traits to each other and to smaller breeders, and in three of four cases also sell the herbicide the trait is designed to tolerate. Everything downstream on this map depends on decisions made here.", "editing": "The firms that make the tools everyone else uses, and increasingly the products too. CRISPR and its successors turned genetic modification from a specialist capability into a licensable platform, and the companies holding the foundational patents collect from work they had no part in. This is also where the regulatory escape happens: organisms made by editing rather than transgene insertion are being moved outside registration in one jurisdiction after another.", "synthesis": "The supply chain almost nobody maps, and the layer where capability actually lives. Every engineered organism begins as ordered DNA, and a handful of companies make most of it. Sequencing has collapsed in price to the point where reading a genome is trivial; writing one is the constraint, and these firms are the constraint. Screening of what gets synthesised is largely voluntary.", "cro": "The invisible middle. Most companies with an engineered product do not run their own trials, their own animal work or their own manufacturing — they buy it. The firm named on a permit is frequently not the firm doing the work, and the contractor is accountable to the client rather than to the public.", "animals": "An industrial supply business selling living animals as reagents. A large and growing share of research animals are genetically altered, bred to order, shipped worldwide and killed at the end of a protocol. It is the least visible facet of the whole industry and among the largest by volume of life consumed.", "livestock": "Engineering applied to animals people eat, farm or keep. Gene-edited cattle and pigs, fast-growing salmon, cloned horses and dogs, and glowing ornamental fish already in tanks worldwide. Some jurisdictions have decided edited livestock is not a regulated article at all, and the commercial pet side operates almost entirely outside biosafety oversight.", "wild": "Organisms engineered specifically to be released into the open and, in some cases, to spread on their own. Sterile-insect and self-limiting mosquito programmes, agricultural microbes, and gene drives designed to push a trait through a wild population. A drive organism cannot respect a border or a permit, which is why the rules are being argued over before any has been released.", "deextinct": "Venture-funded work to rebuild lost species, or engineer living ones to survive what is being done to them. The organisms produced are proxies rather than restorations, and they are intellectual property. If extinction can be presented as reversible, the cost of causing it drops.", "clinical": "Genetic engineering applied to people. Gene and cell therapies approved and priced in the millions per dose. Much of it is medicine that works. The industry question is who it reaches: a therapy priced beyond every health system outside a handful of wealthy countries is a technology developed largely with public money and delivered to almost nobody.", "repro": "Not genetic modification in the technical sense, but the same logic applied to human reproduction. Clinic chains consolidating under private equity, gamete and embryo banks, and preimplantation testing that has moved from screening for disorders towards scoring embryos on traits. The one facet where the customer is the person being engineered for.", "money": "Who pays, and what they are paying for. Venture capital sets the timeline — a fund needs an exit, which rewards speed over caution. Public research money funds a great deal of the underlying science, which then becomes private property. Defence agencies fund work outside civilian biosafety oversight entirely.", "rules": "The machinery that authorises the industry and argues for it. National regulators and their registers; the patent offices where ownership of living material is granted; the standards bodies; and the trade associations that do the industry's public arguing so individual firms need not."}; }catch(e){}
   /* The marker-note injector that used to run here is gone: the note now sits
      once, at the foot of the point toggles above "Shaded areas". It was also
      being rendered by the legend builder, so the same paragraph appeared three
@@ -9469,7 +9485,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeGuide(
   // from whichever file is loaded: either the browser is holding an old copy,
   // or the fixes are running and aimed at the wrong thing. This line says which
   // file you are actually looking at, without opening anything.
-  var BUILD = "BUILD-2026-08-21 04:51";
+  var BUILD = "BUILD-2026-08-23 03:09";
   function stamp(){
     if(document.getElementById('pjBuild')) return;
     var host = document.querySelector('.pj-kinds') ||
