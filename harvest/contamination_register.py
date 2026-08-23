@@ -63,9 +63,11 @@ EXTRA_SOURCES = [
 # and is now Food Safety and Risk on BioMed Central, so the Springer path no
 # longer resolves and the supplementary link went with it. The data is
 # "Additional file 1" on the article page. Candidates tried in order.
-ARTICLE = "https://foodsafetyandrisk.biomedcentral.com/articles/" + DOI
+# Springer Nature Link FIRST: the journal migrated there and the BioMed Central
+# address, while still answering, serves a page with no supplement link on it.
+ARTICLE = "https://link.springer.com/article/" + DOI
 ARTICLE_ALTS = [
-    "https://link.springer.com/article/" + DOI,
+    "https://foodsafetyandrisk.biomedcentral.com/articles/" + DOI,
     "https://doi.org/" + DOI,
     "https://foodsafetyandrisk.biomedcentral.com/counter/pdf/" + DOI + ".pdf",
 ]
@@ -191,25 +193,38 @@ def to_record(row, seq):
 
 
 def main():
+    # THIS LOOP USED TO BREAK ON THE FIRST PAGE THAT FETCHED, not on the first
+    # page that carried what it came for. The journal moved to Springer Nature
+    # Link, and the old BioMed Central address still answers - with a page that
+    # has no supplementary-file link on it. So the run "reached" the article,
+    # found no supplement, and exited telling us the layout had changed, three
+    # weeks running, while the alternate that would have worked sat untried in
+    # the list below it. Reaching a page is not the same as getting the thing.
     print("fetching the article page")
-    page = None
+    page, link, reached = None, None, []
     for _cand in ([ARTICLE] + ARTICLE_ALTS):
         try:
             page = fetch(_cand)
-            print("  reached %s" % _cand[:70])
-            break
         except Exception as e:
             print("  %-66s %s" % (_cand[:66], str(e)[:32]), file=sys.stderr)
-    if page is None:
+            continue
+        link = find_supplement(page)
+        reached.append((_cand, bool(link)))
+        print("  reached %-58s supplement link: %s"
+              % (_cand[:58], "yes" if link else "no"))
+        if link:
+            break
+    if not reached:
         sys.exit("every article route refused. Nothing written: an empty file would "
                  "reach the map as no recorded incidents, which is the opposite of "
                  "true. A 403 everywhere usually means the request was blocked; a "
                  "404 would mean the article moved again.")
-
-    link = find_supplement(page)
     if not link:
-        sys.exit("found the article but no supplementary-file link \u2014 the page "
-                 "layout has changed; open %s and update find_supplement()" % ARTICLE)
+        sys.exit("reached %d of the article's addresses and none carried a "
+                 "supplementary-file link: %s. The DOI is stable, so the article has "
+                 "not gone - the layout has. Open the Springer address and update "
+                 "find_supplement()."
+                 % (len(reached), ", ".join(u[:60] for u, _ in reached)))
     print("  supplement: %s" % link[:110])
 
     try:

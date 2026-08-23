@@ -76,6 +76,57 @@ ALIASES = {
 _STOP = {"the", "of", "and", "for", "de", "del", "la", "le", "des", "du", "y",
          "national", "ministry", "department", "office", "agency", "authority"}
 
+# REVIEWED BY HAND, so the run stops re-reporting settled cases and a genuinely
+# new mismatch is visible instead of buried in nine familiar ones. The reason is
+# recorded because the decision is not obvious from the two names alone.
+REVIEWED = {
+    # Declined: the focal point is a DIFFERENT body from the one the row names,
+    # not a longer way of writing it. Linking would send a reader to an office
+    # that does not hold what the row promises.
+    ("Panama", "Comisión Nacional de Bioseguridad"): "ministry hosts the commission, is not it",
+    ("Guatemala", "MAGA — Ministerio de Agricultura"): "directorate sits under environment, not MAGA",
+    ("Montenegro", "Ministry of Ecology"): "focal point is a university faculty",
+    ("Micronesia", "Department of Environment, Climate Change and Emergency Management"):
+        "a different department of government",
+    ("San Marino", "Environment Authority"): "focal point is a naturalistic centre",
+    # Declined for now: the focal point is a sub-unit INSIDE the body the row
+    # names. Same organisation, but the stub URL points at the sub-unit, and a
+    # reader sent to a biodiversity desk for a biosafety question has been
+    # misdirected inside the right building. Revisit if the stub carries the
+    # parent URL.
+    ("Lebanon", "Ministry of Environment (Lebanon)"): "sub-unit of the named ministry",
+    ("Moldova", "Ministry of Environment (Moldova)"): "sub-unit of the named ministry",
+    ("Kuwait", "Environment Public Authority"): "sub-unit of the named authority",
+}
+
+
+def expands_to(short, long_):
+    """Is `short` the acronym of `long_`?
+
+    NOT first letters. Spanish and French agency acronyms take SEVERAL letters
+    per word: SENASA is SErvicio NAcional SAnidad, so an initials test returns
+    SNSEIA and misses it - which is exactly how a run came to hold Honduras for
+    review against its own full name. This walks the words in order and lets
+    each consume a run of leading letters from the acronym.
+
+    Guarded against coincidence: the acronym must be 4+ letters and must draw
+    on at least two words, so a short code cannot swallow a single long word.
+    """
+    a = re.sub(r"[^A-Za-z]", "", short or "").upper()
+    if len(a) < 4:
+        return False
+    words = [w.upper() for w in re.split(r"[^A-Za-z\u00c0-\u024f]+", long_ or "") if w]
+    i, used = 0, 0
+    for w in words:
+        if i >= len(a):
+            break
+        n = 0
+        while n < len(w) and i < len(a) and w[n] == a[i]:
+            n += 1; i += 1
+        if n:
+            used += 1
+    return i == len(a) and used >= 2
+
 
 def _tokens(name):
     s = re.sub(r"[^a-z0-9\u00c0-\u024f ]", " ", (name or "").lower())
@@ -95,6 +146,14 @@ def same_body(row_name, harvested):
     a, b = _tokens(row_name), _tokens(harvested)
     if not a or not b:
         return False
+    # An acronym and its expansion are the same body and share no tokens at all.
+    # A run held Honduras for review because the row said "SENASA Honduras" and
+    # the harvest said "Servicio Nacional de Sanidad e Inocuidad Agroalimentaria",
+    # which IS SENASA. Require 4+ letters so short codes cannot collide.
+    for short, long_ in ((row_name, harvested), (harvested, row_name)):
+        for t in re.split(r"[^A-Za-z]+", short or ""):
+            if len(t) >= 4 and t.isupper() and expands_to(t, long_):
+                return True
     short, long_ = (a, b) if len(a) <= len(b) else (b, a)
     return len(short & long_) / len(short) >= 0.75
 
@@ -168,7 +227,7 @@ def name_unnamed(doc, ippc):
 
 def merge(doc, keyed):
     """Returns (actions, review). Mutates nothing until the caller applies."""
-    actions, review = [], []
+    actions, review, settled = [], [], []
     for country, cats in doc["countries"].items():
         hit = keyed.get(country)
         if not hit:
@@ -185,9 +244,11 @@ def merge(doc, keyed):
                 elif cat == "decides":
                     if same_body(r.get("n", ""), inst):
                         actions.append(("link", country, cat, r, inst, url))
+                    elif (country, r.get("n", "")) in REVIEWED:
+                        settled.append((country, r.get("n", "")))
                     else:
                         review.append((country, r.get("n", ""), inst, url))
-    return actions, review
+    return actions, review, settled
 
 
 def apply(actions):
@@ -205,12 +266,14 @@ def apply(actions):
                 "complaint about a planting." % inst)
 
 
-def report(actions, review, unresolved, keyed, doc):
+def report(actions, review, unresolved, keyed, doc, settled=()):
     filled = sum(1 for a in actions if a[0] == "focal")
     linked = sum(1 for a in actions if a[0] == "link")
     print("  focal-point address written onto a no-office row : %d" % filled)
     print("  decides row linked, harvested name matches       : %d" % linked)
     print("  decides row held for review, names differ        : %d" % len(review))
+    if settled:
+        print("  reviewed by hand and declined, not re-listed      : %d" % len(settled))
     print("  stub countries with no URL in the source         : %d" % len(unresolved))
     unmatched = sorted(set(keyed) - set(doc["countries"]))
     print("  stub countries not matching a resources country  : %d" % len(unmatched))
@@ -266,7 +329,7 @@ def selftest():
         {"country": "Blankland", "name": "Ministry of Environment", "url": ""},
     ]
     keyed, unresolved = index_stubs(stubs)
-    actions, review = merge(doc, keyed)
+    actions, review, settled = merge(doc, keyed)
     apply(actions)
 
     C = doc["countries"]
@@ -286,6 +349,30 @@ def selftest():
     check("stub with no URL excluded", "Blankland" in keyed, False)
     check("unknown country reported, not merged",
           sorted(set(keyed) - set(C)), ["Nowhereistan"])
+
+    # Acronym matching: a run held Honduras against its own expanded name.
+    check("an acronym matches its expansion",
+          same_body("SENASA Honduras",
+                    "Servicio Nacional de Sanidad e Inocuidad Agroalimentaria"), True)
+    check("word-prefix, not initials (initials would give SNSEIA)",
+          expands_to("SENASA", "Servicio Nacional de Sanidad e Inocuidad"), True)
+    check("a short code cannot swallow one long word",
+          expands_to("SERV", "Servicio"), False)
+    check("unrelated bodies still refused",
+          same_body("Ministry of Ecology", "University of Montenegro, Biotechnical Faculty"), False)
+    check("and a different ministry is still refused",
+          same_body("MAGA \u2014 Ministerio de Agricultura",
+                    "Direcci\u00f3n de Valoraci\u00f3n y Conservaci\u00f3n de la Biodiversidad"), False)
+
+    # Hand-reviewed mismatches stop being re-listed every run.
+    doc3 = {"countries": {"Montenegro": {"decides": [
+        {"n": "Ministry of Ecology", "lens": "REGULATOR", "d": "x"}]}}}
+    k3 = index_stubs([{"country": "Montenegro",
+                       "name": "University of Montenegro, Biotechnical Faculty",
+                       "url": "https://u.example/"}])[0]
+    a3, r3, s3 = merge(doc3, k3)
+    check("a reviewed mismatch is settled, not re-reported", (len(r3), len(s3)), (0, 1))
+    check("and the row is still left alone", "u" in doc3["countries"]["Montenegro"]["decides"][0], False)
 
     # The IPPC naming pass.
     doc2 = {"countries": {
@@ -334,11 +421,11 @@ def main():
     keyed, unresolved = index_stubs(load(STUBS))
     before = sum(1 for cats in doc["countries"].values() for rr in cats.values()
                  if isinstance(rr, list) for r in rr if r.get("u"))
-    actions, review = merge(doc, keyed)
+    actions, review, settled = merge(doc, keyed)
     if "--dry-run" not in sys.argv:
         apply(actions)
         RESOURCES.write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")
-    report(actions, review, unresolved, keyed, doc)
+    report(actions, review, unresolved, keyed, doc, settled)
     after = sum(1 for cats in load(RESOURCES)["countries"].values() for rr in cats.values()
                 if isinstance(rr, list) for r in rr if r.get("u"))
     print("\n  linked rows %d -> %d%s" % (before, after,

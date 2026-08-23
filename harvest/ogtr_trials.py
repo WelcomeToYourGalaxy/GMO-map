@@ -292,6 +292,7 @@ def main():
         return (0 if "geojson" in u else 1 if "/api/" in u or "jsonapi" in u
                 else 2 if "views/ajax" in u or "export" in u else 3)
     cands = sorted(set(cands), key=likely)[:8]
+    tried = []
     print("  %d candidate data endpoints, most likely first" % len(cands))
     for u in cands[:3]:
         print("     %s" % u[:100])
@@ -302,7 +303,13 @@ def main():
             continue
         try:
             got = harvest_rows(fetch(u))
-        except Exception:
+        except Exception as e:
+            # NOT a bare continue. This step ran three times in a row, failed
+            # every time, and the workflow log carried nothing but
+            # "!! ogtr trials failed" - because every candidate endpoint's
+            # error was discarded here. A reason nobody can read is the same
+            # as no reason.
+            tried.append("%s -> %s: %s" % (u[:70], type(e).__name__, str(e)[:60]))
             continue
         if got:
             print("  data from %s (%d rows)" % (u[:90], len(got)))
@@ -310,6 +317,11 @@ def main():
             break
 
     if not rows:
+        if tried:
+            print("  every candidate endpoint failed; the reasons, which were "
+                  "previously discarded:")
+            for t in tried[:8]:
+                print("     %s" % t)
         print("  no machine-readable site data found. The map may render from an "
               "endpoint this script does not recognise, or from markup. Open %s, "
               "look at the network tab, and add the URL to find_endpoints()." % PAGE,

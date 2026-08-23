@@ -431,6 +431,36 @@ def to_record(row):
     }
 
 
+def unplaced_field_report(unplaced_rows):
+    """Which fields the unplaced records share, so the fix names itself.
+
+    A run put 755 records in the Atlantic and 755 was exactly the count the
+    `decision` schema returned - so it is not scattered bad records, it is one
+    schema carrying its country somewhere this code does not look. Guessing the
+    field name from outside costs a round trip each time.
+
+    VALUES ARE NEVER PRINTED, only field names: these records carry submitter
+    details.
+    """
+    if not unplaced_rows:
+        return []
+    keys = {}
+    for r in unplaced_rows:
+        for k in r:
+            keys[k] = keys.get(k, 0) + 1
+    n = len(unplaced_rows)
+    onall = sorted(k for k, c in keys.items() if c == n)
+    likely = [k for k in onall
+              if any(w in k.lower() for w in
+                     ("countr", "govern", "region", "party", "state",
+                      "nation", "jurisd", "owner", "geo"))]
+    return ["     these rows share %d field names; candidates for COUNTRY_FIELDS:" % len(onall),
+            "     %s" % (" ".join(likely) if likely else
+                         "NONE of their fields name a country - it is genuinely "
+                         "absent from this schema and they belong in the Atlantic"),
+            "     all fields present on every one: %s" % " ".join(onall[:40])]
+
+
 def main():
     print("looking for a machine-readable BCH route")
     rows = []
@@ -571,6 +601,8 @@ def main():
     print("  most-filed: %s" % ", ".join("%s %d" % kv for kv in by.most_common(6)))
     if unplaced_rows:
         print("  no country field, parked in the Atlantic: %d" % len(unplaced_rows))
+        for _line in unplaced_field_report(unplaced_rows):
+            print(_line)
     if MISSING_CC:
         # Named, not silent. Each of these is a country whose decisions were
         # read and then dropped for want of a coordinate; the fix is to add
@@ -632,6 +664,18 @@ def selftest():
        (to_record(_row("br")) or {}).get("lat"), C["BR"][0])
     ck("and the United States, which the table lacked entirely, is sited now",
        (to_record(_row("us")) or {}).get("lat"), C["US"][0])
+
+    # The 755 records parked in the Atlantic: the run must name the field that
+    # would have placed them rather than leaving it to be guessed at.
+    _u = [{"id": "a%d" % i, "title_EN_s": "Decision", "partyToProtocol_s": "MX"}
+          for i in range(30)]
+    ck("unplaced report names the likely country field",
+       "partyToProtocol_s" in unplaced_field_report(_u)[1], True)
+    ck("it says so plainly when no field names a country",
+       "genuinely" in unplaced_field_report([{"id": "1"}])[1], True)
+    ck("no rows, no report", unplaced_field_report([]), [])
+    ck("field VALUES are never printed, only names",
+       any("MX" in l for l in unplaced_field_report(_u)), False)
     MISSING_CC.clear()
 
     ck("outcome: prohibition beats approval wording",
