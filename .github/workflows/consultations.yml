@@ -7,11 +7,14 @@ name: Consultations feed
 # old - so a monthly harvest can leave it blank for a fortnight while the
 # facility registers it was riding along with have nothing new to say.
 #
-# It also runs in about a minute against that job's four hours, which is the
-# other half of the reason: there is no sense waiting for 1,140 AAALAC
-# organisations to find out whether a comment period opened yesterday.
-#
 # Daily, and it touches exactly one file.
+#
+# Timings changed with the WTO workbook. Notification_EN.xlsx carries every SPS
+# and TBT notification since 1995 and the download dominates the run, so the
+# step timeout went 12m -> 20m and the job ceiling 20 -> 30. Check the sum of
+# the `timeout Nm` steps against `timeout-minutes` whenever a source is added:
+# a job cancelled partway commits NOTHING, which is how releases.yml once lost
+# a whole successful run.
 
 on:
   schedule:
@@ -28,25 +31,36 @@ concurrency:
 jobs:
   consultations:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
+      # Before the network is touched. The selftest needs none of it: it builds
+      # its own workbook, and it checks the two things that fail silently -
+      # the Excel epoch (four days wrong in every deadline, with no error
+      # anywhere) and the subject filter in four languages. If this step fails
+      # the job stops here and the previous consultations.json stands, which is
+      # the right outcome: a harvester that cannot pass its own tests should
+      # not be allowed to overwrite a good file.
+      - name: Selftest
+        run: python3 harvest/consultations.py --selftest
+
       - name: Harvest open consultations
         run: |
           set +e
-          timeout 12m python3 harvest/consultations.py || \
+          timeout 20m python3 harvest/consultations.py || \
             echo "!! consultations failed - leaving the previous file in place"
           set -e
 
-          # A failed run must not blank the file. If the harvester wrote
-          # nothing, the file on disk is the last good one and committing
-          # nothing is correct: a stale list is caught by the map's own
-          # three-week freshness check, but an EMPTY list would be read as
-          # "no consultations are open anywhere", which is a much worse lie.
+          # A failed run must not blank the file. The harvester exits non-zero
+          # and writes NOTHING when every feed fails, so the file on disk is
+          # the last good one and committing nothing is correct: a stale list
+          # is caught by the map's own three-week freshness check, but an
+          # EMPTY list would be read as "no consultations are open anywhere",
+          # which is a much worse lie.
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A --ignore-errors harvest/consultations.json
