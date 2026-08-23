@@ -472,6 +472,12 @@ body.info-open #controls #indexPanel{position:static !important;
 .pj-dl.open{color:#253c91;background:rgba(28,52,145,0.12);border:1px solid rgba(28,52,145,0.45);}
 .pj-dl.shut{color:#959eb3;background:rgba(154,168,189,0.10);border:1px solid rgba(154,168,189,0.3);}
 .pj-date{color:#98a2c1;}
+.bch-list{max-height:230px;overflow-y:auto;margin:2px 0 6px;border-left:2px solid rgba(83,137,164,.45);padding-left:8px;}
+.bch-row{padding:4px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.bch-row:last-child{border-bottom:0;}
+.bch-t{font-size:11.5px;line-height:1.35;}
+.bch-m{font-size:10px;color:#8fa0b8;margin-top:1px;}
+.bch-none{margin:6px 0;}
 .approx-badge{font-size:10px;color:#305488;background:rgba(230,192,121,0.12);border:1px dashed rgba(230,192,121,0.5);border-radius:4px;padding:2px 5px;margin:0 0 5px;display:inline-block;}</style>
 <script>
 /* Deleting a panel removes elements that code still writes to. `null.innerHTML`
@@ -1401,7 +1407,153 @@ window._reflowInfo=function(){
 window.addEventListener('resize',function(){ if(window._reflowInfo)_reflowInfo(); });
 function showInfoPanel(html){ document.body.classList.add('info-open'); var b=document.getElementById('infoBody'); if(b)b.innerHTML=html; var p=document.getElementById('infoPanel'); if(p){ p.classList.add('open'); if(window._reflowInfo){ _reflowInfo(); setTimeout(_reflowInfo,240); } } }
 function hideInfoPanel(){ const p=document.getElementById('infoPanel'); if(p)p.classList.remove('open'); document.body.classList.remove('info-open'); if(window._reflowInfo){ _reflowInfo(); setTimeout(_reflowInfo,240); } }
-function gbFitPad(sz){ return (window.innerWidth<=640) ? {paddingTopLeft:[40,95],paddingBottomRight:[40,Math.round(sz.y*0.5)+16]} : {paddingTopLeft:[Math.max(660,Math.min(720,Math.round(sz.x*0.45))),72],paddingBottomRight:[40,50]}; }
+/* THE CLICKED COUNTRY LANDED OFF TO THE SIDE.
+   The left padding was a fixed 660-720px, reserved for the info panel. That is
+   right only when the panel is open AND that wide: with the panel shut, or
+   narrower, or on a wide monitor where 0.45 of the width is far more than the
+   panel occupies, fitBounds pushed the country into the right-hand third of the
+   screen. The reserved space is now MEASURED from the panel itself, and is zero
+   when the panel is not open. Capped at 42% of the map so a wide panel cannot
+   squeeze the country into a sliver. */
+function gbPanelReserve(sz){
+  try{
+    var card=document.getElementById('infoPanel');
+    if(!card || !card.classList.contains('open')) return 0;
+    var cr=card.getBoundingClientRect();
+    if(!cr.width) return 0;
+    var mr=document.getElementById('map').getBoundingClientRect();
+    /* how far the panel's right edge reaches into the map, plus a gutter */
+    var reach=Math.round(cr.right-mr.left)+28;
+    return Math.max(0, Math.min(reach, Math.round(sz.x*0.42)));
+  }catch(e){ return 0; }
+}
+/* THE DECISIONS WERE PRINTED AS A JSON BLOB.
+   A Clearing-House record carries its detail in `status`, which is a string
+   holding a JSON array - e.g.
+     ["{\"normalizedUID\":\"MON-\u00d8\u00d86\u00d83-6\",\"decisions\":{\"food\":true,...}}"]
+   The country box printed that string verbatim. It is parsed here into the two
+   things a reader wants: the unique identifier of the organism, and which uses
+   were allowed. Anything unparseable is skipped rather than shown raw - 16 of
+   the 3,022 records do not parse, and a blob on screen is worse than a
+   silence. */
+/* Pull every top-level {...} out of a string by counting braces, ignoring any
+   that fall inside a quoted value. Returns parsed objects; unparseable blocks
+   are dropped. */
+function _bchBraces(str){
+  var out=[], depth=0, start=-1, inStr=false, esc=false;
+  for(var i=0;i<str.length;i++){
+    var ch=str.charAt(i);
+    if(esc){ esc=false; continue; }
+    if(ch==='\\'){ esc=true; continue; }
+    if(ch==='"'){ inStr=!inStr; continue; }
+    if(inStr) continue;
+    if(ch==='{'){ if(depth===0) start=i; depth++; }
+    else if(ch==='}'){ depth--; if(depth===0 && start>=0){
+      try{ out.push(JSON.parse(str.slice(start,i+1))); }catch(e){}
+      start=-1; } }
+  }
+  return out;
+}
+var _BCH_USE = {food:'food', feed:'feed',
+                environmentalCultivation:'cultivation',
+                environmentalImport:'import'};
+function _bchParse(rec){
+  var out={uid:'', uses:[]}, raw=rec && rec.status;
+  if(!raw) return out;
+  var arr=raw;
+  if(typeof raw==='string'){
+    if(raw.charAt(0)!=='[') return out;
+    try{ arr=JSON.parse(raw); }
+    catch(e){
+      /* The harvester wrote a PYTHON repr, not JSON: the outer list uses single
+         quotes around each element while the element itself is double-quoted
+         JSON -  ['{"normalizedUID": ...}'] . Neither JSON.parse nor a blanket
+         quote swap can read that: swapping quotes destroys the inner ones. So
+         the objects are pulled out by scanning for balanced braces, which does
+         not care how the string around them is quoted. */
+      arr=_bchBraces(raw);
+    }
+  }
+  if(!(arr instanceof Array)) return out;
+  var seen={};
+  for(var i=0;i<arr.length;i++){
+    var o=arr[i];
+    if(typeof o==='string'){ try{ o=JSON.parse(o); }catch(e){ continue; } }
+    if(!o || typeof o!=='object') continue;
+    if(!out.uid && o.uniqueIdentification) out.uid=String(o.uniqueIdentification);
+    if(!out.uid && o.normalizedUID) out.uid=String(o.normalizedUID);
+    var dd=o.decisions||{};
+    for(var k in dd){ if(dd[k] && !seen[k]){ seen[k]=1; out.uses.push(_BCH_USE[k]||k); } }
+  }
+  return out;
+}
+/* The list, with a filter. 67 decisions in one box is a wall; the select
+   narrows by use, which is the axis a reader actually cares about - whether
+   something may be GROWN here is a different question from whether it may be
+   eaten. Newest first, because a later decision may supersede an earlier one. */
+function _bchPanel(list, a3){
+  var rows=[], i, uses={};
+  for(i=0;i<list.length;i++){
+    var p=_bchParse(list[i]);
+    for(var u=0;u<p.uses.length;u++) uses[p.uses[u]]=1;
+    rows.push({n:list[i].name||'', d:list[i].date||'', u:list[i].url||'',
+               uid:p.uid, uses:p.uses});
+  }
+  rows.sort(function(a,b){ return (b.d||'').localeCompare(a.d||''); });
+  var id='bchL'+a3, sel='bchS'+a3, h='';
+  var keys=Object.keys(uses).sort();
+  if(keys.length>1){
+    h+='<div class="rgm-p"><label style="font-size:11px">Show decisions for '
+      +'<select id="'+sel+'" onchange="_bchFilter(\''+a3+'\')" '
+      +'style="font-size:11px;margin-left:4px">'
+      +'<option value="">every use</option>';
+    for(i=0;i<keys.length;i++)
+      h+='<option value="'+_esc(keys[i])+'">'+_esc(keys[i])+'</option>';
+    h+='</select></label></div>';
+  }
+  h+='<div id="'+id+'" class="bch-list">';
+  for(i=0;i<rows.length;i++){
+    var r=rows[i];
+    h+='<div class="bch-row" data-uses="'+_esc(r.uses.join(' '))+'">'
+      +'<div class="bch-t">'+(r.u?('<a href="'+_esc(r.u)+'" target="_blank" '
+        +'rel="noopener">'+_esc(r.n)+'</a>'):_esc(r.n))+'</div>'
+      +'<div class="bch-m">'+(r.d?_esc(r.d):'no date')
+      +(r.uid?(' \u00b7 '+_esc(r.uid)):'')
+      +(r.uses.length?(' \u00b7 '+_esc(r.uses.join(', '))):' \u00b7 uses not stated')
+      +'</div></div>';
+  }
+  h+='</div>';
+  return h;
+}
+window._bchFilter=function(a3){
+  try{
+    var sel=document.getElementById('bchS'+a3), box=document.getElementById('bchL'+a3);
+    if(!box) return;
+    var want=sel?sel.value:'';
+    var rows=box.querySelectorAll('.bch-row'), shown=0;
+    for(var i=0;i<rows.length;i++){
+      var u=(rows[i].getAttribute('data-uses')||'').split(' ');
+      var ok=!want || u.indexOf(want)>=0;
+      rows[i].style.display = ok ? '' : 'none';
+      if(ok) shown++;
+    }
+    /* A filter that hides everything looks like a broken panel. Say so. */
+    var note=box.querySelector('.bch-none');
+    if(!shown){
+      if(!note){ note=document.createElement('div');
+        note.className='bch-none rgm-conf';
+        note.textContent='No decision here records that use.';
+        box.appendChild(note); }
+      note.style.display='';
+    } else if(note){ note.style.display='none'; }
+  }catch(e){}
+};
+function gbFitPad(sz){
+  if(window.innerWidth<=640)
+    return {paddingTopLeft:[40,95],paddingBottomRight:[40,Math.round(sz.y*0.5)+16]};
+  return {paddingTopLeft:[Math.max(40,gbPanelReserve(sz)),72],
+          paddingBottomRight:[40,50]};
+}
 function gbFitWithPanel(bounds){ if(!bounds)return; try{ gbFitTime=Date.now(); map.fitBounds(bounds,gbFitPad(map.getSize())); }catch(e){} }
 function gbPanClear(latlng){ if(!latlng||gbDragging)return; try{
   const card=document.getElementById('infoPanel'); if(!card||!card.classList.contains('open'))return;
@@ -1620,7 +1772,11 @@ function _regimeBoxInner(iso){
      and it is a fact about the country, which is here. */
   try{
     var recs=(window.pjDataRef&&window.pjDataRef.projects)||[];
-    var a3=String(iso).toUpperCase(), dec=null;
+    /* Was `dec = the first match, then break`. One country files many decisions
+       - the United States alone has 67 - so a single record stood for all of
+       them, and its raw `status` field was printed straight into the page as a
+       JSON blob. Collect them all instead, and render them below. */
+    var a3=String(iso).toUpperCase(), dec=[];
     for(var q=0;q<recs.length;q++){
       var r=recs[q];
       if(String(r.source||'').indexOf('bch')!==0) continue;
@@ -1628,17 +1784,15 @@ function _regimeBoxInner(iso){
       if(!st || st==='\u2014') continue;
       var got = st.length===3 ? st
               : ((window._WIRE_A2TO3 && window._WIRE_A2TO3[st]) || _A2_EXTRA[st] || '');
-      if(got===a3){ dec=r; break; }
+      if(got===a3) dec.push(r);
     }
-    if(dec){
+    if(dec.length){
       h+='<div class="rgm-h2"><span class="rgm-ar" style="background:#5389a4"></span>'
         +'Decisions filed to the Cartagena Protocol</div>';
-      h+='<div class="rgm-p">'+_esc(String(dec.size||'decisions filed'))
-        +(dec.status?(' \u2014 '+_esc(String(dec.status))):'')+'. '
-        +'A decision is a ruling on whether a living modified organism may be used, '
-        +'imported or released here.</div>';
-      if(dec.url) h+='<div class="rgm-p"><a href="'+_esc(dec.url)
-        +'" target="_blank" rel="noopener">the country\u2019s filing</a></div>';
+      h+='<div class="rgm-p">'+dec.length+' decision'+(dec.length===1?'':'s')
+        +' filed by this country. A decision is a ruling on whether a living '
+        +'modified organism may be used, imported or released here.</div>';
+      h+=_bchPanel(dec, a3);
     } else if(recs.length){
       h+='<div class="rgm-h2"><span class="rgm-ar" style="background:#5389a4"></span>'
         +'Decisions filed to the Cartagena Protocol</div>';
