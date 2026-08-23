@@ -22,11 +22,15 @@ jobs:
     # run went past two hours: nothing here is worth an unbounded wait, and a
     # job that never finishes also never commits what the earlier steps did get.
     # ARITHMETIC, check this every time a harvester is added. The per-step
-    # `timeout Nm` values below sum to 144 minutes. The whole sequence runs
-    # inside `for i in 1 2 3`, so the worst case is 3 x 144 = 432. The ceiling
+    # `timeout Nm` values below sum to 128 minutes. The whole sequence runs
+    # inside `for i in 1 2 3`, so the worst case is 3 x 128 = 384. The ceiling
     # is set above that: a job cancelled partway commits NOTHING, which is worse
     # than a slow one. It was 86 against a 112-minute sum, which is the state
     # this comment exists to stop recurring.
+    # Was 144 until ippc_contacts dropped --websites (20m -> 4m). RECOUNT THIS
+    # SUM whenever a step timeout changes; a comment that has drifted from the
+    # file is worse than no comment, because it is the thing the next person
+    # trusts instead of counting.
     timeout-minutes: 452
     steps:
       - uses: actions/checkout@v4
@@ -84,10 +88,16 @@ jobs:
             # IPPC Art. VIII.2 contact points: the NPPO each country has
             # designated. Names a body; publishes no website. Runs BEFORE the
             # merge so the merge can read it in the same pass.
-            # --websites adds one request per country against the IPPC country
-            # pages, which carry a Website: line the CSV extractor omits. That
-            # is ~180 paced requests, hence the larger timeout.
-            timeout 20m python3 harvest/ippc_contacts.py --websites || echo "!! ippc contacts failed - continuing"
+            #
+            # --websites REMOVED. It fetched the IPPC country page for each of
+            # ~180 countries looking for a Website: line the CSV omits. The
+            # route was tried twice and returned nothing both times: the field
+            # is blank for most countries and the pages that do carry one are
+            # rendered client-side, so a fetcher sees an empty shell. It cost
+            # 20 minutes of the job's budget per run to produce no rows. The
+            # flag still exists in the script for anyone who wants to re-test it
+            # by hand; it is not worth a scheduled slot.
+            timeout 4m python3 harvest/ippc_contacts.py || echo "!! ippc contacts failed - continuing"
             timeout 6m python3 harvest/merge_directory.py || echo "!! directory merge failed - continuing"
             # --ignore-errors so a file a failed harvester never wrote does not
             # abort the step under bash -e on the first run.
