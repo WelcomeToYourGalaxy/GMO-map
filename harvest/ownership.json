@@ -808,7 +808,7 @@
    ]
   },
   {
-   "owner": "CARE Fertility",
+   "owner": "Care Fertility",
    "basis": "inferred from the site's own name",
    "sites": 15,
    "countries": [
@@ -930,7 +930,7 @@
    ]
   },
   {
-   "owner": "GENESIS",
+   "owner": "Genesis",
    "basis": "inferred from the site's own name",
    "sites": 13,
    "countries": [
@@ -3699,7 +3699,7 @@
    ]
   },
   {
-   "owner": "FERTILAB",
+   "owner": "Fertilab",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
@@ -3828,7 +3828,7 @@
    ]
   },
   {
-   "owner": "CITMER",
+   "owner": "Citmer",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
@@ -3994,6 +3994,31 @@
      "lat": 52.62816,
      "lng": -2.15153,
      "where": "Pendeford Business Park, Aldersley House, Overstrand, Wolverhampton, Pendeford, WV9 5HA",
+     "source": "hfea_clinics.json"
+    }
+   ]
+  },
+  {
+   "owner": "TFP GCRM Fertility",
+   "basis": "stated by the register",
+   "sites": 2,
+   "countries": [
+    "AB32 6JL",
+    "DD1 3DA"
+   ],
+   "members": [
+    {
+     "name": "Dundee Fertility Associates",
+     "lat": 56.461,
+     "lng": -2.96616,
+     "where": "Tayside Complete Health, 7, Commercial Street, Dundee, DD1 3DA",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "ROC Clinic Aberdeen",
+     "lat": 57.14791,
+     "lng": -2.29812,
+     "where": "Westhill Business Park, Peregrine Road, Aberdeen, AB32 6JL",
      "source": "hfea_clinics.json"
     }
    ]
@@ -6760,23 +6785,6 @@
    ]
   },
   {
-   "owner": "TFP GCRM Fertility",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "DD1 3DA"
-   ],
-   "members": [
-    {
-     "name": "Dundee Fertility Associates",
-     "lat": 56.461,
-     "lng": -2.96616,
-     "where": "Tayside Complete Health, 7, Commercial Street, Dundee, DD1 3DA",
-     "source": "hfea_clinics.json"
-    }
-   ]
-  },
-  {
    "owner": "Cambridge IVF",
    "basis": "stated by the register",
    "sites": 1,
@@ -6823,6 +6831,23 @@
      "lat": 53.85045,
      "lng": -1.51734,
      "where": "5 Stoneleigh Garth, Moortown, Leeds, LS17 8FG",
+     "source": "hfea_clinics.json"
+    }
+   ]
+  },
+  {
+   "owner": "Guys Hospital",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "EX1 2ED"
+   ],
+   "members": [
+    {
+     "name": "Royal Devon and Fertility Exeter",
+     "lat": 50.72474,
+     "lng": -3.51419,
+     "where": "Royal Devon & Exeter Hospital (Heavitree), Gladstone Road, Devon, Exeter, EX1 2ED",
      "source": "hfea_clinics.json"
     }
    ]
