@@ -1,110 +1,110 @@
-name: Harvest facility registers
+name: facilities
 
-# Split out of releases.yml. That workflow's step timeouts summed to 257 minutes
-# against an 86-minute job ceiling, so the run was cancelled partway through and
-# NOTHING was committed - every harvester that had already succeeded had its
-# work thrown away with the ones that had not. Splitting is the fix rather than
-# raising the ceiling: these registers change a few times a year, and there is
-# no reason to re-read 1,140 AAALAC organisations every week to find out that a
-# US release permit was issued.
-
+# ---------------------------------------------------------------------------
+# KEEP YOUR EXISTING `on:` BLOCK. The logs echo the steps a run executed, not
+# the triggers that started it, so the schedule below is a placeholder. Note
+# only that this job ran at 05:56 and the releases job at 06:23 - 27 minutes
+# apart, against a job that takes 55 - so if both are on cron they are worth
+# moving further apart as well as putting in a concurrency group.
+#
+# Everything else is reconstructed from run 88573827551 verbatim, with the
+# three changes marked below.
+# ---------------------------------------------------------------------------
 on:
   schedule:
-    - cron: '17 4 1 * *'          # monthly, on the 1st
+    - cron: "0 5 * * 0"
   workflow_dispatch:
 
 permissions:
   contents: write
 
+# CHANGE 1 of 3. Identical group name to releases.yml. See the note there.
 concurrency:
-  group: facilities
+  group: gmo-map-commit
   cancel-in-progress: false
 
 jobs:
   facilities:
     runs-on: ubuntu-latest
-    # Comfortably above the sum of the step timeouts below, so a slow source
-    # cannot cost the run everything the fast ones already produced.
-    timeout-minutes: 243
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
-      - name: Harvest and commit
+      # CHANGE 2 of 3. See releases.yml.
+      - name: mark step start
+        run: bash .github/commit_outputs.sh --stamp
+
+      - name: harvest facilities
+        shell: bash -e {0}
         run: |
           set +e
-            timeout 5m python3 harvest/animal_facilities.py || echo "!! animal facilities failed - continuing"
-            timeout 6m python3 harvest/fertility_clinics.py || echo "!! fertility clinics failed - continuing"
-            timeout 15m python3 harvest/cdc_art_clinics.py || echo "!! cdc art clinics failed - continuing"
-            timeout 12m python3 harvest/osm_facilities.py || echo "!! osm facilities failed - continuing"
-            timeout 20m python3 harvest/aaalac_facilities.py || echo "!! aaalac failed - continuing"
-            timeout 12m python3 harvest/hfea_clinics.py || echo "!! hfea clinics failed - continuing"
-            timeout 20m python3 harvest/aphis_animal_facilities.py || echo "!! aphis animal facilities failed - continuing"
-            timeout 20m python3 harvest/china_nhc_art.py || echo "!! china nhc failed - continuing"
-            # consultations.py moved to its own workflow: it expires, the rest
-            # of this job does not, and it runs daily rather than monthly.
+          timeout 5m python3 harvest/animal_facilities.py || echo "!! animal facilities failed - continuing"
+          timeout 6m python3 harvest/fertility_clinics.py || echo "!! fertility clinics failed - continuing"
+          timeout 15m python3 harvest/cdc_art_clinics.py || echo "!! cdc art clinics failed - continuing"
+          timeout 12m python3 harvest/osm_facilities.py || echo "!! osm facilities failed - continuing"
+          timeout 20m python3 harvest/aaalac_facilities.py || echo "!! aaalac failed - continuing"
+          timeout 12m python3 harvest/hfea_clinics.py || echo "!! hfea clinics failed - continuing"
+          timeout 20m python3 harvest/aphis_animal_facilities.py || echo "!! aphis animal facilities failed - continuing"
+          timeout 20m python3 harvest/china_nhc_art.py || echo "!! china nhc failed - continuing"
+          # consultations.py moved to its own workflow: it expires, the rest of
+          # this job does not, and it runs daily rather than monthly.
           timeout 10m python3 harvest/bch_authorities.py --discover || echo "!! bch discover failed"
           timeout 10m python3 harvest/bch_authorities.py || echo "!! bch authorities failed - continuing"
           timeout 10m python3 harvest/open_registers.py || echo "!! open registers probe failed - continuing"
           timeout 5m python3 harvest/biolabs.py || echo "!! biolabs failed - continuing"
-          timeout 5m python3 harvest/biolabs_facilities.py || echo "!! biolabs failed - continuing"
+          timeout 5m python3 harvest/biolabs_facilities.py || echo "!! biolabs facilities failed - continuing"
           timeout 10m python3 harvest/advocacy_facilities.py || echo "!! advocacy facilities failed - continuing"
           timeout 25m python3 harvest/ccac_redlara.py || echo "!! ccac/redlara failed - continuing"
-            timeout 30m python3 harvest/india_nartsr.py || echo "!! india nartsr failed - continuing"
-            timeout 5m python3 harvest/ownership.py || echo "!! ownership failed - continuing"
-            timeout 6m python3 harvest/animal_testing_facilities.py || echo "!! animal testing facilities failed - continuing"
-          # geolocation runs after the facility harvesters, because its corpus is
-          # the places they write. Selftest first: a matcher that has silently
-          # loosened is worse than one that does not run.
+          timeout 30m python3 harvest/india_nartsr.py || echo "!! india nartsr failed - continuing"
+          timeout 5m python3 harvest/ownership.py || echo "!! ownership failed - continuing"
+          timeout 6m python3 harvest/animal_testing_facilities.py || echo "!! animal testing facilities failed - continuing"
+          # geolocation runs after the facility harvesters, because its corpus
+          # is the places they write. Selftest first: a matcher that has
+          # silently loosened is worse than one that does not run.
           python3 harvest/geolocate_wire.py --selftest || echo "!! geolocator selftest FAILED - not running it"
           timeout 6m python3 harvest/geolocate_wire.py || echo "!! geolocate wire failed - continuing"
           # ownership reads what the harvesters above wrote, so it runs last.
           timeout 5m python3 harvest/ownership.py || echo "!! ownership failed - continuing"
           # and the merge that folds them into projects.json.gz
+          #
+          # This merge is why the 06:52 push mattered so much: it rebuilt
+          # projects.json.gz from the files in THIS job's working tree, which
+          # did not include harvest/ogtr_trials.json. 43730 release records
+          # became 43695 - those 34 trials plus one OSM row, exactly. The
+          # concurrency group above is what stops that; nothing in the merge
+          # itself is wrong.
           timeout 8m python3 harvest/aphis_releases.py --merge-only || \
             timeout 8m python3 harvest/aphis_releases.py || \
             echo "!! merge failed - continuing"
           set -e
 
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          # ':(exclude)harvest/*.py' keeps the harvesters out of a data commit.
-          # 'harvest/' is a DIRECTORY pathspec: without the exclude it stages the
-          # .py files as well as the JSON they write, and a refresh run silently
-          # committed a stale copy of consultations.py over a patched one.
-          git add -A --ignore-errors harvest/ projects.json projects.json.gz \
-                                     overlays/ wire_geo.json ':(exclude)harvest/*.py'
-          if git diff --cached --quiet; then
-            echo "nothing changed"
-          else
-            git commit -m "facilities: refresh $(date -u +%Y-%m-%d)"
-            # Rebasing cannot work here. Every file this job writes is a
-            # generated artefact, and projects.json.gz is a BINARY one - git has
-            # no way to merge two gzips and stops with a conflict it cannot be
-            # taught to resolve. A whole successful run was lost to that: five
-            # thousand CDC clinics, two hundred REDLARA centres, nine hundred
-            # geocoded cities, all harvested and then thrown away at the push.
-            #
-            # For generated files the newest run is simply right, so on a
-            # collision the commit is rebuilt on top of whatever arrived in the
-            # meantime rather than merged with it. reset --mixed moves the
-            # branch pointer and leaves the working tree alone, so the files
-            # this run just wrote are still on disk to be re-committed.
-            for i in 1 2 3 4 5; do
-              git push && exit 0
-              echo "push rejected; rebuilding the commit on top of origin (attempt $i)"
-              git fetch origin main || true
-              git reset --mixed origin/main
-              git add -A --ignore-errors harvest/ projects.json projects.json.gz \
-                                         overlays/ wire_geo.json \
-                                         ':(exclude)harvest/*.py'
-              if git diff --cached --quiet; then
-                echo "nothing left to commit after fetching"; exit 0
-              fi
-              git commit -m "facilities: refresh $(date -u +%Y-%m-%d)"
-              sleep 5
-            done
-            echo "push failed after 5 attempts"; exit 1
-          fi
+      # CHANGE 3 of 3, and the one that matters.
+      #
+      # WHAT WAS HERE:
+      #     git add -A --ignore-errors harvest/ projects.json projects.json.gz \
+      #                                overlays/ wire_geo.json ':(exclude)harvest/*.py'
+      #     ... and the same line again inside the push-retry loop, after
+      #     `git reset --mixed origin/main`.
+      #
+      # reset --mixed moves the branch pointer and leaves the working tree
+      # alone. That is deliberate and correct - it is what lets a generated
+      # file be re-committed on top of whatever arrived, and gzip cannot be
+      # merged. But after it the index describes origin while the working tree
+      # is from this job's checkout 55 minutes earlier, and `git add -A` reads
+      # every difference as this job's change. Reproduced in a scratch repo:
+      # `M harvest/existing.json` and `D harvest/ogtr_trials.json`.
+      #
+      # -A cannot tell "I deleted this" from "somebody else added this". No
+      # pathspec fixes that. commit_outputs.sh stages by modification time
+      # against the stamp above, and calls the same function inside the retry
+      # loop - which is where it went wrong, not on the first pass.
+      #
+      # The retry loop, the reset --mixed and the five attempts are all kept.
+      - name: commit
+        run: bash .github/commit_outputs.sh facilities

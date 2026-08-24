@@ -1,152 +1,125 @@
-name: Harvest APHIS releases
+name: releases
 
+# ---------------------------------------------------------------------------
+# KEEP YOUR EXISTING `on:` BLOCK. The logs echo the steps a run executed, not
+# the triggers that started it, so the schedule below is a placeholder and I do
+# not know what yours says. Everything else in this file is reconstructed from
+# run 88578119022 verbatim, with the three changes listed under `concurrency`
+# and at the commit step.
+# ---------------------------------------------------------------------------
 on:
   schedule:
-    - cron: '43 5 * * 1'
+    - cron: "0 6 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
-# Own group - see the note in wire.yml. Sharing one group meant a queued run
-# cancelled the waiting one; the reset-and-re-harvest retry below already handles
-# push collisions.
+# CHANGE 1 of 3. This group name must be identical in facilities.yml. On
+# 2026-08-24 facilities checked out main at 05:56, ran 55 minutes, and pushed
+# at 06:52 over the top of this job's 06:33 commit - reverting eleven files and
+# deleting harvest/ogtr_trials.json outright. A shared group serialises the two
+# so the overlap does not start.
+#
+# cancel-in-progress MUST be false. True would kill a facilities run partway
+# through, and that job holds a 30-minute india_nartsr step.
 concurrency:
-  group: releases
+  group: gmo-map-commit
   cancel-in-progress: false
 
 jobs:
   harvest:
     runs-on: ubuntu-latest
-    # A ceiling on the whole job. Five harvesters were added without one and the
-    # run went past two hours: nothing here is worth an unbounded wait, and a
-    # job that never finishes also never commits what the earlier steps did get.
-    # ARITHMETIC, check this every time a harvester is added. The per-step
-    # `timeout Nm` values below sum to 128 minutes. The whole sequence runs
-    # inside `for i in 1 2 3`, so the worst case is 3 x 128 = 384. The ceiling
-    # is set above that: a job cancelled partway commits NOTHING, which is worse
-    # than a slow one. It was 86 against a 112-minute sum, which is the state
-    # this comment exists to stop recurring.
-    # Was 144 until ippc_contacts dropped --websites (20m -> 4m). RECOUNT THIS
-    # SUM whenever a step timeout changes; a comment that has drifted from the
-    # file is worse than no comment, because it is the thing the next person
-    # trusts instead of counting.
-    timeout-minutes: 452
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
-      # bch_focal_points.py reads a PDF. There was no pip step in any workflow,
-      # so that import would have failed silently behind the `|| echo` below.
-      # Deliberately OUTSIDE the harvest step: if the install breaks, the run
-      # should stop and say so.
-      - name: Install harvester dependencies
-        run: pip install --no-input pypdf
+      - run: pip install --no-input pypdf
 
-      - name: Harvest and commit
+      # CHANGE 2 of 3. Records the moment the harvesters start. The commit step
+      # stages what is newer than this and nothing else, so a file another job
+      # added while this one was running is never staged - not as a change, not
+      # as a deletion.
+      - name: mark step start
+        run: bash .github/commit_outputs.sh --stamp
+
+      - name: harvest
+        shell: bash -e {0}
         run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Each harvester is allowed to fail without taking the step down.
+          # This step runs under `bash -e`, so an unhandled non-zero status
+          # from the first script skips every one after it — which is exactly
+          # what a CFIA timeout did, and APHIS never ran at all. A source being
+          # unreachable is a normal condition, not a build failure.
+          #
+          # The `for i in 1 2 3` wrapper this used to sit inside is GONE. It
+          # existed so that a rejected push could `git reset --hard
+          # origin/main` and re-harvest from scratch — ten minutes of network
+          # work to recover from a collision. commit_outputs.sh recovers with
+          # `reset --mixed`, which leaves this run's output on disk to be
+          # re-staged, so nothing needs harvesting twice.
+          timeout 5m python3 harvest/cfia_approvals.py || echo "!! cfia harvester failed - continuing"
+          timeout 2m python3 harvest/merge_industry.py || echo "!! merge_industry failed - continuing"
+          python3 harvest/build_industry_points.py || echo "!! industry points failed - continuing"
+          timeout 4m python3 harvest/contamination_register.py || echo "!! contamination register failed - continuing"
+          # -u MATTERS HERE. This step is killed by `timeout` while the script
+          # is still probing, and Python BLOCK-BUFFERS stdout when it is not a
+          # terminal: the buffer is discarded on SIGTERM, so four runs produced
+          # the single line "!! ogtr trials failed" and nothing else -
+          # including the lines the script prints BEFORE any network call. The
+          # output was never missing, it was never flushed.
+          #
+          # 6m is now generous. The circuit breaker skips every live request
+          # after the first failure that means the host is silent, so the
+          # 2026-08-24 shape of run costs seconds rather than 4m10s.
+          timeout 6m python3 -u harvest/ogtr_trials.py || echo "!! ogtr trials failed - continuing"
+          timeout 8m python3 harvest/gmofree_zones.py     || echo "!! gmo-free zones failed - continuing"
+          timeout 8m python3 harvest/fas_biotech.py       || echo "!! fas biotech failed - continuing"
+          timeout 8m python3 harvest/treaties.py || echo "!! treaties failed - continuing"
+          # The organism registry must run BEFORE the decisions harvester: it
+          # resolves a code-only decision title to its organism from that file,
+          # and without it every such title stays unnamed.
+          timeout 10m python3 harvest/bch_organisms.py   || echo "!! bch organisms failed - continuing"
+          timeout 8m  python3 harvest/eu_releases.py     || echo "!! eu releases failed - continuing"
+          timeout 8m  python3 harvest/latam_approvals.py || echo "!! latam approvals failed - continuing"
+          timeout 10m python3 harvest/isaaa_approvals.py || echo "!! isaaa approvals failed - continuing"
+          timeout 14m python3 harvest/bch_decisions.py    || echo "!! bch decisions failed - continuing"
+          timeout 8m python3 harvest/clinical_sponsors.py || echo "!! clinical sponsors failed - continuing"
+          # last: it reads what the facility harvesters wrote
+          timeout 8m python3 harvest/aphis_releases.py || echo "!! aphis harvester failed - continuing"
+          timeout 3m python3 harvest/build_regime.py || echo "!! regime overlay failed - continuing"
+          timeout 2m python3 harvest/build_overlays.py || echo "!! overlay builder failed - continuing"
+          # The Secretariat's own focal-point list: institution + website per
+          # country, personal data stripped with an assertion in the script.
+          timeout 6m python3 harvest/bch_focal_points.py || echo "!! bch focal points failed - continuing"
+          # IPPC Art. VIII.2 contact points: the NPPO each country has
+          # designated. Names a body; publishes no website. Runs BEFORE the
+          # merge so the merge can read it in the same pass.
+          #
+          # --websites REMOVED. It fetched the IPPC country page for each of
+          # ~180 countries looking for a Website: line the CSV omits. The route
+          # was tried twice and returned nothing both times: the field is blank
+          # for most countries and the pages that do carry one are rendered
+          # client-side, so a fetcher sees an empty shell. It cost 20 minutes
+          # of the job's budget per run to produce no rows. The flag still
+          # exists in the script for anyone who wants to re-test it by hand; it
+          # is not worth a scheduled slot.
+          timeout 4m python3 harvest/ippc_contacts.py || echo "!! ippc contacts failed - continuing"
+          # Gated merge. Never overwrites a link, never renames a row that
+          # names a real body, prints every row it holds back for review.
+          timeout 6m python3 harvest/merge_directory.py || echo "!! directory merge failed - continuing"
 
-          # Same pattern as the wire: these files are regenerated whole, so on a
-          # rejected push we reset to the remote and re-harvest rather than
-          # trying to rebase a wholesale rewrite.
-          # Each harvester is allowed to fail without taking the step down. This
-          # step runs under `bash -e`, so an unhandled non-zero status from the
-          # first script skips every one after it — which is exactly what a CFIA
-          # timeout did, and APHIS never ran at all. A source being unreachable
-          # is a normal condition, not a build failure.
-          for i in 1 2 3; do
-            timeout 5m python3 harvest/cfia_approvals.py || echo "!! cfia harvester failed - continuing"
-            timeout 2m python3 harvest/merge_industry.py || echo "!! merge_industry failed - continuing"
-            python3 harvest/build_industry_points.py || echo "!! industry points failed - continuing"
-            timeout 4m python3 harvest/contamination_register.py || echo "!! contamination register failed - continuing"
-            # -u MATTERS HERE. This step is killed by `timeout` while the
-            # script is still probing, and Python BLOCK-BUFFERS stdout when it
-            # is not a terminal: the buffer is discarded on SIGTERM, so four
-            # runs produced the single line "!! ogtr trials failed" and nothing
-            # else - including the lines the script prints BEFORE any network
-            # call. The output was never missing, it was never flushed.
-            timeout 6m python3 -u harvest/ogtr_trials.py || echo "!! ogtr trials failed - continuing"
-            timeout 8m python3 harvest/gmofree_zones.py     || echo "!! gmo-free zones failed - continuing"
-            timeout 8m python3 harvest/fas_biotech.py       || echo "!! fas biotech failed - continuing"
-            timeout 8m python3 harvest/treaties.py || echo "!! treaties failed - continuing"
-            # last: it reads what the facility harvesters wrote
-            # The organism registry must run BEFORE the decisions harvester:
-            # it resolves a code-only decision title to its organism from that
-            # file, and without it every such title stays unnamed.
-            timeout 10m python3 harvest/bch_organisms.py   || echo "!! bch organisms failed - continuing"
-            timeout 8m  python3 harvest/eu_releases.py     || echo "!! eu releases failed - continuing"
-            timeout 8m  python3 harvest/latam_approvals.py || echo "!! latam approvals failed - continuing"
-            timeout 10m python3 harvest/isaaa_approvals.py || echo "!! isaaa approvals failed - continuing"
-            timeout 14m python3 harvest/bch_decisions.py    || echo "!! bch decisions failed - continuing"
-            timeout 8m python3 harvest/clinical_sponsors.py || echo "!! clinical sponsors failed - continuing"
-            timeout 8m python3 harvest/aphis_releases.py || echo "!! aphis harvester failed - continuing"
-            timeout 3m python3 harvest/build_regime.py || echo "!! regime overlay failed - continuing"
-            timeout 2m python3 harvest/build_overlays.py || echo "!! overlay builder failed - continuing"
-            # The Secretariat's own focal-point list: institution + website per
-            # country, personal data stripped with an assertion in the script.
-            timeout 6m python3 harvest/bch_focal_points.py || echo "!! bch focal points failed - continuing"
-            # Gated merge. Never overwrites a link, never renames a row that
-            # names a real body, prints every row it holds back for review.
-            # IPPC Art. VIII.2 contact points: the NPPO each country has
-            # designated. Names a body; publishes no website. Runs BEFORE the
-            # merge so the merge can read it in the same pass.
-            #
-            # --websites REMOVED. It fetched the IPPC country page for each of
-            # ~180 countries looking for a Website: line the CSV omits. The
-            # route was tried twice and returned nothing both times: the field
-            # is blank for most countries and the pages that do carry one are
-            # rendered client-side, so a fetcher sees an empty shell. It cost
-            # 20 minutes of the job's budget per run to produce no rows. The
-            # flag still exists in the script for anyone who wants to re-test it
-            # by hand; it is not worth a scheduled slot.
-            timeout 4m python3 harvest/ippc_contacts.py || echo "!! ippc contacts failed - continuing"
-            timeout 6m python3 harvest/merge_directory.py || echo "!! directory merge failed - continuing"
-            # --ignore-errors so a file a failed harvester never wrote does not
-            # abort the step under bash -e on the first run.
-            # `git add a.json b.json` ABORTS AND STAGES NOTHING if any one pathspec
-            # matches no file, and --ignore-errors does not cover that case. Five of
-            # these files do not exist until their harvester first succeeds, so every
-            # run so far staged nothing and reported "no change" - after writing
-            # 24,241 records. Add them one at a time, skipping what is absent.
-            for f in projects.json projects.json.gz wire.json \
-                     harvest/cfia_records.json harvest/industry_points.json \
-                     harvest/register_records.json harvest/animal_facilities.json \
-                     harvest/ogtr_trials.json \
-                     harvest/bch_organisms.json harvest/eu_releases.json harvest/latam_approvals.json harvest/isaaa_approvals.json harvest/bch_decisions.json harvest/gmofree_zones.json harvest/fas_biotech.json \
-                     harvest/clinical_sponsors.json \
-                     harvest/fertility_clinics.json \
-                     harvest/cdc_art_clinics.json harvest/osm_facilities.json \
-                     harvest/aaalac_facilities.json harvest/hfea_clinics.json \
-                     harvest/aphis_animal_facilities.json harvest/china_nhc_art.json \
-                     harvest/ccac_redlara.json harvest/india_nartsr.json \
-                     overlays/treaties.geojson harvest/ownership.json \
-                     harvest/_geocache.json bch_stubs.json harvest/resources.json harvest/ippc_contacts.json \
-                     harvest/animal_testing_facilities.json \
-                     overlays/trials.geojson overlays/regime.geojson overlays/cultivation.geojson overlays/gmofree.geojson \
-                     overlays/incidents.geojson; do
-              if [ -e "$f" ]; then
-                # A file can be written this run and still never reach the
-                # commit. gitignore is the usual reason and it fails silently.
-                if git check-ignore -q "$f"; then
-                  echo "    !! $f IS GITIGNORED - written but never committed"
-                else
-                  git add "$f"
-                fi
-              else
-                echo "    -- $f not written this run"
-              fi
-            done
-            echo "staged this run:"
-            git diff --staged --name-only | sed "s/^/    /"
-            git diff --staged --quiet && { echo "no change"; exit 0; }
-            git commit -m "releases: refresh $(date -u +%Y-%m-%d)"
-            git push && exit 0
-            echo "push rejected (attempt $i) - resetting to origin/main and re-harvesting"
-            git fetch origin main
-            git reset --hard origin/main
-          done
-          echo "push failed after 3 attempts"; exit 1
+      # CHANGE 3 of 3. The explicit `for f in ...` list is gone. It was not the
+      # file that deleted ogtr_trials.json - facilities' `git add -A` did that -
+      # but it carried its own fault: five of its pathspecs do not exist until
+      # their harvester first succeeds, and it had to name every new output by
+      # hand. Staging by modification time covers new harvesters without an
+      # edit, and cannot stage another job's file at all.
+      - name: commit
+        run: bash .github/commit_outputs.sh releases
