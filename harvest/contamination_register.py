@@ -99,7 +99,12 @@ ARTICLE_ALTS = [
 # Europe PMC Articles RESTful API. Documented methods, no key, no registration.
 # The PMCID is READ FROM THE SEARCH RESPONSE - never assembled from the DOI.
 EPMC = "https://www.ebi.ac.uk/europepmc/webservices/rest"
-EPMC_SEARCH = EPMC + "/search?query=DOI:%s&format=json&resultType=core"
+# The DOI is QUOTED and PERCENT-ENCODED. The first attempt sent
+#   query=DOI:10.1186/s40550-014-0005-8
+# raw, so the slash and the colon went into the query string unescaped and
+# Europe PMC matched nothing - a real answer from the API that looked exactly
+# like the article being absent. It is not absent; the query was malformed.
+EPMC_SEARCH = EPMC + "/search?%s"
 EPMC_SUPPL = EPMC + "/%s/supplementaryFiles"
 
 UA = ("GMO-map-harvest/1.0 (+https://github.com/WelcomeToYourGalaxy/GMO-map) "
@@ -150,8 +155,11 @@ def epmc_pmcid(doi):
     The id is READ from the response. A DOI-to-PMCID rule does not exist and
     inventing one would be the error class nothing downstream catches.
     """
+    from urllib.parse import urlencode
+    q = urlencode({"query": 'DOI:"%s"' % doi, "format": "json",
+                   "resultType": "core", "pageSize": "25"})
     try:
-        raw = fetch(EPMC_SEARCH % doi)
+        raw = fetch(EPMC_SEARCH % q)
     except Exception as e:
         return None, "search request failed: %s" % str(e)[:80]
     try:
@@ -160,9 +168,21 @@ def epmc_pmcid(doi):
         return None, "search returned something that is not JSON: %s" % str(e)[:60]
     hits = (((d.get("resultList") or {}).get("result")) or [])
     if not hits:
+        # A quoted DOI is the documented form, but field handling has changed
+        # before. Try it bare once rather than reporting an absence that is
+        # really a syntax difference.
+        try:
+            q2 = urlencode({"query": "DOI:%s" % doi, "format": "json",
+                            "resultType": "core"})
+            d = json.loads(fetch(EPMC_SEARCH % q2))
+            hits = (((d.get("resultList") or {}).get("result")) or [])
+        except Exception:
+            hits = []
+    if not hits:
         return None, ("search reached Europe PMC and matched no article for this "
-                      "DOI. The DOI is in the docstring and is stable, so check "
-                      "the query rather than assuming the paper has gone.")
+                      "DOI, quoted or bare. The DOI is in the docstring and is "
+                      "stable, so check the query syntax rather than assuming the "
+                      "paper has gone.")
     for h in hits:
         pid = h.get("pmcid")
         if pid:

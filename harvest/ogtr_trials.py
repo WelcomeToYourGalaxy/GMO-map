@@ -293,11 +293,26 @@ def main():
                 else 2 if "views/ajax" in u or "export" in u else 3)
     cands = sorted(set(cands), key=likely)[:8]
     tried = []
-    print("  %d candidate data endpoints, most likely first" % len(cands))
+    # 8 candidates x a 45s socket timeout x 3 retries each is 18 minutes of
+    # probing inside a step the workflow kills at 6. The run was terminated
+    # BEFORE the reporting below could say which endpoints were tried, which is
+    # why three runs produced the single line "!! ogtr trials failed" and
+    # nothing else. Give this function its own budget, well inside the step's,
+    # and report what it got through.
+    BUDGET = 240.0
+    t0 = time.time()
+    print("  %d candidate data endpoints, most likely first (%.0fs budget)"
+          % (len(cands), BUDGET))
     for u in cands[:3]:
         print("     %s" % u[:100])
     rows = []
     for u in cands:
+        left = BUDGET - (time.time() - t0)
+        if left <= 10:
+            tried.append("stopped after %d of %d candidates with %.0fs of the "
+                         "budget used - the rest were not probed"
+                         % (cands.index(u), len(cands), time.time() - t0))
+            break
         allowed_u, _ = allowed(u)
         if not allowed_u:
             continue
