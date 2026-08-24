@@ -391,251 +391,6 @@
    ]
   },
   {
-   "owner": "Planned Parenthood",
-   "basis": "stated by the register",
-   "sites": 32,
-   "countries": [
-    "Bakersfield",
-    "Dayton",
-    "El Cerrito",
-    "Fresno",
-    "Hayward",
-    "Manteca",
-    "Merced",
-    "Modesto",
-    "Mountain View",
-    "North Highlands",
-    "North Las Vegas",
-    "Oakland"
-   ],
-   "members": [
-    {
-     "name": "Planned Parenthood Northern California",
-     "lat": 37.89938,
-     "lng": -122.29819,
-     "where": "El Cerrito",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 37.80438,
-     "lng": -122.27089,
-     "where": "Oakland",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 37.25406,
-     "lng": -121.86032,
-     "where": "San Jose",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 37.3211,
-     "lng": -121.82584,
-     "where": "San Jose",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 38.67497,
-     "lng": -121.7939,
-     "where": "Woodland",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 36.33163,
-     "lng": -119.3002,
-     "where": "Visalia",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 36.19969,
-     "lng": -115.1194,
-     "where": "North Las Vegas",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 35.37214,
-     "lng": -119.03282,
-     "where": "Bakersfield",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 36.82523,
-     "lng": -119.77386,
-     "where": "Fresno",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 37.79765,
-     "lng": -121.20364,
-     "where": "Manteca",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 38.67055,
-     "lng": -121.38239,
-     "where": "North Highlands",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 38.57841,
-     "lng": -121.49412,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 38.52644,
-     "lng": -121.47154,
-     "where": "Sacramento",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 36.93035,
-     "lng": -121.77638,
-     "where": "Watsonville",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 37.46921,
-     "lng": -122.21128,
-     "where": "Redwood City",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Dayton Health Center",
-     "lat": 39.7627,
-     "lng": -84.19603,
-     "where": "Dayton",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 37.33716,
-     "lng": -121.91955,
-     "where": "San Jose",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 37.98912,
-     "lng": -121.31547,
-     "where": "Stockton",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 37.96234,
-     "lng": -121.27292,
-     "where": "Stockton",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 37.32032,
-     "lng": -120.47551,
-     "where": "Merced",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 37.40353,
-     "lng": -122.10616,
-     "where": "Mountain View",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 36.68261,
-     "lng": -121.65278,
-     "where": "Salinas",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 36.60274,
-     "lng": -121.84964,
-     "where": "Seaside",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 37.36659,
-     "lng": -121.82747,
-     "where": "San Jose",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 38.58192,
-     "lng": -121.46371,
-     "where": "Sacramento",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 37.74475,
-     "lng": -121.43537,
-     "where": "Tracy",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 39.45484,
-     "lng": -119.77966,
-     "where": "Reno",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 37.6648,
-     "lng": -120.99448,
-     "where": "Modesto",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 36.75213,
-     "lng": -119.80002,
-     "where": "Fresno",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 37.67462,
-     "lng": -122.08347,
-     "where": "Hayward",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 39.14262,
-     "lng": -121.61491,
-     "where": "Yuba City",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Planned Parenthood Mar Monte",
-     "lat": 38.73387,
-     "lng": -121.27013,
-     "where": "Roseville",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
    "owner": "Charles River Laboratories International, Inc",
    "basis": "stated by the register",
    "sites": 22,
@@ -930,218 +685,6 @@
    ]
   },
   {
-   "owner": "Genesis",
-   "basis": "inferred from the site's own name",
-   "sites": 13,
-   "countries": [
-    "Brasil",
-    "CO",
-    "FL",
-    "NY",
-    "SC",
-    "UNITED STATES",
-    "WI"
-   ],
-   "members": [
-    {
-     "name": "GENESIS - Centro de Assistência em Reprodução Humana Ltda.",
-     "lat": -15.78858,
-     "lng": -47.88409,
-     "where": "Brasilia, Brasil",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "GENESIS - Centro de Reprodução Humana",
-     "lat": -28.25081,
-     "lng": -52.39358,
-     "where": "Passo Fundo, Brasil",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "Alpha Genesis, Inc.",
-     "lat": 32.69018,
-     "lng": -80.85066,
-     "where": "YEMASSEE, SC, UNITED STATES",
-     "source": "aaalac_facilities.json"
-    },
-    {
-     "name": "Genesis Midwest, LLC",
-     "lat": 44.56041,
-     "lng": -90.59626,
-     "where": "NEILLSVILLE, WI, UNITED STATES",
-     "source": "aaalac_facilities.json"
-    },
-    {
-     "name": "Genesis Midwest LLC",
-     "lat": 44.27,
-     "lng": -89.62,
-     "where": "Neillsville, WI",
-     "source": "aphis_animal_facilities.json"
-    },
-    {
-     "name": "Alpha Genesis Inc",
-     "lat": 33.86,
-     "lng": -80.95,
-     "where": "Yemassee, SC",
-     "source": "aphis_animal_facilities.json"
-    },
-    {
-     "name": "Alpha Genesis Inc",
-     "lat": 33.86,
-     "lng": -80.95,
-     "where": "Yemassee, SC",
-     "source": "aphis_animal_facilities.json"
-    },
-    {
-     "name": "Genesis Zoological Center Inc",
-     "lat": 27.77,
-     "lng": -81.69,
-     "where": "Polk City, FL",
-     "source": "aphis_animal_facilities.json"
-    },
-    {
-     "name": "Genesis Laboratories Inc.",
-     "lat": 39.06,
-     "lng": -105.31,
-     "where": "WELLINGTON, CO",
-     "source": "aphis_animal_facilities.json"
-    },
-    {
-     "name": "Genesis Fertility & Reproductive Medicine",
-     "lat": 40.6166,
-     "lng": -73.979,
-     "where": "Brooklyn, NY",
-     "source": "cdc_art_clinics.json"
-    },
-    {
-     "name": "Genesis Fertility & Reproductive Medicine",
-     "lat": 40.66623,
-     "lng": -73.97904,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Genesis Fertility & Reproductive Medicine",
-     "lat": 40.60258,
-     "lng": -74.16246,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Genesis Fertility Center",
-     "lat": 13.67394,
-     "lng": 100.54324,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "VIDA",
-   "basis": "inferred from the site's own name",
-   "sites": 13,
-   "countries": [
-    "Bolivia",
-    "Brasil",
-    "Caracas",
-    "México",
-    "Valladolid"
-   ],
-   "members": [
-    {
-     "name": "Instituto de Ciencias en Reprodución Humana -VIDA-Matamoros",
-     "lat": 25.88102,
-     "lng": -97.50649,
-     "where": "Matamoros, México",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "Instituto Vida Guadalajara (Instituto de Ciencias en Reproducción Humana)",
-     "lat": 20.67204,
-     "lng": -103.3384,
-     "where": "Guadalajara, México",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "Instituto VIDA - León",
-     "lat": 26.23844,
-     "lng": -99.8873,
-     "where": "Leon, México",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "Instituto Vida Tijuana",
-     "lat": 32.53174,
-     "lng": -117.01953,
-     "where": "Tijuana, México",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "Vida - Centro de Fertilidade",
-     "lat": -22.99977,
-     "lng": -43.3806,
-     "where": "Río de Janeiro, Brasil",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "Instituto Vida Merida",
-     "lat": 20.96708,
-     "lng": -89.62374,
-     "where": "Merida, México",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "Centro Vida FIVGO",
-     "lat": -16.49555,
-     "lng": -68.13362,
-     "where": "La Paz, Bolivia",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "Vidafer, Unidad de Medicina Reproductiva",
-     "lat": 10.49689,
-     "lng": -66.87472,
-     "where": "Caracas",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Vidafer",
-     "lat": 10.49401,
-     "lng": -66.87454,
-     "where": "Caracas",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Bebé Vida",
-     "lat": 41.16293,
-     "lng": -8.62736,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Vida Recoletas",
-     "lat": 41.64619,
-     "lng": -4.72761,
-     "where": "Valladolid",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Instituto Vida Instituto De Ciencias En Reproduccion Humana",
-     "lat": 17.07621,
-     "lng": -96.71958,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Nueva Vida Maternity Clinic",
-     "lat": 27.50819,
-     "lng": -99.48851,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
    "owner": "University of California",
    "basis": "stated by the register",
    "sites": 10,
@@ -1222,88 +765,88 @@
    ]
   },
   {
-   "owner": "TFP ",
+   "owner": "Genesis",
    "basis": "inferred from the site's own name",
    "sites": 10,
    "countries": [
-    "AT",
-    "BT3 9JQ",
-    "CM2 8FR",
-    "G51 4FD",
-    "NW1 6ER",
-    "SL6 4BY",
-    "United Kingdom"
+    "Brasil",
+    "CO",
+    "FL",
+    "NY",
+    "SC",
+    "UNITED STATES",
+    "WI"
    ],
    "members": [
     {
-     "name": "TFP Belfast Fertility",
-     "lat": 54.63196,
-     "lng": -5.89379,
-     "where": "Edgewater Business Park, Edgewater House, Edgewater Road, Belfast, BT3 9JQ",
-     "source": "hfea_clinics.json"
+     "name": "GENESIS - Centro de Assistência em Reprodução Humana Ltda.",
+     "lat": -15.78858,
+     "lng": -47.88409,
+     "where": "Brasilia, Brasil",
+     "source": "ccac_redlara.json"
     },
     {
-     "name": "TFP Boston Place Fertility",
-     "lat": 51.5234,
-     "lng": -0.16248,
-     "where": "16-20 Boston Place, London, NW1 6ER",
-     "source": "hfea_clinics.json"
+     "name": "GENESIS - Centro de Reprodução Humana",
+     "lat": -28.25081,
+     "lng": -52.39358,
+     "where": "Passo Fundo, Brasil",
+     "source": "ccac_redlara.json"
     },
     {
-     "name": "TFP GCRM Fertility",
-     "lat": 55.85967,
-     "lng": -4.3505,
-     "where": "GCRM Fertility, 21 Fifty Pitches Way, Glasgow, G51 4FD",
-     "source": "hfea_clinics.json"
+     "name": "Alpha Genesis, Inc.",
+     "lat": 32.69018,
+     "lng": -80.85066,
+     "where": "YEMASSEE, SC, UNITED STATES",
+     "source": "aaalac_facilities.json"
     },
     {
-     "name": "TFP Nurture Fertility",
-     "lat": 52.91743,
-     "lng": -1.30175,
-     "where": "The East Midlands Fertility Centre, Bostocks Lane, Sandiacre, Nottingham, NG10 5QG, United Kingdom",
-     "source": "hfea_clinics.json"
+     "name": "Genesis Midwest, LLC",
+     "lat": 44.56041,
+     "lng": -90.59626,
+     "where": "NEILLSVILLE, WI, UNITED STATES",
+     "source": "aaalac_facilities.json"
     },
     {
-     "name": "TFP Oxford Fertility",
-     "lat": 51.73367,
-     "lng": -1.205,
-     "where": "Institute of Reproductive Sciences, Oxford Business Park North, Oxford, Oxfordshire, OX4 2HW, United Kingdom",
-     "source": "hfea_clinics.json"
+     "name": "Genesis Midwest LLC",
+     "lat": 44.27,
+     "lng": -89.62,
+     "where": "Neillsville, WI",
+     "source": "aphis_animal_facilities.json"
     },
     {
-     "name": "TFP Simply Fertility",
-     "lat": 51.70817,
-     "lng": 0.50173,
-     "where": "Essex Healthcare Park, West Hanningfield Road, Great Baddow, Essex, Chelmsford, CM2 8FR",
-     "source": "hfea_clinics.json"
+     "name": "Alpha Genesis Inc",
+     "lat": 33.86,
+     "lng": -80.95,
+     "where": "Yemassee, SC",
+     "source": "aphis_animal_facilities.json"
     },
     {
-     "name": "TFP Thames Valley Fertility",
-     "lat": 51.50829,
-     "lng": -0.73551,
-     "where": "Clarion House, Ground Floor, Norreys Drive, Maidenhead, Berkshire, SL6 4BY",
-     "source": "hfea_clinics.json"
+     "name": "Alpha Genesis Inc",
+     "lat": 33.86,
+     "lng": -80.95,
+     "where": "Yemassee, SC",
+     "source": "aphis_animal_facilities.json"
     },
     {
-     "name": "TFP Wessex Fertility",
-     "lat": 54.0,
-     "lng": -2.55,
-     "where": "Unit 9, Berrywood Business Village, Tollbar Way, Southampton, Hampshire, S030 2UN, United Kingdom",
-     "source": "hfea_clinics.json"
+     "name": "Genesis Zoological Center Inc",
+     "lat": 27.77,
+     "lng": -81.69,
+     "where": "Polk City, FL",
+     "source": "aphis_animal_facilities.json"
     },
     {
-     "name": "TFP Kinderwunsch Wels",
-     "lat": 48.15419,
-     "lng": 14.03613,
-     "where": "Thalheim bei Wels, AT",
-     "source": "osm_facilities.json"
+     "name": "Genesis Laboratories Inc.",
+     "lat": 39.06,
+     "lng": -105.31,
+     "where": "WELLINGTON, CO",
+     "source": "aphis_animal_facilities.json"
     },
     {
-     "name": "TFP Fertility Macierzyństwo",
-     "lat": 50.09327,
-     "lng": 19.93817,
-     "where": "",
-     "source": "osm_facilities.json"
+     "name": "Genesis Fertility & Reproductive Medicine",
+     "lat": 40.6166,
+     "lng": -73.979,
+     "where": "Brooklyn, NY",
+     "source": "cdc_art_clinics.json"
     }
    ]
   },
@@ -1527,143 +1070,73 @@
    ]
   },
   {
-   "owner": "Create Fertility",
+   "owner": "TFP ",
    "basis": "inferred from the site's own name",
    "sites": 8,
    "countries": [
-    "B37 7YB",
-    "BS1 5TE",
-    "EC2V 6ET",
-    "London",
-    "SK9 5AR",
-    "United Kingdom",
-    "WF3 1BU"
+    "BT3 9JQ",
+    "CM2 8FR",
+    "G51 4FD",
+    "NW1 6ER",
+    "SL6 4BY",
+    "United Kingdom"
    ],
    "members": [
     {
-     "name": "CREATE Fertility Bristol",
-     "lat": 51.45197,
-     "lng": -2.59982,
-     "where": "1 Trinity Street, College Green, Bristol, BS1 5TE",
+     "name": "TFP Belfast Fertility",
+     "lat": 54.63196,
+     "lng": -5.89379,
+     "where": "Edgewater Business Park, Edgewater House, Edgewater Road, Belfast, BT3 9JQ",
      "source": "hfea_clinics.json"
     },
     {
-     "name": "CREATE Fertility, Birmingham",
-     "lat": 52.46855,
-     "lng": -1.71592,
-     "where": "Ground Floor, 6270 Bishop's Court, Birmingham Business Park, Solihull, B37 7YB",
+     "name": "TFP Boston Place Fertility",
+     "lat": 51.5234,
+     "lng": -0.16248,
+     "where": "16-20 Boston Place, London, NW1 6ER",
      "source": "hfea_clinics.json"
     },
     {
-     "name": "CREATE Fertility, Leeds",
-     "lat": 53.73579,
-     "lng": -1.57766,
-     "where": "Capitol Park East, 1 Sterling Way, Topcliffe Lane, Morley, Leeds, West Yorkshire, WF3 1BU",
+     "name": "TFP GCRM Fertility",
+     "lat": 55.85967,
+     "lng": -4.3505,
+     "where": "GCRM Fertility, 21 Fifty Pitches Way, Glasgow, G51 4FD",
      "source": "hfea_clinics.json"
     },
     {
-     "name": "CREATE Fertility, London St Paul's",
-     "lat": 51.51483,
-     "lng": -0.09665,
-     "where": "150, Cheapside, St Pauls, London, EC2V 6ET",
+     "name": "TFP Nurture Fertility",
+     "lat": 52.91743,
+     "lng": -1.30175,
+     "where": "The East Midlands Fertility Centre, Bostocks Lane, Sandiacre, Nottingham, NG10 5QG, United Kingdom",
      "source": "hfea_clinics.json"
     },
     {
-     "name": "CREATE Fertility, London Wimbledon",
-     "lat": 51.41031,
-     "lng": -0.22797,
-     "where": "3-5 Pepys Road, West Wimbledon, SW20 8NJ, United Kingdom",
+     "name": "TFP Oxford Fertility",
+     "lat": 51.73367,
+     "lng": -1.205,
+     "where": "Institute of Reproductive Sciences, Oxford Business Park North, Oxford, Oxfordshire, OX4 2HW, United Kingdom",
      "source": "hfea_clinics.json"
     },
     {
-     "name": "CREATE Fertility, Manchester",
-     "lat": 53.32611,
-     "lng": -2.23553,
-     "where": "King's Court, Water Lane, Wilmslow, Cheshire, SK9 5AR",
+     "name": "TFP Simply Fertility",
+     "lat": 51.70817,
+     "lng": 0.50173,
+     "where": "Essex Healthcare Park, West Hanningfield Road, Great Baddow, Essex, Chelmsford, CM2 8FR",
      "source": "hfea_clinics.json"
     },
     {
-     "name": "CREATE Fertility",
-     "lat": 51.51492,
-     "lng": -0.09693,
-     "where": "London",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Create Fertility",
-     "lat": 51.41001,
-     "lng": -0.22828,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "IVI",
-   "basis": "inferred from the site's own name",
-   "sites": 8,
-   "countries": [
-    "NY",
-    "Panama",
-    "Salvador",
-    "W1G 9RQ"
-   ],
-   "members": [
-    {
-     "name": "IVI London (Wimpole Street)",
-     "lat": 51.51699,
-     "lng": -0.14787,
-     "where": "83, Wimpole Street, London, W1G 9RQ",
+     "name": "TFP Thames Valley Fertility",
+     "lat": 51.50829,
+     "lng": -0.73551,
+     "where": "Clarion House, Ground Floor, Norreys Drive, Maidenhead, Berkshire, SL6 4BY",
      "source": "hfea_clinics.json"
     },
     {
-     "name": "IVI Panamá",
-     "lat": 8.55956,
-     "lng": -81.13084,
-     "where": "Panama, Panama",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "Ivica Brkljaca",
-     "lat": 42.17,
-     "lng": -74.95,
-     "where": "Roslyn Heights, NY",
-     "source": "aphis_animal_facilities.json"
-    },
-    {
-     "name": "IVI. Clínica de Reproducción Asistida",
-     "lat": 38.36405,
-     "lng": -0.46179,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "IVI Sevilla - Clínica de Reproducción Asistida y Fertilidad",
-     "lat": 37.37639,
-     "lng": -6.00547,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Ivi",
-     "lat": 28.46347,
-     "lng": -16.26272,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "IVI. Clínica de reproducción asistida",
-     "lat": 38.36404,
-     "lng": -0.46178,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "IVI Reprodução Humana",
-     "lat": -12.99463,
-     "lng": -38.45444,
-     "where": "Salvador",
-     "source": "osm_facilities.json"
+     "name": "TFP Wessex Fertility",
+     "lat": 54.0,
+     "lng": -2.55,
+     "where": "Unit 9, Berrywood Business Village, Tollbar Way, Southampton, Hampshire, S030 2UN, United Kingdom",
+     "source": "hfea_clinics.json"
     }
    ]
   },
@@ -1728,67 +1201,63 @@
    ]
   },
   {
-   "owner": "Instituto Bernabeu",
-   "basis": "stated by the register",
+   "owner": "VIDA",
+   "basis": "inferred from the site's own name",
    "sites": 7,
    "countries": [
-    "Albacete",
-    "Benidorm",
-    "Cartagena",
-    "Elche/Elx",
-    "Madrid",
-    "Martellago",
-    "Palma de Mallorca"
+    "Bolivia",
+    "Brasil",
+    "México"
    ],
    "members": [
     {
-     "name": "Instituto Bernabeu Palma de Mallorca",
-     "lat": 39.57355,
-     "lng": 2.65789,
-     "where": "Palma de Mallorca",
-     "source": "osm_facilities.json"
+     "name": "Instituto de Ciencias en Reprodución Humana -VIDA-Matamoros",
+     "lat": 25.88102,
+     "lng": -97.50649,
+     "where": "Matamoros, México",
+     "source": "ccac_redlara.json"
     },
     {
-     "name": "Instituto Bernabeu Madrid",
-     "lat": 40.42761,
-     "lng": -3.68305,
-     "where": "Madrid",
-     "source": "osm_facilities.json"
+     "name": "Instituto Vida Guadalajara (Instituto de Ciencias en Reproducción Humana)",
+     "lat": 20.67204,
+     "lng": -103.3384,
+     "where": "Guadalajara, México",
+     "source": "ccac_redlara.json"
     },
     {
-     "name": "Instituto Bernabeu Albacete",
-     "lat": 38.99692,
-     "lng": -1.86094,
-     "where": "Albacete",
-     "source": "osm_facilities.json"
+     "name": "Instituto VIDA - León",
+     "lat": 26.23844,
+     "lng": -99.8873,
+     "where": "Leon, México",
+     "source": "ccac_redlara.json"
     },
     {
-     "name": "Instituto Bernabeu Cartagena",
-     "lat": 37.60998,
-     "lng": -0.99441,
-     "where": "Cartagena",
-     "source": "osm_facilities.json"
+     "name": "Instituto Vida Tijuana",
+     "lat": 32.53174,
+     "lng": -117.01953,
+     "where": "Tijuana, México",
+     "source": "ccac_redlara.json"
     },
     {
-     "name": "Instituto Bernabeu Benidorm",
-     "lat": 38.54012,
-     "lng": -0.12519,
-     "where": "Benidorm",
-     "source": "osm_facilities.json"
+     "name": "Vida - Centro de Fertilidade",
+     "lat": -22.99977,
+     "lng": -43.3806,
+     "where": "Río de Janeiro, Brasil",
+     "source": "ccac_redlara.json"
     },
     {
-     "name": "Instituto Bernabeu Elche",
-     "lat": 38.27178,
-     "lng": -0.7014,
-     "where": "Elche/Elx",
-     "source": "osm_facilities.json"
+     "name": "Instituto Vida Merida",
+     "lat": 20.96708,
+     "lng": -89.62374,
+     "where": "Merida, México",
+     "source": "ccac_redlara.json"
     },
     {
-     "name": "Instituto Bernabeu Venezia (Genesi srl)",
-     "lat": 45.54073,
-     "lng": 12.17109,
-     "where": "Martellago",
-     "source": "osm_facilities.json"
+     "name": "Centro Vida FIVGO",
+     "lat": -16.49555,
+     "lng": -68.13362,
+     "where": "La Paz, Bolivia",
+     "source": "ccac_redlara.json"
     }
    ]
   },
@@ -2008,6 +1477,63 @@
      "lng": -74.95,
      "where": "BUFFALO, NY",
      "source": "aphis_animal_facilities.json"
+    }
+   ]
+  },
+  {
+   "owner": "Create Fertility",
+   "basis": "inferred from the site's own name",
+   "sites": 6,
+   "countries": [
+    "B37 7YB",
+    "BS1 5TE",
+    "EC2V 6ET",
+    "SK9 5AR",
+    "United Kingdom",
+    "WF3 1BU"
+   ],
+   "members": [
+    {
+     "name": "CREATE Fertility Bristol",
+     "lat": 51.45197,
+     "lng": -2.59982,
+     "where": "1 Trinity Street, College Green, Bristol, BS1 5TE",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "CREATE Fertility, Birmingham",
+     "lat": 52.46855,
+     "lng": -1.71592,
+     "where": "Ground Floor, 6270 Bishop's Court, Birmingham Business Park, Solihull, B37 7YB",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "CREATE Fertility, Leeds",
+     "lat": 53.73579,
+     "lng": -1.57766,
+     "where": "Capitol Park East, 1 Sterling Way, Topcliffe Lane, Morley, Leeds, West Yorkshire, WF3 1BU",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "CREATE Fertility, London St Paul's",
+     "lat": 51.51483,
+     "lng": -0.09665,
+     "where": "150, Cheapside, St Pauls, London, EC2V 6ET",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "CREATE Fertility, London Wimbledon",
+     "lat": 51.41031,
+     "lng": -0.22797,
+     "where": "3-5 Pepys Road, West Wimbledon, SW20 8NJ, United Kingdom",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "CREATE Fertility, Manchester",
+     "lat": 53.32611,
+     "lng": -2.23553,
+     "where": "King's Court, Water Lane, Wilmslow, Cheshire, SK9 5AR",
+     "source": "hfea_clinics.json"
     }
    ]
   },
@@ -2715,47 +2241,6 @@
    ]
   },
   {
-   "owner": "Life Health Care",
-   "basis": "stated by the register",
-   "sites": 4,
-   "countries": [
-    "Pinelands",
-    "Pretoria",
-    "Roodepoort",
-    "Springs"
-   ],
-   "members": [
-    {
-     "name": "Vincent Pallotti Hospital",
-     "lat": -33.94437,
-     "lng": 18.48933,
-     "where": "Pinelands",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Life Wilgeheuwel Hospital",
-     "lat": -26.09937,
-     "lng": 27.92536,
-     "where": "Radiokop, Roodepoort",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Parkland Clinic",
-     "lat": -26.26579,
-     "lng": 28.43599,
-     "where": "Pollak Park, Springs",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Die Wilgers",
-     "lat": -25.7682,
-     "lng": 28.32022,
-     "where": "Wilgers Ext. 14, Pretoria",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
    "owner": "Charles River",
    "basis": "inferred from the site's own name",
    "sites": 4,
@@ -2831,46 +2316,6 @@
      "lng": -97.56,
      "where": "Alice, TX",
      "source": "aphis_animal_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Apollo",
-   "basis": "inferred from the site's own name",
-   "sites": 4,
-   "countries": [
-    "CA",
-    "TN",
-    "TX"
-   ],
-   "members": [
-    {
-     "name": "Apollo Kane’s Transportation",
-     "lat": 35.75,
-     "lng": -86.69,
-     "where": "Lebanon, TN",
-     "source": "aphis_animal_facilities.json"
-    },
-    {
-     "name": "APOLLO SUPPORT & RESCUE",
-     "lat": 31.05,
-     "lng": -97.56,
-     "where": "JUSTIN, TX",
-     "source": "aphis_animal_facilities.json"
-    },
-    {
-     "name": "Apollo Couriers, Inc.",
-     "lat": 36.12,
-     "lng": -119.68,
-     "where": "Los Angeles, CA",
-     "source": "aphis_animal_facilities.json"
-    },
-    {
-     "name": "Apollo Cradle",
-     "lat": 12.93681,
-     "lng": 77.62063,
-     "where": "",
-     "source": "osm_facilities.json"
     }
    ]
   },
@@ -3600,72 +3045,6 @@
    ]
   },
   {
-   "owner": "Rooh Al-Hayat",
-   "basis": "stated by the register",
-   "sites": 3,
-   "countries": [
-    "الرمادي",
-    "الموصل",
-    "حي العطيفية"
-   ],
-   "members": [
-    {
-     "name": "مركز روح الحياة الموصل لأطفال الأنابيب | Rooh Al-Hayat Mosul IVF Center",
-     "lat": 36.38505,
-     "lng": 43.17789,
-     "where": "الموصل",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "مركز روح الحياة بغداد لأطفال الأنابيب | Rooh Hayat Baghdad Fertility Clinic",
-     "lat": 33.35549,
-     "lng": 44.35428,
-     "where": "حي العطيفية",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "مركز روح الحياة الأنبار لأطفال الأنابيب | Rooh Hayat Anbar IVF Center",
-     "lat": 33.42601,
-     "lng": 43.29946,
-     "where": "الرمادي",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Mediclinic",
-   "basis": "stated by the register",
-   "sites": 3,
-   "countries": [
-    "Erasmuskloof",
-    "Polokwane",
-    "Pretoria"
-   ],
-   "members": [
-    {
-     "name": "Mediclinic Limpopo",
-     "lat": -23.90854,
-     "lng": 29.46418,
-     "where": "Polokwane",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Mediclinic Kloof",
-     "lat": -25.81175,
-     "lng": 28.26332,
-     "where": "Erasmuskloof",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Mediclinic Gynaecological Hospital",
-     "lat": -25.75598,
-     "lng": 28.20555,
-     "where": "Pretoria",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
    "owner": "Bourn Hall",
    "basis": "inferred from the site's own name",
    "sites": 3,
@@ -3699,105 +3078,40 @@
    ]
   },
   {
-   "owner": "FERTILAB",
+   "owner": "IVI",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
-    "Argentina",
-    "Caracas",
-    "Venezuela"
+    "NY",
+    "Panama",
+    "W1G 9RQ"
    ],
    "members": [
     {
-     "name": "Centro Médico FERTILAB",
-     "lat": -33.6763,
-     "lng": -59.67738,
-     "where": "Buenos Aires, Argentina",
+     "name": "IVI London (Wimpole Street)",
+     "lat": 51.51699,
+     "lng": -0.14787,
+     "where": "83, Wimpole Street, London, W1G 9RQ",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "IVI Panamá",
+     "lat": 8.55956,
+     "lng": -81.13084,
+     "where": "Panama, Panama",
      "source": "ccac_redlara.json"
     },
     {
-     "name": "FERTILAB",
-     "lat": 10.50609,
-     "lng": -66.9146,
-     "where": "Caracas, Venezuela",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "Fertilab",
-     "lat": 10.50435,
-     "lng": -66.8501,
-     "where": "Caracas",
-     "source": "osm_facilities.json"
+     "name": "Ivica Brkljaca",
+     "lat": 42.17,
+     "lng": -74.95,
+     "where": "Roslyn Heights, NY",
+     "source": "aphis_animal_facilities.json"
     }
    ]
   },
   {
-   "owner": "Procrear",
-   "basis": "inferred from the site's own name",
-   "sites": 3,
-   "countries": [
-    "Argentina",
-    "Colombia",
-    "Reus"
-   ],
-   "members": [
-    {
-     "name": "Instituto de Reproducción Humana PROCREAR Ltda.",
-     "lat": 11.01019,
-     "lng": -74.82318,
-     "where": "Barranquilla, Colombia",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "PROCREARTE - Red de Medicina Reproductiva y Molecular",
-     "lat": -34.62209,
-     "lng": -58.59362,
-     "where": "Buenos Aires, Argentina",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "procrear",
-     "lat": 41.16046,
-     "lng": 1.10568,
-     "where": "Reus",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Concebir",
-   "basis": "inferred from the site's own name",
-   "sites": 3,
-   "countries": [
-    "Ecuador",
-    "Peru"
-   ],
-   "members": [
-    {
-     "name": "Concebir- Unidad de Fertilidad",
-     "lat": -0.22016,
-     "lng": -78.51233,
-     "where": "Quito, Ecuador",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "Pranor San Isidro - Clínica Concebir",
-     "lat": -12.09169,
-     "lng": -77.03543,
-     "where": "Lima, Peru",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "Concebir Centro de Fertilidad",
-     "lat": -8.11487,
-     "lng": -79.03606,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Ingenes",
+   "owner": "INGENES",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
@@ -3828,7 +3142,7 @@
    ]
   },
   {
-   "owner": "CITMER",
+   "owner": "Citmer",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
@@ -3859,67 +3173,35 @@
    ]
   },
   {
-   "owner": "Eugin",
+   "owner": "Apollo",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
-    "Madrid",
-    "PT"
+    "CA",
+    "TN",
+    "TX"
    ],
    "members": [
     {
-     "name": "Clínica Eugin Madrid",
-     "lat": 40.40839,
-     "lng": -3.68894,
-     "where": "Madrid",
-     "source": "osm_facilities.json"
+     "name": "Apollo Kane’s Transportation",
+     "lat": 35.75,
+     "lng": -86.69,
+     "where": "Lebanon, TN",
+     "source": "aphis_animal_facilities.json"
     },
     {
-     "name": "Clínica Eugin",
-     "lat": 40.21369,
-     "lng": -8.41936,
-     "where": "Coimbra, PT",
-     "source": "osm_facilities.json"
+     "name": "APOLLO SUPPORT & RESCUE",
+     "lat": 31.05,
+     "lng": -97.56,
+     "where": "JUSTIN, TX",
+     "source": "aphis_animal_facilities.json"
     },
     {
-     "name": "Clinica Eugin",
-     "lat": 41.39934,
-     "lng": 2.15071,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Cloudnine",
-   "basis": "inferred from the site's own name",
-   "sites": 3,
-   "countries": [
-    "Bengaluru",
-    "Gurugram",
-    "New Delhi"
-   ],
-   "members": [
-    {
-     "name": "Cloudnine Hospital",
-     "lat": 12.88329,
-     "lng": 77.55009,
-     "where": "Bengaluru",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Cloudnine Fertility Hospital",
-     "lat": 28.42743,
-     "lng": 77.05735,
-     "where": "Gurugram",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "CloudNine",
-     "lat": 28.5553,
-     "lng": 77.2416,
-     "where": "New Delhi",
-     "source": "osm_facilities.json"
+     "name": "Apollo Couriers, Inc.",
+     "lat": 36.12,
+     "lng": -119.68,
+     "where": "Los Angeles, CA",
+     "source": "aphis_animal_facilities.json"
     }
    ]
   },
@@ -4461,31 +3743,6 @@
      "lng": 1.61312,
      "where": "BAZIÈGE, FRANCE",
      "source": "aaalac_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Eurofins",
-   "basis": "stated by the register",
-   "sites": 2,
-   "countries": [
-    "GERMANY",
-    "Échirolles"
-   ],
-   "members": [
-    {
-     "name": "BSL Bioservice Scientific Laboratories Munich GmbH",
-     "lat": 48.13711,
-     "lng": 11.57538,
-     "where": "MUNICH, GERMANY",
-     "source": "aaalac_facilities.json"
-    },
-    {
-     "name": "Eurofins - Laboratoire de Biologie médicale",
-     "lat": 45.14532,
-     "lng": 5.71726,
-     "where": "Échirolles",
-     "source": "osm_facilities.json"
     }
    ]
   },
@@ -6356,121 +5613,27 @@
    ]
   },
   {
-   "owner": "ИООО \"Независимая лаборатория ИНВИТРО\"",
-   "basis": "stated by the register",
-   "sites": 2,
-   "countries": [],
-   "members": [
-    {
-     "name": "Invitro",
-     "lat": 53.88562,
-     "lng": 25.30039,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Invitro",
-     "lat": 53.69726,
-     "lng": 23.83324,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Novosalus",
-   "basis": "stated by the register",
+   "owner": "Fertilab",
+   "basis": "inferred from the site's own name",
    "sites": 2,
    "countries": [
-    "Pune"
+    "Argentina",
+    "Venezuela"
    ],
    "members": [
     {
-     "name": "Dr. Smita deo Vedika Clinic",
-     "lat": 18.55846,
-     "lng": 73.79184,
-     "where": "Pune",
-     "source": "osm_facilities.json"
+     "name": "Centro Médico FERTILAB",
+     "lat": -33.6763,
+     "lng": -59.67738,
+     "where": "Buenos Aires, Argentina",
+     "source": "ccac_redlara.json"
     },
     {
-     "name": "Babysure IVF centre",
-     "lat": 18.50672,
-     "lng": 73.90836,
-     "where": "Pune",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Private",
-   "basis": "stated by the register",
-   "sites": 2,
-   "countries": [
-    "Port of Spain"
-   ],
-   "members": [
-    {
-     "name": "Helfen Medical Centre",
-     "lat": -1.25767,
-     "lng": 36.70317,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Trinidad & Tobago IVF & Fertility Centre Ltd",
-     "lat": 10.67932,
-     "lng": -61.5244,
-     "where": "Port of Spain",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Sutter Medical Foundation",
-   "basis": "stated by the register",
-   "sites": 2,
-   "countries": [
-    "Fairfield",
-    "Vacaville"
-   ],
-   "members": [
-    {
-     "name": "Sutter Medical Plaza Vacaville",
-     "lat": 38.35385,
-     "lng": -121.98354,
-     "where": "Vacaville",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Sutter Fairfield Medical Campus",
-     "lat": 38.23685,
-     "lng": -122.0856,
-     "where": "Fairfield",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Ministry of Health",
-   "basis": "stated by the register",
-   "sites": 2,
-   "countries": [
-    "Banjarbaru"
-   ],
-   "members": [
-    {
-     "name": "Puskesmas Satelit",
-     "lat": -5.4226,
-     "lng": 105.26967,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Puskesmas Banjarbaru Selatan",
-     "lat": -3.44422,
-     "lng": 114.82969,
-     "where": "Banjarbaru",
-     "source": "osm_facilities.json"
+     "name": "FERTILAB",
+     "lat": 10.50609,
+     "lng": -66.9146,
+     "where": "Caracas, Venezuela",
+     "source": "ccac_redlara.json"
     }
    ]
   },
@@ -6500,6 +5663,56 @@
    ]
   },
   {
+   "owner": "Procrear",
+   "basis": "inferred from the site's own name",
+   "sites": 2,
+   "countries": [
+    "Argentina",
+    "Colombia"
+   ],
+   "members": [
+    {
+     "name": "Instituto de Reproducción Humana PROCREAR Ltda.",
+     "lat": 11.01019,
+     "lng": -74.82318,
+     "where": "Barranquilla, Colombia",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "PROCREARTE - Red de Medicina Reproductiva y Molecular",
+     "lat": -34.62209,
+     "lng": -58.59362,
+     "where": "Buenos Aires, Argentina",
+     "source": "ccac_redlara.json"
+    }
+   ]
+  },
+  {
+   "owner": "Concebir",
+   "basis": "inferred from the site's own name",
+   "sites": 2,
+   "countries": [
+    "Ecuador",
+    "Peru"
+   ],
+   "members": [
+    {
+     "name": "Concebir- Unidad de Fertilidad",
+     "lat": -0.22016,
+     "lng": -78.51233,
+     "where": "Quito, Ecuador",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Pranor San Isidro - Clínica Concebir",
+     "lat": -12.09169,
+     "lng": -77.03543,
+     "where": "Lima, Peru",
+     "source": "ccac_redlara.json"
+    }
+   ]
+  },
+  {
    "owner": "WuXi",
    "basis": "inferred from the site's own name",
    "sites": 2,
@@ -6521,28 +5734,6 @@
      "lng": -74.52019,
      "where": "CRANBURY, NJ, UNITED STATES",
      "source": "aaalac_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Nova IVF",
-   "basis": "inferred from the site's own name",
-   "sites": 2,
-   "countries": [],
-   "members": [
-    {
-     "name": "Nova IVF",
-     "lat": 12.96443,
-     "lng": 77.71583,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Nova IVF",
-     "lat": 28.70656,
-     "lng": 77.12701,
-     "where": "",
-     "source": "osm_facilities.json"
     }
    ]
   },
@@ -8633,6 +7824,23 @@
      "lat": 49.46304,
      "lng": 2.75737,
      "where": "BAUGY, FRANCE",
+     "source": "aaalac_facilities.json"
+    }
+   ]
+  },
+  {
+   "owner": "Eurofins",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "GERMANY"
+   ],
+   "members": [
+    {
+     "name": "BSL Bioservice Scientific Laboratories Munich GmbH",
+     "lat": 48.13711,
+     "lng": 11.57538,
+     "where": "MUNICH, GERMANY",
      "source": "aaalac_facilities.json"
     }
    ]
@@ -61406,87 +60614,6 @@
    ]
   },
   {
-   "owner": "Hospital",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Kalaignar Karunanidhi Nagar",
-     "lat": 13.03865,
-     "lng": 80.20522,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "BIG-ANLAGEN Gesundheitszentrum Kiel-Mitte GmbH & Co.KG",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "DE"
-   ],
-   "members": [
-    {
-     "name": "Gesundheitszentrum Kiel-Mitte",
-     "lat": 54.32006,
-     "lng": 10.12627,
-     "where": "Kiel, DE",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr Bulane",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Maseru"
-   ],
-   "members": [
-    {
-     "name": "Beatitudes Surgery",
-     "lat": -29.34758,
-     "lng": 27.51781,
-     "where": "Maseru",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "СПЕЦИАЛИЗИРАНА БОЛНИЦА ЗА АКТИВНО ЛЕЧЕНИЕ ПО ГИНЕКОЛОГИЯ И АСИСТИРАНА РЕПРОДУКЦИЯ /СБАЛГАР/-Д-Р МАЛИНОВ ООД",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "СБАЛГАР „Д-р Малинов“",
-     "lat": 42.67524,
-     "lng": 23.28947,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Centrum Medyczne Femmemedica sp. z o.o",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Kraków"
-   ],
-   "members": [
-    {
-     "name": "CM Femmemedica",
-     "lat": 50.09969,
-     "lng": 19.96821,
-     "where": "Kraków",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
    "owner": "Centro Diagnostico Varesino srl",
    "basis": "stated by the register",
    "sites": 1,
@@ -61499,977 +60626,6 @@
      "lat": 45.81432,
      "lng": 8.82876,
      "where": "Varese",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr. med Susanne Feidicker und Partner",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Steinhagen"
-   ],
-   "members": [
-    {
-     "name": "Frauengesundheit OWL - Feidicker und Partner",
-     "lat": 52.00741,
-     "lng": 8.41282,
-     "where": "Steinhagen",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "MFD Veselības grupa",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "LV"
-   ],
-   "members": [
-    {
-     "name": "Sieviešu veselības centrs \"Vita\"",
-     "lat": 56.96857,
-     "lng": 24.18198,
-     "where": "Rīga, LV",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr. Jason Barritt",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Beverly Hills"
-   ],
-   "members": [
-    {
-     "name": "Southern California Reproductive Center",
-     "lat": 34.06852,
-     "lng": -118.40683,
-     "where": "Beverly Hills",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "SingHealth",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "SG"
-   ],
-   "members": [
-    {
-     "name": "Bedok Polyclinic",
-     "lat": 1.32694,
-     "lng": 103.93161,
-     "where": "Singapore, SG",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Kinderwunsch Centrum München GbR",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "München"
-   ],
-   "members": [
-    {
-     "name": "Kinderwunsch Centrum München (MVZ)",
-     "lat": 48.14965,
-     "lng": 11.45561,
-     "where": "München",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Universitäre Kinderwunschzentrum GmbH",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Kinderwunschzentrum",
-     "lat": 53.662,
-     "lng": 10.2585,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Francesco Orlandi e Cinzia Rossi",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Centro diagnosi prenatale",
-     "lat": 38.12286,
-     "lng": 13.35547,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "clinique chirurgicales",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "6 rue kasem amine"
-   ],
-   "members": [
-    {
-     "name": "clinique nour",
-     "lat": 34.03067,
-     "lng": -5.00939,
-     "where": "6 rue kasem amine",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr. Gautam Nagraj",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "IN"
-   ],
-   "members": [
-    {
-     "name": "Oaj Ayurvedic and Infertility Center",
-     "lat": 22.71634,
-     "lng": 75.85807,
-     "where": "Indore, IN",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr. Umaima Jamali",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Indore"
-   ],
-   "members": [
-    {
-     "name": "Fatemi Clinic",
-     "lat": 22.69684,
-     "lng": 75.85524,
-     "where": "Indore",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Kementerian Kesihatan Malaysia",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Ulu Tiram"
-   ],
-   "members": [
-    {
-     "name": "Klinik Desa Sungai Tiram",
-     "lat": 1.58534,
-     "lng": 103.88045,
-     "where": "Ulu Tiram",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr. Ali Mesut",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Sarajevo"
-   ],
-   "members": [
-    {
-     "name": "Bona Dea IVF Klinika",
-     "lat": 43.86123,
-     "lng": 18.40214,
-     "where": "Sarajevo",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "AIC",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Phnom Penh"
-   ],
-   "members": [
-    {
-     "name": "天使国际生殖医学中心(AIC金边)",
-     "lat": 11.57382,
-     "lng": 104.92145,
-     "where": "Phnom Penh",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "EKI",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "EKI-IVF Centre",
-     "lat": 13.75486,
-     "lng": 100.57253,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Sharon Moayeri, MD",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Newport Beach"
-   ],
-   "members": [
-    {
-     "name": "OC Fertility",
-     "lat": 33.6125,
-     "lng": -117.87072,
-     "where": "Newport Beach",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "CARE Fertility (Northampton) Limited",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "GB"
-   ],
-   "members": [
-    {
-     "name": "CARE Fertility (Northampton)",
-     "lat": 52.23584,
-     "lng": -0.87704,
-     "where": "Northampton, GB",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Kaduna North Local Government",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Kaduna North"
-   ],
-   "members": [
-    {
-     "name": "Unguwar Shanu PHC",
-     "lat": 10.5466,
-     "lng": 7.43786,
-     "where": "Kaduna North",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Chikun Local Government Area",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Sabon Tasha"
-   ],
-   "members": [
-    {
-     "name": "General Hospital, Sabon Tasha",
-     "lat": 10.4507,
-     "lng": 7.46821,
-     "where": "Sabon Tasha",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr. Samuel E. Brown",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Jacksonville"
-   ],
-   "members": [
-    {
-     "name": "Brown Fertility",
-     "lat": 30.13922,
-     "lng": -81.53535,
-     "where": "Jacksonville",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "For Life Medical Center Kft",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Budapest"
-   ],
-   "members": [
-    {
-     "name": "For Life Medical Center",
-     "lat": 47.49277,
-     "lng": 19.06583,
-     "where": "Budapest",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Скандинавия",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "RU"
-   ],
-   "members": [
-    {
-     "name": "Скандинавия Ава-Петер",
-     "lat": 60.00672,
-     "lng": 30.25471,
-     "where": "Санкт-Петербург, RU",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Vila da Serra",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Varginha"
-   ],
-   "members": [
-    {
-     "name": "Vilara Clínica de Reprodução Assistida",
-     "lat": -21.56699,
-     "lng": -45.44964,
-     "where": "Varginha",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "KINH DOANH",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Hà Nội"
-   ],
-   "members": [
-    {
-     "name": "Fertility clinic (unnamed in OpenStreetMap)",
-     "lat": 21.01408,
-     "lng": 105.77748,
-     "where": "Hà Nội",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Unifemme, C.A",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Ciudad Guayana (Puerto Ordaz)"
-   ],
-   "members": [
-    {
-     "name": "Unifemme",
-     "lat": 8.30697,
-     "lng": -62.72507,
-     "where": "Ciudad Guayana (Puerto Ordaz)",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Richard Joseph Schmidt, MD",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Mountain View"
-   ],
-   "members": [
-    {
-     "name": "Nova IVF",
-     "lat": 37.3683,
-     "lng": -122.08245,
-     "where": "Mountain View",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr Shaivalini",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Hyderabad"
-   ],
-   "members": [
-    {
-     "name": "Dr Shaivalini - Gynecologist",
-     "lat": 17.39872,
-     "lng": 78.3653,
-     "where": "Hyderabad",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Monash IVF Group",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Monash IVF Sydney Day Hospital",
-     "lat": -33.86383,
-     "lng": 151.20365,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "mens health",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Pretoria"
-   ],
-   "members": [
-    {
-     "name": "Engage Men's Health Clinic",
-     "lat": -25.74235,
-     "lng": 28.24456,
-     "where": "Pretoria",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "womenclinic",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Pretoria"
-   ],
-   "members": [
-    {
-     "name": "Atteridgeville women clinic",
-     "lat": -25.77026,
-     "lng": 28.08828,
-     "where": "Pretoria",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Baton Rouge General",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "The Fertility Institute of New Orleans",
-     "lat": 30.39355,
-     "lng": -91.09387,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "tahooraclinic",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "جمکران"
-   ],
-   "members": [
-    {
-     "name": "مرکز درمان ناباروی طهورا",
-     "lat": 34.57962,
-     "lng": 50.91207,
-     "where": "جمکران",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Numi Scan",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Stansted Mouthfitchet"
-   ],
-   "members": [
-    {
-     "name": "Numiscan",
-     "lat": 51.9048,
-     "lng": 0.1943,
-     "where": "Stansted Mouthfitchet",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "الدكتورة : تغريد زيناتي العماوي",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "مركز نور الحياة للنساء ومتابعة الحمل والعقم",
-     "lat": 31.53866,
-     "lng": 34.50194,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "دکتر عاطفه الهویی نظری",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Fertility clinic (unnamed in OpenStreetMap)",
-     "lat": 35.6789,
-     "lng": 51.36056,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Klinika Artemida Sp. z o.o",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Olsztyn"
-   ],
-   "members": [
-    {
-     "name": "Klinka Leczenia Niepłodności Artemida",
-     "lat": 53.80217,
-     "lng": 20.50793,
-     "where": "Olsztyn",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "imed",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Gandia"
-   ],
-   "members": [
-    {
-     "name": "Policlinica Imed consultas externas",
-     "lat": 38.96718,
-     "lng": -0.19055,
-     "where": "Gandia",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Belmont Specialist Centre",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Marchini Nutrition",
-     "lat": -33.03512,
-     "lng": 151.66161,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Desti Anasari",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Tangerang"
-   ],
-   "members": [
-    {
-     "name": "Bidan Ana",
-     "lat": -6.20051,
-     "lng": 106.70754,
-     "where": "Tangerang",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "دكتور بشير سليم حقوق",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "مشفى العباسيين",
-     "lat": 33.52202,
-     "lng": 36.32173,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Linda Keku",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Ogudu"
-   ],
-   "members": [
-    {
-     "name": "Pink Clinic Nigeria",
-     "lat": 6.57603,
-     "lng": 3.38692,
-     "where": "Ogudu",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Jahrom University of Medical Sciences",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "مرکز درمان ناباروری IVF",
-     "lat": 28.49416,
-     "lng": 53.6076,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "As Nova Vita",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Nova Vita Kliinik",
-     "lat": 59.4015,
-     "lng": 24.71604,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "DR AMGHAR FATIHA",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Agadir"
-   ],
-   "members": [
-    {
-     "name": "Cabinet d'Endocrinologie Dr AMGHAR FATIHA",
-     "lat": 30.40996,
-     "lng": -9.58958,
-     "where": "Agadir",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "MVZ KITZ Regensburg GmbH",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "DE"
-   ],
-   "members": [
-    {
-     "name": "KITZ KinderwunschTherapie im Zentrum",
-     "lat": 49.01348,
-     "lng": 12.10228,
-     "where": "Regensburg, DE",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "دکتر سارا داودی",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "شیراز"
-   ],
-   "members": [
-    {
-     "name": "کلینیک نازایی دکتر سارا داودی",
-     "lat": 29.62642,
-     "lng": 52.52541,
-     "where": "شیراز",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "بخشی نژاد",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "رشت"
-   ],
-   "members": [
-    {
-     "name": "مرکز خدمات تخمک اهدایی،جنین اهدایی و رحم اجاره ای ارشیا",
-     "lat": 37.2993,
-     "lng": 49.60561,
-     "where": "رشت",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Anuvansh",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Mumbai"
-   ],
-   "members": [
-    {
-     "name": "Anuvansh Fertility & Women's Clinic",
-     "lat": 19.11792,
-     "lng": 72.84608,
-     "where": "Mumbai",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Richmond Health Network",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Michael Cabbad, MD, F.A.C.O.G.",
-     "lat": 40.54458,
-     "lng": -74.1615,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Gynaecology and Reproductive Care",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Dr Victoria Nisenblat",
-     "lat": -34.93451,
-     "lng": 138.61555,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Sean Nash",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "US"
-   ],
-   "members": [
-    {
-     "name": "Elevate Egg Donors and Surrogates",
-     "lat": 40.75351,
-     "lng": -73.98649,
-     "where": "New York, US",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "tirupathi private limited",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "mumbai"
-   ],
-   "members": [
-    {
-     "name": "tirupathi metarnal and general hospital",
-     "lat": 19.20662,
-     "lng": 72.86506,
-     "where": "mumbai",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr. Meenu Singh",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "IN"
-   ],
-   "members": [
-    {
-     "name": "MediServe",
-     "lat": 28.59045,
-     "lng": 77.39785,
-     "where": "Noida, IN",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "MVZ Kinderwunschzentrum Dortmund GmbH",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Dortmund"
-   ],
-   "members": [
-    {
-     "name": "Kinderwunschzentrum Dortmund",
-     "lat": 51.51212,
-     "lng": 7.46903,
-     "where": "Dortmund",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "DTIM Al-Ameen-Lawal",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Anthony Village"
-   ],
-   "members": [
-    {
-     "name": "The Tent Wellness Centre",
-     "lat": 6.56579,
-     "lng": 3.37226,
-     "where": "Anthony Village",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Datta Healthcare",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Benison IVF & Healthcare Clinic",
-     "lat": 28.61366,
-     "lng": 77.03264,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Université de Nantes",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Service de Santé des Étudiants",
-     "lat": 47.23903,
-     "lng": -1.55633,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Planned Parenthood of Illinois",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Peoria"
-   ],
-   "members": [
-    {
-     "name": "Planned Parenthood Peoria Health Center",
-     "lat": 40.72077,
-     "lng": -89.5941,
-     "where": "Peoria",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "MAPO",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "FERTIMED, s.r.o. OLOMOUC",
-     "lat": 49.59041,
-     "lng": 17.26767,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Fertility Centre",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Bengaluru"
-   ],
-   "members": [
-    {
-     "name": "Shishu Ivf Fertility Centre Pvt Ltd",
-     "lat": 12.99872,
-     "lng": 77.55266,
-     "where": "Bengaluru",
      "source": "osm_facilities.json"
     }
    ]
@@ -62492,136 +60648,6 @@
    ]
   },
   {
-   "owner": "Dr Joshua Lamers",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Naples"
-   ],
-   "members": [
-    {
-     "name": "Harmony Health Clinic",
-     "lat": 26.15349,
-     "lng": -81.79473,
-     "where": "Naples",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "NHS Lothian",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Fertility & Reproductive Endocrine Unit",
-     "lat": 55.92307,
-     "lng": -3.13625,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Compounding Wellness",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Mount Pearl"
-   ],
-   "members": [
-    {
-     "name": "Compounding Wellness Pharmacy & Fertility Services",
-     "lat": 47.51642,
-     "lng": -52.80664,
-     "where": "Mount Pearl",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Chris Complex Executive Stays",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Yaounde"
-   ],
-   "members": [
-    {
-     "name": "Serenity Medical Center",
-     "lat": 3.82311,
-     "lng": 11.48918,
-     "where": "Yaounde",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "UNC Health",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "UNC Fertility",
-     "lat": 35.91765,
-     "lng": -78.78005,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Profamilia",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Profamilia Quirigua",
-     "lat": 4.70733,
-     "lng": -74.10863,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr. Sarabjeet Singh",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Jalandhar"
-   ],
-   "members": [
-    {
-     "name": "Sarab Healthcare",
-     "lat": 31.30804,
-     "lng": 75.59241,
-     "where": "Jalandhar",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Doçent Doktor Deniz Şimşek",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Bursa"
-   ],
-   "members": [
-    {
-     "name": "Doç. Dr. Deniz Şimşek Kliniği",
-     "lat": 40.19631,
-     "lng": 29.06408,
-     "where": "Bursa",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
    "owner": "Omvia AG",
    "basis": "stated by the register",
    "sites": 1,
@@ -62634,754 +60660,6 @@
      "lat": 47.17047,
      "lng": 8.51602,
      "where": "Zug",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Saint Francis",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Broken Arrow"
-   ],
-   "members": [
-    {
-     "name": "Marian Medical Clinic",
-     "lat": 36.02226,
-     "lng": -95.79884,
-     "where": "Broken Arrow",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Grupo Oroño",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Rosario"
-   ],
-   "members": [
-    {
-     "name": "Fertya",
-     "lat": -32.94457,
-     "lng": -60.65462,
-     "where": "Rosario",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "DC Klinieken",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Vrouwenkliniek Zuioost",
-     "lat": 52.32114,
-     "lng": 4.96828,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Arvind Medicare Pvt. Ltd",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Gurugram"
-   ],
-   "members": [
-    {
-     "name": "Miracles Mediclinic",
-     "lat": 28.42799,
-     "lng": 77.09863,
-     "where": "Gurugram",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Shady Grove Fertility",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Webster"
-   ],
-   "members": [
-    {
-     "name": "Fertility clinic (unnamed in OpenStreetMap)",
-     "lat": 29.53509,
-     "lng": -95.13324,
-     "where": "Webster",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Operatör Doktor Mehmet Deniz Altıparmak",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "İstanbul"
-   ],
-   "members": [
-    {
-     "name": "Altıparmak & Altıparmak Klinik",
-     "lat": 40.96932,
-     "lng": 29.05428,
-     "where": "İstanbul",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "หมอพรทิพย์",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "คลินิกสูตินรีเวชหมอพรทิพย์",
-     "lat": 13.34503,
-     "lng": 100.96751,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr. Rashmi Bhamare Patil",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "0 to 9 Women’s Care & Fertility Center",
-     "lat": 18.56445,
-     "lng": 73.77488,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Providence Health & Services",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Tigard"
-   ],
-   "members": [
-    {
-     "name": "Providence Family Medicine - Scholls",
-     "lat": 45.44281,
-     "lng": -122.80508,
-     "where": "Tigard",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "دکتر زهرا شمالی",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "کلینیک زنان ،زایمان دکتر زهرا شمالی",
-     "lat": 29.62761,
-     "lng": 52.52561,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "South Carolina Department of Health and Environmental Control",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Mount Pleasant"
-   ],
-   "members": [
-    {
-     "name": "DHEC Charleston County Health Clinic",
-     "lat": 32.83214,
-     "lng": -79.82301,
-     "where": "Mount Pleasant",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr. Rahul Jain, Dr. Geetika Jain",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Janam Fertility Clinic",
-     "lat": 28.68228,
-     "lng": 77.20143,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Братская городская больница № 2",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Женская консультация, филиал ГБ № 2",
-     "lat": 56.31143,
-     "lng": 101.73139,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr Sagar Kasar",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Nashik"
-   ],
-   "members": [
-    {
-     "name": "Dr. Kasar Hospital & Maternity Home",
-     "lat": 19.94995,
-     "lng": 73.83779,
-     "where": "Nashik",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "ООО «Клиника семейного здоровья»",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Моя Клиника",
-     "lat": 53.71277,
-     "lng": 23.83907,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Newtown Medical",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Monksland Medical Center",
-     "lat": 53.42097,
-     "lng": -7.99075,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "City Fertility Limited",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "London"
-   ],
-   "members": [
-    {
-     "name": "CRGH",
-     "lat": 51.5202,
-     "lng": -0.10154,
-     "where": "London",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "CARE Manchester",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Fertility clinic (unnamed in OpenStreetMap)",
-     "lat": 53.45876,
-     "lng": -2.21666,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "CHU Dijon Bourgogne",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Hôpital François Mitterrand",
-     "lat": 47.32042,
-     "lng": 5.06935,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Indigo Medical",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "JE"
-   ],
-   "members": [
-    {
-     "name": "Indigo House Surgery",
-     "lat": 49.18816,
-     "lng": -2.10081,
-     "where": "St Helier, JE",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Lusíadas",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Hospital dos Lusíadas Vilamoura",
-     "lat": 37.08123,
-     "lng": -8.11342,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Gobierno del Estado de México",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Hospital Materno Perinatal Mónica Pretelini Sáenz",
-     "lat": 19.27207,
-     "lng": -99.65721,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "IMED",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Alcoi"
-   ],
-   "members": [
-    {
-     "name": "IMED San Jorge",
-     "lat": 38.69282,
-     "lng": -0.48594,
-     "where": "Alcoi",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Lesotho Government",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Queen Mamohato Memorial Hospital (QMMH)",
-     "lat": -29.3431,
-     "lng": 27.5288,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "PT. HI-LAB Internasional",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Kota Yogyakarta"
-   ],
-   "members": [
-    {
-     "name": "HI-LAB Laboratorium & Klinik",
-     "lat": -7.77425,
-     "lng": 110.3614,
-     "where": "Kota Yogyakarta",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "PRONATAL s.r.o",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Praha"
-   ],
-   "members": [
-    {
-     "name": "Pronatal Sanatorium",
-     "lat": 50.01767,
-     "lng": 14.42349,
-     "where": "Praha",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr khaled",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "manama"
-   ],
-   "members": [
-    {
-     "name": "Elite Medical Center",
-     "lat": 26.21711,
-     "lng": 50.609,
-     "where": "manama",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "TNI AD",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "DKI Jakarta"
-   ],
-   "members": [
-    {
-     "name": "RSPAD Gatot Soebroto",
-     "lat": -6.17667,
-     "lng": 106.83715,
-     "where": "DKI Jakarta",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Queen Square Medical Practice",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Lancaster"
-   ],
-   "members": [
-    {
-     "name": "Healthub",
-     "lat": 54.04599,
-     "lng": -2.80141,
-     "where": "Lancaster",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "AIMS Hospital",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Pune"
-   ],
-   "members": [
-    {
-     "name": "The Birth Company",
-     "lat": 18.55804,
-     "lng": 73.80676,
-     "where": "Pune",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "University at Buffalo",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Buffalo"
-   ],
-   "members": [
-    {
-     "name": "Student Health Services",
-     "lat": 42.99132,
-     "lng": -78.80225,
-     "where": "Buffalo",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Krankenhaus Maria Hilf GmbH",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Krankenhaus Maria-Hilf",
-     "lat": 51.4418,
-     "lng": 8.35569,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "PT. Vale",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Klinik Wawondula",
-     "lat": -2.63826,
-     "lng": 121.36775,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Sağlık Bakanlığı",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "İstanbul"
-   ],
-   "members": [
-    {
-     "name": "Hırka-i Şerif Aile Sağlığı Merkezi",
-     "lat": 41.02142,
-     "lng": 28.93894,
-     "where": "İstanbul",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Life Healthcare",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Symhurst Primrose"
-   ],
-   "members": [
-    {
-     "name": "Life Roseacres Hospital",
-     "lat": -26.17866,
-     "lng": 28.16938,
-     "where": "Symhurst Primrose",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr. Polite",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Kabala"
-   ],
-   "members": [
-    {
-     "name": "Monarch Specialist Hospital",
-     "lat": 10.51048,
-     "lng": 7.45169,
-     "where": "Kabala",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr. Obineche",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Unguwar Sarki"
-   ],
-   "members": [
-    {
-     "name": "Belmont Hospital",
-     "lat": 10.54801,
-     "lng": 7.47051,
-     "where": "Unguwar Sarki",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Klinik Manhagen GmbH & Co. KG",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Klinik Manhagen",
-     "lat": 53.66307,
-     "lng": 10.25745,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Mens Health Clinics",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Pretoria"
-   ],
-   "members": [
-    {
-     "name": "Engage Mens Health Clinic",
-     "lat": -25.7423,
-     "lng": 28.24474,
-     "where": "Hatfield, Pretoria",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "private",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "zakiganj"
-   ],
-   "members": [
-    {
-     "name": "মতিন ডাক্তার হাসপাতাল",
-     "lat": 24.91414,
-     "lng": 92.45694,
-     "where": "zakiganj",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Humana",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Goiânia"
-   ],
-   "members": [
-    {
-     "name": "Humana Medicina Reprodutiva",
-     "lat": -16.70402,
-     "lng": -49.26271,
-     "where": "Goiânia",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Centro Integral de la Mujer S.A",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Neuquén"
-   ],
-   "members": [
-    {
-     "name": "Centro Integral de la Mujer",
-     "lat": -38.95159,
-     "lng": -68.05572,
-     "where": "Neuquén",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr Jad Alsmadi, Consultant Urologist",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "عمان"
-   ],
-   "members": [
-    {
-     "name": "عيادة الدكتور جاد الصمادي استشاري جراحة الكلى والمسالك البولية",
-     "lat": 31.96028,
-     "lng": 35.87631,
-     "where": "عمان",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "شبکه بهداشت و درمان",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "درمانگاه تخصصی سردار سلیمانی",
-     "lat": 35.2562,
-     "lng": 58.45736,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "S M Abdul Hamid",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Chittagong"
-   ],
-   "members": [
-    {
-     "name": "Lin Nissa Fertility Center",
-     "lat": 22.36013,
-     "lng": 91.82793,
-     "where": "Chittagong",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "CK Birla Group",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Gurugram"
-   ],
-   "members": [
-    {
-     "name": "CK Birla Hospital Gurgaon",
-     "lat": 28.42367,
-     "lng": 77.06156,
-     "where": "Gurugram",
      "source": "osm_facilities.json"
     }
    ]
