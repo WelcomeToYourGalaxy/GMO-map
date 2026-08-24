@@ -808,7 +808,7 @@
    ]
   },
   {
-   "owner": "Care Fertility",
+   "owner": "CARE Fertility",
    "basis": "inferred from the site's own name",
    "sites": 15,
    "countries": [
@@ -1461,6 +1461,72 @@
    ]
   },
   {
+   "owner": "Fisheries and Oceans Canada",
+   "basis": "stated by the register",
+   "sites": 8,
+   "countries": [
+    "Canada"
+   ],
+   "members": [
+    {
+     "name": "Bedford Institute of Oceanography",
+     "lat": 44.68348,
+     "lng": -63.61179,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Charlottetown Aquatic Animal Pathogen and Biocontainment Laboratory",
+     "lat": 56.13,
+     "lng": -106.35,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Freshwater Institute, Winnipeg",
+     "lat": 49.80488,
+     "lng": -97.13959,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Mont-Joli, Institut Maurice-Lamontagne",
+     "lat": 56.13,
+     "lng": -106.35,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Northwest Atlantic Fisheries Centre",
+     "lat": 47.58774,
+     "lng": -52.67915,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Pacific Biological Station",
+     "lat": 49.21057,
+     "lng": -123.95539,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Pacific Science Enterprise Centre",
+     "lat": 49.34058,
+     "lng": -123.23329,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "St. Andrews Biological Station",
+     "lat": 45.08078,
+     "lng": -67.08236,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    }
+   ]
+  },
+  {
    "owner": "Create Fertility",
    "basis": "inferred from the site's own name",
    "sites": 8,
@@ -1841,6 +1907,58 @@
    ]
   },
   {
+   "owner": "Environment and Climate Change Canada",
+   "basis": "stated by the register",
+   "sites": 6,
+   "countries": [
+    "Canada"
+   ],
+   "members": [
+    {
+     "name": "Aquatic Life Research Facility Water Science and Technology Directorate - Burlington",
+     "lat": 56.13,
+     "lng": -106.35,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Atlantic Laboratory for Environmental Testing - Moncton",
+     "lat": 56.13,
+     "lng": -106.35,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Canadian Wildlife Service",
+     "lat": 49.1013,
+     "lng": -123.17252,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Pacific & Yukon Laboratory for Environmental Testing - North Vancouver",
+     "lat": 56.13,
+     "lng": -106.35,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Prairie & Northern Laboratory for Environmental Testing - Edmonton",
+     "lat": 56.13,
+     "lng": -106.35,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Wildlife and Landscape Science Directorate",
+     "lat": 56.13,
+     "lng": -106.35,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    }
+   ]
+  },
+  {
    "owner": "State University of New York",
    "basis": "stated by the register",
    "sites": 6,
@@ -2042,6 +2160,51 @@
      "lng": -0.81823,
      "where": "Main Road, Meyer Clinic, Fishbourne, West Sussex, Chichester, PO188AN",
      "source": "hfea_clinics.json"
+    }
+   ]
+  },
+  {
+   "owner": "Agriculture and Agri-Food Canada",
+   "basis": "stated by the register",
+   "sites": 5,
+   "countries": [
+    "Canada"
+   ],
+   "members": [
+    {
+     "name": "Centre de recherche et de développement de Sherbrooke",
+     "lat": 45.36853,
+     "lng": -71.82997,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Lacombe Research and Development Centre",
+     "lat": 52.45395,
+     "lng": -113.75121,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Lethbridge Research and Development Centre",
+     "lat": 49.70207,
+     "lng": -112.76097,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Nappan Research Farm",
+     "lat": 52.15914,
+     "lng": -106.53939,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Semiarid Prairie Agricultural Research Centre",
+     "lat": 56.13,
+     "lng": -106.35,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
     }
    ]
   },
@@ -2358,6 +2521,44 @@
    ]
   },
   {
+   "owner": "Canadian Food Inspection Agency",
+   "basis": "stated by the register",
+   "sites": 4,
+   "countries": [
+    "Canada"
+   ],
+   "members": [
+    {
+     "name": "Canadian Science Centre for Human and Animal Health",
+     "lat": 49.90815,
+     "lng": -97.16279,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Lethbridge",
+     "lat": 49.69458,
+     "lng": -112.8331,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Ontario Laboratory Network, Ottawa Laboratory, Fallowfield",
+     "lat": 45.28699,
+     "lng": -75.76987,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Saskatoon Laboratory, Centre for Food-borne and Animal Parasitology",
+     "lat": 56.13,
+     "lng": -106.35,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    }
+   ]
+  },
+  {
    "owner": "Charles River Laboratories, Inc",
    "basis": "stated by the register",
    "sites": 4,
@@ -2555,6 +2756,45 @@
    ]
   },
   {
+   "owner": "Charles River",
+   "basis": "inferred from the site's own name",
+   "sites": 4,
+   "countries": [
+    "Canada",
+    "MA"
+   ],
+   "members": [
+    {
+     "name": "Charles River Laboratories Montréal ULC – Laval",
+     "lat": 45.42008,
+     "lng": -73.96479,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Charles River Laboratories Montréal ULC - Senneville and Sherbrooke",
+     "lat": 56.13,
+     "lng": -106.35,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Charles River Laboratories Inc",
+     "lat": 42.23,
+     "lng": -71.53,
+     "where": "Wilmington, MA",
+     "source": "aphis_animal_facilities.json"
+    },
+    {
+     "name": "Charles River Laboratories Inc",
+     "lat": 42.23,
+     "lng": -71.53,
+     "where": "Wilmington, MA",
+     "source": "aphis_animal_facilities.json"
+    }
+   ]
+  },
+  {
    "owner": "Envigo",
    "basis": "inferred from the site's own name",
    "sites": 4,
@@ -2730,6 +2970,37 @@
      "lng": -0.06455,
      "where": "The Selsden Park Medical Practice, 97 Addison Road, Selsden, South Croydon, CR2 8LG",
      "source": "hfea_clinics.json"
+    }
+   ]
+  },
+  {
+   "owner": "National Research Council Canada",
+   "basis": "stated by the register",
+   "sites": 3,
+   "countries": [
+    "Canada"
+   ],
+   "members": [
+    {
+     "name": "Aquatic and Crop Resource Development Research Centre",
+     "lat": 56.13,
+     "lng": -106.35,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Human Health Therapeutics Ottawa",
+     "lat": 45.48758,
+     "lng": -73.67284,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Industrial Research Assistance Program",
+     "lat": 56.13,
+     "lng": -106.35,
+     "where": "Canada",
+     "source": "ccac_redlara.json"
     }
    ]
   },
@@ -3723,31 +3994,6 @@
      "lat": 52.62816,
      "lng": -2.15153,
      "where": "Pendeford Business Park, Aldersley House, Overstrand, Wolverhampton, Pendeford, WV9 5HA",
-     "source": "hfea_clinics.json"
-    }
-   ]
-  },
-  {
-   "owner": "TFP GCRM Fertility",
-   "basis": "stated by the register",
-   "sites": 2,
-   "countries": [
-    "AB32 6JL",
-    "DD1 3DA"
-   ],
-   "members": [
-    {
-     "name": "Dundee Fertility Associates",
-     "lat": 56.461,
-     "lng": -2.96616,
-     "where": "Tayside Complete Health, 7, Commercial Street, Dundee, DD1 3DA",
-     "source": "hfea_clinics.json"
-    },
-    {
-     "name": "ROC Clinic Aberdeen",
-     "lat": 57.14791,
-     "lng": -2.29812,
-     "where": "Westhill Business Park, Peregrine Road, Aberdeen, AB32 6JL",
      "source": "hfea_clinics.json"
     }
    ]
@@ -6254,30 +6500,6 @@
    ]
   },
   {
-   "owner": "Charles River",
-   "basis": "inferred from the site's own name",
-   "sites": 2,
-   "countries": [
-    "MA"
-   ],
-   "members": [
-    {
-     "name": "Charles River Laboratories Inc",
-     "lat": 42.23,
-     "lng": -71.53,
-     "where": "Wilmington, MA",
-     "source": "aphis_animal_facilities.json"
-    },
-    {
-     "name": "Charles River Laboratories Inc",
-     "lat": 42.23,
-     "lng": -71.53,
-     "where": "Wilmington, MA",
-     "source": "aphis_animal_facilities.json"
-    }
-   ]
-  },
-  {
    "owner": "Nova IVF",
    "basis": "inferred from the site's own name",
    "sites": 2,
@@ -6538,6 +6760,23 @@
    ]
   },
   {
+   "owner": "TFP GCRM Fertility",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "DD1 3DA"
+   ],
+   "members": [
+    {
+     "name": "Dundee Fertility Associates",
+     "lat": 56.461,
+     "lng": -2.96616,
+     "where": "Tayside Complete Health, 7, Commercial Street, Dundee, DD1 3DA",
+     "source": "hfea_clinics.json"
+    }
+   ]
+  },
+  {
    "owner": "Cambridge IVF",
    "basis": "stated by the register",
    "sites": 1,
@@ -6584,23 +6823,6 @@
      "lat": 53.85045,
      "lng": -1.51734,
      "where": "5 Stoneleigh Garth, Moortown, Leeds, LS17 8FG",
-     "source": "hfea_clinics.json"
-    }
-   ]
-  },
-  {
-   "owner": "Guys Hospital",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "EX1 2ED"
-   ],
-   "members": [
-    {
-     "name": "Royal Devon and Fertility Exeter",
-     "lat": 50.72474,
-     "lng": -3.51419,
-     "where": "Royal Devon & Exeter Hospital (Heavitree), Gladstone Road, Devon, Exeter, EX1 2ED",
      "source": "hfea_clinics.json"
     }
    ]
