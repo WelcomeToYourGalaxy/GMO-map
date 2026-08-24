@@ -63,7 +63,13 @@ jobs:
             timeout 2m python3 harvest/merge_industry.py || echo "!! merge_industry failed - continuing"
             python3 harvest/build_industry_points.py || echo "!! industry points failed - continuing"
             timeout 4m python3 harvest/contamination_register.py || echo "!! contamination register failed - continuing"
-            timeout 6m python3 harvest/ogtr_trials.py || echo "!! ogtr trials failed - continuing"
+            # -u MATTERS HERE. This step is killed by `timeout` while the
+            # script is still probing, and Python BLOCK-BUFFERS stdout when it
+            # is not a terminal: the buffer is discarded on SIGTERM, so four
+            # runs produced the single line "!! ogtr trials failed" and nothing
+            # else - including the lines the script prints BEFORE any network
+            # call. The output was never missing, it was never flushed.
+            timeout 6m python3 -u harvest/ogtr_trials.py || echo "!! ogtr trials failed - continuing"
             timeout 8m python3 harvest/gmofree_zones.py     || echo "!! gmo-free zones failed - continuing"
             timeout 8m python3 harvest/fas_biotech.py       || echo "!! fas biotech failed - continuing"
             timeout 8m python3 harvest/treaties.py || echo "!! treaties failed - continuing"
