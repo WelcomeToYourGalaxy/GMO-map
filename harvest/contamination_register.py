@@ -44,6 +44,28 @@ were tried.
 If every route fails the script says which one failed and how, and writes
 nothing.
 
+WHY THIS SHOULD PROBABLY STOP BEING A HARVESTER
+------------------------------------------------
+Both automated routes have now been tried and both are closed:
+
+  Springer   renders the supplementary section CLIENT-SIDE. A fetcher gets the
+             page without the link. Confirmed over four runs.
+  Europe PMC answered and holds no record of the DOI. The paper is real and
+             open access, but INTERNATIONAL JOURNAL OF FOOD CONTAMINATION IS
+             NOT INDEXED BY PUBMED CENTRAL. No PMCID exists to ask for
+             supplementary files with.
+
+The Register STOPPED IN 2013. It is a frozen dataset of 396 incidents that
+will never gain a row, and a nightly harvester for a dead dataset is the wrong
+tool no matter how well it is written. The right answer is to download
+Additional file 1 once, by hand, from the article page, save it as
+
+    harvest/register_table.csv
+
+and commit it. This script reads that file if it is there and skips the network
+entirely. The fetch routes are kept below it for the case where the file is
+absent, and as the record of what was tried.
+
     python3 harvest/contamination_register.py --dry-run
     python3 harvest/contamination_register.py
 
@@ -179,10 +201,14 @@ def epmc_pmcid(doi):
         except Exception:
             hits = []
     if not hits:
-        return None, ("search reached Europe PMC and matched no article for this "
-                      "DOI, quoted or bare. The DOI is in the docstring and is "
-                      "stable, so check the query syntax rather than assuming the "
-                      "paper has gone.")
+        return None, ("Europe PMC answered and holds no record of this DOI, "
+                      "quoted or bare. CHECKED: the paper is real and open "
+                      "access, but INTERNATIONAL JOURNAL OF FOOD CONTAMINATION "
+                      "IS NOT INDEXED BY PUBMED CENTRAL - it is a food-science "
+                      "title, and Europe PMC covers biomedical and life-science "
+                      "literature. This is not a query bug and no amount of "
+                      "syntax work will fix it. See the note at the top of the "
+                      "file: place the table by hand.")
     for h in hits:
         pid = h.get("pmcid")
         if pid:
@@ -307,8 +333,18 @@ def main():
     # found no supplement, and exited telling us the layout had changed, three
     # weeks running, while the alternate that would have worked sat untried in
     # the list below it. Reaching a page is not the same as getting the thing.
-    # ROUTE 1 - Europe PMC, which serves the supplementary files as data.
+    # ROUTE 0 - A FILE PLACED BY HAND. Read the note below before adding a
+    # fifth automated route to this script.
+    LOCAL = ROOT / "harvest" / "register_table.csv"
     rows, src = None, ""
+    if LOCAL.exists():
+        rows = rows_from_csv(LOCAL.read_text(encoding="utf-8", errors="replace"))
+        src = "harvest/register_table.csv (placed by hand)"
+        print("using %s: %d rows" % (LOCAL.name, len(rows)))
+        _emit(rows, src)
+        return
+
+    # ROUTE 1 - Europe PMC, which serves supplementary files as data.
     print("Europe PMC: resolving the DOI to a PMCID")
     pmcid, why = epmc_pmcid(DOI)
     if not pmcid:
