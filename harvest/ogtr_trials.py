@@ -161,7 +161,28 @@ def _relay(url):
     return RELAY + sep + "url=" + urllib.parse.quote(url, safe="")
 
 
-def fetch(url, timeout=25, tries=2, hdrs=None, raw=False):
+# Set the first time a request to the origin fails at a stage that means the
+# host is not answering this runner. Every later live request is then skipped
+# rather than attempted.
+#
+# The 2026-08-24 run spent 4m10s of a 6m budget waiting: 78s on robots.txt, 55s
+# on one endpoint, 116s on the map page, all with the identical failure
+# ("connected, no HTTP response"), and about a second doing the actual work off
+# the archived copy. Each wait was a fresh attempt to learn something the
+# previous wait had already established.
+LIVE_DEAD = []
+
+
+def _dead(reason=""):
+    if not LIVE_DEAD:
+        LIVE_DEAD.append(reason or "unspecified")
+        print("  the origin is not answering this runner (%s). Skipping the "
+              "remaining live requests and going to the archived copy."
+              % LIVE_DEAD[0])
+    return LIVE_DEAD[0]
+
+
+def fetch(url, timeout=25, tries=1, hdrs=None, raw=False):
     """One request, with the failing STAGE named in the exception text.
 
     `str(e)[:60]` was the whole diagnostic before, and for a socket timeout that
@@ -172,6 +193,8 @@ def fetch(url, timeout=25, tries=2, hdrs=None, raw=False):
     """
     last = None
     target = _relay(url)
+    if LIVE_DEAD and HOST in url and not RELAY:
+        raise RuntimeError("skipped [%s]" % LIVE_DEAD[0])
     for attempt in range(tries):
         try:
             r = urlopen(Request(target, headers=hdrs or HDRS), timeout=timeout)
@@ -184,6 +207,13 @@ def fetch(url, timeout=25, tries=2, hdrs=None, raw=False):
                 break               # an answer, not a transient failure
             time.sleep(1.5 * (attempt + 1))
     stage = _classify(url, last)
+    # A stage at or below HTTP means the host is not talking to this runner at
+    # all, and it will not talk to it about the next URL either. A 404 or a 403
+    # is an ANSWER and says nothing about the next path, so it does not trip
+    # the breaker.
+    if HOST in url and stage in ("DNS", "TCP connect", "TLS handshake",
+                                 "connected, no HTTP response"):
+        _dead(stage)
     raise RuntimeError("%s [%s] %s" % (type(last).__name__, stage, str(last)[:70]))
 
 
@@ -364,19 +394,19 @@ def _robots():
         return _ROBOTS[0]
     url = BASE + "/robots.txt"
     code, note, body = None, "", None
-    for attempt in range(2):
-        try:
-            r = urlopen(Request(_relay(url), headers=HDRS), timeout=30)
-            code, note = r.getcode(), ""
-            body = r.read().decode("utf-8", "replace")
-            ROBOTS_SRC[0] = "live"
-            break
-        except Exception as e:
-            code = getattr(e, "code", None)
-            note = "%s: %s" % (type(e).__name__, str(e)[:60])
-            if code in (401, 403):
-                break                      # a block, not a transient failure
-            time.sleep(2 * (attempt + 1))
+    # ONE attempt at 20s, not three at 60. This is the first request of the run,
+    # so it is also the cheapest place to find out that the host is silent, and
+    # a retry has never once turned a silence into an answer here.
+    try:
+        r = urlopen(Request(_relay(url), headers=HDRS), timeout=20)
+        code, note = r.getcode(), ""
+        body = r.read().decode("utf-8", "replace")
+        ROBOTS_SRC[0] = "live"
+    except Exception as e:
+        code = getattr(e, "code", None)
+        note = "%s: %s" % (type(e).__name__, str(e)[:60])
+        if code is None:
+            _dead(_classify(url, e))
 
     if body is None and code is None:
         arch, when = _archived(url)
@@ -400,8 +430,8 @@ def _robots():
     elif code is not None and 400 <= code < 500:
         rp.allow_all = True                # a 404 is not a refusal
     else:
-        print("  robots.txt: no response after 2 tries and no archived copy "
-              "(%s)" % (note or "no reason recorded"))
+        print("  robots.txt: no response and no archived copy (%s)"
+              % (note or "no reason recorded"))
         _ROBOTS.append(None)
         return None
 
@@ -767,6 +797,112 @@ def coords(row):
 # Placement
 # ---------------------------------------------------------------------------
 
+# Rough extents of each state and territory. Used ONLY to reject a geocoder
+# result that landed in the wrong one - never to place anything. "Hilltops
+# Council" and "Central Highlands Regional Council" both have namesakes, and a
+# lookup that answers with the wrong continent's version of a name is the exact
+# failure that produces a plausible-looking pair of floats.
+STATE_BOX = {
+    "NSW": (-37.6, -28.1, 140.9, 153.7), "VIC": (-39.3, -33.9, 140.9, 150.1),
+    "QLD": (-29.2, -9.0, 137.9, 153.6), "SA": (-38.2, -25.9, 128.9, 141.1),
+    "WA": (-35.2, -13.6, 112.8, 129.1), "TAS": (-43.7, -39.1, 143.7, 148.6),
+    "NT": (-26.1, -10.9, 128.9, 138.1), "ACT": (-36.0, -35.1, 148.7, 149.5),
+}
+
+NOMINATIM = "https://nominatim.openstreetmap.org/search"
+GEO_UA = ("GMO-map-harvest/1.0 (+https://github.com/WelcomeToYourGalaxy/GMO-map)")
+
+
+def resolve_councils(rows, budget=150.0):
+    """Fill harvest/au_lga_centroids.json for the councils these rows name.
+
+    Only the councils that appear, not all 560-odd nationally: the table names
+    about thirty, the answer is cached, and a national boundary download is
+    several hundred megabytes for a lookup this uses a page of.
+
+    Every entry keeps the OSM object it came from, so a suspect point can be
+    opened and checked rather than argued about. A result that is not an
+    administrative boundary, or that falls outside the state OGTR named for
+    that site, is DISCARDED and the site stays at state grade - a missing
+    upgrade costs resolution, a wrong one puts a trial in the wrong place.
+    """
+    if "--no-geocode" in sys.argv:
+        return
+    want = {}
+    for r in rows:
+        lga = (r.get("lga") or "").strip()
+        st = _statecode(r.get("state"))
+        if lga and st and _lganorm(lga) not in _load_lga():
+            want.setdefault(_lganorm(lga), (lga, st))
+    if not want:
+        return
+    print("  resolving %d council areas not yet in %s" % (len(want), LGA_FILE.name))
+    store = {}
+    if LGA_FILE.exists():
+        try:
+            store = json.loads(LGA_FILE.read_text(encoding="utf-8"))
+        except Exception:
+            store = {}
+    store.setdefault("centroids", {})
+    store.setdefault("note", "Council-area points for OGTR field trial sites, "
+                             "from OpenStreetMap administrative boundaries via "
+                             "Nominatim. Each entry names the OSM object it "
+                             "came from. Rejected where the point fell outside "
+                             "the state OGTR named.")
+    t0, added, refused = time.time(), 0, 0
+    for key, (name, st) in sorted(want.items()):
+        if time.time() - t0 > budget:
+            print("  geocoding budget spent; %d left for the next run"
+                  % (len(want) - added - refused))
+            break
+        q = urllib.parse.urlencode({
+            "q": "%s, %s, Australia" % (name, STATE_NAME.get(st, "")),
+            "format": "jsonv2", "limit": "5", "addressdetails": "1"})
+        try:
+            # Nominatim asks for one request a second and an identifying
+            # user-agent. Both are honoured; this is somebody else's server.
+            time.sleep(1.2)
+            body = urlopen(Request(NOMINATIM + "?" + q,
+                                   headers={"User-Agent": GEO_UA}),
+                           timeout=25).read().decode("utf-8", "replace")
+            hits = json.loads(body)
+        except Exception as e:
+            print("     %-42s lookup failed (%s)" % (name[:42], str(e)[:40]))
+            refused += 1
+            continue
+        got = None
+        for h in hits if isinstance(hits, list) else []:
+            if h.get("category") != "boundary" or h.get("type") != "administrative":
+                continue
+            try:
+                la, ln = float(h["lat"]), float(h["lon"])
+            except Exception:
+                continue
+            box = STATE_BOX.get(st)
+            if not box or not (box[0] <= la <= box[1] and box[2] <= ln <= box[3]):
+                continue
+            got = (la, ln, "%s/%s" % (h.get("osm_type", "?"), h.get("osm_id", "?")),
+                   h.get("display_name", "")[:120])
+            break
+        if not got:
+            print("     %-42s no administrative boundary inside %s" % (name[:42], st))
+            refused += 1
+            continue
+        store["centroids"][key] = {"lat": got[0], "lng": got[1], "name": name,
+                                   "state": st, "osm": got[2], "matched": got[3]}
+        _LGA[key] = (got[0], got[1])
+        added += 1
+    if added:
+        LGA_FILE.parent.mkdir(parents=True, exist_ok=True)
+        LGA_FILE.write_text(json.dumps(store, ensure_ascii=False, indent=1),
+                            encoding="utf-8")
+        print("  %d resolved, %d refused; %s now holds %d councils"
+              % (added, refused, LGA_FILE.name, len(store["centroids"])))
+    elif refused:
+        print("  %d councils could not be resolved; those sites stay at state "
+              "grade" % refused)
+
+
 _LGA = {}
 
 
@@ -783,7 +919,10 @@ def _load_lga():
         return _LGA
     for k, v in (raw.get("centroids") or raw).items():
         try:
-            _LGA[_lganorm(k)] = (float(v[0]), float(v[1]))
+            if isinstance(v, dict):
+                _LGA[_lganorm(k)] = (float(v["lat"]), float(v["lng"]))
+            else:
+                _LGA[_lganorm(k)] = (float(v[0]), float(v[1]))
         except Exception:
             continue
     print("  council centroid lookup: %d entries" % len(_LGA))
@@ -950,6 +1089,11 @@ def _from_page(html, src):
     rows = parse_page_table(html)
     if rows:
         merge_coords(rows, find_inline_coords(html))
+        # Only for the rows that still have no coordinate. If OGTR published
+        # one, that is the position and a geocoder has nothing to add.
+        unplaced = [r for r in rows if coords(r)[0] is None]
+        if unplaced:
+            resolve_councils(unplaced)
         return rows
     return []
 
@@ -994,6 +1138,10 @@ def main():
 
     # 1. Any permitted data path, first, because a real endpoint carries the
     #    coordinates the table does not.
+    if LIVE_DEAD and not RELAY:
+        print("  not probing the %d permitted endpoints: they are on the host "
+              "that is not answering" % len(open_paths))
+        open_paths = []
     for url in open_paths:
         if time.time() - t_start > BUDGET * 0.4:
             print("  endpoint probing stopped at 40%% of the budget; the page "
@@ -1023,7 +1171,7 @@ def main():
     # 2. The page. This is now the main route, not a place to hunt for one.
     html, src = None, ""
     try:
-        html = fetch(PAGE, timeout=35, tries=3)
+        html = fetch(PAGE, timeout=25, tries=1)
         src = "map page"
     except Exception as e:
         print("  the map page could not be fetched: %s" % str(e)[:90])
@@ -1153,6 +1301,14 @@ _BANNED = ("escape", "escapee", "stray", "self-sown", "loss of containment",
            "contaminat", "unauthorised presence")
 
 
+def _errof(fn):
+    try:
+        fn()
+    except Exception as e:
+        return str(e)
+    return ""
+
+
 def selftest():
     fails = []
 
@@ -1227,6 +1383,38 @@ def selftest():
     rp2 = RobotFileParser()
     rp2.parse(["User-agent: *", "Disallow: /what-weve-approved/"])
     ck("a rule on the map path does close it", not rp2.can_fetch(UA, PAGE))
+
+    print("\ncircuit breaker")
+    LIVE_DEAD[:] = []
+    _dead("connected, no HTTP response")
+    ck("a second live request is skipped, not retried",
+       "skipped" in _errof(lambda: fetch(PAGE, timeout=1)))
+    ck("the archive is a different host and is NOT skipped",
+       "skipped" not in _errof(lambda: fetch(WB_AVAIL % "x", timeout=1)))
+    ck("breaker is set once and names the stage", LIVE_DEAD == ["connected, no HTTP response"])
+    LIVE_DEAD[:] = []
+
+    print("\ncouncil centroids")
+    _LGA.clear()
+    _LGA["lockyervalley"] = (-27.55, 152.33)
+    r3 = to_record({"licence": "DIR 209", "lga": "Lockyer Valley Regional Council",
+                    "state": "QLD", "status": "Current"})
+    ck("a resolved council upgrades the record off the state point",
+       r3["addr_grade"] == "lga" and (r3["lat"], r3["lng"]) != STATE_PT["QLD"])
+    ck("council-grade record still says precise false", r3["precise"] is False)
+    ck("council-grade text names the council area, not the state",
+       "centroid of that council area" in r3["desc"])
+    box = STATE_BOX["QLD"]
+    ck("QLD box rejects a NSW point", not (box[0] <= -33.8 <= box[1]))
+    ck("QLD box accepts the Lockyer Valley point",
+       box[0] <= -27.55 <= box[1] and box[2] <= 152.33 <= box[3])
+    ck("every state with a fallback point has a box",
+       set(STATE_PT) == set(STATE_BOX))
+    ck("each fallback point sits inside its own box",
+       all(STATE_BOX[k][0] <= v[0] <= STATE_BOX[k][1]
+           and STATE_BOX[k][2] <= v[1] <= STATE_BOX[k][3]
+           for k, v in STATE_PT.items()))
+    _LGA.clear()
 
     print("\nrelay")
     global RELAY
