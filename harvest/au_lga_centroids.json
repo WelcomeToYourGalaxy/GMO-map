@@ -1,0 +1,109 @@
+{
+ "centroids": {
+  "greatergeraldton": {
+   "lat": -28.439715,
+   "lng": 115.7565916,
+   "name": "City of Greater Geraldton",
+   "state": "WA",
+   "osm": "relation/11689919",
+   "matched": "City of Greater Geraldton, Western Australia, Australia"
+  },
+  "hilltops": {
+   "lat": -34.4156191,
+   "lng": 148.5634257,
+   "name": "Hilltops Council",
+   "state": "NSW",
+   "osm": "relation/6256597",
+   "matched": "Hilltops Council, New South Wales, Australia"
+  },
+  "leeton": {
+   "lat": -34.5297533,
+   "lng": 146.293258,
+   "name": "Leeton Shire Council",
+   "state": "NSW",
+   "osm": "relation/6411154",
+   "matched": "Leeton Shire Council, New South Wales, Australia"
+  },
+  "light": {
+   "lat": -34.4100885,
+   "lng": 138.8321181,
+   "name": "Light Regional Council",
+   "state": "SA",
+   "osm": "relation/9108117",
+   "matched": "Light Regional Council, South Australia, Australia"
+  },
+  "litchfield": {
+   "lat": -12.4998275,
+   "lng": 131.196753,
+   "name": "Litchfield Municipality",
+   "state": "NT",
+   "osm": "relation/9045375",
+   "matched": "Litchfield Municipality, Northern Territory, Australia"
+  },
+  "lockhart": {
+   "lat": -35.321955,
+   "lng": 146.8103884,
+   "name": "Lockhart Shire Council",
+   "state": "NSW",
+   "osm": "relation/6322050",
+   "matched": "Lockhart Shire Council, New South Wales, Australia"
+  },
+  "murrayriver": {
+   "lat": -35.2303,
+   "lng": 144.0054688,
+   "name": "Murray River Council",
+   "state": "NSW",
+   "osm": "relation/6134295",
+   "matched": "Murray River Council, New South Wales, Australia"
+  },
+  "murrumbidgee": {
+   "lat": -35.0141713,
+   "lng": 145.8110415,
+   "name": "Murrumbidgee Council",
+   "state": "NSW",
+   "osm": "relation/6231900",
+   "matched": "Murrumbidgee Council, New South Wales, Australia"
+  },
+  "narrabri": {
+   "lat": -30.3278407,
+   "lng": 149.5571542,
+   "name": "Narrabri Shire Council",
+   "state": "NSW",
+   "osm": "relation/6389900",
+   "matched": "Narrabri Shire Council, New South Wales, Australia"
+  },
+  "narrandera": {
+   "lat": -34.5926463,
+   "lng": 146.7000438,
+   "name": "Narrandera Shire Council",
+   "state": "NSW",
+   "osm": "relation/6322034",
+   "matched": "Narrandera Shire Council, New South Wales, 2700, Australia"
+  },
+  "tammin": {
+   "lat": -31.6035545,
+   "lng": 117.4776581,
+   "name": "Shire of Tammin",
+   "state": "WA",
+   "osm": "relation/11689484",
+   "matched": "Shire of Tammin, Western Australia, 6409, Australia"
+  },
+  "warren": {
+   "lat": -31.2955213,
+   "lng": 147.8051376,
+   "name": "Warren Shire Council",
+   "state": "NSW",
+   "osm": "relation/6100934",
+   "matched": "Warren Shire Council, New South Wales, Australia"
+  },
+  "weddin": {
+   "lat": -33.8784387,
+   "lng": 147.9757074,
+   "name": "Weddin Shire Council",
+   "state": "NSW",
+   "osm": "relation/6257772",
+   "matched": "Weddin Shire Council, New South Wales, Australia"
+  }
+ },
+ "note": "Council-area points for OGTR field trial sites, from OpenStreetMap administrative boundaries via Nominatim. Each entry names the OSM object it came from. Rejected where the point fell outside the state OGTR named."
+}
