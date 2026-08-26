@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-25",
+ "generated": "2026-08-26",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
@@ -24,7 +24,7 @@
    "ok": true,
    "rows": 8,
    "url": "https://eping.wto.org/en/Search",
-   "message": "104912 notifications scanned"
+   "message": "104918 notifications scanned"
   },
   {
    "name": "EFSA",
