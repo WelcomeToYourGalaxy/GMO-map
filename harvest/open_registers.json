@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-24",
+ "generated": "2026-08-26",
  "bch": [
   {
    "name": "MON-877Ø1-2 - Insect resistant soybean",
@@ -1772,18 +1772,6 @@
    "url": "https://data.gov.au/data/dataset/nsw-3-10030-state-forests-of-new-south-wales-research-and-development-annual-report-2003-2004"
   },
   {
-   "title": "NSW Child Death Review Team Report 2015",
-   "org": "NSW Government",
-   "files": [
-    {
-     "name": "CDRT review report 2015 final 16572",
-     "format": "PDF",
-     "url": "https://data.nsw.gov.au/data/dataset/1035db4a-7c40-46b9-b7da-541faab723ab/resource/77d1ddeb-88aa-4c3e-8049-41c6984b23bc/download/cdrt_review_report_2015_final_16572.pdf"
-    }
-   ],
-   "url": "https://data.gov.au/data/dataset/nsw-3-16341-nsw-child-death-review-team-report-2015"
-  },
-  {
    "title": "Government Gazette of the State of New South Wales Week No. 31/2007",
    "org": "NSW Government",
    "files": [
@@ -1794,6 +1782,18 @@
     }
    ],
    "url": "https://data.gov.au/data/dataset/nsw-3-11693-government-gazette-of-the-state-of-new-south-wales-week-no-31-2007"
+  },
+  {
+   "title": "NSW Child Death Review Team Report 2015",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "CDRT review report 2015 final 16572",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/1035db4a-7c40-46b9-b7da-541faab723ab/resource/77d1ddeb-88aa-4c3e-8049-41c6984b23bc/download/cdrt_review_report_2015_final_16572.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-16341-nsw-child-death-review-team-report-2015"
   },
   {
    "title": "State Forests of New South Wales Research and Development Report 2001/02",
@@ -1964,6 +1964,18 @@
    "url": "https://data.gov.au/data/dataset/nsw-3-11881-government-gazette-of-the-state-of-new-south-wales-week-no-52-2003"
   },
   {
+   "title": "Department of Environment and Conservation (NSW) Annual Report 2003-04",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 11565",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/ca25ca42-f3e8-4ce9-b20c-9ca6d5e5c381/resource/6cab30c1-0dfd-4615-8a9f-f1e57e01f22f/download/document_11565.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-10619-department-of-environment-and-conservation-nsw-annual-report-2003-04"
+  },
+  {
    "title": "WAMSI 2 - Dredging Node - Project 4.1 - Assessing impacts of dredging on corals, Western Australia",
    "org": "Australian Ocean Data Network",
    "files": [
@@ -1999,18 +2011,6 @@
     }
    ],
    "url": "https://data.gov.au/data/dataset/wamsi-2-dredging-node-project-4-1-assessing-impacts-of-dredging-on-corals-western-australia"
-  },
-  {
-   "title": "Department of Environment and Conservation (NSW) Annual Report 2003-04",
-   "org": "NSW Government",
-   "files": [
-    {
-     "name": "document 11565",
-     "format": "PDF",
-     "url": "https://data.nsw.gov.au/data/dataset/ca25ca42-f3e8-4ce9-b20c-9ca6d5e5c381/resource/6cab30c1-0dfd-4615-8a9f-f1e57e01f22f/download/document_11565.pdf"
-    }
-   ],
-   "url": "https://data.gov.au/data/dataset/nsw-3-10619-department-of-environment-and-conservation-nsw-annual-report-2003-04"
   },
   {
    "title": "Government Gazette of the State of New South Wales Week No. 08/2003",
@@ -2097,18 +2097,6 @@
    "url": "https://data.gov.au/data/dataset/nsw-3-10357-privacy-nsw-annual-report-2005-06"
   },
   {
-   "title": "Botanic Gardens Trust Annual Report 2005-2006",
-   "org": "NSW Government",
-   "files": [
-    {
-     "name": "document 10630",
-     "format": "PDF",
-     "url": "https://data.nsw.gov.au/data/dataset/b69b310a-ad76-4023-a4b0-920b5173d0d3/resource/2c9e9a23-f8d4-4d02-bc2f-9862fd0211c6/download/document_10630.pdf"
-    }
-   ],
-   "url": "https://data.gov.au/data/dataset/nsw-3-9750-botanic-gardens-trust-annual-report-2005-2006"
-  },
-  {
    "title": "Government Gazette of the State of New South Wales Week No. 04/2008",
    "org": "NSW Government",
    "files": [
@@ -2119,6 +2107,18 @@
     }
    ],
    "url": "https://data.gov.au/data/dataset/nsw-3-11668-government-gazette-of-the-state-of-new-south-wales-week-no-04-2008"
+  },
+  {
+   "title": "Botanic Gardens Trust Annual Report 2005-2006",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 10630",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/b69b310a-ad76-4023-a4b0-920b5173d0d3/resource/2c9e9a23-f8d4-4d02-bc2f-9862fd0211c6/download/document_10630.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-9750-botanic-gardens-trust-annual-report-2005-2006"
   },
   {
    "title": "Government Gazette of the State of New South Wales Week No. 46/2008",
@@ -2241,18 +2241,6 @@
    "url": "https://data.gov.au/data/dataset/nsw-3-11732-government-gazette-of-the-state-of-new-south-wales-week-no-44-2006"
   },
   {
-   "title": "NSW Department of Primary Industries Annual Report 2004-05",
-   "org": "NSW Government",
-   "files": [
-    {
-     "name": "document 11537",
-     "format": "PDF",
-     "url": "https://data.nsw.gov.au/data/dataset/6ba3ee7a-e804-4426-88bf-ccdf8ade08b6/resource/43ecd54e-17e7-4619-b68e-2fbdb4b5fc67/download/document_11537.pdf"
-    }
-   ],
-   "url": "https://data.gov.au/data/dataset/nsw-3-10591-nsw-department-of-primary-industries-annual-report-2004-05"
-  },
-  {
    "title": "Government Gazette of the State of New South Wales Week No. 35/2006",
    "org": "NSW Government",
    "files": [
@@ -2263,6 +2251,18 @@
     }
    ],
    "url": "https://data.gov.au/data/dataset/nsw-3-11741-government-gazette-of-the-state-of-new-south-wales-week-no-35-2006"
+  },
+  {
+   "title": "NSW Department of Primary Industries Annual Report 2004-05",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 11537",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/6ba3ee7a-e804-4426-88bf-ccdf8ade08b6/resource/43ecd54e-17e7-4619-b68e-2fbdb4b5fc67/download/document_11537.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-10591-nsw-department-of-primary-industries-annual-report-2004-05"
   },
   {
    "title": "Government Gazette of the State of New South Wales Week No. 06/2007",
