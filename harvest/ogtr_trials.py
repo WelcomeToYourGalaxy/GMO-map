@@ -837,6 +837,75 @@ STATE_BOX = {
 }
 
 NOMINATIM = "https://nominatim.openstreetmap.org/search"
+
+# An administrative area is not always tagged boundary/administrative in
+# Nominatim's answer, and jsonv2 has shipped the class under both "category"
+# and "class". Accepting either key, and either the boundary tags or an
+# administrative addresstype, is cheaper than being wrong about which.
+_ADMIN_TYPES = {"administrative", "municipality", "county", "city", "region",
+                "local_administrative_area", "district", "shire"}
+
+
+def _strip_council(name):
+    """"Central Highlands Regional Council" -> "Central Highlands".
+
+    OGTR writes the legal name of the body. OSM commonly names the AREA. The
+    two differ by exactly these words, and a query carrying them can miss an
+    area that is plainly there.
+    """
+    s = re.sub(r"\b(regional|rural|municipal(ity)?|district|city|shire|"
+               r"borough|council|of|the)\b", " ", name, flags=re.I)
+    return re.sub(r"\s+", " ", s).strip(" ,")
+
+
+def _queries(name, st):
+    """Query forms to try, in descending order of how specific they are."""
+    state = STATE_NAME.get(st, "")
+    base = {"format": "jsonv2", "limit": "8", "addressdetails": "1",
+            "countrycodes": "au"}
+    out = [dict(base, q="%s, %s, Australia" % (name, state))]
+    short = _strip_council(name)
+    if short and short.lower() != name.lower():
+        out.append(dict(base, q="%s, %s, Australia" % (short, state)))
+        # Structured form: Nominatim matches a county field against
+        # administrative areas more willingly than a free-text string that
+        # carries the word "Council".
+        out.append(dict(base, county=short, state=state, country="Australia"))
+    return out
+
+
+def _match(hits, st):
+    """First result that is an administrative area inside the named state.
+
+    Returns (match, notes). The notes describe what was rejected and why, so a
+    refusal can be read rather than guessed at.
+    """
+    notes = []
+    box = STATE_BOX.get(st)
+    for h in hits if isinstance(hits, list) else []:
+        cat = h.get("category") or h.get("class") or ""
+        typ = h.get("type") or ""
+        atype = h.get("addresstype") or ""
+        admin = (cat == "boundary" and typ in _ADMIN_TYPES) or atype in _ADMIN_TYPES
+        try:
+            la, ln = float(h["lat"]), float(h["lon"])
+        except Exception:
+            continue
+        if not admin:
+            notes.append("%s/%s not an admin area" % (cat[:12], typ[:14]))
+            continue
+        if not box or not (box[0] <= la <= box[1] and box[2] <= ln <= box[3]):
+            # Worth naming: OGTR's table lists Goondiwindi Regional Council
+            # under NSW and the council is in Queensland. That is a fault in
+            # the source, not in the lookup, and it should read as one.
+            inside = [k for k, b in STATE_BOX.items()
+                      if b[0] <= la <= b[1] and b[2] <= ln <= b[3]]
+            notes.append("found in %s, table says %s"
+                         % ("/".join(inside) or "no AU state", st))
+            continue
+        return (la, ln, "%s/%s" % (h.get("osm_type", "?"), h.get("osm_id", "?")),
+                h.get("display_name", "")[:120]), notes
+    return None, notes
 GEO_UA = ("GMO-map-harvest/1.0 (+https://github.com/WelcomeToYourGalaxy/GMO-map)")
 
 
@@ -884,37 +953,33 @@ def resolve_councils(rows, budget=150.0):
             print("  geocoding budget spent; %d left for the next run"
                   % (len(want) - added - refused))
             break
-        q = urllib.parse.urlencode({
-            "q": "%s, %s, Australia" % (name, STATE_NAME.get(st, "")),
-            "format": "jsonv2", "limit": "5", "addressdetails": "1"})
-        try:
-            # Nominatim asks for one request a second and an identifying
-            # user-agent. Both are honoured; this is somebody else's server.
-            time.sleep(1.2)
-            body = urlopen(Request(NOMINATIM + "?" + q,
-                                   headers={"User-Agent": GEO_UA}),
-                           timeout=25).read().decode("utf-8", "replace")
-            hits = json.loads(body)
-        except Exception as e:
-            print("     %-42s lookup failed (%s)" % (name[:42], str(e)[:40]))
-            refused += 1
-            continue
-        got = None
-        for h in hits if isinstance(hits, list) else []:
-            if h.get("category") != "boundary" or h.get("type") != "administrative":
-                continue
+        got, seen, tried = None, [], _queries(name, st)
+        for q in tried:
             try:
-                la, ln = float(h["lat"]), float(h["lon"])
-            except Exception:
-                continue
-            box = STATE_BOX.get(st)
-            if not box or not (box[0] <= la <= box[1] and box[2] <= ln <= box[3]):
-                continue
-            got = (la, ln, "%s/%s" % (h.get("osm_type", "?"), h.get("osm_id", "?")),
-                   h.get("display_name", "")[:120])
-            break
+                # Nominatim asks for one request a second and an identifying
+                # user-agent. Both are honoured; this is somebody else's
+                # server.
+                time.sleep(1.2)
+                body = urlopen(Request(NOMINATIM + "?" + urllib.parse.urlencode(q),
+                                       headers={"User-Agent": GEO_UA}),
+                               timeout=25).read().decode("utf-8", "replace")
+                hits = json.loads(body)
+            except Exception as e:
+                print("     %-42s lookup failed (%s)" % (name[:42], str(e)[:40]))
+                break
+            got, why = _match(hits, st)
+            seen.extend(why)
+            if got:
+                break
         if not got:
-            print("     %-42s no administrative boundary inside %s" % (name[:42], st))
+            # Say what came back, not just that nothing did. The first version
+            # printed "no administrative boundary inside QLD" for ten councils
+            # at once, which is consistent with a rate limit, a renamed JSON
+            # field, a wrong state in OGTR's own table and a genuine no-match,
+            # and told them apart from none of it.
+            print("     %-42s unresolved after %d quer%s%s"
+                  % (name[:42], len(tried), "y" if len(tried) == 1 else "ies",
+                     "; saw " + "; ".join(seen[:3]) if seen else "; no results"))
             refused += 1
             continue
         store["centroids"][key] = {"lat": got[0], "lng": got[1], "name": name,
