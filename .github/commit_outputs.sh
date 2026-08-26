@@ -72,7 +72,13 @@ stage_outputs() {
   local n=0
   while IFS= read -r f; do
     case "$f" in
-      *.py|*.sh|*.yml|*.yaml|./.git/*) continue ;;
+      # Source, never data. facilities/ used ':(exclude)harvest/*.py' for this
+      # after a refresh run committed a stale consultations.py over a patched
+      # one; excluding by extension covers the .sh and .yml too.
+      *.py|*.sh|*.yml|*.yaml) continue ;;
+      # Build noise. Without this the gitignore branch below prints a line per
+      # .pyc every run.
+      */__pycache__/*|*.pyc|*.pyo|./.git/*|*/.git/*) continue ;;
     esac
     [ -f "$f" ] || continue
     if git check-ignore -q "$f"; then
