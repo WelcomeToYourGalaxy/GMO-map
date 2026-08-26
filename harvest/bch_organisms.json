@@ -2234,6 +2234,67 @@
    ],
    "developer": ""
   },
+  "BCHLMOSCBD1116131": {
+   "id": "bch-lmo-scbd-111613-1",
+   "organism": "",
+   "name": "Potato modified for reduced sucrose synthesis",
+   "traits": [
+    "Carbohydrates",
+    "Kanamycin",
+    "Neomycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1116142": {
+   "id": "bch-lmo-scbd-111614-2",
+   "organism": "",
+   "name": "Petunia with a modified flower colour",
+   "traits": [
+    "Pigmentation / Coloration",
+    "Kanamycin",
+    "Neomycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1116152": {
+   "id": "bch-lmo-scbd-111615-2",
+   "organism": "",
+   "name": "Potato modified for increased tuber weight",
+   "traits": [
+    "Kanamycin",
+    "Yield"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1116162": {
+   "id": "bch-lmo-scbd-111616-2",
+   "organism": "",
+   "name": "Potato modified for increased tuber weight",
+   "traits": [
+    "Kanamycin",
+    "Yield"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1116172": {
+   "id": "bch-lmo-scbd-111617-2",
+   "organism": "",
+   "name": "Potato modified for increased specific density",
+   "traits": [
+    "Kanamycin",
+    "Yield"
+   ],
+   "developer": ""
+  },
+  "MON892492": {
+   "id": "MON-89249-2",
+   "organism": "",
+   "name": "MON-89249-2 - Roundup Ready™ canola",
+   "traits": [
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
   "BCHLMOSCBD153904": {
    "id": "bch-lmo-scbd-15390-4",
    "organism": "",
@@ -2262,6 +2323,74 @@
    "traits": [
     "Pigmentation / Coloration",
     "Sulfonylurea"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1003155": {
+   "id": "bch-lmo-scbd-100315-5",
+   "organism": "",
+   "name": "Potato modified to synthesise fusion spider silk/ elastin protein",
+   "traits": [
+    "Kanamycin",
+    "Use in industrial applications"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1003393": {
+   "id": "bch-lmo-scbd-100339-3",
+   "organism": "",
+   "name": "Vaccine against Aujeszky's Disease",
+   "traits": [
+    "Vaccines"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1003455": {
+   "id": "bch-lmo-scbd-100345-5",
+   "organism": "",
+   "name": "Raboral V-RG (vaccine against rabies) [DRAFT]",
+   "traits": [
+    "Viruses"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1003527": {
+   "id": "bch-lmo-scbd-100352-7",
+   "organism": "",
+   "name": "Tobacco modified for tolerance to bromoxynil",
+   "traits": [
+    "Bromoxynil"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD153855": {
+   "id": "bch-lmo-scbd-15385-5",
+   "organism": "",
+   "name": "New Leaf™ Plus Russet Burbank potato",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Potato leaf roll virus (PLRV)",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD153884": {
+   "id": "bch-lmo-scbd-15388-4",
+   "organism": "",
+   "name": "Cantaloupe A (delayed ripening)",
+   "traits": [
+    "Kanamycin",
+    "Ripening"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD153893": {
+   "id": "bch-lmo-scbd-15389-3",
+   "organism": "",
+   "name": "Cantaloupe B (delayed ripening)",
+   "traits": [
+    "Kanamycin",
+    "Ripening"
    ],
    "developer": ""
   },
@@ -2343,6 +2472,860 @@
    ],
    "developer": ""
   },
+  "SEM0ZW207": {
+   "id": "SEM-ØZW2Ø-7",
+   "organism": "",
+   "name": "SEM-ØZW2Ø-7 - Virus-resistant squash",
+   "traits": [
+    "Watermelon mosaic virus-2 (WMV2)",
+    "Zucchini yellow mosaic virus (ZYMV)",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BGH008277": {
+   "id": "BGH-ØØ827-7",
+   "organism": "",
+   "name": "BGH-00827-7 - Rice modified for insect resistance",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Hygromycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1078672": {
+   "id": "bch-lmo-scbd-107867-2",
+   "organism": "",
+   "name": "Prototheca moriformis modified for the synthesis of biofuel",
+   "traits": [
+    "Lipid and fatty acids"
+   ],
+   "developer": ""
+  },
+  "SPS00J552": {
+   "id": "SPS-ØØJ55-2",
+   "organism": "",
+   "name": "SPS-ØØJ55-2 - Innate™ Atlantic Potato",
+   "traits": [
+    "Pigmentation / Coloration",
+    "Protein and amino acids"
+   ],
+   "developer": ""
+  },
+  "NMK897245": {
+   "id": "NMK-89724-5",
+   "organism": "",
+   "name": "NMK-89724-5 - Superior NewLeaf™ potato",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "REN000383MON008106": {
+   "id": "REN-ØØØ38-3 × MON-ØØ81Ø-6",
+   "organism": "",
+   "name": "REN-ØØØ38-3 × MON-ØØ81Ø-6 - Mavera™YieldGard™ maize",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Lysine content"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD153924": {
+   "id": "bch-lmo-scbd-15392-4",
+   "organism": "",
+   "name": "New Leaf™ Plus Russet Burbank potato",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Potato leaf roll virus (PLRV)",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD153933": {
+   "id": "bch-lmo-scbd-15393-3",
+   "organism": "",
+   "name": "Canola MPS963 Phytaseed™ (phytase-producing)",
+   "traits": [
+    "Changes in quality and/or metabolite content",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD153954": {
+   "id": "bch-lmo-scbd-15395-4",
+   "organism": "",
+   "name": "Tomato modified for delayed ripening",
+   "traits": [
+    "Kanamycin",
+    "Ripening"
+   ],
+   "developer": ""
+  },
+  "MON718004": {
+   "id": "MON-718ØØ-4",
+   "organism": "",
+   "name": "MON-718ØØ-4 - Roundup Ready™ wheat",
+   "traits": [
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "BPS252719": {
+   "id": "BPS-25271-9",
+   "organism": "",
+   "name": "BPS-25271-9 - Amflora™Potato",
+   "traits": [
+    "Kanamycin",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "DAS062758": {
+   "id": "DAS-Ø6275-8",
+   "organism": "",
+   "name": "DAS-Ø6275-8 - Herbicide-tolerant, insect-resistant maize",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD454111": {
+   "id": "bch-lmo-scbd-45411-1",
+   "organism": "",
+   "name": "Genetically modified Francisella tularensis",
+   "traits": [],
+   "developer": ""
+  },
+  "BCHLMOSCBD461225": {
+   "id": "bch-lmo-scbd-46122-5",
+   "organism": "",
+   "name": "Rice containing cedar pollen peptide",
+   "traits": [
+    "Allergens",
+    "Hygromycin"
+   ],
+   "developer": ""
+  },
+  "MON802007": {
+   "id": "MON-8Ø2ØØ-7",
+   "organism": "",
+   "name": "MON-8Ø2ØØ-7 - YieldGard™ maize",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Glyphosate",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "PH0006767": {
+   "id": "PH-ØØØ676-7",
+   "organism": "",
+   "name": "PH-ØØØ676-7 - Male-sterile, herbicide-tolerant maize",
+   "traits": [
+    "Glufosinate",
+    "Male sterility"
+   ],
+   "developer": ""
+  },
+  "ACSGM0031": {
+   "id": "ACS-GMØØ3-1",
+   "organism": "",
+   "name": "ACS-GMØØ3-1 - Herbicide-tolerant soybean",
+   "traits": [
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "ACSGM0042": {
+   "id": "ACS-GMØØ4-2",
+   "organism": "",
+   "name": "ACS-GMØØ4-2 - Herbicide-tolerant soybean",
+   "traits": [
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "MON008635MON008106": {
+   "id": "MON-ØØ863-5 × MON-ØØ81Ø-6",
+   "organism": "",
+   "name": "MON-ØØ863-5 × MON-ØØ81Ø-6 - YieldGard™ Rootworm™ maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "DP0981406DAS591227": {
+   "id": "DP-Ø9814Ø-6 × DAS-59122-7",
+   "organism": "",
+   "name": "DP-Ø9814Ø-6 × DAS-59122-7 - Maize modified for insect resistance and herbicide tolerance",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Glufosinate",
+    "Glyphosate",
+    "Sulfonylurea"
+   ],
+   "developer": ""
+  },
+  "ACSGM0053ACSGM0064": {
+   "id": "ACS-GMØØ5-3 × ACS-GMØØ6-4",
+   "organism": "",
+   "name": "ACS-GMØØ5-3 × ACS-GMØØ6-4 - Herbicide tolerant soybean",
+   "traits": [
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "SHD299524": {
+   "id": "SHD-29952-4",
+   "organism": "",
+   "name": "SHD-29952-4 - Colour modified carnation",
+   "traits": [
+    "Flavonoids (e.g. anthocyanin)",
+    "Pigmentation / Coloration",
+    "Chlorsulfuron",
+    "Sulfonylurea"
+   ],
+   "developer": ""
+  },
+  "SHD298951": {
+   "id": "SHD-29895-1",
+   "organism": "",
+   "name": "SHD-29895-1 - Colour modified carnation",
+   "traits": [
+    "Flavonoids (e.g. anthocyanin)",
+    "Pigmentation / Coloration",
+    "Chlorsulfuron",
+    "Sulfonylurea"
+   ],
+   "developer": ""
+  },
+  "SHD259305": {
+   "id": "SHD-2593Ø-5",
+   "organism": "",
+   "name": "SHD-25930-5 - Colour modified carnation",
+   "traits": [
+    "Flavonoids (e.g. anthocyanin)",
+    "Pigmentation / Coloration",
+    "Chlorsulfuron",
+    "Sulfonylurea"
+   ],
+   "developer": ""
+  },
+  "SHD298218": {
+   "id": "SHD-29821-8",
+   "organism": "",
+   "name": "SHD-29821-8 - Colour modified carnation",
+   "traits": [
+    "Flavonoids (e.g. anthocyanin)",
+    "Pigmentation / Coloration",
+    "Chlorsulfuron",
+    "Sulfonylurea"
+   ],
+   "developer": ""
+  },
+  "HZUHH0019": {
+   "id": "HZU-HHØØ1-9",
+   "organism": "",
+   "name": "HZU-HHØØ1-9 - Insect resistent rice",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1062602": {
+   "id": "bch-lmo-scbd-106260-2",
+   "organism": "",
+   "name": "Canola modified for herbicide tolerance",
+   "traits": [
+    "Glyphosate",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1063062": {
+   "id": "bch-lmo-scbd-106306-2",
+   "organism": "",
+   "name": "Potato modified for antimicrobial activity",
+   "traits": [
+    "Bacteria",
+    "Fungi",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "UFLX17CP9": {
+   "id": "UFL-X17CP-9",
+   "organism": "",
+   "name": "UFL-X17CP-9 - Papaya modified for resistance to Papaya Ringspot Virus",
+   "traits": [
+    "Papaya ringspot virus (PRV)"
+   ],
+   "developer": ""
+  },
+  "MON883029ACSBN0036": {
+   "id": "MON-883Ø2-9 × ACS-BNØØ3-6",
+   "organism": "",
+   "name": "MON-883Ø2-9 × ACS-BNØØ3-6 - Herbicide Tolerant Canola",
+   "traits": [
+    "Glufosinate",
+    "Glyphosate",
+    "Changes in physiology and/or production",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1057343": {
+   "id": "bch-lmo-scbd-105734-3",
+   "organism": "",
+   "name": "Hybrid aspen lines with modified stomatal regulation",
+   "traits": [
+    "Vaccines",
+    "Hygromycin",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1057371": {
+   "id": "bch-lmo-scbd-105737-1",
+   "organism": "",
+   "name": "Hybrid aspen lines with modified wood development",
+   "traits": [
+    "Hygromycin",
+    "Yield"
+   ],
+   "developer": ""
+  },
+  "SHD300863": {
+   "id": "SHD-3ØØ86-3",
+   "organism": "",
+   "name": "SHD-30086-3 - Colour Modified Carnation",
+   "traits": [
+    "Flavonoids (e.g. anthocyanin)",
+    "Pigmentation / Coloration",
+    "Chlorsulfuron",
+    "Sulfonylurea"
+   ],
+   "developer": ""
+  },
+  "DAS242365DAS210235MON889138": {
+   "id": "DAS-24236-5 × DAS-21Ø23-5 × MON-88913-8",
+   "organism": "",
+   "name": "DAS-24236-5 × DAS-21Ø23-5 × MON-88913-8 - Widestrike™ Roundup Ready Flex™ cotton",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "ACSGM0086": {
+   "id": "ACS-GMØØ8-6",
+   "organism": "",
+   "name": "ACS-GMØØ8-6 - Herbicide-tolerant soybean",
+   "traits": [
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1110841": {
+   "id": "bch-lmo-scbd-111084-1",
+   "organism": "",
+   "name": "Potato modified for Potato Leaf Roll Virus resistance",
+   "traits": [
+    "Potato leaf roll virus (PLRV)",
+    "Potato virus Y (PVY)",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1110862": {
+   "id": "bch-lmo-scbd-111086-2",
+   "organism": "",
+   "name": "Potato modified for increased methionine content in leaves and tubers",
+   "traits": [
+    "Protein and amino acids",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1110892": {
+   "id": "bch-lmo-scbd-111089-2",
+   "organism": "",
+   "name": "Potato modified for altered starch content",
+   "traits": [
+    "Carbohydrates",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1110902": {
+   "id": "bch-lmo-scbd-111090-2",
+   "organism": "",
+   "name": "Potato modified for altered starch content",
+   "traits": [
+    "Carbohydrates",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1114701": {
+   "id": "bch-lmo-scbd-111470-1",
+   "organism": "",
+   "name": "Potato modified for increased tuber yield",
+   "traits": [
+    "Kanamycin",
+    "Yield"
+   ],
+   "developer": ""
+  },
+  "MON877056MON877089MON897881": {
+   "id": "MON-877Ø5-6 × MON-877Ø8-9 ×  MON-89788-1",
+   "organism": "",
+   "name": "MON-877Ø5-6 × MON-877Ø8-9 ×  MON-89788-1 - Soybeans with modified fatty acid profile and herbicide tolerance",
+   "traits": [
+    "Lipid and fatty acids",
+    "Glyphosate",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1116111": {
+   "id": "bch-lmo-scbd-111611-1",
+   "organism": "",
+   "name": "Potato modified for a tolerance against bacterial pathogens",
+   "traits": [
+    "Bacteria",
+    "Kanamycin",
+    "Neomycin"
+   ],
+   "developer": ""
+  },
+  "SPS00J787": {
+   "id": "SPS-ØØJ78-7",
+   "organism": "",
+   "name": "SPS-ØØJ78-7 - Innate™ Atlantic Potato",
+   "traits": [
+    "Pigmentation / Coloration",
+    "Protein and amino acids"
+   ],
+   "developer": ""
+  },
+  "SPS00G119": {
+   "id": "SPS-ØØG11-9",
+   "organism": "",
+   "name": "SPS-ØØG11-9 - Innate™ G Potato",
+   "traits": [
+    "Pigmentation / Coloration",
+    "Protein and amino acids"
+   ],
+   "developer": ""
+  },
+  "SPS00H379": {
+   "id": "SPS-ØØH37-9",
+   "organism": "",
+   "name": "SPS-ØØH37-9 - Innate™ H Potato",
+   "traits": [
+    "Pigmentation / Coloration",
+    "Protein and amino acids"
+   ],
+   "developer": ""
+  },
+  "SPS00H504": {
+   "id": "SPS-ØØH5Ø-4",
+   "organism": "",
+   "name": "SPS-ØØH50-4 - Innate™ H Potato",
+   "traits": [
+    "Pigmentation / Coloration",
+    "Protein and amino acids"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1102631": {
+   "id": "bch-lmo-scbd-110263-1",
+   "organism": "",
+   "name": "Herbicide tolerant canola",
+   "traits": [
+    "Imidazolinone"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1102682": {
+   "id": "bch-lmo-scbd-110268-2",
+   "organism": "",
+   "name": "Herbicide tolerant SU canola",
+   "traits": [
+    "Imidazolinone",
+    "Sulfonylurea"
+   ],
+   "developer": ""
+  },
+  "DP0734964ACSBN0036": {
+   "id": "DP-Ø73496-4 × ACS-BNØØ3-6",
+   "organism": "",
+   "name": "DP-Ø73496-4 × ACS-BNØØ3-6 - Fertility Restored Herbicide Tolerant Canola",
+   "traits": [
+    "Glufosinate",
+    "Glyphosate",
+    "Reproduction"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1119731": {
+   "id": "bch-lmo-scbd-111973-1",
+   "organism": "",
+   "name": "Pexa-Vec Vaccine",
+   "traits": [
+    "Vaccines"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1119861": {
+   "id": "bch-lmo-scbd-111986-1",
+   "organism": "",
+   "name": "Liberty Link™ Independence™ Canola",
+   "traits": [
+    "Glufosinate",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1121281": {
+   "id": "bch-lmo-scbd-112128-1",
+   "organism": "",
+   "name": "Male Sterile/ Fertility Restored Herbicide Tolerant Canola",
+   "traits": [
+    "Glufosinate",
+    "Reproduction"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1110682": {
+   "id": "bch-lmo-scbd-111068-2",
+   "organism": "",
+   "name": "Potato modified for altered fructan metabolism",
+   "traits": [
+    "Carbohydrates",
+    "Hygromycin",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1110691": {
+   "id": "bch-lmo-scbd-111069-1",
+   "organism": "",
+   "name": "Potato modified for altered fructan metabolism",
+   "traits": [
+    "Carbohydrates",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1110711": {
+   "id": "bch-lmo-scbd-111071-1",
+   "organism": "",
+   "name": "Potato modified for increased gibberellin production",
+   "traits": [
+    "Kanamycin",
+    "Growth rate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1110721": {
+   "id": "bch-lmo-scbd-111072-1",
+   "organism": "",
+   "name": "Potato modified for decreased gibberellin production",
+   "traits": [
+    "Kanamycin",
+    "Growth rate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1110781": {
+   "id": "bch-lmo-scbd-111078-1",
+   "organism": "",
+   "name": "Potato modified for altered phytochrome B expression",
+   "traits": [
+    "Flavonoids (e.g. anthocyanin)",
+    "Pigmentation / Coloration",
+    "Kanamycin",
+    "Streptomycin",
+    "Growth rate",
+    "Photoperiod response",
+    "Yield"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1110801": {
+   "id": "bch-lmo-scbd-111080-1",
+   "organism": "",
+   "name": "Potato modified for altered amylose content",
+   "traits": [
+    "Amylose and amylopectin ratio",
+    "Carbohydrates",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1110821": {
+   "id": "bch-lmo-scbd-111082-1",
+   "organism": "",
+   "name": "Potato modified for 2-deoxyglucose resistance",
+   "traits": [
+    "Kanamycin",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1103031": {
+   "id": "bch-lmo-scbd-110303-1",
+   "organism": "",
+   "name": "Maize modified for insect resistance and herbicide tolerance",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "MON874604MON880173": {
+   "id": "MON-8746Ø-4 × MON-88Ø17-3",
+   "organism": "",
+   "name": "MON-8746Ø-4 × MON-88Ø17-3 - Insect resistant, drought and herbicide tolerant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate",
+    "Cold / Heat",
+    "Drought"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1002885": {
+   "id": "bch-lmo-scbd-100288-5",
+   "organism": "",
+   "name": "Pea modified for increased protein content",
+   "traits": [
+    "Protein and amino acids"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1002939": {
+   "id": "bch-lmo-scbd-100293-9",
+   "organism": "",
+   "name": "Potato modified for increased stomata density",
+   "traits": [
+    "Kanamycin",
+    "Neomycin",
+    "Drought"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1002946": {
+   "id": "bch-lmo-scbd-100294-6",
+   "organism": "",
+   "name": "Potato modified for decreased Stomata Density",
+   "traits": [
+    "Hygromycin",
+    "Drought"
+   ],
+   "developer": ""
+  },
+  "CUHCP5518": {
+   "id": "CUH-CP551-8",
+   "organism": "",
+   "name": "CUH-CP551-8 - Papaya resistant to papaya ringspot virus",
+   "traits": [
+    "Viruses",
+    "Papaya ringspot virus (PRV)",
+    "Kanamycin",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "CUHCP6317": {
+   "id": "CUH-CP631-7",
+   "organism": "",
+   "name": "CUH-CP631-7 - Papaya resistant to papaya ringspot virus",
+   "traits": [
+    "Viruses",
+    "Papaya ringspot virus (PRV)",
+    "Kanamycin",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCSOS0037": {
+   "id": "BCS-OSØØ3-7",
+   "organism": "",
+   "name": "BCS-OSØØ3-7 - Liberty Link™ rice",
+   "traits": [
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1002777": {
+   "id": "bch-lmo-scbd-100277-7",
+   "organism": "",
+   "name": "Potato with altered growth and tuber quality",
+   "traits": [
+    "Kanamycin",
+    "Changes in physiology and/or production"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1031245": {
+   "id": "bch-lmo-scbd-103124-5",
+   "organism": "",
+   "name": "Potato modified for heat tolerance and increased yield",
+   "traits": [
+    "Ampicillin",
+    "Kanamycin",
+    "Neomycin",
+    "Growth rate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1032183": {
+   "id": "bch-lmo-scbd-103218-3",
+   "organism": "",
+   "name": "Insect resistant cotton (MLS 9124)",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "Kanamycin",
+    "Neomycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1043201": {
+   "id": "bch-lmo-scbd-104320-1",
+   "organism": "",
+   "name": "Flax modified for improved ability to bind heavy metals",
+   "traits": [
+    "Bioremediation"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1043241": {
+   "id": "bch-lmo-scbd-104324-1",
+   "organism": "",
+   "name": "Flax modified for altered fatty acid composition",
+   "traits": [
+    "Lipid and fatty acids",
+    "Ampicillin",
+    "Hygromycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1043351": {
+   "id": "bch-lmo-scbd-104335-1",
+   "organism": "",
+   "name": "Barley modified to produce phytase",
+   "traits": [
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1043521": {
+   "id": "bch-lmo-scbd-104352-1",
+   "organism": "",
+   "name": "Potato modified for decreased sugar content",
+   "traits": [
+    "Carbohydrates",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD480778": {
+   "id": "bch-lmo-scbd-48077-8",
+   "organism": "",
+   "name": "Wheat modified for resistance against corn smut (KP4-Golin 5)",
+   "traits": [
+    "Fungi",
+    "Glufosinate",
+    "Ampicillin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD480786": {
+   "id": "bch-lmo-scbd-48078-6",
+   "organism": "",
+   "name": "Wheat modified for resistance against corn smut (KP4-Greina 16)",
+   "traits": [
+    "Fungi",
+    "Glufosinate",
+    "Ampicillin"
+   ],
+   "developer": ""
+  },
+  "FL0406896": {
+   "id": "FLO-4Ø689-6",
+   "organism": "",
+   "name": "FLO-4Ø689-6 - Moonaqua™ carnation",
+   "traits": [
+    "Pigmentation / Coloration",
+    "Sulfonylurea"
+   ],
+   "developer": ""
+  },
+  "EMBPV0511": {
+   "id": "EMB-PVØ51-1",
+   "organism": "",
+   "name": "EMB-PVØ51-1 - Common bean modified for resistance to Bean Golden Mosaic Virus",
+   "traits": [
+    "Viruses"
+   ],
+   "developer": ""
+  },
+  "IFD259471": {
+   "id": "IFD-25947-1",
+   "organism": "",
+   "name": "IFD-25947-1 - Moonpearl carnation",
+   "traits": [
+    "Flavonoids (e.g. anthocyanin)",
+    "Pigmentation / Coloration",
+    "Chlorsulfuron",
+    "Sulfonylurea"
+   ],
+   "developer": ""
+  },
+  "AVE436G71": {
+   "id": "AVE-436G7-1",
+   "organism": "",
+   "name": "AVE-436G7-1 - Modena potato with altered starch",
+   "traits": [
+    "Amylose and amylopectin ratio"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1019312": {
+   "id": "bch-lmo-scbd-101931-2",
+   "organism": "",
+   "name": "Pea modified for resistance to fungal diseases or insect pests",
+   "traits": [
+    "Fungi",
+    "Insects",
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1019432": {
+   "id": "bch-lmo-scbd-101943-2",
+   "organism": "",
+   "name": "Pea resistant to viral diseases",
+   "traits": [
+    "Viruses"
+   ],
+   "developer": ""
+  },
   "BCHLMOSCBD403134": {
    "id": "bch-lmo-scbd-40313-4",
    "organism": "",
@@ -2374,843 +3357,37 @@
    ],
    "developer": ""
   },
-  "MON892492": {
-   "id": "MON-89249-2",
+  "BCHLMOSCBD1031055": {
+   "id": "bch-lmo-scbd-103105-5",
    "organism": "",
-   "name": "MON-89249-2 - Roundup Ready™ canola",
+   "name": "Pink Bollworm Modified for the Expression of a Fluorescent Marker",
    "traits": [
-    "Glyphosate"
+    "Selectable marker genes and reporter genes"
    ],
    "developer": ""
   },
-  "MIR162MON89034GA21": {
-   "id": "MIR162 × MON89Ø34 × GA21",
+  "GTLGFM3116": {
+   "id": "GTL-GFM311-6",
    "organism": "",
-   "name": "MIR162 × MON89034 × GA21 - Herbicide-tolerant, insect-resistant maize",
+   "name": "GTL-GFM311-6 - Cotton modified for insect resistance",
    "traits": [
-    "Other",
-    "Resistance to diseases and pests",
     "Lepidoptera (butterflies and moths)",
     "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Resistance to herbicides",
-    "Glyphosate"
+    "Kanamycin"
    ],
    "developer": ""
   },
-  "SYNIR1624SYNIR6045MON890343SYN053071MON000219": {
-   "id": "SYN-IR162-4 × SYN-IR6Ø4-5 × MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9",
+  "SMG368002": {
+   "id": "SMG-368ØØ-2",
    "organism": "",
-   "name": "SYN-IR162-4 × SYN-IR6Ø4-5 × MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9 - Herbicide-tolerant, insect-resistant maize",
-   "traits": [
-    "Other",
-    "Resistance to diseases and pests",
-    "Coleoptera (beetles)",
-    "Colorado potato beetle (Leptinotarsa decemlineata)",
-    "Western corn rootworm (Diabrotica virgifera)",
-    "Northern corn rootworm (Diabrotica barberi)",
-    "Lepidoptera (butterflies and moths)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Resistance to herbicides",
-    "Glyphosate",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "MON890343SYN053071MON000219": {
-   "id": "MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9 - Herbicide-tolerant, insect-resistant maize",
-   "traits": [
-    "Other",
-    "Resistance to diseases and pests",
-    "Coleoptera (beetles)",
-    "Colorado potato beetle (Leptinotarsa decemlineata)",
-    "Western corn rootworm (Diabrotica virgifera)",
-    "Northern corn rootworm (Diabrotica barberi)",
-    "Lepidoptera (butterflies and moths)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Resistance to herbicides",
-    "Glyphosate",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "SYNIR6045SYN053071MON000219": {
-   "id": "SYN-IR6Ø4-5 × SYN-Ø53Ø7-1 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-IR6Ø4-5 × SYN-Ø53Ø7-1 × MON-ØØØ21-9 - Glyphosate tolerant, Coleoptera resistant maize",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Glyphosate",
-    "Selectable marker genes and reporter genes",
-    "Other"
-   ],
-   "developer": ""
-  },
-  "SYNIR1624MON000219": {
-   "id": "SYN-IR162-4 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-IR162-4 × MON-ØØØ21-9 - Insect resistant, herbicide tolerant maize",
-   "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Glyphosate",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "VC0019027": {
-   "id": "VCO-Ø19Ø2-7",
-   "organism": "",
-   "name": "VCO-Ø19Ø2-7 - Glyphosate tolerant maize",
+   "name": "SMG-368ØØ-2 - Roundup Ready® Creeping Bentgrass",
    "traits": [
     "Glyphosate"
    ],
    "developer": ""
   },
-  "VC0018533": {
-   "id": "VCO-Ø1853-3",
-   "organism": "",
-   "name": "VCO-Ø1853-3 - Glyphosate tolerant maize",
-   "traits": [
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "VC0018961": {
-   "id": "VCO-Ø1896-1",
-   "organism": "",
-   "name": "VCO-Ø1896-1 - Glyphosate tolerant maize",
-   "traits": [
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "MON000219MON008106": {
-   "id": "MON-ØØØ21-9 × MON-ØØ81Ø-6",
-   "organism": "",
-   "name": "MON-ØØØ21-9 × MON-ØØ81Ø-6 - Roundup Ready™ YieldGard™ maize",
-   "traits": [
-    "European corn borer (Ostrinia nubilalis)",
-    "Glyphosate",
-    "Ampicillin"
-   ],
-   "developer": ""
-  },
-  "SYN053071MON000219": {
-   "id": "SYN-Ø53Ø7-1 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-Ø53Ø7-1 × MON-ØØØ21-9 - Insect-resistant, herbicide-tolerant maize",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Lepidoptera (butterflies and moths)",
-    "Glyphosate",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "SYNIR1624SYNIR6045SYN053071MON000219": {
-   "id": "SYN-IR162-4 × SYN-IR6Ø4-5 × SYN-Ø53Ø7-1 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-IR162-4 × SYN-IR6Ø4-5 × SYN-Ø53Ø7-1 × MON-ØØØ21-9 - Glyphosate tolerant, insect resistant maize",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Lepidoptera (butterflies and moths)",
-    "Glyphosate",
-    "Selectable marker genes and reporter genes",
-    "Other"
-   ],
-   "developer": ""
-  },
-  "SYNIR1624SYN053071MON000219": {
-   "id": "SYN-IR162-4 × SYN-Ø53Ø7-1 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-IR162-4 × SYN-Ø53Ø7-1 × MON-ØØØ21-9 - Glyphosate tolerant, insect resistant maize",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Lepidoptera (butterflies and moths)",
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "DAS591227MON000219": {
-   "id": "DAS-59122-7 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "DAS-59122-7 × MON-ØØØ21-9 - Insect resistant, herbicide tolerant maize",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Glufosinate",
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "SYNIR1624MON890343SYN053071MON000219": {
-   "id": "SYN-IR162-4 × MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-IR162-4 × MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9 - Herbicide-tolerant, insect-resistant maize",
-   "traits": [
-    "Other",
-    "Resistance to diseases and pests",
-    "Coleoptera (beetles)",
-    "Western corn rootworm (Diabrotica virgifera)",
-    "Northern corn rootworm (Diabrotica barberi)",
-    "Lepidoptera (butterflies and moths)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Resistance to herbicides",
-    "Glyphosate",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "SYNIR6045MON890343MON000219": {
-   "id": "SYN-IR6Ø4-5 × MON-89Ø34-3 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-IR6Ø4-5 × MON-89Ø34-3 × MON-ØØØ21-9 - Herbicide-tolerant, insect-resistant maize",
-   "traits": [
-    "Other",
-    "Resistance to diseases and pests",
-    "Coleoptera (beetles)",
-    "Colorado potato beetle (Leptinotarsa decemlineata)",
-    "Western corn rootworm (Diabrotica virgifera)",
-    "Northern corn rootworm (Diabrotica barberi)",
-    "Lepidoptera (butterflies and moths)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Resistance to herbicides",
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "SYNE32725SYNIR6045MON000219": {
-   "id": "SYN-E3272-5 × SYN-IR6Ø4-5 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-E3272-5 × SYN-IR6Ø4-5 × MON-ØØØ21-9 - Modified thermostable alpha-amylase, insect-resistant, herbicide-tolerant maize",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Lepidoptera (butterflies and moths)",
-    "Glyphosate",
-    "Biofuel production",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "SYNIR1624MON890343MON000219": {
-   "id": "SYN-IR162-4 × MON-89Ø34-3 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-IR162-4 × MON-89Ø34-3 × MON-ØØØ21-9 - Herbicide tolerant, insect resistant maize",
-   "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Glyphosate",
-    "Selectable marker genes and reporter genes",
-    "Other"
-   ],
-   "developer": ""
-  },
-  "BCSGH0025ACSGH0013MON159857": {
-   "id": "BCS-GHØØ2-5 × ACS-GHØØ1-3 × MON-15985-7",
-   "organism": "",
-   "name": "BCS-GHØØ2-5 × ACS-GHØØ1-3 × MON-15985-7 - Herbicide-tolerant, insect-resistant cotton",
-   "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Glufosinate",
-    "Glyphosate",
-    "Streptomycin"
-   ],
-   "developer": ""
-  },
-  "BCSGH0025MON159857": {
-   "id": "BCS-GHØØ2-5 × MON-15985-7",
-   "organism": "",
-   "name": "BCS-GHØØ2-5 × MON-15985-7 - Herbicide-tolerant, insect-resistant cotton",
-   "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Glyphosate",
-    "Streptomycin"
-   ],
-   "developer": ""
-  },
-  "VC0019365": {
-   "id": "VCO-Ø1936-5",
-   "organism": "",
-   "name": "VCO-Ø1936-5 - Glyphosate tolerant maize",
-   "traits": [
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "DAS591227SYNIR6045MON000219": {
-   "id": "DAS-59122-7 × SYN-IR6Ø4-5 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "DAS-59122-7 × SYN-IR6Ø4-5 × MON-ØØØ21-9 - Insect resistant, herbicide tolerant maize",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Lepidoptera (butterflies and moths)",
-    "Glufosinate",
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "SYNIR1624SYNIR6045MON890343MON000219": {
-   "id": "SYN-IR162-4 × SYN-IR6Ø4-5 × MON-89Ø34-3 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-IR162-4 × SYN-IR6Ø4-5 × MON-89Ø34-3 × MON-ØØØ21-9 - Herbicide-tolerant, insect-resistant maize",
-   "traits": [
-    "Other",
-    "Resistance to diseases and pests",
-    "Coleoptera (beetles)",
-    "Colorado potato beetle (Leptinotarsa decemlineata)",
-    "Western corn rootworm (Diabrotica virgifera)",
-    "Northern corn rootworm (Diabrotica barberi)",
-    "Lepidoptera (butterflies and moths)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Resistance to herbicides",
-    "Glyphosate",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "SYNE32725MON000219": {
-   "id": "SYN-E3272-5 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-E3272-5 × MON-ØØØ21-9 - Modified thermostable alpha-amylase, herbicide-tolerant maize",
-   "traits": [
-    "Resistance to herbicides",
-    "Biofuel production",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "BCSGH0025SYNIR67B1": {
-   "id": "BCS-GHØØ2-5 × SYN-IR67B-1",
-   "organism": "",
-   "name": "BCS-GHØØ2-5 × SYN-IR67B-1 - Insect resistant herbicide tolerant cotton",
-   "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "SYN000JG2": {
-   "id": "SYN-ØØØJG-2",
-   "organism": "",
-   "name": "SYN-ØØØJG-2 - Herbicide tolerant maize",
-   "traits": [
-    "Glufosinate",
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "MON890343MON000219": {
-   "id": "MON-89Ø34-3 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "MON-89Ø34-3 × MON-ØØØ21-9 - Herbicide tolerant, insect resistant maize",
-   "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "SYNIR6045MON000219": {
-   "id": "SYN-IR6Ø4-5 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-IR6Ø4-5 × MON-ØØØ21-9 - Agrisure™ RW Rootworm-Protected Roundup Ready™ maize",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Glyphosate",
-    "Selectable marker genes and reporter genes",
-    "Other"
-   ],
-   "developer": ""
-  },
-  "MON000219ACSZM0032": {
-   "id": "MON-ØØØ21-9 × ACS-ZMØØ3-2",
-   "organism": "",
-   "name": "MON-ØØØ21-9 × ACS-ZMØØ3-2 - Herbicide tolerant Corn",
-   "traits": [
-    "Glufosinate",
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "SYNIR1624SYNIR6045MON000219": {
-   "id": "SYN-IR162-4 × SYN-IR6Ø4-5 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-IR162-4 × SYN-IR6Ø4-5 × MON-ØØØ21-9 - Insect resistant, herbicide tolerant maize",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Lepidoptera (butterflies and moths)",
-    "Glyphosate",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "SYNIR6045MON890343SYN053071MON000219": {
-   "id": "SYN-IR6Ø4-5 × MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-IR6Ø4-5 × MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9 - Herbicide-tolerant, insect-resistant maize",
-   "traits": [
-    "Other",
-    "Resistance to diseases and pests",
-    "Coleoptera (beetles)",
-    "Colorado potato beetle (Leptinotarsa decemlineata)",
-    "Western corn rootworm (Diabrotica virgifera)",
-    "Northern corn rootworm (Diabrotica barberi)",
-    "Lepidoptera (butterflies and moths)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Resistance to herbicides",
-    "Glufosinate"
-   ],
-   "developer": ""
-  },
-  "DP9156354": {
-   "id": "DP-915635-4",
-   "organism": "",
-   "name": "DP-915635-4 - Borer-resistant, herbicide-tolerant maize",
-   "traits": [
-    "Resistance to diseases and pests",
-    "Western corn rootworm (Diabrotica virgifera)",
-    "Resistance to herbicides",
-    "Glufosinate",
-    "Changes in physiology and/or production",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "MON889138": {
-   "id": "MON-88913-8",
-   "organism": "",
-   "name": "MON-88913-8 - Roundup Ready™ Flex™ cotton",
-   "traits": [
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "MON874277": {
-   "id": "MON-87427-7",
-   "organism": "",
-   "name": "MON-87427-7 - Maize modified for tissue selective glyphosate tolerance",
-   "traits": [
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "ACSZM0032": {
-   "id": "ACS-ZMØØ3-2",
-   "organism": "",
-   "name": "ACS-ZMØØ3-2 - Liberty Link™ maize",
-   "traits": [
-    "Glufosinate",
-    "Ampicillin"
-   ],
-   "developer": ""
-  },
-  "MON008106SYNIR1624": {
-   "id": "MON-ØØ81Ø-6 × SYN-IR162-4",
-   "organism": "",
-   "name": "MON-ØØ81Ø-6 × SYN-IR162-4 - Herbicide tolerant, insect resistant corn",
-   "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "MON890343MON880173": {
-   "id": "MON-89Ø34-3 × MON-88Ø17-3",
-   "organism": "",
-   "name": "MON-89Ø34-3 × MON-88Ø17-3 - Genuity® VT Triple Pro™ Maize",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Lepidoptera (butterflies and moths)",
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "MON877089MON897881": {
-   "id": "MON-877Ø8-9 × MON-89788-1",
-   "organism": "",
-   "name": "MON-877Ø8-9 × MON-89788-1 - Herbicide tolerant soybean",
-   "traits": [
-    "Glyphosate",
-    "Other"
-   ],
-   "developer": ""
-  },
-  "MON877517": {
-   "id": "MON-87751-7",
-   "organism": "",
-   "name": "MON-87751-7 - Insect resistant soybean",
-   "traits": [
-    "Lepidoptera (butterflies and moths)"
-   ],
-   "developer": ""
-  },
-  "MON877089": {
-   "id": "MON-877Ø8-9",
-   "organism": "",
-   "name": "MON-877Ø8-9 - Dicamba Tolerant Soybean",
-   "traits": [
-    "Resistance to herbicides"
-   ],
-   "developer": ""
-  },
-  "BPSCV1279": {
-   "id": "BPS-CV127-9",
-   "organism": "",
-   "name": "BPS-CV127-9 - Herbicide-tolerant soybean",
-   "traits": [
-    "Imidazolinone",
-    "Sulfonylurea"
-   ],
-   "developer": ""
-  },
-  "MON877012MON897881": {
-   "id": "MON-877Ø1-2 × MON-89788-1",
-   "organism": "",
-   "name": "MON-877Ø1-2 × MON-89788-1 - Intacta™ Roundup Ready™ 2 Pro soybean",
-   "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "MON953793": {
-   "id": "MON-95379-3",
-   "organism": "",
-   "name": "MON-95379-3 - Insect-protected maize",
-   "traits": [
-    "Resistance to diseases and pests",
-    "Lepidoptera (butterflies and moths)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)"
-   ],
-   "developer": ""
-  },
-  "MON890343SYNIR1624": {
-   "id": "MON-89Ø34-3 × SYN-IR162-4",
-   "organism": "",
-   "name": "MON-89Ø34-3 × SYN-IR162-4 - Insect-resistant maize",
-   "traits": [
-    "Other",
-    "Resistance to diseases and pests",
-    "Lepidoptera (butterflies and moths)",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "DAS242365DAS210235": {
-   "id": "DAS-24236-5 × DAS-21Ø23-5",
-   "organism": "",
-   "name": "DAS-24236-5 × DAS-21Ø23-5 - WideStrike™ cotton",
-   "traits": [
-    "Lepidoptera (butterflies and moths)"
-   ],
-   "developer": ""
-  },
-  "ACSGM0053": {
-   "id": "ACS-GMØØ5-3",
-   "organism": "",
-   "name": "ACS-GMØØ5-3 - Herbicide-tolerant soybean",
-   "traits": [
-    "Glufosinate"
-   ],
-   "developer": ""
-  },
-  "SYN053071": {
-   "id": "SYN-Ø53Ø7-1",
-   "organism": "",
-   "name": "SYN-Ø53Ø7-1 - Agrisure® Duracade™ Maize",
-   "traits": [
-    "Northern corn rootworm (Diabrotica barberi)",
-    "Western corn rootworm (Diabrotica virgifera)"
-   ],
-   "developer": ""
-  },
-  "MSTFG0722ACSGM0064": {
-   "id": "MST-FGØ72-2 × ACS-GMØØ6-4",
-   "organism": "",
-   "name": "MST-FGØ72-2 × ACS-GMØØ6-4 - Soybean modified for herbicide tolerance",
-   "traits": [
-    "Glufosinate",
-    "Glyphosate",
-    "Other"
-   ],
-   "developer": ""
-  },
-  "BPSBFLFK2": {
-   "id": "BPS-BFLFK-2",
-   "organism": "",
-   "name": "BPS-BFLFK-2 - EPA+DHA canola",
-   "traits": [
-    "Lipid and fatty acids",
-    "Imidazolinone",
-    "Sulfonylurea",
-    "Omega-3 fatty acids (e.g. DHA)",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "MON943138": {
-   "id": "MON-94313-8",
-   "organism": "",
-   "name": "MON-94313-8 - Herbicide tolerant soybean",
-   "traits": [
-    "Resistance to herbicides",
-    "Glufosinate"
-   ],
-   "developer": ""
-  },
-  "MON877697": {
-   "id": "MON-87769-7",
-   "organism": "",
-   "name": "MON-87769-7 - Soybean with modified fatty acid composition",
-   "traits": [
-    "Lipid and fatty acids"
-   ],
-   "developer": ""
-  },
-  "MON874604": {
-   "id": "MON-8746Ø-4",
-   "organism": "",
-   "name": "MON-8746Ø-4 - Droughtgard™ Maize",
-   "traits": [
-    "Kanamycin",
-    "Neomycin",
-    "Cold / Heat",
-    "Drought"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1003331": {
-   "id": "bch-lmo-scbd-100333-1",
-   "organism": "",
-   "name": "Sugar cane resistant to insects",
-   "traits": [],
-   "developer": ""
-  },
-  "BCHLMOSCBD2589371": {
-   "id": "bch-lmo-scbd-258937-1",
-   "organism": "",
-   "name": "Phytase maize",
-   "traits": [
-    "Changes in quality and/or metabolite content",
-    "Vitamins"
-   ],
-   "developer": ""
-  },
-  "DP3560435MON040326": {
-   "id": "DP-356Ø43-5 × MON-Ø4Ø32-6",
-   "organism": "",
-   "name": "DP-356Ø43-5 × MON-Ø4Ø32-6 - Soy modified for glyphosate and sulfonylurea herbicide tolerance",
-   "traits": [
-    "Glyphosate",
-    "Sulfonylurea"
-   ],
-   "developer": ""
-  },
-  "DP3560435": {
-   "id": "DP-356Ø43-5",
-   "organism": "",
-   "name": "DP-356Ø43-5 - Optimum™ GAT™ soybean",
-   "traits": [
-    "Glyphosate",
-    "Sulfonylurea"
-   ],
-   "developer": ""
-  },
-  "ACSGM0018": {
-   "id": "ACS-GMØØ1-8",
-   "organism": "",
-   "name": "ACS-GMØØ1-8 - Herbicide-tolerant soybean",
-   "traits": [
-    "Glufosinate",
-    "Ampicillin"
-   ],
-   "developer": ""
-  },
-  "ACSGM0029": {
-   "id": "ACS-GMØØ2-9",
-   "organism": "",
-   "name": "ACS-GMØØ2-9 - Herbicide-tolerant soybean",
-   "traits": [
-    "Glufosinate",
-    "Ampicillin"
-   ],
-   "developer": ""
-  },
-  "FL0406198": {
-   "id": "FLO-4Ø619-8",
-   "organism": "",
-   "name": "FLO-4Ø619-8 - Moonshade™ carnation",
-   "traits": [
-    "Pigmentation / Coloration",
-    "Sulfonylurea",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "FL0112269": {
-   "id": "FLO-11226-9",
-   "organism": "",
-   "name": "FLO-11226-9 - Moonshade™ carnation",
-   "traits": [
-    "Pigmentation / Coloration",
-    "Sulfonylurea"
-   ],
-   "developer": ""
-  },
-  "FL0113518": {
-   "id": "FLO-11351-8",
-   "organism": "",
-   "name": "FLO-11351-8 - Moonshade™ carnation",
-   "traits": [
-    "Pigmentation / Coloration",
-    "Sulfonylurea"
-   ],
-   "developer": ""
-  },
-  "FL0074425": {
-   "id": "FLO-Ø7442-5",
-   "organism": "",
-   "name": "FLO-Ø7442-5 - Moondust™ carnation",
-   "traits": [
-    "Pigmentation / Coloration",
-    "Sulfonylurea"
-   ],
-   "developer": ""
-  },
-  "DP0610617": {
-   "id": "DP-Ø61Ø61-7",
-   "organism": "",
-   "name": "DP-Ø61Ø61-7 - Glyphosate tolerant canola",
-   "traits": [
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "FGN01A215FGN03S195FGN06K594": {
-   "id": "FGN-Ø1A21-5 × FGN-Ø3S19-5 × FGN-Ø6K59-4",
-   "organism": "",
-   "name": "FGN-Ø1A21-5 × FGN-Ø3S19-5 × FGN-Ø6K59-4 - Insect-resistant, herbicide-tolerant, high yield eucalyptus",
-   "traits": [
-    "Resistance to diseases and pests",
-    "Diptera (flies)",
-    "Hessian fly (Mayetiola destructor)",
-    "Lepidoptera (butterflies and moths)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Resistance to herbicides",
-    "Glyphosate",
-    "Resistance to antibiotics",
-    "Kanamycin",
-    "Neomycin",
-    "Changes in physiology and/or production",
-    "Yield",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "FGN01A215FGN03S195": {
-   "id": "FGN-Ø1A21-5 × FGN-Ø3S19-5",
-   "organism": "",
-   "name": "FGN-Ø1A21-5 × FGN-Ø3S19-5 - Herbicide-tolerant, high yield eucalyptus",
-   "traits": [
-    "Resistance to herbicides",
-    "Glyphosate",
-    "Resistance to antibiotics",
-    "Kanamycin",
-    "Neomycin",
-    "Changes in physiology and/or production",
-    "Yield",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "FGN01A215FGN06K594": {
-   "id": "FGN-Ø1A21-5 × FGN-Ø6K59-4",
-   "organism": "",
-   "name": "FGN-Ø1A21-5 × FGN-Ø6K59-4 - Insect-resistant, high yield eucalyptus",
-   "traits": [
-    "Resistance to diseases and pests",
-    "Diptera (flies)",
-    "Hessian fly (Mayetiola destructor)",
-    "Lepidoptera (butterflies and moths)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Resistance to antibiotics",
-    "Kanamycin",
-    "Neomycin",
-    "Changes in physiology and/or production",
-    "Yield",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "FGN03S195FGN06K594": {
-   "id": "FGN-Ø3S19-5 × FGN-Ø6K59-4",
-   "organism": "",
-   "name": "FGN-Ø3S19-5 × FGN-Ø6K59-4 - Herbicide-tolerant, insect-resistant eucalyptus",
-   "traits": [
-    "Resistance to diseases and pests",
-    "Diptera (flies)",
-    "Hessian fly (Mayetiola destructor)",
-    "Lepidoptera (butterflies and moths)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Resistance to herbicides",
-    "Glyphosate",
-    "Resistance to antibiotics",
-    "Kanamycin",
-    "Neomycin",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "SYNIR1624MON890343SYN053071": {
-   "id": "SYN-IR162-4 × MON-89Ø34-3 × SYN-Ø53Ø7-1",
-   "organism": "",
-   "name": "SYN-IR162-4 × MON-89Ø34-3 × SYN-Ø53Ø7-1 - Insect-resistant maize",
-   "traits": [
-    "Other",
-    "Resistance to diseases and pests",
-    "Coleoptera (beetles)",
-    "Colorado potato beetle (Leptinotarsa decemlineata)",
-    "Western corn rootworm (Diabrotica virgifera)",
-    "Northern corn rootworm (Diabrotica barberi)",
-    "Lepidoptera (butterflies and moths)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1050391": {
-   "id": "bch-lmo-scbd-105039-1",
-   "organism": "",
-   "name": "Female-specific Dominant Lethal Olive Fly",
-   "traits": [
-    "Reproduction"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1037353": {
-   "id": "bch-lmo-scbd-103735-3",
+  "BCHLMOSCBD1048742": {
+   "id": "bch-lmo-scbd-104874-2",
    "organism": "",
    "name": "Rice Modified for Multiple Disease Resistance",
    "traits": [
@@ -3221,142 +3398,978 @@
    ],
    "developer": ""
   },
-  "BCHLMOSCBD1054792": {
-   "id": "bch-lmo-scbd-105479-2",
+  "BCHLMOSCBD1048752": {
+   "id": "bch-lmo-scbd-104875-2",
    "organism": "",
-   "name": "BXN™ Plus Bollgard™ Cotton",
+   "name": "Rice Modified for Multiple Disease Resistance",
    "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Bromoxynil"
+    "Bacteria",
+    "Fungi",
+    "Hygromycin",
+    "Selectable marker genes and reporter genes"
    ],
    "developer": ""
   },
-  "BCHLMOSCBD1054782": {
-   "id": "bch-lmo-scbd-105478-2",
+  "BCHLMOSCBD1048794": {
+   "id": "bch-lmo-scbd-104879-4",
    "organism": "",
-   "name": "BXN™ Plus Bollgard™ Cotton",
+   "name": "Rice Modified for Multiple Disease Resistance",
    "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Bromoxynil"
+    "Bacteria",
+    "Fungi",
+    "Sulfonylurea",
+    "Selectable marker genes and reporter genes"
    ],
    "developer": ""
   },
-  "MON159857MON014452": {
-   "id": "MON-15985-7 × MON-Ø1445-2",
+  "BCHLMOSCBD1048802": {
+   "id": "bch-lmo-scbd-104880-2",
    "organism": "",
-   "name": "MON-15985-7 × MON-Ø1445-2 - Roundup Ready™ Bollgard II™ cotton",
+   "name": "Rice Modified for Multiple Disease Resistance",
    "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Glyphosate",
-    "Streptomycin"
+    "Bacteria",
+    "Fungi",
+    "Sulfonylurea",
+    "Selectable marker genes and reporter genes"
    ],
    "developer": ""
   },
-  "DP321381": {
-   "id": "DP-32138-1",
+  "BCHLMOSCBD1048812": {
+   "id": "bch-lmo-scbd-104881-2",
    "organism": "",
-   "name": "DP-32138-1 - 32138 SPT Maintainer",
+   "name": "Rice Modified for Multiple Disease Resistance",
    "traits": [
-    "Selectable marker genes and reporter genes",
-    "Male sterility"
+    "Bacteria",
+    "Fungi",
+    "Sulfonylurea",
+    "Selectable marker genes and reporter genes"
    ],
    "developer": ""
   },
-  "BCHLMOSCBD1054802": {
-   "id": "bch-lmo-scbd-105480-2",
+  "BCHLMOSCBD1048891": {
+   "id": "bch-lmo-scbd-104889-1",
    "organism": "",
-   "name": "BXN™ Plus Bollgard™ Cotton",
+   "name": "Papaya modified for delayed ripening",
    "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Bromoxynil"
+    "Kanamycin",
+    "Ripening"
    ],
    "developer": ""
   },
-  "TUC873RH7": {
-   "id": "TUC-873RH-7",
+  "BCHLMOSCBD1049422": {
+   "id": "bch-lmo-scbd-104942-2",
    "organism": "",
-   "name": "TUC-873RH-7 - Herbicide-tolerant sugarcane",
-   "traits": [
-    "Glyphosate",
-    "Kanamycin"
-   ],
-   "developer": ""
-  },
-  "CTC141174": {
-   "id": "CTC-14117-4",
-   "organism": "",
-   "name": "CTC-14117-4 - Sugarcane modified for insect resistance",
-   "traits": [
-    "Lepidoptera (butterflies and moths)"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1003352": {
-   "id": "bch-lmo-scbd-100335-2",
-   "organism": "",
-   "name": "Sugar cane resistant to herbicide",
-   "traits": [],
-   "developer": ""
-  },
-  "BCHLMOSCBD2814712": {
-   "id": "bch-lmo-scbd-281471-2",
-   "organism": "",
-   "name": "GloFish® Electric Green® Tetra",
-   "traits": [
-    "Changes in physiology and/or production"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD2603251": {
-   "id": "bch-lmo-scbd-260325-1",
-   "organism": "",
-   "name": "Green fluorescent zebrafish",
-   "traits": [
-    "Changes in quality and/or metabolite content",
-    "Pigmentation / Coloration"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD454064": {
-   "id": "bch-lmo-scbd-45406-4",
-   "organism": "",
-   "name": "GloFish®",
+   "name": "ARSOlux Biosensor",
    "traits": [
     "Selectable marker genes and reporter genes"
    ],
    "developer": ""
   },
-  "CTC932094": {
-   "id": "CTC-932Ø9-4",
+  "BCHLMOSCBD450494": {
+   "id": "bch-lmo-scbd-45049-4",
    "organism": "",
-   "name": "CTC-932Ø9-4 - Insect resistant sugarcane",
+   "name": "Canarypox virus ALVAC strain containing the FeLV-env, FeLV-gag and FeLV-pol genes from the feline leukemia virus",
    "traits": [
-    "Resistance to diseases and pests",
-    "Lepidoptera (butterflies and moths)",
-    "Resistance to antibiotics",
+    "Viruses"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1109111": {
+   "id": "bch-lmo-scbd-110911-1",
+   "organism": "",
+   "name": "Aspen, male, modified for modified for an altered morphology and reduced growth.",
+   "traits": [
+    "Pigmentation / Coloration",
+    "Kanamycin",
+    "Growth rate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1093731": {
+   "id": "bch-lmo-scbd-109373-1",
+   "organism": "",
+   "name": "Potato modified for increased starch content",
+   "traits": [
+    "Carbohydrates",
     "Kanamycin"
    ],
    "developer": ""
   },
-  "BCHLMOSCBD1003272": {
-   "id": "bch-lmo-scbd-100327-2",
+  "DP0331213": {
+   "id": "DP-Ø33121-3",
    "organism": "",
-   "name": "Sugar cane resistant to fungi",
-   "traits": [],
+   "name": "DP-Ø33121-3 - Insect resistant, herbicide tolerant Maize",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "Glufosinate"
+   ],
    "developer": ""
   },
-  "BCHLMOSCBD1003244": {
-   "id": "bch-lmo-scbd-100324-4",
+  "BCHLMOSCBD1097351": {
+   "id": "bch-lmo-scbd-109735-1",
    "organism": "",
-   "name": "Sugar cane resistant to fungi and herbicide",
-   "traits": [],
+   "name": "VAXXITEK® HVT+ IBD",
+   "traits": [
+    "Vaccines"
+   ],
    "developer": ""
   },
-  "BCHLMOSCBD1003302": {
-   "id": "bch-lmo-scbd-100330-2",
+  "BCHLMOSCBD1109201": {
+   "id": "bch-lmo-scbd-110920-1",
    "organism": "",
-   "name": "Sugar cane resistant to fungi and tolerant to the herbicide Basta",
-   "traits": [],
+   "name": "Oilseed rape modified for an altered fatty acid metabolism in the seeds",
+   "traits": [
+    "Lipid and fatty acids",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1109121": {
+   "id": "bch-lmo-scbd-110912-1",
+   "organism": "",
+   "name": "Hybrid Aspen, female, modified for an altered morphology",
+   "traits": [
+    "Pigmentation / Coloration",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1116232": {
+   "id": "bch-lmo-scbd-111623-2",
+   "organism": "",
+   "name": "Potato modified for an enhanced phosphate content in leaves, roots and tubers",
+   "traits": [
+    "Kanamycin",
+    "Changes in physiology and/or production"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1116242": {
+   "id": "bch-lmo-scbd-111624-2",
+   "organism": "",
+   "name": "Potato modified for reduced cell wall stability",
+   "traits": [
+    "Changes in quality and/or metabolite content",
+    "Hygromycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1116601": {
+   "id": "bch-lmo-scbd-111660-1",
+   "organism": "",
+   "name": "Sinorhizobium meliloti modified for the expression of a reporter gene and reduced growth",
+   "traits": [
+    "Selectable marker genes and reporter genes",
+    "Growth rate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1116611": {
+   "id": "bch-lmo-scbd-111661-1",
+   "organism": "",
+   "name": "Sinorhizobium meliloti modified for the expression of a reporter gene",
+   "traits": [
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1117481": {
+   "id": "bch-lmo-scbd-111748-1",
+   "organism": "",
+   "name": "Grape vine modified for the expression of a marker gene",
+   "traits": [
+    "Kanamycin",
+    "Neomycin",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1117501": {
+   "id": "bch-lmo-scbd-111750-1",
+   "organism": "",
+   "name": "Grape vine modified for resistance to fungal pathogens",
+   "traits": [
+    "Fungi",
+    "Kanamycin",
+    "Neomycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1117511": {
+   "id": "bch-lmo-scbd-111751-1",
+   "organism": "",
+   "name": "Grape vine modified for resistance to fungal pathogens",
+   "traits": [
+    "Fungi",
+    "Kanamycin",
+    "Neomycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1122581": {
+   "id": "bch-lmo-scbd-112258-1",
+   "organism": "",
+   "name": "Petunia modified for altered flower colour",
+   "traits": [
+    "Pigmentation / Coloration",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1122641": {
+   "id": "bch-lmo-scbd-112264-1",
+   "organism": "",
+   "name": "Herbicide tolerant Maize",
+   "traits": [
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "DAS591227MON008106": {
+   "id": "DAS-59122-7 × MON-ØØ81Ø-6",
+   "organism": "",
+   "name": "DAS-59122-7 × MON-ØØ81Ø-6 - Insect resistant, herbicide tolerant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1114681": {
+   "id": "bch-lmo-scbd-111468-1",
+   "organism": "",
+   "name": "Potato modified for earlier and enhanced flower formation",
+   "traits": [
+    "Hygromycin",
+    "Growth rate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1114691": {
+   "id": "bch-lmo-scbd-111469-1",
+   "organism": "",
+   "name": "Potato modified for increased tuber yield",
+   "traits": [
+    "Kanamycin",
+    "Growth rate",
+    "Yield"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1116121": {
+   "id": "bch-lmo-scbd-111612-1",
+   "organism": "",
+   "name": "Potato modified for increased sucrose synthesis",
+   "traits": [
+    "Carbohydrates",
+    "Kanamycin",
+    "Neomycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1119192": {
+   "id": "bch-lmo-scbd-111919-2",
+   "organism": "",
+   "name": "Roundup Ready Flex® Pima cotton",
+   "traits": [
+    "Glyphosate",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1116222": {
+   "id": "bch-lmo-scbd-111622-2",
+   "organism": "",
+   "name": "Potato modified for tolerance to oxidative stress and heavy metals",
+   "traits": [
+    "Hygromycin",
+    "Tolerance to abiotic stress"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1114541": {
+   "id": "bch-lmo-scbd-111454-1",
+   "organism": "",
+   "name": "Potato modified with an ethanol-inducible GUS reporter system",
+   "traits": [
+    "Kanamycin",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1109091": {
+   "id": "bch-lmo-scbd-110909-1",
+   "organism": "",
+   "name": "Hybrid Aspen, female, modified for an altered morphology and reduced growth",
+   "traits": [
+    "Pigmentation / Coloration",
+    "Kanamycin",
+    "Growth rate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1109101": {
+   "id": "bch-lmo-scbd-110910-1",
+   "organism": "",
+   "name": "Aspen, female, modified for modified for an altered morphology and reduced growth",
+   "traits": [
+    "Pigmentation / Coloration",
+    "Kanamycin",
+    "Growth rate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD153964": {
+   "id": "bch-lmo-scbd-15396-4",
+   "organism": "",
+   "name": "Insect resistant tomato",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "DAS591227DAS402789": {
+   "id": "DAS-59122-7 × DAS-4Ø278-9",
+   "organism": "",
+   "name": "DAS-59122-7 × DAS-4Ø278-9 - Insect resistant, herbicide tolerant maize",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "DAS591227MON008106SYNIR6045": {
+   "id": "DAS-59122-7 × MON-ØØ81Ø-6 × SYN-IR6Ø4-5",
+   "organism": "",
+   "name": "DAS-59122-7 × MON-ØØ81Ø-6 × SYN-IR6Ø4-5 - Insect resistant, herbicide tolerant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "MON874277DAS591227": {
+   "id": "MON-87427-7 × DAS-59122-7",
+   "organism": "",
+   "name": "MON-87427-7 × DAS-59122-7 - Insect resistant, herbicide tolerant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "MON874277MON880173": {
+   "id": "MON-87427-7 × MON-88Ø17-3",
+   "organism": "",
+   "name": "MON-87427-7 × MON-88Ø17-3 - Insect resistant, Herbicide tolerant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "MON874277MON890343": {
+   "id": "MON-87427-7 × MON-89Ø34-3",
+   "organism": "",
+   "name": "MON-87427-7 × MON-89Ø34-3 - Insect resistant Herbicide tolerant Maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1126091": {
+   "id": "bch-lmo-scbd-112609-1",
+   "organism": "",
+   "name": "Cassava modified for reduced starch metabolism",
+   "traits": [
+    "Carbohydrates",
+    "Hygromycin",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "MON008106SYNIR6045": {
+   "id": "MON-ØØ81Ø-6 × SYN-IR6Ø4-5",
+   "organism": "",
+   "name": "MON-ØØ81Ø-6 × SYN-IR6Ø4-5 - Insect resistant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "SYNIR6045SYN053071": {
+   "id": "SYN-IR6Ø4-5 × SYN-Ø53Ø7-1",
+   "organism": "",
+   "name": "SYN-IR6Ø4-5 × SYN-Ø53Ø7-1 - Insect resistant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "NMK896018": {
+   "id": "NMK-896Ø1-8",
+   "organism": "",
+   "name": "NMK-896Ø1-8 - New Leaf™ Russet Burbank potato",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "MON877056MON897881": {
+   "id": "MON-877Ø5-6 × MON-89788-1",
+   "organism": "",
+   "name": "MON-877Ø5-6 × MON-89788-1 - Soybeans with modified fatty acid profile and glyphosate tolerance",
+   "traits": [
+    "Lipid and fatty acids",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "MON877697MON897881": {
+   "id": "MON-87769-7 × MON-89788-1",
+   "organism": "",
+   "name": "MON-87769-7 × MON-89788-1 - Soybeans with modified fatty acid profile and glyphosate tolerance",
+   "traits": [
+    "Lipid and fatty acids",
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD154044": {
+   "id": "bch-lmo-scbd-15404-4",
+   "organism": "",
+   "name": "Chicory RM3-6 modified for tolerance to herbicides",
+   "traits": [
+    "Glufosinate",
+    "Male sterility"
+   ],
+   "developer": ""
+  },
+  "SYN0000B6": {
+   "id": "SYN-ØØØØB-6",
+   "organism": "",
+   "name": "SYN-ØØØØB-6 - Tomato Modified for delayed softening",
+   "traits": [
+    "Kanamycin",
+    "Ripening"
+   ],
+   "developer": ""
+  },
+  "SYN000DA9": {
+   "id": "SYN-ØØØDA-9",
+   "organism": "",
+   "name": "SYN-ØØØDA-9 - Tomato Modified for delayed softening",
+   "traits": [
+    "Kanamycin",
+    "Ripening"
+   ],
+   "developer": ""
+  },
+  "MON874277MON890343MON880173": {
+   "id": "MON-87427-7 × MON-89Ø34-3 × MON-88Ø17-3",
+   "organism": "",
+   "name": "MON-87427-7 × MON-89Ø34-3 × MON-88Ø17-3 - Insect resistant Herbicide tolerant Corn",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1052061": {
+   "id": "bch-lmo-scbd-105206-1",
+   "organism": "",
+   "name": "VECTORMUNE® FP-LT Vaccine",
+   "traits": [
+    "Vaccines"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1052072": {
+   "id": "bch-lmo-scbd-105207-2",
+   "organism": "",
+   "name": "Yeast modified for the production of Farnesene",
+   "traits": [
+    "Biofuel production"
+   ],
+   "developer": ""
+  },
+  "NMK893678": {
+   "id": "NMK-89367-8",
+   "organism": "",
+   "name": "NMK-89367-8 - Atlantic NewLeaf™ potato",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "DAS684164MON897881": {
+   "id": "DAS-68416-4 × MON-89788-1",
+   "organism": "",
+   "name": "DAS-68416-4 × MON-89788-1 - Soybeans modified for herbicide tolerance",
+   "traits": [
+    "Glufosinate",
+    "Glyphosate",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "SHD275314": {
+   "id": "SHD-27531-4",
+   "organism": "",
+   "name": "SHD-27531-4 - Moontea™ carnation",
+   "traits": [
+    "Flavonoids (e.g. anthocyanin)",
+    "Pigmentation / Coloration",
+    "Chlorsulfuron",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "DAS591328": {
+   "id": "DAS-59132-8",
+   "organism": "",
+   "name": "DAS-59132-8 - Insect resistant Herbicide tolerant Maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "SPS00E242": {
+   "id": "SPS-ØØE24-2",
+   "organism": "",
+   "name": "SPS-ØØE24-2 - Innate™ Russet Burbank Potato",
+   "traits": [
+    "Pigmentation / Coloration",
+    "Protein and amino acids"
+   ],
+   "developer": ""
+  },
+  "TAM662745": {
+   "id": "TAM-66274-5",
+   "organism": "",
+   "name": "TAM-66274-5 - Ultra-low gossypol cottonseed",
+   "traits": [
+    "Changes in quality and/or metabolite content",
+    "Kanamycin",
+    "Selectable marker genes and reporter genes",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "SHD037016": {
+   "id": "SHD-Ø37Ø1-6",
+   "organism": "",
+   "name": "SHD-03701-6 - Rose modified for mauve colouration (Rose OS10033701)",
+   "traits": [
+    "Flavonoids (e.g. anthocyanin)",
+    "Pigmentation / Coloration",
+    "Kanamycin",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "SHD061013": {
+   "id": "SHD-Ø61Ø1-3",
+   "organism": "",
+   "name": "SHD-06101-3 - Rose modified for purple colouration (OS10036101)",
+   "traits": [
+    "Flavonoids (e.g. anthocyanin)",
+    "Pigmentation / Coloration",
+    "Kanamycin",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "MON159857MON887013MON889138": {
+   "id": "MON-15985-7 × MON-887Ø1-3 × MON-88913-8",
+   "organism": "",
+   "name": "MON-15985-7 × MON-887Ø1-3 × MON-88913-8 - Insect resistant, Herbicide tolerant Cotton",
+   "traits": [
+    "Other",
+    "Resistance to diseases and pests",
+    "Lepidoptera (butterflies and moths)",
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Glyphosate",
+    "Resistance to antibiotics",
+    "Kanamycin",
+    "Streptomycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1089051": {
+   "id": "bch-lmo-scbd-108905-1",
+   "organism": "",
+   "name": "Barley modified for increased fungal resistance",
+   "traits": [
+    "Fungi",
+    "Glufosinate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1089061": {
+   "id": "bch-lmo-scbd-108906-1",
+   "organism": "",
+   "name": "Rubber tree modified to express a reporter gene",
+   "traits": [
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1089082": {
+   "id": "bch-lmo-scbd-108908-2",
+   "organism": "",
+   "name": "Rubber tree modified to express Human Protamine 1",
+   "traits": [
+    "Production of medical or pharmaceutical compounds (human or animal)"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1109161": {
+   "id": "bch-lmo-scbd-110916-1",
+   "organism": "",
+   "name": "Oilseed rape modified for an altered fatty acid metabolism in the seeds",
+   "traits": [
+    "Lipid and fatty acids",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1109171": {
+   "id": "bch-lmo-scbd-110917-1",
+   "organism": "",
+   "name": "Oilseed rape modified for an altered fatty acid metabolism in the seeds",
+   "traits": [
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1109181": {
+   "id": "bch-lmo-scbd-110918-1",
+   "organism": "",
+   "name": "Oilseed rape modified for an altered fatty acid metabolism in the seeds",
+   "traits": [
+    "Lipid and fatty acids",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1109191": {
+   "id": "bch-lmo-scbd-110919-1",
+   "organism": "",
+   "name": "Oilseed rape modified for an altered fatty acid metabolism in the seeds",
+   "traits": [
+    "Lipid and fatty acids",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "SYNIR1624SYN053071": {
+   "id": "SYN-IR162-4 × SYN-Ø53Ø7-1",
+   "organism": "",
+   "name": "SYN-IR162-4 × SYN-Ø53Ø7-1 - Insect resistant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1082682": {
+   "id": "bch-lmo-scbd-108268-2",
+   "organism": "",
+   "name": "Canola modified for the expression of chicken interferon alpha",
+   "traits": [
+    "Vaccines",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1087043": {
+   "id": "bch-lmo-scbd-108704-3",
+   "organism": "",
+   "name": "Barley modified for tolerance to drought and nutrient deficiencies",
+   "traits": [
+    "Hygromycin",
+    "Drought",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1087063": {
+   "id": "bch-lmo-scbd-108706-3",
+   "organism": "",
+   "name": "Barley modified for tolerance to drought and nutrient deficiencies",
+   "traits": [
+    "Hygromycin",
+    "Drought",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1087082": {
+   "id": "bch-lmo-scbd-108708-2",
+   "organism": "",
+   "name": "Barley modified for tolerance to drought and nutrient deficiencies",
+   "traits": [
+    "Hygromycin",
+    "Drought",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1087101": {
+   "id": "bch-lmo-scbd-108710-1",
+   "organism": "",
+   "name": "Barley modified for tolerance to drought and nutrient deficiencies",
+   "traits": [
+    "Hygromycin",
+    "Drought",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1087133": {
+   "id": "bch-lmo-scbd-108713-3",
+   "organism": "",
+   "name": "Black Nightshade with reduced pathogenesis-related protein 1S synthesis.",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Hygromycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1087143": {
+   "id": "bch-lmo-scbd-108714-3",
+   "organism": "",
+   "name": "Black Nightshade with reduced pathogenesis-related protein 1S synthesis",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Hygromycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1003833": {
+   "id": "bch-lmo-scbd-100383-3",
+   "organism": "",
+   "name": "Streptococcus thermophilus T102 containing synthetic luxA, luxB genes and chloramphenicol-acetyl-transferase gene",
+   "traits": [
+    "Chloramphenicol",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1147042": {
+   "id": "bch-lmo-scbd-114704-2",
+   "organism": "",
+   "name": "Cassava modified for high starch yield, increased photosynthetic capacity, and ACMV resistance",
+   "traits": [
+    "Viruses",
+    "Carbohydrates",
+    "Hygromycin",
+    "Cold / Heat",
+    "Selectable marker genes and reporter genes",
+    "Growth rate",
+    "Yield",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1147053": {
+   "id": "bch-lmo-scbd-114705-3",
+   "organism": "",
+   "name": "Cassava modified for increased starch yield, elevated photosynthesis, and ACMV resistance",
+   "traits": [
+    "Viruses",
+    "Carbohydrates",
+    "Hygromycin",
+    "Selectable marker genes and reporter genes",
+    "Growth rate",
+    "Yield",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1147062": {
+   "id": "bch-lmo-scbd-114706-2",
+   "organism": "",
+   "name": "Cassava modified for high starch yield, increased photosynthetic capacity, and ACMV resistance",
+   "traits": [
+    "Carbohydrates",
+    "Hygromycin",
+    "Cold / Heat",
+    "Growth rate",
+    "Photoperiod response",
+    "Yield",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1089091": {
+   "id": "bch-lmo-scbd-108909-1",
+   "organism": "",
+   "name": "Rubber tree modified to express Human atrial natriuretic factor",
+   "traits": [
+    "Production of medical or pharmaceutical compounds (human or animal)"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1089121": {
+   "id": "bch-lmo-scbd-108912-1",
+   "organism": "",
+   "name": "Rubber tree modified to express the scFv4715 antibody fragment",
+   "traits": [
+    "Antibodies and antigens"
+   ],
+   "developer": ""
+  },
+  "AAT709AA4AAT0245F3": {
+   "id": "AAT-7Ø9AA-4 × AAT-Ø245F-3",
+   "organism": "",
+   "name": "AAT-7Ø9AA-4 × AAT-Ø245F-3 - Cowpea resistant to maruca pod borer",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Lepidoptera (butterflies and moths)",
+    "Resistance to antibiotics",
+    "Kanamycin",
+    "Neomycin",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1145551": {
+   "id": "bch-lmo-scbd-114555-1",
+   "organism": "",
+   "name": "Cisgenic barley with improved phytase activity",
+   "traits": [
+    "Protein and amino acids",
+    "Vitamins"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1028982": {
+   "id": "bch-lmo-scbd-102898-2",
+   "organism": "",
+   "name": "Potato with altered starch composition",
+   "traits": [
+    "Amylose and amylopectin ratio"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1047255": {
+   "id": "bch-lmo-scbd-104725-5",
+   "organism": "",
+   "name": "AquAdvantage® Salmon",
+   "traits": [
+    "Growth rate"
+   ],
+   "developer": ""
+  },
+  "IFD259583": {
+   "id": "IFD-25958-3",
+   "organism": "",
+   "name": "IFD-25958-3 - Moonberry carnation",
+   "traits": [
+    "Flavonoids (e.g. anthocyanin)",
+    "Pigmentation / Coloration",
+    "Chlorsulfuron",
+    "Sulfonylurea"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1039382": {
+   "id": "bch-lmo-scbd-103938-2",
+   "organism": "",
+   "name": "Cisgenic apple trees with scab resistance",
+   "traits": [
+    "Fungi"
+   ],
+   "developer": ""
+  },
+  "ARSPLMC56": {
+   "id": "ARS-PLMC5-6",
+   "organism": "",
+   "name": "ARS-PLMC5-6 - Plum Tree modified for resistance to Plum pox virus",
+   "traits": [
+    "Viruses",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1043151": {
+   "id": "bch-lmo-scbd-104315-1",
+   "organism": "",
+   "name": "Flax modified for insertional mutagenesis",
+   "traits": [
+    "Changes in physiology and/or production"
+   ],
+   "developer": ""
+  },
+  "NMK899304": {
+   "id": "NMK-8993Ø-4",
+   "organism": "",
+   "name": "NMK-8993Ø-4 - Shepody NewLeaf™ Y potato",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Potato virus Y (PVY)",
+    "Kanamycin",
+    "Streptomycin"
+   ],
+   "developer": ""
+  },
+  "NMK899359": {
+   "id": "NMK-89935-9",
+   "organism": "",
+   "name": "NMK-89935-9 - Shepody NewLeaf™ Y potato",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Potato virus Y (PVY)",
+    "Kanamycin",
+    "Streptomycin"
+   ],
+   "developer": ""
+  },
+  "NMK898966": {
+   "id": "NMK-89896-6",
+   "organism": "",
+   "name": "NMK-89896-6 - New Leaf™ Plus Russet Burbank potato",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Potato leaf roll virus (PLRV)",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "NMK896841": {
+   "id": "NMK-89684-1",
+   "organism": "",
+   "name": "NMK-89684-1 - New Leaf™ Plus Russet Burbank potato",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Potato leaf roll virus (PLRV)",
+    "Kanamycin"
+   ],
    "developer": ""
   },
   "BCHLMOSCBD403195": {
@@ -3466,123 +4479,6 @@
    ],
    "developer": ""
   },
-  "BCHLMOSCBD1036305": {
-   "id": "bch-lmo-scbd-103630-5",
-   "organism": "",
-   "name": "Cowpea resistant to lepidoptera pests",
-   "traits": [
-    "European corn borer (Ostrinia nubilalis)",
-    "Kanamycin"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1036362": {
-   "id": "bch-lmo-scbd-103636-2",
-   "organism": "",
-   "name": "Potato with altered starch quality",
-   "traits": [
-    "Amylose and amylopectin ratio"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1036511": {
-   "id": "bch-lmo-scbd-103651-1",
-   "organism": "",
-   "name": "Potato with modified starch composition",
-   "traits": [
-    "Amylose and amylopectin ratio",
-    "Imidazolinone"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1151312": {
-   "id": "bch-lmo-scbd-115131-2",
-   "organism": "",
-   "name": "Maize with altered growth and tolerance to herbicides",
-   "traits": [
-    "Cellulose",
-    "Lignin",
-    "Glufosinate",
-    "Cold / Heat",
-    "Drought",
-    "Growth rate",
-    "Reproduction",
-    "Yield"
-   ],
-   "developer": ""
-  },
-  "MON874277SYNIR1624": {
-   "id": "MON-87427-7 × SYN-IR162-4",
-   "organism": "",
-   "name": "MON-87427-7 × SYN-IR162-4 - Herbicide tolerant, Insect resistant maize",
-   "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Glufosinate",
-    "Selectable marker genes and reporter genes",
-    "Other"
-   ],
-   "developer": ""
-  },
-  "MON001018MON001637": {
-   "id": "MON-ØØ1Ø1-8 × MON-ØØ163-7",
-   "organism": "",
-   "name": "MON-ØØ1Ø1-8 × MON-ØØ163-7 - Roundup Ready™ alfalfa",
-   "traits": [
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1003164": {
-   "id": "bch-lmo-scbd-100316-4",
-   "organism": "",
-   "name": "Potato modified to synthesise fusion spider silk fragment/ elastin protein",
-   "traits": [
-    "Kanamycin",
-    "Use in industrial applications"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1003078": {
-   "id": "bch-lmo-scbd-100307-8",
-   "organism": "",
-   "name": "Papaya transformed with a viral coat protein that confers resistance to PRSV",
-   "traits": [
-    "Viruses"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1035236": {
-   "id": "bch-lmo-scbd-103523-6",
-   "organism": "",
-   "name": "Maize with altered growth and tolerance to herbicides",
-   "traits": [
-    "Cellulose",
-    "Lignin",
-    "Glufosinate",
-    "Growth rate"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1035552": {
-   "id": "bch-lmo-scbd-103555-2",
-   "organism": "",
-   "name": "Potato modified for the production of spider silk protein",
-   "traits": [
-    "Production of medical or pharmaceutical compounds (human or animal)",
-    "Kanamycin",
-    "Use in industrial applications"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1036286": {
-   "id": "bch-lmo-scbd-103628-6",
-   "organism": "",
-   "name": "Sorghum with modified levels of vitamin A, zinc and iron",
-   "traits": [
-    "Vitamins"
-   ],
-   "developer": ""
-  },
   "BCHLMOSCBD154196": {
    "id": "bch-lmo-scbd-15419-6",
    "organism": "",
@@ -3674,26 +4570,6 @@
    ],
    "developer": ""
   },
-  "FL0000669": {
-   "id": "FLO-ØØØ66-9",
-   "organism": "",
-   "name": "FLO-ØØØ66-9 - Long vase life carnation",
-   "traits": [
-    "Sulfonylurea",
-    "Ripening"
-   ],
-   "developer": ""
-  },
-  "FL0000041": {
-   "id": "FLO-ØØØØ4-1",
-   "organism": "",
-   "name": "FLO-ØØØØ4-1 - Moondust™ carnation",
-   "traits": [
-    "Pigmentation / Coloration",
-    "Sulfonylurea"
-   ],
-   "developer": ""
-  },
   "MON000737": {
    "id": "MON-ØØØ73-7",
    "organism": "",
@@ -3703,679 +4579,23 @@
    ],
    "developer": ""
   },
-  "FL0000153": {
-   "id": "FLO-ØØØ15-3",
+  "ACSGM0018": {
+   "id": "ACS-GMØØ1-8",
    "organism": "",
-   "name": "FLO-ØØØ15-3 - Moondust™ carnation",
-   "traits": [
-    "Pigmentation / Coloration",
-    "Sulfonylurea"
-   ],
-   "developer": ""
-  },
-  "FL0000164": {
-   "id": "FLO-ØØØ16-4",
-   "organism": "",
-   "name": "FLO-ØØØ16-4 - Moondust™ carnation",
-   "traits": [
-    "Pigmentation / Coloration",
-    "Sulfonylurea"
-   ],
-   "developer": ""
-  },
-  "ACSZM0043": {
-   "id": "ACS-ZMØØ4-3",
-   "organism": "",
-   "name": "ACS-ZMØØ4-3 - Starlink™ maize",
-   "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Glufosinate"
-   ],
-   "developer": ""
-  },
-  "NMK891676": {
-   "id": "NMK-89167-6",
-   "organism": "",
-   "name": "NMK-89167-6 - New Leaf™ Russet Burbank potato",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Kanamycin"
-   ],
-   "developer": ""
-  },
-  "NMK891755": {
-   "id": "NMK-89175-5",
-   "organism": "",
-   "name": "NMK-89175-5 - New Leaf™ Russet Burbank potato",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Kanamycin"
-   ],
-   "developer": ""
-  },
-  "ACSZM0054": {
-   "id": "ACS-ZMØØ5-4",
-   "organism": "",
-   "name": "ACS-ZMØØ5-4 - InVigor™ maize",
+   "name": "ACS-GMØØ1-8 - Herbicide-tolerant soybean",
    "traits": [
     "Glufosinate",
-    "Ampicillin",
-    "Male sterility"
+    "Ampicillin"
    ],
    "developer": ""
   },
-  "ACSOS0014": {
-   "id": "ACS-OSØØ1-4",
+  "ACSGM0029": {
+   "id": "ACS-GMØØ2-9",
    "organism": "",
-   "name": "ACS-OSØØ1-4 - Liberty Link™ rice",
+   "name": "ACS-GMØØ2-9 - Herbicide-tolerant soybean",
    "traits": [
-    "Glufosinate"
-   ],
-   "developer": ""
-  },
-  "DP0981406": {
-   "id": "DP-Ø9814Ø-6",
-   "organism": "",
-   "name": "DP-Ø9814Ø-6 - Optimum™ GAT™ maize",
-   "traits": [
-    "Glyphosate",
-    "Sulfonylurea"
-   ],
-   "developer": ""
-  },
-  "MON877517MON877012MON877089MON897881": {
-   "id": "MON-87751-7 × MON-877Ø1-2 × MON-877Ø8-9 × MON-89788-1",
-   "organism": "",
-   "name": "MON-87751-7 × MON-877Ø1-2 × MON-877Ø8-9 × MON-89788-1 - Herbicide tolerant insect resistant soybean",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Lepidoptera (butterflies and moths)",
-    "Glyphosate",
-    "Other"
-   ],
-   "developer": ""
-  },
-  "MON897881": {
-   "id": "MON-89788-1",
-   "organism": "",
-   "name": "MON-89788-1 - Roundup Ready2Yield™ soybean",
-   "traits": [
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD2603241": {
-   "id": "bch-lmo-scbd-260324-1",
-   "organism": "",
-   "name": "Red fluorescent zebrafish",
-   "traits": [
-    "Changes in quality and/or metabolite content",
-    "Pigmentation / Coloration"
-   ],
-   "developer": ""
-  },
-  "NSB500274": {
-   "id": "NS-B5ØØ27-4",
-   "organism": "",
-   "name": "NS-B5ØØ27-4 - DHA canola",
-   "traits": [
-    "Lipid and fatty acids",
-    "Glufosinate"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1007254": {
-   "id": "bch-lmo-scbd-100725-4",
-   "organism": "",
-   "name": "Pseudomonas fluorescens strain SBW25 modified for biocontrol of fungal pathogens",
-   "traits": [
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1089021": {
-   "id": "bch-lmo-scbd-108902-1",
-   "organism": "",
-   "name": "Barley modified for increased (1,3-1,4)-β-glucan degradation",
-   "traits": [
-    "Carbohydrates",
-    "Glufosinate"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1090692": {
-   "id": "bch-lmo-scbd-109069-2",
-   "organism": "",
-   "name": "Tobacco modified for antibiotic resistance and GFP expression",
-   "traits": [
-    "Streptomycin",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1103061": {
-   "id": "bch-lmo-scbd-110306-1",
-   "organism": "",
-   "name": "Maize modified for herbicide tolerance",
-   "traits": [
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "NPS012018": {
-   "id": "NPS-Ø12Ø1-8",
-   "organism": "",
-   "name": "NPS-Ø12Ø1-8 - Purple Tomato",
-   "traits": [
-    "Resistance to antibiotics",
-    "Neomycin",
-    "Changes in quality and/or metabolite content",
-    "Antioxidants",
-    "Pigmentation / Coloration",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "REN000383": {
-   "id": "REN-ØØØ38-3",
-   "organism": "",
-   "name": "REN-ØØØ38-3 - Mavera™ maize",
-   "traits": [
-    "Protein and amino acids"
-   ],
-   "developer": ""
-  },
-  "MON948044": {
-   "id": "MON-948Ø4-4",
-   "organism": "",
-   "name": "MON-948Ø4-4 - Short-stature maize",
-   "traits": [
-    "Changes in physiology and/or production"
-   ],
-   "developer": ""
-  },
-  "MON883029": {
-   "id": "MON-883Ø2-9",
-   "organism": "",
-   "name": "MON-883Ø2-9 - TruFlex Roundup Ready™ Canola",
-   "traits": [
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1109111": {
-   "id": "bch-lmo-scbd-110911-1",
-   "organism": "",
-   "name": "Aspen, male, modified for modified for an altered morphology and reduced growth.",
-   "traits": [
-    "Pigmentation / Coloration",
-    "Kanamycin",
-    "Growth rate"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1093731": {
-   "id": "bch-lmo-scbd-109373-1",
-   "organism": "",
-   "name": "Potato modified for increased starch content",
-   "traits": [
-    "Carbohydrates",
-    "Kanamycin"
-   ],
-   "developer": ""
-  },
-  "DP0331213": {
-   "id": "DP-Ø33121-3",
-   "organism": "",
-   "name": "DP-Ø33121-3 - Insect resistant, herbicide tolerant Maize",
-   "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "Glufosinate"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1097351": {
-   "id": "bch-lmo-scbd-109735-1",
-   "organism": "",
-   "name": "VAXXITEK® HVT+ IBD",
-   "traits": [
-    "Vaccines"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1109201": {
-   "id": "bch-lmo-scbd-110920-1",
-   "organism": "",
-   "name": "Oilseed rape modified for an altered fatty acid metabolism in the seeds",
-   "traits": [
-    "Lipid and fatty acids",
-    "Kanamycin"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1109121": {
-   "id": "bch-lmo-scbd-110912-1",
-   "organism": "",
-   "name": "Hybrid Aspen, female, modified for an altered morphology",
-   "traits": [
-    "Pigmentation / Coloration",
-    "Kanamycin"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1116232": {
-   "id": "bch-lmo-scbd-111623-2",
-   "organism": "",
-   "name": "Potato modified for an enhanced phosphate content in leaves, roots and tubers",
-   "traits": [
-    "Kanamycin",
-    "Changes in physiology and/or production"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1116242": {
-   "id": "bch-lmo-scbd-111624-2",
-   "organism": "",
-   "name": "Potato modified for reduced cell wall stability",
-   "traits": [
-    "Changes in quality and/or metabolite content",
-    "Hygromycin"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1116601": {
-   "id": "bch-lmo-scbd-111660-1",
-   "organism": "",
-   "name": "Sinorhizobium meliloti modified for the expression of a reporter gene and reduced growth",
-   "traits": [
-    "Selectable marker genes and reporter genes",
-    "Growth rate"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1116611": {
-   "id": "bch-lmo-scbd-111661-1",
-   "organism": "",
-   "name": "Sinorhizobium meliloti modified for the expression of a reporter gene",
-   "traits": [
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "REN000383MON008106": {
-   "id": "REN-ØØØ38-3 × MON-ØØ81Ø-6",
-   "organism": "",
-   "name": "REN-ØØØ38-3 × MON-ØØ81Ø-6 - Mavera™YieldGard™ maize",
-   "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Lysine content"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD153924": {
-   "id": "bch-lmo-scbd-15392-4",
-   "organism": "",
-   "name": "New Leaf™ Plus Russet Burbank potato",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Potato leaf roll virus (PLRV)",
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD153933": {
-   "id": "bch-lmo-scbd-15393-3",
-   "organism": "",
-   "name": "Canola MPS963 Phytaseed™ (phytase-producing)",
-   "traits": [
-    "Changes in quality and/or metabolite content",
-    "Other"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD153954": {
-   "id": "bch-lmo-scbd-15395-4",
-   "organism": "",
-   "name": "Tomato modified for delayed ripening",
-   "traits": [
-    "Kanamycin",
-    "Ripening"
-   ],
-   "developer": ""
-  },
-  "DAS591227MON008106": {
-   "id": "DAS-59122-7 × MON-ØØ81Ø-6",
-   "organism": "",
-   "name": "DAS-59122-7 × MON-ØØ81Ø-6 - Insect resistant, herbicide tolerant maize",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Lepidoptera (butterflies and moths)",
-    "Glufosinate"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1114681": {
-   "id": "bch-lmo-scbd-111468-1",
-   "organism": "",
-   "name": "Potato modified for earlier and enhanced flower formation",
-   "traits": [
-    "Hygromycin",
-    "Growth rate"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1114691": {
-   "id": "bch-lmo-scbd-111469-1",
-   "organism": "",
-   "name": "Potato modified for increased tuber yield",
-   "traits": [
-    "Kanamycin",
-    "Growth rate",
-    "Yield"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1116121": {
-   "id": "bch-lmo-scbd-111612-1",
-   "organism": "",
-   "name": "Potato modified for increased sucrose synthesis",
-   "traits": [
-    "Carbohydrates",
-    "Kanamycin",
-    "Neomycin"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1119192": {
-   "id": "bch-lmo-scbd-111919-2",
-   "organism": "",
-   "name": "Roundup Ready Flex® Pima cotton",
-   "traits": [
-    "Glyphosate",
-    "Kanamycin"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1116222": {
-   "id": "bch-lmo-scbd-111622-2",
-   "organism": "",
-   "name": "Potato modified for tolerance to oxidative stress and heavy metals",
-   "traits": [
-    "Hygromycin",
-    "Tolerance to abiotic stress"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1114541": {
-   "id": "bch-lmo-scbd-111454-1",
-   "organism": "",
-   "name": "Potato modified with an ethanol-inducible GUS reporter system",
-   "traits": [
-    "Kanamycin",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1109091": {
-   "id": "bch-lmo-scbd-110909-1",
-   "organism": "",
-   "name": "Hybrid Aspen, female, modified for an altered morphology and reduced growth",
-   "traits": [
-    "Pigmentation / Coloration",
-    "Kanamycin",
-    "Growth rate"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1109101": {
-   "id": "bch-lmo-scbd-110910-1",
-   "organism": "",
-   "name": "Aspen, female, modified for modified for an altered morphology and reduced growth",
-   "traits": [
-    "Pigmentation / Coloration",
-    "Kanamycin",
-    "Growth rate"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD153964": {
-   "id": "bch-lmo-scbd-15396-4",
-   "organism": "",
-   "name": "Insect resistant tomato",
-   "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Kanamycin"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1122581": {
-   "id": "bch-lmo-scbd-112258-1",
-   "organism": "",
-   "name": "Petunia modified for altered flower colour",
-   "traits": [
-    "Pigmentation / Coloration",
-    "Kanamycin"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1122641": {
-   "id": "bch-lmo-scbd-112264-1",
-   "organism": "",
-   "name": "Herbicide tolerant Maize",
-   "traits": [
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1126091": {
-   "id": "bch-lmo-scbd-112609-1",
-   "organism": "",
-   "name": "Cassava modified for reduced starch metabolism",
-   "traits": [
-    "Carbohydrates",
-    "Hygromycin",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "MON008106SYNIR6045": {
-   "id": "MON-ØØ81Ø-6 × SYN-IR6Ø4-5",
-   "organism": "",
-   "name": "MON-ØØ81Ø-6 × SYN-IR6Ø4-5 - Insect resistant maize",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Lepidoptera (butterflies and moths)",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "SYNIR6045SYN053071": {
-   "id": "SYN-IR6Ø4-5 × SYN-Ø53Ø7-1",
-   "organism": "",
-   "name": "SYN-IR6Ø4-5 × SYN-Ø53Ø7-1 - Insect resistant maize",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Lepidoptera (butterflies and moths)",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1117481": {
-   "id": "bch-lmo-scbd-111748-1",
-   "organism": "",
-   "name": "Grape vine modified for the expression of a marker gene",
-   "traits": [
-    "Kanamycin",
-    "Neomycin",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1117501": {
-   "id": "bch-lmo-scbd-111750-1",
-   "organism": "",
-   "name": "Grape vine modified for resistance to fungal pathogens",
-   "traits": [
-    "Fungi",
-    "Kanamycin",
-    "Neomycin"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1117511": {
-   "id": "bch-lmo-scbd-111751-1",
-   "organism": "",
-   "name": "Grape vine modified for resistance to fungal pathogens",
-   "traits": [
-    "Fungi",
-    "Kanamycin",
-    "Neomycin"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1003155": {
-   "id": "bch-lmo-scbd-100315-5",
-   "organism": "",
-   "name": "Potato modified to synthesise fusion spider silk/ elastin protein",
-   "traits": [
-    "Kanamycin",
-    "Use in industrial applications"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1003393": {
-   "id": "bch-lmo-scbd-100339-3",
-   "organism": "",
-   "name": "Vaccine against Aujeszky's Disease",
-   "traits": [
-    "Vaccines"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1003455": {
-   "id": "bch-lmo-scbd-100345-5",
-   "organism": "",
-   "name": "Raboral V-RG (vaccine against rabies) [DRAFT]",
-   "traits": [
-    "Viruses"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1003527": {
-   "id": "bch-lmo-scbd-100352-7",
-   "organism": "",
-   "name": "Tobacco modified for tolerance to bromoxynil",
-   "traits": [
-    "Bromoxynil"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD153855": {
-   "id": "bch-lmo-scbd-15385-5",
-   "organism": "",
-   "name": "New Leaf™ Plus Russet Burbank potato",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Potato leaf roll virus (PLRV)",
-    "Kanamycin"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD153884": {
-   "id": "bch-lmo-scbd-15388-4",
-   "organism": "",
-   "name": "Cantaloupe A (delayed ripening)",
-   "traits": [
-    "Kanamycin",
-    "Ripening"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD153893": {
-   "id": "bch-lmo-scbd-15389-3",
-   "organism": "",
-   "name": "Cantaloupe B (delayed ripening)",
-   "traits": [
-    "Kanamycin",
-    "Ripening"
-   ],
-   "developer": ""
-  },
-  "BGH008277": {
-   "id": "BGH-ØØ827-7",
-   "organism": "",
-   "name": "BGH-00827-7 - Rice modified for insect resistance",
-   "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Hygromycin"
-   ],
-   "developer": ""
-  },
-  "BCHLMOSCBD1078672": {
-   "id": "bch-lmo-scbd-107867-2",
-   "organism": "",
-   "name": "Prototheca moriformis modified for the synthesis of biofuel",
-   "traits": [
-    "Lipid and fatty acids"
-   ],
-   "developer": ""
-  },
-  "SPS00J552": {
-   "id": "SPS-ØØJ55-2",
-   "organism": "",
-   "name": "SPS-ØØJ55-2 - Innate™ Atlantic Potato",
-   "traits": [
-    "Pigmentation / Coloration",
-    "Protein and amino acids"
-   ],
-   "developer": ""
-  },
-  "NMK899304": {
-   "id": "NMK-8993Ø-4",
-   "organism": "",
-   "name": "NMK-8993Ø-4 - Shepody NewLeaf™ Y potato",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Potato virus Y (PVY)",
-    "Kanamycin",
-    "Streptomycin"
-   ],
-   "developer": ""
-  },
-  "NMK899359": {
-   "id": "NMK-89935-9",
-   "organism": "",
-   "name": "NMK-89935-9 - Shepody NewLeaf™ Y potato",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Potato virus Y (PVY)",
-    "Kanamycin",
-    "Streptomycin"
-   ],
-   "developer": ""
-  },
-  "NMK898966": {
-   "id": "NMK-89896-6",
-   "organism": "",
-   "name": "NMK-89896-6 - New Leaf™ Plus Russet Burbank potato",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Potato leaf roll virus (PLRV)",
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "NMK896841": {
-   "id": "NMK-89684-1",
-   "organism": "",
-   "name": "NMK-89684-1 - New Leaf™ Plus Russet Burbank potato",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Potato leaf roll virus (PLRV)",
-    "Kanamycin"
+    "Glufosinate",
+    "Ampicillin"
    ],
    "developer": ""
   },
@@ -4707,6 +4927,95 @@
    ],
    "developer": ""
   },
+  "NSB500274": {
+   "id": "NS-B5ØØ27-4",
+   "organism": "",
+   "name": "NS-B5ØØ27-4 - DHA canola",
+   "traits": [
+    "Lipid and fatty acids",
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1007254": {
+   "id": "bch-lmo-scbd-100725-4",
+   "organism": "",
+   "name": "Pseudomonas fluorescens strain SBW25 modified for biocontrol of fungal pathogens",
+   "traits": [
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1089021": {
+   "id": "bch-lmo-scbd-108902-1",
+   "organism": "",
+   "name": "Barley modified for increased (1,3-1,4)-β-glucan degradation",
+   "traits": [
+    "Carbohydrates",
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1090692": {
+   "id": "bch-lmo-scbd-109069-2",
+   "organism": "",
+   "name": "Tobacco modified for antibiotic resistance and GFP expression",
+   "traits": [
+    "Streptomycin",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1103061": {
+   "id": "bch-lmo-scbd-110306-1",
+   "organism": "",
+   "name": "Maize modified for herbicide tolerance",
+   "traits": [
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "NPS012018": {
+   "id": "NPS-Ø12Ø1-8",
+   "organism": "",
+   "name": "NPS-Ø12Ø1-8 - Purple Tomato",
+   "traits": [
+    "Resistance to antibiotics",
+    "Neomycin",
+    "Changes in quality and/or metabolite content",
+    "Antioxidants",
+    "Pigmentation / Coloration",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "REN000383": {
+   "id": "REN-ØØØ38-3",
+   "organism": "",
+   "name": "REN-ØØØ38-3 - Mavera™ maize",
+   "traits": [
+    "Protein and amino acids"
+   ],
+   "developer": ""
+  },
+  "MON948044": {
+   "id": "MON-948Ø4-4",
+   "organism": "",
+   "name": "MON-948Ø4-4 - Short-stature maize",
+   "traits": [
+    "Changes in physiology and/or production"
+   ],
+   "developer": ""
+  },
+  "MON883029": {
+   "id": "MON-883Ø2-9",
+   "organism": "",
+   "name": "MON-883Ø2-9 - TruFlex Roundup Ready™ Canola",
+   "traits": [
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
   "MON159857": {
    "id": "MON-15985-7",
    "organism": "",
@@ -4728,6 +5037,123 @@
    "traits": [
     "Lepidoptera (butterflies and moths)",
     "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1036305": {
+   "id": "bch-lmo-scbd-103630-5",
+   "organism": "",
+   "name": "Cowpea resistant to lepidoptera pests",
+   "traits": [
+    "European corn borer (Ostrinia nubilalis)",
+    "Kanamycin"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1036362": {
+   "id": "bch-lmo-scbd-103636-2",
+   "organism": "",
+   "name": "Potato with altered starch quality",
+   "traits": [
+    "Amylose and amylopectin ratio"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1036511": {
+   "id": "bch-lmo-scbd-103651-1",
+   "organism": "",
+   "name": "Potato with modified starch composition",
+   "traits": [
+    "Amylose and amylopectin ratio",
+    "Imidazolinone"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1151312": {
+   "id": "bch-lmo-scbd-115131-2",
+   "organism": "",
+   "name": "Maize with altered growth and tolerance to herbicides",
+   "traits": [
+    "Cellulose",
+    "Lignin",
+    "Glufosinate",
+    "Cold / Heat",
+    "Drought",
+    "Growth rate",
+    "Reproduction",
+    "Yield"
+   ],
+   "developer": ""
+  },
+  "MON874277SYNIR1624": {
+   "id": "MON-87427-7 × SYN-IR162-4",
+   "organism": "",
+   "name": "MON-87427-7 × SYN-IR162-4 - Herbicide tolerant, Insect resistant maize",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Selectable marker genes and reporter genes",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "MON001018MON001637": {
+   "id": "MON-ØØ1Ø1-8 × MON-ØØ163-7",
+   "organism": "",
+   "name": "MON-ØØ1Ø1-8 × MON-ØØ163-7 - Roundup Ready™ alfalfa",
+   "traits": [
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1003164": {
+   "id": "bch-lmo-scbd-100316-4",
+   "organism": "",
+   "name": "Potato modified to synthesise fusion spider silk fragment/ elastin protein",
+   "traits": [
+    "Kanamycin",
+    "Use in industrial applications"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1003078": {
+   "id": "bch-lmo-scbd-100307-8",
+   "organism": "",
+   "name": "Papaya transformed with a viral coat protein that confers resistance to PRSV",
+   "traits": [
+    "Viruses"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1035236": {
+   "id": "bch-lmo-scbd-103523-6",
+   "organism": "",
+   "name": "Maize with altered growth and tolerance to herbicides",
+   "traits": [
+    "Cellulose",
+    "Lignin",
+    "Glufosinate",
+    "Growth rate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1035552": {
+   "id": "bch-lmo-scbd-103555-2",
+   "organism": "",
+   "name": "Potato modified for the production of spider silk protein",
+   "traits": [
+    "Production of medical or pharmaceutical compounds (human or animal)",
+    "Kanamycin",
+    "Use in industrial applications"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1036286": {
+   "id": "bch-lmo-scbd-103628-6",
+   "organism": "",
+   "name": "Sorghum with modified levels of vitamin A, zinc and iron",
+   "traits": [
+    "Vitamins"
    ],
    "developer": ""
   },
@@ -4865,6 +5291,27 @@
    ],
    "developer": ""
   },
+  "MON889138": {
+   "id": "MON-88913-8",
+   "organism": "",
+   "name": "MON-88913-8",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Insects",
+    "Coleoptera (beetles)",
+    "Colorado potato beetle (Leptinotarsa decemlineata)",
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Northern corn rootworm (Diabrotica barberi)",
+    "Diptera (flies)",
+    "Hessian fly (Mayetiola destructor)",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides"
+   ],
+   "developer": ""
+  },
   "BCHTRGLMOSCBD2701531": {
    "id": "bchtrg-lmo-scbd-270153-1",
    "organism": "",
@@ -4885,6 +5332,221 @@
    ],
    "developer": ""
   },
+  "MON008106SYNIR1624": {
+   "id": "MON-ØØ81Ø-6 × SYN-IR162-4",
+   "organism": "",
+   "name": "MON-ØØ81Ø-6 × SYN-IR162-4 - Herbicide tolerant, insect resistant corn",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "MON890343MON880173": {
+   "id": "MON-89Ø34-3 × MON-88Ø17-3",
+   "organism": "",
+   "name": "MON-89Ø34-3 × MON-88Ø17-3 - Genuity® VT Triple Pro™ Maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "MON874277": {
+   "id": "MON-87427-7",
+   "organism": "",
+   "name": "MON-87427-7 - Maize modified for tissue selective glyphosate tolerance",
+   "traits": [
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "ACSZM0032": {
+   "id": "ACS-ZMØØ3-2",
+   "organism": "",
+   "name": "ACS-ZMØØ3-2 - Liberty Link™ maize",
+   "traits": [
+    "Glufosinate",
+    "Ampicillin"
+   ],
+   "developer": ""
+  },
+  "SYNIR1624SYNIR6045MON000219": {
+   "id": "SYN-IR162-4 × SYN-IR6Ø4-5 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-IR162-4 × SYN-IR6Ø4-5 × MON-ØØØ21-9 - Insect resistant, herbicide tolerant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "SYNIR6045MON890343SYN053071MON000219": {
+   "id": "SYN-IR6Ø4-5 × MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-IR6Ø4-5 × MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9 - Herbicide-tolerant, insect-resistant maize",
+   "traits": [
+    "Other",
+    "Resistance to diseases and pests",
+    "Coleoptera (beetles)",
+    "Colorado potato beetle (Leptinotarsa decemlineata)",
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Northern corn rootworm (Diabrotica barberi)",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "MIR162MON89034GA21": {
+   "id": "MIR162 × MON89Ø34 × GA21",
+   "organism": "",
+   "name": "MIR162 × MON89034 × GA21 - Herbicide-tolerant, insect-resistant maize",
+   "traits": [
+    "Other",
+    "Resistance to diseases and pests",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "SYNIR1624SYNIR6045MON890343SYN053071MON000219": {
+   "id": "SYN-IR162-4 × SYN-IR6Ø4-5 × MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-IR162-4 × SYN-IR6Ø4-5 × MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9 - Herbicide-tolerant, insect-resistant maize",
+   "traits": [
+    "Other",
+    "Resistance to diseases and pests",
+    "Coleoptera (beetles)",
+    "Colorado potato beetle (Leptinotarsa decemlineata)",
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Northern corn rootworm (Diabrotica barberi)",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "MON890343SYN053071MON000219": {
+   "id": "MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9 - Herbicide-tolerant, insect-resistant maize",
+   "traits": [
+    "Other",
+    "Resistance to diseases and pests",
+    "Coleoptera (beetles)",
+    "Colorado potato beetle (Leptinotarsa decemlineata)",
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Northern corn rootworm (Diabrotica barberi)",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "SYNIR6045SYN053071MON000219": {
+   "id": "SYN-IR6Ø4-5 × SYN-Ø53Ø7-1 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-IR6Ø4-5 × SYN-Ø53Ø7-1 × MON-ØØØ21-9 - Glyphosate tolerant, Coleoptera resistant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "SYNIR1624MON000219": {
+   "id": "SYN-IR162-4 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-IR162-4 × MON-ØØØ21-9 - Insect resistant, herbicide tolerant maize",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "VC0019027": {
+   "id": "VCO-Ø19Ø2-7",
+   "organism": "",
+   "name": "VCO-Ø19Ø2-7 - Glyphosate tolerant maize",
+   "traits": [
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "VC0018533": {
+   "id": "VCO-Ø1853-3",
+   "organism": "",
+   "name": "VCO-Ø1853-3 - Glyphosate tolerant maize",
+   "traits": [
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "VC0018961": {
+   "id": "VCO-Ø1896-1",
+   "organism": "",
+   "name": "VCO-Ø1896-1 - Glyphosate tolerant maize",
+   "traits": [
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "MON000219MON008106": {
+   "id": "MON-ØØØ21-9 × MON-ØØ81Ø-6",
+   "organism": "",
+   "name": "MON-ØØØ21-9 × MON-ØØ81Ø-6 - Roundup Ready™ YieldGard™ maize",
+   "traits": [
+    "European corn borer (Ostrinia nubilalis)",
+    "Glyphosate",
+    "Ampicillin"
+   ],
+   "developer": ""
+  },
+  "SYN053071": {
+   "id": "SYN-Ø53Ø7-1",
+   "organism": "",
+   "name": "SYN-Ø53Ø7-1 - Agrisure® Duracade™ Maize",
+   "traits": [
+    "Northern corn rootworm (Diabrotica barberi)",
+    "Western corn rootworm (Diabrotica virgifera)"
+   ],
+   "developer": ""
+  },
+  "DP9156354": {
+   "id": "DP-915635-4",
+   "organism": "",
+   "name": "DP-915635-4 - Borer-resistant, herbicide-tolerant maize",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Changes in physiology and/or production",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
   "MON952757": {
    "id": "MON-95275-7",
    "organism": "",
@@ -4895,6 +5557,348 @@
     "Colorado potato beetle (Leptinotarsa decemlineata)",
     "Western corn rootworm (Diabrotica virgifera)",
     "Northern corn rootworm (Diabrotica barberi)"
+   ],
+   "developer": ""
+  },
+  "MON890343SYNIR1624": {
+   "id": "MON-89Ø34-3 × SYN-IR162-4",
+   "organism": "",
+   "name": "MON-89Ø34-3 × SYN-IR162-4 - Insect-resistant maize",
+   "traits": [
+    "Other",
+    "Resistance to diseases and pests",
+    "Lepidoptera (butterflies and moths)",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "MON877089": {
+   "id": "MON-877Ø8-9",
+   "organism": "",
+   "name": "MON-877Ø8-9 - Dicamba Tolerant Soybean",
+   "traits": [
+    "Resistance to herbicides"
+   ],
+   "developer": ""
+  },
+  "BPSCV1279": {
+   "id": "BPS-CV127-9",
+   "organism": "",
+   "name": "BPS-CV127-9 - Herbicide-tolerant soybean",
+   "traits": [
+    "Imidazolinone",
+    "Sulfonylurea"
+   ],
+   "developer": ""
+  },
+  "MON877012MON897881": {
+   "id": "MON-877Ø1-2 × MON-89788-1",
+   "organism": "",
+   "name": "MON-877Ø1-2 × MON-89788-1 - Intacta™ Roundup Ready™ 2 Pro soybean",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "MON953793": {
+   "id": "MON-95379-3",
+   "organism": "",
+   "name": "MON-95379-3 - Insect-protected maize",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)"
+   ],
+   "developer": ""
+  },
+  "DAS242365DAS210235": {
+   "id": "DAS-24236-5 × DAS-21Ø23-5",
+   "organism": "",
+   "name": "DAS-24236-5 × DAS-21Ø23-5 - WideStrike™ cotton",
+   "traits": [
+    "Lepidoptera (butterflies and moths)"
+   ],
+   "developer": ""
+  },
+  "ACSGM0053": {
+   "id": "ACS-GMØØ5-3",
+   "organism": "",
+   "name": "ACS-GMØØ5-3 - Herbicide-tolerant soybean",
+   "traits": [
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "MSTFG0722ACSGM0064": {
+   "id": "MST-FGØ72-2 × ACS-GMØØ6-4",
+   "organism": "",
+   "name": "MST-FGØ72-2 × ACS-GMØØ6-4 - Soybean modified for herbicide tolerance",
+   "traits": [
+    "Glufosinate",
+    "Glyphosate",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "SYN053071MON000219": {
+   "id": "SYN-Ø53Ø7-1 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-Ø53Ø7-1 × MON-ØØØ21-9 - Insect-resistant, herbicide-tolerant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "SYNIR1624SYNIR6045SYN053071MON000219": {
+   "id": "SYN-IR162-4 × SYN-IR6Ø4-5 × SYN-Ø53Ø7-1 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-IR162-4 × SYN-IR6Ø4-5 × SYN-Ø53Ø7-1 × MON-ØØØ21-9 - Glyphosate tolerant, insect resistant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "SYNIR1624SYN053071MON000219": {
+   "id": "SYN-IR162-4 × SYN-Ø53Ø7-1 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-IR162-4 × SYN-Ø53Ø7-1 × MON-ØØØ21-9 - Glyphosate tolerant, insect resistant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "DAS591227MON000219": {
+   "id": "DAS-59122-7 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "DAS-59122-7 × MON-ØØØ21-9 - Insect resistant, herbicide tolerant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Glufosinate",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "SYNIR1624MON890343SYN053071MON000219": {
+   "id": "SYN-IR162-4 × MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-IR162-4 × MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9 - Herbicide-tolerant, insect-resistant maize",
+   "traits": [
+    "Other",
+    "Resistance to diseases and pests",
+    "Coleoptera (beetles)",
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Northern corn rootworm (Diabrotica barberi)",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "SYNIR6045MON890343MON000219": {
+   "id": "SYN-IR6Ø4-5 × MON-89Ø34-3 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-IR6Ø4-5 × MON-89Ø34-3 × MON-ØØØ21-9 - Herbicide-tolerant, insect-resistant maize",
+   "traits": [
+    "Other",
+    "Resistance to diseases and pests",
+    "Coleoptera (beetles)",
+    "Colorado potato beetle (Leptinotarsa decemlineata)",
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Northern corn rootworm (Diabrotica barberi)",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "SYNE32725SYNIR6045MON000219": {
+   "id": "SYN-E3272-5 × SYN-IR6Ø4-5 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-E3272-5 × SYN-IR6Ø4-5 × MON-ØØØ21-9 - Modified thermostable alpha-amylase, insect-resistant, herbicide-tolerant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate",
+    "Biofuel production",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "SYNIR1624MON890343MON000219": {
+   "id": "SYN-IR162-4 × MON-89Ø34-3 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-IR162-4 × MON-89Ø34-3 × MON-ØØØ21-9 - Herbicide tolerant, insect resistant maize",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "BCSGH0025ACSGH0013MON159857": {
+   "id": "BCS-GHØØ2-5 × ACS-GHØØ1-3 × MON-15985-7",
+   "organism": "",
+   "name": "BCS-GHØØ2-5 × ACS-GHØØ1-3 × MON-15985-7 - Herbicide-tolerant, insect-resistant cotton",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Glyphosate",
+    "Streptomycin"
+   ],
+   "developer": ""
+  },
+  "BCSGH0025MON159857": {
+   "id": "BCS-GHØØ2-5 × MON-15985-7",
+   "organism": "",
+   "name": "BCS-GHØØ2-5 × MON-15985-7 - Herbicide-tolerant, insect-resistant cotton",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate",
+    "Streptomycin"
+   ],
+   "developer": ""
+  },
+  "VC0019365": {
+   "id": "VCO-Ø1936-5",
+   "organism": "",
+   "name": "VCO-Ø1936-5 - Glyphosate tolerant maize",
+   "traits": [
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "DAS591227SYNIR6045MON000219": {
+   "id": "DAS-59122-7 × SYN-IR6Ø4-5 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "DAS-59122-7 × SYN-IR6Ø4-5 × MON-ØØØ21-9 - Insect resistant, herbicide tolerant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "SYNIR1624SYNIR6045MON890343MON000219": {
+   "id": "SYN-IR162-4 × SYN-IR6Ø4-5 × MON-89Ø34-3 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-IR162-4 × SYN-IR6Ø4-5 × MON-89Ø34-3 × MON-ØØØ21-9 - Herbicide-tolerant, insect-resistant maize",
+   "traits": [
+    "Other",
+    "Resistance to diseases and pests",
+    "Coleoptera (beetles)",
+    "Colorado potato beetle (Leptinotarsa decemlineata)",
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Northern corn rootworm (Diabrotica barberi)",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "SYNE32725MON000219": {
+   "id": "SYN-E3272-5 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-E3272-5 × MON-ØØØ21-9 - Modified thermostable alpha-amylase, herbicide-tolerant maize",
+   "traits": [
+    "Resistance to herbicides",
+    "Biofuel production",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCSGH0025SYNIR67B1": {
+   "id": "BCS-GHØØ2-5 × SYN-IR67B-1",
+   "organism": "",
+   "name": "BCS-GHØØ2-5 × SYN-IR67B-1 - Insect resistant herbicide tolerant cotton",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "SYN000JG2": {
+   "id": "SYN-ØØØJG-2",
+   "organism": "",
+   "name": "SYN-ØØØJG-2 - Herbicide tolerant maize",
+   "traits": [
+    "Glufosinate",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "MON890343MON000219": {
+   "id": "MON-89Ø34-3 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "MON-89Ø34-3 × MON-ØØØ21-9 - Herbicide tolerant, insect resistant maize",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "SYNIR6045MON000219": {
+   "id": "SYN-IR6Ø4-5 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-IR6Ø4-5 × MON-ØØØ21-9 - Agrisure™ RW Rootworm-Protected Roundup Ready™ maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "MON000219ACSZM0032": {
+   "id": "MON-ØØØ21-9 × ACS-ZMØØ3-2",
+   "organism": "",
+   "name": "MON-ØØØ21-9 × ACS-ZMØØ3-2 - Herbicide tolerant Corn",
+   "traits": [
+    "Glufosinate",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "MON877089MON897881": {
+   "id": "MON-877Ø8-9 × MON-89788-1",
+   "organism": "",
+   "name": "MON-877Ø8-9 × MON-89788-1 - Herbicide tolerant soybean",
+   "traits": [
+    "Glyphosate",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "MON877517": {
+   "id": "MON-87751-7",
+   "organism": "",
+   "name": "MON-87751-7 - Insect resistant soybean",
+   "traits": [
+    "Lepidoptera (butterflies and moths)"
    ],
    "developer": ""
   },
@@ -8540,170 +9544,6 @@
    "traits": [],
    "developer": ""
   },
-  "SYNBT0111SYNIR6045MON890343MON000219": {
-   "id": "SYN-BTØ11-1 × SYN-IR6Ø4-5 × MON-89Ø34-3 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-BTØ11-1 × SYN-IR6Ø4-5 × MON-89Ø34-3 × MON-ØØØ21-9 - Herbicide-tolerant, insect-resistant maize",
-   "traits": [
-    "Other",
-    "Resistance to diseases and pests",
-    "Coleoptera (beetles)",
-    "Colorado potato beetle (Leptinotarsa decemlineata)",
-    "Western corn rootworm (Diabrotica virgifera)",
-    "Northern corn rootworm (Diabrotica barberi)",
-    "Lepidoptera (butterflies and moths)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Resistance to herbicides",
-    "Glufosinate",
-    "Glyphosate",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "SYNBT0111SYNIR1624SYNIR6045MON890343": {
-   "id": "SYN-BTØ11-1 × SYN-IR162-4 × SYN-IR6Ø4-5 × MON-89Ø34-3",
-   "organism": "",
-   "name": "SYN-BTØ11-1 × SYN-IR162-4 × SYN-IR6Ø4-5 × MON-89Ø34-3 - Herbicide-tolerant, insect-resistant maize",
-   "traits": [
-    "Other",
-    "Resistance to diseases and pests",
-    "Coleoptera (beetles)",
-    "Colorado potato beetle (Leptinotarsa decemlineata)",
-    "Western corn rootworm (Diabrotica virgifera)",
-    "Northern corn rootworm (Diabrotica barberi)",
-    "Lepidoptera (butterflies and moths)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Resistance to herbicides",
-    "Glufosinate",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "SYNBT0111DAS015071SYN053071": {
-   "id": "SYN-BTØ11-1 × DAS-Ø15Ø7-1 × SYN-Ø53Ø7-1",
-   "organism": "",
-   "name": "SYN-BTØ11-1 × DAS-Ø15Ø7-1 × SYN-Ø53Ø7-1 - Glufosinate tolerant, insect resistant maize",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Lepidoptera (butterflies and moths)",
-    "Glufosinate",
-    "Selectable marker genes and reporter genes",
-    "Other"
-   ],
-   "developer": ""
-  },
-  "SYNBT0111MON890343SYN053071": {
-   "id": "SYN-BTØ11-1 × MON-89Ø34-3 × SYN-Ø53Ø7-1",
-   "organism": "",
-   "name": "SYN-BTØ11-1 × MON-89Ø34-3 × SYN-Ø53Ø7-1 - Herbicide-tolerant, insect-resistant maize",
-   "traits": [
-    "Other",
-    "Resistance to diseases and pests",
-    "Coleoptera (beetles)",
-    "Colorado potato beetle (Leptinotarsa decemlineata)",
-    "Western corn rootworm (Diabrotica virgifera)",
-    "Northern corn rootworm (Diabrotica barberi)",
-    "Lepidoptera (butterflies and moths)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Resistance to herbicides",
-    "Glufosinate",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "SYNBT0111DAS015071MON006036": {
-   "id": "SYN-BTØ11-1 × DAS-Ø15Ø7-1 × MON-ØØ6Ø3-6",
-   "organism": "",
-   "name": "SYN-BTØ11-1 × DAS-Ø15Ø7-1 × MON-ØØ6Ø3-6 - Insect-resistant and herbicide-tolerant maize",
-   "traits": [
-    "Resistance to diseases and pests",
-    "Lepidoptera (butterflies and moths)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Resistance to herbicides",
-    "Glufosinate",
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "SYNE32725SYNBT0111SYNIR1624MON000219": {
-   "id": "SYN-E3272-5 × SYN-BTØ11-1 × SYN-IR162-4 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-E3272-5 × SYN-BTØ11-1 × SYN-IR162-4 × MON-ØØØ21-9 - Insect-resistant, herbicide-tolerant, amylase-producing maize",
-   "traits": [
-    "Resistance to diseases and pests",
-    "Lepidoptera (butterflies and moths)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Resistance to herbicides",
-    "Glufosinate",
-    "Glyphosate",
-    "Use in industrial applications",
-    "Biofuel production",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "SYNBT0111SYNIR6045MON890343": {
-   "id": "SYN-BTØ11-1 × SYN-IR6Ø4-5 × MON-89Ø34-3",
-   "organism": "",
-   "name": "SYN-BTØ11-1 × SYN-IR6Ø4-5 × MON-89Ø34-3 - Herbicide-tolerant, insect-resistant maize",
-   "traits": [
-    "Other",
-    "Resistance to diseases and pests",
-    "Colorado potato beetle (Leptinotarsa decemlineata)",
-    "Western corn rootworm (Diabrotica virgifera)",
-    "Northern corn rootworm (Diabrotica barberi)",
-    "Lepidoptera (butterflies and moths)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Resistance to herbicides",
-    "Glufosinate"
-   ],
-   "developer": ""
-  },
-  "SYNBT0111SYNIR1624MON006036": {
-   "id": "SYN-BTØ11-1 × SYN-IR162-4 × MON-ØØ6Ø3-6",
-   "organism": "",
-   "name": "SYN-BTØ11-1 × SYN-IR162-4 × MON-ØØ6Ø3-6 - Insect-resistant and herbicide-tolerant maize",
-   "traits": [
-    "Resistance to diseases and pests",
-    "Lepidoptera (butterflies and moths)",
-    "Resistance to herbicides",
-    "Glufosinate",
-    "Glyphosate",
-    "Selectable marker genes and reporter genes"
-   ],
-   "developer": ""
-  },
-  "SYNBT0111DAS015071MON000219": {
-   "id": "SYN-BTØ11-1 × DAS-Ø15Ø7-1 × MON-ØØØ21-9",
-   "organism": "",
-   "name": "SYN-BTØ11-1 × DAS-Ø15Ø7-1 × MON-ØØØ21-9 - Maize modified for insect resistance and herbicide tolerance",
-   "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Glufosinate",
-    "Glyphosate"
-   ],
-   "developer": ""
-  },
-  "SYNBT0111DAS015071": {
-   "id": "SYN-BTØ11-1 × DAS-Ø15Ø7-1",
-   "organism": "",
-   "name": "SYN-BTØ11-1 × DAS-Ø15Ø7-1 - Insect resistant, herbicide tolerant maize",
-   "traits": [
-    "Lepidoptera (butterflies and moths)",
-    "Glufosinate"
-   ],
-   "developer": ""
-  },
   "SYNBT0111SYNIR1624MON890343SYN053071MON000219": {
    "id": "SYN-BTØ11-1 × SYN-IR162-4 × MON-89Ø34-3 × SYN-Ø53Ø7-1 × MON-ØØØ21-9",
    "organism": "",
@@ -8739,19 +9579,6 @@
    ],
    "developer": ""
   },
-  "SYNBT0111SYNIR6045DAS015071SYN053071": {
-   "id": "SYN-BTØ11-1 × SYN-IR6Ø4-5 × DAS-Ø15Ø7-1 × SYN-Ø53Ø7-1",
-   "organism": "",
-   "name": "SYN-BTØ11-1 × SYN-IR6Ø4-5 × DAS-Ø15Ø7-1 × SYN-Ø53Ø7-1 - Glufosinate tolerant, insect resistant maize",
-   "traits": [
-    "Coleoptera (beetles)",
-    "Lepidoptera (butterflies and moths)",
-    "Glufosinate",
-    "Selectable marker genes and reporter genes",
-    "Other"
-   ],
-   "developer": ""
-  },
   "SYNBT0111SYNIR6045": {
    "id": "SYN-BTØ11-1 × SYN-IR6Ø4-5",
    "organism": "",
@@ -8775,6 +9602,194 @@
     "European corn borer (Ostrinia nubilalis)",
     "Glufosinate",
     "Ampicillin"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111SYNIR1624SYNIR6045MON890343": {
+   "id": "SYN-BTØ11-1 × SYN-IR162-4 × SYN-IR6Ø4-5 × MON-89Ø34-3",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × SYN-IR162-4 × SYN-IR6Ø4-5 × MON-89Ø34-3 - Herbicide-tolerant, insect-resistant maize",
+   "traits": [
+    "Other",
+    "Resistance to diseases and pests",
+    "Coleoptera (beetles)",
+    "Colorado potato beetle (Leptinotarsa decemlineata)",
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Northern corn rootworm (Diabrotica barberi)",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111SYNIR1624MON006036": {
+   "id": "SYN-BTØ11-1 × SYN-IR162-4 × MON-ØØ6Ø3-6",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × SYN-IR162-4 × MON-ØØ6Ø3-6 - Insect-resistant and herbicide-tolerant maize",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Lepidoptera (butterflies and moths)",
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111MON890343SYN053071": {
+   "id": "SYN-BTØ11-1 × MON-89Ø34-3 × SYN-Ø53Ø7-1",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × MON-89Ø34-3 × SYN-Ø53Ø7-1 - Herbicide-tolerant, insect-resistant maize",
+   "traits": [
+    "Other",
+    "Resistance to diseases and pests",
+    "Coleoptera (beetles)",
+    "Colorado potato beetle (Leptinotarsa decemlineata)",
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Northern corn rootworm (Diabrotica barberi)",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111SYNIR6045DAS015071SYN053071": {
+   "id": "SYN-BTØ11-1 × SYN-IR6Ø4-5 × DAS-Ø15Ø7-1 × SYN-Ø53Ø7-1",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × SYN-IR6Ø4-5 × DAS-Ø15Ø7-1 × SYN-Ø53Ø7-1 - Glufosinate tolerant, insect resistant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Selectable marker genes and reporter genes",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111SYNIR6045MON890343MON000219": {
+   "id": "SYN-BTØ11-1 × SYN-IR6Ø4-5 × MON-89Ø34-3 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × SYN-IR6Ø4-5 × MON-89Ø34-3 × MON-ØØØ21-9 - Herbicide-tolerant, insect-resistant maize",
+   "traits": [
+    "Other",
+    "Resistance to diseases and pests",
+    "Coleoptera (beetles)",
+    "Colorado potato beetle (Leptinotarsa decemlineata)",
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Northern corn rootworm (Diabrotica barberi)",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "SYNE32725SYNBT0111SYNIR1624MON000219": {
+   "id": "SYN-E3272-5 × SYN-BTØ11-1 × SYN-IR162-4 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-E3272-5 × SYN-BTØ11-1 × SYN-IR162-4 × MON-ØØØ21-9 - Insect-resistant, herbicide-tolerant, amylase-producing maize",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Glyphosate",
+    "Use in industrial applications",
+    "Biofuel production",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111DAS015071MON006036": {
+   "id": "SYN-BTØ11-1 × DAS-Ø15Ø7-1 × MON-ØØ6Ø3-6",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × DAS-Ø15Ø7-1 × MON-ØØ6Ø3-6 - Insect-resistant and herbicide-tolerant maize",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Lepidoptera (butterflies and moths)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111DAS015071SYN053071": {
+   "id": "SYN-BTØ11-1 × DAS-Ø15Ø7-1 × SYN-Ø53Ø7-1",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × DAS-Ø15Ø7-1 × SYN-Ø53Ø7-1 - Glufosinate tolerant, insect resistant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Selectable marker genes and reporter genes",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111DAS015071": {
+   "id": "SYN-BTØ11-1 × DAS-Ø15Ø7-1",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × DAS-Ø15Ø7-1 - Insect resistant, herbicide tolerant maize",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111SYNIR6045MON890343": {
+   "id": "SYN-BTØ11-1 × SYN-IR6Ø4-5 × MON-89Ø34-3",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × SYN-IR6Ø4-5 × MON-89Ø34-3 - Herbicide-tolerant, insect-resistant maize",
+   "traits": [
+    "Other",
+    "Resistance to diseases and pests",
+    "Colorado potato beetle (Leptinotarsa decemlineata)",
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Northern corn rootworm (Diabrotica barberi)",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111SYNIR1624SYNIR6045DAS015071": {
+   "id": "SYN-BTØ11-1 × SYN-IR162-4 × SYN-IR6Ø4-5 × DAS-Ø15Ø7-1",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × SYN-IR162-4 × SYN-IR6Ø4-5 × DAS-Ø15Ø7-1 - Glufosinate tolerant, insect resistant maize",
+   "traits": [
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111DAS015071MON000219": {
+   "id": "SYN-BTØ11-1 × DAS-Ø15Ø7-1 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × DAS-Ø15Ø7-1 × MON-ØØØ21-9 - Maize modified for insect resistance and herbicide tolerance",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Glyphosate"
    ],
    "developer": ""
   },
@@ -8812,13 +9827,16 @@
    ],
    "developer": ""
   },
-  "SYNBT0111SYNIR1624SYNIR6045DAS015071": {
-   "id": "SYN-BTØ11-1 × SYN-IR162-4 × SYN-IR6Ø4-5 × DAS-Ø15Ø7-1",
+  "BCSGH0047BCSGH0058": {
+   "id": "BCS-GHØØ4-7 × BCS-GHØØ5-8",
    "organism": "",
-   "name": "SYN-BTØ11-1 × SYN-IR162-4 × SYN-IR6Ø4-5 × DAS-Ø15Ø7-1 - Glufosinate tolerant, insect resistant maize",
+   "name": "BCS-GHØØ4-7 × BCS-GHØØ5-8 - TwinLink™ Cotton",
    "traits": [
-    "Western corn rootworm (Diabrotica virgifera)",
+    "Insects",
     "Lepidoptera (butterflies and moths)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
     "Glufosinate"
    ],
    "developer": ""
@@ -8835,20 +9853,6 @@
    ],
    "developer": ""
   },
-  "BCSGH0047BCSGH0058": {
-   "id": "BCS-GHØØ4-7 × BCS-GHØØ5-8",
-   "organism": "",
-   "name": "BCS-GHØØ4-7 × BCS-GHØØ5-8 - TwinLink™ Cotton",
-   "traits": [
-    "Insects",
-    "Lepidoptera (butterflies and moths)",
-    "Fall armyworm (Spodoptera frugiperda)",
-    "Cotton bollworm (Helicoverpa spp.)",
-    "European corn borer (Ostrinia nubilalis)",
-    "Glufosinate"
-   ],
-   "developer": ""
-  },
   "BCSGH0025BCSGH0047BCSGH0058SYNIR1027": {
    "id": "BCS-GHØØ2-5 × BCS-GHØØ4-7 × BCS-GHØØ5-8 × SYN-IR1Ø2-7",
    "organism": "",
@@ -8861,6 +9865,240 @@
    ],
    "developer": ""
   },
+  "SYNBT0111SYNIR6045DAS015071": {
+   "id": "SYN-BTØ11-1 × SYN-IR6Ø4-5 × DAS-Ø15Ø7-1",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × SYN-IR6Ø4-5 × DAS-Ø15Ø7-1 - Insect resistant, herbicide tolerant maize",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111SYNIR1624DAS015071": {
+   "id": "SYN-BTØ11-1 × SYN-IR162-4 × DAS-Ø15Ø7-1",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × SYN-IR162-4 × DAS-Ø15Ø7-1 - Insect resistant, herbicide tolerant maize",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "BCSGH8114BCSGH0047BCSGH0058SYNIR1027MON887013": {
+   "id": "BCS-GH811-4 × BCS-GHØØ4-7 × BCS-GHØØ5-8 × SYN-IR1Ø2-7 × MON-887Ø1-3",
+   "organism": "",
+   "name": "BCS-GH811-4 × BCS-GHØØ4-7 × BCS-GHØØ5-8 × SYN-IR1Ø2-7 × MON-887Ø1-3 - Herbicide-tolerant, insect-resistant cotton",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Glyphosate",
+    "Resistance to antibiotics",
+    "Hygromycin"
+   ],
+   "developer": ""
+  },
+  "BCSGH0025BCSGH0047BCSGH0058": {
+   "id": "BCS-GHØØ2-5 × BCS-GHØØ4-7 × BCS-GHØØ5-8",
+   "organism": "",
+   "name": "BCS-GHØØ2-5 × BCS-GHØØ4-7 × BCS-GHØØ5-8 - GlyTol™ x TwinLink™ Cotton",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "Glufosinate",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "BCSGH0025BCSGH0047": {
+   "id": "BCS-GHØØ2-5 × BCS-GHØØ4-7",
+   "organism": "",
+   "name": "BCS-GHØØ2-5 × BCS-GHØØ4-7 - Herbicide tolerant, insect resistant cotton",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "BCSGH0036": {
+   "id": "BCS-GHØØ3-6",
+   "organism": "",
+   "name": "BCS-GHØØ3-6 - Herbicide-tolerant, insect-resistant cotton",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "BCSGH0047BCSGH0058SYNIR1027": {
+   "id": "BCS-GHØØ4-7 × BCS-GHØØ5-8 × SYN-IR1Ø2-7",
+   "organism": "",
+   "name": "BCS-GHØØ4-7 × BCS-GHØØ5-8 × SYN-IR1Ø2-7 - Insect-resistant, herbicide-tolerant cotton",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Hygromycin"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111MON890343": {
+   "id": "SYN-BTØ11-1 × MON-89Ø34-3",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × MON-89Ø34-3 - Herbicide tolerant, insect resistant maize",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111DAS591227DAS015071": {
+   "id": "SYN-BTØ11-1 × DAS-59122-7 × DAS-Ø15Ø7-1",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × DAS-59122-7 × DAS-Ø15Ø7-1 - Insect resistant, herbicide tolerant maize",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "BCSGH8114BCSGH0047BCSGH0058SYNIR1027": {
+   "id": "BCS-GH811-4 × BCS-GHØØ4-7 × BCS-GHØØ5-8 × SYN-IR1Ø2-7",
+   "organism": "",
+   "name": "BCS-GH811-4 × BCS-GHØØ4-7 × BCS-GHØØ5-8 × SYN-IR1Ø2-7 - Herbicide-tolerant and insect-resistant cotton",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Glyphosate",
+    "Resistance to antibiotics",
+    "Hygromycin"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111SYNIR1624MON890343MON000219": {
+   "id": "SYN-BTØ11-1 × SYN-IR162-4 × MON-89Ø34-3 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × SYN-IR162-4 × MON-89Ø34-3 × MON-ØØØ21-9 - Maize modified for insect resistance and herbicide tolerance",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111SYNIR1624SYN000983DP0041143MON006036": {
+   "id": "SYN-BTØ11-1 × SYN-IR162-4 × SYN-ØØØ98-3 × DP-ØØ4114-3 × MON-ØØ6Ø3-6",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × SYN-IR162-4 × SYN-ØØØ98-3 × DP-ØØ4114-3 × MON-ØØ6Ø3-6 - Insect-resistant and herbicide-tolerant maize",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Northern corn rootworm (Diabrotica barberi)",
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111SYNIR1624SYNIR6045SYN053071": {
+   "id": "SYN-BTØ11-1 × SYN-IR162-4 × SYN-IR6Ø4-5 × SYN-Ø53Ø7-1",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × SYN-IR162-4 × SYN-IR6Ø4-5 × SYN-Ø53Ø7-1 - Glufosinate tolerant, Insect resistant maize",
+   "traits": [
+    "Northern corn rootworm (Diabrotica barberi)",
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Selectable marker genes and reporter genes",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "SYNBT0111SYN000983DP0041143MON006036": {
+   "id": "SYN-BTØ11-1 × SYN-ØØØ98-3 × DP-ØØ4114-3 × MON-ØØ6Ø3-6",
+   "organism": "",
+   "name": "SYN-BTØ11-1 × SYN-ØØØ98-3 × DP-ØØ4114-3 × MON-ØØ6Ø3-6 - Insect-resistant and herbicide-tolerant maize",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Coleoptera (beetles)",
+    "Colorado potato beetle (Leptinotarsa decemlineata)",
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Northern corn rootworm (Diabrotica barberi)",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "SYNE32725SYNBT0111MON000219": {
+   "id": "SYN-E3272-5 × SYN-BTØ11-1 × MON-ØØØ21-9",
+   "organism": "",
+   "name": "SYN-E3272-5 × SYN-BTØ11-1 × MON-ØØØ21-9 - Insect resistant, herbicide tolerant maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Glyphosate",
+    "Selectable marker genes and reporter genes"
+   ],
+   "developer": ""
+  },
+  "MON890343DAS015071MON880173DAS591227": {
+   "id": "MON-89Ø34-3 × DAS-Ø15Ø7-1 × MON-88Ø17-3 × DAS-59122-7",
+   "organism": "",
+   "name": "MON-89Ø34-3 × DAS-Ø15Ø7-1 × MON-88Ø17-3 × DAS-59122-7 - Genuity® SmartStax®™ Maize",
+   "traits": [
+    "Coleoptera (beetles)",
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "BCHLMOSCBD1016127": {
+   "id": "bch-lmo-scbd-101612-7",
+   "organism": "",
+   "name": "Proteqflu - equine influenza vaccine",
+   "traits": [
+    "Vaccines",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "MON890343DAS015071MON006036SYNIR1624DAS402789": {
+   "id": "MON-89Ø34-3 × DAS-Ø15Ø7-1 × MON-ØØ6Ø3-6 × SYN-IR162-4 × DAS-4Ø278-9",
+   "organism": "",
+   "name": "MON-89Ø34-3 × DAS-Ø15Ø7-1 × MON-ØØ6Ø3-6 × SYN-IR162-4 × DAS-4Ø278-9 - Power Core™ x MIR162 x Enlist™",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Glyphosate",
+    "Other"
+   ],
+   "developer": ""
+  },
   "BCHLMOSCBD3000651": {
    "id": "bch-lmo-scbd-300065-1",
    "organism": "",
@@ -8868,6 +10106,198 @@
    "traits": [
     "Production of medical or pharmaceutical compounds (human or animal)",
     "Vaccines"
+   ],
+   "developer": ""
+  },
+  "EHBRS9132": {
+   "id": "EH-BRS913-2",
+   "organism": "",
+   "name": "EH-BRS913-2 - Insect-resistant and herbicide-tolerant maize",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Insects",
+    "Coleoptera (beetles)",
+    "Colorado potato beetle (Leptinotarsa decemlineata)",
+    "Western corn rootworm (Diabrotica virgifera)",
+    "Northern corn rootworm (Diabrotica barberi)",
+    "Diptera (flies)",
+    "Hessian fly (Mayetiola destructor)",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glufosinate"
+   ],
+   "developer": ""
+  },
+  "IFKP05417": {
+   "id": "IF-KPØ541-7",
+   "organism": "",
+   "name": "IF-KPØ541-7 - Komagataella phaffii strain MXY0541",
+   "traits": [
+    "Other",
+    "Changes in quality and/or metabolite content"
+   ],
+   "developer": ""
+  },
+  "DAS011313": {
+   "id": "DAS-Ø1131-3",
+   "organism": "",
+   "name": "DAS-Ø1131-3 - Insect-resistant and herbicide-tolerant maize",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "BCSGM1516XDAS444066": {
+   "id": "BCS-GM151-6 X DAS-444Ø6-6",
+   "organism": "",
+   "name": "BCS-GM151-6 x DAS-444Ø6-6 - Nematode-resistant and herbicide-tolerant soybean",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Nematodes",
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "DP2022166XMON006036": {
+   "id": "DP-2Ø2216-6 X MON-ØØ6Ø3-6",
+   "organism": "",
+   "name": "DP-2Ø2216-6 x MON-ØØ6Ø3-6 - Enhanced grain yield potential, glufosinate-ammonium resistant, Roundup Ready™ maize",
+   "traits": [
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Glyphosate",
+    "Changes in physiology and/or production",
+    "Yield"
+   ],
+   "developer": ""
+  },
+  "DAS011313XDP9105212XDP2022166XDAS402789": {
+   "id": "DAS-Ø1131-3 X DP-91Ø521-2 X DP-2Ø2216-6 X DAS-4Ø278-9",
+   "organism": "",
+   "name": "DAS-Ø1131-3 x DP-91Ø521-2 x DP-2Ø2216-6 x DAS-4Ø278-9 - Enhanced grain yield potential and insect‑resistant maize, tolerant to herbicides glyphosate, glufosinate, 2,4‑Dichlorophenoxyacetic acid, and aryloxyphenoxypropionate",
+   "traits": [
+    "Resistance to diseases and pests",
+    "Lepidoptera (butterflies and moths)",
+    "Cotton bollworm (Helicoverpa spp.)",
+    "European corn borer (Ostrinia nubilalis)",
+    "Fall armyworm (Spodoptera frugiperda)",
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Glyphosate",
+    "Changes in physiology and/or production",
+    "Yield"
+   ],
+   "developer": ""
+  },
+  "DP2022166XDAS402789": {
+   "id": "DP-2Ø2216-6 X DAS-4Ø278-9",
+   "organism": "",
+   "name": "DP-2Ø2216-6 x DAS-4Ø278-9 - Enhanced grain yield potential, glufosinate-ammonium resistant, Enlist™  maize",
+   "traits": [
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Changes in physiology and/or production",
+    "Yield"
+   ],
+   "developer": ""
+  },
+  "DAS814192DAS444066": {
+   "id": "DAS-81419-2 × DAS-444Ø6-6",
+   "organism": "",
+   "name": "DAS-81419-2 × DAS-444Ø6-6 - Conkesta Enlist E3™ Soybean",
+   "traits": [
+    "Lepidoptera (butterflies and moths)",
+    "Glufosinate",
+    "Glyphosate",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "DP2022166XMON006036XDAS402789": {
+   "id": "DP-2Ø2216-6 X MON-ØØ6Ø3-6 X DAS-4Ø278-9",
+   "organism": "",
+   "name": "DP-2Ø2216-6 x MON-ØØ6Ø3-6 x DAS-4Ø278-9 - Enhanced grain yield potential, glufosinate-ammonium resistant, Roundup Ready™ Enlist™  maize",
+   "traits": [
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Glyphosate",
+    "Changes in physiology and/or production",
+    "Yield"
+   ],
+   "developer": ""
+  },
+  "DAS402789XMON006036": {
+   "id": "DAS-4Ø278-9 X MON-ØØ6Ø3-6",
+   "organism": "",
+   "name": "DAS-4Ø278-9 x MON-ØØ6Ø3-6 - Roundup Ready™ Enlist™  maize",
+   "traits": [
+    "Resistance to herbicides",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "DAS444066": {
+   "id": "DAS-444Ø6-6",
+   "organism": "",
+   "name": "DAS-444Ø6-6 - Enlist E3™ Soybean",
+   "traits": [
+    "Other",
+    "Resistance to herbicides",
+    "Glufosinate",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "BCSGM1516": {
+   "id": "BCS-GM151-6",
+   "organism": "",
+   "name": "BCS-GM151-6 - Plant-Parasitic Nematode-Protected and Herbicide Tolerant Soybean",
+   "traits": [
+    "Nematodes",
+    "Resistance to herbicides",
+    "Other"
+   ],
+   "developer": ""
+  },
+  "MON877056": {
+   "id": "MON-877Ø5-6",
+   "organism": "",
+   "name": "MON-877Ø5-6 - Vistive Gold™ Soybean",
+   "traits": [
+    "Lipid and fatty acids",
+    "Glyphosate"
+   ],
+   "developer": ""
+  },
+  "MON006036ACSZM0032": {
+   "id": "MON-ØØ6Ø3-6 × ACS-ZMØØ3-2",
+   "organism": "",
+   "name": "MON-ØØ6Ø3-6 × ACS-ZMØØ3-2 - Roundup Ready™ Liberty Link™ maize",
+   "traits": [
+    "Glufosinate",
+    "Glyphosate",
+    "Ampicillin"
+   ],
+   "developer": ""
+  },
+  "DAS684164": {
+   "id": "DAS-68416-4",
+   "organism": "",
+   "name": "DAS-68416-4 - Enlist™ Soybeans",
+   "traits": [
+    "Glufosinate",
+    "Other"
    ],
    "developer": ""
   },

@@ -103,6 +103,54 @@
    "state": "NSW",
    "osm": "relation/6257772",
    "matched": "Weddin Shire Council, New South Wales, Australia"
+  },
+  "corangamite": {
+   "lat": -38.21597,
+   "lng": 143.1273689,
+   "name": "Corangamite Shire Council",
+   "state": "VIC",
+   "osm": "relation/3291894",
+   "matched": "Shire of Corangamite, Victoria, Australia"
+  },
+  "greatershepparton": {
+   "lat": -36.4277195,
+   "lng": 145.3781558,
+   "name": "Greater Shepparton City Council",
+   "state": "VIC",
+   "osm": "relation/3365116",
+   "matched": "City of Greater Shepparton, Victoria, Australia"
+  },
+  "horsham": {
+   "lat": -36.7148099,
+   "lng": 142.2018105,
+   "name": "Horsham Rural City Council",
+   "state": "VIC",
+   "osm": "relation/3169693",
+   "matched": "Horsham, Victoria, 3400, Australia"
+  },
+  "lockyervalley": {
+   "lat": -27.680931,
+   "lng": 152.199498,
+   "name": "Lockyer Valley Regional Council",
+   "state": "QLD",
+   "osm": "relation/11675710",
+   "matched": "Lockyer Valley Regional, Queensland, Australia"
+  },
+  "westerndowns": {
+   "lat": -26.80694,
+   "lng": 150.5586119,
+   "name": "Western Downs Regional Council",
+   "state": "QLD",
+   "osm": "relation/11674821",
+   "matched": "Western Downs Regional, Queensland, Australia"
+  },
+  "yarriambiack": {
+   "lat": -36.0284095,
+   "lng": 142.3884677,
+   "name": "Yarriambiack Shire Council",
+   "state": "VIC",
+   "osm": "relation/3345545",
+   "matched": "Shire of Yarriambiack, Victoria, Australia"
   }
  },
  "note": "Council-area points for OGTR field trial sites, from OpenStreetMap administrative boundaries via Nominatim. Each entry names the OSM object it came from. Rejected where the point fell outside the state OGTR named."
