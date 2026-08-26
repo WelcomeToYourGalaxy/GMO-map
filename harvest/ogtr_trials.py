@@ -127,15 +127,12 @@ ENDPOINTS = [
 # Australia's rough bounds, used to reject anything that is not a site coordinate
 AU = (-44.0, -9.0, 112.0, 154.0)
 
-# State and territory reference points, used ONLY when no finer position was
-# published and always written as precise:false with addr_grade "state". These
-# are approximate land centroids; they are a stated fallback position, not a
-# measurement of anything, and the record says so in its own text.
-STATE_PT = {
-    "NSW": (-32.16, 147.02), "VIC": (-36.85, 144.28), "QLD": (-22.49, 144.43),
-    "SA": (-30.05, 135.76), "WA": (-25.33, 122.30), "TAS": (-42.02, 146.60),
-    "NT": (-19.38, 133.36), "ACT": (-35.49, 149.00),
-}
+# There is NO state-level fallback. A trial placed at the middle of Western
+# Australia is a marker on a map that says nothing: the state is already in the
+# record text, the point adds no information the reader did not have, and it
+# invites a reader to think a release happened somewhere it did not. A row that
+# cannot be placed at its council area or better is dropped, and the count of
+# dropped rows is printed so the gap is visible rather than papered over.
 STATE_NAME = {
     "NSW": "New South Wales", "VIC": "Victoria", "QLD": "Queensland",
     "SA": "South Australia", "WA": "Western Australia", "TAS": "Tasmania",
@@ -481,6 +478,37 @@ def permitted_endpoints():
 # The archive
 # ---------------------------------------------------------------------------
 
+# Wayback refuses bursts. On 2026-08-26 the robots.txt snapshot came back fine
+# and the map-page request four seconds later got ECONNREFUSED - not a 429,
+# just a closed socket, which reads like a dead archive rather than a rate
+# limit. Two archive requests are wanted per run, so they are spaced and
+# retried rather than fired back to back.
+_ARCH_LAST = [0.0]
+ARCH_GAP = 6.0
+
+
+def _wb_get(url, timeout, tries=3):
+    last = None
+    for attempt in range(tries):
+        wait = ARCH_GAP - (time.time() - _ARCH_LAST[0])
+        if wait > 0:
+            time.sleep(wait)
+        _ARCH_LAST[0] = time.time()
+        try:
+            return urlopen(Request(url, headers={"User-Agent": UA}),
+                           timeout=timeout).read().decode("utf-8", "replace")
+        except Exception as e:
+            last = e
+            code = getattr(e, "code", None)
+            if code == 404:
+                break                      # no snapshot; retrying cannot help
+            if attempt < tries - 1:
+                # Refusals here are volumetric, so the backoff is generous.
+                # This is the only route left when the origin is silent.
+                time.sleep(8 * (attempt + 1))
+    raise last
+
+
 def _archived(url):
     """Newest snapshot of `url`, as bytes-decoded text, plus its timestamp.
 
@@ -489,11 +517,10 @@ def _archived(url):
     snapshots are the only route to trials that have since closed out.
     """
     try:
-        meta = json.loads(urlopen(Request(WB_AVAIL % urllib.parse.quote(url, safe=""),
-                                          headers={"User-Agent": UA}),
-                                  timeout=30).read().decode("utf-8", "replace"))
+        meta = json.loads(_wb_get(WB_AVAIL % urllib.parse.quote(url, safe=""), 30))
     except Exception as e:
-        print("  archive lookup failed: %s: %s" % (type(e).__name__, str(e)[:60]))
+        print("  archive lookup failed after 3 tries: %s: %s"
+              % (type(e).__name__, str(e)[:60]))
         return None, ""
     snap = ((meta.get("archived_snapshots") or {}).get("closest") or {})
     if not snap.get("available") or not snap.get("timestamp"):
@@ -501,10 +528,10 @@ def _archived(url):
     ts = snap["timestamp"]
     when = "%s-%s-%s" % (ts[:4], ts[4:6], ts[6:8])
     try:
-        raw = urlopen(Request(WB_RAW % (ts, url), headers={"User-Agent": UA}),
-                      timeout=45).read().decode("utf-8", "replace")
+        raw = _wb_get(WB_RAW % (ts, url), 45)
     except Exception as e:
-        print("  archive fetch failed: %s: %s" % (type(e).__name__, str(e)[:60]))
+        print("  archive fetch failed after 3 tries: %s: %s"
+              % (type(e).__name__, str(e)[:60]))
         return None, ""
     return raw, when
 
@@ -827,6 +854,8 @@ def resolve_councils(rows, budget=150.0):
     upgrade costs resolution, a wrong one puts a trial in the wrong place.
     """
     if "--no-geocode" in sys.argv:
+        print("  --no-geocode: council areas will not be resolved, so every "
+              "row without a published coordinate will be dropped")
         return
     want = {}
     for r in rows:
@@ -898,9 +927,9 @@ def resolve_councils(rows, budget=150.0):
                             encoding="utf-8")
         print("  %d resolved, %d refused; %s now holds %d councils"
               % (added, refused, LGA_FILE.name, len(store["centroids"])))
-    elif refused:
-        print("  %d councils could not be resolved; those sites stay at state "
-              "grade" % refused)
+    if refused:
+        print("  %d council area(s) unresolved; those sites will be DROPPED, "
+              "not placed at a coarser point" % refused)
 
 
 _LGA = {}
@@ -943,15 +972,12 @@ def _statecode(s):
 def place(row):
     """(lat, lng, grade, precise) or (None, None, "", False).
 
-    Three grades, in descending order of what the source actually stated:
-      site  - a coordinate OGTR published for this site
-      lga   - the centroid of the council area OGTR named, from the ABS boundary
-      state - the state OGTR named, and nothing finer
+    Two grades:
+      site - a coordinate OGTR published for this site
+      lga  - the point of the council area OGTR named, resolved and checked
+             against that council's state
 
-    A row naming no state resolvable to one of eight codes is DROPPED, not
-    placed. The standing rule in this repo is that a plausible-looking pair of
-    floats is the one error class nothing downstream catches, so the fallback
-    stops at a set of eight values that can be checked by eye.
+    Nothing coarser. A row whose council will not resolve is dropped.
     """
     la, ln = coords(row)
     if la is not None:
@@ -961,10 +987,6 @@ def place(row):
         pt = _load_lga().get(_lganorm(lga))
         if pt:
             return pt[0], pt[1], "lga", False
-    st = _statecode(pick(row, "state", "territory"))
-    if st:
-        la, ln = STATE_PT[st]
-        return la, ln, "state", False
     return None, None, "", False
 
 
@@ -1002,9 +1024,9 @@ _DESC_SITE = (
 
 _DESC_COARSE = (
     "WHAT. A licensed GMO crop field trial site%(extra)s. "
-    "WHERE IT SITS. OGTR named the %(where)s this site is in; it published no "
-    "coordinate on the page this was read from, so this marker sits at the "
-    "%(fallback)s and not at the trial. "
+    "WHERE IT SITS. OGTR named the council area this site is in and published "
+    "no coordinate on the page this was read from, so this marker sits in that "
+    "council area and not at the trial itself. "
     "WHY IT MATTERS. OGTR names the council area of every licensed site, its "
     "area in hectares and the licence it runs under. No other register on this "
     "map states where a release is at all, which is the comparison worth making "
@@ -1025,21 +1047,14 @@ def to_record(row):
     # "site" LAST in this list: on a table row it holds a row number, and on a
     # JSON payload it may hold a place name. Asked after the columns that
     # certainly hold a place, it can only win when nothing else answered.
-    where = lga or STATE_NAME.get(st, "") or pick(row, "location", "region", "site")
+    where = lga or STATE_NAME.get(st, "")
     stated = pick(row, "status", "stage")
     status = stated or "Licensed field trial"
     area = pick(row, "area", "hectare", "size")
 
     extra = "".join([", %s" % trait if trait else "",
                      ", held by %s" % holder if holder else ""])
-    if grade == "site":
-        desc = _DESC_SITE % {"extra": extra}
-    else:
-        desc = _DESC_COARSE % {
-            "extra": extra,
-            "where": "council area" if lga else "state",
-            "fallback": ("centroid of that council area" if grade == "lga"
-                         else "state reference point")}
+    desc = (_DESC_SITE if grade == "site" else _DESC_COARSE) % {"extra": extra}
 
     name = "%s \u2014 %s field trial" % (lic or "OGTR licence", crop or "GM crop")
     if site:
@@ -1103,6 +1118,8 @@ def main():
         return diagnose()
     if "--selftest" in sys.argv:
         return selftest()
+
+    _purge_state_grade()
 
     t_start = time.time()
     BUDGET = 300.0
@@ -1183,9 +1200,24 @@ def main():
         html, when = _archived(PAGE)
         src = "archived map page, snapshot %s" % when if html else ""
         if html is None:
-            print("  no live page and no archived copy. Run --diagnose: the "
-                  "stage that fails names the fix, and a silent `curl -sI` "
-                  "names nothing.", file=sys.stderr)
+            if OUT.exists():
+                # NOT a data loss, and the old wording read like one. Nothing
+                # is written, so the committed file stands and the map keeps
+                # the trials it had. Worth saying, because the next line in the
+                # workflow log is the merge picking that file up.
+                try:
+                    n = len(json.loads(OUT.read_text(encoding="utf-8"))
+                            .get("projects", []))
+                except Exception:
+                    n = 0
+                print("  neither the origin nor the archive answered, so "
+                      "nothing was written. %s stands with its %d records and "
+                      "the merge will use it. Run --diagnose if this repeats."
+                      % (OUT.name, n))
+            else:
+                print("  no live page and no archived copy, and no previous "
+                      "%s to fall back on. Run --diagnose: the stage that "
+                      "fails names the fix." % OUT.name, file=sys.stderr)
             return
 
     rows = _from_page(html, src)
@@ -1235,15 +1267,50 @@ def main():
     _emit(rows, "page-referenced endpoint")
 
 
+def _purge_state_grade():
+    """Remove a previously committed file that still holds state-point records.
+
+    Self-limiting: place() can no longer produce a "state" grade, so a file
+    containing one is necessarily a leftover from before that rule changed.
+    Deleting it here rather than by hand means the change takes effect on the
+    next scheduled run with nothing to remember.
+
+    If this run then fails to reach the page, the merge finds no OGTR file and
+    the map shows no trials. That is the intended outcome: the point of the
+    rule is that a marker in the middle of Western Australia is worse than no
+    marker.
+    """
+    if not OUT.exists():
+        return
+    try:
+        old = json.loads(OUT.read_text(encoding="utf-8")).get("projects", [])
+    except Exception:
+        return
+    stale = [r for r in old if r.get("addr_grade") == "state"]
+    if not stale:
+        return
+    OUT.unlink()
+    print("  removed %s: %d of its %d records sat on state reference points, "
+          "which this script no longer produces. Rebuilding from scratch."
+          % (OUT.name, len(stale), len(old)))
+
+
 def _emit(rows, src):
     """The single writer."""
     out = [r for r in (to_record(x) for x in rows) if r]
+    lost = [(x.get("licence") or "?", x.get("lga") or x.get("state") or "?")
+            for x in rows if to_record(x) is None]
     grades = {}
     for r in out:
         grades[r["addr_grade"]] = grades.get(r["addr_grade"], 0) + 1
     print("  usable site records: %d of %d rows (from %s)" % (len(out), len(rows), src))
     print("  placement: %s" % (", ".join("%s %d" % (k, v)
                                          for k, v in sorted(grades.items())) or "none"))
+    for lic, where in lost[:12]:
+        print("     dropped %-10s no coordinate and no resolved council (%s)"
+              % (lic, where[:48]))
+    if len(lost) > 12:
+        print("     ... and %d more" % (len(lost) - 12))
     if not out:
         print("  every row was dropped, so this route gave nothing usable. "
               "Nothing written: an empty file reaches the map as 'OGTR "
@@ -1340,16 +1407,23 @@ def selftest():
        recs[0]["addr_grade"] == "site" and recs[0]["precise"] is True)
     nocoord = [dict(r) for r in rows[:1]]
     nocoord[0].pop("_lat"); nocoord[0].pop("_lng")
+    _LGA.clear()
+    ck("no coordinate and no resolved council -> DROPPED, not placed",
+       to_record(nocoord[0]) is None)
+    _LGA["lockyervalley"] = (-27.55, 152.33)
     r2 = to_record(nocoord[0])
-    ck("no coordinate -> state reference point, precise false",
-       r2["addr_grade"] == "state" and r2["precise"] is False
-       and (r2["lat"], r2["lng"]) == STATE_PT["QLD"])
-    ck("state fallback names the council in the record",
-       "Lockyer Valley" in r2["name"] and "council area" in r2["desc"])
+    ck("resolved council -> lga grade, precise false",
+       r2["addr_grade"] == "lga" and r2["precise"] is False
+       and (r2["lat"], r2["lng"]) == (-27.55, 152.33))
+    ck("council-grade record names the council", "Lockyer Valley" in r2["name"])
     ck("coarse record does not claim to sit at the trial",
        "sits where the trial is" not in r2["desc"])
     ck("precise record does claim it",
        "sits where the trial is" in recs[0]["desc"])
+    ck("no state-level fallback table is defined",
+       not [g for g in globals() if g.startswith("STATE_") and g != "STATE_BOX"
+            and g != "STATE_NAME"])
+    _LGA.clear()
 
     print("\npick() traps")
     ck("`translation` does not answer a latitude request",
@@ -1369,8 +1443,11 @@ def selftest():
     ck("'Post-harvest monitoring' -> post", _phase("Post-harvest monitoring") == "post")
     ck("'Current' -> live", _phase("Current") == "live")
     ck("unstated status -> empty, not asserted", _phase("Licensed field trial") == "")
+    _LGA["mingenew"] = (-29.19, 115.44)
     ck("a record with no published status asserts no phase",
-       to_record({"licence": "DIR 1", "state": "WA"})["phase"] == "")
+       to_record({"licence": "DIR 1", "lga": "Shire of Mingenew",
+                  "state": "WA"})["phase"] == "")
+    _LGA.clear()
     blob = json.dumps(recs + [r2]).lower()
     bad = [w for w in _BANNED if w in blob]
     ck("no banned wording in any record", not bad, bad)
@@ -1394,27 +1471,15 @@ def selftest():
     ck("breaker is set once and names the stage", LIVE_DEAD == ["connected, no HTTP response"])
     LIVE_DEAD[:] = []
 
-    print("\ncouncil centroids")
-    _LGA.clear()
-    _LGA["lockyervalley"] = (-27.55, 152.33)
-    r3 = to_record({"licence": "DIR 209", "lga": "Lockyer Valley Regional Council",
-                    "state": "QLD", "status": "Current"})
-    ck("a resolved council upgrades the record off the state point",
-       r3["addr_grade"] == "lga" and (r3["lat"], r3["lng"]) != STATE_PT["QLD"])
-    ck("council-grade record still says precise false", r3["precise"] is False)
-    ck("council-grade text names the council area, not the state",
-       "centroid of that council area" in r3["desc"])
+    print("\ncouncil validation")
     box = STATE_BOX["QLD"]
     ck("QLD box rejects a NSW point", not (box[0] <= -33.8 <= box[1]))
     ck("QLD box accepts the Lockyer Valley point",
        box[0] <= -27.55 <= box[1] and box[2] <= 152.33 <= box[3])
-    ck("every state with a fallback point has a box",
-       set(STATE_PT) == set(STATE_BOX))
-    ck("each fallback point sits inside its own box",
-       all(STATE_BOX[k][0] <= v[0] <= STATE_BOX[k][1]
-           and STATE_BOX[k][2] <= v[1] <= STATE_BOX[k][3]
-           for k, v in STATE_PT.items()))
-    _LGA.clear()
+    ck("every state OGTR can name has a box to check against",
+       set(STATE_BOX) == set(STATE_NAME))
+    ck("a council resolved into the wrong state would be refused",
+       not (STATE_BOX["WA"][2] <= 152.33 <= STATE_BOX["WA"][3]))
 
     print("\nrelay")
     global RELAY
