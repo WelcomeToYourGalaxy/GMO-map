@@ -864,6 +864,15 @@ def _queries(name, st):
     base = {"format": "jsonv2", "limit": "8", "addressdetails": "1",
             "countrycodes": "au"}
     out = [dict(base, q="%s, %s, Australia" % (name, state))]
+    # OSM names these areas the way the state does, which keeps the qualifier
+    # and drops only the word Council: "Central Highlands Regional",
+    # "Goondiwindi Regional". _strip_council removes "regional" too, so the
+    # full name and the bare name both miss and the search falls through to
+    # whatever else carries those words - a mall and a dentist in Central
+    # Highlands' case, a house and a weir in Goondiwindi's.
+    trimmed = re.sub(r"\s*\bcouncil\b\s*$", "", name, flags=re.I).strip()
+    if trimmed.lower() != name.lower():
+        out.append(dict(base, q="%s, %s, Australia" % (trimmed, state)))
     short = _strip_council(name)
     if short and short.lower() != name.lower():
         out.append(dict(base, q="%s, %s, Australia" % (short, state)))
@@ -874,14 +883,23 @@ def _queries(name, st):
     return out
 
 
-def _match(hits, st):
+# A council's own town hall or government office is, by definition, inside that
+# council's area - which is exactly what an "lga" grade record claims and no
+# more. Accepted only when the result names the council, so a shopping centre
+# that happens to share the name cannot qualify. Recorded in the cache with
+# via:"townhall" so it can be told apart from a boundary later.
+_SEAT_TYPES = {"townhall", "town_hall", "government", "public_building"}
+
+
+def _match(hits, st, council=""):
     """First result that is an administrative area inside the named state.
 
     Returns (match, notes). The notes describe what was rejected and why, so a
     refusal can be read rather than guessed at.
     """
-    notes = []
+    notes, seat = [], None
     box = STATE_BOX.get(st)
+    words = [w for w in re.split(r"[^a-z]+", _strip_council(council).lower()) if w]
     for h in hits if isinstance(hits, list) else []:
         cat = h.get("category") or h.get("class") or ""
         typ = h.get("type") or ""
@@ -892,6 +910,13 @@ def _match(hits, st):
         except Exception:
             continue
         if not admin:
+            dn = (h.get("display_name") or "").lower()
+            if (typ in _SEAT_TYPES and words and all(w in dn for w in words)
+                    and box and box[0] <= la <= box[1] and box[2] <= ln <= box[3]
+                    and seat is None):
+                seat = (la, ln, "%s/%s" % (h.get("osm_type", "?"),
+                                           h.get("osm_id", "?")),
+                        h.get("display_name", "")[:120], "townhall")
             notes.append("%s/%s not an admin area" % (cat[:12], typ[:14]))
             continue
         if not box or not (box[0] <= la <= box[1] and box[2] <= ln <= box[3]):
@@ -904,7 +929,11 @@ def _match(hits, st):
                          % ("/".join(inside) or "no AU state", st))
             continue
         return (la, ln, "%s/%s" % (h.get("osm_type", "?"), h.get("osm_id", "?")),
-                h.get("display_name", "")[:120]), notes
+                h.get("display_name", "")[:120], "boundary"), notes
+    if seat:
+        notes.append("no boundary; using this council's own town hall, which "
+                     "is inside its area")
+        return seat, notes
     return None, notes
 GEO_UA = ("GMO-map-harvest/1.0 (+https://github.com/WelcomeToYourGalaxy/GMO-map)")
 
@@ -967,7 +996,7 @@ def resolve_councils(rows, budget=150.0):
             except Exception as e:
                 print("     %-42s lookup failed (%s)" % (name[:42], str(e)[:40]))
                 break
-            got, why = _match(hits, st)
+            got, why = _match(hits, st, name)
             seen.extend(why)
             if got:
                 break
@@ -983,7 +1012,8 @@ def resolve_councils(rows, budget=150.0):
             refused += 1
             continue
         store["centroids"][key] = {"lat": got[0], "lng": got[1], "name": name,
-                                   "state": st, "osm": got[2], "matched": got[3]}
+                                   "state": st, "osm": got[2], "matched": got[3],
+                                   "via": got[4]}
         _LGA[key] = (got[0], got[1])
         added += 1
     if added:
