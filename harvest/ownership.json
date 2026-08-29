@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-26",
+ "generated": "2026-08-29",
  "note": "Ownership as the registers state it, plus chains visible in the names themselves. Company filings are not read here, so this shows trading relationships rather than share ownership.",
  "groups": [
   {
@@ -930,7 +930,7 @@
    ]
   },
   {
-   "owner": "GENESIS",
+   "owner": "Genesis",
    "basis": "inferred from the site's own name",
    "sites": 13,
    "countries": [
@@ -1037,7 +1037,7 @@
    ]
   },
   {
-   "owner": "Vida",
+   "owner": "VIDA",
    "basis": "inferred from the site's own name",
    "sites": 13,
    "countries": [
@@ -3699,7 +3699,7 @@
    ]
   },
   {
-   "owner": "Fertilab",
+   "owner": "FERTILAB",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
@@ -3828,7 +3828,7 @@
    ]
   },
   {
-   "owner": "Citmer",
+   "owner": "CITMER",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
@@ -62890,6 +62890,23 @@
      "lat": 53.42097,
      "lng": -7.99075,
      "where": "",
+     "source": "osm_facilities.json"
+    }
+   ]
+  },
+  {
+   "owner": "ZOE Beratung",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "Linz"
+   ],
+   "members": [
+    {
+     "name": "ZOE Beratung rund um Schwangerschaft und Geburt",
+     "lat": 48.31065,
+     "lng": 14.29877,
+     "where": "Linz",
      "source": "osm_facilities.json"
     }
    ]
