@@ -151,6 +151,24 @@
    "state": "VIC",
    "osm": "relation/3345545",
    "matched": "Shire of Yarriambiack, Victoria, Australia"
+  },
+  "centralhighlands": {
+   "lat": -23.5251554,
+   "lng": 148.1612617,
+   "name": "Central Highlands Regional Council",
+   "state": "QLD",
+   "osm": "node/3546566402",
+   "matched": "Central Highlands Regional Council Shire Offices, Egerton Street, Emerald, Queensland, 4720, Australia",
+   "via": "townhall"
+  },
+  "wyndhameastkimberley": {
+   "lat": -15.7764687,
+   "lng": 128.734873,
+   "name": "Shire of Wyndham-East Kimberley",
+   "state": "WA",
+   "osm": "way/330700836",
+   "matched": "Shire of Wyndham East Kimberley, 20, Coolibah Drive, Nulleywah, Kununurra, Western Australia, 6743, Australia",
+   "via": "townhall"
   }
  },
  "note": "Council-area points for OGTR field trial sites, from OpenStreetMap administrative boundaries via Nominatim. Each entry names the OSM object it came from. Rejected where the point fell outside the state OGTR named."
