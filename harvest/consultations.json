@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-28",
+ "generated": "2026-08-29",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
@@ -22,9 +22,9 @@
    "name": "WTO / ePing notifications",
    "kind": "feed",
    "ok": true,
-   "rows": 8,
+   "rows": 9,
    "url": "https://eping.wto.org/en/Search",
-   "message": "104953 notifications scanned"
+   "message": "104969 notifications scanned"
   },
   {
    "name": "EFSA",
@@ -125,6 +125,14 @@
    "url": "https://www.federalregister.gov/documents/2026/08/18/2026-16809/pioneer-hi-bred-international-inc-availability-of-a-petition-for-a-determination-of-nonregulated",
    "country": "United States",
    "ref": "2026-16809"
+  },
+  {
+   "title": "Draft Decree of the Head of BPJPH on the Guidelines for the Implementation of the Halal Product Assurance System for Genetically Modified Products",
+   "agency": "WTO Regular notification",
+   "closes": "2026-10-27",
+   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/IDN192.docx",
+   "country": "Indonesia",
+   "ref": "G/TBT/N/IDN/192"
   }
  ]
 }
