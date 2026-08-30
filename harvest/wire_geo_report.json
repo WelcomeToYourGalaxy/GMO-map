@@ -3,9 +3,9 @@
  "corpus": 1512,
  "mapped": 0,
  "reasons": {
-  "no_place_match": 743,
+  "no_place_match": 749,
   "sector_or_market": 9,
   "supralocal": 16
  },
- "wire_items": 768
+ "wire_items": 774
 }

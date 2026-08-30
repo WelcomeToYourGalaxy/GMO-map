@@ -1,326 +1,6 @@
 {
- "generated": "2026-08-29",
+ "generated": "2026-08-30",
  "bch": [
-  {
-   "name": "Insect resistant cotton",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-103216-4",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019330"
-  },
-  {
-   "name": "Petunia modified for altered flower colour",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-112261-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b685"
-  },
-  {
-   "name": "BCS-BNØ12-7 - Male Sterile/ Fertility Restored Herbicide Tolerant Canola",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-112988-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b95c"
-  },
-  {
-   "name": "DP-Ø73496-4 - Optimum® Gly Canola",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-104975-3",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019a0f"
-  },
-  {
-   "name": "KB-KWS2Ø1-6 - Herbicide-tolerant sugar beet",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-280866-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000044922"
-  },
-  {
-   "name": "CTC-92Ø15-7 - Insect-resistant sugarcane",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-260625-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003fa11"
-  },
-  {
-   "name": "Pea modified for increased protein content",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-100288-5",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187c0"
-  },
-  {
-   "name": "Potato modified for increased stomata density",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-100293-9",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187c5"
-  },
-  {
-   "name": "Potato modified for decreased Stomata Density",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-100294-6",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187c6"
-  },
-  {
-   "name": "CUH-CP551-8 - Papaya resistant to papaya ringspot virus",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-40294-8",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000009d66"
-  },
-  {
-   "name": "CUH-CP631-7 - Papaya resistant to papaya ringspot virus",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-40296-11",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000009d68"
-  },
-  {
-   "name": "BCS-OSØØ3-7 - Liberty Link™ rice",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-47517-6",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000b99d"
-  },
-  {
-   "name": "Potato with altered growth and tuber quality",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-100277-7",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187b5"
-  },
-  {
-   "name": "Potato modified to synthesise fusion spider silk/ elastin protein",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-100315-5",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187db"
-  },
-  {
-   "name": "Vaccine against Aujeszky's Disease",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-100339-3",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187f3"
-  },
-  {
-   "name": "Raboral V-RG (vaccine against rabies) [DRAFT]",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-100345-5",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187f9"
-  },
-  {
-   "name": "Tobacco modified for tolerance to bromoxynil",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-100352-7",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018800"
-  },
-  {
-   "name": "New Leaf™ Plus Russet Burbank potato",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-15385-5",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c19"
-  },
-  {
-   "name": "Cantaloupe A (delayed ripening)",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-15388-4",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c1c"
-  },
-  {
-   "name": "Cantaloupe B (delayed ripening)",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-15389-3",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c1d"
-  },
-  {
-   "name": "SHD-27531-4 - Moontea™ carnation",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-105802-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019d4a"
-  },
-  {
-   "name": "DAS-59132-8 - Insect resistant Herbicide tolerant Maize",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-105177-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019ad9"
-  },
-  {
-   "name": "VECTORMUNE® FP-LT Vaccine",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-105206-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019af6"
-  },
-  {
-   "name": "Yeast modified for the production of Farnesene",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-105207-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019af7"
-  },
-  {
-   "name": "Canola modified for herbicide tolerance",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-106260-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019f14"
-  },
-  {
-   "name": "Potato modified for antimicrobial activity",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-106306-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019f42"
-  },
-  {
-   "name": "UFL-X17CP-9 - Papaya modified for resistance to Papaya Ringspot Virus",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-106312-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019f48"
-  },
-  {
-   "name": "MON-883Ø2-9 × ACS-BNØØ3-6 - Herbicide Tolerant Canola",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-105712-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019cf0"
-  },
-  {
-   "name": "Hybrid aspen lines with modified stomatal regulation",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-105734-3",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019d06"
-  },
-  {
-   "name": "Hybrid aspen lines with modified wood development",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-105737-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019d09"
-  },
-  {
-   "name": "SHD-30086-3 - Colour Modified Carnation",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-105796-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019d44"
-  },
-  {
-   "name": "DAS-68416-4 × MON-89788-1 - Soybeans modified for herbicide tolerance",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-105800-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019d48"
-  },
-  {
-   "name": "DP-Ø9814Ø-6 × DAS-59122-7 - Maize modified for insect resistance and herbicide tolerance",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-104817-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019971"
-  },
-  {
-   "name": "ACS-GMØØ5-3 × ACS-GMØØ6-4 - Herbicide tolerant soybean",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-104824-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019978"
-  },
-  {
-   "name": "SHD-29952-4 - Colour modified carnation",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-105853-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019d7d"
-  },
-  {
-   "name": "SHD-29895-1 - Colour modified carnation",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-105855-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019d7f"
-  },
-  {
-   "name": "SHD-25930-5 - Colour modified carnation",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-105856-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019d80"
-  },
-  {
-   "name": "SHD-29821-8 - Colour modified carnation",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-105857-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019d81"
-  },
-  {
-   "name": "HZU-HHØØ1-9 - Insect resistent rice",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-106014-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019e1e"
-  },
-  {
-   "name": "IND-ØØ412-7 - Drought-tolerant wheat (HB4 wheat)",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-259261-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f4bd"
-  },
   {
    "name": "MON-877Ø1-2 - Insect resistant soybean",
    "iso": "",
@@ -330,20 +10,44 @@
    "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000192a7"
   },
   {
-   "name": "DBN-Ø9ØØ4-6 - Glyphosate and Glufosinate tolerant soybean",
+   "name": "MOUSTICIDE™",
    "iso": "",
-   "identifier": "bch-lmo-scbd-115067-3",
+   "identifier": "bch-lmo-scbd-106444-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c17b"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019fcc"
   },
   {
-   "name": "Potato Modified for insect resistance",
+   "name": "DPS-Ø4Ø46–8 - Cassava brown streak disease-resistant cassava",
    "iso": "",
-   "identifier": "bch-lmo-scbd-105659-1",
+   "identifier": "bch-lmo-scbd-258946-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019cbb"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f382"
+  },
+  {
+   "name": "MON-887Ø2-4 - Insect-protected cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-114159-5",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001bdef"
+  },
+  {
+   "name": "MON-8746Ø-4 × MON-89Ø34-3 × MON-88Ø17-3 - Maize Modified for drought and glyphosate tolerance and resistance to Lepidoptera and Coleoptera",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104681-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000198e9"
+  },
+  {
+   "name": "IND-ØØ41Ø-5 × MON-Ø4Ø32-6 - Drought and Glyphosate tolerant soybean",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115071-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c17f"
   },
   {
    "name": "MON-877Ø8-9 × MON-89788-1 × ACS-GMØØ6-4 - Herbicide tolerant soybean",
@@ -362,364 +66,356 @@
    "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019c93"
   },
   {
-   "name": "PVA dergradation - Bacilus subtilis.OPH",
+   "name": "GOR-73226-6 - Safflower modified for altered fatty acid content (SHOSO26)",
    "iso": "",
-   "identifier": "bchtrg-lmo-scbd-269926-1",
+   "identifier": "bch-lmo-scbd-112730-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000041e66"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b85a"
   },
   {
-   "name": "nom des OVM's",
+   "name": "MON-941ØØ-2 - Dicamba-tolerant canola",
    "iso": "",
-   "identifier": "bchtrg-lmo-scbd-270154-1",
+   "identifier": "bch-lmo-scbd-258887-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000041f4a"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f347"
   },
   {
-   "name": "HighVitamin",
+   "name": "FDP-ØØ114-5 - Pinkglow™ pineapple",
    "iso": "",
-   "identifier": "bchtrg-lmo-scbd-261588-1",
+   "identifier": "bch-lmo-scbd-111940-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003fdd4"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b544"
   },
   {
-   "name": "Herrerasaurus",
+   "name": "Colour modified petunias",
    "iso": "",
-   "identifier": "bchtrg-lmo-scbd-258216-2",
+   "identifier": "bch-lmo-scbd-258884-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f0a8"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f344"
   },
   {
-   "name": "MON890",
+   "name": "Male-sterile Anopheles gambiae mosquitoes",
    "iso": "",
-   "identifier": "bchtrg-lmo-scbd-258628-1",
+   "identifier": "bch-lmo-scbd-260489-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f244"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f989"
   },
   {
-   "name": "Paradontax",
+   "name": "Late blight-resistant Shangi potato",
    "iso": "",
-   "identifier": "bchtrg-lmo-scbd-258630-1",
+   "identifier": "bch-lmo-scbd-260847-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f246"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003faef"
   },
   {
-   "name": "test Gaelle",
+   "name": "Male-sterile Anopheles coluzzii mosquitoes",
    "iso": "",
-   "identifier": "bchtrg-lmo-scbd-279364-1",
+   "identifier": "bch-lmo-scbd-260490-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000044344"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f98a"
   },
   {
-   "name": "Potato",
+   "name": "IND-ØØ41Ø-5 - Verdeca HB4 Soybean",
    "iso": "",
-   "identifier": "bchtrg-lmo-scbd-279366-1",
+   "identifier": "bch-lmo-scbd-112020-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000044346"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b594"
   },
   {
-   "name": "Soy modified for the expression of heat-labile enterotoxin, B subunit",
+   "name": "SPS-ØBG25-7 - Disease-resistant, low-reducing sugars and reduced browning potato",
    "iso": "",
-   "identifier": "bch-lmo-scbd-111063-1",
+   "identifier": "bch-lmo-scbd-280792-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b1d7"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000448d8"
   },
   {
-   "name": "AGV-PY2Ø3-4 - GRAINZYME corn",
+   "name": "Potato resistant to Phytophthora infestans",
    "iso": "",
-   "identifier": "bch-lmo-scbd-115832-1",
+   "identifier": "bch-lmo-scbd-40318-7",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c478"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000009d7e"
   },
   {
-   "name": "CTC-95Ø19-5 - Insect-resistant sugarcane",
+   "name": "KM-ØØØH71-4 - Roundup Ready™ sugar beet",
    "iso": "",
-   "identifier": "bch-lmo-scbd-259285-2",
+   "identifier": "bch-lmo-scbd-14773-14",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f4d5"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039b5"
   },
   {
-   "name": "Rift Valley Fever Virus DIVA vaccine",
+   "name": "GOR-7324Ø-2 - Safflower modified for altered fatty acid content",
    "iso": "",
-   "identifier": "bch-lmo-scbd-115616-2",
+   "identifier": "bch-lmo-scbd-113969-5",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c3a0"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001bd31"
   },
   {
-   "name": "Cassava mosaic disease resistant cassava",
+   "name": "SPS-ØØØY9-7 - Innate® Hibernate Atlantic Potato",
    "iso": "",
-   "identifier": "bch-lmo-scbd-115621-1",
+   "identifier": "bch-lmo-scbd-112930-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c3a5"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b922"
   },
   {
-   "name": "Cassava mosaic disease resistant cassava",
+   "name": "SPS-ØØX17-5 - Innate® Acclimate Ranger Russet Potato",
    "iso": "",
-   "identifier": "bch-lmo-scbd-115622-1",
+   "identifier": "bch-lmo-scbd-112929-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c3a6"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b921"
   },
   {
-   "name": "Cassava mosaic disease resistant cassava",
+   "name": "SPS-ØØØJ3-4 - Innate™ Atlantic Potato",
    "iso": "",
-   "identifier": "bch-lmo-scbd-115623-1",
+   "identifier": "bch-lmo-scbd-109056-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c3a7"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001aa00"
   },
   {
-   "name": "Cassava brown streak disease resistant cassava",
+   "name": "SPS-ØØØW8-4 - Innate™ Russet Burbank Potato",
    "iso": "",
-   "identifier": "bch-lmo-scbd-115624-1",
+   "identifier": "bch-lmo-scbd-109066-3",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c3a8"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001aa0a"
   },
   {
-   "name": "Cassava mosaic disease resistant cassava",
+   "name": "SPS-ØØF10-7 - Innate™ Ranger Russet Potato",
    "iso": "",
-   "identifier": "bch-lmo-scbd-115625-1",
+   "identifier": "bch-lmo-scbd-109054-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c3a9"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a9fe"
   },
   {
-   "name": "Rhodococcus equi Vaccine",
+   "name": "SYN-ØØ26Ø-3 - Insect-protected corn",
    "iso": "",
-   "identifier": "bch-lmo-scbd-107877-1",
+   "identifier": "bch-lmo-scbd-280864-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a565"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000044920"
   },
   {
-   "name": "Aspen modified for herbicide tolerance",
+   "name": "Canola MPS964 Phytaseed™ (phytase-producing)",
    "iso": "",
-   "identifier": "bch-lmo-scbd-107888-1",
+   "identifier": "bch-lmo-scbd-15382-3",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a570"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c16"
   },
   {
-   "name": "White birch modified for herbicide tolerance",
+   "name": "Chicory RM3-4 modified for tolerance to herbicides",
    "iso": "",
-   "identifier": "bch-lmo-scbd-107889-1",
+   "identifier": "bch-lmo-scbd-15403-4",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a571"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c2b"
   },
   {
-   "name": "White birch modified for increased growth rate",
+   "name": "INI-FMAPDF-6 - Common Bean modified for fungal resistance",
    "iso": "",
-   "identifier": "bch-lmo-scbd-107890-1",
+   "identifier": "bch-lmo-scbd-108263-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a572"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a6e7"
   },
   {
-   "name": "Aspen modified for increased growth rate",
+   "name": "Canola modified for glufosinate tolerance",
    "iso": "",
-   "identifier": "bch-lmo-scbd-107891-1",
+   "identifier": "bch-lmo-scbd-101074-4",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a573"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018ad2"
   },
   {
-   "name": "Maize with altered growth and tolerance to herbicides",
+   "name": "ACS-BNØØ4-7 × ACS-BNØØ3-6 - InVigor™ canola",
    "iso": "",
-   "identifier": "bch-lmo-scbd-107960-4",
+   "identifier": "bch-lmo-scbd-101077-7",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a5b8"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018ad5"
   },
   {
-   "name": "Domestic goat modified to produce human lactoferrin",
+   "name": "Rice resistant to insects",
    "iso": "",
-   "identifier": "bch-lmo-scbd-108045-1",
+   "identifier": "bch-lmo-scbd-101096-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a60d"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018ae8"
   },
   {
-   "name": "Canola modified for herbicide tolerance",
+   "name": "Proteqflu-Te - equine influenza vaccine",
    "iso": "",
-   "identifier": "bch-lmo-scbd-108048-1",
+   "identifier": "bch-lmo-scbd-101616-7",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a610"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018cf0"
   },
   {
-   "name": "Potato modified for pathogen resistance",
+   "name": "Canola MPS961 Phytaseed™ (phytase-producing )",
    "iso": "",
-   "identifier": "bch-lmo-scbd-108134-1",
+   "identifier": "bch-lmo-scbd-15379-4",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a666"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c13"
   },
   {
-   "name": "Oilseed rape modified for an altered fatty acid metabolism in the seeds",
+   "name": "Canola MPS965 Phytaseed™ (phytase-producing)",
    "iso": "",
-   "identifier": "bch-lmo-scbd-110921-1",
+   "identifier": "bch-lmo-scbd-15380-3",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b149"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c14"
   },
   {
-   "name": "Oilseed rape modified for increased oleic acid content in the seeds",
+   "name": "Canola MPS962 Phytaseed™ (phytase-producing )",
    "iso": "",
-   "identifier": "bch-lmo-scbd-110922-1",
+   "identifier": "bch-lmo-scbd-15381-3",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b14a"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c15"
   },
   {
-   "name": "Red Clover modified for cold tolerance and fungal resistance",
+   "name": "Dominant lethal Aedes aegypti mosquito",
    "iso": "",
-   "identifier": "bch-lmo-scbd-110933-1",
+   "identifier": "bch-lmo-scbd-101474-21",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b155"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018c62"
+  },
+  {
+   "name": "Brassica napus modified for the synthesis of resveratrol",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-101525-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018c95"
+  },
+  {
+   "name": "Brassica napus modified for reduced sinapine content (pLH-BnSGT-GUS)",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-101526-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018c96"
+  },
+  {
+   "name": "Rice vaccine against cedar pollen allergy",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-102156-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018f0c"
+  },
+  {
+   "name": "Cold tolerant eucalyptus",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-102159-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018f0f"
+  },
+  {
+   "name": "Marek's disease virus modified for the expression of NDV-F protein",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-48972-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000bf4c"
+  },
+  {
+   "name": "Brassica napus modified for reduced sinapine content (pLH7000-SGT/SCT)",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-101527-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018c97"
+  },
+  {
+   "name": "Brassica napus modified for the synthesis of resveratrol and reduced sinapine content",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-101528-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018c98"
+  },
+  {
+   "name": "High-protein, herbicide resistant Barley HOSUT",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-101597-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018cdd"
+  },
+  {
+   "name": "Potato with altered starch content",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-101611-5",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018ceb"
+  },
+  {
+   "name": "Rice resistant to fungi",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-101097-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018ae9"
+  },
+  {
+   "name": "Banana cultivar Navolean resistant to fungi",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-100317-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187dd"
+  },
+  {
+   "name": "Potato transformed with PLRV viral coat protein",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-100319-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187df"
+  },
+  {
+   "name": "Potato transformed with a pat gene for resistance to ammonium glyphosate",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-100321-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187e1"
+  },
+  {
+   "name": "Cotton transformation events tolerant to the herbicides Dicamba and Glufosinate",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-100729-5",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018979"
   },
   {
    "name": "Brassica napus modified for altered fatty acid metabolism",
    "iso": "",
-   "identifier": "bch-lmo-scbd-110939-1",
+   "identifier": "bch-lmo-scbd-101385-4",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b15b"
-  },
-  {
-   "name": "Oilseed rape modified for increased myristic acid content in the seeds",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-110940-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b15c"
-  },
-  {
-   "name": "SYN-IR6Ø4-5 × MON-89Ø34-3 - Insect-resistant maize",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-269726-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000041d9e"
-  },
-  {
-   "name": "MON-89Ø34-3 × SYN-Ø53Ø7-1 - Insect-resistant maize",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-269727-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000041d9f"
-  },
-  {
-   "name": "AAT-Ø245F-3 - Pod borer-resistant cowpea",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-269931-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000041e6b"
-  },
-  {
-   "name": "FGN-Ø3S19-5 - Herbicide-tolerant eucalyptus",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-272464-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000042850"
-  },
-  {
-   "name": "FGN-Ø6K59-4 - Insect-resistant eucalyptus",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-272537-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000042899"
-  },
-  {
-   "name": "IR-ØØGR2E-5 - Provitamin A biofortified rice",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-112997-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b965"
-  },
-  {
-   "name": "NMK-89653-6 - New Leaf™ Y Russet Burbank potato",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-14903-8",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a37"
-  },
-  {
-   "name": "NMK-89185-6 - New Leaf™ Plus Russet Burbank potato",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-14897-6",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a31"
-  },
-  {
-   "name": "ACS-OSØØ2-5 - Liberty Link™ rice",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-14859-7",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a0b"
-  },
-  {
-   "name": "NMK-89279-1 - Atlantic NewLeaf™ potato",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-14898-7",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a32"
-  },
-  {
-   "name": "NMK-8993Ø-4 - Shepody NewLeaf™ Y potato",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-14912-7",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a40"
-  },
-  {
-   "name": "NMK-89935-9 - Shepody NewLeaf™ Y potato",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-14911-8",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a3f"
-  },
-  {
-   "name": "NMK-89896-6 - New Leaf™ Plus Russet Burbank potato",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-14910-6",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a3e"
-  },
-  {
-   "name": "NMK-89684-1 - New Leaf™ Plus Russet Burbank potato",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-14905-6",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a39"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018c09"
   },
   {
    "name": "Insect resistant, herbicide tolerant maize",
@@ -858,84 +554,300 @@
    "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000041e8f"
   },
   {
-   "name": "MON-887Ø2-4 - Insect-protected cotton",
+   "name": "Rhizomania resistant, glyphosate tolerant sugar beet",
    "iso": "",
-   "identifier": "bch-lmo-scbd-114159-5",
+   "identifier": "bch-lmo-scbd-101878-6",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001bdef"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018df6"
   },
   {
-   "name": "NMK-89367-8 - Atlantic NewLeaf™ potato",
+   "name": "ACS-BNØØ9-3 - Liberator™ canola",
    "iso": "",
-   "identifier": "bch-lmo-scbd-14899-7",
+   "identifier": "bch-lmo-scbd-46388-5",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a33"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000b534"
   },
   {
-   "name": "NMK-896Ø1-8 - New Leaf™ Russet Burbank potato",
+   "name": "SEM-ØCZW3-2 - Virus-resistant squash",
    "iso": "",
-   "identifier": "bch-lmo-scbd-14906-6",
+   "identifier": "bch-lmo-scbd-15217-5",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a3a"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003b71"
   },
   {
-   "name": "MON-877Ø5-6 × MON-89788-1 - Soybeans with modified fatty acid profile and glyphosate tolerance",
+   "name": "Banana modified for Xanthomonas wilt disease resistance",
    "iso": "",
-   "identifier": "bch-lmo-scbd-104776-4",
+   "identifier": "bch-lmo-scbd-115602-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019948"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c392"
   },
   {
-   "name": "MON-87769-7 × MON-89788-1 - Soybeans with modified fatty acid profile and glyphosate tolerance",
+   "name": "MON-8746Ø-4 × MON-89Ø34-3 × DAS-59122-7 - Drought-tolerant, herbicide-tolerant, insect resistant maize",
    "iso": "",
-   "identifier": "bch-lmo-scbd-104778-3",
+   "identifier": "bch-lmo-scbd-116315-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001994a"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c65b"
   },
   {
-   "name": "MON-ØØ863-5 × MON-ØØ81Ø-6 - YieldGard™ Rootworm™ maize",
+   "name": "ACS-BNØ1Ø-4 - Falcon™ rapeseed",
    "iso": "",
-   "identifier": "bch-lmo-scbd-14890-7",
+   "identifier": "bch-lmo-scbd-15101-6",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a2a"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003afd"
   },
   {
-   "name": "Chicory RM3-6 modified for tolerance to herbicides",
+   "name": "SPS-ØØE56-7 - Low acrylamide potential, reduced browning Russet potato",
    "iso": "",
-   "identifier": "bch-lmo-scbd-15404-4",
+   "identifier": "bch-lmo-scbd-260756-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c2c"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003fa94"
   },
   {
-   "name": "SYN-ØØØØB-6 - Tomato Modified for delayed softening",
+   "name": "IFD-529Ø1-9 - Colour-modified rose",
    "iso": "",
-   "identifier": "bch-lmo-scbd-15405-5",
+   "identifier": "bch-lmo-scbd-43796-6",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c2d"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000ab14"
   },
   {
-   "name": "SYN-ØØØDA-9 - Tomato Modified for delayed softening",
+   "name": "VCO-Ø1981-5 - Glyphosate tolerant maize",
    "iso": "",
-   "identifier": "bch-lmo-scbd-15406-6",
+   "identifier": "bch-lmo-scbd-101947-4",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c2e"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018e3b"
   },
   {
-   "name": "MON-87427-7 × MON-89Ø34-3 × MON-88Ø17-3 - Insect resistant Herbicide tolerant Corn",
+   "name": "BPS-A1Ø2Ø-5 - Amadea potato",
    "iso": "",
-   "identifier": "bch-lmo-scbd-105693-1",
+   "identifier": "bch-lmo-scbd-48075-7",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019cdd"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000bbcb"
+  },
+  {
+   "name": "Late blight-resistant Desiree potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-260845-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003faed"
+  },
+  {
+   "name": "Black Nightshade modified for reduced jasmonate synthesis and antibiotic resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-48033-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000bba1"
+  },
+  {
+   "name": "Tobacco modified for reduced nicotine levels",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-15417-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c39"
+  },
+  {
+   "name": "Black Nightshade modified for antibiotic resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-48071-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000bbc7"
+  },
+  {
+   "name": "MON-87427-7 × MON-89Ø34-3 × SYN-IR162-4 - Herbicide tolerant, insect resistant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115665-5",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c3d1"
+  },
+  {
+   "name": "IND-1ØØØ3-4 × IND-1ØØ15-7 - Chymosin-producing safflower",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-259219-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f493"
+  },
+  {
+   "name": "Black Nightshade modified for reduced jasmonate synthesis and antibiotic resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-48032-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000bba0"
+  },
+  {
+   "name": "BPS-PHØ48-1 - Fortuna potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-48362-8",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000bcea"
+  },
+  {
+   "name": "SPS-ØØØZ6-5 - Elevate potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115591-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c387"
+  },
+  {
+   "name": "Potato modified for resistance to Phytophthora infestans",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-48361-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000bce9"
+  },
+  {
+   "name": "SYN-IR67B-1 - Insect-resistant cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-47352-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000b8f8"
+  },
+  {
+   "name": "CTC-75Ø64-3 - Insect-resistant sugarcane",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-261453-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003fd4d"
+  },
+  {
+   "name": "Potatoes modified for resistance to Phytophthora infestans",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-40312-5",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000009d78"
+  },
+  {
+   "name": "Late blight-resistant Victoria potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-260846-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003faee"
+  },
+  {
+   "name": "Late blight-resistant Diamant potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-260844-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003faec"
+  },
+  {
+   "name": "Phytophthora-resistant potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-259172-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f464"
+  },
+  {
+   "name": "Late blight-resistant Jalene potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-260849-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003faf1"
+  },
+  {
+   "name": "MON-87427-7 × MON-8746Ø-4 - Drought-tolerant maize with tissue-specific herbicide tolerance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-116256-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c620"
+  },
+  {
+   "name": "Poplar with modified wood composition",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-277098-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000043a6a"
+  },
+  {
+   "name": "Poplar modified for increased glutathione content",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-101272-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018b98"
+  },
+  {
+   "name": "IFD-524Ø1-4 - Colour-modified rose",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-43797-5",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000ab15"
+  },
+  {
+   "name": "Banana modified for Xanthomonas wilt disease resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115603-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c393"
+  },
+  {
+   "name": "ISK-311NR-4 - Blue-purple moth orchid",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-259101-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f41d"
+  },
+  {
+   "name": "BXN-1Ø222-2 - BXN™ cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14825-7",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039e9"
+  },
+  {
+   "name": "Banana resistant to Xanthomonas wilt disease",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115604-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c394"
+  },
+  {
+   "name": "BXN-1Ø211-9 - BXN™ cotton",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-14941-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a5d"
+  },
+  {
+   "name": "MON-8746Ø-4 × SYN-IR162-4 - Insect-resistant, drought-tolerant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-116257-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c621"
   },
   {
    "name": "SPS-ØØF37-7 - Innate™ Ranger Russet Potato",
@@ -994,28 +906,356 @@
    "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c655"
   },
   {
-   "name": "SPS-ØØE24-2 - Innate™ Russet Burbank Potato",
+   "name": "Potato producing vaccine against cholera",
    "iso": "",
-   "identifier": "bch-lmo-scbd-109053-1",
+   "identifier": "bch-lmo-scbd-103103-4",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a9fd"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000192bf"
   },
   {
-   "name": "ACS-GMØØ3-1 - Herbicide-tolerant soybean",
+   "name": "Garden Pea modified for the expression of a single chain antibody (scFv) in the seed",
    "iso": "",
-   "identifier": "bch-lmo-scbd-14854-5",
+   "identifier": "bch-lmo-scbd-103028-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a06"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019274"
   },
   {
-   "name": "ACS-GMØØ4-2 - Herbicide-tolerant soybean",
+   "name": "Wheat modified for increased protein content",
    "iso": "",
-   "identifier": "bch-lmo-scbd-14855-5",
+   "identifier": "bch-lmo-scbd-102891-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a07"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000191eb"
+  },
+  {
+   "name": "Poplar with modified lignin",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-102141-4",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018efd"
+  },
+  {
+   "name": "High-protein, antibiotic and herbicide resistant wheat SUTAP60",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-102892-6",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000191ec"
+  },
+  {
+   "name": "SYN-IR162-4 × SYN-IR6Ø4-5 × SYN-Ø53Ø7-1 - Insect resistant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115549-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c35d"
+  },
+  {
+   "name": "Oilseed rape modified for an altered fatty acid metabolism in the seeds",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-110914-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b142"
+  },
+  {
+   "name": "Oilseed rape modified for an altered fatty acid metabolism in the seeds",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-110915-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b143"
+  },
+  {
+   "name": "IFD-264Ø7-2 - Moonvelvet carnation",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104609-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000198a1"
+  },
+  {
+   "name": "Rice modified for Ultraviolet- B radiation sensitivity",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104772-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019944"
+  },
+  {
+   "name": "ACS-BNØØ5-8 × ACS-BNØØ3-6 × MON-ØØØ73-7 - Male Sterile/ Fertility Restored Herbicide Tolerant Canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104829-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001997d"
+  },
+  {
+   "name": "Flax modified for improved ability to bind heavy metals",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104318-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001977e"
+  },
+  {
+   "name": "Rice modified for Ultraviolet- B radiation resistance",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-104771-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019943"
+  },
+  {
+   "name": "ACS-ZMØØ3-2 × MON-ØØ81Ø-6 - Liberty Link™ Yieldgard™ maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-15373-10",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c0d"
+  },
+  {
+   "name": "Gypsophila modified for altered flower colour",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115181-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c1ed"
+  },
+  {
+   "name": "Papaya modified for resistance to Papaya Dieback Disease",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115340-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c28c"
+  },
+  {
+   "name": "Telomelysin®",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-113228-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001ba4c"
+  },
+  {
+   "name": "MON-883Ø2-9 × ACS-BNØØ5-8 - Herbicide Tolerant Canola",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-113279-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001ba7f"
+  },
+  {
+   "name": "TIC-AR233-5 - Potato Virus Y-resistant Potato",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115053-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c16d"
+  },
+  {
+   "name": "VECTORMUNE® ND",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115064-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c178"
+  },
+  {
+   "name": "Poplar with modified lignin",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115134-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c1be"
+  },
+  {
+   "name": "Viral resistant cassava with increased levels of zinc and iron",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115140-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c1c4"
+  },
+  {
+   "name": "Cassava modified for increased levels of iron and zinc",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115141-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c1c5"
+  },
+  {
+   "name": "Cassava modified for increased levels of iron and zinc",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115142-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c1c6"
+  },
+  {
+   "name": "Cassava brown streak disease-resistant cassava",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115143-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c1c7"
+  },
+  {
+   "name": "Viral resistant cassava with increased levels of zinc and iron",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115144-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c1c8"
+  },
+  {
+   "name": "OKA-NBØØ3-1 - Arctic™ Fuji Apple",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115072-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c180"
+  },
+  {
+   "name": "SPS-ØØV11-6 - Innate® Invigorate Snowden",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115075-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c183"
+  },
+  {
+   "name": "Maize with impaired DNA-repair mechanism",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115118-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c1ae"
+  },
+  {
+   "name": "Maize with impaired DNA-repair mechanism",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115119-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c1af"
+  },
+  {
+   "name": "Maize with impaired DNA-repair mechanism",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115120-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c1b0"
+  },
+  {
+   "name": "Maize with impaired DNA-repair mechanism",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115121-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c1b1"
+  },
+  {
+   "name": "Maize with altered growth characteristics",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-115124-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c1b4"
+  },
+  {
+   "name": "Imojev (Japanese Encephalitis Chimeric Virus Vaccine; JE-CV)",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-114728-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c028"
+  },
+  {
+   "name": "VECTORMUNE® HVT-NDV + Rispens",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-114750-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c03e"
+  },
+  {
+   "name": "Hybrid aspen with modified autumn phenology",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-114965-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c115"
+  },
+  {
+   "name": "Antisense hybrid aspen modified for altered circadian rhythms",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-114967-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001c117"
+  },
+  {
+   "name": "MON-87427-7 × MON-88Ø17-3 × DAS-59122-7 - Insect resistant, herbicide tolerant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-112721-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b851"
+  },
+  {
+   "name": "MON-87427-7 × MON-89Ø34-3 × DAS-59122-7 - Insect resistant, herbicide tolerant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-112722-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b852"
+  },
+  {
+   "name": "Potato modified for antimicrobial activity",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-106334-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019f5e"
+  },
+  {
+   "name": "SY-GTSB77-7 - InVigor™ Sugar Beet",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-15409-10",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c31"
+  },
+  {
+   "name": "SYN-IR6Ø4-5 - Agrisure™ RW Rootworm-Protected maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-15105-12",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003b01"
+  },
+  {
+   "name": "MON-88Ø17-3 × MON-ØØ81Ø-6 - YieldGard™ VT Triple",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-15374-8",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003c0e"
+  },
+  {
+   "name": "SYN-E3272-5 × SYN-IR6Ø4-5 - Modified thermostable alpha-amylase, insect-resistant, herbicide-tolerant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-111995-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b57b"
   },
   {
    "name": "ACS-BNØØ3-6 - InVigor™ canola",
@@ -1042,20 +1282,12 @@
    "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a5a"
   },
   {
-   "name": "Potato resistant to Phytophthora infestans",
+   "name": "DAS-24236-5 - Insect-resistant cotton",
    "iso": "",
-   "identifier": "bch-lmo-scbd-40318-7",
+   "identifier": "bch-lmo-scbd-14940-7",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000009d7e"
-  },
-  {
-   "name": "FDP-ØØ114-5 - Pinkglow™ pineapple",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-111940-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b544"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003a5c"
   },
   {
    "name": "Potatoes modified for decreased susceptibility to Phytophthora infestans",
@@ -1066,116 +1298,28 @@
    "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018f18"
   },
   {
-   "name": "MON-8Ø2ØØ-7 - YieldGard™ maize",
+   "name": "BXN™ Plus Bollgard™ Cotton",
    "iso": "",
-   "identifier": "bch-lmo-scbd-14786-5",
+   "identifier": "bch-lmo-scbd-105481-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039c2"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019c09"
   },
   {
-   "name": "PH-ØØØ676-7 - Male-sterile, herbicide-tolerant maize",
+   "name": "BXN™ Plus Bollgard™ Cotton",
    "iso": "",
-   "identifier": "bch-lmo-scbd-14791-5",
+   "identifier": "bch-lmo-scbd-105482-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000039c7"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019c0a"
   },
   {
-   "name": "Male-sterile Anopheles gambiae mosquitoes",
+   "name": "MON-87712-4 - Soybean modified for increased yield",
    "iso": "",
-   "identifier": "bch-lmo-scbd-260489-1",
+   "identifier": "bch-lmo-scbd-105601-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f989"
-  },
-  {
-   "name": "Late blight-resistant Shangi potato",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-260847-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003faef"
-  },
-  {
-   "name": "Male-sterile Anopheles coluzzii mosquitoes",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-260490-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f98a"
-  },
-  {
-   "name": "IND-ØØ41Ø-5 - Verdeca HB4 Soybean",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-112020-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b594"
-  },
-  {
-   "name": "SPS-ØBG25-7 - Disease-resistant, low-reducing sugars and reduced browning potato",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-280792-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000448d8"
-  },
-  {
-   "name": "MOUSTICIDE™",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-106444-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019fcc"
-  },
-  {
-   "name": "DPS-Ø4Ø46–8 - Cassava brown streak disease-resistant cassava",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-258946-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f382"
-  },
-  {
-   "name": "GOR-73226-6 - Safflower modified for altered fatty acid content (SHOSO26)",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-112730-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b85a"
-  },
-  {
-   "name": "MON-941ØØ-2 - Dicamba-tolerant canola",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-258887-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f347"
-  },
-  {
-   "name": "Colour modified petunias",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-258884-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000003f344"
-  },
-  {
-   "name": "Canola modified for glufosinate tolerance",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-101074-4",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018ad2"
-  },
-  {
-   "name": "ACS-BNØØ4-7 × ACS-BNØØ3-6 - InVigor™ canola",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-101077-7",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018ad5"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019c81"
   },
   {
    "name": "Potato modified to express a reporter gene under the control of a pathogen-induced promoter",
@@ -1266,60 +1410,116 @@
    "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b369"
   },
   {
-   "name": "Cotton transformation events tolerant to the herbicides Dicamba and Glufosinate",
+   "name": "Wheat modified for low celiac-toxic epitope content",
    "iso": "",
-   "identifier": "bch-lmo-scbd-100729-5",
+   "identifier": "bch-lmo-scbd-109214-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018979"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001aa9e"
   },
   {
-   "name": "Brassica napus modified for altered fatty acid metabolism",
+   "name": "Maize modified for biofortification",
    "iso": "",
-   "identifier": "bch-lmo-scbd-101385-4",
+   "identifier": "bch-lmo-scbd-109222-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018c09"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001aaa6"
   },
   {
-   "name": "Rice resistant to insects",
+   "name": "Pea modified for alpha-amylase expression",
    "iso": "",
-   "identifier": "bch-lmo-scbd-101096-2",
+   "identifier": "bch-lmo-scbd-109360-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018ae8"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001ab30"
   },
   {
-   "name": "Rice resistant to fungi",
+   "name": "Maize modified for insect resistance and herbicide tolerance",
    "iso": "",
-   "identifier": "bch-lmo-scbd-101097-1",
+   "identifier": "bch-lmo-scbd-109365-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018ae9"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001ab35"
   },
   {
-   "name": "Banana cultivar Navolean resistant to fungi",
+   "name": "CIE-ADBB6-5 - Bitter orange modified to express human defensin",
    "iso": "",
-   "identifier": "bch-lmo-scbd-100317-3",
+   "identifier": "bch-lmo-scbd-108929-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187dd"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a981"
   },
   {
-   "name": "Potato transformed with PLRV viral coat protein",
+   "name": "CIE-ADBB7-6 - Bitter orange modified to express human lysozyme",
    "iso": "",
-   "identifier": "bch-lmo-scbd-100319-3",
+   "identifier": "bch-lmo-scbd-108932-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187df"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a984"
   },
   {
-   "name": "Potato transformed with a pat gene for resistance to ammonium glyphosate",
+   "name": "CIE-ADBB8-7 - Bitter orange modified to express human defensin and lysozyme",
    "iso": "",
-   "identifier": "bch-lmo-scbd-100321-4",
+   "identifier": "bch-lmo-scbd-108933-2",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000187e1"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a985"
+  },
+  {
+   "name": "MON-ØØ179-5 × MON-ØØ1Ø1-8 - Herbicide tolerant, reduced ligning alfalfa",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-109024-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a9e0"
+  },
+  {
+   "name": "FGN-Ø1A21-5 - Eucalyptus modified for increased growth and yield",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-109049-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001a9f9"
+  },
+  {
+   "name": "Potato modified for increased tuber yield",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-111466-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b36a"
+  },
+  {
+   "name": "Potato modified for increased tuber yield",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-111467-1",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b36b"
+  },
+  {
+   "name": "MON-89Ø34-3 × MON-88Ø17-3 × DAS-59122-7 - Insect resistant, herbicide tolerant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-109698-3",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001ac82"
+  },
+  {
+   "name": "MON-89Ø34-3 × DAS-59122-7 - Insect resistant, herbicide tolerant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-109702-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001ac86"
+  },
+  {
+   "name": "MON-88Ø17-3 × DAS-59122-7 - Insect resistant, herbicide tolerant maize",
+   "iso": "",
+   "identifier": "bch-lmo-scbd-109704-2",
+   "organism": "",
+   "trait": "",
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001ac88"
   },
   {
    "name": "Silver birch lines with potential pest or fungal disease resistence",
@@ -1394,212 +1594,12 @@
    "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019fb3"
   },
   {
-   "name": "Potato with altered starch composition",
+   "name": "Cisgenic apples modified for elevated anthocyanin levels",
    "iso": "",
-   "identifier": "bch-lmo-scbd-102898-2",
+   "identifier": "bch-lmo-scbd-110609-1",
    "organism": "",
    "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000191f2"
-  },
-  {
-   "name": "AquAdvantage® Salmon",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-104725-5",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019915"
-  },
-  {
-   "name": "IFD-25958-3 - Moonberry carnation",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-104611-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000198a3"
-  },
-  {
-   "name": "High-protein, antibiotic and herbicide resistant wheat SUTAP78",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-102893-6",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000191ed"
-  },
-  {
-   "name": "High-protein, herbicide resistant wheat HOSUT",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-102894-3",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000191ee"
-  },
-  {
-   "name": "High-protein, antibiotic and herbicide resistant wheat SUTAP69",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-102895-3",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000191ef"
-  },
-  {
-   "name": "Potato modified for heat tolerance and increased yield",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-103124-5",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000192d4"
-  },
-  {
-   "name": "Insect resistant cotton (MLS 9124)",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-103218-3",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019332"
-  },
-  {
-   "name": "Flax modified for improved ability to bind heavy metals",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-104320-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019780"
-  },
-  {
-   "name": "Flax modified for altered fatty acid composition",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-104324-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000019784"
-  },
-  {
-   "name": "Barley modified to produce phytase",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-104335-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001978f"
-  },
-  {
-   "name": "Potato modified for decreased sugar content",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-104352-1",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000197a0"
-  },
-  {
-   "name": "Wheat modified for resistance against corn smut (KP4-Golin 5)",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-48077-8",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000bbcd"
-  },
-  {
-   "name": "Wheat modified for resistance against corn smut (KP4-Greina 16)",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-48078-6",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000bbce"
-  },
-  {
-   "name": "FLO-4Ø689-6 - Moonaqua™ carnation",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-48219-6",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000bc5b"
-  },
-  {
-   "name": "EMB-PVØ51-1 - Common bean modified for resistance to Bean Golden Mosaic Virus",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-104605-6",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001989d"
-  },
-  {
-   "name": "IFD-25947-1 - Moonpearl carnation",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-104608-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000198a0"
-  },
-  {
-   "name": "AVE-436G7-1 - Modena potato with altered starch",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-101897-11",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018e09"
-  },
-  {
-   "name": "Pea modified for resistance to fungal diseases or insect pests",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-101931-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018e2b"
-  },
-  {
-   "name": "Pea resistant to viral diseases",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-101943-2",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018e37"
-  },
-  {
-   "name": "IFD-199Ø7-9 - Moonique carnation",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-104612-3",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000198a4"
-  },
-  {
-   "name": "Pink Bollworm Modified for the Expression of a Fluorescent Marker",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-103105-5",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000192c1"
-  },
-  {
-   "name": "GTL-GFM311-6 - Cotton modified for insect resistance",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-103111-7",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd08000000192c7"
-  },
-  {
-   "name": "Rhizomania resistant, glyphosate tolerant sugar beet",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-101878-6",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000018df6"
-  },
-  {
-   "name": "ACS-BNØØ9-3 - Liberator™ canola",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-46388-5",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000000b534"
-  },
-  {
-   "name": "SEM-ØCZW3-2 - Virus-resistant squash",
-   "iso": "",
-   "identifier": "bch-lmo-scbd-15217-5",
-   "organism": "",
-   "trait": "",
-   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd0800000003b71"
+   "url": "https://bch.cbd.int/database/record?documentid=52000000cbd080000001b011"
   }
  ],
  "ogtr": [

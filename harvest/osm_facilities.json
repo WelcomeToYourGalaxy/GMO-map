@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-29",
+ "generated": "2026-08-30",
  "note": "OpenStreetMap facilities. Fertility clinics tagged healthcare:speciality=fertility or healthcare=fertility_clinic, and mapped sites of named animal-research companies. Coverage follows mapper density, not facility density. Data (c) OpenStreetMap contributors, ODbL.",
  "projects": [
   {
@@ -7071,32 +7071,6 @@
     "human"
    ],
    "url": "https://www.openstreetmap.org/node/10025696240",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "安陆市妇幼保健院",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 31.27896,
-   "lng": 113.6862,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/10026172137",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },

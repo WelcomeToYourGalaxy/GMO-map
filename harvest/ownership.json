@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-29",
+ "generated": "2026-08-30",
  "note": "Ownership as the registers state it, plus chains visible in the names themselves. Company filings are not read here, so this shows trading relationships rather than share ownership.",
  "groups": [
   {
@@ -930,7 +930,7 @@
    ]
   },
   {
-   "owner": "Genesis",
+   "owner": "GENESIS",
    "basis": "inferred from the site's own name",
    "sites": 13,
    "countries": [
@@ -1037,7 +1037,7 @@
    ]
   },
   {
-   "owner": "VIDA",
+   "owner": "Vida",
    "basis": "inferred from the site's own name",
    "sites": 13,
    "countries": [
@@ -3699,7 +3699,7 @@
    ]
   },
   {
-   "owner": "FERTILAB",
+   "owner": "Fertilab",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
@@ -3828,7 +3828,7 @@
    ]
   },
   {
-   "owner": "CITMER",
+   "owner": "Citmer",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
