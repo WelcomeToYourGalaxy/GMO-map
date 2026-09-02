@@ -1,6 +1,6 @@
 {
  "note": "Canadian unconfined-release approvals from the CFIA PNT dataset (open.canada.ca, Open Government Licence). Merged into projects.json by aphis_releases.py. National approvals, so every record is at the country centroid and marked imprecise.",
- "generated": "2026-09-01",
+ "generated": "2026-09-02",
  "projects": [
   {
    "name": "Alfalfa — Events J101 and J163 (Monsanto Canada Inc.)",
