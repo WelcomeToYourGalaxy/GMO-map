@@ -2,6 +2,25 @@
  "note": "National biosafety decisions filed to the Biosafety Clearing-House under Article 20 of the Cartagena Protocol. Country-level positions. The United States is not a party and files nothing here, so this and the APHIS harvest are complementary rather than overlapping.",
  "projects": [
   {
+   "name": "Conditional commodity clearance of maize stack event DP910521",
+   "source": "bch:decision",
+   "type": "maize, national biosafety decision",
+   "lat": -30.6,
+   "lng": 22.9,
+   "state": "ZA",
+   "precise": false,
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "['{\"uniqueIdentification\":\"DP-91Ø521-2\"}']",
+   "phase": "post",
+   "date": "2026-08-17",
+   "lapsed": false,
+   "url": "https://bch.cbd.int/en/database/52000000cbd080000004976e",
+   "desc": "A decision on a living modified organism, filed by the country itself to the Biosafety Clearing-House. Article 20 of the Cartagena Protocol requires every party to file its release and market decisions there within fifteen days, and 173 parties are bound by it. The United States is not among them. Nowhere else holds national release decisions from this many countries in one place. A country with no records here has not necessarily approved nothing — it may not have filed, and from the outside those two look the same.",
+   "checked": ""
+  },
+  {
    "name": "Resolución CNB N.º 009-2026 de 15 de junio de 2026 — Refrendo de las autorizaciones para la utilización confinada en laboratorio y para la exportación con fines de investigación de",
    "source": "bch:decision",
    "type": "organism not named in the title, national biosafety decision",
