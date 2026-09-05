@@ -1,6 +1,6 @@
 {
  "note": "Canadian unconfined-release approvals from the CFIA PNT dataset (open.canada.ca, Open Government Licence). Merged into projects.json by aphis_releases.py. National approvals, so every record is at the country centroid and marked imprecise.",
- "generated": "2026-09-04",
+ "generated": "2026-09-05",
  "projects": [
   {
    "name": "Alfalfa — KK179 (Monsanto Canada Inc. & Forage Genetics International, LLC)",
