@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-30",
+ "generated": "2026-09-06",
  "note": "Ownership as the registers state it, plus chains visible in the names themselves. Company filings are not read here, so this shows trading relationships rather than share ownership.",
  "groups": [
   {
@@ -808,7 +808,7 @@
    ]
   },
   {
-   "owner": "CARE Fertility",
+   "owner": "Care Fertility",
    "basis": "inferred from the site's own name",
    "sites": 15,
    "countries": [
@@ -3699,7 +3699,7 @@
    ]
   },
   {
-   "owner": "Fertilab",
+   "owner": "FERTILAB",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
