@@ -1,6 +1,6 @@
 {
  "note": "IPPC official contact points, Article VIII.2. ORGANIZATION ONLY - the source is a contact list and every personal field is dropped before writing, with an assertion. No website is published in this source, so these name a body and do not link it.",
- "generated": "2026-09-10",
+ "generated": "2026-09-11",
  "contacts": [
   {
    "country": "Guyana",
@@ -414,12 +414,6 @@
    "country": "Myanmar",
    "region": "Asia",
    "organization": "Plant Protection Division, Department of Agriculture, Ministry of Agriculture, Livestock and Irrigation",
-   "_source": "IPPC official contact points, Art. VIII.2"
-  },
-  {
-   "country": "Tanzania- United Republic of",
-   "region": "Africa",
-   "organization": "Tanzania Plant Health and Pesticide Authority (TPHPA)",
    "_source": "IPPC official contact points, Art. VIII.2"
   },
   {
@@ -1092,6 +1086,12 @@
    "country": "Slovenia",
    "region": "Europe",
    "organization": "Ministry of Agriculture; Administration for Food Safety, Veterinary Sector and Plant Protection",
+   "_source": "IPPC official contact points, Art. VIII.2"
+  },
+  {
+   "country": "Tanzania- United Republic of",
+   "region": "Africa",
+   "organization": "TANZANIA PLANT HEALTH AND PESTICIDES AUTHORITY",
    "_source": "IPPC official contact points, Art. VIII.2"
   }
  ]
