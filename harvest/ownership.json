@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-06",
+ "generated": "2026-09-13",
  "note": "Ownership as the registers state it, plus chains visible in the names themselves. Company filings are not read here, so this shows trading relationships rather than share ownership.",
  "groups": [
   {
@@ -361,13 +361,6 @@
      "source": "aaalac_facilities.json"
     },
     {
-     "name": "Tibor Rubin VA Medical Center, Veterans Affairs Long Beach Healthcare System",
-     "lat": 33.76902,
-     "lng": -118.1916,
-     "where": "LONG BEACH, CA, UNITED STATES",
-     "source": "aaalac_facilities.json"
-    },
-    {
      "name": "Veterans Affairs Boston Healthcare System",
      "lat": 42.35883,
      "lng": -71.05783,
@@ -379,6 +372,13 @@
      "lat": 29.95614,
      "lng": -90.07339,
      "where": "NEW ORLEANS, LA, UNITED STATES",
+     "source": "aaalac_facilities.json"
+    },
+    {
+     "name": "Tibor Rubin VA Medical Center, Veterans Affairs Long Beach Healthcare System",
+     "lat": 33.76902,
+     "lng": -118.1916,
+     "where": "LONG BEACH, CA, UNITED STATES",
      "source": "aaalac_facilities.json"
     },
     {
@@ -659,13 +659,6 @@
      "source": "aaalac_facilities.json"
     },
     {
-     "name": "Charles River Laboratories - St. Constant",
-     "lat": 45.3903,
-     "lng": -73.57113,
-     "where": "ST. CONSTANT, QUEBEC, CANADA",
-     "source": "aaalac_facilities.json"
-    },
-    {
      "name": "Charles River Laboratories Italia srl",
      "lat": 45.72487,
      "lng": 9.41591,
@@ -677,6 +670,13 @@
      "lat": 49.10609,
      "lng": 8.85968,
      "where": "SULZFELD, GERMANY",
+     "source": "aaalac_facilities.json"
+    },
+    {
+     "name": "Charles River Laboratories - St. Constant",
+     "lat": 45.3903,
+     "lng": -73.57113,
+     "where": "ST. CONSTANT, QUEBEC, CANADA",
      "source": "aaalac_facilities.json"
     },
     {
@@ -1037,7 +1037,7 @@
    ]
   },
   {
-   "owner": "Vida",
+   "owner": "VIDA",
    "basis": "inferred from the site's own name",
    "sites": 13,
    "countries": [
@@ -1099,7 +1099,7 @@
     },
     {
      "name": "Vidafer, Unidad de Medicina Reproductiva",
-     "lat": 10.49689,
+     "lat": 10.49685,
      "lng": -66.87472,
      "where": "Caracas",
      "source": "osm_facilities.json"
@@ -1599,75 +1599,6 @@
    ]
   },
   {
-   "owner": "IVI",
-   "basis": "inferred from the site's own name",
-   "sites": 8,
-   "countries": [
-    "NY",
-    "Panama",
-    "Salvador",
-    "W1G 9RQ"
-   ],
-   "members": [
-    {
-     "name": "IVI London (Wimpole Street)",
-     "lat": 51.51699,
-     "lng": -0.14787,
-     "where": "83, Wimpole Street, London, W1G 9RQ",
-     "source": "hfea_clinics.json"
-    },
-    {
-     "name": "IVI Panamá",
-     "lat": 8.55956,
-     "lng": -81.13084,
-     "where": "Panama, Panama",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "Ivica Brkljaca",
-     "lat": 42.17,
-     "lng": -74.95,
-     "where": "Roslyn Heights, NY",
-     "source": "aphis_animal_facilities.json"
-    },
-    {
-     "name": "IVI. Clínica de Reproducción Asistida",
-     "lat": 38.36405,
-     "lng": -0.46179,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "IVI Sevilla - Clínica de Reproducción Asistida y Fertilidad",
-     "lat": 37.37639,
-     "lng": -6.00547,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Ivi",
-     "lat": 28.46347,
-     "lng": -16.26272,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "IVI. Clínica de reproducción asistida",
-     "lat": 38.36404,
-     "lng": -0.46178,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "IVI Reprodução Humana",
-     "lat": -12.99463,
-     "lng": -38.45444,
-     "where": "Salvador",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
    "owner": "WuXi AppTec Co., Ltd",
    "basis": "stated by the register",
    "sites": 7,
@@ -1788,6 +1719,67 @@
      "lat": 45.54073,
      "lng": 12.17109,
      "where": "Martellago",
+     "source": "osm_facilities.json"
+    }
+   ]
+  },
+  {
+   "owner": "IVI",
+   "basis": "inferred from the site's own name",
+   "sites": 7,
+   "countries": [
+    "NY",
+    "Panama",
+    "W1G 9RQ"
+   ],
+   "members": [
+    {
+     "name": "IVI London (Wimpole Street)",
+     "lat": 51.51699,
+     "lng": -0.14787,
+     "where": "83, Wimpole Street, London, W1G 9RQ",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "IVI Panamá",
+     "lat": 8.55956,
+     "lng": -81.13084,
+     "where": "Panama, Panama",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Ivica Brkljaca",
+     "lat": 42.17,
+     "lng": -74.95,
+     "where": "Roslyn Heights, NY",
+     "source": "aphis_animal_facilities.json"
+    },
+    {
+     "name": "IVI. Clínica de Reproducción Asistida",
+     "lat": 38.36405,
+     "lng": -0.46179,
+     "where": "",
+     "source": "osm_facilities.json"
+    },
+    {
+     "name": "IVI Sevilla - Clínica de Reproducción Asistida y Fertilidad",
+     "lat": 37.37639,
+     "lng": -6.00547,
+     "where": "",
+     "source": "osm_facilities.json"
+    },
+    {
+     "name": "Ivi",
+     "lat": 28.46347,
+     "lng": -16.26272,
+     "where": "",
+     "source": "osm_facilities.json"
+    },
+    {
+     "name": "IVI. Clínica de reproducción asistida",
+     "lat": 38.36404,
+     "lng": -0.46178,
+     "where": "",
      "source": "osm_facilities.json"
     }
    ]
@@ -3075,6 +3067,13 @@
    ],
    "members": [
     {
+     "name": "Colbert Research Center, Boehringer Ingelheim Animal Health USA, Inc. (BIAH)",
+     "lat": 38.80015,
+     "lng": -77.58975,
+     "where": "COLBERT AND GAINESVILLE, GA, UNITED STATES",
+     "source": "aaalac_facilities.json"
+    },
+    {
      "name": "Boehringer Ingelheim Animal Health",
      "lat": 35.58438,
      "lng": -78.79987,
@@ -3086,13 +3085,6 @@
      "lat": 34.29788,
      "lng": -83.82407,
      "where": "GAINESVILLE, GA, UNITED STATES",
-     "source": "aaalac_facilities.json"
-    },
-    {
-     "name": "Colbert Research Center, Boehringer Ingelheim Animal Health USA, Inc. (BIAH)",
-     "lat": 38.80015,
-     "lng": -77.58975,
-     "where": "COLBERT AND GAINESVILLE, GA, UNITED STATES",
      "source": "aaalac_facilities.json"
     }
    ]
@@ -3797,7 +3789,7 @@
    ]
   },
   {
-   "owner": "Ingenes",
+   "owner": "INGENES",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
@@ -3828,7 +3820,7 @@
    ]
   },
   {
-   "owner": "Citmer",
+   "owner": "CITMER",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
@@ -4974,31 +4966,6 @@
      "lat": 37.8312,
      "lng": 127.50959,
      "where": "GAPYEONG-GUN, GYEONGGI-DO, REPUBLIC OF KOREA",
-     "source": "aaalac_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Scantibodies Laboratory, Inc",
-   "basis": "stated by the register",
-   "sites": 2,
-   "countries": [
-    "MEXICO",
-    "UNITED STATES"
-   ],
-   "members": [
-    {
-     "name": "Laboratorios Scantibodies, S.A. de C.V.",
-     "lat": 32.56538,
-     "lng": -116.62988,
-     "where": "TECATE, BAJA CALIFORNIA, MEXICO",
-     "source": "aaalac_facilities.json"
-    },
-    {
-     "name": "Scantibodies Laboratory, Inc. Ramona Ranch Facility",
-     "lat": 33.04171,
-     "lng": -116.86808,
-     "where": "RAMONA, CA, UNITED STATES",
      "source": "aaalac_facilities.json"
     }
    ]
@@ -6418,8 +6385,8 @@
     },
     {
      "name": "Trinidad & Tobago IVF & Fertility Centre Ltd",
-     "lat": 10.67932,
-     "lng": -61.5244,
+     "lat": 10.67931,
+     "lng": -61.52436,
      "where": "Port of Spain",
      "source": "osm_facilities.json"
     }
@@ -61455,38 +61422,6 @@
    ]
   },
   {
-   "owner": "СПЕЦИАЛИЗИРАНА БОЛНИЦА ЗА АКТИВНО ЛЕЧЕНИЕ ПО ГИНЕКОЛОГИЯ И АСИСТИРАНА РЕПРОДУКЦИЯ /СБАЛГАР/-Д-Р МАЛИНОВ ООД",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "СБАЛГАР „Д-р Малинов“",
-     "lat": 42.67524,
-     "lng": 23.28947,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Centrum Medyczne Femmemedica sp. z o.o",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Kraków"
-   ],
-   "members": [
-    {
-     "name": "CM Femmemedica",
-     "lat": 50.09969,
-     "lng": 19.96821,
-     "where": "Kraków",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
    "owner": "Centro Diagnostico Varesino srl",
    "basis": "stated by the register",
    "sites": 1,
@@ -61830,8 +61765,8 @@
    "members": [
     {
      "name": "For Life Medical Center",
-     "lat": 47.49277,
-     "lng": 19.06583,
+     "lat": 47.49275,
+     "lng": 19.06584,
      "where": "Budapest",
      "source": "osm_facilities.json"
     }
@@ -62786,7 +62721,7 @@
    ]
   },
   {
-   "owner": "دکتر زهرا شمالی",
+   "owner": "کلینیک درمان ناباروری",
    "basis": "stated by the register",
    "sites": 1,
    "countries": [],
@@ -62833,85 +62768,6 @@
    ]
   },
   {
-   "owner": "Братская городская больница № 2",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Женская консультация, филиал ГБ № 2",
-     "lat": 56.31143,
-     "lng": 101.73139,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Dr Sagar Kasar",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Nashik"
-   ],
-   "members": [
-    {
-     "name": "Dr. Kasar Hospital & Maternity Home",
-     "lat": 19.94995,
-     "lng": 73.83779,
-     "where": "Nashik",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "ООО «Клиника семейного здоровья»",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Моя Клиника",
-     "lat": 53.71277,
-     "lng": 23.83907,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "Newtown Medical",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Monksland Medical Center",
-     "lat": 53.42097,
-     "lng": -7.99075,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "ZOE Beratung",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Linz"
-   ],
-   "members": [
-    {
-     "name": "ZOE Beratung rund um Schwangerschaft und Geburt",
-     "lat": 48.31065,
-     "lng": 14.29877,
-     "where": "Linz",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
    "owner": "City Fertility Limited",
    "basis": "stated by the register",
    "sites": 1,
@@ -62938,21 +62794,6 @@
      "name": "Fertility clinic (unnamed in OpenStreetMap)",
      "lat": 53.45876,
      "lng": -2.21666,
-     "where": "",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "CHU Dijon Bourgogne",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [],
-   "members": [
-    {
-     "name": "Hôpital François Mitterrand",
-     "lat": 47.32042,
-     "lng": 5.06935,
      "where": "",
      "source": "osm_facilities.json"
     }
@@ -63382,23 +63223,6 @@
      "lat": 22.36013,
      "lng": 91.82793,
      "where": "Chittagong",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "CK Birla Group",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "Gurugram"
-   ],
-   "members": [
-    {
-     "name": "CK Birla Hospital Gurgaon",
-     "lat": 28.42367,
-     "lng": 77.06156,
-     "where": "Gurugram",
      "source": "osm_facilities.json"
     }
    ]

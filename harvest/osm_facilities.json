@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-06",
+ "generated": "2026-09-13",
  "note": "OpenStreetMap facilities. Fertility clinics tagged healthcare:speciality=fertility or healthcare=fertility_clinic, and mapped sites of named animal-research companies. Coverage follows mapper density, not facility density. Data (c) OpenStreetMap contributors, ODbL.",
  "projects": [
   {
@@ -107,32 +107,6 @@
    "checked": ""
   },
   {
-   "name": "Spectrum Community Health Clinic",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 53.55357,
-   "lng": -1.48644,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/1110010948",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
    "name": "Twig Fertility",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -182,32 +156,6 @@
    ],
    "url": "https://www.openstreetmap.org/node/1313949451",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Dr Bulane. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "СБАЛГАР „Д-р Малинов“",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 42.67524,
-   "lng": 23.28947,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "СПЕЦИАЛИЗИРАНА БОЛНИЦА ЗА АКТИВНО ЛЕЧЕНИЕ ПО ГИНЕКОЛОГИЯ И АСИСТИРАНА РЕПРОДУКЦИЯ /СБАЛГАР/-Д-Р МАЛИНОВ ООД",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/1699496559",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by СПЕЦИАЛИЗИРАНА БОЛНИЦА ЗА АКТИВНО ЛЕЧЕНИЕ ПО ГИНЕКОЛОГИЯ И АСИСТИРАНА РЕПРОДУКЦИЯ /СБАЛГАР/-Д-Р МАЛИНОВ ООД. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
   {
@@ -320,7 +268,7 @@
    "type": "Fertility clinic (OpenStreetMap)",
    "lat": 43.29877,
    "lng": 68.19581,
-   "state": "Туркестан, KZ",
+   "state": "Туркестан",
    "precise": true,
    "addr_grade": "mapped",
    "impact": 1,
@@ -389,32 +337,6 @@
     "human"
    ],
    "url": "https://www.openstreetmap.org/node/2550063480",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Aimee Raupp Wellness & Fertility Center",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 40.7401,
-   "lng": -73.98934,
-   "state": "New York",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/2555136030",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
@@ -679,32 +601,6 @@
    "checked": ""
   },
   {
-   "name": "CM Femmemedica",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 50.09969,
-   "lng": 19.96821,
-   "state": "Kraków",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "Centrum Medyczne Femmemedica sp. z o.o.",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/3623839068",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Centrum Medyczne Femmemedica sp. z o.o.. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
    "name": "Humanitas",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -760,7 +656,7 @@
    "name": "Vidafer, Unidad de Medicina Reproductiva",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 10.49689,
+   "lat": 10.49685,
    "lng": -66.87472,
    "state": "Caracas",
    "precise": true,
@@ -1351,32 +1247,6 @@
     "human"
    ],
    "url": "https://www.openstreetmap.org/node/4885859521",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Elara Healthcare",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 20.93034,
-   "lng": 77.76287,
-   "state": "Amravati",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/4900971455",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
@@ -2161,32 +2031,6 @@
    "checked": ""
   },
   {
-   "name": "مركز المساعدة الطبية للإنجاب تيزيري",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 36.77161,
-   "lng": 3.04108,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/5887529485",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
    "name": "Mersham Medical Centre",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -2209,7 +2053,7 @@
     "human"
    ],
    "url": "https://www.openstreetmap.org/node/5890360895",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Wikidata: Q131524958. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
+   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
   {
@@ -2262,32 +2106,6 @@
    ],
    "url": "https://www.openstreetmap.org/node/6008607860",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Eurofins. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Siz Ona Bo’lasiz",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 41.33688,
-   "lng": 69.32234,
-   "state": "Toshkent",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/6085796985",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
   {
@@ -3357,32 +3175,6 @@
    "checked": ""
   },
   {
-   "name": "21st Century Fertility Center",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 21.2047,
-   "lng": 72.83861,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/6974284635",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
    "name": "Tri-County Pregnancy Care Centre",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -4166,8 +3958,8 @@
    "name": "For Life Medical Center",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 47.49277,
-   "lng": 19.06583,
+   "lat": 47.49275,
+   "lng": 19.06584,
    "state": "Budapest",
    "precise": true,
    "addr_grade": "mapped",
@@ -4865,7 +4657,7 @@
    "checked": ""
   },
   {
-   "name": "Selva Maternity Clinic",
+   "name": "Maternity Center",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
    "lat": 12.95287,
@@ -5567,7 +5359,7 @@
    "checked": ""
   },
   {
-   "name": "Dr. Mashuda Ally",
+   "name": "Dr Mashuda Ally",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
    "lat": -25.74963,
@@ -7071,6 +6863,32 @@
     "human"
    ],
    "url": "https://www.openstreetmap.org/node/10025696240",
+   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
+   "checked": ""
+  },
+  {
+   "name": "安陆市妇幼保健院",
+   "source": "industry:repro",
+   "type": "Fertility clinic (OpenStreetMap)",
+   "lat": 31.27896,
+   "lng": 113.6862,
+   "state": "",
+   "precise": true,
+   "addr_grade": "mapped",
+   "impact": 1,
+   "company": "",
+   "size": "",
+   "status": "Mapped in OpenStreetMap",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "repro:clinics"
+   ],
+   "species": [
+    "human"
+   ],
+   "url": "https://www.openstreetmap.org/node/10026172137",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
@@ -8765,32 +8583,6 @@
    "checked": ""
   },
   {
-   "name": "Diers Fertilitetsklinik",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 55.46563,
-   "lng": 8.44894,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/11003485639",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
    "name": "Clínicas Dorsia",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -9446,7 +9238,7 @@
    "type": "Fertility clinic (OpenStreetMap)",
    "lat": 49.48475,
    "lng": 8.44671,
-   "state": "Ludwigshafen am Rhein, DE",
+   "state": "Ludwigshafen am Rhein",
    "precise": true,
    "addr_grade": "mapped",
    "impact": 1,
@@ -11131,7 +10923,7 @@
    "checked": ""
   },
   {
-   "name": "Kindbody",
+   "name": "Kindbody (formerly Vios)",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
    "lat": 41.90837,
@@ -11283,6 +11075,32 @@
     "human"
    ],
    "url": "https://www.openstreetmap.org/node/12091710738",
+   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
+   "checked": ""
+  },
+  {
+   "name": "Double Happiness Health - Acupuncture San Francisco",
+   "source": "industry:repro",
+   "type": "Fertility clinic (OpenStreetMap)",
+   "lat": 37.75901,
+   "lng": -122.41671,
+   "state": "San Francisco",
+   "precise": true,
+   "addr_grade": "mapped",
+   "impact": 1,
+   "company": "",
+   "size": "",
+   "status": "Mapped in OpenStreetMap",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "repro:clinics"
+   ],
+   "species": [
+    "human"
+   ],
+   "url": "https://www.openstreetmap.org/node/12092036107",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
@@ -12063,7 +11881,7 @@
     "human"
    ],
    "url": "https://www.openstreetmap.org/node/12429486552",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Wikidata: Q97040950. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
+   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
   {
@@ -14598,7 +14416,7 @@
    "precise": true,
    "addr_grade": "mapped",
    "impact": 1,
-   "company": "دکتر زهرا شمالی",
+   "company": "کلینیک درمان ناباروری",
    "size": "",
    "status": "Mapped in OpenStreetMap",
    "phase": "post",
@@ -14611,7 +14429,7 @@
     "human"
    ],
    "url": "https://www.openstreetmap.org/node/13534353670",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by دکتر زهرا شمالی. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
+   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by کلینیک درمان ناباروری. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
   {
@@ -15317,604 +15135,6 @@
    "checked": ""
   },
   {
-   "name": "Женская консультация, филиал ГБ № 2",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 56.31143,
-   "lng": 101.73139,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "Братская городская больница № 2",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/13819800533",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Братская городская больница № 2. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Almond Blossoms Care",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 25.23182,
-   "lng": 55.3218,
-   "state": "دبي",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "Almond Blossoms Care",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/13820131467",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Almond Blossoms Care. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Women's Health Group of Ventura",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 34.27465,
-   "lng": -119.25703,
-   "state": "Ventura, US",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/13855440670",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Embryolab",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 40.57377,
-   "lng": 22.97169,
-   "state": "Καλαμαριά",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/13875876968",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Vamsam Hospital & Fertility Centre",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 8.71112,
-   "lng": 77.72038,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/13889327801",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Fertility Centers of New England",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 42.54787,
-   "lng": -71.75908,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/13915635481",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Sussex Sperm Bank",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 50.83094,
-   "lng": -0.20806,
-   "state": "Hove",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/13944075996",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Dr. Kasar Hospital & Maternity Home",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 19.94995,
-   "lng": 73.83779,
-   "state": "Nashik",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "Dr Sagar Kasar",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/13951272388",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Dr Sagar Kasar. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Empowering Women",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": -38.0359,
-   "lng": 145.34514,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/13955239037",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Моя Клиника",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 53.71277,
-   "lng": 23.83907,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "ООО «Клиника семейного здоровья»",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/13958492311",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by ООО «Клиника семейного здоровья». OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Kinderwunschzentrum Siegen",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 50.88117,
-   "lng": 8.00991,
-   "state": "Siegen, DE",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/13965984348",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "หมอชญาดา อ้อมอุ่นสูตินรีเวชคลินิก",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 18.29004,
-   "lng": 99.49136,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14014523019",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Blue Ova Health",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 37.7502,
-   "lng": -122.43416,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14019126670",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Sperm 360º",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 19.85986,
-   "lng": 75.34439,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14048000524",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Ardor Grove Botanicals",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 35.19569,
-   "lng": -80.79474,
-   "state": "Charlotte",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14062163036",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Monksland Medical Center",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 53.42097,
-   "lng": -7.99075,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "Newtown Medical",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14085575133",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Newtown Medical. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Dr. Sakshi Heda, Maternity and Infertility Specialist",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 20.93032,
-   "lng": 77.76272,
-   "state": "Amravati",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14087907456",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Caroline Scheiber, PhD",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 39.97899,
-   "lng": -105.13157,
-   "state": "Louisville",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14097588908",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Анкалайф",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 42.85698,
-   "lng": 74.6119,
-   "state": "Bishkek",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14125573692",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "ZOE Beratung rund um Schwangerschaft und Geburt",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 48.31065,
-   "lng": 14.29877,
-   "state": "Linz",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "ZOE Beratung",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14128631652",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by ZOE Beratung. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "GQ Health and Wellness",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": -33.96424,
-   "lng": 25.61095,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14131205417",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Waterstone Clinic",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 53.3363,
-   "lng": -6.24986,
-   "state": "Dublin",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14136442762",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Dhaka Fertility Center",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 23.75216,
-   "lng": 90.38502,
-   "state": "Dhaka",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14138630769",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
    "name": "Fertility clinic (unnamed in OpenStreetMap)",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -16128,7 +15348,7 @@
    "type": "Fertility clinic (OpenStreetMap)",
    "lat": 53.28882,
    "lng": -6.68366,
-   "state": "Clane",
+   "state": "",
    "precise": true,
    "addr_grade": "mapped",
    "impact": 1,
@@ -16383,37 +15603,11 @@
    "checked": ""
   },
   {
-   "name": "Little Stars 4D Scan",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 53.02374,
-   "lng": -2.17829,
-   "state": "Hanley, Stoke-on-Trent",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/way/145579323",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
    "name": "Trinidad & Tobago IVF & Fertility Centre Ltd",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 10.67932,
-   "lng": -61.5244,
+   "lat": 10.67931,
+   "lng": -61.52436,
    "state": "Port of Spain",
    "precise": true,
    "addr_grade": "mapped",
@@ -16510,32 +15704,6 @@
    ],
    "url": "https://www.openstreetmap.org/way/164774511",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Planned Parenthood. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Hôpital François Mitterrand",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 47.32042,
-   "lng": 5.06935,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "CHU Dijon Bourgogne",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/way/165616167",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by CHU Dijon Bourgogne. Wikidata: Q2945762. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
   {
@@ -17345,32 +16513,6 @@
    "checked": ""
   },
   {
-   "name": "Janya Fertility",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 12.91757,
-   "lng": 77.65151,
-   "state": "Bangalore",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/way/349721443",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
    "name": "Cloudnine Fertility Hospital",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -17419,32 +16561,6 @@
     "human"
    ],
    "url": "https://www.openstreetmap.org/way/352921804",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Iswarya Fertility Center",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 13.12179,
-   "lng": 80.14825,
-   "state": "Chennai",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/way/354467887",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
@@ -17757,32 +16873,6 @@
     "human"
    ],
    "url": "https://www.openstreetmap.org/way/431442640",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Centro Clinico Di Ginecologia e Fecondazione Assistita San Carlo",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 45.05161,
-   "lng": 7.676,
-   "state": "Torino",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/way/436245121",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
@@ -19039,7 +18129,7 @@
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
    "lat": 12.96592,
-   "lng": 77.74939,
+   "lng": 77.74941,
    "state": "",
    "precise": true,
    "addr_grade": "mapped",
@@ -19350,8 +18440,8 @@
    "name": "Fertility clinic (unnamed in OpenStreetMap)",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 4.84926,
-   "lng": 100.74061,
+   "lat": 4.84928,
+   "lng": 100.74059,
    "state": "",
    "precise": true,
    "addr_grade": "mapped",
@@ -19503,32 +18593,6 @@
    "checked": ""
   },
   {
-   "name": "Royal clinic",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 55.6844,
-   "lng": 37.60114,
-   "state": "Москва",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/way/761103353",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
    "name": "RMA",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -19656,32 +18720,6 @@
    ],
    "url": "https://www.openstreetmap.org/way/785704771",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Sağlık Bakanlığı. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "University Hospital",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 5.10518,
-   "lng": -1.28284,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/way/786198572",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
   {
@@ -20279,32 +19317,6 @@
     "human"
    ],
    "url": "https://www.openstreetmap.org/way/973190852",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "IVI Reprodução Humana",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": -12.99463,
-   "lng": -38.45444,
-   "state": "Salvador",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/way/984466751",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
@@ -21917,84 +20929,6 @@
     "human"
    ],
    "url": "https://www.openstreetmap.org/way/1498959790",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Swathi Fertility Centre",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 13.12385,
-   "lng": 80.14973,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/way/1533550991",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "CK Birla Hospital Gurgaon",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 28.42367,
-   "lng": 77.06156,
-   "state": "Gurugram",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "CK Birla Group",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/way/1533933372",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by CK Birla Group. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Wiregrass Hope Pregnancy Center",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 31.2302,
-   "lng": -85.435,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/way/1549157882",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
