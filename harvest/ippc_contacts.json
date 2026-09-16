@@ -1,6 +1,6 @@
 {
  "note": "IPPC official contact points, Article VIII.2. ORGANIZATION ONLY - the source is a contact list and every personal field is dropped before writing, with an assertion. No website is published in this source, so these name a body and do not link it.",
- "generated": "2026-09-15",
+ "generated": "2026-09-16",
  "contacts": [
   {
    "country": "Guyana",
@@ -438,12 +438,6 @@
    "country": "Ghana",
    "region": "Africa",
    "organization": "Plant Protection and Regulatory Services Directorate (PPRSD) of The Ministry of Food and Agriculture (MOFA)",
-   "_source": "IPPC official contact points, Art. VIII.2"
-  },
-  {
-   "country": "Moldova- Republic of",
-   "region": "Asia",
-   "organization": "National Food Safety Agency",
    "_source": "IPPC official contact points, Art. VIII.2"
   },
   {
@@ -1092,6 +1086,12 @@
    "country": "Tanzania- United Republic of",
    "region": "Africa",
    "organization": "TANZANIA PLANT HEALTH AND PESTICIDES AUTHORITY",
+   "_source": "IPPC official contact points, Art. VIII.2"
+  },
+  {
+   "country": "Moldova- Republic of",
+   "region": "Asia",
+   "organization": "NATIONAL FOOD SAFETY AGENCY",
    "_source": "IPPC official contact points, Art. VIII.2"
   }
  ]
