@@ -1,8 +1,9 @@
 {
- "generated": "2026-09-16",
+ "generated": "2026-09-17",
  "source": "ISAAA GM Approval Database",
  "note": "Compiled by ISAAA, which exists to promote agricultural biotechnology and is funded in part by the companies whose products it counts. The underlying decision documents are public and checkable; the framing is not neutral. Counts here are not merged with the national registers, because where the two differ the difference is information.",
  "unreachable": [
+  "Burkina Faso",
   "Malawi",
   "Mozambique",
   "Ukraine"
@@ -1632,25 +1633,6 @@
     {
      "id": "IND-ØØ412-7",
      "id_key": "IND004127"
-    },
-    {
-     "id": "UA-1179856-2",
-     "id_key": "UA11798562"
-    }
-   ]
-  },
-  {
-   "country": "Burkina Faso",
-   "declared_total": 1,
-   "events_parsed": 3,
-   "events": [
-    {
-     "id": "MON-1598-5",
-     "id_key": "MON15985"
-    },
-    {
-     "id": "MON-15985-7",
-     "id_key": "MON159857"
     },
     {
      "id": "UA-1179856-2",
