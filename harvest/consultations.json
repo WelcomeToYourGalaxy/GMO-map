@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-17",
+ "generated": "2026-09-18",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
@@ -22,9 +22,9 @@
    "name": "WTO / ePing notifications",
    "kind": "feed",
    "ok": true,
-   "rows": 8,
+   "rows": 9,
    "url": "https://eping.wto.org/en/Search",
-   "message": "105524 notifications scanned"
+   "message": "105579 notifications scanned"
   },
   {
    "name": "EFSA",
@@ -125,6 +125,14 @@
    "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/IDN192.docx",
    "country": "Indonesia",
    "ref": "G/TBT/N/IDN/192"
+  },
+  {
+   "title": "Draft Circular of the Minister of Agriculture and Environment on Management of Livestock Breeds and Livestock Breed Products",
+   "agency": "WTO Regular notification",
+   "closes": "2026-11-16",
+   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NVNM193.docx",
+   "country": "Viet Nam",
+   "ref": "G/SPS/N/VNM/193"
   }
  ]
 }
