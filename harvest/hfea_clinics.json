@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-13",
+ "generated": "2026-09-20",
  "note": "HFEA licensed fertility clinics, from the A-Z listing. Positions from the published postcode.",
  "projects": [
   {
@@ -680,32 +680,6 @@
   },
   {
    "name": "Braetha",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 51.52039,
-   "lng": -0.14735,
-   "state": "86, Harley Street, London, W1G 7HP",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "Satellite clinic to King’s Fertility",
-   "size": "",
-   "status": "HFEA licensed — satellite",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to King’s Fertility. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "Braetha Health Ltd Limited",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": 51.52039,
@@ -2450,9 +2424,9 @@
    "name": "Fertility Plus",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 51.52159,
-   "lng": -0.1479,
-   "state": "Devonshire Suite, First Floor, Fertility Plus, 112 Harley Street, London, W1G 7JQ",
+   "lat": 51.521,
+   "lng": -0.14765,
+   "state": "Fertility Plus, 92 Harley Street, London, W1G 7HY",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -2528,9 +2502,9 @@
    "name": "Fitzrovia",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 51.60964,
-   "lng": -0.13437,
-   "state": "12 Gateway Mews, Bounds Green, London, N11 2UT",
+   "lat": 51.51897,
+   "lng": -0.15441,
+   "state": "37 Manchester St, London, W1U 7LJ",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -2885,162 +2859,6 @@
     "human"
    ],
    "url": "www.hulleastridingfertility.co.uk/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "In-OVO Fertility Clinic",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 54.62721,
-   "lng": -5.87514,
-   "state": "Unit 1, Portside Business Park, 189 Airport Road West, Co Antrim, Belfast, BT3 9ED",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "HFEA licensed",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "www.in-ovo.co.uk",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "Ipswich IVF",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 52.05686,
-   "lng": 1.19795,
-   "state": "Ipswich Hospital, Heath Road, Ipswich, IP4 5PD",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "Satellite clinic to Cambridge IVF",
-   "size": "",
-   "status": "HFEA licensed — satellite",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to Cambridge IVF. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "IVF London",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 51.64257,
-   "lng": -0.31401,
-   "state": "Caspian House, The Waterfront, Elstree, Borehamwood, WD6 3BS",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "HFEA licensed",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "IVF Matters",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 51.51739,
-   "lng": -0.14598,
-   "state": "10, Harley Street, London, W1G 9PF",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "Satellite clinic to TFP Boston Place Fertility",
-   "size": "",
-   "status": "HFEA licensed — satellite",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to TFP Boston Place Fertility. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "IVF North East",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 54.59401,
-   "lng": -1.33197,
-   "state": "Tees Hospital, Junction Road, Norton, Stockton on Tees, TS20 1PX",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "Satellite clinic to London Women's Clinic, Darlington",
-   "size": "",
-   "status": "HFEA licensed — satellite",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to London Women's Clinic, Darlington. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "IVI London (Wimpole Street)",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 51.51699,
-   "lng": -0.14787,
-   "state": "83, Wimpole Street, London, W1G 9RQ",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "HFEA licensed",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "www.ivi.uk",
    "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
    "checked": ""
   },
@@ -4842,9 +4660,9 @@
    "name": "Sunderland Fertility Centre",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 54.90221,
-   "lng": -1.41033,
-   "state": "Sunderland Royal Hospital, Kayll Road, Sunderland, Tyne & Wear, SR4 7TP, United Kingdom",
+   "lat": 54.97121,
+   "lng": -1.42847,
+   "state": "South Tyneside And Sunderland NHS FT, C/O Financial Services, South Tyneside District Hospital, South Shield, Harton Lan",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -5512,32 +5330,6 @@
    ],
    "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
    "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to Manchester Fertility. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "Zita West Clinic",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 51.51897,
-   "lng": -0.15441,
-   "state": "37 Manchester Street, London, London, W1U 7LJ",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "Satellite clinic to Care Fertility London",
-   "size": "",
-   "status": "HFEA licensed — satellite",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to Care Fertility London. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
    "checked": ""
   }
  ]

@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-13",
+ "generated": "2026-09-20",
  "note": "Wire items resolved to places this map already holds at street precision. An item that resolves to nothing gets no pin.",
  "pins": []
 }
