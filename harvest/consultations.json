@@ -1,12 +1,12 @@
 {
- "generated": "2026-09-20",
+ "generated": "2026-09-21",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
    "name": "Federal Register",
    "kind": "feed",
    "ok": true,
-   "rows": 2,
+   "rows": 4,
    "url": "https://www.federalregister.gov/",
    "message": "7 of 7 queries answered"
   },
@@ -133,6 +133,22 @@
    "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NVNM193.docx",
    "country": "Viet Nam",
    "ref": "G/SPS/N/VNM/193"
+  },
+  {
+   "title": "Bayer U.S.-Crop Science: Availability of a Petition for a Determination of Nonregulated Status and Draft Plant Pest Risk Assessment for MON 89151 Lepidopteran-Protected Cotton (Gossypium hirsutum)",
+   "agency": "Agriculture Department",
+   "closes": "2026-11-20",
+   "url": "https://www.federalregister.gov/documents/2026/09/21/2026-19239/bayer-us-crop-science-availability-of-a-petition-for-a-determination-of-nonregulated-status-and",
+   "country": "United States",
+   "ref": "2026-19239"
+  },
+  {
+   "title": "Bayer U.S.-Crop Science: Availability of a Petition for a Determination of Nonregulated Status and Draft Plant Pest Risk Assessment for Herbicide Resistant MON 96012 Cotton (Gossypium hirsutum)",
+   "agency": "Agriculture Department",
+   "closes": "2026-11-20",
+   "url": "https://www.federalregister.gov/documents/2026/09/21/2026-19237/bayer-us-crop-science-availability-of-a-petition-for-a-determination-of-nonregulated-status-and",
+   "country": "United States",
+   "ref": "2026-19237"
   }
  ]
 }
