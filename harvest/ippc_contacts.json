@@ -1,6 +1,6 @@
 {
  "note": "IPPC official contact points, Article VIII.2. ORGANIZATION ONLY - the source is a contact list and every personal field is dropped before writing, with an assertion. No website is published in this source, so these name a body and do not link it.",
- "generated": "2026-09-21",
+ "generated": "2026-09-22",
  "contacts": [
   {
    "country": "Guyana",
@@ -609,12 +609,6 @@
    "_source": "IPPC official contact points, Art. VIII.2"
   },
   {
-   "country": "Trinidad and Tobago",
-   "region": "Latin America and Caribbean",
-   "organization": "Ministry of Agriculture, Land and Fishierie",
-   "_source": "IPPC official contact points, Art. VIII.2"
-  },
-  {
    "country": "Jamaica",
    "region": "Latin America and Caribbean",
    "organization": "Ministry of Agriculture, Fisheries and Mining - Plant Quarantine Produce Inspection Branch",
@@ -1092,6 +1086,12 @@
    "country": "Moldova- Republic of",
    "region": "Asia",
    "organization": "NATIONAL FOOD SAFETY AGENCY",
+   "_source": "IPPC official contact points, Art. VIII.2"
+  },
+  {
+   "country": "Trinidad and Tobago",
+   "region": "Latin America and Caribbean",
+   "organization": "Ministry of Agriculture and Fisheries",
    "_source": "IPPC official contact points, Art. VIII.2"
   }
  ]
