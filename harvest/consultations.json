@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-22",
+ "generated": "2026-09-23",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
@@ -24,7 +24,7 @@
    "ok": true,
    "rows": 6,
    "url": "https://eping.wto.org/en/Search",
-   "message": "105251 notifications scanned"
+   "message": "105743 notifications scanned"
   },
   {
    "name": "EFSA",
@@ -46,14 +46,6 @@
  "sources_reached": 3,
  "sources_total": 3,
  "consultations": [
-  {
-   "title": "Decreeamending and supplementing a number of articles of decrees in the field of forestry and forest protection; Nature and Biodiversity Conservation",
-   "agency": "WTO Regular notification",
-   "closes": "2026-09-22",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NVNM186.docx",
-   "country": "Viet Nam",
-   "ref": "G/SPS/N/VNM/186"
-  },
   {
    "title": "Draft Regulation of the Halal Product Assurance Organizing Body concerning Conformity Assurance of Foreign Halal Products Entering to Indonesia",
    "agency": "WTO Regular notification",
@@ -109,6 +101,14 @@
    "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/IDN192.docx",
    "country": "Indonesia",
    "ref": "G/TBT/N/IDN/192"
+  },
+  {
+   "title": "Draft Circular of the Minister of Agriculture and Environment on Management of Livestock Breeds and Livestock Breed Products",
+   "agency": "WTO Regular notification",
+   "closes": "2026-11-16",
+   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NVNM193.docx",
+   "country": "Viet Nam",
+   "ref": "G/SPS/N/VNM/193"
   },
   {
    "title": "Bayer U.S.-Crop Science: Availability of a Petition for a Determination of Nonregulated Status and Draft Plant Pest Risk Assessment for MON 89151 Lepidopteran-Protected Cotton (Gossypium hirsutum)",
