@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-20",
+ "generated": "2026-09-27",
  "note": "AAALAC International accredited organisations. Voluntary accreditation, not a register: absence means not accredited, not no animal research. City-level positions only.",
  "projects": [
   {
@@ -4657,32 +4657,6 @@
    "checked": ""
   },
   {
-   "name": "Charles River Laboratories Italia srl",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 45.72487,
-   "lng": 9.41591,
-   "state": "CALCO (LC), ITALY",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Charles River Laboratories International, Inc.",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Charles River Laboratories International, Inc.. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
    "name": "Charles River Laboratories, Research Models and Services - Germany GmbH",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -4715,6 +4689,32 @@
    "lat": 45.3903,
    "lng": -73.57113,
    "state": "ST. CONSTANT, QUEBEC, CANADA",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Charles River Laboratories International, Inc.",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Charles River Laboratories International, Inc.. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Charles River Laboratories Italia srl",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 45.72487,
+   "lng": 9.41591,
+   "state": "CALCO (LC), ITALY",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -5463,6 +5463,32 @@
    "checked": ""
   },
   {
+   "name": "Children's Mercy Research Institute d/b/a Children's Mercy Hospital",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 39.1001,
+   "lng": -94.57814,
+   "state": "KANSAS CITY, MO, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
    "name": "Children's Research Institute",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -5486,32 +5512,6 @@
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
    "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Children's National Medical Center. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "Children's Mercy Research Institute d/b/a Children's Mercy Hospital",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 39.1001,
-   "lng": -94.57814,
-   "state": "KANSAS CITY, MO, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Childre's Mercy Research Institute d/b/a Children's Mercy Hospital",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Childre's Mercy Research Institute d/b/a Children's Mercy Hospital. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -6893,38 +6893,12 @@
    "checked": ""
   },
   {
-   "name": "James J. Peters Veterans Affairs Medical Center",
+   "name": "VA Loma Linda Healthcare System",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 40.84665,
-   "lng": -73.87859,
-   "state": "BRONX, NY, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Department of Veterans Affairs",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "Samuel S. Stratton Veterans Affairs Medical Center",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 42.65117,
-   "lng": -73.75497,
-   "state": "ALBANY, NY, UNITED STATES",
+   "lat": 34.0538,
+   "lng": -117.26109,
+   "state": "LOMA LINDA, CA, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -7647,6 +7621,58 @@
    "checked": ""
   },
   {
+   "name": "James J. Peters Veterans Affairs Medical Center",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 40.84665,
+   "lng": -73.87859,
+   "state": "BRONX, NY, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Department of Veterans Affairs",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Samuel S. Stratton Veterans Affairs Medical Center",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 42.65117,
+   "lng": -73.75497,
+   "state": "ALBANY, NY, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Department of Veterans Affairs",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
    "name": "Rocky Mountain Regional Veterans Administration Medical Center",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -7757,32 +7783,6 @@
    "lat": 43.07469,
    "lng": -89.38417,
    "state": "MADISON, WI, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Department of Veterans Affairs",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "VA Loma Linda Healthcare System",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 34.0538,
-   "lng": -117.26109,
-   "state": "LOMA LINDA, CA, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -8843,32 +8843,6 @@
    "checked": ""
   },
   {
-   "name": "Emory National Primate Research Center",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 33.75447,
-   "lng": -84.38982,
-   "state": "ATLANTA, GA, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Emory University",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Emory University. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
    "name": "Emory University",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -8892,6 +8866,32 @@
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
    "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Emory National Primate Research Center",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 33.75447,
+   "lng": -84.38982,
+   "state": "ATLANTA, GA, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Emory University",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Emory University. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -9155,12 +9155,12 @@
    "checked": ""
   },
   {
-   "name": "ERBC Dommartin",
+   "name": "ERBC Toulouse",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 49.80062,
-   "lng": 2.38957,
-   "state": "DOMMARTIN, FRANCE",
+   "lat": 43.4552,
+   "lng": 1.61312,
+   "state": "BAZIÈGE, FRANCE",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -9181,12 +9181,12 @@
    "checked": ""
   },
   {
-   "name": "ERBC Toulouse",
+   "name": "ERBC Dommartin",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 43.4552,
-   "lng": 1.61312,
-   "state": "BAZIÈGE, FRANCE",
+   "lat": 49.80062,
+   "lng": 2.38957,
+   "state": "DOMMARTIN, FRANCE",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -11989,7 +11989,7 @@
    "checked": ""
   },
   {
-   "name": "National Beijing Center for Drug Safety Evaluation and Research",
+   "name": "Center for Drug Safety Evaluation and Research, Academy of Military Medical Sciences",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
    "lat": 39.99714,
@@ -25249,32 +25249,6 @@
    "checked": ""
   },
   {
-   "name": "Beltsville Human Nutrition Research Center",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 39.02991,
-   "lng": -76.91495,
-   "state": "BELTSVILLE, MD, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "U.S. Department of Agriculture - Agricultural Research Service",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of U.S. Department of Agriculture - Agricultural Research Service. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
    "name": "The Jean Mayer USDA Human Nutrition Research Center on Aging",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -25353,12 +25327,12 @@
    "checked": ""
   },
   {
-   "name": "White Oak Animal Program",
+   "name": "National Center for Toxicological Research",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 38.99595,
-   "lng": -77.02762,
-   "state": "SILVER SPRING, MD, UNITED STATES",
+   "lat": 34.27117,
+   "lng": -91.92483,
+   "state": "JEFFERSON, AR, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -25379,12 +25353,12 @@
    "checked": ""
   },
   {
-   "name": "National Center for Toxicological Research",
+   "name": "White Oak Animal Program",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 34.27117,
-   "lng": -91.92483,
-   "state": "JEFFERSON, AR, UNITED STATES",
+   "lat": 38.99595,
+   "lng": -77.02762,
+   "state": "SILVER SPRING, MD, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -25743,32 +25717,6 @@
    "checked": ""
   },
   {
-   "name": "University of California, Irvine",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 33.6857,
-   "lng": -117.82598,
-   "state": "IRVINE, CA, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "University of California",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of University of California. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
    "name": "University of California, Santa Cruz",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -25853,6 +25801,32 @@
    "lat": 34.05369,
    "lng": -118.24277,
    "state": "LOS ANGELES, CA, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "University of California",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of University of California. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "University of California, Irvine",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 33.6857,
+   "lng": -117.82598,
+   "state": "IRVINE, CA, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,

@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-20",
+ "generated": "2026-09-27",
  "note": "Ownership as the registers state it, plus chains visible in the names themselves. Company filings are not read here, so this shows trading relationships rather than share ownership.",
  "groups": [
   {
@@ -18,17 +18,10 @@
      "source": "aaalac_facilities.json"
     },
     {
-     "name": "James J. Peters Veterans Affairs Medical Center",
-     "lat": 40.84665,
-     "lng": -73.87859,
-     "where": "BRONX, NY, UNITED STATES",
-     "source": "aaalac_facilities.json"
-    },
-    {
-     "name": "Samuel S. Stratton Veterans Affairs Medical Center",
-     "lat": 42.65117,
-     "lng": -73.75497,
-     "where": "ALBANY, NY, UNITED STATES",
+     "name": "VA Loma Linda Healthcare System",
+     "lat": 34.0538,
+     "lng": -117.26109,
+     "where": "LOMA LINDA, CA, UNITED STATES",
      "source": "aaalac_facilities.json"
     },
     {
@@ -221,6 +214,20 @@
      "source": "aaalac_facilities.json"
     },
     {
+     "name": "James J. Peters Veterans Affairs Medical Center",
+     "lat": 40.84665,
+     "lng": -73.87859,
+     "where": "BRONX, NY, UNITED STATES",
+     "source": "aaalac_facilities.json"
+    },
+    {
+     "name": "Samuel S. Stratton Veterans Affairs Medical Center",
+     "lat": 42.65117,
+     "lng": -73.75497,
+     "where": "ALBANY, NY, UNITED STATES",
+     "source": "aaalac_facilities.json"
+    },
+    {
      "name": "Rocky Mountain Regional Veterans Administration Medical Center",
      "lat": 39.74014,
      "lng": -104.87334,
@@ -253,13 +260,6 @@
      "lat": 43.07469,
      "lng": -89.38417,
      "where": "MADISON, WI, UNITED STATES",
-     "source": "aaalac_facilities.json"
-    },
-    {
-     "name": "VA Loma Linda Healthcare System",
-     "lat": 34.0538,
-     "lng": -117.26109,
-     "where": "LOMA LINDA, CA, UNITED STATES",
      "source": "aaalac_facilities.json"
     },
     {
@@ -659,13 +659,6 @@
      "source": "aaalac_facilities.json"
     },
     {
-     "name": "Charles River Laboratories Italia srl",
-     "lat": 45.72487,
-     "lng": 9.41591,
-     "where": "CALCO (LC), ITALY",
-     "source": "aaalac_facilities.json"
-    },
-    {
      "name": "Charles River Laboratories, Research Models and Services - Germany GmbH",
      "lat": 49.10609,
      "lng": 8.85968,
@@ -677,6 +670,13 @@
      "lat": 45.3903,
      "lng": -73.57113,
      "where": "ST. CONSTANT, QUEBEC, CANADA",
+     "source": "aaalac_facilities.json"
+    },
+    {
+     "name": "Charles River Laboratories Italia srl",
+     "lat": 45.72487,
+     "lng": 9.41591,
+     "where": "CALCO (LC), ITALY",
      "source": "aaalac_facilities.json"
     },
     {
@@ -944,14 +944,14 @@
    ],
    "members": [
     {
-     "name": "GENESIS - Centro de Assistência em Reprodução Humana Ltda.",
+     "name": "GENESIS - Centro de AssistÃªncia em ReproduÃ§Ã£o Humana Ltda.",
      "lat": -15.78858,
      "lng": -47.88409,
      "where": "Brasilia, Brasil",
      "source": "ccac_redlara.json"
     },
     {
-     "name": "GENESIS - Centro de Reprodução Humana",
+     "name": "GENESIS - Centro de ReproduÃ§Ã£o Humana",
      "lat": -28.25081,
      "lng": -52.39358,
      "where": "Passo Fundo, Brasil",
@@ -1037,57 +1037,57 @@
    ]
   },
   {
-   "owner": "Vida",
+   "owner": "VIDA",
    "basis": "inferred from the site's own name",
    "sites": 13,
    "countries": [
     "Bolivia",
     "Brasil",
     "Caracas",
-    "México",
+    "MÃ©xico",
     "Valladolid"
    ],
    "members": [
     {
-     "name": "Instituto de Ciencias en Reprodución Humana -VIDA-Matamoros",
-     "lat": 25.88102,
-     "lng": -97.50649,
-     "where": "Matamoros, México",
+     "name": "Instituto de Ciencias en ReproduciÃ³n Humana -VIDA-Matamoros MÃ©xico Matamoros",
+     "lat": 19.2732,
+     "lng": -98.92787,
+     "where": "Matamoros, MÃ©xico",
      "source": "ccac_redlara.json"
     },
     {
-     "name": "Instituto Vida Guadalajara (Instituto de Ciencias en Reproducción Humana)",
-     "lat": 20.67204,
-     "lng": -103.3384,
-     "where": "Guadalajara, México",
+     "name": "Instituto Vida Guadalajara (Instituto de Ciencias en ReproducciÃ³n Humana) MÃ©xico Guadalajara",
+     "lat": 40.74,
+     "lng": -2.50593,
+     "where": "Guadalajara, MÃ©xico",
      "source": "ccac_redlara.json"
     },
     {
-     "name": "Instituto VIDA - León",
-     "lat": 26.23844,
-     "lng": -99.8873,
-     "where": "Leon, México",
+     "name": "Instituto VIDA - LeÃ³n MÃ©xico Leon",
+     "lat": 19.42682,
+     "lng": -96.96456,
+     "where": "Leon, MÃ©xico",
      "source": "ccac_redlara.json"
     },
     {
-     "name": "Instituto Vida Tijuana",
-     "lat": 32.53174,
-     "lng": -117.01953,
-     "where": "Tijuana, México",
+     "name": "Instituto Vida Tijuana MÃ©xico Tijuana",
+     "lat": 32.4706,
+     "lng": -116.84654,
+     "where": "Tijuana, MÃ©xico",
      "source": "ccac_redlara.json"
     },
     {
      "name": "Vida - Centro de Fertilidade",
-     "lat": -22.99977,
-     "lng": -43.3806,
-     "where": "Río de Janeiro, Brasil",
+     "lat": -22.95838,
+     "lng": -43.37434,
+     "where": "RÃ­o de Janeiro, Brasil",
      "source": "ccac_redlara.json"
     },
     {
-     "name": "Instituto Vida Merida",
-     "lat": 20.96708,
-     "lng": -89.62374,
-     "where": "Merida, México",
+     "name": "Instituto Vida Merida MÃ©xico Merida",
+     "lat": 20.92464,
+     "lng": -89.65928,
+     "where": "Merida, MÃ©xico",
      "source": "ccac_redlara.json"
     },
     {
@@ -1164,13 +1164,6 @@
      "source": "aaalac_facilities.json"
     },
     {
-     "name": "University of California, Irvine",
-     "lat": 33.6857,
-     "lng": -117.82598,
-     "where": "IRVINE, CA, UNITED STATES",
-     "source": "aaalac_facilities.json"
-    },
-    {
      "name": "University of California, Santa Cruz",
      "lat": 37.0501,
      "lng": -121.99059,
@@ -1196,6 +1189,13 @@
      "lat": 34.05369,
      "lng": -118.24277,
      "where": "LOS ANGELES, CA, UNITED STATES",
+     "source": "aaalac_facilities.json"
+    },
+    {
+     "name": "University of California, Irvine",
+     "lat": 33.6857,
+     "lng": -117.82598,
+     "where": "IRVINE, CA, UNITED STATES",
      "source": "aaalac_facilities.json"
     },
     {
@@ -1599,6 +1599,75 @@
    ]
   },
   {
+   "owner": "IVI",
+   "basis": "inferred from the site's own name",
+   "sites": 8,
+   "countries": [
+    "NY",
+    "Panama",
+    "Salvador",
+    "W1G 9RQ"
+   ],
+   "members": [
+    {
+     "name": "IVI London (Wimpole Street)",
+     "lat": 51.51699,
+     "lng": -0.14787,
+     "where": "83, Wimpole Street, London, W1G 9RQ",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "IVI PanamÃ¡",
+     "lat": 8.55956,
+     "lng": -81.13084,
+     "where": "Panama, Panama",
+     "source": "ccac_redlara.json"
+    },
+    {
+     "name": "Ivica Brkljaca",
+     "lat": 42.17,
+     "lng": -74.95,
+     "where": "Roslyn Heights, NY",
+     "source": "aphis_animal_facilities.json"
+    },
+    {
+     "name": "IVI. Clínica de Reproducción Asistida",
+     "lat": 38.36405,
+     "lng": -0.46179,
+     "where": "",
+     "source": "osm_facilities.json"
+    },
+    {
+     "name": "IVI Sevilla - Clínica de Reproducción Asistida y Fertilidad",
+     "lat": 37.37639,
+     "lng": -6.00547,
+     "where": "",
+     "source": "osm_facilities.json"
+    },
+    {
+     "name": "Ivi",
+     "lat": 28.46347,
+     "lng": -16.26272,
+     "where": "",
+     "source": "osm_facilities.json"
+    },
+    {
+     "name": "IVI. Clínica de reproducción asistida",
+     "lat": 38.36404,
+     "lng": -0.46178,
+     "where": "",
+     "source": "osm_facilities.json"
+    },
+    {
+     "name": "IVI Reprodução Humana",
+     "lat": -12.99463,
+     "lng": -38.45444,
+     "where": "Salvador",
+     "source": "osm_facilities.json"
+    }
+   ]
+  },
+  {
    "owner": "WuXi AppTec Co., Ltd",
    "basis": "stated by the register",
    "sites": 7,
@@ -1719,67 +1788,6 @@
      "lat": 45.54073,
      "lng": 12.17109,
      "where": "Martellago",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "IVI",
-   "basis": "inferred from the site's own name",
-   "sites": 7,
-   "countries": [
-    "NY",
-    "Panama",
-    "Salvador"
-   ],
-   "members": [
-    {
-     "name": "IVI Panamá",
-     "lat": 8.55956,
-     "lng": -81.13084,
-     "where": "Panama, Panama",
-     "source": "ccac_redlara.json"
-    },
-    {
-     "name": "Ivica Brkljaca",
-     "lat": 42.17,
-     "lng": -74.95,
-     "where": "Roslyn Heights, NY",
-     "source": "aphis_animal_facilities.json"
-    },
-    {
-     "name": "IVI. Clínica de Reproducción Asistida",
-     "lat": 38.36405,
-     "lng": -0.46179,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "IVI Sevilla - Clínica de Reproducción Asistida y Fertilidad",
-     "lat": 37.37639,
-     "lng": -6.00547,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "Ivi",
-     "lat": 28.46347,
-     "lng": -16.26272,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "IVI. Clínica de reproducción asistida",
-     "lat": 38.36404,
-     "lng": -0.46178,
-     "where": "",
-     "source": "osm_facilities.json"
-    },
-    {
-     "name": "IVI Reprodução Humana",
-     "lat": -12.99463,
-     "lng": -38.45444,
-     "where": "Salvador",
      "source": "osm_facilities.json"
     }
    ]
@@ -2015,13 +2023,13 @@
    "members": [
     {
      "name": "Huntington - Centro de Medicina Reprodutiva - Unidade Ibirapuera",
-     "lat": -23.59941,
-     "lng": -46.65823,
+     "lat": -23.64466,
+     "lng": -46.52842,
      "where": "Sao Paulo, Brasil",
      "source": "ccac_redlara.json"
     },
     {
-     "name": "Huntington Pró-Criar Medicina Reprodutiva",
+     "name": "Huntington PrÃ³-Criar Medicina Reprodutiva",
      "lat": -19.92935,
      "lng": -43.93948,
      "where": "Belo Horizonte, Brasil",
@@ -2035,7 +2043,7 @@
      "source": "ccac_redlara.json"
     },
     {
-     "name": "Huntington Brasília",
+     "name": "Huntington BrasÃ­lia",
      "lat": -15.78858,
      "lng": -47.88409,
      "where": "Brasilia, Brasil",
@@ -3398,17 +3406,17 @@
    ],
    "members": [
     {
-     "name": "White Oak Animal Program",
-     "lat": 38.99595,
-     "lng": -77.02762,
-     "where": "SILVER SPRING, MD, UNITED STATES",
-     "source": "aaalac_facilities.json"
-    },
-    {
      "name": "National Center for Toxicological Research",
      "lat": 34.27117,
      "lng": -91.92483,
      "where": "JEFFERSON, AR, UNITED STATES",
+     "source": "aaalac_facilities.json"
+    },
+    {
+     "name": "White Oak Animal Program",
+     "lat": 38.99595,
+     "lng": -77.02762,
+     "where": "SILVER SPRING, MD, UNITED STATES",
      "source": "aaalac_facilities.json"
     },
     {
@@ -3685,7 +3693,7 @@
    ],
    "members": [
     {
-     "name": "Centro Médico FERTILAB",
+     "name": "Centro MÃ©dico FERTILAB",
      "lat": -33.6763,
      "lng": -59.67738,
      "where": "Buenos Aires, Argentina",
@@ -3718,7 +3726,7 @@
    ],
    "members": [
     {
-     "name": "Instituto de Reproducción Humana PROCREAR Ltda.",
+     "name": "Instituto de ReproducciÃ³n Humana PROCREAR Ltda.",
      "lat": 11.01019,
      "lng": -74.82318,
      "where": "Barranquilla, Colombia",
@@ -3757,7 +3765,7 @@
      "source": "ccac_redlara.json"
     },
     {
-     "name": "Pranor San Isidro - Clínica Concebir",
+     "name": "Pranor San Isidro - ClÃ­nica Concebir",
      "lat": -12.09169,
      "lng": -77.03543,
      "where": "Lima, Peru",
@@ -3773,63 +3781,63 @@
    ]
   },
   {
-   "owner": "INGENES",
+   "owner": "Ingenes",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
-    "México"
+    "MÃ©xico"
    ],
    "members": [
     {
-     "name": "INGENES",
-     "lat": 19.32077,
-     "lng": -99.15147,
-     "where": "Ciudad de México, México",
+     "name": "INGENES MÃ©xico MÃ©xico Ciudad de MÃ©xico",
+     "lat": 19.49115,
+     "lng": -98.05789,
+     "where": "Ciudad de MÃ©xico, MÃ©xico",
      "source": "ccac_redlara.json"
     },
     {
-     "name": "Ingenes Guadalajara",
-     "lat": 20.67204,
-     "lng": -103.3384,
-     "where": "Guadalajara, México",
+     "name": "Ingenes Guadalajara MÃ©xico Guadalajara",
+     "lat": 40.74,
+     "lng": -2.50593,
+     "where": "Guadalajara, MÃ©xico",
      "source": "ccac_redlara.json"
     },
     {
-     "name": "Instituto Ingenes Monterrey",
-     "lat": 25.6802,
-     "lng": -100.31526,
-     "where": "Monterrey, México",
+     "name": "Instituto Ingenes Monterrey MÃ©xico Monterrey",
+     "lat": 25.69692,
+     "lng": -100.33058,
+     "where": "Monterrey, MÃ©xico",
      "source": "ccac_redlara.json"
     }
    ]
   },
   {
-   "owner": "Citmer",
+   "owner": "CITMER",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
-    "México"
+    "MÃ©xico"
    ],
    "members": [
     {
-     "name": "Centro de Innovación Tecnológica y Medicina Reproductiva CITMER",
-     "lat": 19.32077,
-     "lng": -99.15147,
-     "where": "Ciudad de México, México",
+     "name": "Centro de InnovaciÃ³n TecnolÃ³gica y Medicina Reproductiva CITMER MÃ©xico Ciudad de MÃ©xico",
+     "lat": 19.49115,
+     "lng": -98.05789,
+     "where": "Ciudad de MÃ©xico, MÃ©xico",
      "source": "ccac_redlara.json"
     },
     {
-     "name": "Centro de Innovacion Tecnologica y Medicina Reproductiva CITMER",
-     "lat": 25.6802,
-     "lng": -100.31526,
-     "where": "Monterrey, México",
+     "name": "Centro de Innovacion Tecnologica y Medicina Reproductiva CITMER MÃ©xico Monterrey",
+     "lat": 25.69692,
+     "lng": -100.33058,
+     "where": "Monterrey, MÃ©xico",
      "source": "ccac_redlara.json"
     },
     {
-     "name": "Centro de Innovacion Tecnologica y Medicina Reproductiva CITMER",
-     "lat": 18.83333,
-     "lng": -98.0,
-     "where": "Puebla, México",
+     "name": "Centro de Innovacion Tecnologica y Medicina Reproductiva CITMER MÃ©xico Puebla",
+     "lat": 19.20437,
+     "lng": -98.19552,
+     "where": "Puebla, MÃ©xico",
      "source": "ccac_redlara.json"
     }
    ]
@@ -3925,6 +3933,31 @@
    ]
   },
   {
+   "owner": "London Women's Clinic, Wales",
+   "basis": "stated by the register",
+   "sites": 2,
+   "countries": [
+    "GL50 4DP",
+    "SA1 8AS"
+   ],
+   "members": [
+    {
+     "name": "Cotswold Fertility Unit",
+     "lat": 51.90671,
+     "lng": -2.08149,
+     "where": "St Pauls Medical Centre, 121 Swindon Rd, Cheltenham, GL50 4DP",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "LWC Swansea",
+     "lat": 51.62045,
+     "lng": -3.93307,
+     "where": "Ethos Building, LWC Swansea, Kings Road, Swansea, SA1 8AS",
+     "source": "hfea_clinics.json"
+    }
+   ]
+  },
+  {
    "owner": "CREATE Fertility, Manchester",
    "basis": "stated by the register",
    "sites": 2,
@@ -3995,6 +4028,31 @@
      "lat": 57.14791,
      "lng": -2.29812,
      "where": "Westhill Business Park, Peregrine Road, Aberdeen, AB32 6JL",
+     "source": "hfea_clinics.json"
+    }
+   ]
+  },
+  {
+   "owner": "London Women's Clinic, Darlington",
+   "basis": "stated by the register",
+   "sites": 2,
+   "countries": [
+    "SE19RY",
+    "TS20 1PX"
+   ],
+   "members": [
+    {
+     "name": "IVF North East",
+     "lat": 54.59401,
+     "lng": -1.33197,
+     "where": "Tees Hospital, Junction Road, Norton, Stockton on Tees, TS20 1PX",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "London Egg Bank",
+     "lat": 51.505,
+     "lng": -0.08823,
+     "where": "1, St Thomas Street, London Bridge, London, SE19RY",
      "source": "hfea_clinics.json"
     }
    ]
@@ -4400,17 +4458,17 @@
    ],
    "members": [
     {
-     "name": "ERBC Dommartin",
-     "lat": 49.80062,
-     "lng": 2.38957,
-     "where": "DOMMARTIN, FRANCE",
-     "source": "aaalac_facilities.json"
-    },
-    {
      "name": "ERBC Toulouse",
      "lat": 43.4552,
      "lng": 1.61312,
      "where": "BAZIÈGE, FRANCE",
+     "source": "aaalac_facilities.json"
+    },
+    {
+     "name": "ERBC Dommartin",
+     "lat": 49.80062,
+     "lng": 2.38957,
+     "where": "DOMMARTIN, FRANCE",
      "source": "aaalac_facilities.json"
     }
    ]
@@ -6406,7 +6464,7 @@
    "sites": 2,
    "countries": [
     "Brasil",
-    "México"
+    "MÃ©xico"
    ],
    "members": [
     {
@@ -6417,10 +6475,10 @@
      "source": "ccac_redlara.json"
     },
     {
-     "name": "Origen MX Fertilidad y Salud Reproductiva",
-     "lat": 20.96708,
-     "lng": -89.62374,
-     "where": "Merida, México",
+     "name": "Origen MX Fertilidad y Salud Reproductiva MÃ©xico Merida",
+     "lat": 20.92464,
+     "lng": -89.65928,
+     "where": "Merida, MÃ©xico",
      "source": "ccac_redlara.json"
     }
    ]
@@ -6626,23 +6684,6 @@
    ]
   },
   {
-   "owner": "London Women's Clinic, Wales",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "GL50 4DP"
-   ],
-   "members": [
-    {
-     "name": "Cotswold Fertility Unit",
-     "lat": 51.90671,
-     "lng": -2.08149,
-     "where": "St Pauls Medical Centre, 121 Swindon Rd, Cheltenham, GL50 4DP",
-     "source": "hfea_clinics.json"
-    }
-   ]
-  },
-  {
    "owner": "CREATE Fertility Bristol",
    "basis": "stated by the register",
    "sites": 1,
@@ -6711,6 +6752,40 @@
    ]
   },
   {
+   "owner": "Cambridge IVF",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "IP4 5PD"
+   ],
+   "members": [
+    {
+     "name": "Ipswich IVF",
+     "lat": 52.05686,
+     "lng": 1.19795,
+     "where": "Ipswich Hospital, Heath Road, Ipswich, IP4 5PD",
+     "source": "hfea_clinics.json"
+    }
+   ]
+  },
+  {
+   "owner": "TFP Boston Place Fertility",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "W1G 9PF"
+   ],
+   "members": [
+    {
+     "name": "IVF Matters",
+     "lat": 51.51739,
+     "lng": -0.14598,
+     "where": "10, Harley Street, London, W1G 9PF",
+     "source": "hfea_clinics.json"
+    }
+   ]
+  },
+  {
    "owner": "Hull & East Riding Fertility",
    "basis": "stated by the register",
    "sites": 1,
@@ -6723,23 +6798,6 @@
      "lat": 53.85045,
      "lng": -1.51734,
      "where": "5 Stoneleigh Garth, Moortown, Leeds, LS17 8FG",
-     "source": "hfea_clinics.json"
-    }
-   ]
-  },
-  {
-   "owner": "London Women's Clinic, Darlington",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "SE19RY"
-   ],
-   "members": [
-    {
-     "name": "London Egg Bank",
-     "lat": 51.505,
-     "lng": -0.08823,
-     "where": "1, St Thomas Street, London Bridge, London, SE19RY",
      "source": "hfea_clinics.json"
     }
    ]
@@ -8003,23 +8061,6 @@
    ]
   },
   {
-   "owner": "Childre's Mercy Research Institute d/b/a Children's Mercy Hospital",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "UNITED STATES"
-   ],
-   "members": [
-    {
-     "name": "Children's Mercy Research Institute d/b/a Children's Mercy Hospital",
-     "lat": 39.1001,
-     "lng": -94.57814,
-     "where": "KANSAS CITY, MO, UNITED STATES",
-     "source": "aaalac_facilities.json"
-    }
-   ]
-  },
-  {
    "owner": "China Institute for Radiation Protection",
    "basis": "stated by the register",
    "sites": 1,
@@ -9184,7 +9225,7 @@
    ],
    "members": [
     {
-     "name": "National Beijing Center for Drug Safety Evaluation and Research",
+     "name": "Center for Drug Safety Evaluation and Research, Academy of Military Medical Sciences",
      "lat": 39.99714,
      "lng": 116.34363,
      "where": "BEIJING, P.R. CHINA",
@@ -12622,23 +12663,6 @@
      "lat": 42.02676,
      "lng": -93.61704,
      "where": "AMES, IA, UNITED STATES",
-     "source": "aaalac_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "U.S. Department of Agriculture - Agricultural Research Service",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "UNITED STATES"
-   ],
-   "members": [
-    {
-     "name": "Beltsville Human Nutrition Research Center",
-     "lat": 39.02991,
-     "lng": -76.91495,
-     "where": "BELTSVILLE, MD, UNITED STATES",
      "source": "aaalac_facilities.json"
     }
    ]
@@ -62288,6 +62312,23 @@
    ]
   },
   {
+   "owner": "Dr. Vani Sundarapandian",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "Chennai"
+   ],
+   "members": [
+    {
+     "name": "Jananam Fertility Centre",
+     "lat": 12.95691,
+     "lng": 80.25134,
+     "where": "Chennai",
+     "source": "osm_facilities.json"
+    }
+   ]
+  },
+  {
    "owner": "MVZ Kinderwunschzentrum Dortmund GmbH",
    "basis": "stated by the register",
    "sites": 1,
@@ -62869,6 +62910,23 @@
      "lat": 36.5721,
      "lng": 59.19115,
      "where": "گلبهار",
+     "source": "osm_facilities.json"
+    }
+   ]
+  },
+  {
+   "owner": "George Mulaudzi",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "Sandton"
+   ],
+   "members": [
+    {
+     "name": "Erectile Dysfunction",
+     "lat": -26.05824,
+     "lng": 28.11559,
+     "where": "Sandton",
      "source": "osm_facilities.json"
     }
    ]

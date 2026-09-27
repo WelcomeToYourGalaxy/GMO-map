@@ -12127,5 +12127,417 @@
 "UKPC:NE340PL": [
 54.97121,
 -1.42847
+],
+"UKPC:SA18AS": [
+51.62045,
+-3.93307
+],
+"Riobamba 1205, 1\u00c2\u00b0 Piso, Buenos Aires, Argentina": [
+-33.6763,
+-59.67738
+],
+"Blvd. Oro\u00c3\u00b1o 1520, Rosario, Argentina": null,
+"Rosario, Argentina": [
+-32.95936,
+-60.6617
+],
+"Chacabuco 1089, C\u00c3\u00b3rdoba, Argentina": [
+-28.47044,
+-65.77125
+],
+"Juan Domingo Per\u00c3\u00b3n, 4190, Buenos Aires, Argentina": [
+-34.79029,
+-58.34309
+],
+"Rua Esp\u00c3\u00adrito Santo, 1739 - Lourdes, Belo Horizonte, Brasil": [
+-19.9274,
+-43.93952
+],
+"Alameda Coronel Joaquim Bastos N\u00c2\u00b0 243, Setor Marista, Goi\u00c3\u00a2nia - Goias, Brasil": null,
+"Goi\u00c3\u00a2nia - Goias, Brasil": [
+-15.93237,
+-50.13929
+],
+"Rua Lauro M\u00c3\u00bcller, 116-903, Botafogo., R\u00c3\u00ado de Janeiro, Brasil": null,
+"R\u00c3\u00ado de Janeiro, Brasil": [
+-22.95838,
+-43.37434
+],
+"Av. das Americas 4666, Salas 312 - 313 - Barra da Tijuca, R\u00c3\u00ado de Janeiro, Brasil": null,
+"Av. Bandeirantes 3900, Hospital das Cl\u00c3\u00adnicas - 1 andar, Laborat\u00c3\u00b3rio de Ginecologia, Ribeirao Preto, Brasil": null,
+"Av. Jo\u00c3\u00a3o Fi\u00c3\u00baza, 689, Ribeirao Preto, Brasil": [
+-21.19862,
+-47.81696
+],
+"Av. Rep\u00c3\u00bablica do L\u00c3\u00adbano, 529 - Ibirapuera, Sao Paulo, Brasil": [
+-23.64466,
+-46.52842
+],
+"Rua Gomes Jardim, 201, 15\u00c2\u00ba andar - Torre Norte / Medplex Santana. Bairro Santana, Porto Alegre, Brasil": null,
+"Travessa Doutor Fl\u00c3\u00a1vio Luz, 132 - T\u00c3\u00a9rreo - Condom\u00c3\u00adnio AR3000 - loja 3 - Juvev\u00c3\u00aa, Curitiba, Brasil": null,
+"Autopista Concepci\u00c3\u00b3n-Talcahuano 8720, 5to piso, Hualp\u00c3\u00a9n, Concepci\u00c3\u00b3n, Chile": null,
+"Concepci\u00c3\u00b3n, Chile": [
+-36.82707,
+-73.05021
+],
+"Av. Jos\u00c3\u00a9 Alcalde D\u00c3\u00a9lano #10581, Lo Barnechea, Santiago, Chile": null,
+"Ave. Alejandro Navarrete, 2606, Vi\u00c3\u00b1a del Mar, Chile": [
+-32.98479,
+-71.52782
+],
+"Avda. Manquehue Norte 1410, Piso 4\u00c2\u00b0 Vitacura Santiago, Santiago, Chile": null,
+"Carrera 16 N\u00c2\u00b082-29 Piso 7., Bogot\u00c3\u00a1, Colombia": null,
+"Bogot\u00c3\u00a1, Colombia": [
+4.28347,
+-74.17536
+],
+"Calle 12 # 39-60 - Loma Lalinde - El Poblado, Medell\u00c3\u00adn, Colombia": null,
+"Medell\u00c3\u00adn, Colombia": [
+6.26973,
+-75.60256
+],
+"Calle 50, N\u00c2\u00b07-36, Piso 4., Bogot\u00c3\u00a1, Colombia": null,
+"Carrera 40 N\u00c2\u00b05B-105, Barrio Tequendama, Cali, Colombia": null,
+"Av. Real San Agustin, 222 local TA-106, Real San Agustin, San Pedro Garza Garcia, M\u00c3\u00a9xico": null,
+"San Pedro Garza Garcia, M\u00c3\u00a9xico": [
+24.85483,
+-99.28253
+],
+"Av. Palmira, 600, Fracc. Villas del Pedregal, San Luis Potos\u00c3\u00ad, M\u00c3\u00a9xico": null,
+"San Luis Potos\u00c3\u00ad, M\u00c3\u00a9xico": [
+19.32223,
+-98.95123
+],
+"Vialidad de la Barranca s/n- consultorio 240, Col. Valle de las Palmas, Huixquilucan, M\u00c3\u00a9xico": null,
+"Huixquilucan, M\u00c3\u00a9xico": [
+19.41378,
+-99.27359
+],
+"Av. Hidalgo 1842 Pte. 3er Piso. Colonia Obispado, Monterrey, M\u00c3\u00a9xico": null,
+"Monterrey, M\u00c3\u00a9xico": [
+25.69692,
+-100.33058
+],
+"AVENIDA CATALU\u00c3\u2018A 3137, Montevideo, Uruguay": [
+-34.89606,
+-56.14975
+],
+"6ta transversal de Altamira Av San Juan Bosco. Edif: Cl\u00c3\u00adnica El \u00c3\ufffdvila, Anexo A, piso 4., Caracas, Venezuela": null,
+"Santa Rosa 1234 Piso 2, Hosp. Cl\u00c3\u00adnico San Borja Arriar\u00c3\u00a1n, Santiago, Chile": null,
+"Rua Mato Grosso, 306 - 19\u00c2\u00ba andar, Sao Paulo, Brasil": [
+-23.55012,
+-46.65841
+],
+"Rua Bernardo Guimar\u00c3\u00a3es, 2063, Lourdes, Belo Horizonte, Brasil": [
+-19.92935,
+-43.93948
+],
+"Rua XV de Novembro, 4461 - Centro, S\u00c3\u00a3o Jos\u00c3\u00a9 do Rio Preto, Brasil": null,
+"S\u00c3\u00a3o Jos\u00c3\u00a9 do Rio Preto, Brasil": [
+-20.81259,
+-49.38042
+],
+"Rua Coronel Linhares, 950 6\u00c2\u00b0 andar, Salas 605 a 608 - Aldeota, Ed. Medical Center, Fortaleza, Brasil": null,
+"Mart\u00c3\u00adn de Utreras N31-310 y Avenida Mariana de Jes\u00c3\u00bas - Edificio Concebir, Quito, Ecuador": null,
+"Quebec #631-104, Col. Providencia, Guadalajara, M\u00c3\u00a9xico": null,
+"Guadalajara, M\u00c3\u00a9xico": [
+40.74,
+-2.50593
+],
+"Av. Indian\u00c3\u00b3polis 1960, Sao Paulo, Brasil": [
+-23.61539,
+-46.64977
+],
+"Rua Tiradentes, 333 - Bloco B - 5\u00c2\u00ba andar, Porto Alegre, Brasil": null,
+"Rua 1129 Qd. 229 Lt. 19 - Setor Marista, Goi\u00c3\u00a2nia - Goias, Brasil": null,
+"Calle Alhelies # 51 entre 1a. Y 2a. Colonia Jard\u00c3\u00adn, Matamoros, M\u00c3\u00a9xico": null,
+"Matamoros, M\u00c3\u00a9xico": [
+19.2732,
+-98.92787
+],
+"Juan de Grijalva # 174 - Fracc. Reforma, Veracruz, M\u00c3\u00a9xico": null,
+"Veracruz, M\u00c3\u00a9xico": [
+19.42682,
+-96.96456
+],
+"Av. Empresarios 150, Planta Baja 6, Col.Puerta de Hierro, Zapopan, Jalisco, Guadalajara, M\u00c3\u00a9xico": null,
+"Av.Pedro Rosales de Le\u00c3\u00b3n, 7510 - Frac. Fuentes del Valle - Hosp. Poliplaza M\u00c3\u00a9dica, Ciudad Juarez, M\u00c3\u00a9xico": null,
+"Ciudad Juarez, M\u00c3\u00a9xico": [
+23.64733,
+-100.61711
+],
+"Av. San Juan Bosco con 6ta Transversal. Urb. Altamira. Edif. Cl\u00c3\u00adnica El \u00c3\ufffdvila. Piso 11, cons. 1101, Caracas, Venezuela": null,
+"Rua Alberto de Campos, 175 - Ipanema, R\u00c3\u00ado de Janeiro, Brasil": [
+-21.74588,
+-41.34442
+],
+"Plaza las Am\u00c3\u00a9ricas 115 - Colonia Jard\u00c3\u00adnes del Moral, Leon, M\u00c3\u00a9xico": null,
+"Leon, M\u00c3\u00a9xico": [
+19.42682,
+-96.96456
+],
+"Rua Dom Joaquim, 779 - Centro, Florian\u00c3\u00b3polis, Brasil": [
+-27.58972,
+-48.54685
+],
+"Parana 545, C\u00c3\u00b3rdoba, Argentina": [
+-31.75258,
+-60.50323
+],
+"SAN LUIS 2176, 3\u00c2\u00b0 PISO, Mar del Plata, Argentina": [
+-38.00277,
+-57.55081
+],
+"Rua Itaja\u00c3\u00ad, 31, Condom\u00c3\u00adnio Centro Empresarial Taquari - Jd.Aqu\u00c3\u00a1rius, S\u00c3\u00a3o Jos\u00c3\u00a9 dos Campos, Brasil": null,
+"S\u00c3\u00a3o Jos\u00c3\u00a9 dos Campos, Brasil": [
+-9.78222,
+-36.09032
+],
+"Pablo Neruda, 3148 - Colonia Providencia 4a. secci\u00c3\u00b3n, Guadalajara, M\u00c3\u00a9xico": null,
+"Marginal Av. Nu\u00c3\u00b1ez de Caceres 366, 7mo piso Edif Corporativo NC, El Millon, Santo Domingo, Republica Dominicana": null,
+"Av. Indian\u00c3\u00b3polis, 843, Sao Paulo, Brasil": [
+-23.55058,
+-46.5198
+],
+"Av. L2 Sul SGAS. Quadra 608 M\u00c3\u00b3dulo A - Asa Sul, Brasilia, Brasil": null,
+"Avenida Doutor Nilo Pe\u00c3\u00a7anha, 1221 \u00e2\u20ac\u201c 10\u00c2\u00b0 Andar, Boa Vista, Porto Alegre, Brasil": null,
+"Av. Desembargador Santos Nieves, 165 - Santa Lucia, Vit\u00c3\u00b3ria, Brasil": [
+-20.30917,
+-40.2963
+],
+"Hospital Angeles M\u00c3\u00a9xico - Agrarismo 208 1\u00c2\u00ba piso Torre A, Colonia Escandon, Ciudad de M\u00c3\u00a9xico, M\u00c3\u00a9xico": null,
+"Ciudad de M\u00c3\u00a9xico, M\u00c3\u00a9xico": [
+19.49115,
+-98.05789
+],
+"Centro Universitario de Medicina Reproductiva, Hospital Universitario \u00e2\u20ac\u0153Dr. Jos\u00c3\u00a9 Eleuterio Gonz\u00c3\u00a1lez\u00e2\u20ac\ufffd, Edificio Jes\u00c3\u00bas Gracia Garza, 4to. Piso, Monterrey, M\u00c3\u00a9xico": null,
+"Paseo Rio San Miguel, 35, Colonia R\u00c3\u00ado Sonora, Hermosillo, M\u00c3\u00a9xico": null,
+"Hermosillo, M\u00c3\u00a9xico": [
+30.53388,
+-111.1171
+],
+"Calle 83, 16A-44 Consultorio 502, Bogot\u00c3\u00a1, Colombia": null,
+"Calle 134 No. 7B -83 piso 7, Bogot\u00c3\u00a1, Colombia": [
+4.71143,
+-74.03089
+],
+"Leona Vicario # 1450 suite 6, Zona R\u00c3\u00ado, Tijuana, M\u00c3\u00a9xico": null,
+"Tijuana, M\u00c3\u00a9xico": [
+32.4706,
+-116.84654
+],
+"Pra\u00c3\u00a7a Amadeu Amaral, 47 13. andar conj. 134 - Bela Vista, Sao Paulo, Brasil": null,
+"Av. Armando Lombardi, 1000 Bl. 1 sala 123 - Centro M\u00c3\u00a9dico Barra Life, R\u00c3\u00ado de Janeiro, Brasil": null,
+"Rua Marqu\u00c3\u00aas Povoa, 224 - Martins, Uberl\u00c3\u00a2ndia, Brasil": [
+-18.91902,
+-48.28427
+],
+"Indalecio G\u00c3\u00b3mez, 260, Salta, Argentina": [
+-32.03716,
+-61.22313
+],
+"Avenida Pl\u00c3\u00adnio Brasil Milano 162, Porto Alegre, Brasil": [
+-30.01168,
+-51.16999
+],
+"Rua Henriqueta Galeno, 501 - Bairro Dion\u00c3\u00adsio Torres, Fortaleza, Brasil": [
+-3.74628,
+-38.4957
+],
+"Carretera Mexico - Toluca #5420, Piso 6, Oficina 602. Colonia El Yaqui. Delegaci\u00c3\u00b3n Cuajimalpa de Morelos, Ciudad de M\u00c3\u00a9xico, M\u00c3\u00a9xico": null,
+"Paseo de los Heroes, 10289, int. 7003 piso 7, Zona Urbana Rio, Tijuana, M\u00c3\u00a9xico": null,
+"Managua, 730 - Lindavista, Ciudad de M\u00c3\u00a9xico, M\u00c3\u00a9xico": null,
+"Ejercito nacional 613-101 11520 col granada deleg miguel hidalgo cdmx, Ciudad de M\u00c3\u00a9xico, M\u00c3\u00a9xico": null,
+"21 Poniente, 3713 Col. Belisario Dominguez, Puebla, M\u00c3\u00a9xico": null,
+"Puebla, M\u00c3\u00a9xico": [
+19.20437,
+-98.19552
+],
+"Rua Pedro de Toledo, 88 - Vila Adyana, S\u00c3\u00a3o Jos\u00c3\u00a9 dos Campos, Brasil": [
+-23.19925,
+-45.89408
+],
+"Rua da Paz, 1479 - Bairro Santa F\u00c3\u00a9, Campo Grande, Brasil": [
+-7.23131,
+-35.90671
+],
+"Av. das Am\u00c3\u00a9ricas, 6205, sala 305, R\u00c3\u00ado de Janeiro, Brasil": null,
+"Calle Ram\u00c3\u00b3n H. Jurado, Paitilla. The Panama Clinic, Torre B, Piso 27, Panama, Panama": null,
+"Urbanizaci\u00c3\u00b3n Los Mangos, Ave. 110 IEQ Los Mangos, piso 4, Valencia, Venezuela": null,
+"Rua Joaquim Floriano 413 - 7\u00c2\u00b0 e 8\u00c2\u00b0 andar, Sao Paulo, Brasil": null,
+"Av. Rep\u00c3\u00bablica Argentina, 210 - 17\u00c2\u00ba andar, Curitiba, Brasil": [
+-25.4491,
+-49.28785
+],
+"Sierra Mojada 340, Ciudad de M\u00c3\u00a9xico, M\u00c3\u00a9xico": null,
+"Av. Adrian Muguerza, 1115 int. 105 - Colonia Brisas, Saltillo, M\u00c3\u00a9xico": null,
+"Saltillo, M\u00c3\u00a9xico": [
+25.4151,
+-100.90841
+],
+"Av. San Jorge y la decima, Clinica Kennedy, Secci\u00c3\u00b3n Gamma, consultorio 11, Guayaquil, Ecuador": null,
+"Islas del Atl\u00c3\u00a1ntico Sur 4685, C\u00c3\u00b3rdoba, Argentina": null,
+"C\u00c3\u00b3rdoba, Argentina": [
+20.61409,
+-99.11362
+],
+"Camino a Santa Teresa, 1055, Col. Heroes de Padierna, Ciudad de M\u00c3\u00a9xico, M\u00c3\u00a9xico": null,
+"Calle 124, 7-38, piso 7, Bogot\u00c3\u00a1, Colombia": [
+4.66183,
+-74.05069
+],
+"Urbanizaci\u00c3\u00b3n Mariscal Gamarra B-11, Segunda Etapa, Cusco, Peru": null,
+"Av. Tulum, Lote 3, manzana 1, super manzana 9, Planta Baja, Canc\u00c3\u00ban, M\u00c3\u00a9xico": null,
+"Canc\u00c3\u00ban, M\u00c3\u00a9xico": [
+19.23575,
+-98.91572
+],
+"San Martin, 2447 - 2\u00c2\u00ba piso, Antofagasta, Chile": [
+-23.64811,
+-70.39945
+],
+"Hospital Punta Pac\u00c3\u00adfica, 6\u00c2\u00ba piso, consultorios 617 - 620, Panama, Panama": null,
+"Avda Brasilia 760 casi Fray Luis de Le\u00c3\u00b3n, Asunci\u00c3\u00b3n, Paraguay": null,
+"Asunci\u00c3\u00b3n, Paraguay": [
+-25.28005,
+-57.63438
+],
+"Av. Indian\u00c3\u00b3polis, 171 - Moema, Sao Paulo, Brasil": [
+-23.60425,
+-46.65899
+],
+"Cra 19A # 82-85 consultorio 401, Bogot\u00c3\u00a1, Colombia": null,
+"Av. Barbacena 600, sala 407. Santo Agostinho.\u00c2, Belo Horizonte, Brasil": null,
+"Av. Francisco Garcia Salinas, 19 Col El Carmen, Guadalupe, M\u00c3\u00a9xico": null,
+"Guadalupe, M\u00c3\u00a9xico": [
+19.27482,
+-98.92476
+],
+"Avenida Royal Country, 4650 - 301, Zapopan, M\u00c3\u00a9xico": null,
+"Zapopan, M\u00c3\u00a9xico": [
+25.37093,
+-103.34722
+],
+"Calle 21 # 204-D entre 24 y 26, Colonia Garcia Gineres, Merida, M\u00c3\u00a9xico": null,
+"Merida, M\u00c3\u00a9xico": [
+20.92464,
+-89.65928
+],
+"Av. Mar del Sur 2014 local 102. Col. Country Club, Guadalajara, M\u00c3\u00a9xico": null,
+"Av. Jos\u00c3\u00a9 Aguirre Acha, Los Pinos, La Paz, Bolivia": [
+-16.54506,
+-68.07548
+],
+"Avenida Nelson Carrero, 637 - Santo Ant\u00c3\u00a3o., Bento Gon\u00c3\u00a7alves, Brasil": null,
+"Bento Gon\u00c3\u00a7alves, Brasil": [
+-29.16567,
+-51.52012
+],
+"Calle Pedro Ascencio 427, consultorio 418, Colonia Barrio Santa Cruz. Metepec Estado de M\u00c3\u00a9xico. Torre de Servicios Especializados del Centro Medico Toluca, Metepec, M\u00c3\u00a9xico": null,
+"Metepec, M\u00c3\u00a9xico": [
+19.21468,
+-99.63334
+],
+"SGAS 915 Conjunto N - Sala 1 (2\u00c2\u00ba subsolo) - Edif\u00c3\u00adcio Advance I - Asa Sul, Brasilia, Brasil": null,
+"Paseo de los Tamarindos, 90 Torre 1, piso 2. Col. Bosque de las Lomas. Cuajimalpa de Morelos, Ciudad de M\u00c3\u00a9xico, M\u00c3\u00a9xico": null,
+"Gutenberg 175, Anzures, Miguel Hidalgo, Ciudad de M\u00c3\u00a9xico, M\u00c3\u00a9xico": null,
+"Calle Jose Maria Velazco #2524, Colonia Zona Urbana Rio Tijuana, Tijuana, M\u00c3\u00a9xico": null,
+"Boulevard Miguel de Cervantes Saavedra No. 233, Piso 3, Colonia Granada, delegaci\u00c3\u00b3n Miguel Hidalgo, Ciudad de M\u00c3\u00a9xico, Ciudad de M\u00c3\u00a9xico, M\u00c3\u00a9xico": null,
+"Rua Vit\u00c3\u00b3ria, 30. Bairro Santana., Porto Alegre, Brasil": [
+-30.03902,
+-51.2122
+],
+"Clarion 1434, Isla Musala, Culiac\u00c3\u00a1n, M\u00c3\u00a9xico": null,
+"Culiac\u00c3\u00a1n, M\u00c3\u00a9xico": [
+19.23575,
+-98.91572
+],
+"Av. Javier Prado Este N\u00c2\u00b0 1010 Torre B - 5to piso Of 502, San Isidro, Lima, Peru": null,
+"Av. Revoluci\u00c3\u00b3n, 2703 - Centro Empresarial Nuevo Sur Torre 1, piso 8. Col. Ladrillera, Monterrey, M\u00c3\u00a9xico": null,
+"Lago Zurich, 219 int, 402-A, 4\u00c2\u00ba piso. Col. Granada, Ciudad de M\u00c3\u00a9xico, M\u00c3\u00a9xico": null,
+"Calle Acacias, 1876, Fracc. Gamez, Irapuato, M\u00c3\u00a9xico": null,
+"Irapuato, M\u00c3\u00a9xico": [
+20.75719,
+-101.33708
+],
+"Rua Araguari, 652 - Vila Uberabinha, S\u00c3\u00a3o Paulo, Brasil": [
+-23.59861,
+-46.67611
+],
+"6ta Avenida 4-01, Zona 10, Edificio Medika 10, 4\u00c2\u00ba nivel., Ciudad de Guatemala, Guatemala": null,
+"Carrera 19C Nr. 90-14, 2\u00c2\u00ba piso, Bogota, Colombia": null,
+"Prolongaci\u00c3\u00b3n Usamacinta, 2085 suite 840. Torre de Consultorios - Hospital Angeles, Villahermosa, M\u00c3\u00a9xico": null,
+"Villahermosa, M\u00c3\u00a9xico": [
+38.75059,
+-2.87188
+],
+"Alvares de azevedo, 847 B, Ribeir\u00c3\u00a3o Preto, Brasil": [
+-21.17208,
+-47.81988
+],
+"De la Clinica 2520 piso PB M- 4 y M-5, Sertoma, Monterrey, M\u00c3\u00a9xico": null,
+"Belsario Dominguez 2725 Col. Obispado SUITE 201, Monterrey, M\u00c3\u00a9xico": null,
+"Jr. Hu\u00c3\u00a1scar 1244. Jes\u00c3\u00bas Mar\u00c3\u00ada, Lima, Peru": null,
+"Reforma 1777 Colonia Nueva, Mexicali, M\u00c3\u00a9xico": null,
+"Mexicali, M\u00c3\u00a9xico": [
+42.34118,
+-71.83992
+],
+"Torre JV Ju\u00c3\u00a1rez, Av. Piso 13, La Paz, 72160 Puebla, Pue., Puebla, M\u00c3\u00a9xico": null,
+"Av. Campos Eliseos, 9371, Hosp. Angeles 7\u00c2\u00ba piso, cons. 755, Ciudad Juarez, M\u00c3\u00a9xico": null,
+"Calle 15, #501, entre 18 y 22, piso 11 - Penthouse. Frac. Altabrisa, Merida, M\u00c3\u00a9xico": null,
+"Av. Olsen, 379 Centro, Pen\u00c3\u00a1polis, Brasil": [
+-21.3697,
+-46.52543
+],
+"Rua Itapeva, 261 - Bela Vista, S\u00c3\u00a3o Paulo, Brasil": [
+-23.55966,
+-46.65356
+],
+"Av. Santa Mar\u00c3\u00ada 1810 - Providencia, Santiago, Chile": [
+-33.42137,
+-70.61848
+],
+"Callao, 693 - Lindavista Norte, Alcadia Gustavo A. Madero, Ciudad de M\u00c3\u00a9xico, M\u00c3\u00a9xico": null,
+"Blvd. Atlixcayotl, 1499 Interior 13 - Edif. Valcob - San Andr\u00c3\u00a9s Cholula, Puebla, M\u00c3\u00a9xico": null,
+"Av. Ej\u00c3\u00a9rcito Nacional, 769 - Polanco, Ciudad de Mexico, M\u00c3\u00a9xico": null,
+"Ciudad de Mexico, M\u00c3\u00a9xico": [
+19.49115,
+-98.05789
+],
+"Juan B. Ceballos, 487 - Nueva Chapultepec, Morelia, M\u00c3\u00a9xico": null,
+"Morelia, M\u00c3\u00a9xico": [
+16.51055,
+-92.3359
+],
+"Carrera 16 # 88-81\u00c2 of 606, Bogota, Colombia": null,
+"Torre M\u00c3\u00a9dica de la Cl\u00c3\u00adnica Porto Azul, piso 7, cons. 729. Cra 30 Corredor Universitario No. 1 - 850 cons. 729, Puerto Colombia, Atlantico, Barranquilla, Colombia": null,
+"Mariano Escobedo 185, Colonia Centro, Culiac\u00c3\u00a1n, M\u00c3\u00a9xico": null,
+"Calle General Borgo\u00c3\u00b1o, Miraflores., Lima, Peru": [
+-12.11288,
+-77.03341
+],
+"Avenida Ibirapuera, 2315 - 1 e 2 andar - Moema, S\u00c3\u00a3o Paulo, Brasil": [
+-23.60442,
+-46.66273
+],
+"Rua das Pitangueira, 187 - Bairro Jardim, Santo Andr\u00c3\u00a9, Brasil": [
+-23.65107,
+-46.5442
+],
+"RUA 135, 323, SETOR MARISTA, Goi\u00c3\u00a2nia, Brasil": [
+-16.69788,
+-49.25539
+],
+"Av. 6 de Agosto N\u00c2\u00ba 2614, Esq. Macario Pinilla, Edif. Vitruvio 4\u00c2\u00ba piso., La Paz, Bolivia": null,
+"Calle M\u00c3\u00a1laga Grenet 110, Umacollo, Arequipa, Peru": [
+-16.39825,
+-71.54763
+],
+"San Gabriel y Nicol\u00c3\u00a1s Arteta y Calisto Torre M\u00c3\u00a9dica II PB ofc.06, Quito, Ecuador": null,
+"Monte Everest # 1215. Fracc. Valle del Campestre., Aguascalientes, M\u00c3\u00a9xico": null,
+"Aguascalientes, M\u00c3\u00a9xico": [
+19.32403,
+-98.9529
 ]
 }

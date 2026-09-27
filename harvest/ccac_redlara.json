@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-20",
+ "generated": "2026-09-27",
  "note": "CCAC certified institutions (Canada) and REDLARA accredited centres (Latin America). Both voluntary accreditation, not state registers.",
  "projects": [
   {
@@ -5307,7 +5307,7 @@
    "checked": ""
   },
   {
-   "name": "Centro Médico FERTILAB",
+   "name": "Centro MÃ©dico FERTILAB",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -33.6763,
@@ -5336,11 +5336,11 @@
    "name": "Instituto de Fertilidad Asistida Dr. Julio Colabianchi",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -32.95252,
-   "lng": -60.65573,
+   "lat": -32.95936,
+   "lng": -60.6617,
    "state": "Rosario, Argentina",
-   "precise": true,
-   "addr_grade": "operational",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -5355,11 +5355,11 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=4",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.institutocolabianchi.com. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.institutocolabianchi.com. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "CEGYR - Centro de Estudios en Ginecología y Reproducción",
+   "name": "CEGYR - Centro de Estudios en GinecologÃ­a y ReproducciÃ³n",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -34.60066,
@@ -5385,12 +5385,12 @@
    "checked": ""
   },
   {
-   "name": "CIGOR Centro Integral de Ginecología- Obstetricia y Reproducción",
+   "name": "CIGOR Centro Integral de GinecologÃ­a- Obstetricia y ReproducciÃ³n",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -32.42861,
-   "lng": -63.25739,
-   "state": "Córdoba, Argentina",
+   "lat": -28.47044,
+   "lng": -65.77125,
+   "state": "CÃ³rdoba, Argentina",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -5463,7 +5463,7 @@
    "checked": ""
   },
   {
-   "name": "Halitus Instituto Médico",
+   "name": "Halitus Instituto MÃ©dico",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -38.04587,
@@ -5541,7 +5541,7 @@
    "checked": ""
   },
   {
-   "name": "GENESIS - Centro de Assistência em Reprodução Humana Ltda.",
+   "name": "GENESIS - Centro de AssistÃªncia em ReproduÃ§Ã£o Humana Ltda.",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -15.78858,
@@ -5570,8 +5570,8 @@
    "name": "Cegonha Medicina Reprodutiva",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -19.93124,
-   "lng": -43.94061,
+   "lat": -19.9274,
+   "lng": -43.93952,
    "state": "Belo Horizonte, Brasil",
    "precise": true,
    "addr_grade": "operational",
@@ -5593,14 +5593,14 @@
    "checked": ""
   },
   {
-   "name": "Fértile Reprodução Humana",
+   "name": "FÃ©rtile ReproduÃ§Ã£o Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -16.70834,
-   "lng": -49.26226,
-   "state": "Goiânia - Goias, Brasil",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": -15.93237,
+   "lng": -50.13929,
+   "state": "GoiÃ¢nia - Goias, Brasil",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -5615,11 +5615,11 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=20",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.fertile.com.br/reproducaohumana/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.fertile.com.br/reproducaohumana/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "FERTILITY - Centro de Fertilização Assistida",
+   "name": "FERTILITY - Centro de FertilizaÃ§Ã£o Assistida",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -23.58143,
@@ -5674,11 +5674,11 @@
    "name": "Day Clinic Rio Sul",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -22.95715,
-   "lng": -43.17674,
-   "state": "Río de Janeiro, Brasil",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": -22.95838,
+   "lng": -43.37434,
+   "state": "RÃ­o de Janeiro, Brasil",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -5693,16 +5693,16 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=26",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.clinicadale.com.br. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.clinicadale.com.br. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
    "name": "Fertipraxis",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -22.91101,
-   "lng": -43.20937,
-   "state": "Río de Janeiro, Brasil",
+   "lat": -22.95838,
+   "lng": -43.37434,
+   "state": "RÃ­o de Janeiro, Brasil",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -5723,7 +5723,7 @@
    "checked": ""
   },
   {
-   "name": "Hospital das Clínicas Ribeirao Preto",
+   "name": "Hospital das ClÃ­nicas Ribeirao Preto",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -21.17763,
@@ -5775,7 +5775,7 @@
    "checked": ""
   },
   {
-   "name": "Centro de Reproduçao Humana Prof. Franco Junior",
+   "name": "Centro de ReproduÃ§ao Humana Prof. Franco Junior",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -21.19862,
@@ -5804,8 +5804,8 @@
    "name": "Huntington - Centro de Medicina Reprodutiva - Unidade Ibirapuera",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -23.59941,
-   "lng": -46.65823,
+   "lat": -23.64466,
+   "lng": -46.52842,
    "state": "Sao Paulo, Brasil",
    "precise": true,
    "addr_grade": "operational",
@@ -5853,7 +5853,7 @@
    "checked": ""
   },
   {
-   "name": "ANDROLAB - Clínica da Fertilidade",
+   "name": "ANDROLAB - ClÃ­nica da Fertilidade",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -25.4296,
@@ -5884,7 +5884,7 @@
    "type": "Fertility clinic",
    "lat": -36.82707,
    "lng": -73.05021,
-   "state": "Concepción, Chile",
+   "state": "ConcepciÃ³n, Chile",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -5905,14 +5905,14 @@
    "checked": ""
   },
   {
-   "name": "Unidad de Medicina Reproductiva Clínica MEDS",
+   "name": "Unidad de Medicina Reproductiva ClÃ­nica MEDS",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -33.3545,
-   "lng": -70.53057,
+   "lat": -33.4377,
+   "lng": -70.65107,
    "state": "Santiago, Chile",
-   "precise": true,
-   "addr_grade": "operational",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -5927,16 +5927,16 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=40",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://www.meds.cl/especialidades/unidad-de-medicina-reproductiva/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://www.meds.cl/especialidades/unidad-de-medicina-reproductiva/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "Clínica de la Mujer Medicina Reproductiva",
+   "name": "ClÃ­nica de la Mujer Medicina Reproductiva",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -32.98497,
-   "lng": -71.5311,
-   "state": "Viña del Mar, Chile",
+   "lat": -32.98479,
+   "lng": -71.52782,
+   "state": "ViÃ±a del Mar, Chile",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -5957,7 +5957,7 @@
    "checked": ""
   },
   {
-   "name": "Clínica Alemana de Santiago",
+   "name": "ClÃ­nica Alemana de Santiago",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -33.4377,
@@ -5983,7 +5983,7 @@
    "checked": ""
   },
   {
-   "name": "Clínica CER",
+   "name": "ClÃ­nica CER",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -33.39866,
@@ -6012,9 +6012,9 @@
    "name": "CONCEPTUM - Unidad de Fertilidad del Country Ltda.",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 4.65338,
-   "lng": -74.08363,
-   "state": "Bogotá, Colombia",
+   "lat": 4.28347,
+   "lng": -74.17536,
+   "state": "BogotÃ¡, Colombia",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -6035,12 +6035,12 @@
    "checked": ""
   },
   {
-   "name": "InSer - Instituto de Fertilidad Humana sede Medellín",
+   "name": "InSer - Instituto de Fertilidad Humana sede MedellÃ­n",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": 6.26973,
    "lng": -75.60256,
-   "state": "Medellín, Colombia",
+   "state": "MedellÃ­n, Colombia",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -6061,14 +6061,14 @@
    "checked": ""
   },
   {
-   "name": "Procreación Médicamente Asistida Ltda.",
+   "name": "ProcreaciÃ³n MÃ©dicamente Asistida Ltda.",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 4.26382,
-   "lng": -75.93286,
-   "state": "Bogotá, Colombia",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": 4.28347,
+   "lng": -74.17536,
+   "state": "BogotÃ¡, Colombia",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -6083,11 +6083,11 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=47",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.fertilidadpma.com. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.fertilidadpma.com. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "Instituto de Reproducción Humana PROCREAR Ltda.",
+   "name": "Instituto de ReproducciÃ³n Humana PROCREAR Ltda.",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": 11.01019,
@@ -6139,7 +6139,7 @@
    "checked": ""
   },
   {
-   "name": "Centro de Reproducción Humana CER",
+   "name": "Centro de ReproducciÃ³n Humana CER",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": 14.64161,
@@ -6165,12 +6165,12 @@
    "checked": ""
   },
   {
-   "name": "Creasis San Pedro",
+   "name": "Creasis San Pedro MÃ©xico San Pedro Garza Garcia",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 25.84718,
-   "lng": -100.39136,
-   "state": "San Pedro Garza Garcia, México",
+   "lat": 24.85483,
+   "lng": -99.28253,
+   "state": "San Pedro Garza Garcia, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -6191,14 +6191,14 @@
    "checked": ""
   },
   {
-   "name": "Centro de Medicina Reproductiva FILIUS",
+   "name": "Centro de Medicina Reproductiva FILIUS MÃ©xico San Luis PotosÃ­",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 22.12608,
-   "lng": -101.02151,
-   "state": "San Luis Potosí, México",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": 19.32223,
+   "lng": -98.95123,
+   "state": "San Luis PotosÃ­, MÃ©xico",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -6213,16 +6213,16 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=56",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: http://www.filius.mx/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: http://www.filius.mx/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "CEPAM - Centro Especializado para la Atención de la Mujer",
+   "name": "CEPAM - Centro Especializado para la AtenciÃ³n de la Mujer MÃ©xico Huixquilucan",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 19.37018,
-   "lng": -99.35816,
-   "state": "Huixquilucan, México",
+   "lat": 19.41378,
+   "lng": -99.27359,
+   "state": "Huixquilucan, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -6243,12 +6243,12 @@
    "checked": ""
   },
   {
-   "name": "Centro de Fertilidad IECH",
+   "name": "Centro de Fertilidad IECH MÃ©xico Monterrey",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 25.6802,
-   "lng": -100.31526,
-   "state": "Monterrey, México",
+   "lat": 25.69692,
+   "lng": -100.33058,
+   "state": "Monterrey, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -6269,7 +6269,7 @@
    "checked": ""
   },
   {
-   "name": "Clínica Miraflores - Ginecología y Fertilidad",
+   "name": "ClÃ­nica Miraflores - GinecologÃ­a y Fertilidad",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -12.04598,
@@ -6321,7 +6321,7 @@
    "checked": ""
   },
   {
-   "name": "Ávila FIV",
+   "name": "Ã�vila FIV",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": 10.50609,
@@ -6373,7 +6373,7 @@
    "checked": ""
   },
   {
-   "name": "CEERH - Centro Especializado em Reprodução Humana",
+   "name": "CEERH - Centro Especializado em ReproduÃ§Ã£o Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -23.55012,
@@ -6425,7 +6425,7 @@
    "checked": ""
   },
   {
-   "name": "Huntington Pró-Criar Medicina Reprodutiva",
+   "name": "Huntington PrÃ³-Criar Medicina Reprodutiva",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -19.92935,
@@ -6477,7 +6477,7 @@
    "checked": ""
   },
   {
-   "name": "Unidad de Medicina Reproductiva - Centro Médico IMBANACO",
+   "name": "Unidad de Medicina Reproductiva - Centro MÃ©dico IMBANACO",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": 3.41084,
@@ -6499,11 +6499,11 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=86",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.fertilidad-reproducción.com.co. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.fertilidad-reproducciÃ³n.com.co. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "Generar - Reprodução Humana",
+   "name": "Generar - ReproduÃ§Ã£o Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -30.03264,
@@ -6529,7 +6529,7 @@
    "checked": ""
   },
   {
-   "name": "FIVMED - Instituto de Reprodução Humana Ltda",
+   "name": "FIVMED - Instituto de ReproduÃ§Ã£o Humana Ltda",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -22.8877,
@@ -6555,14 +6555,14 @@
    "checked": ""
   },
   {
-   "name": "Centro de Reprodução Humana de Sao José do Rio Preto",
+   "name": "Centro de ReproduÃ§Ã£o Humana de Sao JosÃ© do Rio Preto",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -20.81055,
-   "lng": -49.37743,
-   "state": "São José do Rio Preto, Brasil",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": -20.81259,
+   "lng": -49.38042,
+   "state": "SÃ£o JosÃ© do Rio Preto, Brasil",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -6577,11 +6577,11 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=95",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://www.crhriopreto.com.br/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://www.crhriopreto.com.br/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "CONCEPTUS - Centro de Reprodução Assistida do Ceará",
+   "name": "CONCEPTUS - Centro de ReproduÃ§Ã£o Assistida do CearÃ¡",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -3.73045,
@@ -6633,12 +6633,12 @@
    "checked": ""
   },
   {
-   "name": "Centro de Reproducción Asistida de Occidente",
+   "name": "Centro de ReproducciÃ³n Asistida de Occidente MÃ©xico Guadalajara",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 20.67204,
-   "lng": -103.3384,
-   "state": "Guadalajara, México",
+   "lat": 40.74,
+   "lng": -2.50593,
+   "state": "Guadalajara, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -6711,7 +6711,7 @@
    "checked": ""
   },
   {
-   "name": "GENESIS - Centro de Reprodução Humana",
+   "name": "GENESIS - Centro de ReproduÃ§Ã£o Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -28.25081,
@@ -6740,9 +6740,9 @@
    "name": "Humana Medicina Reprodutiva",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -16.68088,
-   "lng": -49.25327,
-   "state": "Goiânia - Goias, Brasil",
+   "lat": -15.93237,
+   "lng": -50.13929,
+   "state": "GoiÃ¢nia - Goias, Brasil",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -6763,12 +6763,12 @@
    "checked": ""
   },
   {
-   "name": "Instituto de Ciencias en Reprodución Humana -VIDA-Matamoros",
+   "name": "Instituto de Ciencias en ReproduciÃ³n Humana -VIDA-Matamoros MÃ©xico Matamoros",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 25.88102,
-   "lng": -97.50649,
-   "state": "Matamoros, México",
+   "lat": 19.2732,
+   "lng": -98.92787,
+   "state": "Matamoros, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -6789,12 +6789,12 @@
    "checked": ""
   },
   {
-   "name": "Centro de Diagnóstico Ginecológico",
+   "name": "Centro de DiagnÃ³stico GinecolÃ³gico MÃ©xico Veracruz",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 19.33333,
-   "lng": -96.66667,
-   "state": "Veracruz, México",
+   "lat": 19.42682,
+   "lng": -96.96456,
+   "state": "Veracruz, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -6815,12 +6815,12 @@
    "checked": ""
   },
   {
-   "name": "Instituto Vida Guadalajara (Instituto de Ciencias en Reproducción Humana)",
+   "name": "Instituto Vida Guadalajara (Instituto de Ciencias en ReproducciÃ³n Humana) MÃ©xico Guadalajara",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 20.67204,
-   "lng": -103.3384,
-   "state": "Guadalajara, México",
+   "lat": 40.74,
+   "lng": -2.50593,
+   "state": "Guadalajara, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -6841,12 +6841,12 @@
    "checked": ""
   },
   {
-   "name": "Unidad de Reproducción Humana y Genética",
+   "name": "Unidad de ReproducciÃ³n Humana y GenÃ©tica MÃ©xico Ciudad Juarez",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 31.6908,
-   "lng": -106.42532,
-   "state": "Ciudad Juarez, México",
+   "lat": 23.64733,
+   "lng": -100.61711,
+   "state": "Ciudad Juarez, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -6893,7 +6893,7 @@
    "checked": ""
   },
   {
-   "name": "Laboratorio PRANOR de la Clínica Monterrico",
+   "name": "Laboratorio PRANOR de la ClÃ­nica Monterrico",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -12.10304,
@@ -6922,9 +6922,9 @@
    "name": "Primordia Medicina Reprodutiva",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -22.98105,
-   "lng": -43.20468,
-   "state": "Río de Janeiro, Brasil",
+   "lat": -21.74588,
+   "lng": -41.34442,
+   "state": "RÃ­o de Janeiro, Brasil",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -6945,12 +6945,12 @@
    "checked": ""
   },
   {
-   "name": "Instituto VIDA - León",
+   "name": "Instituto VIDA - LeÃ³n MÃ©xico Leon",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 26.23844,
-   "lng": -99.8873,
-   "state": "Leon, México",
+   "lat": 19.42682,
+   "lng": -96.96456,
+   "state": "Leon, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -6976,7 +6976,7 @@
    "type": "Fertility clinic",
    "lat": -27.58972,
    "lng": -48.54685,
-   "state": "Florianópolis, Brasil",
+   "state": "FlorianÃ³polis, Brasil",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -6997,12 +6997,12 @@
    "checked": ""
   },
   {
-   "name": "Fundación FECUNDART",
+   "name": "FundaciÃ³n FECUNDART",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -31.72385,
-   "lng": -60.53121,
-   "state": "Córdoba, Argentina",
+   "lat": -31.75258,
+   "lng": -60.50323,
+   "state": "CÃ³rdoba, Argentina",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -7023,7 +7023,7 @@
    "checked": ""
   },
   {
-   "name": "CRECER - Centro de medicina reproductiva y genética humana",
+   "name": "CRECER - Centro de medicina reproductiva y genÃ©tica humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -38.00277,
@@ -7049,7 +7049,7 @@
    "checked": ""
   },
   {
-   "name": "Fertway Reprodução Humana",
+   "name": "Fertway ReproduÃ§Ã£o Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -25.43991,
@@ -7075,7 +7075,7 @@
    "checked": ""
   },
   {
-   "name": "Feliccità Instituto de Fertilidade",
+   "name": "FeliccitÃ Instituto de Fertilidade",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -25.45325,
@@ -7101,12 +7101,12 @@
    "checked": ""
   },
   {
-   "name": "Reproferty - Centro de Reprodução Humana- Saúde da Mulher e Saúde do Homem",
+   "name": "Reproferty - Centro de ReproduÃ§Ã£o Humana- SaÃºde da Mulher e SaÃºde do Homem",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -23.18678,
-   "lng": -45.88545,
-   "state": "São José dos Campos, Brasil",
+   "lat": -9.78222,
+   "lng": -36.09032,
+   "state": "SÃ£o JosÃ© dos Campos, Brasil",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -7127,7 +7127,7 @@
    "checked": ""
   },
   {
-   "name": "ANDROFERT - Clínica de Andrologia e Reprodução Humana SC Ltda",
+   "name": "ANDROFERT - ClÃ­nica de Andrologia e ReproduÃ§Ã£o Humana SC Ltda",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -22.90564,
@@ -7153,14 +7153,14 @@
    "checked": ""
   },
   {
-   "name": "Instituto IMER - Guadalajara",
+   "name": "Instituto IMER - Guadalajara MÃ©xico Guadalajara",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 20.69737,
-   "lng": -103.38991,
-   "state": "Guadalajara, México",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": 40.74,
+   "lng": -2.50593,
+   "state": "Guadalajara, MÃ©xico",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -7175,11 +7175,11 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=143",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.institutoimer.com. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.institutoimer.com. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "PROFERT Programa de Reproducción Asistida y Medicina Perinatal",
+   "name": "PROFERT Programa de ReproducciÃ³n Asistida y Medicina Perinatal",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": 18.47139,
@@ -7205,11 +7205,11 @@
    "checked": ""
   },
   {
-   "name": "FERTIVITRO - Centro de Reprodução Humana",
+   "name": "FERTIVITRO - Centro de ReproduÃ§Ã£o Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -23.60579,
-   "lng": -46.65333,
+   "lat": -23.55058,
+   "lng": -46.5198,
    "state": "Sao Paulo, Brasil",
    "precise": true,
    "addr_grade": "operational",
@@ -7231,7 +7231,7 @@
    "checked": ""
   },
   {
-   "name": "Centro de Ensino e Pesquisa em Reprodução Assistida do Hospital Materno Infantil de Brasília - CEPRA HMIB",
+   "name": "Centro de Ensino e Pesquisa em ReproduÃ§Ã£o Assistida do Hospital Materno Infantil de BrasÃ­lia - CEPRA HMIB",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -15.78858,
@@ -7340,7 +7340,7 @@
    "type": "Fertility clinic",
    "lat": -20.30917,
    "lng": -40.2963,
-   "state": "Vitória, Brasil",
+   "state": "VitÃ³ria, Brasil",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -7361,12 +7361,12 @@
    "checked": ""
   },
   {
-   "name": "CEERH - Centro Especializado en Esterilidad y Reproducción Humana SC",
+   "name": "CEERH - Centro Especializado en Esterilidad y ReproducciÃ³n Humana SC MÃ©xico Ciudad de MÃ©xico",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 19.32077,
-   "lng": -99.15147,
-   "state": "Ciudad de México, México",
+   "lat": 19.49115,
+   "lng": -98.05789,
+   "state": "Ciudad de MÃ©xico, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -7387,12 +7387,12 @@
    "checked": ""
   },
   {
-   "name": "Centro Universitario de Medicina Reproductiva - CEUMER",
+   "name": "Centro Universitario de Medicina Reproductiva - CEUMER MÃ©xico Monterrey",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 25.6802,
-   "lng": -100.31526,
-   "state": "Monterrey, México",
+   "lat": 25.69692,
+   "lng": -100.33058,
+   "state": "Monterrey, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -7413,14 +7413,14 @@
    "checked": ""
   },
   {
-   "name": "URA - Hospital CIMA Hermosillo",
+   "name": "URA - Hospital CIMA Hermosillo MÃ©xico Hermosillo",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 29.0647,
-   "lng": -110.96127,
-   "state": "Hermosillo, México",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": 30.53388,
+   "lng": -111.1171,
+   "state": "Hermosillo, MÃ©xico",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -7435,16 +7435,16 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=159",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.ura.mx. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.ura.mx. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
    "name": "PROFAMILIA FERTILIDAD",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 4.65338,
-   "lng": -74.08363,
-   "state": "Bogotá, Colombia",
+   "lat": 4.28347,
+   "lng": -74.17536,
+   "state": "BogotÃ¡, Colombia",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -7465,7 +7465,7 @@
    "checked": ""
   },
   {
-   "name": "CER Centro Especializado en Reproducción",
+   "name": "CER Centro Especializado en ReproducciÃ³n",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -38.72758,
@@ -7491,12 +7491,12 @@
    "checked": ""
   },
   {
-   "name": "Asociados en Fertilidad y Reproducción Humana",
+   "name": "Asociados en Fertilidad y ReproducciÃ³n Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": 4.71143,
    "lng": -74.03089,
-   "state": "Bogotá, Colombia",
+   "state": "BogotÃ¡, Colombia",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -7517,12 +7517,12 @@
    "checked": ""
   },
   {
-   "name": "IECH de B.C.",
+   "name": "IECH de B.C. MÃ©xico Tijuana",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 32.53174,
-   "lng": -117.01953,
-   "state": "Tijuana, México",
+   "lat": 32.4706,
+   "lng": -116.84654,
+   "state": "Tijuana, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -7543,7 +7543,7 @@
    "checked": ""
   },
   {
-   "name": "Centro de Reprodução Humana Monteleone",
+   "name": "Centro de ReproduÃ§Ã£o Humana Monteleone",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -22.07027,
@@ -7569,12 +7569,12 @@
    "checked": ""
   },
   {
-   "name": "Clínica Pró-Nascer",
+   "name": "ClÃ­nica PrÃ³-Nascer",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -22.91101,
-   "lng": -43.20937,
-   "state": "Río de Janeiro, Brasil",
+   "lat": -22.95838,
+   "lng": -43.37434,
+   "state": "RÃ­o de Janeiro, Brasil",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -7595,12 +7595,12 @@
    "checked": ""
   },
   {
-   "name": "Fecunda Reprodução humana Ltda",
+   "name": "Fecunda ReproduÃ§Ã£o humana Ltda",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -18.91902,
    "lng": -48.28427,
-   "state": "Uberlândia, Brasil",
+   "state": "UberlÃ¢ndia, Brasil",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -7621,7 +7621,7 @@
    "checked": ""
   },
   {
-   "name": "BIOGEPA - Centro de Reproducción Humana",
+   "name": "BIOGEPA - Centro de ReproducciÃ³n Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -2.90102,
@@ -7650,8 +7650,8 @@
    "name": "Mater Medicina Reproductiva",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -24.79032,
-   "lng": -65.40119,
+   "lat": -32.03716,
+   "lng": -61.22313,
    "state": "Salta, Argentina",
    "precise": true,
    "addr_grade": "operational",
@@ -7699,11 +7699,11 @@
    "checked": ""
   },
   {
-   "name": "Insemine Centro de Reprodução Humana",
+   "name": "Insemine Centro de ReproduÃ§Ã£o Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -30.01167,
-   "lng": -51.17035,
+   "lat": -30.01168,
+   "lng": -51.16999,
    "state": "Porto Alegre, Brasil",
    "precise": true,
    "addr_grade": "operational",
@@ -7725,7 +7725,7 @@
    "checked": ""
   },
   {
-   "name": "BIOS - Centro de Medicina Reprodutiva do Ceará",
+   "name": "BIOS - Centro de Medicina Reprodutiva do CearÃ¡",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -3.74628,
@@ -7751,12 +7751,12 @@
    "checked": ""
   },
   {
-   "name": "INGENES",
+   "name": "INGENES MÃ©xico MÃ©xico Ciudad de MÃ©xico",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 19.32077,
-   "lng": -99.15147,
-   "state": "Ciudad de México, México",
+   "lat": 19.49115,
+   "lng": -98.05789,
+   "state": "Ciudad de MÃ©xico, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -7777,12 +7777,12 @@
    "checked": ""
   },
   {
-   "name": "Instituto Vida Tijuana",
+   "name": "Instituto Vida Tijuana MÃ©xico Tijuana",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 32.53174,
-   "lng": -117.01953,
-   "state": "Tijuana, México",
+   "lat": 32.4706,
+   "lng": -116.84654,
+   "state": "Tijuana, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -7803,14 +7803,14 @@
    "checked": ""
   },
   {
-   "name": "Red Crea Fertilidad",
+   "name": "Red Crea Fertilidad MÃ©xico Ciudad de MÃ©xico",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 19.48806,
-   "lng": -99.13507,
-   "state": "Ciudad de México, México",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": 19.49115,
+   "lng": -98.05789,
+   "state": "Ciudad de MÃ©xico, MÃ©xico",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -7825,11 +7825,11 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=198",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://redcrea.com.mx. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://redcrea.com.mx. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "NACER - Centro de Reproducción Humana de Lima",
+   "name": "NACER - Centro de ReproducciÃ³n Humana de Lima",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -12.11202,
@@ -7881,12 +7881,12 @@
    "checked": ""
   },
   {
-   "name": "Hisparep",
+   "name": "Hisparep MÃ©xico Ciudad de MÃ©xico",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 19.32077,
-   "lng": -99.15147,
-   "state": "Ciudad de México, México",
+   "lat": 19.49115,
+   "lng": -98.05789,
+   "state": "Ciudad de MÃ©xico, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -7907,12 +7907,12 @@
    "checked": ""
   },
   {
-   "name": "GYRA de Puebla",
+   "name": "GYRA de Puebla MÃ©xico Puebla",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 18.83333,
-   "lng": -98.0,
-   "state": "Puebla, México",
+   "lat": 19.20437,
+   "lng": -98.19552,
+   "state": "Puebla, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -7938,7 +7938,7 @@
    "type": "Fertility clinic",
    "lat": -23.19925,
    "lng": -45.89408,
-   "state": "São José dos Campos, Brasil",
+   "state": "SÃ£o JosÃ© dos Campos, Brasil",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -7959,11 +7959,11 @@
    "checked": ""
   },
   {
-   "name": "FertLiv Reprodução Assistida",
+   "name": "FertLiv ReproduÃ§Ã£o Assistida",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -20.45682,
-   "lng": -54.58876,
+   "lat": -7.23131,
+   "lng": -35.90671,
    "state": "Campo Grande, Brasil",
    "precise": true,
    "addr_grade": "operational",
@@ -8014,11 +8014,11 @@
    "name": "Vida - Centro de Fertilidade",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -22.99977,
-   "lng": -43.3806,
-   "state": "Río de Janeiro, Brasil",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": -22.95838,
+   "lng": -43.37434,
+   "state": "RÃ­o de Janeiro, Brasil",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -8033,7 +8033,7 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=214",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://vida.com.br/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://vida.com.br/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
@@ -8089,7 +8089,7 @@
    "checked": ""
   },
   {
-   "name": "CEFRA - Centro de Fertilidad y Reproducción Asistida",
+   "name": "CEFRA - Centro de Fertilidad y ReproducciÃ³n Asistida",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -12.04598,
@@ -8141,7 +8141,7 @@
    "checked": ""
   },
   {
-   "name": "IVI Panamá",
+   "name": "IVI PanamÃ¡",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": 8.55956,
@@ -8167,7 +8167,7 @@
    "checked": ""
   },
   {
-   "name": "Grupo Médico IVF - Grupo Medico de la Mujer",
+   "name": "Grupo MÃ©dico IVF - Grupo Medico de la Mujer",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": 10.17003,
@@ -8193,7 +8193,7 @@
    "checked": ""
   },
   {
-   "name": "Originare - Centro de Reprodução Humana",
+   "name": "Originare - Centro de ReproduÃ§Ã£o Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -22.07027,
@@ -8219,7 +8219,7 @@
    "checked": ""
   },
   {
-   "name": "Pranor San Isidro - Clínica Concebir",
+   "name": "Pranor San Isidro - ClÃ­nica Concebir",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -12.09169,
@@ -8245,7 +8245,7 @@
    "checked": ""
   },
   {
-   "name": "Conceber - Centro de Reprodução Humana",
+   "name": "Conceber - Centro de ReproduÃ§Ã£o Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -25.4491,
@@ -8271,14 +8271,14 @@
    "checked": ""
   },
   {
-   "name": "INMATER - Instituto Mexicano de Tecnologia Reproductiva",
+   "name": "INMATER - Instituto Mexicano de Tecnologia Reproductiva MÃ©xico Ciudad de MÃ©xico",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 19.43088,
-   "lng": -99.21143,
-   "state": "Ciudad de México, México",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": 19.49115,
+   "lng": -98.05789,
+   "state": "Ciudad de MÃ©xico, MÃ©xico",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -8293,16 +8293,16 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=228",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.inmater.com. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.inmater.com. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "Centro de Reproducción Asistida de Saltillo",
+   "name": "Centro de ReproducciÃ³n Asistida de Saltillo MÃ©xico Saltillo",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 25.42304,
-   "lng": -100.99275,
-   "state": "Saltillo, México",
+   "lat": 25.4151,
+   "lng": -100.90841,
+   "state": "Saltillo, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -8349,14 +8349,14 @@
    "checked": ""
   },
   {
-   "name": "Nascentis- especialistas en fertilidad y genética reproductiva.",
+   "name": "Nascentis- especialistas en fertilidad y genÃ©tica reproductiva.",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -31.34466,
-   "lng": -64.24039,
-   "state": "Córdoba, Argentina",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": 20.61409,
+   "lng": -99.11362,
+   "state": "CÃ³rdoba, Argentina",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -8371,18 +8371,18 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=234",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: http://www.nascentis.com/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: http://www.nascentis.com/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "Hospital Angeles del Pedregal SA de CV",
+   "name": "Hospital Angeles del Pedregal SA de CV MÃ©xico Ciudad de MÃ©xico",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 19.31275,
-   "lng": -99.22116,
-   "state": "Ciudad de México, México",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": 19.49115,
+   "lng": -98.05789,
+   "state": "Ciudad de MÃ©xico, MÃ©xico",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -8397,7 +8397,7 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=236",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.hospitalangelespedregal.com.mx. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.hospitalangelespedregal.com.mx. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
@@ -8406,7 +8406,7 @@
    "type": "Fertility clinic",
    "lat": 4.66183,
    "lng": -74.05069,
-   "state": "Bogotá, Colombia",
+   "state": "BogotÃ¡, Colombia",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -8479,7 +8479,7 @@
    "checked": ""
   },
   {
-   "name": "CFGS - Centro de Fertilidad y Ginecología del Sur",
+   "name": "CFGS - Centro de Fertilidad y GinecologÃ­a del Sur",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -12.5,
@@ -8505,12 +8505,12 @@
    "checked": ""
   },
   {
-   "name": "Advanced Fertility Center Cancun",
+   "name": "Advanced Fertility Center Cancun MÃ©xico CancÃºn",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 21.15275,
-   "lng": -86.84258,
-   "state": "Cancún, México",
+   "lat": 19.23575,
+   "lng": -98.91572,
+   "state": "CancÃºn, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -8531,7 +8531,7 @@
    "checked": ""
   },
   {
-   "name": "GERA - Grupo de Endoscopia e Reprodução Assistida",
+   "name": "GERA - Grupo de Endoscopia e ReproduÃ§Ã£o Assistida",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -23.55849,
@@ -8557,7 +8557,7 @@
    "checked": ""
   },
   {
-   "name": "Fertil Reprodução Humana",
+   "name": "Fertil ReproduÃ§Ã£o Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -16.72447,
@@ -8635,12 +8635,12 @@
    "checked": ""
   },
   {
-   "name": "Neolife Medicina y Cirugía Reproductiva",
+   "name": "Neolife Medicina y CirugÃ­a Reproductiva",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -25.28005,
    "lng": -57.63438,
-   "state": "Asunción, Paraguay",
+   "state": "AsunciÃ³n, Paraguay",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -8661,7 +8661,7 @@
    "checked": ""
   },
   {
-   "name": "Conception Centro de Reprodução Humana",
+   "name": "Conception Centro de ReproduÃ§Ã£o Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -29.1685,
@@ -8687,11 +8687,11 @@
    "checked": ""
   },
   {
-   "name": "Genics Medicina Reprodutiva e genômica",
+   "name": "Genics Medicina Reprodutiva e genÃ´mica",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -23.60098,
-   "lng": -46.65752,
+   "lat": -23.60425,
+   "lng": -46.65899,
    "state": "Sao Paulo, Brasil",
    "precise": true,
    "addr_grade": "operational",
@@ -8716,9 +8716,9 @@
    "name": "Fertivida S.A.S. - Unidad de Fertilidad",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 4.65338,
-   "lng": -74.08363,
-   "state": "Bogotá, Colombia",
+   "lat": 4.28347,
+   "lng": -74.17536,
+   "state": "BogotÃ¡, Colombia",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -8765,12 +8765,12 @@
    "checked": ""
   },
   {
-   "name": "PROGEN",
+   "name": "PROGEN MÃ©xico Guadalupe",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 25.67511,
-   "lng": -100.21518,
-   "state": "Guadalupe, México",
+   "lat": 19.27482,
+   "lng": -98.92476,
+   "state": "Guadalupe, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -8817,14 +8817,14 @@
    "checked": ""
   },
   {
-   "name": "Biofertility Center",
+   "name": "Biofertility Center MÃ©xico Zapopan",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 20.7071,
-   "lng": -103.41551,
-   "state": "Zapopan, México",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": 25.37093,
+   "lng": -103.34722,
+   "state": "Zapopan, MÃ©xico",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -8839,16 +8839,16 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=259",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.biofertilitycenter.com. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.biofertilitycenter.com. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "Instituto Vida Merida",
+   "name": "Instituto Vida Merida MÃ©xico Merida",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 20.96708,
-   "lng": -89.62374,
-   "state": "Merida, México",
+   "lat": 20.92464,
+   "lng": -89.65928,
+   "state": "Merida, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -8869,7 +8869,7 @@
    "checked": ""
   },
   {
-   "name": "Clinica Progerar Saúde e Reprodução Humana LTDA",
+   "name": "Clinica Progerar SaÃºde e ReproduÃ§Ã£o Humana LTDA",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -23.96447,
@@ -8895,12 +8895,12 @@
    "checked": ""
   },
   {
-   "name": "Ingenes Guadalajara",
+   "name": "Ingenes Guadalajara MÃ©xico Guadalajara",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 20.67204,
-   "lng": -103.3384,
-   "state": "Guadalajara, México",
+   "lat": 40.74,
+   "lng": -2.50593,
+   "state": "Guadalajara, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -8999,14 +8999,14 @@
    "checked": ""
   },
   {
-   "name": "Embrios Centro de Reprodução Humana Ltda",
+   "name": "Embrios Centro de ReproduÃ§Ã£o Humana Ltda",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -29.19272,
-   "lng": -51.50484,
-   "state": "Bento Gonçalves, Brasil",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": -29.16567,
+   "lng": -51.52012,
+   "state": "Bento GonÃ§alves, Brasil",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -9021,7 +9021,7 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=268",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.embrios.com.br. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.embrios.com.br. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
@@ -9077,12 +9077,12 @@
    "checked": ""
   },
   {
-   "name": "Clinica de Infertilidad y Reproducción Asistida de Toluca",
+   "name": "Clinica de Infertilidad y ReproducciÃ³n Asistida de Toluca MÃ©xico Metepec",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 19.25113,
-   "lng": -99.59373,
-   "state": "Metepec, México",
+   "lat": 19.21468,
+   "lng": -99.63334,
+   "state": "Metepec, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -9103,7 +9103,7 @@
    "checked": ""
   },
   {
-   "name": "Inmater - Clínica de Fertilidad",
+   "name": "Inmater - ClÃ­nica de Fertilidad",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -12.09621,
@@ -9207,7 +9207,7 @@
    "checked": ""
   },
   {
-   "name": "Instituto Ideia Fertil de Saude Reprodutiva - Unidade Santo André",
+   "name": "Instituto Ideia Fertil de Saude Reprodutiva - Unidade Santo AndrÃ©",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -23.66048,
@@ -9233,7 +9233,7 @@
    "checked": ""
   },
   {
-   "name": "Huntington Brasília",
+   "name": "Huntington BrasÃ­lia",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -15.78858,
@@ -9259,12 +9259,12 @@
    "checked": ""
   },
   {
-   "name": "Clínica Nascere",
+   "name": "ClÃ­nica Nascere MÃ©xico Ciudad de MÃ©xico",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 19.32077,
-   "lng": -99.15147,
-   "state": "Ciudad de México, México",
+   "lat": 19.49115,
+   "lng": -98.05789,
+   "state": "Ciudad de MÃ©xico, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -9285,7 +9285,7 @@
    "checked": ""
   },
   {
-   "name": "PROCRIAR - Centro de medicina reprodutiva e diagnósticos LTDA",
+   "name": "PROCRIAR - Centro de medicina reprodutiva e diagnÃ³sticos LTDA",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -26.92034,
@@ -9337,14 +9337,14 @@
    "checked": ""
   },
   {
-   "name": "Centro CARE",
+   "name": "Centro CARE MÃ©xico Ciudad de MÃ©xico",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 19.43345,
-   "lng": -99.17205,
-   "state": "Ciudad de México, México",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": 19.49115,
+   "lng": -98.05789,
+   "state": "Ciudad de MÃ©xico, MÃ©xico",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -9359,16 +9359,16 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=290",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://www.centrocare.mx/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://www.centrocare.mx/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "CONCIBO",
+   "name": "CONCIBO MÃ©xico Tijuana",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 32.53174,
-   "lng": -117.01953,
-   "state": "Tijuana, México",
+   "lat": 32.4706,
+   "lng": -116.84654,
+   "state": "Tijuana, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -9389,12 +9389,12 @@
    "checked": ""
   },
   {
-   "name": "Centro de Innovación Tecnológica y Medicina Reproductiva CITMER",
+   "name": "Centro de InnovaciÃ³n TecnolÃ³gica y Medicina Reproductiva CITMER MÃ©xico Ciudad de MÃ©xico",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 19.32077,
-   "lng": -99.15147,
-   "state": "Ciudad de México, México",
+   "lat": 19.49115,
+   "lng": -98.05789,
+   "state": "Ciudad de MÃ©xico, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -9415,11 +9415,11 @@
    "checked": ""
   },
   {
-   "name": "Clinica de Reprodução Assistida ProSer",
+   "name": "Clinica de ReproduÃ§Ã£o Assistida ProSer",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -30.04512,
-   "lng": -51.20717,
+   "lat": -30.03902,
+   "lng": -51.2122,
    "state": "Porto Alegre, Brasil",
    "precise": true,
    "addr_grade": "operational",
@@ -9441,14 +9441,14 @@
    "checked": ""
   },
   {
-   "name": "Red Génesis Centros de Fertilidad",
+   "name": "Red GÃ©nesis Centros de Fertilidad MÃ©xico CuliacÃ¡n",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 24.82303,
-   "lng": -107.37254,
-   "state": "Culiacán, México",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": 19.23575,
+   "lng": -98.91572,
+   "state": "CuliacÃ¡n, MÃ©xico",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -9463,11 +9463,11 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=296",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: http://www.redgenesis.mx/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: http://www.redgenesis.mx/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "Instituto de Medicina Reproductiva Clínica Ricardo Palma",
+   "name": "Instituto de Medicina Reproductiva ClÃ­nica Ricardo Palma",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -12.04598,
@@ -9493,12 +9493,12 @@
    "checked": ""
   },
   {
-   "name": "Instituto Ingenes Monterrey",
+   "name": "Instituto Ingenes Monterrey MÃ©xico Monterrey",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 25.6802,
-   "lng": -100.31526,
-   "state": "Monterrey, México",
+   "lat": 25.69692,
+   "lng": -100.33058,
+   "state": "Monterrey, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -9545,12 +9545,12 @@
    "checked": ""
   },
   {
-   "name": "Plenus Reproducción Asistida",
+   "name": "Plenus ReproducciÃ³n Asistida MÃ©xico Ciudad de MÃ©xico",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 19.32077,
-   "lng": -99.15147,
-   "state": "Ciudad de México, México",
+   "lat": 19.49115,
+   "lng": -98.05789,
+   "state": "Ciudad de MÃ©xico, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -9571,14 +9571,14 @@
    "checked": ""
   },
   {
-   "name": "CERH - Centro para el Estudio de la Reproducción Humana",
+   "name": "CERH - Centro para el Estudio de la ReproducciÃ³n Humana MÃ©xico Irapuato",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 20.68839,
-   "lng": -101.35965,
-   "state": "Irapuato, México",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": 20.75719,
+   "lng": -101.33708,
+   "state": "Irapuato, MÃ©xico",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -9593,16 +9593,16 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=303",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "Instituto Ideia Fértil de Saúde Reprodutiva - Unidade São Paulo",
+   "name": "Instituto Ideia FÃ©rtil de SaÃºde Reprodutiva - Unidade SÃ£o Paulo",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -23.59861,
    "lng": -46.67611,
-   "state": "São Paulo, Brasil",
+   "state": "SÃ£o Paulo, Brasil",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -9675,7 +9675,7 @@
    "checked": ""
   },
   {
-   "name": "Clínica de la Mujer",
+   "name": "ClÃ­nica de la Mujer",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": 4.28347,
@@ -9701,12 +9701,12 @@
    "checked": ""
   },
   {
-   "name": "REPROGYN - Centro de Cirugía Reproductiva y Ginecología",
+   "name": "REPROGYN - Centro de CirugÃ­a Reproductiva y GinecologÃ­a MÃ©xico Villahermosa",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 17.98847,
-   "lng": -92.93663,
-   "state": "Villahermosa, México",
+   "lat": 38.75059,
+   "lng": -2.87188,
+   "state": "Villahermosa, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -9727,12 +9727,12 @@
    "checked": ""
   },
   {
-   "name": "Suporte Vianett Administração",
+   "name": "Suporte Vianett AdministraÃ§Ã£o",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -21.17208,
    "lng": -47.81988,
-   "state": "Ribeirão Preto, Brasil",
+   "state": "RibeirÃ£o Preto, Brasil",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -9779,12 +9779,12 @@
    "checked": ""
   },
   {
-   "name": "Centro de Innovacion Tecnologica y Medicina Reproductiva CITMER",
+   "name": "Centro de Innovacion Tecnologica y Medicina Reproductiva CITMER MÃ©xico Monterrey",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 25.6802,
-   "lng": -100.31526,
-   "state": "Monterrey, México",
+   "lat": 25.69692,
+   "lng": -100.33058,
+   "state": "Monterrey, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -9805,12 +9805,12 @@
    "checked": ""
   },
   {
-   "name": "Fertilitá Medicina Reproductiva",
+   "name": "FertilitÃ¡ Medicina Reproductiva MÃ©xico Monterrey",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 25.6802,
-   "lng": -100.31526,
-   "state": "Monterrey, México",
+   "lat": 25.69692,
+   "lng": -100.33058,
+   "state": "Monterrey, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -9834,11 +9834,11 @@
    "name": "Centro de Fertilidad Germinar",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -12.08255,
-   "lng": -77.05058,
+   "lat": -12.04598,
+   "lng": -77.03059,
    "state": "Lima, Peru",
-   "precise": true,
-   "addr_grade": "operational",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -9853,11 +9853,11 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=320",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://germinar.pe/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://germinar.pe/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "Centro Especializado en Reproducción Asistida Niuvida",
+   "name": "Centro Especializado en ReproducciÃ³n Asistida Niuvida",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -12.0911,
@@ -9883,12 +9883,12 @@
    "checked": ""
   },
   {
-   "name": "Dr. Cigüeña",
+   "name": "Dr. CigÃ¼eÃ±a MÃ©xico Mexicali",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 32.62453,
-   "lng": -115.4526,
-   "state": "Mexicali, México",
+   "lat": 42.34118,
+   "lng": -71.83992,
+   "state": "Mexicali, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -9935,12 +9935,12 @@
    "checked": ""
   },
   {
-   "name": "Centro de Innovacion Tecnologica y Medicina Reproductiva CITMER",
+   "name": "Centro de Innovacion Tecnologica y Medicina Reproductiva CITMER MÃ©xico Puebla",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 18.83333,
-   "lng": -98.0,
-   "state": "Puebla, México",
+   "lat": 19.20437,
+   "lng": -98.19552,
+   "state": "Puebla, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -9987,12 +9987,12 @@
    "checked": ""
   },
   {
-   "name": "INICIAR - Instituto de Investigación Científica en Infertilidad- Andrología y Reproducción",
+   "name": "INICIAR - Instituto de InvestigaciÃ³n CientÃ­fica en Infertilidad- AndrologÃ­a y ReproducciÃ³n MÃ©xico Ciudad Juarez",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 31.6908,
-   "lng": -106.42532,
-   "state": "Ciudad Juarez, México",
+   "lat": 23.64733,
+   "lng": -100.61711,
+   "state": "Ciudad Juarez, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -10013,12 +10013,12 @@
    "checked": ""
   },
   {
-   "name": "Origen MX Fertilidad y Salud Reproductiva",
+   "name": "Origen MX Fertilidad y Salud Reproductiva MÃ©xico Merida",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 20.96708,
-   "lng": -89.62374,
-   "state": "Merida, México",
+   "lat": 20.92464,
+   "lng": -89.65928,
+   "state": "Merida, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -10039,7 +10039,7 @@
    "checked": ""
   },
   {
-   "name": "Ginoferty Centro de Reprodução Humana Ltda.",
+   "name": "Ginoferty Centro de ReproduÃ§Ã£o Humana Ltda.",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -24.96063,
@@ -10065,14 +10065,14 @@
    "checked": ""
   },
   {
-   "name": "Centro de Reprodução Humana Wahib Hassan",
+   "name": "Centro de ReproduÃ§Ã£o Humana Wahib Hassan",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -21.41924,
-   "lng": -50.07656,
-   "state": "Penápolis, Brasil",
-   "precise": false,
-   "addr_grade": "centroid",
+   "lat": -21.3697,
+   "lng": -46.52543,
+   "state": "PenÃ¡polis, Brasil",
+   "precise": true,
+   "addr_grade": "operational",
    "impact": 2,
    "company": "",
    "size": "",
@@ -10087,7 +10087,7 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=335",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://crhwahibhassan.com.br/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://crhwahibhassan.com.br/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
    "checked": ""
   },
   {
@@ -10122,7 +10122,7 @@
    "type": "Fertility clinic",
    "lat": -23.55966,
    "lng": -46.65356,
-   "state": "São Paulo, Brasil",
+   "state": "SÃ£o Paulo, Brasil",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -10143,7 +10143,7 @@
    "checked": ""
   },
   {
-   "name": "Clínica Indisa",
+   "name": "ClÃ­nica Indisa",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -33.42137,
@@ -10195,12 +10195,12 @@
    "checked": ""
   },
   {
-   "name": "Eligen Fertility Center",
+   "name": "Eligen Fertility Center MÃ©xico Ciudad de MÃ©xico",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 19.32077,
-   "lng": -99.15147,
-   "state": "Ciudad de México, México",
+   "lat": 19.49115,
+   "lng": -98.05789,
+   "state": "Ciudad de MÃ©xico, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -10221,12 +10221,12 @@
    "checked": ""
   },
   {
-   "name": "UNILIVE. Unidad de Fertilidad y Esterilidad Puebla",
+   "name": "UNILIVE. Unidad de Fertilidad y Esterilidad Puebla MÃ©xico Puebla",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 18.83333,
-   "lng": -98.0,
-   "state": "Puebla, México",
+   "lat": 19.20437,
+   "lng": -98.19552,
+   "state": "Puebla, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -10247,14 +10247,14 @@
    "checked": ""
   },
   {
-   "name": "Fertilidad Integral",
+   "name": "Fertilidad Integral MÃ©xico Ciudad de",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 19.43791,
-   "lng": -99.19724,
-   "state": "Ciudad de Mexico, México",
-   "precise": true,
-   "addr_grade": "operational",
+   "lat": 19.49115,
+   "lng": -98.05789,
+   "state": "Ciudad de Mexico, MÃ©xico",
+   "precise": false,
+   "addr_grade": "centroid",
    "impact": 2,
    "company": "",
    "size": "",
@@ -10269,16 +10269,16 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=342",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
    "checked": ""
   },
   {
-   "name": "MásFértil",
+   "name": "MÃ¡sFÃ©rtil MÃ©xico Morelia",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 19.6546,
-   "lng": -101.26238,
-   "state": "Morelia, México",
+   "lat": 16.51055,
+   "lng": -92.3359,
+   "state": "Morelia, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -10325,7 +10325,7 @@
    "checked": ""
   },
   {
-   "name": "Fertility Care Clínica de Fertilidad",
+   "name": "Fertility Care ClÃ­nica de Fertilidad",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": 11.01019,
@@ -10351,7 +10351,7 @@
    "checked": ""
   },
   {
-   "name": "Provida Nacer Reproducción Humana",
+   "name": "Provida Nacer ReproducciÃ³n Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -0.93403,
@@ -10429,7 +10429,33 @@
    "checked": ""
   },
   {
-   "name": "Ferticlinic Panamá",
+   "name": "ViaFERT ClÃ­nica de Fertilidad MÃ©xico CuliacÃ¡n",
+   "source": "industry:repro",
+   "type": "Fertility clinic",
+   "lat": 19.23575,
+   "lng": -98.91572,
+   "state": "CuliacÃ¡n, MÃ©xico",
+   "precise": false,
+   "addr_grade": "centroid",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "REDLARA accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "repro:clinics"
+   ],
+   "species": [
+    "human"
+   ],
+   "url": "https://redlara.com/centro.asp?USIM5=349",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://viafert.com/. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
+   "checked": ""
+  },
+  {
+   "name": "Ferticlinic PanamÃ¡",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": 9.26863,
@@ -10455,11 +10481,11 @@
    "checked": ""
   },
   {
-   "name": "Unidad de Medicina Reproductiva Clínica Delgado AUNA",
+   "name": "Unidad de Medicina Reproductiva ClÃ­nica Delgado AUNA",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -12.11183,
-   "lng": -77.03334,
+   "lat": -12.11288,
+   "lng": -77.03341,
    "state": "Lima, Peru",
    "precise": true,
    "addr_grade": "operational",
@@ -10507,12 +10533,12 @@
    "checked": ""
   },
   {
-   "name": "Mater Lab Medicina Reprodutiva",
+   "name": "Mater Lab",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -23.60442,
    "lng": -46.66273,
-   "state": "São Paulo, Brasil",
+   "state": "SÃ£o Paulo, Brasil",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -10529,16 +10555,16 @@
     "human"
    ],
    "url": "https://redlara.com/centro.asp?USIM5=354",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: materlab.com.br. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.materlab.com.br. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
    "checked": ""
   },
   {
-   "name": "InVentre - Centro Avançado de Medicina Reprodutiva",
+   "name": "InVentre - Centro AvanÃ§ado de Medicina Reprodutiva",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -23.65093,
-   "lng": -46.54483,
-   "state": "Santo André, Brasil",
+   "lat": -23.65107,
+   "lng": -46.5442,
+   "state": "Santo AndrÃ©, Brasil",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -10559,7 +10585,7 @@
    "checked": ""
   },
   {
-   "name": "Clínica Art Fértil",
+   "name": "ClÃ­nica Art FÃ©rtil",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -8.03345,
@@ -10585,12 +10611,12 @@
    "checked": ""
   },
   {
-   "name": "Perfetto Reprodução Humana",
+   "name": "Perfetto ReproduÃ§Ã£o Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -16.69788,
    "lng": -49.25539,
-   "state": "Goiânia, Brasil",
+   "state": "GoiÃ¢nia, Brasil",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -10637,7 +10663,7 @@
    "checked": ""
   },
   {
-   "name": "INBIOFER - Instituto de Biomedicina y Fertilidad - Clínica Melo",
+   "name": "INBIOFER - Instituto de Biomedicina y Fertilidad - ClÃ­nica Melo",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -16.39825,
@@ -10663,7 +10689,7 @@
    "checked": ""
   },
   {
-   "name": "Centro Metropolitano de Reproducción Humana Gynefert",
+   "name": "Centro Metropolitano de ReproducciÃ³n Humana Gynefert",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": -0.22016,
@@ -10689,12 +10715,12 @@
    "checked": ""
   },
   {
-   "name": "Endofertyl",
+   "name": "Endofertyl MÃ©xico Aguascalientes",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": 21.88049,
-   "lng": -102.29672,
-   "state": "Aguascalientes, México",
+   "lat": 19.32403,
+   "lng": -98.9529,
+   "state": "Aguascalientes, MÃ©xico",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
