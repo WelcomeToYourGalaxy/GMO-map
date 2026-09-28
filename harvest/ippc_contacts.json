@@ -1,6 +1,6 @@
 {
  "note": "IPPC official contact points, Article VIII.2. ORGANIZATION ONLY - the source is a contact list and every personal field is dropped before writing, with an assertion. No website is published in this source, so these name a body and do not link it.",
- "generated": "2026-09-27",
+ "generated": "2026-09-28",
  "contacts": [
   {
    "country": "Guyana",
@@ -213,8 +213,8 @@
    "_source": "IPPC official contact points, Art. VIII.2"
   },
   {
-   "country": "Belize",
-   "region": "Latin America and Caribbean",
+   "country": "Philippines",
+   "region": "Asia",
    "organization": "Plant Health Department, Belize Agricultural Health Authority",
    "_source": "IPPC official contact points, Art. VIII.2"
   },
@@ -510,12 +510,6 @@
    "country": "Iran- Islamic Republic of",
    "region": "Near East",
    "organization": "Plant Protection Organization",
-   "_source": "IPPC official contact points, Art. VIII.2"
-  },
-  {
-   "country": "Philippines",
-   "region": "Asia",
-   "organization": "Bureau of Plant Industry",
    "_source": "IPPC official contact points, Art. VIII.2"
   },
   {
