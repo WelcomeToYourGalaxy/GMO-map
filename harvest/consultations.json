@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-28",
+ "generated": "2026-09-29",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
@@ -22,9 +22,9 @@
    "name": "WTO / ePing notifications",
    "kind": "feed",
    "ok": true,
-   "rows": 6,
+   "rows": 5,
    "url": "https://eping.wto.org/en/Search",
-   "message": "105799 notifications scanned"
+   "message": "105803 notifications scanned"
   },
   {
    "name": "EFSA",
@@ -46,14 +46,6 @@
  "sources_reached": 3,
  "sources_total": 3,
  "consultations": [
-  {
-   "title": "Draft Regulation of the Halal Product Assurance Organizing Body concerning Conformity Assurance of Foreign Halal Products Entering to Indonesia",
-   "agency": "WTO Regular notification",
-   "closes": "2026-09-28",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/IDN190.docx",
-   "country": "Indonesia",
-   "ref": "G/TBT/N/IDN/190"
-  },
   {
    "title": "Proposed amendments to the “Labelling Standards for Genetically Modified Foods”",
    "agency": "WTO Addendum to Regular Notification",
