@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-04",
+ "generated": "2026-10-05",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
@@ -22,7 +22,7 @@
    "name": "WTO / ePing notifications",
    "kind": "feed",
    "ok": true,
-   "rows": 5,
+   "rows": 4,
    "url": "https://eping.wto.org/en/Search",
    "message": "105926 notifications scanned"
   },
@@ -46,14 +46,6 @@
  "sources_reached": 3,
  "sources_total": 3,
  "consultations": [
-  {
-   "title": "Proposed amendments to the “Labelling Standards for Genetically Modified Foods”",
-   "agency": "WTO Addendum to Regular Notification",
-   "closes": "2026-10-04",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/KOR1345A1.docx",
-   "country": "Korea, Republic of",
-   "ref": "G/TBT/N/KOR/1345/Add.1"
-  },
   {
    "title": "Proposed amendments to the “Labelling Standards for Genetically Modified Foods”",
    "agency": "WTO Addendum to Regular Notification",
