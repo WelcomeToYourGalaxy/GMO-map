@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-06",
+ "generated": "2026-10-07",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
@@ -22,9 +22,9 @@
    "name": "WTO / ePing notifications",
    "kind": "feed",
    "ok": true,
-   "rows": 4,
+   "rows": 3,
    "url": "https://eping.wto.org/en/Search",
-   "message": "105946 notifications scanned"
+   "message": "105955 notifications scanned"
   },
   {
    "name": "EFSA",
@@ -46,14 +46,6 @@
  "sources_reached": 3,
  "sources_total": 3,
  "consultations": [
-  {
-   "title": "Proposed amendments to the “Labelling Standards for Genetically Modified Foods”",
-   "agency": "WTO Addendum to Regular Notification",
-   "closes": "2026-10-06",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/KOR1345A2.docx",
-   "country": "Korea, Republic of",
-   "ref": "G/TBT/N/KOR/1345/Add.2"
-  },
   {
    "title": "U.S. Department of Agriculture, Agricultural Research Service: Availability of a Petition for a Determination of Nonregulated Status and Draft Plant Pest Risk Assessment for Early and Near-Continuous ",
    "agency": "Agriculture Department",
