@@ -1,6 +1,6 @@
 {
  "note": "IPPC official contact points, Article VIII.2. ORGANIZATION ONLY - the source is a contact list and every personal field is dropped before writing, with an assertion. No website is published in this source, so these name a body and do not link it.",
- "generated": "2026-10-08",
+ "generated": "2026-10-09",
  "contacts": [
   {
    "country": "Guyana",
@@ -1086,6 +1086,12 @@
    "country": "Trinidad and Tobago",
    "region": "Latin America and Caribbean",
    "organization": "Ministry of Agriculture and Fisheries",
+   "_source": "IPPC official contact points, Art. VIII.2"
+  },
+  {
+   "country": "Algeria",
+   "region": "Africa",
+   "organization": "Ministère de l'Agriculture et du Développement Rural",
    "_source": "IPPC official contact points, Art. VIII.2"
   }
  ]
