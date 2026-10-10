@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-09",
+ "generated": "2026-10-10",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
@@ -22,9 +22,9 @@
    "name": "WTO / ePing notifications",
    "kind": "feed",
    "ok": true,
-   "rows": 3,
+   "rows": 4,
    "url": "https://eping.wto.org/en/Search",
-   "message": "106028 notifications scanned"
+   "message": "106040 notifications scanned"
   },
   {
    "name": "EFSA",
@@ -101,6 +101,14 @@
    "url": "https://www.federalregister.gov/documents/2026/09/21/2026-19237/bayer-us-crop-science-availability-of-a-petition-for-a-determination-of-nonregulated-status-and",
    "country": "United States",
    "ref": "2026-19237"
+  },
+  {
+   "title": "DJS 2434:2026 – Terms and definitions of genetically modified (GM) foods",
+   "agency": "WTO Regular notification",
+   "closes": "2026-12-08",
+   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/JOR109.docx",
+   "country": "Jordan",
+   "ref": "G/TBT/N/JOR/109"
   }
  ]
 }
