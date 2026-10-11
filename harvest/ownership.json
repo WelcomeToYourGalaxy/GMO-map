@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-04",
+ "generated": "2026-10-11",
  "note": "Ownership as the registers state it, plus chains visible in the names themselves. Company filings are not read here, so this shows trading relationships rather than share ownership.",
  "groups": [
   {
@@ -563,7 +563,7 @@
    ]
   },
   {
-   "owner": "CARE Fertility",
+   "owner": "Care Fertility",
    "basis": "inferred from the site's own name",
    "sites": 15,
    "countries": [
@@ -1066,6 +1066,77 @@
      "lng": -67.08236,
      "where": "Canada",
      "source": "ccac_redlara.json"
+    }
+   ]
+  },
+  {
+   "owner": "TFP ",
+   "basis": "inferred from the site's own name",
+   "sites": 8,
+   "countries": [
+    "BT3 9JQ",
+    "CM2 8FR",
+    "G51 4FD",
+    "NW1 6ER",
+    "SL6 4BY",
+    "United Kingdom"
+   ],
+   "members": [
+    {
+     "name": "TFP Belfast Fertility",
+     "lat": 54.63196,
+     "lng": -5.89379,
+     "where": "Edgewater Business Park, Edgewater House, Edgewater Road, Belfast, BT3 9JQ",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "TFP Boston Place Fertility",
+     "lat": 51.5234,
+     "lng": -0.16248,
+     "where": "16-20 Boston Place, London, NW1 6ER",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "TFP GCRM Fertility",
+     "lat": 55.85967,
+     "lng": -4.3505,
+     "where": "GCRM Fertility, 21 Fifty Pitches Way, Glasgow, G51 4FD",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "TFP Nurture Fertility",
+     "lat": 52.91743,
+     "lng": -1.30175,
+     "where": "The East Midlands Fertility Centre, Bostocks Lane, Sandiacre, Nottingham, NG10 5QG, United Kingdom",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "TFP Oxford Fertility",
+     "lat": 51.73367,
+     "lng": -1.205,
+     "where": "Institute of Reproductive Sciences, Oxford Business Park North, Oxford, Oxfordshire, OX4 2HW, United Kingdom",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "TFP Simply Fertility",
+     "lat": 51.70817,
+     "lng": 0.50173,
+     "where": "Essex Healthcare Park, West Hanningfield Road, Great Baddow, Essex, Chelmsford, CM2 8FR",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "TFP Thames Valley Fertility",
+     "lat": 51.50829,
+     "lng": -0.73551,
+     "where": "Clarion House, Ground Floor, Norreys Drive, Maidenhead, Berkshire, SL6 4BY",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "TFP Wessex Fertility",
+     "lat": 54.0,
+     "lng": -2.55,
+     "where": "Unit 9, Berrywood Business Village, Tollbar Way, Southampton, Hampshire, S030 2UN, United Kingdom",
+     "source": "hfea_clinics.json"
     }
    ]
   },
@@ -3024,7 +3095,7 @@
    ]
   },
   {
-   "owner": "INGENES",
+   "owner": "Ingenes",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
@@ -5526,32 +5597,7 @@
    ]
   },
   {
-   "owner": "TFP ",
-   "basis": "inferred from the site's own name",
-   "sites": 2,
-   "countries": [
-    "BT3 9JQ",
-    "NW1 6ER"
-   ],
-   "members": [
-    {
-     "name": "TFP Belfast Fertility",
-     "lat": 54.63196,
-     "lng": -5.89379,
-     "where": "Edgewater Business Park, Edgewater House, Edgewater Road, Belfast, BT3 9JQ",
-     "source": "hfea_clinics.json"
-    },
-    {
-     "name": "TFP Boston Place Fertility",
-     "lat": 51.5234,
-     "lng": -0.16248,
-     "where": "16-20 Boston Place, London, NW1 6ER",
-     "source": "hfea_clinics.json"
-    }
-   ]
-  },
-  {
-   "owner": "Fertilab",
+   "owner": "FERTILAB",
    "basis": "inferred from the site's own name",
    "sites": 2,
    "countries": [
