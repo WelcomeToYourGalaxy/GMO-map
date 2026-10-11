@@ -512168,6 +512168,32 @@
    "checked": ""
   },
   {
+   "name": "Katharina Tscharland",
+   "source": "industry:animals",
+   "type": "Animal research company site (OpenStreetMap)",
+   "lat": 47.42782,
+   "lng": 7.65095,
+   "state": "",
+   "precise": true,
+   "addr_grade": "mapped",
+   "impact": 2,
+   "company": "Katharina Tscharland",
+   "size": "",
+   "status": "Mapped in OpenStreetMap",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.openstreetmap.org/node/10789439705",
+   "desc": "A mapped site of Harlan, a company whose business is animal research, breeding laboratory animals, or both. What this record says is that the company has a site here. It does not say animals are used at this address: a mapped corporate site may be an office, and no regulator publishes a worldwide list of the buildings where the work happens. There is no OpenStreetMap tag for an animal research facility and there should not be one — whether a building runs toxicology studies is not visible from the street, which is the test OpenStreetMap applies to everything it records.",
+   "checked": ""
+  },
+  {
    "name": "Clinical Investigations and Research Support",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -546615,162 +546641,6 @@
    ],
    "url": "tfp-fertility.com/en-gb/tfp-boston-place-fertility",
    "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "TFP GCRM Fertility",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 55.85967,
-   "lng": -4.3505,
-   "state": "GCRM Fertility, 21 Fifty Pitches Way, Glasgow, G51 4FD",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "HFEA licensed",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "tfp-fertility.com/en-gb/tfp-gcrm-fertility",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "TFP Nurture Fertility",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 52.91743,
-   "lng": -1.30175,
-   "state": "The East Midlands Fertility Centre, Bostocks Lane, Sandiacre, Nottingham, NG10 5QG, United Kingdom",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "HFEA licensed",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "www.nurturefertility.co.uk",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "TFP Oxford Fertility",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 51.73367,
-   "lng": -1.205,
-   "state": "Institute of Reproductive Sciences, Oxford Business Park North, Oxford, Oxfordshire, OX4 2HW, United Kingdom",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "HFEA licensed",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "www.oxfordfertility.co.uk",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "TFP Simply Fertility",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 51.70817,
-   "lng": 0.50173,
-   "state": "Essex Healthcare Park, West Hanningfield Road, Great Baddow, Essex, Chelmsford, CM2 8FR",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "HFEA licensed",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "tfp-fertility.com/en-gb/tfp-simply-fertility",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "TFP Thames Valley Fertility",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 51.50829,
-   "lng": -0.73551,
-   "state": "Clarion House, Ground Floor, Norreys Drive, Maidenhead, Berkshire, SL6 4BY",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "HFEA licensed",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "tfp-fertility.com/en-gb/tfp-thames-valley-fertility",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "TFP Wessex Fertility",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 54.0,
-   "lng": -2.55,
-   "state": "Unit 9, Berrywood Business Village, Tollbar Way, Southampton, Hampshire, S030 2UN, United Kingdom",
-   "precise": false,
-   "addr_grade": "centroid",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "HFEA licensed",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "www.wessexfertility.com",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated. The postcode did not resolve, so this point sits at the centre of the country rather than at the clinic.",
    "checked": ""
   },
   {
@@ -887359,7 +887229,7 @@
    "impact": 2,
    "company": "Environment and Climate Change Canada",
    "size": "",
-   "status": "Certificate of GAP Last visit: interim, February 2025",
+   "status": "Certificate of GAP Last visit: regular, February 2022",
    "phase": "post",
    "date": "",
    "otype": "institute",
@@ -887370,7 +887240,7 @@
     "lab_animals"
    ],
    "url": "https://ccac.ca/en/certification/certified-institutions.html",
-   "desc": "An institution certified by the Canadian Council on Animal Care for its use of animals in science. A site of Environment and Climate Change Canada. Certificate of GAP Last visit: interim, February 2025. CCAC certification is a condition of federal research funding rather than a licence, so an institution outside it is not necessarily outside the work — it may simply not take federal money. The CCAC publishes names and certificate status and no addresses, so this point marks the institution rather than the building where animals are held.",
+   "desc": "An institution certified by the Canadian Council on Animal Care for its use of animals in science. A site of Environment and Climate Change Canada. Certificate of GAP Last visit: regular, February 2022. CCAC certification is a condition of federal research funding rather than a licence, so an institution outside it is not necessarily outside the work — it may simply not take federal money. The CCAC publishes names and certificate status and no addresses, so this point marks the institution rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -888919,7 +888789,7 @@
    "impact": 2,
    "company": "",
    "size": "",
-   "status": "Certificate of GAP Last visit: interim, September 2025",
+   "status": "Certificate of GAP Last visit: regular, September 2022",
    "phase": "post",
    "date": "",
    "otype": "institute",
@@ -888930,7 +888800,7 @@
     "lab_animals"
    ],
    "url": "https://ccac.ca/en/certification/certified-institutions.html",
-   "desc": "An institution certified by the Canadian Council on Animal Care for its use of animals in science. Certificate of GAP Last visit: interim, September 2025. CCAC certification is a condition of federal research funding rather than a licence, so an institution outside it is not necessarily outside the work — it may simply not take federal money. The CCAC publishes names and certificate status and no addresses, so this point marks the institution rather than the building where animals are held.",
+   "desc": "An institution certified by the Canadian Council on Animal Care for its use of animals in science. Certificate of GAP Last visit: regular, September 2022. CCAC certification is a condition of federal research funding rather than a licence, so an institution outside it is not necessarily outside the work — it may simply not take federal money. The CCAC publishes names and certificate status and no addresses, so this point marks the institution rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -890245,7 +890115,7 @@
    "impact": 2,
    "company": "",
    "size": "",
-   "status": "Certificate of GAP Last visit: interim, January 2026",
+   "status": "Probationary Certificate of GAP Last visit: regular, May 2022",
    "phase": "post",
    "date": "",
    "otype": "institute",
@@ -890256,7 +890126,7 @@
     "lab_animals"
    ],
    "url": "https://ccac.ca/en/certification/certified-institutions.html",
-   "desc": "An institution certified by the Canadian Council on Animal Care for its use of animals in science. Certificate of GAP Last visit: interim, January 2026. CCAC certification is a condition of federal research funding rather than a licence, so an institution outside it is not necessarily outside the work — it may simply not take federal money. The CCAC publishes names and certificate status and no addresses, so this point marks the institution rather than the building where animals are held.",
+   "desc": "An institution certified by the Canadian Council on Animal Care for its use of animals in science. Probationary Certificate of GAP Last visit: regular, May 2022. CCAC certification is a condition of federal research funding rather than a licence, so an institution outside it is not necessarily outside the work — it may simply not take federal money. The CCAC publishes names and certificate status and no addresses, so this point marks the institution rather than the building where animals are held.",
    "checked": ""
   },
   {
