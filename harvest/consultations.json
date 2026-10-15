@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-14",
+ "generated": "2026-10-15",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
@@ -22,9 +22,9 @@
    "name": "WTO / ePing notifications",
    "kind": "feed",
    "ok": true,
-   "rows": 7,
+   "rows": 5,
    "url": "https://eping.wto.org/en/Search",
-   "message": "106163 notifications scanned"
+   "message": "106107 notifications scanned"
   },
   {
    "name": "EFSA",
@@ -101,22 +101,6 @@
    "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/JOR109.docx",
    "country": "Jordan",
    "ref": "G/TBT/N/JOR/109"
-  },
-  {
-   "title": "Terms and definitions of genetically modified (GM) foods",
-   "agency": "WTO Regular notification",
-   "closes": "2026-12-12",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NJOR50.docx",
-   "country": "Jordan",
-   "ref": "G/SPS/N/JOR/50"
-  },
-  {
-   "title": "General requirements for novel feeds and feed products of biotechnology.",
-   "agency": "WTO Regular notification",
-   "closes": "2026-12-12",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NSAU637.docx",
-   "country": "Saudi Arabia, Kingdom of",
-   "ref": "G/SPS/N/SAU/637"
   },
   {
    "title": "Proyecto de Norma Metrológica Peruana PNMP 021:2026 “Esfigmomanómetros no invasivos no automáticos”. Parte 1: Requisitos metrológicos y técnicos. Diecisiete (17) páginas, en españolParte 2: Procedimie",
