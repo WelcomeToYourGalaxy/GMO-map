@@ -1,6 +1,6 @@
 {
  "note": "IPPC official contact points, Article VIII.2. ORGANIZATION ONLY - the source is a contact list and every personal field is dropped before writing, with an assertion. No website is published in this source, so these name a body and do not link it.",
- "generated": "2026-10-14",
+ "generated": "2026-10-15",
  "contacts": [
   {
    "country": "Guyana",
@@ -138,12 +138,6 @@
    "country": "Haiti",
    "region": "Latin America and Caribbean",
    "organization": "Ministère de l'Agriculture, des Ressources Naturelles et du Développement Rural",
-   "_source": "IPPC official contact points, Art. VIII.2"
-  },
-  {
-   "country": "Cyprus",
-   "region": "Europe",
-   "organization": "Department of Agriculture; Ministry of Agriculture, Rural Development and Environment",
    "_source": "IPPC official contact points, Art. VIII.2"
   },
   {
@@ -735,12 +729,6 @@
    "_source": "IPPC official contact points, Art. VIII.2"
   },
   {
-   "country": "Rwanda",
-   "region": "Africa",
-   "organization": "Rwanda Inspectorate, Competition and Consumer Protection Authority (RICA)",
-   "_source": "IPPC official contact points, Art. VIII.2"
-  },
-  {
    "country": "Sudan",
    "region": "Near East",
    "organization": "General Plant Protection Directorate",
@@ -1092,6 +1080,12 @@
    "country": "Algeria",
    "region": "Africa",
    "organization": "Ministère de l'Agriculture et du Développement Rural",
+   "_source": "IPPC official contact points, Art. VIII.2"
+  },
+  {
+   "country": "Rwanda",
+   "region": "Africa",
+   "organization": "Rwanda Inspectorate, Competition and Consumer Protection Authority (RICA)",
    "_source": "IPPC official contact points, Art. VIII.2"
   }
  ]
