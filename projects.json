@@ -1,6 +1,6 @@
 {
  "note": "US environmental-release authorisations harvested from the APHIS BRS public data files (public domain), plus hand-curated records from other registers. Only records with a release component are included — import and interstate movement are not releases. Every position is a state centroid: APHIS publishes release states, never coordinates, so every record is precise:false and draws as a dashed ring. Canadian records come from the CFIA PNT dataset and sit at the national centroid, because that register records a national approval rather than a planting location. Everywhere else is not yet harvested.",
- "generated": "2026-10-15",
+ "generated": "2026-10-16",
  "dropped": {
   "reason": "never authorised — withdrawn, denied, void, returned, incomplete or cancelled",
   "by_status": {
@@ -12,7 +12,7 @@
   "seen": 60242,
   "share_pct": 10.1
  },
- "source": "APHIS BRS public data files, 2026-10-15",
+ "source": "APHIS BRS public data files, 2026-10-16",
  "projects": [
   {
    "name": "DIR 201 — GM wheat & barley field trial (yield enhancement)",
@@ -5865,9 +5865,9 @@
    "impact": 1,
    "company": "J.R. Simplot Company",
    "size": "1 declared release location across 1 state",
-   "status": "Issued",
+   "status": "Issued — expired",
    "phase": "post",
-   "lapsed": false,
+   "lapsed": true,
    "date": "2025-10-15",
    "url": "https://www.aphis.usda.gov/biotechnology-permits/releases",
    "desc": "Permit to release genetically engineered strawberry at 1 declared location in CA. Applicant: J.R. Simplot Company. Status: Issued. Declared traits: marker gene, product quality, fungal resistance, other. The applicant claimed confidential business information on this record, so the trait description is partly withheld as [CBI] in the source. The dot is scattered inside the state, not placed at a site: APHIS publishes the state and the number of release locations, never the locations themselves. Australia is the only regulator in the world that publishes field trial sites. Position is a state centroid, not the site — APHIS publishes release states, never coordinates."
