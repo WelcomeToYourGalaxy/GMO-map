@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-16",
+ "generated": "2026-10-17",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
@@ -22,9 +22,9 @@
    "name": "WTO / ePing notifications",
    "kind": "feed",
    "ok": true,
-   "rows": 8,
+   "rows": 7,
    "url": "https://eping.wto.org/en/Search",
-   "message": "106193 notifications scanned"
+   "message": "106195 notifications scanned"
   },
   {
    "name": "EFSA",
@@ -46,14 +46,6 @@
  "sources_reached": 3,
  "sources_total": 3,
  "consultations": [
-  {
-   "title": "Draft Circular of the Minister of Agriculture and Environment Providing for the Quarantine of Animals and Animal Products",
-   "agency": "WTO Regular notification",
-   "closes": "2026-10-16",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NVNM190.docx",
-   "country": "Viet Nam",
-   "ref": "G/SPS/N/VNM/190"
-  },
   {
    "title": "Pioneer Hi-Bred International, Inc.: Availability of a Petition for a Determination of Nonregulated Status and Draft Plant Pest Risk Assessment for Insect Resistant COR-23134-4 Soybean (Glycine max)",
    "agency": "Agriculture Department",
@@ -130,7 +122,7 @@
    "title": "Proyecto de Norma Metrológica Peruana PNMP 021:2026 “Esfigmomanómetros no invasivos no automáticos”. Parte 1: Requisitos metrológicos y técnicos. Diecisiete (17) páginas, en españolParte 2: Procedimie",
    "agency": "WTO Regular notification",
    "closes": "2027-01-10",
-   "url": "https://eping.wto.org/en/Search",
+   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/PER184.docx",
    "country": "Peru",
    "ref": "G/TBT/N/PER/184"
   }
