@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11",
+ "generated": "2026-10-18",
  "note": "AAALAC International accredited organisations. Voluntary accreditation, not a register: absence means not accredited, not no animal research. City-level positions only.",
  "projects": [
   {
@@ -2447,12 +2447,12 @@
    "checked": ""
   },
   {
-   "name": "Zhangjiang & Waigaoqiao Facility, Charles River Accelerator & Development Laboratories (Shanghai) Co., Ltd.",
+   "name": "Baishan Facility, Beijing Vital River Laboratories Animal Technology Co Ltd.",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 31.14336,
-   "lng": 121.66198,
-   "state": "SHANGHAI, P.R. CHINA",
+   "lat": 39.99714,
+   "lng": 116.34363,
+   "state": "BEIJING, P.R. CHINA",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -2473,12 +2473,12 @@
    "checked": ""
   },
   {
-   "name": "Baishan Facility, Beijing Vital River Laboratories Animal Technology Co Ltd.",
+   "name": "Zhangjiang & Waigaoqiao Facility, Charles River Accelerator & Development Laboratories (Shanghai) Co., Ltd.",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 39.99714,
-   "lng": 116.34363,
-   "state": "BEIJING, P.R. CHINA",
+   "lat": 31.14336,
+   "lng": 121.66198,
+   "state": "SHANGHAI, P.R. CHINA",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -3227,12 +3227,12 @@
    "checked": ""
   },
   {
-   "name": "Boehringer Ingelheim Animal Health",
+   "name": "Candler Poultry Center, Boehringer Ingelheim Animal Health",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 35.58438,
-   "lng": -78.79987,
-   "state": "FUQUAY VARINA, NC, UNITED STATES",
+   "lat": 34.29788,
+   "lng": -83.82407,
+   "state": "GAINESVILLE, GA, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -3253,12 +3253,12 @@
    "checked": ""
   },
   {
-   "name": "Candler Poultry Center, Boehringer Ingelheim Animal Health",
+   "name": "Boehringer Ingelheim Animal Health",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 34.29788,
-   "lng": -83.82407,
-   "state": "GAINESVILLE, GA, UNITED STATES",
+   "lat": 35.58438,
+   "lng": -78.79987,
+   "state": "FUQUAY VARINA, NC, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -3779,6 +3779,32 @@
    "lat": 37.68717,
    "lng": -122.40279,
    "state": "BRISBANE, CA, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Bristol Myers Squibb",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 47.60383,
+   "lng": -122.33006,
+   "state": "SEATTLE, WA, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -4839,12 +4865,12 @@
    "checked": ""
   },
   {
-   "name": "Charles River Laboratories, Edinburgh",
+   "name": "Charles River Laboratories - Mattawan",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 55.9445,
-   "lng": -2.95349,
-   "state": "TRANENT, EAST LOTHIAN, UNITED KINGDOM",
+   "lat": 42.20948,
+   "lng": -85.78445,
+   "state": "MATTAWAN, MI, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -4865,12 +4891,12 @@
    "checked": ""
   },
   {
-   "name": "Charles River Laboratories - Mattawan",
+   "name": "Charles River Laboratories, Edinburgh",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 42.20948,
-   "lng": -85.78445,
-   "state": "MATTAWAN, MI, UNITED STATES",
+   "lat": 55.9445,
+   "lng": -2.95349,
+   "state": "TRANENT, EAST LOTHIAN, UNITED KINGDOM",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -6893,12 +6919,142 @@
    "checked": ""
   },
   {
-   "name": "VA Loma Linda Healthcare System",
+   "name": "Palo Alto Health Care System",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 34.0538,
-   "lng": -117.26109,
-   "state": "LOMA LINDA, CA, UNITED STATES",
+   "lat": 37.44433,
+   "lng": -122.15985,
+   "state": "PALO ALTO, CA, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Department of Veterans Affairs",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Corporal Michael J. Crescenz Veteran's Affairs Medical Center",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 39.95272,
+   "lng": -75.16353,
+   "state": "PHILADELPHIA, PA, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Department of Veterans Affairs",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Kansas City Veterans Affairs Medical Center",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 39.1001,
+   "lng": -94.57814,
+   "state": "KANSAS CITY, MO, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Department of Veterans Affairs",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Central Arkansas Veterans Healthcare System",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 34.74651,
+   "lng": -92.28963,
+   "state": "LITTLE ROCK, AR, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Department of Veterans Affairs",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Tennessee Valley Healthcare System",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 36.16228,
+   "lng": -86.7743,
+   "state": "NASHVILLE, TN, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Department of Veterans Affairs",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Oklahoma City Veterans Affairs Health Care System",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 35.47299,
+   "lng": -97.51705,
+   "state": "OKLAHOMA CITY, OK, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -7621,12 +7777,12 @@
    "checked": ""
   },
   {
-   "name": "James J. Peters Veterans Affairs Medical Center",
+   "name": "Samuel S. Stratton Veterans Affairs Medical Center",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 40.84665,
-   "lng": -73.87859,
-   "state": "BRONX, NY, UNITED STATES",
+   "lat": 42.65117,
+   "lng": -73.75497,
+   "state": "ALBANY, NY, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -7647,12 +7803,12 @@
    "checked": ""
   },
   {
-   "name": "Samuel S. Stratton Veterans Affairs Medical Center",
+   "name": "James J. Peters Veterans Affairs Medical Center",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 42.65117,
-   "lng": -73.75497,
-   "state": "ALBANY, NY, UNITED STATES",
+   "lat": 40.84665,
+   "lng": -73.87859,
+   "state": "BRONX, NY, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -7803,142 +7959,12 @@
    "checked": ""
   },
   {
-   "name": "Palo Alto Health Care System",
+   "name": "VA Loma Linda Healthcare System",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 37.44433,
-   "lng": -122.15985,
-   "state": "PALO ALTO, CA, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Department of Veterans Affairs",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "Corporal Michael J. Crescenz Veteran's Affairs Medical Center",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 39.95272,
-   "lng": -75.16353,
-   "state": "PHILADELPHIA, PA, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Department of Veterans Affairs",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "Kansas City Veterans Affairs Medical Center",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 39.1001,
-   "lng": -94.57814,
-   "state": "KANSAS CITY, MO, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Department of Veterans Affairs",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "Central Arkansas Veterans Healthcare System",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 34.74651,
-   "lng": -92.28963,
-   "state": "LITTLE ROCK, AR, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Department of Veterans Affairs",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "Tennessee Valley Healthcare System",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 36.16228,
-   "lng": -86.7743,
-   "state": "NASHVILLE, TN, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Department of Veterans Affairs",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "Oklahoma City Veterans Affairs Health Care System",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 35.47299,
-   "lng": -97.51705,
-   "state": "OKLAHOMA CITY, OK, UNITED STATES",
+   "lat": 34.0538,
+   "lng": -117.26109,
+   "state": "LOMA LINDA, CA, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -8167,6 +8193,32 @@
    "checked": ""
   },
   {
+   "name": "Tibor Rubin VA Medical Center, Veterans Affairs Long Beach Healthcare System",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 33.76902,
+   "lng": -118.1916,
+   "state": "LONG BEACH, CA, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Department of Veterans Affairs",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
    "name": "Veterans Affairs Boston Healthcare System",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -8199,32 +8251,6 @@
    "lat": 29.95614,
    "lng": -90.07339,
    "state": "NEW ORLEANS, LA, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Department of Veterans Affairs",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Department of Veterans Affairs. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "Tibor Rubin VA Medical Center, Veterans Affairs Long Beach Healthcare System",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 33.76902,
-   "lng": -118.1916,
-   "state": "LONG BEACH, CA, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -10244,6 +10270,32 @@
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
    "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of GenScript Corporation. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Gentas Biotechnology Co., Ltd.",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 31.14336,
+   "lng": 121.66198,
+   "state": "SHANGHAI, P.R. CHINA",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Gentas Biotechnology Co., Ltd",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Gentas Biotechnology Co., Ltd. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -15915,6 +15967,32 @@
    "checked": ""
   },
   {
+   "name": "MIMO Biosciences",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 42.81569,
+   "lng": -1.65224,
+   "state": "PAMPLONA, SPAIN",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
    "name": "National Institute of Food and Drug Safety Evaluation OSONG-EUP, REPUBLIC OF KOREA",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -15993,12 +16071,12 @@
    "checked": ""
   },
   {
-   "name": "Mispro Biotech Services Corporation - Cambridge",
+   "name": "Mispro Biotech Services Corporation - California",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 42.36563,
-   "lng": -71.104,
-   "state": "CAMBRIDGE, MA, UNITED STATES",
+   "lat": 37.79142,
+   "lng": -122.42019,
+   "state": "SOUTH SAN FRANCISCO AND PALO ALTO, CA, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -16019,12 +16097,12 @@
    "checked": ""
   },
   {
-   "name": "Mispro Biotech Services Corporation - California",
+   "name": "Mispro Biotech Services Corporation - Cambridge",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 37.79142,
-   "lng": -122.42019,
-   "state": "SOUTH SAN FRANCISCO AND PALO ALTO, CA, UNITED STATES",
+   "lat": 42.36563,
+   "lng": -71.104,
+   "state": "CAMBRIDGE, MA, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -16441,6 +16519,32 @@
    "lat": 29.75894,
    "lng": -95.3677,
    "state": "HOUSTON, TX, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Nantong Jingqi Biotechnology Co., Ltd.",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 32.04633,
+   "lng": 120.85666,
+   "state": "CHONGCHUAN DISTRICT, NANTONG, P.R. CHINA",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -20647,6 +20751,32 @@
    "checked": ""
   },
   {
+   "name": "Saudi Food and Drugs Authority (SFDA)",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 24.63892,
+   "lng": 46.71601,
+   "state": "RIYADH, SAUDI ARABIA",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
    "name": "Scantox Neuro GmbH Parkring 12, 8074 Grambach GRAMBACH, AUSTRIA Tel: +43 316 258 111 Fax: +43 316 258 111 300",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -21242,6 +21372,32 @@
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
    "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Shanghai Yuanxiang Biotechnology Co., Ltd.",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 31.14336,
+   "lng": 121.66198,
+   "state": "SHANGHAI, P.R. CHINA",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Shanghai Municipal Science and Technology Commission",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Shanghai Municipal Science and Technology Commission. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -22468,6 +22624,32 @@
   },
   {
    "name": "Suzhou Truway Biotechnology Inc.",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 31.27871,
+   "lng": 120.72376,
+   "state": "SUZHOU, P.R. CHINA",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Suzhou Xihua Scientific Co., Ltd.",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
    "lat": 31.27871,
@@ -26523,6 +26705,32 @@
    "checked": ""
   },
   {
+   "name": "University of Massachusetts Amherst",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 42.37319,
+   "lng": -72.51988,
+   "state": "AMHERST, MA, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
    "name": "University of Massachusetts Chan Medical School",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -27075,32 +27283,6 @@
    "lat": 41.47321,
    "lng": -71.5225,
    "state": "KINGSTON, RI, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "University of Rochester",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 43.15729,
-   "lng": -77.61521,
-   "state": "ROCHESTER, NY, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -27745,6 +27927,32 @@
    "checked": ""
   },
   {
+   "name": "Georgia Institute of Technology",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 33.75447,
+   "lng": -84.38982,
+   "state": "ATLANTA, GA, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "University System of Georgia",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of University System of Georgia. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
    "name": "Augusta University",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -28002,6 +28210,32 @@
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
    "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Verdeya. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "VERSA Biomedical S.L.",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 39.32607,
+   "lng": -4.83798,
+   "state": "SPAIN",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -29233,6 +29467,32 @@
    "lat": 31.14336,
    "lng": 121.66198,
    "state": "SHANGHAI, P.R. CHINA",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Zhanyuan Biological Technology (Chengdu) Co., LTD",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 30.42725,
+   "lng": 104.07316,
+   "state": "CHENGDU CITY, P.R. CHINA",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
