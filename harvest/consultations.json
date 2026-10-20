@@ -1,12 +1,12 @@
 {
- "generated": "2026-10-19",
+ "generated": "2026-10-20",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
    "name": "Federal Register",
    "kind": "feed",
    "ok": true,
-   "rows": 3,
+   "rows": 2,
    "url": "https://www.federalregister.gov/",
    "message": "7 of 7 queries answered"
   },
@@ -24,7 +24,7 @@
    "ok": true,
    "rows": 7,
    "url": "https://eping.wto.org/en/Search",
-   "message": "106195 notifications scanned"
+   "message": "106204 notifications scanned"
   },
   {
    "name": "EFSA",
@@ -46,14 +46,6 @@
  "sources_reached": 3,
  "sources_total": 3,
  "consultations": [
-  {
-   "title": "Pioneer Hi-Bred International, Inc.: Availability of a Petition for a Determination of Nonregulated Status and Draft Plant Pest Risk Assessment for Insect Resistant COR-23134-4 Soybean (Glycine max)",
-   "agency": "Agriculture Department",
-   "closes": "2026-10-19",
-   "url": "https://www.federalregister.gov/documents/2026/08/18/2026-16809/pioneer-hi-bred-international-inc-availability-of-a-petition-for-a-determination-of-nonregulated",
-   "country": "United States",
-   "ref": "2026-16809"
-  },
   {
    "title": "Draft Decree of the Head of BPJPH on the Guidelines for the Implementation of the Halal Product Assurance System for Genetically Modified Products",
    "agency": "WTO Regular notification",
