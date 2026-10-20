@@ -21,12 +21,17 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install what the chart fix needs
+        run: python3 -m pip install numpy scipy pillow
+
       - name: Run the patch scripts
         run: |
           python3 patch_world_button.py
           python3 patch_globe.py
           python3 patch_globe_2.py
           python3 patch_globe_3.py
+          python3 patch_globe_4.py
+          python3 patch_plate_seam.py
 
       - name: Commit index.html if it changed
         run: |
