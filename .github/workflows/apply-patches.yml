@@ -26,6 +26,7 @@ jobs:
           python3 patch_world_button.py
           python3 patch_globe.py
           python3 patch_globe_2.py
+          python3 patch_globe_3.py
 
       - name: Commit index.html if it changed
         run: |
