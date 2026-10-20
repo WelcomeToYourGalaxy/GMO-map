@@ -998,7 +998,7 @@ document.getElementById('levelPills').addEventListener('click',e=>{ const p=e.ta
 document.getElementById('histToggle').addEventListener('change',e=>{ showHistorical=e.target.checked; rebuild(); });
 
 const map=L.map('map',{center:[25,10],zoom:3,minZoom:2,maxZoom:18,zoomControl:true,attributionControl:true,worldCopyJump:false,maxBoundsViscosity:0.0});
-map.setMaxBounds([[-85,-250],[85,250]]);
+/* No edge limit: the flat map drags freely past the edges of the world. */
 
 /* ---------------------------------------------------------------------------
    Painted world plate. Below the fade window the map reads as a drawn chart;
@@ -10019,17 +10019,20 @@ body.info-open #legend #indexPanel{position:static!important;left:auto!important
   var t=setInterval(go,700); setTimeout(function(){ clearInterval(t); },30000);
 })();
 </script>
-<!-- ======================================================================
+<!-- =====================================================================
      THE GLOBE. The map opens as a planet (MapLibre, vertical-perspective
-     projection) carrying the markers the flat map draws, with the basemaps
-     from the Culprits atlas: Jurassic, Atlas, Bioluminescent, Hologram,
-     Hell, Standard. "Flat map" is the Leaflet map this file has always
-     been; it is untouched. Clicking a marker or a country on the globe
-     drops into the flat map at that spot and opens what the flat map would
-     open. Everything here lives between these two comment bars.
+     projection). It carries what the flat map draws: the record markers, the
+     country outlines and highlights, the regime outlines, the shaded areas
+     and the international-body markers, copied from the flat map as they
+     stand and kept in step as filters change. "Flat map" is the Leaflet map.
+     The basemaps from the Culprits atlas - Jurassic, Atlas, Bioluminescent,
+     Hell, Standard - work in both views; on the flat map all but Atlas are
+     drawn by MapLibre inside Leaflet. Everything here lives between these two
+     comment bars.
      ====================================================================== -->
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css">
 <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.1.3/leaflet-maplibre-gl.js"></script>
 <style id="globe-style">
   #globe{position:absolute;left:0;top:0;width:100%;height:100vh;z-index:900;background:#040611;
     transition:opacity .35s ease;}
@@ -10038,40 +10041,31 @@ body.info-open #legend #indexPanel{position:static!important;left:auto!important
   #globeStars{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
   #globeMap{position:absolute;inset:0;}
   body.globe-on #map{visibility:hidden;}
-  /* Flat-map-only furniture that has no meaning on the globe. */
   body.globe-on #gbCrumb{display:none!important;}
+  /* The flat map's own zoom and world buttons: the view box does both jobs. */
+  #map .leaflet-top.leaflet-left{display:none!important;}
   #globeTip{position:absolute;z-index:3;pointer-events:none;display:none;max-width:260px;padding:5px 9px;
     background:rgba(8,12,27,0.95);border:1px solid var(--accent-soft);border-radius:7px;color:#e3e6ef;
     font-size:11.5px;line-height:1.35;box-shadow:0 3px 14px rgba(0,0,0,.5);}
   #globeTip b{display:block;color:#f0ece4;font-weight:600;}
   #globeTip span{color:#969eb1;}
-  /* The view box: at the foot of the screen, between the side columns. */
-  #globeBox{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:1003;display:flex;align-items:center;
-    gap:10px;padding:7px 10px;background:rgba(8,12,27,0.95);border:1px solid var(--accent-soft);border-radius:10px;
+  /* The view box, top right, above the Guides column. */
+  #globeBox{position:fixed;right:16px;top:10px;z-index:1300;display:flex;align-items:center;
+    gap:8px;padding:5px 8px;background:rgba(8,12,27,0.95);border:1px solid var(--accent-soft);border-radius:10px;
     backdrop-filter:blur(10px);box-shadow:0 4px 22px rgba(0,0,0,0.45);font-family:'Marcellus','Georgia',serif;
-    font-size:12px;color:#d6dae8;max-width:calc(100vw - 24px);flex-wrap:wrap;justify-content:center;}
-  #globeBox .gb-grp{display:flex;align-items:center;gap:5px;}
-  #globeBox .gb-cap{font-size:10px;letter-spacing:.6px;text-transform:uppercase;color:#8a93ad;margin-right:2px;}
+    font-size:12px;color:#d6dae8;max-width:calc(100vw - 300px);flex-wrap:wrap;justify-content:flex-end;}
+  #globeBox .gb-grp{display:flex;align-items:center;gap:4px;}
+  #globeBox .gb-cap{font-size:9.5px;letter-spacing:.6px;text-transform:uppercase;color:#8a93ad;margin-right:2px;}
   #globeBox button{font:inherit;font-size:12px;color:#d6dae8;background:rgba(20,27,56,0.55);border:1px solid var(--accent-soft);
-    border-radius:7px;padding:5px 10px;cursor:pointer;line-height:1.2;white-space:nowrap;}
+    border-radius:7px;padding:4px 8px;cursor:pointer;line-height:1.15;white-space:nowrap;}
   #globeBox button:hover{background:rgba(34,46,98,0.75);color:#fff;}
   #globeBox button.on{background:#2e3e72;color:#fff;border-color:#4e62a8;}
-  #globeBox .gb-zoom button{width:30px;padding:5px 0;font-size:15px;font-weight:700;}
-  #globeBox .gb-sep{width:1px;height:22px;background:var(--accent-soft);}
-  #globeBox .gb-sub{display:block;font-size:9.5px;color:#8a93ad;letter-spacing:.2px;margin-top:1px;}
-  #globeBox button.bm{text-align:center;padding:4px 8px;}
+  #globeBox .gb-zoom button{width:28px;padding:4px 0;font-size:15px;font-weight:700;}
+  #globeBox .gb-sep{width:1px;height:26px;background:var(--accent-soft);}
+  #globeBox .gb-sub{display:block;font-size:9px;color:#8a93ad;letter-spacing:.2px;margin-top:1px;}
+  #globeBox button.bm{text-align:center;padding:3px 7px;}
   #globeBox button.bm.on .gb-sub{color:#c9d1ee;}
-  @media (max-width:900px){ #globeBox{bottom:8px;gap:6px;padding:6px 8px;font-size:11px;} #globeBox button{padding:4px 7px;} }
-  /* Hologram: the screen behind the planet, scan lines, a tube's rounded dark edge. */
-  :root{--holo-bg:#081729;--holo-earth:#0f2440;--holo-line:#7fb8d9;--holo-glow:#5b9cc8;--holo-grid:rgba(127,184,217,0.15);
-    --holo-detail:#6d9fc0;--holo-fringe:#6fb0bd;}
-  .holo-scan,.holo-crt,.holo-rim{position:absolute;pointer-events:none;display:none;}
-  #globe.holo-on .holo-scan,#globe.holo-on .holo-crt,#globe.holo-on .holo-rim{display:block;}
-  #globe.holo-on{background:radial-gradient(ellipse at 50% 45%, #0e2037 0%, var(--holo-bg) 70%);}
-  .holo-rim{left:0;top:0;width:100%;height:100%;z-index:2;}
-  .holo-scan{inset:0;opacity:.04;z-index:2;background:repeating-linear-gradient(to bottom, var(--holo-line) 0 1px, transparent 1px 3px);}
-  .holo-crt{inset:0;z-index:2;border-radius:18px;background:radial-gradient(ellipse at center, transparent 58%, rgba(2,4,14,.38) 100%);
-    box-shadow:inset 0 0 70px rgba(2,4,14,.55);}
+  @media (max-width:900px){ #globeBox{top:6px;right:8px;max-width:calc(100vw - 16px);gap:5px;} #globeBox .gb-sub{display:none;} }
 </style>
 <script id="globe-script">
 (function(){
@@ -10081,18 +10075,17 @@ body.info-open #legend #indexPanel{position:static!important;left:auto!important
 
   /* ---------- the page: a container after the flat map, and the view box ---------- */
   var box=document.createElement("div"); box.id="globe";
-  box.innerHTML='<canvas id="globeStars"></canvas><div id="globeMap"></div>'+
-    '<div class="holo-scan"></div><div class="holo-crt"></div><canvas class="holo-rim"></canvas><div id="globeTip"></div>';
+  box.innerHTML='<canvas id="globeStars"></canvas><div id="globeMap"></div><div id="globeTip"></div>';
   mapEl.parentNode.insertBefore(box, mapEl.nextSibling);
 
   // The basemaps as the Culprits atlas names them, with a word for a reader
-  // who has never seen them. Woodlands is left out at the owner's word.
+  // who has never seen them. Woodlands and Hologram are left out at the
+  // owner's word.
   var BASEMAPS=[
-    ["jurassic","Jurassic","photograph, shaded relief","The satellite photograph of Earth with shaded relief laid over it in earth tones."],
+    ["jurassic","Jurassic","photo + relief","The satellite photograph of Earth with shaded relief laid over it in earth tones."],
     ["atlas","Atlas","painted chart","The painted world chart. Zoom in and it gives way to the photograph underneath."],
     ["night","Bioluminescent","Earth at night","NASA's picture of the planet's lights after dark, in navy and ice, with a glow along every shore."],
-    ["holo","Hologram","glowing wireframe","Country outlines as a glowing wireframe on a dark screen, with streets drawn in close up."],
-    ["hell","Hell","oxblood and basalt","The same Earth drawn in oxblood sea, black land and red rivers."],
+    ["hell","Hell","oxblood, basalt","The same Earth drawn in oxblood sea, black land and red rivers."],
     ["outlines","Standard","plain outlines","Plain country shapes on dark water, with roads, rivers and buildings close in."]];
   var BM_KEY="gmo-globe-basemap";
   var BASEMAP="atlas";
@@ -10124,6 +10117,7 @@ body.info-open #legend #indexPanel{position:static!important;left:auto!important
   drawStars(); window.addEventListener("resize",drawStars);
 
   /* ---------- helpers ported from the Culprits atlas ---------- */
+  var PLATE={ top:85.05112877980659, bot:-80.55, fadeIn:3, fadeOut:5 };
   function pngCrc(buf,start,end){
     var c=~0; for(var i=start;i<end;i++){ c^=buf[i]; for(var k=0;k<8;k++) c=(c>>>1)^(0xEDB88320&-(c&1)); } return ~c>>>0; }
   function rawPng(rgba,w,h){
@@ -10150,32 +10144,6 @@ body.info-open #legend #indexPanel{position:static!important;left:auto!important
     return out.buffer; }
   function hexRgb(h){ var n=parseInt(h.slice(1),16); return [(n>>16&255)/255,(n>>8&255)/255,(n&255)/255]; }
   var cv256=function(w,h){ return typeof OffscreenCanvas!=="undefined"?new OffscreenCanvas(w,h):Object.assign(document.createElement("canvas"),{width:w,height:h}); };
-
-  /* ---------- the painted plate, cut into map squares ---------- */
-  // The same plate the flat map lays over its imagery (PLATE_IMG), registered
-  // in Mercator between the same latitudes, fading out between zoom 3 and 5.
-  var PLATE={ top:85.05112877980659, bot:-80.55, fadeIn:3, fadeOut:5 };
-  var plateBitmap=null;
-  var plateMerc=function(lat){ return (1-Math.log(Math.tan(Math.PI/4+lat*Math.PI/360))/Math.PI)/2; };
-  function platePiece(z,x,y){
-    if(!plateBitmap){
-      var src=(typeof PLATE_IMG==="string"&&PLATE_IMG)?PLATE_IMG:"https://welcometoyourgalaxy.github.io/culprits/atlas-plate.webp";
-      plateBitmap=fetch(src).then(function(r){ if(!r.ok) throw new Error(""+r.status); return r.blob(); }).then(function(b){ return createImageBitmap(b); });
-      plateBitmap.catch(function(){ plateBitmap=null; });
-    }
-    return plateBitmap.then(function(img){
-      var n=Math.pow(2,z), top=plateMerc(PLATE.top), bot=plateMerc(PLATE.bot);
-      var cv=cv256(256,256), ctx=cv.getContext("2d");
-      var y0=y/n, y1=(y+1)/n, a=Math.max(y0,top), b=Math.min(y1,bot);
-      if(b>a){ var sy=(a-top)/(bot-top)*img.height, sh=(b-a)/(bot-top)*img.height;
-        var dy=(a-y0)*n*256, dh=(b-a)*n*256;
-        ctx.imageSmoothingQuality="high";
-        ctx.drawImage(img, x/n*img.width, sy, img.width/n, sh, 0, dy, 256, dh); }
-      return rawPng(ctx.getImageData(0,0,256,256).data,256,256); });
-  }
-  maplibregl.addProtocol("gmoplate", function(params){
-    var m=params.url.match(/^gmoplate:\/\/(\d+)\/(\d+)\/(\d+)/); if(!m) return Promise.reject(new Error("not a plate square"));
-    return platePiece(+m[1],+m[2],+m[3]).then(function(d){ return {data:d}; }); });
 
   /* ---------- Earth at night, recoloured square by square ---------- */
   var NIGHT={
@@ -10287,10 +10255,8 @@ body.info-open #legend #indexPanel{position:static!important;left:auto!important
     town:"#1C1719",townWork:"#221C1E",road:["#2B1C1E","#3A2124","#4C2529"],rail:"#3A3034",building:"#201B1D",border:"rgba(170,58,62,0.32)" };
   var HELL_FONT={regular:["EBGaramond-Regular"],bold:["EBGaramond-SemiBold"],italic:["EBGaramond-Italic"]};
   var HELL_NAME={country:"#A9504C",state:"#8C4A47",city:"#CDBDB4",town:"#B4A39B",minor:"#9A8B85",water:"#B0605F",peak:"#958680",halo:"rgba(8,4,5,0.85)",haloWater:"rgba(24,6,9,0.8)"};
-  var HOLO={ bg:"#081729",earth:"#0f2440",line:"#7fb8d9",glow:"#5b9cc8",grid:"rgba(127,184,217,0.15)",detail:"#6d9fc0",fringe:"#6fb0bd" };
   var rgba=function(hex,a){ var n=parseInt(hex.slice(1),16); return "rgba("+(n>>16&255)+","+(n>>8&255)+","+(n&255)+","+a+")"; };
   var SKY_DAY={"atmosphere-blend":["interpolate",["linear"],["zoom"],0,1,4,0.8,7,0],"sky-color":"#1B242B","horizon-color":"#46545B","fog-color":"#46545B","sky-horizon-blend":0.6,"horizon-fog-blend":0.6,"fog-ground-blend":0.7};
-  var SKY_HOLO={"sky-color":HOLO.bg,"horizon-color":HOLO.bg,"fog-color":HOLO.bg,"atmosphere-blend":0,"sky-horizon-blend":0.5,"horizon-fog-blend":0.5,"fog-ground-blend":0.5};
   var SKY_HELL={"sky-color":"#0A0305","horizon-color":"#3A0C11","fog-color":"#1E080B","sky-horizon-blend":0.6,"horizon-fog-blend":0.5,"fog-ground-blend":0.8,"atmosphere-blend":["interpolate",["linear"],["zoom"],0,0.5,4,0.3,7,0]};
 
   /* ---------- the layers of each basemap ---------- */
@@ -10358,172 +10324,161 @@ body.info-open #legend #indexPanel{position:static!important;left:auto!important
       {id:"night-road",type:"line",source:"osm","source-layer":"transportation",minzoom:9,filter:kind(["secondary","tertiary"]),paint:{"line-color":NIGHT.road[1],"line-width":road(.5),"line-opacity":fadeZ(9,11,1)}},
       {id:"night-road-major",type:"line",source:"osm","source-layer":"transportation",minzoom:7,filter:kind(["motorway","trunk","primary"]),layout:{"line-cap":"round","line-join":"round"},paint:{"line-color":NIGHT.road[2],"line-width":road(.6),"line-opacity":fadeZ(7,9,1)}},
       {id:"night-border",type:"line",source:"countries",paint:{"line-color":NIGHT.border,"line-width":["interpolate",["linear"],["zoom"],2,.4,6,.8]}} ]; }
-  function holoLayers(){ var line={"line-join":"round","line-cap":"round"}, c=HOLO;
-    var f=function(a){ return ["interpolate",["linear"],["zoom"],6,a,9,a*0.4]; };
-    return [
-      {id:"holo-earth",type:"background",paint:{"background-color":c.earth}},
-      {id:"holo-grat",type:"line",source:"holo-graticule",layout:line,paint:{"line-color":c.grid,"line-width":0.8}},
-      {id:"holo-relief",type:"hillshade",source:"outline-dem",minzoom:3,paint:{"hillshade-exaggeration":0.5,"hillshade-illumination-direction":315,"hillshade-highlight-color":rgba(c.line,0.22),"hillshade-shadow-color":"rgba(2,5,16,0.55)","hillshade-accent-color":rgba(c.glow,0.10)}},
-      {id:"holo-osm-water",type:"line",source:"osm","source-layer":"water",minzoom:5,layout:line,paint:{"line-color":c.line,"line-width":["interpolate",["linear"],["zoom"],5,0.7,12,1.2],"line-opacity":fadeZ(5,7.5,0.8)}},
-      {id:"holo-osm-waterway",type:"line",source:"osm","source-layer":"waterway",minzoom:7,layout:line,paint:{"line-color":c.detail,"line-width":0.7,"line-opacity":fadeZ(7,9,0.45)}},
-      {id:"holo-osm-road",type:"line",source:"osm","source-layer":"transportation",minzoom:6,layout:line,filter:["match",["get","class"],["motorway","trunk","primary","secondary","tertiary","minor","street","service"],true,false],
-        paint:{"line-color":c.detail,"line-width":["interpolate",["exponential",1.4],["zoom"],6,0.4,12,0.9,16,2.4],
-          "line-opacity":["interpolate",["linear"],["zoom"],6,0,8,["match",["get","class"],["motorway","trunk","primary"],0.5,0],12,["match",["get","class"],["motorway","trunk","primary"],0.6,["secondary","tertiary"],0.45,0.3]]}},
-      {id:"holo-osm-boundary",type:"line",source:"osm","source-layer":"boundary",minzoom:4,layout:line,filter:["all",["<=",["to-number",["get","admin_level"],99],4],["!=",["to-number",["get","maritime"],0],1]],
-        paint:{"line-color":c.line,"line-width":["match",["to-number",["get","admin_level"],99],2,1.1,0.7],"line-dasharray":[3,2],"line-opacity":["interpolate",["linear"],["zoom"],4,0,6,["match",["to-number",["get","admin_level"],99],2,0.75,0.35]]}},
-      {id:"holo-glow",type:"line",source:"holo-outlines",layout:line,paint:{"line-color":c.glow,"line-opacity":f(0.32),"line-blur":3,"line-width":["interpolate",["linear"],["zoom"],1,3.5,6,5]}},
-      {id:"holo-fringe",type:"line",source:"holo-outlines",layout:line,paint:{"line-color":c.fringe,"line-opacity":f(0.35),"line-translate":[1.2,0.6],"line-width":["interpolate",["linear"],["zoom"],1,0.7,6,1]}},
-      {id:"holo-line",type:"line",source:"holo-outlines",layout:line,paint:{"line-color":c.line,"line-opacity":f(0.95),"line-width":["interpolate",["linear"],["zoom"],1,0.8,6,1.2]}},
-      {id:"holo-osm-building-line",type:"line",source:"osm","source-layer":"building",minzoom:13,layout:line,paint:{"line-color":c.line,"line-width":0.6,"line-opacity":fadeZ(13,14.5,0.55)}},
-      {id:"holo-osm-building",type:"fill-extrusion",source:"osm","source-layer":"building",minzoom:13,paint:{"fill-extrusion-color":c.glow,"fill-extrusion-height":["coalesce",["get","render_height"],6],"fill-extrusion-base":["coalesce",["get","render_min_height"],0],"fill-extrusion-opacity":["interpolate",["linear"],["zoom"],13,0,14.5,0.28]}} ]; }
-  // The hologram's outlines: each shared border drawn once, from the arcs of
-  // the same world-atlas file the flat map's countries come from.
-  function topoToLines(topo){ var sx=topo.transform.scale[0],sy=topo.transform.scale[1],tx=topo.transform.translate[0],ty=topo.transform.translate[1], lines=[];
-    topo.arcs.forEach(function(arc){ var x=0,y=0,cur=[];
-      for(var i=0;i<arc.length;i++){ x+=arc[i][0]; y+=arc[i][1]; var pt=[x*sx+tx,y*sy+ty], prev=cur[cur.length-1];
-        if(prev&&((Math.abs(pt[0])>179.99&&Math.abs(prev[0])>179.99)||(pt[1]<-89.9&&prev[1]<-89.9)||Math.abs(pt[0]-prev[0])>180)){ if(cur.length>1) lines.push(cur); cur=[pt]; continue; }
-        cur.push(pt); }
-      if(cur.length>1) lines.push(cur); });
-    return {type:"Feature",properties:{},geometry:{type:"MultiLineString",coordinates:lines}}; }
-  function graticule(step){ var lines=[],lon,lat,l;
-    for(lon=-180;lon<180;lon+=step){ l=[]; for(lat=-85;lat<=85;lat+=2) l.push([lon,lat]); l.push([lon,85]); lines.push(l); }
-    for(lat=-75;lat<=75;lat+=step){ l=[]; for(lon=-180;lon<=180;lon+=2) l.push([lon,lat]); lines.push(l); }
-    return {type:"Feature",properties:{},geometry:{type:"MultiLineString",coordinates:lines}}; }
-
-  /* ---------- the map ---------- */
-  var OPENING_ZOOM=1.35;
-  var empty={type:"FeatureCollection",features:[]};
-  var globe=new maplibregl.Map({
-    container:"globeMap", renderWorldCopies:false, fadeDuration:0, maxPitch:85, rollEnabled:true,
-    pixelRatio:Math.min(window.devicePixelRatio||1,1.5),
-    center:[12,24], zoom:OPENING_ZOOM, minZoom:0.4,
-    attributionControl:{compact:true},
-    style:{ version:8, projection:{type:"vertical-perspective"}, sky:SKY_DAY,
+  /* ---------- one style, used by the globe and by the flat map's basemaps ---------- */
+  var PLATE_URL=(typeof PLATE_IMG==="string"&&PLATE_IMG)?PLATE_IMG:"https://welcometoyourgalaxy.github.io/culprits/atlas-plate.webp";
+  function baseStyle(projection){
+    return { version:8, projection:{type:projection}, sky:SKY_DAY,
       glyphs:"https://welcometoyourgalaxy.github.io/culprits/glyphs/{fontstack}/{range}.pbf",
       sources:{
         base:{type:"raster",tiles:["https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"],tileSize:256,maxzoom:18,attribution:"Imagery © Esri, Maxar"},
         hillshade:{type:"raster",tiles:["https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}"],tileSize:256,maxzoom:16,attribution:"Hillshade © Esri"},
         labels:{type:"raster",tiles:["https://a.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}@2x.png?key=cb1_494p_1_eebbbfcb65bc573e54783d42"],tileSize:256,attribution:"Labels © CARTO, © OpenStreetMap"},
-        "holo-labels":{type:"raster",tiles:["https://a.basemaps.cartocdn.com/rastertiles/dark_only_labels/{z}/{x}/{y}@2x.png?key=cb1_494p_1_eebbbfcb65bc573e54783d42"],tileSize:256,attribution:"Labels © CARTO, © OpenStreetMap"},
-        "plate-base":{type:"image",url:(typeof PLATE_IMG==="string"&&PLATE_IMG)?PLATE_IMG:"https://welcometoyourgalaxy.github.io/culprits/atlas-plate.webp",
-          coordinates:[[-180,PLATE.top],[180,PLATE.top],[180,PLATE.bot],[-180,PLATE.bot]]},
         "night-lights":{type:"raster",tiles:["gmonight://{z}/{y}/{x}"],tileSize:256,maxzoom:8,attribution:'<a href="https://earthobservatory.nasa.gov/features/NightLights" target="_blank" rel="noopener">NASA Black Marble 2016</a> via GIBS'},
         osm:OSM_SOURCE, "outline-dem":RELIEF_SOURCE, "sea-dem":TERRAIN_SOURCE, "world-sheet":WORLD_SHEET,
-        countries:{type:"geojson",data:empty,promoteId:"id"},
-        "holo-outlines":{type:"geojson",data:empty,tolerance:0.2},
-        "holo-graticule":{type:"geojson",data:graticule(15)},
-        points:{type:"geojson",data:empty}
+        countries:{type:"geojson",data:{type:"FeatureCollection",features:[]}}
       },
       layers:[
         {id:"bg",type:"background",paint:{"background-color":"#0B1017"}},
         {id:"base",type:"raster",source:"base",paint:Object.assign({"raster-opacity":1},BASE_GRADE.atlas)},
-        {id:"hillshade",type:"raster",source:"hillshade",paint:{"raster-opacity":["interpolate",["linear"],["zoom"],4,.18,9,.34,13,.46]}}
-      ] }
+        {id:"hillshade",type:"raster",source:"hillshade",paint:{"raster-opacity":["interpolate",["linear"],["zoom"],PLATE.fadeIn,0,PLATE.fadeOut,.2,9,.34,13,.46]}}
+      ] };
+  }
+  // Country shapes for the basemaps that draw land and borders themselves
+  // (Standard, Hell, Bioluminescent): the flat map's own world-atlas file.
+  function feedCountries(m){
+    var c=window.__gmoCountries; if(!m) return;
+    if(!c){ setTimeout(function(){ feedCountries(m); },400); return; }
+    var s=m.getSource&&m.getSource("countries"); if(s) s.setData(c);
+  }
+  var hide=function(l){ l.layout=Object.assign({},l.layout||{},{visibility:"none"}); return l; };
+  // Adds every basemap's layers to a map, hidden, and returns which layers
+  // belong to which basemap. withAtlas: the globe's own painted atlas (the
+  // flat map keeps the Leaflet atlas it always had).
+  function addBasemaps(m, withAtlas, tag){
+    var by={}, add=function(list,key){ var ids=[]; list.forEach(function(l){ try{ m.addLayer(hide(l)); ids.push(l.id); }catch(e){ console.warn("[globe] "+tag+" "+key+" layer "+l.id+":",e.message||e); } }); return ids; };
+    by.jurassic=["base"].concat(add([
+      {id:"sat-relief-colour",type:"color-relief",source:"outline-dem",paint:{"color-relief-color":SAT_RELIEF.colour,"color-relief-opacity":1}},
+      {id:"sat-relief-seabed",type:"color-relief",source:"sea-dem",paint:{"color-relief-color":SAT_RELIEF.seabed,"color-relief-opacity":1}},
+      {id:"sat-relief-shade",type:"hillshade",source:"outline-dem",paint:SAT_RELIEF.shade},
+      {id:"sat-relief-depth",type:"hillshade",source:"outline-dem",paint:SAT_RELIEF.depth},
+      {id:"sat-relief-sea",type:"color-relief",source:"sea-dem",paint:{"color-relief-color":SAT_RELIEF.sea,"color-relief-opacity":1}}],"jurassic"));
+    if(withAtlas){
+      // The washes and the plate sit UNDER the hillshade: drawn above it, the
+      // plate kept showing at full strength after zooming in.
+      try{ m.addLayer(atlasWashes,"hillshade"); }catch(e){ console.warn("[globe] atlas washes:",e.message||e); }
+      m.addSource("plate-base",{type:"image",url:PLATE_URL,coordinates:[[-180,PLATE.top],[180,PLATE.top],[180,PLATE.bot],[-180,PLATE.bot]]});
+      m.addLayer({id:"plate-base",type:"raster",source:"plate-base",paint:{"raster-opacity":["interpolate",["linear"],["zoom"],PLATE.fadeIn,1,PLATE.fadeOut,0],"raster-fade-duration":0}},"hillshade");
+      by.atlas=["base","hillshade","plate-base"];
+    }
+    by.outlines=add(outlineLayers(),"standard");
+    by.hell=add(hellLayers(),"hell").concat(add(hellNameLayers(),"hell names"));
+    by.night=add(nightLayers(),"night");
+    feedCountries(m);
+    m.addLayer({id:"labels",type:"raster",source:"labels",paint:{"raster-opacity":.92}});
+    return by;
+  }
+  // Shows one basemap's layers on a map and hides the rest.
+  function showBasemap(m, by, kind, isGlobe){
+    if(!m||!by||!m.getLayer("labels")) return;
+    var vis=function(id,on){ if(m.getLayer(id)) m.setLayoutProperty(id,"visibility",on?"visible":"none"); };
+    var all={}; Object.keys(by).forEach(function(k){ by[k].forEach(function(id){ all[id]=1; }); });
+    Object.keys(all).forEach(function(id){ vis(id,false); });
+    (by[kind]||[]).forEach(function(id){ vis(id,true); });
+    if(kind==="atlas"||kind==="jurassic"){ Object.keys(BASE_GRADE[kind]).forEach(function(k){ m.setPaintProperty("base",k,BASE_GRADE[kind][k]); }); }
+    vis("labels",kind!=="hell");
+    m.setPaintProperty("labels","raster-opacity",kind==="atlas"?["interpolate",["linear"],["zoom"],PLATE.fadeIn,0,PLATE.fadeOut,.92]:kind==="jurassic"?.8:.92);
+    m.setPaintProperty("labels","raster-saturation",kind==="atlas"||kind==="hell"?0:-1);
+    m.setPaintProperty("labels","raster-brightness-min",kind==="night"||kind==="outlines"?0.8:0);
+    m.setPaintProperty("labels","raster-brightness-max",kind==="night"||kind==="outlines"?0.1:1);
+    if(isGlobe){ try{ m.setSky(kind==="night"?NIGHT.sky:kind==="hell"?SKY_HELL:SKY_DAY); }catch(e){} }
+    m.triggerRepaint();
+  }
+
+  /* ---------- the globe ---------- */
+  var OPENING_ZOOM=1.35;
+  var globe=new maplibregl.Map({
+    container:"globeMap", renderWorldCopies:false, fadeDuration:0, maxPitch:85, rollEnabled:true,
+    pixelRatio:Math.min(window.devicePixelRatio||1,1.5),
+    center:[12,24], zoom:OPENING_ZOOM, minZoom:0.4,
+    attributionControl:{compact:true}, style:baseStyle("vertical-perspective")
   });
   window.gmoGlobe=globe;
+  var GLOBE_BY=null;
   // The planet sits in the room the side columns leave, not under them.
   function fitPadding(){
     try{ var w=window.innerWidth, h=window.innerHeight, sb=document.getElementById("sidebar"), rb=document.getElementById("rightbar"), ip=document.getElementById("infoPanel");
       var left=0, right=0; [sb,ip].forEach(function(el){ if(el&&el.offsetWidth){ var r=el.getBoundingClientRect(); if(r.left<w/2) left=Math.max(left,r.right); } });
       if(rb&&rb.offsetWidth){ var rr=rb.getBoundingClientRect(); right=Math.max(0,w-rr.left); }
       if(w<900){ left=0; right=0; }
-      globe.setPadding({left:Math.min(left,w*0.45),right:Math.min(right,w*0.3),top:60,bottom:Math.min(ctl.offsetHeight+20,h*0.25)}); }catch(e){}
+      globe.setPadding({left:Math.min(left,w*0.45),right:Math.min(right,w*0.3),top:70,bottom:20}); }catch(e){}
   }
   window.addEventListener("resize",fitPadding);
-  var hide=function(l){ l.layout=Object.assign({},l.layout||{},{visibility:"none"}); return l; };
-  var show=function(id,on){ if(globe.getLayer(id)) globe.setLayoutProperty(id,"visibility",on?"visible":"none"); };
-  var LAYERS_BY_BASEMAP={};
-  var holoOn=false;
 
   globe.on("load",function(){
-    // Jurassic's relief, drawn above the photograph.
-    [ {id:"sat-relief-colour",type:"color-relief",source:"outline-dem",paint:{"color-relief-color":SAT_RELIEF.colour,"color-relief-opacity":1}},
-      {id:"sat-relief-seabed",type:"color-relief",source:"sea-dem",paint:{"color-relief-color":SAT_RELIEF.seabed,"color-relief-opacity":1}},
-      {id:"sat-relief-shade",type:"hillshade",source:"outline-dem",paint:SAT_RELIEF.shade},
-      {id:"sat-relief-depth",type:"hillshade",source:"outline-dem",paint:SAT_RELIEF.depth},
-      {id:"sat-relief-sea",type:"color-relief",source:"sea-dem",paint:{"color-relief-color":SAT_RELIEF.sea,"color-relief-opacity":1}}
-    ].forEach(function(l){ try{ globe.addLayer(hide(l)); }catch(e){ console.warn("[globe] jurassic relief:",e.message||e); } });
-    LAYERS_BY_BASEMAP.jurassic=["base","hillshade","sat-relief-colour","sat-relief-seabed","sat-relief-shade","sat-relief-depth","sat-relief-sea"];
-    // The washes and the plate go UNDER the hillshade, not over it as on the
-    // Culprits map: MapLibre 5.24's globe draws a raster layer at full
-    // strength when the layer before it was a part-transparent raster whose
-    // tiles go deeper than its own, so plate-after-hillshade never faded.
-    // Hillshade-after-plate does, and the hillshade is kept off until the
-    // plate has gone (the chart carries its own drawn relief).
-    try{ globe.addLayer(atlasWashes,"hillshade"); }catch(e){ console.warn("[globe] atlas washes:",e.message||e); }
-    globe.addLayer({id:"plate-base",type:"raster",source:"plate-base",paint:{"raster-opacity":["interpolate",["linear"],["zoom"],PLATE.fadeIn,1,PLATE.fadeOut,0],"raster-fade-duration":0}},"hillshade");
-    globe.setPaintProperty("hillshade","raster-opacity",["interpolate",["linear"],["zoom"],PLATE.fadeIn,0,PLATE.fadeOut,.2,9,.34,13,.46]);
-    LAYERS_BY_BASEMAP.atlas=["base","hillshade","plate-base"];
-    var add=function(list,key){ var ids=[]; list.forEach(function(l){ try{ globe.addLayer(hide(l)); ids.push(l.id); }catch(e){ console.warn("[globe] "+key+" layer "+l.id+":",e.message||e); } }); return ids; };
-    LAYERS_BY_BASEMAP.outlines=add(outlineLayers(),"standard");
-    LAYERS_BY_BASEMAP.hell=add(hellLayers(),"hell").concat(add(hellNameLayers(),"hell names"));
-    LAYERS_BY_BASEMAP.night=add(nightLayers(),"night");
-    LAYERS_BY_BASEMAP.holo=add(holoLayers(),"hologram");
-    globe.addLayer({id:"labels",type:"raster",source:"labels",paint:{"raster-opacity":.92}});
-    globe.addLayer(hide({id:"holo-labels",type:"raster",source:"holo-labels",paint:{"raster-opacity":0.85,"raster-saturation":-1,"raster-fade-duration":0}}));
-    // Countries: a see-through sheet to click on, and a faint edge where the
-    // basemap draws none of its own.
-    globe.addLayer({id:"gl-countries-fill",type:"fill",source:"countries",paint:{"fill-color":"#ffffff","fill-opacity":0.01}});
-    globe.addLayer({id:"gl-countries-hover",type:"line",source:"countries",paint:{"line-color":"rgba(223,231,245,0.75)","line-width":1.6,"line-opacity":["case",["boolean",["feature-state","hover"],false],1,0]}});
-    globe.addLayer(hide({id:"gl-countries-line",type:"line",source:"countries",paint:{"line-color":"rgba(223,231,245,0.22)","line-width":["interpolate",["linear"],["zoom"],1,.5,5,.9]}}));
+    GLOBE_BY=addBasemaps(globe,true,"globe");
+    // What the flat map draws, copied (see the mirror below).
+    globe.addSource("mirror",{type:"geojson",data:{type:"FeatureCollection",features:[]},promoteId:"fid"});
+    globe.addLayer({id:"mirror-fill",type:"fill",source:"mirror",filter:["all",["==",["get","g"],"area"],["get","fill"]],
+      paint:{"fill-color":["get","fc"],"fill-opacity":["get","fo"],"fill-antialias":false}});
+    globe.addLayer({id:"mirror-line",type:"line",source:"mirror",filter:["all",["!=",["get","g"],"point"],["get","stroke"],["!",["get","dash"]]],
+      layout:{"line-join":"round","line-cap":"round"},paint:{"line-color":["get","c"],"line-opacity":["get","o"],"line-width":["get","w"]}});
+    globe.addLayer({id:"mirror-dash",type:"line",source:"mirror",filter:["all",["!=",["get","g"],"point"],["get","stroke"],["get","dash"]],
+      paint:{"line-color":["get","c"],"line-opacity":["get","o"],"line-width":["get","w"],"line-dasharray":[2,1.6]}});
+    globe.addLayer({id:"mirror-hover",type:"line",source:"mirror",filter:["==",["get","g"],"area"],
+      paint:{"line-color":"rgba(223,231,245,0.75)","line-width":1.6,"line-opacity":["case",["boolean",["feature-state","hover"],false],1,0]}});
+    globe.addLayer({id:"mirror-pt",type:"circle",source:"mirror",filter:["==",["get","g"],"point"],
+      paint:{"circle-radius":["get","r"],"circle-color":["get","fc"],"circle-opacity":["get","fo"],
+        "circle-stroke-color":["get","c"],"circle-stroke-width":["case",["get","stroke"],["get","w"],0],"circle-stroke-opacity":["get","o"]}});
     // The markers: the same points, colours and sizes the flat map draws.
-    // Radius by zoom, scaled by the record's impact grade, as pjRad() does on
-    // the flat map. MapLibre wants zoom at the top of the expression.
+    globe.addSource("points",{type:"geojson",data:{type:"FeatureCollection",features:[]}});
     var imp=["match",["get","i"],5,1.7,4,1.45,3,1.25,2,1.08,1];
     var rad=function(k){ var e=["interpolate",["linear"],["zoom"]]; [[0,1.5],[3,2.2],[5,3.2],[7,4.4],[9,5.6],[12,7]].forEach(function(s){ e.push(s[0],["*",s[1]*k,imp]); }); return e; };
     globe.addLayer({id:"pt-glow",type:"circle",source:"points",paint:{"circle-color":["get","c"],"circle-opacity":0.28,"circle-blur":1,"circle-radius":rad(2.4)}});
     globe.addLayer({id:"pt-core",type:"circle",source:"points",paint:{"circle-color":["get","c"],"circle-opacity":0.95,"circle-radius":rad(1),"circle-stroke-color":"rgba(8,12,27,0.85)","circle-stroke-width":0.8}});
-    fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(function(r){ return r.json(); })
-      .then(function(topo){ var s=globe.getSource("holo-outlines"); if(s) s.setData(topoToLines(topo)); })
-      .catch(function(e){ console.warn("[globe] hologram outlines:",e.message||e); });
-    setBasemap(BASEMAP);
+    // Hell's own names go over everything but the markers.
+    (GLOBE_BY.hell||[]).forEach(function(id){ if(/^hell-name-/.test(id)) try{ globe.moveLayer(id,"mirror-hover"); }catch(e){} });
+    showBasemap(globe,GLOBE_BY,BASEMAP,true);
     fitPadding(); globe.jumpTo({center:[12,24],zoom:OPENING_ZOOM});
-    feedPoints(); feedCountries();
+    feedPoints(); syncMirror(true);
   });
 
-  /* ---------- basemaps on and off ---------- */
+  /* ---------- the flat map's basemaps ---------- */
+  // Atlas is the Leaflet atlas the flat map has always drawn. The others are
+  // MapLibre drawn inside Leaflet as one layer, in their own pane under the
+  // country shapes and markers; while one of them shows, the atlas's panes
+  // are hidden.
+  var ATLAS_PANES=["tilePane","satSea","satWash","satWarm","satShade","satLabels","plate"];
+  var flatGL=null, FLAT_BY=null, VIEW="globe";
+  function freeConstrain(lngLat,zoom){ return {center:new maplibregl.LngLat(Math.max(-540,Math.min(540,lngLat.lng)),Math.max(-89.9,Math.min(89.9,lngLat.lat))),zoom:zoom==null?0:zoom}; }
+  function flatMap(){ return (typeof map!=="undefined"&&map&&typeof map.setView==="function")?map:null; }
+  function ensureFlatGL(){
+    var m=flatMap(); if(flatGL||!m||!L.maplibreGL) return;
+    if(!m.getPane("glBase")){ m.createPane("glBase"); m.getPane("glBase").style.zIndex=205; m.getPane("glBase").style.pointerEvents="none"; }
+    flatGL=L.maplibreGL({style:baseStyle("mercator"),pane:"glBase",interactive:false,renderWorldCopies:false,fadeDuration:0,
+      transformConstrain:freeConstrain,pixelRatio:Math.min(window.devicePixelRatio||1,1.5)}).addTo(m);
+    var gm=flatGL.getMaplibreMap();
+    gm.on("load",function(){ FLAT_BY=addBasemaps(gm,false,"flat"); showBasemap(gm,FLAT_BY,BASEMAP,false); });
+  }
+  function flatBasemap(kind){
+    var m=flatMap(); if(!m) return;
+    var atlas=(kind==="atlas");
+    ATLAS_PANES.forEach(function(p){ var el=m.getPane(p); if(el) el.style.display=atlas?"":"none"; });
+    if(!atlas) ensureFlatGL();
+    var gp=m.getPane("glBase"); if(gp) gp.style.display=atlas?"none":"";
+    if(!atlas&&flatGL&&FLAT_BY) showBasemap(flatGL.getMaplibreMap(),FLAT_BY,kind,false);
+  }
+
+  /* ---------- basemaps on and off, in both views ---------- */
   function setBasemap(kind){
     if(!BASEMAPS.some(function(b){ return b[0]===kind; })) kind="atlas";
     BASEMAP=kind; try{ localStorage.setItem(BM_KEY,kind); }catch(e){}
     Array.prototype.forEach.call(ctl.querySelectorAll("button.bm"),function(b){ b.classList.toggle("on",b.dataset.bm===kind); });
-    if(!globe.isStyleLoaded||!globe.getLayer("labels")) return;
-    Object.keys(LAYERS_BY_BASEMAP).forEach(function(k){ LAYERS_BY_BASEMAP[k].forEach(function(id){ show(id,false); }); });
-    (LAYERS_BY_BASEMAP[kind]||[]).forEach(function(id){ show(id,true); });
-    if(kind==="atlas"||kind==="jurassic"){ Object.keys(BASE_GRADE[kind]).forEach(function(k){ globe.setPaintProperty("base",k,BASE_GRADE[kind][k]); }); }
-    show("bg",true);
-    holoOn=(kind==="holo"); box.classList.toggle("holo-on",holoOn);
-    show("holo-labels",holoOn); show("labels",!holoOn&&kind!=="hell");
-    show("gl-countries-line",kind==="jurassic");
-    if(globe.getLayer("labels")){
-      globe.setPaintProperty("labels","raster-opacity",kind==="atlas"?["interpolate",["linear"],["zoom"],PLATE.fadeIn,0,PLATE.fadeOut,.92]:kind==="jurassic"?.8:.92);
-      globe.setPaintProperty("labels","raster-saturation",kind==="jurassic"||kind==="night"||kind==="outlines"?-1:0);
-      globe.setPaintProperty("labels","raster-brightness-min",kind==="night"||kind==="outlines"?0.8:0);
-      globe.setPaintProperty("labels","raster-brightness-max",kind==="night"||kind==="outlines"?0.1:1); }
-    try{ globe.setSky(kind==="night"?NIGHT.sky:kind==="holo"?SKY_HOLO:kind==="hell"?SKY_HELL:SKY_DAY); }catch(e){}
-    globe.triggerRepaint(); drawRim();
+    // Only the map in view loads the new basemap; the other catches up when
+    // it is switched to, so the two are never loading tiles at once.
+    if(VIEW==="globe") showBasemap(globe,GLOBE_BY,kind,true); else flatBasemap(kind);
   }
 
-  /* ---------- the hologram's rim ---------- */
-  var rim=box.querySelector(".holo-rim");
-  function drawRim(){
-    if(!rim) return; var w=box.clientWidth,h=box.clientHeight,dpr=window.devicePixelRatio||1;
-    if(rim.width!==Math.round(w*dpr)||rim.height!==Math.round(h*dpr)){ rim.width=Math.round(w*dpr); rim.height=Math.round(h*dpr); }
-    var g=rim.getContext("2d"); g.setTransform(dpr,0,0,dpr,0,0); g.clearRect(0,0,w,h);
-    if(!holoOn) return;
-    var cx=w/2,cy=h/2,R=20000,N=120,runs=[],run=[];
-    for(var i=0;i<=N;i++){ var t=(i/N)*Math.PI*2, fx=cx+Math.cos(t)*R, fy=cy+Math.sin(t)*R, p=null;
-      try{ p=globe.project(globe.unproject([fx,fy])); }catch(e){ p=null; }
-      if(!p||!isFinite(p.x)||!isFinite(p.y)||Math.hypot(p.x-fx,p.y-fy)<2){ if(run.length>1) runs.push(run); run=[]; continue; }
-      run.push(p); }
-    if(run.length>1) runs.push(run); if(!runs.length) return;
-    [[10,rgba(HOLO.glow,0.06)],[5,rgba(HOLO.glow,0.13)],[2.6,rgba(HOLO.line,0.3)],[1.3,rgba(HOLO.line,0.95)]].forEach(function(s){
-      g.lineWidth=s[0]; g.strokeStyle=s[1]; g.lineJoin="round";
-      runs.forEach(function(r){ g.beginPath(); g.moveTo(r[0].x,r[0].y); for(var k=1;k<r.length;k++) g.lineTo(r[k].x,r[k].y); g.stroke(); }); });
-  }
-  globe.on("render",function(){ if(holoOn) drawRim(); });
-  globe.on("resize",function(){ drawRim(); });
-
-  /* ---------- the markers, fed from the flat map's own filtered set ---------- */
+  /* ---------- the record markers, fed from the flat map's own filtered set ---------- */
   function feedPoints(){
     var pts=window.__pjPts||[], src=globe.getSource("points"); if(!src) return;
     var feats=[];
@@ -10532,31 +10487,86 @@ body.info-open #legend #indexPanel{position:static!important;left:auto!important
     src.setData({type:"FeatureCollection",features:feats});
   }
   window.addEventListener("pj:rebuilt",feedPoints);
-  function feedCountries(){
-    var c=window.__gmoCountries, src=globe.getSource("countries"); if(!src) return;
-    if(!c){ setTimeout(feedCountries,400); return; }
-    // world-atlas carries each country's number as the feature's own id, a
-    // string; MapLibre wants it as a numeric property to click and hover by.
-    var feats=(c.features||[]).map(function(f){ return {type:"Feature",id:Number(f.id),properties:Object.assign({},f.properties||{},{id:Number(f.id)}),geometry:f.geometry}; });
+
+  /* ---------- the mirror: everything else the flat map draws ---------- */
+  // Every shape and marker on the flat map (country outlines and highlights,
+  // regime outlines, shaded areas, drilled regions, international bodies) is
+  // copied with its own colour, line and fill, in the flat map's drawing
+  // order. Filters and highlights change the flat map; the copy follows.
+  var MIRROR_LAYERS=[], geomCache={}, mirrorDirty=true, mirrorTimer=null;
+  function paneZ(name){ var m=flatMap(); var el=m&&m.getPane(name||"overlayPane"); var z=el&&parseInt(el.style.zIndex||getComputedStyle(el).zIndex,10); return isNaN(z)?400:z; }
+  function iconColours(l){
+    var html=(l.options.icon&&l.options.icon.options&&l.options.icon.options.html)||"", sz=(l.options.icon&&l.options.icon.options&&l.options.icon.options.iconSize)||[14,14];
+    var bg=/background(?:-color)?\s*:\s*(#[0-9a-fA-F]{3,8}|rgba?\([^)]*\))/.exec(html), bd=/border\s*:\s*[\d.]+px\s+\w+\s+(#[0-9a-fA-F]{3,8}|rgba?\([^)]*\))/.exec(html);
+    return {fc:bg?bg[1]:"#9aa4c7", c:bd?bd[1]:"rgba(8,12,27,0.85)", r:Math.max(4,(Array.isArray(sz)?sz[0]:14)/2)};
+  }
+  function syncMirror(force){
+    var src=globe.getSource&&globe.getSource("mirror"), m=flatMap(); if(!src||!m) return;
+    if(!force&&!mirrorDirty) return; mirrorDirty=false;
+    var list=[];
+    m.eachLayer(function(l){
+      if(l instanceof L.Path || (l instanceof L.Marker && l.options && l.options.icon)) list.push(l);
+    });
+    list.sort(function(a,b){ var za=paneZ(a.options.pane||(a instanceof L.Marker?"markerPane":"overlayPane")), zb=paneZ(b.options.pane||(b instanceof L.Marker?"markerPane":"overlayPane")); return za-zb || L.stamp(a)-L.stamp(b); });
+    var feats=[]; MIRROR_LAYERS=[];
+    list.forEach(function(l){
+      var id=L.stamp(l), o=l.options||{}, geom=null, g;
+      if(l instanceof L.Marker){ var ll=l.getLatLng(); geom={type:"Point",coordinates:[ll.lng,ll.lat]}; g="point"; }
+      else {
+        var key=l._latlngs||l._latlng, c=geomCache[id];
+        if(c&&c.key===key) geom=c.geom; else { try{ geom=l.toGeoJSON().geometry; }catch(e){ geom=null; } geomCache[id]={key:key,geom:geom}; }
+        if(!geom) return;
+        g=(l instanceof L.CircleMarker)?"point":(l instanceof L.Polygon)?"area":"line";
+      }
+      var p=(l.feature&&l.feature.properties)||{};
+      var props={fid:MIRROR_LAYERS.length, g:g, n:String(p.name||p.NAME||p.title||p.shapeName||""),
+        stroke:o.stroke!==false, c:o.color||"#3388ff", o:(o.opacity==null?1:o.opacity), w:(o.weight==null?3:o.weight),
+        fill:(g==="area"||g==="point")?(o.fill!==false):false, fc:o.fillColor||o.color||"#3388ff", fo:(o.fillOpacity==null?0.2:o.fillOpacity),
+        dash:!!o.dashArray, r:(o.radius==null?6:o.radius), click:o.interactive!==false};
+      if(l instanceof L.Marker){ var ic=iconColours(l); props.fc=ic.fc; props.c=ic.c; props.r=ic.r; props.w=2; props.fo=1; props.o=1; props.fill=true; props.stroke=true;
+        props.n=String((l.options.title)||(l.getTooltip&&l.getTooltip()&&l.getTooltip().getContent&&typeof l.getTooltip().getContent()==="string"?l.getTooltip().getContent():"")||""); }
+      MIRROR_LAYERS.push(l);
+      feats.push({type:"Feature",properties:props,geometry:geom});
+    });
     src.setData({type:"FeatureCollection",features:feats});
   }
+  function markDirty(){ mirrorDirty=true; if(VIEW!=="globe") return; clearTimeout(mirrorTimer); mirrorTimer=setTimeout(function(){ syncMirror(false); },200); }
+  (function hook(){
+    var m=flatMap(); if(!m){ setTimeout(hook,300); return; }
+    m.on("layeradd layerremove",markDirty);
+    var ps=L.Path.prototype.setStyle; L.Path.prototype.setStyle=function(){ var r=ps.apply(this,arguments); if(this._map) markDirty(); return r; };
+    var mi=L.Marker.prototype.setIcon; L.Marker.prototype.setIcon=function(){ var r=mi.apply(this,arguments); if(this._map) markDirty(); return r; };
+  })();
 
   /* ---------- hovering, clicking, and dropping into the flat map ---------- */
   var tip=document.getElementById("globeTip"), hoverId=null;
+  var esc=function(s){ return String(s).replace(/[<>&]/g,function(ch){ return {"<":"&lt;",">":"&gt;","&":"&amp;"}[ch]; }); };
   function setHover(id){ if(id===undefined||id===null||isNaN(id)) id=null; if(hoverId===id) return;
-    if(hoverId!==null) try{ globe.setFeatureState({source:"countries",id:hoverId},{hover:false}); }catch(e){}
-    hoverId=id; if(hoverId!==null) try{ globe.setFeatureState({source:"countries",id:hoverId},{hover:true}); }catch(e){} }
-  function countryName(f){ var p=(f&&f.properties)||{}; return p.name||p.NAME||""; }
+    if(hoverId!==null) try{ globe.setFeatureState({source:"mirror",id:hoverId},{hover:false}); }catch(e){}
+    hoverId=id; if(hoverId!==null) try{ globe.setFeatureState({source:"mirror",id:hoverId},{hover:true}); }catch(e){} }
+  function topMirror(point){
+    var fs=globe.queryRenderedFeatures(point,{layers:["mirror-pt","mirror-fill","mirror-line","mirror-dash"]}).filter(function(f){ return f.properties.click; });
+    if(!fs.length) return null;
+    var pts=fs.filter(function(f){ return f.properties.g==="point"; }); if(pts.length) fs=pts;
+    fs.sort(function(a,b){ return b.properties.fid-a.properties.fid; });
+    return fs[0];
+  }
+  // A readable name for the spot: some layers store only a country code.
+  function nameAt(point,top){
+    if(top.properties.n&&!/^[A-Z]{2,3}$/.test(top.properties.n)) return top.properties.n;
+    var fs=globe.queryRenderedFeatures(point,{layers:["mirror-fill","mirror-line","mirror-dash"]});
+    for(var i=0;i<fs.length;i++){ var n=fs[i].properties.n; if(n&&!/^[A-Z]{2,3}$/.test(n)) return n; }
+    return top.properties.n;
+  }
+  function showTip(e,html){ tip.innerHTML=html; tip.style.display="block"; tip.style.left=(e.point.x+14)+"px"; tip.style.top=(e.point.y+10)+"px"; }
   globe.on("mousemove",function(e){
     var pts=globe.queryRenderedFeatures(e.point,{layers:["pt-glow","pt-core"]});
     if(pts.length){ setHover(null); globe.getCanvas().style.cursor="pointer";
       var names=[]; for(var i=0;i<pts.length&&names.length<4;i++){ var n=pts[i].properties.n; if(n&&names.indexOf(n)<0) names.push(n); }
-      tip.innerHTML="<b>"+names.map(function(s){ return String(s).replace(/[<>&]/g,function(ch){ return {"<":"&lt;",">":"&gt;","&":"&amp;"}[ch]; }); }).join("<br>")+(pts.length>names.length?"<br>&hellip; "+pts.length+" records here":"")+"</b><span>Click to open on the flat map</span>";
-      tip.style.display="block"; tip.style.left=(e.point.x+14)+"px"; tip.style.top=(e.point.y+10)+"px"; return; }
-    var cs=globe.queryRenderedFeatures(e.point,{layers:["gl-countries-fill"]});
-    if(cs.length){ setHover(cs[0].id); globe.getCanvas().style.cursor="pointer";
-      tip.innerHTML="<b>"+countryName(cs[0])+"</b><span>Click to open on the flat map</span>";
-      tip.style.display="block"; tip.style.left=(e.point.x+14)+"px"; tip.style.top=(e.point.y+10)+"px"; return; }
+      showTip(e,"<b>"+names.map(esc).join("<br>")+(pts.length>names.length?"<br>&hellip; "+pts.length+" records here":"")+"</b><span>Click to open on the flat map</span>"); return; }
+    var f=topMirror(e.point);
+    if(f){ setHover(f.properties.g==="area"?f.properties.fid:null); globe.getCanvas().style.cursor="pointer";
+      showTip(e,(nameAt(e.point,f)?"<b>"+esc(nameAt(e.point,f))+"</b>":"")+"<span>Click to open on the flat map</span>"); return; }
     setHover(null); globe.getCanvas().style.cursor=""; tip.style.display="none";
   });
   globe.on("mouseout",function(){ setHover(null); tip.style.display="none"; });
@@ -10565,43 +10575,48 @@ body.info-open #legend #indexPanel{position:static!important;left:auto!important
     if(dragged) return;
     var pts=globe.queryRenderedFeatures(e.point,{layers:["pt-glow","pt-core"]});
     if(pts.length){ var o=(window.__pjPts||[])[pts[0].properties.k]; if(!o) return;
-      var lz=Math.max(6,Math.round(globe.getZoom()+1));
-      toFlat([o.la,o.lo],lz,function(){ if(typeof window.pjGlobeOpen==="function") window.pjGlobeOpen(o); }); return; }
-    var cs=globe.queryRenderedFeatures(e.point,{layers:["gl-countries-fill"]});
-    if(cs.length){ var id=cs[0].id, feat=null, list=(window.__gmoCountries&&window.__gmoCountries.features)||[];
-      for(var i=0;i<list.length;i++){ if(String(list[i].id)===String(id)){ feat=list[i]; break; } }
-      var ll=[e.lngLat.lat,e.lngLat.lng];
-      toFlat(ll,Math.max(3,Math.round(globe.getZoom()+1)),function(){ try{ if(feat&&typeof window.__gmoBaseClick==="function") window.__gmoBaseClick(feat,L.latLng(ll[0],ll[1])); }catch(err){ console.warn("[globe] country open:",err.message||err); } }); }
+      toFlat([o.la,o.lo],Math.max(6,Math.round(globe.getZoom()+1)),function(){ if(typeof window.pjGlobeOpen==="function") window.pjGlobeOpen(o); }); return; }
+    var f=topMirror(e.point); if(!f) return;
+    var l=MIRROR_LAYERS[f.properties.fid]; if(!l) return;
+    var ll=(l instanceof L.Marker)?l.getLatLng():L.latLng(e.lngLat.lat,e.lngLat.lng);
+    toFlat([ll.lat,ll.lng],Math.max(3,Math.round(globe.getZoom()+1)),function(){
+      try{ var m=flatMap(), cp=m.latLngToContainerPoint(ll);
+        l.fire("click",{latlng:ll,layerPoint:m.latLngToLayerPoint(ll),containerPoint:cp,originalEvent:new MouseEvent("click",{clientX:cp.x,clientY:cp.y})}); }
+      catch(err){ console.warn("[globe] open on flat map:",err.message||err); } });
   });
 
   /* ---------- the two views ---------- */
-  var VIEW="globe";
   var bGlobe=document.getElementById("gbViewGlobe"), bFlat=document.getElementById("gbViewFlat");
-  function flatMap(){ return (typeof map!=="undefined"&&map&&typeof map.setView==="function")?map:null; }
   function toFlat(center,zoom,after){
     var m=flatMap(); VIEW="flat";
     bGlobe.classList.remove("on"); bFlat.classList.add("on");
     if(!center&&m){ var c=globe.getCenter(); center=[c.lat,c.lng]; zoom=Math.max(2,Math.round(globe.getZoom()+1)); }
     document.body.classList.remove("globe-on"); box.classList.add("off"); tip.style.display="none";
     if(m){ try{ m.invalidateSize(false); }catch(e){} try{ if(center) m.setView(center,zoom,{animate:false}); }catch(e){} }
-    document.getElementById("gbBasemaps").style.display="none"; document.querySelector("#globeBox .gb-zoom").style.display="none"; document.getElementById("gbWorld").style.display="none";
+    flatBasemap(BASEMAP);
     if(after) setTimeout(after,80);
   }
   function toGlobe(){
     var m=flatMap(); VIEW="globe";
     bFlat.classList.remove("on"); bGlobe.classList.add("on");
-    if(m){ try{ var c=m.getCenter(); globe.jumpTo({center:[c.lng,c.lat],zoom:Math.max(0.4,m.getZoom()-1),pitch:0,bearing:0}); }catch(e){} }
+    if(m){ try{ var c=m.getCenter(); globe.jumpTo({center:[c.lng,Math.max(-80,Math.min(80,c.lat))],zoom:Math.max(0.4,m.getZoom()-1),pitch:0,bearing:0}); }catch(e){} }
     document.body.classList.add("globe-on"); box.classList.remove("off");
-    document.getElementById("gbBasemaps").style.display=""; document.querySelector("#globeBox .gb-zoom").style.display=""; document.getElementById("gbWorld").style.display="";
+    showBasemap(globe,GLOBE_BY,BASEMAP,true);
+    syncMirror(false);
     setTimeout(function(){ try{ globe.resize(); }catch(e){} },30);
   }
   window.gmoToFlat=toFlat; window.gmoToGlobe=toGlobe;
   bGlobe.addEventListener("click",function(){ if(VIEW!=="globe") toGlobe(); });
   bFlat.addEventListener("click",function(){ if(VIEW!=="flat") toFlat(); });
   document.getElementById("gbBasemaps").addEventListener("click",function(e){ var b=e.target.closest&&e.target.closest("button.bm"); if(b) setBasemap(b.dataset.bm); });
-  document.getElementById("gbZoomIn").addEventListener("click",function(){ globe.zoomIn(); });
-  document.getElementById("gbZoomOut").addEventListener("click",function(){ globe.zoomOut(); });
-  document.getElementById("gbWorld").addEventListener("click",function(){ fitPadding(); globe.easeTo({center:[globe.getCenter().lng,20],zoom:OPENING_ZOOM,pitch:0,bearing:0,roll:0,duration:900}); });
+  document.getElementById("gbZoomIn").addEventListener("click",function(){ var m=flatMap(); if(VIEW==="globe") globe.zoomIn(); else if(m) m.zoomIn(); });
+  document.getElementById("gbZoomOut").addEventListener("click",function(){ var m=flatMap(); if(VIEW==="globe") globe.zoomOut(); else if(m) m.zoomOut(); });
+  document.getElementById("gbWorld").addEventListener("click",function(){
+    if(VIEW==="globe"){ fitPadding(); globe.easeTo({center:[globe.getCenter().lng,20],zoom:OPENING_ZOOM,pitch:0,bearing:0,roll:0,duration:900}); return; }
+    var m=flatMap(); if(!m) return;
+    try{ if(typeof deactivate==="function") deactivate(); }catch(e){}
+    try{ m.closePopup(); m.setView([25,10],3); }catch(e){}
+  });
 
   // The globe is the opening view.
   document.body.classList.add("globe-on");
