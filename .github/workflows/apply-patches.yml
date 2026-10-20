@@ -1,6 +1,6 @@
 name: Apply patches
 
-# Runs patch_world_button.py and patch_globe.py against index.html and
+# Runs every patch script against index.html, in order, and
 # commits the result. Start it from the Actions tab: "Apply patches" ->
 # "Run workflow". Safe to run again: each script says "already applied"
 # and nothing is committed.
@@ -25,6 +25,7 @@ jobs:
         run: |
           python3 patch_world_button.py
           python3 patch_globe.py
+          python3 patch_globe_2.py
 
       - name: Commit index.html if it changed
         run: |
@@ -35,7 +36,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add index.html
-          git commit -m "Globe opens the map; six basemaps; world-view button"
+          git commit -m "Apply map patches"
           for i in 1 2 3; do
             git pull --rebase && git push && exit 0
             sleep 5
