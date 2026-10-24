@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-23",
+ "generated": "2026-10-24",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
@@ -13,10 +13,10 @@
   {
    "name": "OGTR",
    "kind": "feed",
-   "ok": true,
+   "ok": false,
    "rows": 0,
    "url": "https://www.ogtr.gov.au/what-weve-approved/dealings-involving-intentional-release",
-   "message": "22 links read"
+   "message": "could not be fetched on the last run"
   },
   {
    "name": "WTO / ePing notifications",
@@ -24,7 +24,7 @@
    "ok": true,
    "rows": 7,
    "url": "https://eping.wto.org/en/Search",
-   "message": "106195 notifications scanned"
+   "message": "106314 notifications scanned"
   },
   {
    "name": "EFSA",
@@ -43,7 +43,7 @@
    "message": "The Cartagena Protocol obliges a party to consult the public (Art. 23) but does not require the consultation to be filed, and the BCH publishes no open-window record type. Its decision records document decisions already taken. Search the national records for your own country."
   }
  ],
- "sources_reached": 3,
+ "sources_reached": 2,
  "sources_total": 3,
  "consultations": [
   {
