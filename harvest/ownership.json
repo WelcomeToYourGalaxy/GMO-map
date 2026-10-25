@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-18",
+ "generated": "2026-10-25",
  "note": "Ownership as the registers state it, plus chains visible in the names themselves. Company filings are not read here, so this shows trading relationships rather than share ownership.",
  "groups": [
   {
@@ -930,7 +930,7 @@
    ]
   },
   {
-   "owner": "Genesis",
+   "owner": "GENESIS",
    "basis": "inferred from the site's own name",
    "sites": 13,
    "countries": [
@@ -3683,7 +3683,7 @@
    ]
   },
   {
-   "owner": "Fertilab",
+   "owner": "FERTILAB",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
@@ -3812,7 +3812,7 @@
    ]
   },
   {
-   "owner": "CITMER",
+   "owner": "Citmer",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
@@ -9071,6 +9071,23 @@
    ]
   },
   {
+   "owner": "ICE-Bioscience",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "P.R. CHINA"
+   ],
+   "members": [
+    {
+     "name": "ICE-NeuroResearch",
+     "lat": 34.26916,
+     "lng": 117.3002,
+     "where": "XUZHOU CITY, P.R. CHINA",
+     "source": "aaalac_facilities.json"
+    }
+   ]
+  },
+  {
    "owner": "IDEXX Laboratories Inc",
    "basis": "stated by the register",
    "sites": 1,
@@ -9576,6 +9593,23 @@
      "lat": 12.97679,
      "lng": 77.59008,
      "where": "BANGALORE, KARNATAKA, INDIA",
+     "source": "aaalac_facilities.json"
+    }
+   ]
+  },
+  {
+   "owner": "KAC Co., Ltd",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "JAPAN"
+   ],
+   "members": [
+    {
+     "name": "Bioscience Center, Ritto Eastern Industrial Park",
+     "lat": 35.02165,
+     "lng": 135.99809,
+     "where": "RITTO, SHIGA, JAPAN",
      "source": "aaalac_facilities.json"
     }
    ]
@@ -62486,15 +62520,13 @@
    "owner": "Liane Aubert, Romane Rivière",
    "basis": "stated by the register",
    "sites": 1,
-   "countries": [
-    "Bayonne"
-   ],
+   "countries": [],
    "members": [
     {
      "name": "Fertility clinic (unnamed in OpenStreetMap)",
      "lat": 43.49682,
      "lng": -1.46939,
-     "where": "Bayonne",
+     "where": "",
      "source": "osm_facilities.json"
     }
    ]
@@ -63358,6 +63390,23 @@
      "lat": 10.54801,
      "lng": 7.47051,
      "where": "Unguwar Sarki",
+     "source": "osm_facilities.json"
+    }
+   ]
+  },
+  {
+   "owner": "Dr.N.N.Kannappan",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "Madurai"
+   ],
+   "members": [
+    {
+     "name": "Balamurugan Sexology Clinic",
+     "lat": 9.95617,
+     "lng": 78.15469,
+     "where": "Madurai",
      "source": "osm_facilities.json"
     }
    ]

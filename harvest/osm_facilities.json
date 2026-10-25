@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-18",
+ "generated": "2026-10-25",
  "note": "OpenStreetMap facilities. Fertility clinics tagged healthcare:speciality=fertility or healthcare=fertility_clinic, and mapped sites of named animal-research companies. Coverage follows mapper density, not facility density. Data (c) OpenStreetMap contributors, ODbL.",
  "projects": [
   {
@@ -11942,7 +11942,7 @@
    "type": "Fertility clinic (OpenStreetMap)",
    "lat": 43.49682,
    "lng": -1.46939,
-   "state": "Bayonne",
+   "state": "",
    "precise": true,
    "addr_grade": "mapped",
    "impact": 1,
@@ -16383,6 +16383,58 @@
    "checked": ""
   },
   {
+   "name": "Cifar Fertility & IVF",
+   "source": "industry:repro",
+   "type": "Fertility clinic (OpenStreetMap)",
+   "lat": 28.46345,
+   "lng": 77.09418,
+   "state": "",
+   "precise": true,
+   "addr_grade": "mapped",
+   "impact": 1,
+   "company": "",
+   "size": "",
+   "status": "Mapped in OpenStreetMap",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "repro:clinics"
+   ],
+   "species": [
+    "human"
+   ],
+   "url": "https://www.openstreetmap.org/node/14297231723",
+   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
+   "checked": ""
+  },
+  {
+   "name": "Seeds of Innocens IVF",
+   "source": "industry:repro",
+   "type": "Fertility clinic (OpenStreetMap)",
+   "lat": 28.46213,
+   "lng": 77.10013,
+   "state": "",
+   "precise": true,
+   "addr_grade": "mapped",
+   "impact": 1,
+   "company": "",
+   "size": "",
+   "status": "Mapped in OpenStreetMap",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "repro:clinics"
+   ],
+   "species": [
+    "human"
+   ],
+   "url": "https://www.openstreetmap.org/node/14307075444",
+   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
+   "checked": ""
+  },
+  {
    "name": "Fertility clinic (unnamed in OpenStreetMap)",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -20436,6 +20488,32 @@
    ],
    "url": "https://www.openstreetmap.org/way/803646980",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Dr. Obineche. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
+   "checked": ""
+  },
+  {
+   "name": "Balamurugan Sexology Clinic",
+   "source": "industry:repro",
+   "type": "Fertility clinic (OpenStreetMap)",
+   "lat": 9.95617,
+   "lng": 78.15469,
+   "state": "Madurai",
+   "precise": true,
+   "addr_grade": "mapped",
+   "impact": 1,
+   "company": "Dr.N.N.Kannappan",
+   "size": "",
+   "status": "Mapped in OpenStreetMap",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "repro:clinics"
+   ],
+   "species": [
+    "human"
+   ],
+   "url": "https://www.openstreetmap.org/way/824738155",
+   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Dr.N.N.Kannappan. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
   {

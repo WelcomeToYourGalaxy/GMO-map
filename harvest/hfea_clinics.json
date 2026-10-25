@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-18",
+ "generated": "2026-10-25",
  "note": "HFEA licensed fertility clinics, from the A-Z listing. Positions from the published postcode.",
  "projects": [
   {
@@ -3666,6 +3666,32 @@
    ],
    "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
    "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to London Women's Clinic Bromley. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
+   "checked": ""
+  },
+  {
+   "name": "London Women's Clinic Bristol",
+   "source": "industry:repro",
+   "type": "Fertility clinic",
+   "lat": 51.45564,
+   "lng": -2.57959,
+   "state": "Zinc Works, Unity Street, St Philips, Bristol, South West, BS2 0NX",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "HFEA licensed",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "repro:clinics"
+   ],
+   "species": [
+    "human"
+   ],
+   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
+   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
    "checked": ""
   },
   {
