@@ -525057,7 +525057,7 @@
    "type": "Fertility clinic (OpenStreetMap)",
    "lat": 43.49682,
    "lng": -1.46939,
-   "state": "",
+   "state": "Bayonne",
    "precise": true,
    "addr_grade": "mapped",
    "impact": 1,
@@ -529498,58 +529498,6 @@
    "checked": ""
   },
   {
-   "name": "Cifar Fertility & IVF",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 28.46345,
-   "lng": 77.09418,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14297231723",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Seeds of Innocens IVF",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 28.46213,
-   "lng": 77.10013,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14307075444",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
    "name": "Fertility clinic (unnamed in OpenStreetMap)",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -533606,32 +533554,6 @@
    "checked": ""
   },
   {
-   "name": "Balamurugan Sexology Clinic",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 9.95617,
-   "lng": 78.15469,
-   "state": "Madurai",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "Dr.N.N.Kannappan",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/way/824738155",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Dr.N.N.Kannappan. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
    "name": "Divya's Infertility Centre",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -537044,32 +536966,6 @@
    "lat": 41.53432,
    "lng": 2.18358,
    "state": "SANTA PERPETUA DE MOGODA, BARCELONA, SPAIN",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "ANEWCRO, LLC.",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 26.66006,
-   "lng": -81.88244,
-   "state": "FT MYERS, FL, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -547308,32 +547204,6 @@
    "checked": ""
   },
   {
-   "name": "ICE-NeuroResearch",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 34.26916,
-   "lng": 117.3002,
-   "state": "XUZHOU CITY, P.R. CHINA",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "ICE-Bioscience",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of ICE-Bioscience. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
    "name": "Ichor Life Sciences, Inc",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -547981,32 +547851,6 @@
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
    "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Instituto de Biologia Molecular e Celular. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "Integrated Biotherapeutics, LLC",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 39.0818,
-   "lng": -77.15168,
-   "state": "ROCKVILLE, MD, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -549073,32 +548917,6 @@
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
    "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "Bioscience Center, Ritto Eastern Industrial Park",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 35.02165,
-   "lng": 135.99809,
-   "state": "RITTO, SHIGA, JAPAN",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "KAC Co., Ltd.",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of KAC Co., Ltd.. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -551182,32 +551000,6 @@
    "checked": ""
   },
   {
-   "name": "M-CLEA Bioresource Co., Ltd.",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 13.53908,
-   "lng": 100.63692,
-   "state": "BANGPLEE, SAMUTPRAKARN, THAILAND",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
    "name": "MCPHS University",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -552456,32 +552248,6 @@
    "checked": ""
   },
   {
-   "name": "Nanjing Immunophage Biomedical Co., Ltd.",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 32.11527,
-   "lng": 118.92596,
-   "state": "NANJING CITY, JIANGSU PROVINCE, P.R. CHINA",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
    "name": "Division of In Vivo Pharmacology",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -552930,32 +552696,6 @@
    "lat": 39.73924,
    "lng": -104.98486,
    "state": "DENVER, CO, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "National Primate Center (CENP)",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": -1.37403,
-   "lng": -48.40166,
-   "state": "ANAINDEUA, PARÁ, BRAZIL",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -553467,32 +553207,6 @@
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
    "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Nihon Bioresearch Inc.,. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "Nissei Bilis Co., Ltd.",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 35.24715,
-   "lng": 136.10939,
-   "state": "SHIGA, JAPAN",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -558650,32 +558364,6 @@
    "lat": 31.27871,
    "lng": 120.72376,
    "state": "SUZHOU, JIANGSU, P.R. CHINA",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "Suzhou Institute of Materia Medica",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 31.27871,
-   "lng": 120.72376,
-   "state": "SUZHOU, P.R. CHINA",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -569535,32 +569223,6 @@
    ],
    "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
    "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to London Women's Clinic Bromley. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "London Women's Clinic Bristol",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 51.45564,
-   "lng": -2.57959,
-   "state": "Zinc Works, Unity Street, St Philips, Bristol, South West, BS2 0NX",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "HFEA licensed",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
    "checked": ""
   },
   {
