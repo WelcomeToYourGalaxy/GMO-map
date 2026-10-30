@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-29",
+ "generated": "2026-10-30",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
@@ -22,9 +22,9 @@
    "name": "WTO / ePing notifications",
    "kind": "feed",
    "ok": true,
-   "rows": 6,
+   "rows": 7,
    "url": "https://eping.wto.org/en/Search",
-   "message": "106377 notifications scanned"
+   "message": "106411 notifications scanned"
   },
   {
    "name": "EFSA",
@@ -101,6 +101,14 @@
    "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/SAU1458.docx",
    "country": "Saudi Arabia, Kingdom of",
    "ref": "G/TBT/N/SAU/1458"
+  },
+  {
+   "title": "Proyecto de resolución \"Por medio de la cual se actualizan los requisitos sanitarios para la importación a Colombia de semen bovino congelado, procedente de Estados Unidos, para mejoramiento genético\"",
+   "agency": "WTO Regular notification",
+   "closes": "2026-12-25",
+   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NCOL438.docx",
+   "country": "Colombia",
+   "ref": "G/SPS/N/COL/438"
   },
   {
    "title": "Proyecto de Norma Metrológica Peruana PNMP 021:2026 “Esfigmomanómetros no invasivos no automáticos”. Parte 1: Requisitos metrológicos y técnicos. Diecisiete (17) páginas, en españolParte 2: Procedimie",
