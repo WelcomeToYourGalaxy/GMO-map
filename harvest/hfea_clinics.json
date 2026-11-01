@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-25",
+ "generated": "2026-11-01",
  "note": "HFEA licensed fertility clinics, from the A-Z listing. Positions from the published postcode.",
  "projects": [
   {
@@ -2842,7 +2842,7 @@
    "type": "Fertility clinic",
    "lat": 54.62721,
    "lng": -5.87514,
-   "state": "Unit 1, Portside Business Park, 189 Airport Road West, Co Antrim, Belfast, BT3 9ED",
+   "state": "Unit 1, Portside Business Park, 189 Airport Road West, Co Antrim, Belfast, BT3 9ED, Northern Ireland",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -4428,7 +4428,7 @@
    "type": "Fertility clinic",
    "lat": 54.59424,
    "lng": -5.95403,
-   "state": "Royal Maternity Hospital, Grosvenor Road, Belfast, BT12 6BA, United Kingdom",
+   "state": "Royal Maternity Hospital, Grosvenor Road, Belfast, BT12 6BA, Northern Ireland",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -4896,7 +4896,7 @@
    "type": "Fertility clinic",
    "lat": 54.63196,
    "lng": -5.89379,
-   "state": "Edgewater Business Park, Edgewater House, Edgewater Road, Belfast, BT3 9JQ",
+   "state": "Edgewater Business Park, Edgewater House, Edgewater Road, Belfast, BT3 9JQ, Northern Ireland",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,

@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-25",
+ "generated": "2026-11-01",
  "note": "Ownership as the registers state it, plus chains visible in the names themselves. Company filings are not read here, so this shows trading relationships rather than share ownership.",
  "groups": [
   {
@@ -808,7 +808,7 @@
    ]
   },
   {
-   "owner": "Care Fertility",
+   "owner": "CARE Fertility",
    "basis": "inferred from the site's own name",
    "sites": 15,
    "countries": [
@@ -1037,7 +1037,7 @@
    ]
   },
   {
-   "owner": "VIDA",
+   "owner": "Vida",
    "basis": "inferred from the site's own name",
    "sites": 13,
    "countries": [
@@ -1227,10 +1227,10 @@
    "sites": 10,
    "countries": [
     "AT",
-    "BT3 9JQ",
     "CM2 8FR",
     "G51 4FD",
     "NW1 6ER",
+    "Northern Ireland",
     "SL6 4BY",
     "United Kingdom"
    ],
@@ -1239,7 +1239,7 @@
      "name": "TFP Belfast Fertility",
      "lat": 54.63196,
      "lng": -5.89379,
-     "where": "Edgewater Business Park, Edgewater House, Edgewater Road, Belfast, BT3 9JQ",
+     "where": "Edgewater Business Park, Edgewater House, Edgewater Road, Belfast, BT3 9JQ, Northern Ireland",
      "source": "hfea_clinics.json"
     },
     {
@@ -7502,6 +7502,23 @@
      "lat": 39.99714,
      "lng": 116.34363,
      "where": "BEIJING, P.R. CHINA",
+     "source": "aaalac_facilities.json"
+    }
+   ]
+  },
+  {
+   "owner": "Beijing Life-Biosciences Co., Ltd. (LIFE-BIO)",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "P.R. CHINA"
+   ],
+   "members": [
+    {
+     "name": "Non-Human Primate Breeding Center / Jiangsu Johnsen Bioresource Co., Ltd",
+     "lat": 31.27871,
+     "lng": 120.72376,
+     "where": "JIANGSU PROVINCE, P.R. CHINA",
      "source": "aaalac_facilities.json"
     }
    ]

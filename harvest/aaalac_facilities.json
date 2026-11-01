@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-25",
+ "generated": "2026-11-01",
  "note": "AAALAC International accredited organisations. Voluntary accreditation, not a register: absence means not accredited, not no animal research. City-level positions only.",
  "projects": [
   {
@@ -2392,6 +2392,32 @@
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
    "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Beijing Laboratory Animal Research Center Co., Ltd.. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Non-Human Primate Breeding Center / Jiangsu Johnsen Bioresource Co., Ltd",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 31.27871,
+   "lng": 120.72376,
+   "state": "JIANGSU PROVINCE, P.R. CHINA",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Beijing Life-Biosciences Co., Ltd. (LIFE-BIO)",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Beijing Life-Biosciences Co., Ltd. (LIFE-BIO). Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {
