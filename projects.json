@@ -538234,32 +538234,6 @@
    "checked": ""
   },
   {
-   "name": "Non-Human Primate Breeding Center / Jiangsu Johnsen Bioresource Co., Ltd",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 31.27871,
-   "lng": 120.72376,
-   "state": "JIANGSU PROVINCE, P.R. CHINA",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Beijing Life-Biosciences Co., Ltd. (LIFE-BIO)",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Beijing Life-Biosciences Co., Ltd. (LIFE-BIO). Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
    "name": "Beijing Division, Qidong Division and Gu'an Division of Beijing Marshall Biotechnology Co., Ltd.",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -568737,7 +568711,7 @@
    "type": "Fertility clinic",
    "lat": 54.62721,
    "lng": -5.87514,
-   "state": "Unit 1, Portside Business Park, 189 Airport Road West, Co Antrim, Belfast, BT3 9ED, Northern Ireland",
+   "state": "Unit 1, Portside Business Park, 189 Airport Road West, Co Antrim, Belfast, BT3 9ED",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -570323,7 +570297,7 @@
    "type": "Fertility clinic",
    "lat": 54.59424,
    "lng": -5.95403,
-   "state": "Royal Maternity Hospital, Grosvenor Road, Belfast, BT12 6BA, Northern Ireland",
+   "state": "Royal Maternity Hospital, Grosvenor Road, Belfast, BT12 6BA, United Kingdom",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -570791,7 +570765,7 @@
    "type": "Fertility clinic",
    "lat": 54.63196,
    "lng": -5.89379,
-   "state": "Edgewater Business Park, Edgewater House, Edgewater Road, Belfast, BT3 9JQ, Northern Ireland",
+   "state": "Edgewater Business Park, Edgewater House, Edgewater Road, Belfast, BT3 9JQ",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -916875,9 +916849,9 @@
    "name": "FÃ©rtile ReproduÃ§Ã£o Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -16.68088,
-   "lng": -49.25327,
-   "state": "GoiÃ¢nia, Brasil",
+   "lat": -15.93237,
+   "lng": -50.13929,
+   "state": "GoiÃ¢nia - Goias, Brasil",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -918019,9 +917993,9 @@
    "name": "Humana Medicina Reprodutiva",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -16.68088,
-   "lng": -49.25327,
-   "state": "GoiÃ¢nia, Brasil",
+   "lat": -15.93237,
+   "lng": -50.13929,
+   "state": "GoiÃ¢nia - Goias, Brasil",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -921809,32 +921783,6 @@
    ],
    "url": "https://redlara.com/centro.asp?USIM5=352",
    "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.embriovid.com. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
-   "checked": ""
-  },
-  {
-   "name": "ClÃ­nica Reproduce",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": -23.48775,
-   "lng": -47.43894,
-   "state": "Sorocaba, Brasil",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "REDLARA accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://redlara.com/centro.asp?USIM5=353",
-   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://www.reproduce.com.br. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
    "checked": ""
   },
   {
