@@ -1,6 +1,6 @@
 {
  "note": "US environmental-release authorisations harvested from the APHIS BRS public data files (public domain), plus hand-curated records from other registers. Only records with a release component are included — import and interstate movement are not releases. Every position is a state centroid: APHIS publishes release states, never coordinates, so every record is precise:false and draws as a dashed ring. Canadian records come from the CFIA PNT dataset and sit at the national centroid, because that register records a national approval rather than a planting location. Everywhere else is not yet harvested.",
- "generated": "2026-11-01",
+ "generated": "2026-11-02",
  "dropped": {
   "reason": "never authorised — withdrawn, denied, void, returned, incomplete or cancelled",
   "by_status": {
@@ -12,7 +12,7 @@
   "seen": 60507,
   "share_pct": 10.1
  },
- "source": "APHIS BRS public data files, 2026-11-01",
+ "source": "APHIS BRS public data files, 2026-11-02",
  "projects": [
   {
    "name": "DIR 201 — GM wheat & barley field trial (yield enhancement)",
@@ -6819,9 +6819,9 @@
    "impact": 5,
    "company": "Pioneer Hi-Bred International",
    "size": "135 declared release locations across 20 states",
-   "status": "Superceded",
+   "status": "Superceded — expired",
    "phase": "pre",
-   "lapsed": false,
+   "lapsed": true,
    "date": "2025-11-01",
    "url": "https://www.aphis.usda.gov/biotechnology-permits/releases",
    "desc": "Permit to release genetically engineered corn at 135 declared locations in AR, CA, TN, HI, MS, TX, MO, KS, AL, GA, PR, MD, IL, FL, NE, MN, IN, WI, IA, SD. Applicant: Pioneer Hi-Bred International. Status: Superceded. Declared traits: agronomic properties, other, insect resistance, herbicide resistance, marker gene, fungal resistance, product quality, bacterial resistance, virus resistance. The applicant claimed confidential business information on this record, so the trait description is partly withheld as [CBI] in the source. The dot is scattered inside the state, not placed at a site: APHIS publishes the state and the number of release locations, never the locations themselves. Australia is the only regulator in the world that publishes field trial sites. Position is a state centroid, not the site — APHIS publishes release states, never coordinates."
@@ -6837,9 +6837,9 @@
    "impact": 5,
    "company": "Pioneer Hi-Bred International",
    "size": "135 declared release locations across 20 states",
-   "status": "Superceded",
+   "status": "Superceded — expired",
    "phase": "pre",
-   "lapsed": false,
+   "lapsed": true,
    "date": "2025-11-01",
    "url": "https://www.aphis.usda.gov/biotechnology-permits/releases",
    "desc": "Permit to release genetically engineered corn at 135 declared locations in GA, PR, KS, AL, TN, AR, CA, TX, MO, MS, HI, WI, IN, SD, IA, MD, MN, NE, IL, FL. Applicant: Pioneer Hi-Bred International. Status: Superceded. Declared traits: fungal resistance, other, marker gene, product quality, virus resistance, herbicide resistance, agronomic properties, bacterial resistance, insect resistance. The applicant claimed confidential business information on this record, so the trait description is partly withheld as [CBI] in the source. The dot is scattered inside the state, not placed at a site: APHIS publishes the state and the number of release locations, never the locations themselves. Australia is the only regulator in the world that publishes field trial sites. Position is a state centroid, not the site — APHIS publishes release states, never coordinates."
@@ -6855,9 +6855,9 @@
    "impact": 5,
    "company": "Pioneer Hi-Bred International",
    "size": "135 declared release locations across 20 states",
-   "status": "Issued",
+   "status": "Issued — expired",
    "phase": "post",
-   "lapsed": false,
+   "lapsed": true,
    "date": "2025-11-01",
    "url": "https://www.aphis.usda.gov/biotechnology-permits/releases",
    "desc": "Permit to release genetically engineered corn at 135 declared locations in MD, MN, NE, FL, IL, WI, IN, SD, IA, TN, CA, AR, MO, TX, MS, HI, PR, GA, AL, KS. Applicant: Pioneer Hi-Bred International. Status: Issued. Declared traits: other, insect resistance, fungal resistance, herbicide resistance, marker gene, agronomic properties, product quality, bacterial resistance, virus resistance. The applicant claimed confidential business information on this record, so the trait description is partly withheld as [CBI] in the source. The dot is scattered inside the state, not placed at a site: APHIS publishes the state and the number of release locations, never the locations themselves. Australia is the only regulator in the world that publishes field trial sites. Position is a state centroid, not the site — APHIS publishes release states, never coordinates."
@@ -6873,9 +6873,9 @@
    "impact": 5,
    "company": "Pioneer Hi-Bred International",
    "size": "135 declared release locations across 20 states",
-   "status": "Issued",
+   "status": "Issued — expired",
    "phase": "post",
-   "lapsed": false,
+   "lapsed": true,
    "date": "2025-11-01",
    "url": "https://www.aphis.usda.gov/biotechnology-permits/releases",
    "desc": "Permit to release genetically engineered corn at 135 declared locations in MN, NE, FL, IL, MD, SD, IA, WI, IN, MO, TX, MS, HI, TN, CA, AR, PR, GA, AL, KS. Applicant: Pioneer Hi-Bred International. Status: Issued. Declared traits: fungal resistance, herbicide resistance, other, virus resistance, marker gene, product quality, agronomic properties, bacterial resistance, insect resistance. The applicant claimed confidential business information on this record, so the trait description is partly withheld as [CBI] in the source. The dot is scattered inside the state, not placed at a site: APHIS publishes the state and the number of release locations, never the locations themselves. Australia is the only regulator in the world that publishes field trial sites. Position is a state centroid, not the site — APHIS publishes release states, never coordinates."
@@ -538234,6 +538234,32 @@
    "checked": ""
   },
   {
+   "name": "Non-Human Primate Breeding Center / Jiangsu Johnsen Bioresource Co., Ltd",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 31.27871,
+   "lng": 120.72376,
+   "state": "JIANGSU PROVINCE, P.R. CHINA",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Beijing Life-Biosciences Co., Ltd. (LIFE-BIO)",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Beijing Life-Biosciences Co., Ltd. (LIFE-BIO). Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
    "name": "Beijing Division, Qidong Division and Gu'an Division of Beijing Marshall Biotechnology Co., Ltd.",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -568711,7 +568737,7 @@
    "type": "Fertility clinic",
    "lat": 54.62721,
    "lng": -5.87514,
-   "state": "Unit 1, Portside Business Park, 189 Airport Road West, Co Antrim, Belfast, BT3 9ED",
+   "state": "Unit 1, Portside Business Park, 189 Airport Road West, Co Antrim, Belfast, BT3 9ED, Northern Ireland",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -570297,7 +570323,7 @@
    "type": "Fertility clinic",
    "lat": 54.59424,
    "lng": -5.95403,
-   "state": "Royal Maternity Hospital, Grosvenor Road, Belfast, BT12 6BA, United Kingdom",
+   "state": "Royal Maternity Hospital, Grosvenor Road, Belfast, BT12 6BA, Northern Ireland",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -570765,7 +570791,7 @@
    "type": "Fertility clinic",
    "lat": 54.63196,
    "lng": -5.89379,
-   "state": "Edgewater Business Park, Edgewater House, Edgewater Road, Belfast, BT3 9JQ",
+   "state": "Edgewater Business Park, Edgewater House, Edgewater Road, Belfast, BT3 9JQ, Northern Ireland",
    "precise": true,
    "addr_grade": "operational",
    "impact": 2,
@@ -916849,9 +916875,9 @@
    "name": "FÃ©rtile ReproduÃ§Ã£o Humana",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -15.93237,
-   "lng": -50.13929,
-   "state": "GoiÃ¢nia - Goias, Brasil",
+   "lat": -16.68088,
+   "lng": -49.25327,
+   "state": "GoiÃ¢nia, Brasil",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -917993,9 +918019,9 @@
    "name": "Humana Medicina Reprodutiva",
    "source": "industry:repro",
    "type": "Fertility clinic",
-   "lat": -15.93237,
-   "lng": -50.13929,
-   "state": "GoiÃ¢nia - Goias, Brasil",
+   "lat": -16.68088,
+   "lng": -49.25327,
+   "state": "GoiÃ¢nia, Brasil",
    "precise": false,
    "addr_grade": "centroid",
    "impact": 2,
@@ -921783,6 +921809,32 @@
    ],
    "url": "https://redlara.com/centro.asp?USIM5=352",
    "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: www.embriovid.com. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere. No street address resolved, so this point is the city or the country rather than the centre.",
+   "checked": ""
+  },
+  {
+   "name": "ClÃ­nica Reproduce",
+   "source": "industry:repro",
+   "type": "Fertility clinic",
+   "lat": -23.48775,
+   "lng": -47.43894,
+   "state": "Sorocaba, Brasil",
+   "precise": true,
+   "addr_grade": "operational",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "REDLARA accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "repro:clinics"
+   ],
+   "species": [
+    "human"
+   ],
+   "url": "https://redlara.com/centro.asp?USIM5=353",
+   "desc": "A centre accredited by REDLARA, the Latin American Network of Assisted Reproduction. Website: https://www.reproduce.com.br. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. REDLARA accreditation is voluntary and its members report to a shared registry, which is why Latin America can be read at all — most countries in the region have no national register of clinics. What it is not is a complete list: a clinic outside REDLARA appears nowhere.",
    "checked": ""
   },
   {
