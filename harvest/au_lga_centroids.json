@@ -169,6 +169,42 @@
    "osm": "way/330700836",
    "matched": "Shire of Wyndham East Kimberley, 20, Coolibah Drive, Nulleywah, Kununurra, Western Australia, 6743, Australia",
    "via": "townhall"
+  },
+  "griffith": {
+   "lat": -34.2862707,
+   "lng": 146.0367914,
+   "name": "Griffith City Council",
+   "state": "NSW",
+   "osm": "way/368387153",
+   "matched": "Griffith City Council, Benerembah Street, Griffith, New South Wales, 2680, Australia",
+   "via": "townhall"
+  },
+  "indigo": {
+   "lat": -36.3670409,
+   "lng": 146.6957686,
+   "name": "Indigo Shire Council",
+   "state": "VIC",
+   "osm": "way/500013668",
+   "matched": "Indigo Shire Council, Kurrajong Way, Beechworth, Victoria, 3747, Australia",
+   "via": "townhall"
+  },
+  "moyne": {
+   "lat": -38.0817186,
+   "lng": 142.8087371,
+   "name": "Moyne Shire Council",
+   "state": "VIC",
+   "osm": "way/1443419138",
+   "matched": "Moyne Shire Council, Park Street, Mortlake, Victoria, 3272, Australia",
+   "via": "townhall"
+  },
+  "westwimmera": {
+   "lat": -36.5785069,
+   "lng": 141.401182,
+   "name": "West Wimmera Shire Council",
+   "state": "VIC",
+   "osm": "relation/3345520",
+   "matched": "Shire of West Wimmera, Victoria, Australia",
+   "via": "boundary"
   }
  },
  "note": "Council-area points for OGTR field trial sites, from OpenStreetMap administrative boundaries via Nominatim. Each entry names the OSM object it came from. Rejected where the point fell outside the state OGTR named."

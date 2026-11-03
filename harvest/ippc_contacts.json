@@ -1,6 +1,6 @@
 {
  "note": "IPPC official contact points, Article VIII.2. ORGANIZATION ONLY - the source is a contact list and every personal field is dropped before writing, with an assertion. No website is published in this source, so these name a body and do not link it.",
- "generated": "2026-11-02",
+ "generated": "2026-11-03",
  "contacts": [
   {
    "country": "Guyana",
@@ -516,12 +516,6 @@
    "country": "Zimbabwe",
    "region": "Africa",
    "organization": "Research and Specialist Services, Ministry of Lands, Agriculture, Fisheries, Water and Rural Develpment",
-   "_source": "IPPC official contact points, Art. VIII.2"
-  },
-  {
-   "country": "Fiji",
-   "region": "South West Pacific",
-   "organization": "Organization: Biosecurity Authority of Fiji (BAF)",
    "_source": "IPPC official contact points, Art. VIII.2"
   },
   {
@@ -1086,6 +1080,12 @@
    "country": "Colombia",
    "region": "Latin America and Caribbean",
    "organization": "Instituto Colombiano Agropecuario - ICA",
+   "_source": "IPPC official contact points, Art. VIII.2"
+  },
+  {
+   "country": "Fiji",
+   "region": "South West Pacific",
+   "organization": "Biosecurity Authority of Fiji (BAF)",
    "_source": "IPPC official contact points, Art. VIII.2"
   }
  ]
