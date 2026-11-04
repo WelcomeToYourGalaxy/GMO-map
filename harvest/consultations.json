@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-03",
+ "generated": "2026-11-04",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
@@ -22,9 +22,9 @@
    "name": "WTO / ePing notifications",
    "kind": "feed",
    "ok": true,
-   "rows": 7,
+   "rows": 9,
    "url": "https://eping.wto.org/en/Search",
-   "message": "106450 notifications scanned"
+   "message": "106505 notifications scanned"
   },
   {
    "name": "EFSA",
@@ -109,6 +109,22 @@
    "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NCOL438.docx",
    "country": "Colombia",
    "ref": "G/SPS/N/COL/438"
+  },
+  {
+   "title": "DJS 2438:2026 – General Requirements for Genetically Modified Unprocessed Agricultural Products",
+   "agency": "WTO Regular notification",
+   "closes": "2027-01-01",
+   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/JOR111.docx",
+   "country": "Jordan",
+   "ref": "G/TBT/N/JOR/111"
+  },
+  {
+   "title": "Proposed amendment to the “Regulation on Safety Assessment for Genetically Modified Food Products” (MFDS notification No. 2023-43, 14 June 2023)",
+   "agency": "WTO Regular notification",
+   "closes": "2027-01-01",
+   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/KOR1385.docx",
+   "country": "Korea, Republic of",
+   "ref": "G/TBT/N/KOR/1385"
   },
   {
    "title": "Proyecto de Norma Metrológica Peruana PNMP 021:2026 “Esfigmomanómetros no invasivos no automáticos”. Parte 1: Requisitos metrológicos y técnicos. Diecisiete (17) páginas, en españolParte 2: Procedimie",
