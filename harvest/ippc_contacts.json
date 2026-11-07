@@ -1,6 +1,6 @@
 {
  "note": "IPPC official contact points, Article VIII.2. ORGANIZATION ONLY - the source is a contact list and every personal field is dropped before writing, with an assertion. No website is published in this source, so these name a body and do not link it.",
- "generated": "2026-11-06",
+ "generated": "2026-11-07",
  "contacts": [
   {
    "country": "Guyana",
@@ -324,12 +324,6 @@
    "country": "Republic of Türkiye",
    "region": "Europe",
    "organization": "Ministry of Agriculture and Forestry, General Directorate of Food and Control",
-   "_source": "IPPC official contact points, Art. VIII.2"
-  },
-  {
-   "country": "Uzbekistan",
-   "region": "Asia",
-   "organization": "Agency of Plant Protection and Quarantine, Ministry of Agriculture of the Republic of Uzbekistan",
    "_source": "IPPC official contact points, Art. VIII.2"
   },
   {
@@ -1086,6 +1080,12 @@
    "country": "Fiji",
    "region": "South West Pacific",
    "organization": "Biosecurity Authority of Fiji (BAF)",
+   "_source": "IPPC official contact points, Art. VIII.2"
+  },
+  {
+   "country": "Uzbekistan",
+   "region": "Asia",
+   "organization": "Food Safety Committee of the Republic of Uzbekistan",
    "_source": "IPPC official contact points, Art. VIII.2"
   }
  ]
