@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01",
+ "generated": "2026-11-08",
  "note": "AAALAC International accredited organisations. Voluntary accreditation, not a register: absence means not accredited, not no animal research. City-level positions only.",
  "projects": [
   {
@@ -2395,7 +2395,7 @@
    "checked": ""
   },
   {
-   "name": "Non-Human Primate Breeding Center / Jiangsu Johnsen Bioresource Co., Ltd",
+   "name": "Jiangsu Johnsen Bioresource Co., Ltd",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
    "lat": 31.27871,
@@ -2404,7 +2404,7 @@
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
-   "company": "Beijing Life-Biosciences Co., Ltd. (LIFE-BIO)",
+   "company": "Beijing Life-Biosciences Co., Ltd.",
    "size": "",
    "status": "AAALAC accredited",
    "phase": "post",
@@ -2417,7 +2417,7 @@
     "lab_animals"
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Beijing Life-Biosciences Co., Ltd. (LIFE-BIO). Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Beijing Life-Biosciences Co., Ltd.. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -4735,32 +4735,6 @@
    "checked": ""
   },
   {
-   "name": "Charles River Laboratories, Research Models and Services - Germany GmbH",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 49.10609,
-   "lng": 8.85968,
-   "state": "SULZFELD, GERMANY",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Charles River Laboratories International, Inc.",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Charles River Laboratories International, Inc.. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
    "name": "Charles River Laboratories - St. Constant",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -4793,6 +4767,32 @@
    "lat": 45.72487,
    "lng": 9.41591,
    "state": "CALCO (LC), ITALY",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Charles River Laboratories International, Inc.",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Charles River Laboratories International, Inc.. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Charles River Laboratories, Research Models and Services - Germany GmbH",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 49.10609,
+   "lng": 8.85968,
+   "state": "SULZFELD, GERMANY",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -16227,12 +16227,12 @@
    "checked": ""
   },
   {
-   "name": "Mispro Biotech Services Corporation - California",
+   "name": "Mispro Biotech Services Corporation - Cambridge",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 37.79142,
-   "lng": -122.42019,
-   "state": "SOUTH SAN FRANCISCO AND PALO ALTO, CA, UNITED STATES",
+   "lat": 42.36563,
+   "lng": -71.104,
+   "state": "CAMBRIDGE, MA, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -16253,12 +16253,12 @@
    "checked": ""
   },
   {
-   "name": "Mispro Biotech Services Corporation - Cambridge",
+   "name": "Mispro Biotech Services Corporation - California",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 42.36563,
-   "lng": -71.104,
-   "state": "CAMBRIDGE, MA, UNITED STATES",
+   "lat": 37.79142,
+   "lng": -122.42019,
+   "state": "SOUTH SAN FRANCISCO AND PALO ALTO, CA, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -22129,32 +22129,6 @@
    "checked": ""
   },
   {
-   "name": "SmartLabs Corporate, LLC.",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 42.36563,
-   "lng": -71.104,
-   "state": "CAMBRIDGE, MA, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
    "name": "Smith College",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -22516,32 +22490,6 @@
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
    "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of St. Kitts Biomedical Research Foundation. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "XenoStart",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 29.4246,
-   "lng": -98.49514,
-   "state": "SAN ANTONIO, TX, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "START, LP.",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of START, LP.. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -27563,6 +27511,32 @@
    "checked": ""
   },
   {
+   "name": "University of Rochester",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 43.15729,
+   "lng": -77.61521,
+   "state": "ROCHESTER, NY, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
    "name": "University of Sharjah Clinical and Surgical Training Center",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -29435,12 +29409,12 @@
    "checked": ""
   },
   {
-   "name": "WuXi AppTec (Nanjing) Co., Ltd.",
+   "name": "WuXi AppTec (Suzhou) Co., Ltd. - LTD Division",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 32.08872,
-   "lng": 118.79175,
-   "state": "NANJING, JIANGSU, P.R. CHINA",
+   "lat": 31.27871,
+   "lng": 120.72376,
+   "state": "SUZHOU, P.R. CHINA",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -29461,12 +29435,12 @@
    "checked": ""
   },
   {
-   "name": "WuXi AppTec (Suzhou) Co., Ltd. - LTD Division",
+   "name": "WuXi AppTec (Nanjing) Co., Ltd.",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 31.27871,
-   "lng": 120.72376,
-   "state": "SUZHOU, P.R. CHINA",
+   "lat": 32.08872,
+   "lng": 118.79175,
+   "state": "NANJING, JIANGSU, P.R. CHINA",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,

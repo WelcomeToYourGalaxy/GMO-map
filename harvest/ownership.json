@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01",
+ "generated": "2026-11-08",
  "note": "Ownership as the registers state it, plus chains visible in the names themselves. Company filings are not read here, so this shows trading relationships rather than share ownership.",
  "groups": [
   {
@@ -659,13 +659,6 @@
      "source": "aaalac_facilities.json"
     },
     {
-     "name": "Charles River Laboratories, Research Models and Services - Germany GmbH",
-     "lat": 49.10609,
-     "lng": 8.85968,
-     "where": "SULZFELD, GERMANY",
-     "source": "aaalac_facilities.json"
-    },
-    {
      "name": "Charles River Laboratories - St. Constant",
      "lat": 45.3903,
      "lng": -73.57113,
@@ -677,6 +670,13 @@
      "lat": 45.72487,
      "lng": 9.41591,
      "where": "CALCO (LC), ITALY",
+     "source": "aaalac_facilities.json"
+    },
+    {
+     "name": "Charles River Laboratories, Research Models and Services - Germany GmbH",
+     "lat": 49.10609,
+     "lng": 8.85968,
+     "where": "SULZFELD, GERMANY",
      "source": "aaalac_facilities.json"
     },
     {
@@ -808,7 +808,7 @@
    ]
   },
   {
-   "owner": "CARE Fertility",
+   "owner": "Care Fertility",
    "basis": "inferred from the site's own name",
    "sites": 15,
    "countries": [
@@ -930,7 +930,7 @@
    ]
   },
   {
-   "owner": "GENESIS",
+   "owner": "Genesis",
    "basis": "inferred from the site's own name",
    "sites": 13,
    "countries": [
@@ -1037,7 +1037,7 @@
    ]
   },
   {
-   "owner": "Vida",
+   "owner": "VIDA",
    "basis": "inferred from the site's own name",
    "sites": 13,
    "countries": [
@@ -1113,8 +1113,8 @@
     },
     {
      "name": "Bebé Vida",
-     "lat": 41.16293,
-     "lng": -8.62736,
+     "lat": 41.163,
+     "lng": -8.62738,
      "where": "",
      "source": "osm_facilities.json"
     },
@@ -1610,7 +1610,7 @@
    ],
    "members": [
     {
-     "name": "IVI London (Wimpole Street)",
+     "name": "IVI Fertility London",
      "lat": 51.51699,
      "lng": -0.14787,
      "where": "83, Wimpole Street, London, W1G 9RQ",
@@ -1705,17 +1705,17 @@
      "source": "aaalac_facilities.json"
     },
     {
-     "name": "WuXi AppTec (Nanjing) Co., Ltd.",
-     "lat": 32.08872,
-     "lng": 118.79175,
-     "where": "NANJING, JIANGSU, P.R. CHINA",
-     "source": "aaalac_facilities.json"
-    },
-    {
      "name": "WuXi AppTec (Suzhou) Co., Ltd. - LTD Division",
      "lat": 31.27871,
      "lng": 120.72376,
      "where": "SUZHOU, P.R. CHINA",
+     "source": "aaalac_facilities.json"
+    },
+    {
+     "name": "WuXi AppTec (Nanjing) Co., Ltd.",
+     "lat": 32.08872,
+     "lng": 118.79175,
+     "where": "NANJING, JIANGSU, P.R. CHINA",
      "source": "aaalac_facilities.json"
     },
     {
@@ -2467,6 +2467,47 @@
      "lat": 51.51402,
      "lng": -0.15095,
      "where": "411 Oxford Street, London, W1C 2PE",
+     "source": "hfea_clinics.json"
+    }
+   ]
+  },
+  {
+   "owner": "Aria Fertility",
+   "basis": "stated by the register",
+   "sites": 4,
+   "countries": [
+    "TN4 8HH",
+    "W1G 6LJ",
+    "W1G 8YB",
+    "W1W 5QN"
+   ],
+   "members": [
+    {
+     "name": "LCRH Ltd London",
+     "lat": 51.51926,
+     "lng": -0.14827,
+     "where": "30B Wimpole Street, London, W1G 8YB",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "LCRH Ltd Tunbridge Wells",
+     "lat": 51.12467,
+     "lng": 0.25673,
+     "where": "2 Linen Close, Amara Clinic, Tunbridge Wells, TN4 8HH",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "Miss Sara Mathews",
+     "lat": 51.52255,
+     "lng": -0.1434,
+     "where": "3rd Floor Consulting Suite, The Portland Hospital, 212-214 Great Portland Street, London, W1W 5QN",
+     "source": "hfea_clinics.json"
+    },
+    {
+     "name": "Mr Adrian Lower",
+     "lat": 51.52107,
+     "lng": -0.14908,
+     "where": "9 Upper Wimpole St, London, W1G 6LJ",
      "source": "hfea_clinics.json"
     }
    ]
@@ -3812,7 +3853,7 @@
    ]
   },
   {
-   "owner": "Citmer",
+   "owner": "CITMER",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
@@ -4053,31 +4094,6 @@
      "lat": 51.505,
      "lng": -0.08823,
      "where": "1, St Thomas Street, London Bridge, London, SE19RY",
-     "source": "hfea_clinics.json"
-    }
-   ]
-  },
-  {
-   "owner": "Aria Fertility",
-   "basis": "stated by the register",
-   "sites": 2,
-   "countries": [
-    "W1G 6LJ",
-    "W1W 5QN"
-   ],
-   "members": [
-    {
-     "name": "Miss Sara Mathews",
-     "lat": 51.52255,
-     "lng": -0.1434,
-     "where": "3rd Floor Consulting Suite, The Portland Hospital, 212-214 Great Portland Street, London, W1W 5QN",
-     "source": "hfea_clinics.json"
-    },
-    {
-     "name": "Mr Adrian Lower",
-     "lat": 51.52107,
-     "lng": -0.14908,
-     "where": "9 Upper Wimpole St, London, W1G 6LJ",
      "source": "hfea_clinics.json"
     }
    ]
@@ -4826,17 +4842,17 @@
    ],
    "members": [
     {
-     "name": "Mispro Biotech Services Corporation - California",
-     "lat": 37.79142,
-     "lng": -122.42019,
-     "where": "SOUTH SAN FRANCISCO AND PALO ALTO, CA, UNITED STATES",
-     "source": "aaalac_facilities.json"
-    },
-    {
      "name": "Mispro Biotech Services Corporation - Cambridge",
      "lat": 42.36563,
      "lng": -71.104,
      "where": "CAMBRIDGE, MA, UNITED STATES",
+     "source": "aaalac_facilities.json"
+    },
+    {
+     "name": "Mispro Biotech Services Corporation - California",
+     "lat": 37.79142,
+     "lng": -122.42019,
+     "where": "SOUTH SAN FRANCISCO AND PALO ALTO, CA, UNITED STATES",
      "source": "aaalac_facilities.json"
     }
    ]
@@ -6386,6 +6402,31 @@
    ]
   },
   {
+   "owner": "private",
+   "basis": "stated by the register",
+   "sites": 2,
+   "countries": [
+    "PIDUGURALLA",
+    "zakiganj"
+   ],
+   "members": [
+    {
+     "name": "Vikasa Hospital",
+     "lat": 16.48223,
+     "lng": 79.88944,
+     "where": "PIDUGURALLA",
+     "source": "osm_facilities.json"
+    },
+    {
+     "name": "মতিন ডাক্তার হাসপাতাল",
+     "lat": 24.91414,
+     "lng": 92.45694,
+     "where": "zakiganj",
+     "source": "osm_facilities.json"
+    }
+   ]
+  },
+  {
    "owner": "Novosalus",
    "basis": "stated by the register",
    "sites": 2,
@@ -7507,7 +7548,7 @@
    ]
   },
   {
-   "owner": "Beijing Life-Biosciences Co., Ltd. (LIFE-BIO)",
+   "owner": "Beijing Life-Biosciences Co., Ltd",
    "basis": "stated by the register",
    "sites": 1,
    "countries": [
@@ -7515,7 +7556,7 @@
    ],
    "members": [
     {
-     "name": "Non-Human Primate Breeding Center / Jiangsu Johnsen Bioresource Co., Ltd",
+     "name": "Jiangsu Johnsen Bioresource Co., Ltd",
      "lat": 31.27871,
      "lng": 120.72376,
      "where": "JIANGSU PROVINCE, P.R. CHINA",
@@ -12007,23 +12048,6 @@
      "lat": 41.30821,
      "lng": -72.92505,
      "where": "NEW HAVEN, CT, UNITED STATES",
-     "source": "aaalac_facilities.json"
-    }
-   ]
-  },
-  {
-   "owner": "START, LP",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "UNITED STATES"
-   ],
-   "members": [
-    {
-     "name": "XenoStart",
-     "lat": 29.4246,
-     "lng": -98.49514,
-     "where": "SAN ANTONIO, TX, UNITED STATES",
      "source": "aaalac_facilities.json"
     }
    ]
@@ -63069,6 +63093,38 @@
    ]
   },
   {
+   "owner": "Unknown",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "Noida"
+   ],
+   "members": [
+    {
+     "name": "Anamaya Clinics - Multi Speciality",
+     "lat": 28.5908,
+     "lng": 77.39753,
+     "where": "Noida",
+     "source": "osm_facilities.json"
+    }
+   ]
+  },
+  {
+   "owner": "https://misrclinic.com",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [],
+   "members": [
+    {
+     "name": "عيادة مصر",
+     "lat": 29.98706,
+     "lng": 31.14264,
+     "where": "",
+     "source": "osm_facilities.json"
+    }
+   ]
+  },
+  {
    "owner": "City Fertility Limited",
    "basis": "stated by the register",
    "sites": 1,
@@ -63461,23 +63517,6 @@
    ]
   },
   {
-   "owner": "private",
-   "basis": "stated by the register",
-   "sites": 1,
-   "countries": [
-    "zakiganj"
-   ],
-   "members": [
-    {
-     "name": "মতিন ডাক্তার হাসপাতাল",
-     "lat": 24.91414,
-     "lng": 92.45694,
-     "where": "zakiganj",
-     "source": "osm_facilities.json"
-    }
-   ]
-  },
-  {
    "owner": "Humana",
    "basis": "stated by the register",
    "sites": 1,
@@ -63507,6 +63546,23 @@
      "lat": -38.95159,
      "lng": -68.05572,
      "where": "Neuquén",
+     "source": "osm_facilities.json"
+    }
+   ]
+  },
+  {
+   "owner": "Window to the Womb Limited",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "Newcastle-under-Lyme"
+   ],
+   "members": [
+    {
+     "name": "Window to the Womb",
+     "lat": 53.01894,
+     "lng": -2.24711,
+     "where": "Newcastle-under-Lyme",
      "source": "osm_facilities.json"
     }
    ]
@@ -63573,6 +63629,23 @@
      "lat": 28.42367,
      "lng": 77.06156,
      "where": "Gurugram",
+     "source": "osm_facilities.json"
+    }
+   ]
+  },
+  {
+   "owner": "Necip Öztürk",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "Mersin"
+   ],
+   "members": [
+    {
+     "name": "Mersin Tüp Bebek Merkezi",
+     "lat": 36.80788,
+     "lng": 34.61763,
+     "where": "Mersin",
      "source": "osm_facilities.json"
     }
    ]

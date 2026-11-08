@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01",
+ "generated": "2026-11-08",
  "bch": [
   {
    "name": "Petunia modified for altered flower colour",
@@ -1921,18 +1921,6 @@
    "url": "https://data.gov.au/data/dataset/nsw-3-11569-government-gazette-of-the-state-of-new-south-wales-week-no-51-2009"
   },
   {
-   "title": "Government Gazette of the State of New South Wales Week No. 44/2008",
-   "org": "NSW Government",
-   "files": [
-    {
-     "name": "document 12682",
-     "format": "PDF",
-     "url": "https://data.nsw.gov.au/data/dataset/e1c7362d-9c12-405e-bf23-a565088a2883/resource/6f2c91c1-6aa3-449b-8712-6ed2d2f467e2/download/document_12682.pdf"
-    }
-   ],
-   "url": "https://data.gov.au/data/dataset/nsw-3-11628-government-gazette-of-the-state-of-new-south-wales-week-no-44-2008"
-  },
-  {
    "title": "Government Gazette of the State of New South Wales Week No. 44/2005",
    "org": "NSW Government",
    "files": [
@@ -1943,6 +1931,18 @@
     }
    ],
    "url": "https://data.gov.au/data/dataset/nsw-3-11784-government-gazette-of-the-state-of-new-south-wales-week-no-44-2005"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 44/2008",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12682",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/e1c7362d-9c12-405e-bf23-a565088a2883/resource/6f2c91c1-6aa3-449b-8712-6ed2d2f467e2/download/document_12682.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11628-government-gazette-of-the-state-of-new-south-wales-week-no-44-2008"
   },
   {
    "title": "Government Gazette of the State of New South Wales Week No. 41/2011",
