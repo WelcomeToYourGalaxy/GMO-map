@@ -513423,32 +513423,6 @@
    "checked": ""
   },
   {
-   "name": "Al-Malaki Specialised Hospital",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 31.50391,
-   "lng": 35.07352,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/432231986",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
    "name": "Bielefeld Fertility Center",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -516598,8 +516572,8 @@
    "name": "Cloud Nine, Jayanagar",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 12.93391,
-   "lng": 77.58411,
+   "lat": 12.934,
+   "lng": 77.58414,
    "state": "",
    "precise": true,
    "addr_grade": "mapped",
@@ -516773,32 +516747,6 @@
     "human"
    ],
    "url": "https://www.openstreetmap.org/node/6974284635",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Kothari Hospital Maternity and IUI Centre",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 23.08556,
-   "lng": 72.63054,
-   "state": "Ahmedabad",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/6974913360",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
@@ -517739,32 +517687,6 @@
    "checked": ""
   },
   {
-   "name": "Vikasa Hospital",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 16.48223,
-   "lng": 79.88944,
-   "state": "PIDUGURALLA",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "private",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/7800444769",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by private. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
    "name": "Maternal Fetal Medicine of Arizona",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -518288,8 +518210,8 @@
    "name": "Bebé Vida",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 41.163,
-   "lng": -8.62738,
+   "lat": 41.16293,
+   "lng": -8.62736,
    "state": "",
    "precise": true,
    "addr_grade": "mapped",
@@ -527203,32 +527125,6 @@
    "checked": ""
   },
   {
-   "name": "Materi",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 50.52178,
-   "lng": 30.4625,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/13074063586",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
    "name": "OMVIA",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -529904,292 +529800,6 @@
    ],
    "url": "https://www.openstreetmap.org/node/14307075444",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "دكتور احمد عيد رفاعي مسالك بولية",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 29.99212,
-   "lng": 31.13996,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14321382518",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Anamaya Clinics - Multi Speciality",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 28.5908,
-   "lng": 77.39753,
-   "state": "Noida",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "Unknown",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14344909247",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Unknown. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "عيادة مصر",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 29.98706,
-   "lng": 31.14264,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "https://misrclinic.com",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14345648259",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by https://misrclinic.com. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Texas IVF",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 33.04431,
-   "lng": -96.83727,
-   "state": "Plano",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14345874802",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Plano IVF - A.R.T.S.",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 33.04384,
-   "lng": -96.83834,
-   "state": "Plano",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14345874863",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Jasmin Reif",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 51.22925,
-   "lng": 6.74813,
-   "state": "Düsseldorf, DE",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "Jasmin Reif",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14349304819",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Jasmin Reif. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Jasmin Reif",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 51.44569,
-   "lng": 7.05165,
-   "state": "Essen, DE",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "Jasmin Reif",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14349304820",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Jasmin Reif. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Jasmin Reif",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 51.43904,
-   "lng": 7.00573,
-   "state": "Essen, DE",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "Jasmin Reif",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14349304821",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Jasmin Reif. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Jasmin Reif",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 51.52566,
-   "lng": -0.08506,
-   "state": "London, GB",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "Jasmin Reif",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14349304822",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Jasmin Reif. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Aunt Martha’s Health & Wellness - Humboldt Park Community Health Center",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 41.9028,
-   "lng": -87.6936,
-   "state": "Chicago",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14349857092",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Starvita",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 50.8245,
-   "lng": -0.14083,
-   "state": "Brighton & Hove",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "Starvita",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/node/14355330547",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Starvita. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
   {
@@ -535523,32 +535133,6 @@
    "checked": ""
   },
   {
-   "name": "Window to the Womb",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 53.01894,
-   "lng": -2.24711,
-   "state": "Newcastle-under-Lyme",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "Window to the Womb Limited",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/way/1297703661",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Window to the Womb Limited. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
    "name": "Nueva Vida Maternity Clinic",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -536403,58 +535987,6 @@
     "human"
    ],
    "url": "https://www.openstreetmap.org/way/1568512132",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Mersin Tüp Bebek Merkezi",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 36.80788,
-   "lng": 34.61763,
-   "state": "Mersin",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "Necip Öztürk",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/way/1573450403",
-   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Necip Öztürk. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
-   "checked": ""
-  },
-  {
-   "name": "Peak Fertility",
-   "source": "industry:repro",
-   "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 33.09061,
-   "lng": -96.80353,
-   "state": "",
-   "precise": true,
-   "addr_grade": "mapped",
-   "impact": 1,
-   "company": "",
-   "size": "",
-   "status": "Mapped in OpenStreetMap",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.openstreetmap.org/way/1575936151",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
@@ -538955,7 +538487,7 @@
    "checked": ""
   },
   {
-   "name": "Jiangsu Johnsen Bioresource Co., Ltd",
+   "name": "Non-Human Primate Breeding Center / Jiangsu Johnsen Bioresource Co., Ltd",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
    "lat": 31.27871,
@@ -538964,7 +538496,7 @@
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
-   "company": "Beijing Life-Biosciences Co., Ltd.",
+   "company": "Beijing Life-Biosciences Co., Ltd. (LIFE-BIO)",
    "size": "",
    "status": "AAALAC accredited",
    "phase": "post",
@@ -538977,7 +538509,7 @@
     "lab_animals"
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Beijing Life-Biosciences Co., Ltd.. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Beijing Life-Biosciences Co., Ltd. (LIFE-BIO). Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -541295,6 +540827,32 @@
    "checked": ""
   },
   {
+   "name": "Charles River Laboratories, Research Models and Services - Germany GmbH",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 49.10609,
+   "lng": 8.85968,
+   "state": "SULZFELD, GERMANY",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "Charles River Laboratories International, Inc.",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Charles River Laboratories International, Inc.. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
    "name": "Charles River Laboratories - St. Constant",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -541327,32 +540885,6 @@
    "lat": 45.72487,
    "lng": 9.41591,
    "state": "CALCO (LC), ITALY",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Charles River Laboratories International, Inc.",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Charles River Laboratories International, Inc.. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "Charles River Laboratories, Research Models and Services - Germany GmbH",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 49.10609,
-   "lng": 8.85968,
-   "state": "SULZFELD, GERMANY",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -552787,12 +552319,12 @@
    "checked": ""
   },
   {
-   "name": "Mispro Biotech Services Corporation - Cambridge",
+   "name": "Mispro Biotech Services Corporation - California",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 42.36563,
-   "lng": -71.104,
-   "state": "CAMBRIDGE, MA, UNITED STATES",
+   "lat": 37.79142,
+   "lng": -122.42019,
+   "state": "SOUTH SAN FRANCISCO AND PALO ALTO, CA, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -552813,12 +552345,12 @@
    "checked": ""
   },
   {
-   "name": "Mispro Biotech Services Corporation - California",
+   "name": "Mispro Biotech Services Corporation - Cambridge",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 37.79142,
-   "lng": -122.42019,
-   "state": "SOUTH SAN FRANCISCO AND PALO ALTO, CA, UNITED STATES",
+   "lat": 42.36563,
+   "lng": -71.104,
+   "state": "CAMBRIDGE, MA, UNITED STATES",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -558689,6 +558221,32 @@
    "checked": ""
   },
   {
+   "name": "SmartLabs Corporate, LLC.",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 42.36563,
+   "lng": -71.104,
+   "state": "CAMBRIDGE, MA, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
    "name": "Smith College",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -559050,6 +558608,32 @@
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
    "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of St. Kitts Biomedical Research Foundation. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "XenoStart",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 29.4246,
+   "lng": -98.49514,
+   "state": "SAN ANTONIO, TX, UNITED STATES",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "START, LP.",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of START, LP.. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -564071,32 +563655,6 @@
    "checked": ""
   },
   {
-   "name": "University of Rochester",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 43.15729,
-   "lng": -77.61521,
-   "state": "ROCHESTER, NY, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
    "name": "University of Sharjah Clinical and Surgical Training Center",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -565969,12 +565527,12 @@
    "checked": ""
   },
   {
-   "name": "WuXi AppTec (Suzhou) Co., Ltd. - LTD Division",
+   "name": "WuXi AppTec (Nanjing) Co., Ltd.",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 31.27871,
-   "lng": 120.72376,
-   "state": "SUZHOU, P.R. CHINA",
+   "lat": 32.08872,
+   "lng": 118.79175,
+   "state": "NANJING, JIANGSU, P.R. CHINA",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -565995,12 +565553,12 @@
    "checked": ""
   },
   {
-   "name": "WuXi AppTec (Nanjing) Co., Ltd.",
+   "name": "WuXi AppTec (Suzhou) Co., Ltd. - LTD Division",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
-   "lat": 32.08872,
-   "lng": 118.79175,
-   "state": "NANJING, JIANGSU, P.R. CHINA",
+   "lat": 31.27871,
+   "lng": 120.72376,
+   "state": "SUZHOU, P.R. CHINA",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -569557,7 +569115,7 @@
    "checked": ""
   },
   {
-   "name": "IVI Fertility London",
+   "name": "IVI London (Wimpole Street)",
    "source": "industry:repro",
    "type": "Fertility clinic",
    "lat": 51.51699,
@@ -569843,32 +569401,6 @@
    "checked": ""
   },
   {
-   "name": "LCRH Ltd London",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 51.51926,
-   "lng": -0.14827,
-   "state": "30B Wimpole Street, London, W1G 8YB",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "Satellite clinic to Aria Fertility",
-   "size": "",
-   "status": "HFEA licensed — satellite",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to Aria Fertility. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
    "name": "LCRH Ltd The Beaconsfield Clinic",
    "source": "industry:repro",
    "type": "Fertility clinic",
@@ -569892,32 +569424,6 @@
    ],
    "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
    "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to The Lister Fertility Clinic. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
-   "checked": ""
-  },
-  {
-   "name": "LCRH Ltd Tunbridge Wells",
-   "source": "industry:repro",
-   "type": "Fertility clinic",
-   "lat": 51.12467,
-   "lng": 0.25673,
-   "state": "2 Linen Close, Amara Clinic, Tunbridge Wells, TN4 8HH",
-   "precise": true,
-   "addr_grade": "operational",
-   "impact": 2,
-   "company": "Satellite clinic to Aria Fertility",
-   "size": "",
-   "status": "HFEA licensed — satellite",
-   "phase": "post",
-   "date": "",
-   "otype": "company",
-   "tags": [
-    "repro:clinics"
-   ],
-   "species": [
-    "human"
-   ],
-   "url": "https://www.hfea.gov.uk/choose-a-fertility-clinic/",
-   "desc": "A fertility clinic licensed and inspected by the Human Fertilisation and Embryology Authority. Satellite clinic to Aria Fertility. A satellite is where patients are seen; the licence sits with the parent clinic, so the regulator's paperwork and the treatment are in different places. A fertility clinic is where human embryos are made, selected and stored, and where assisted reproduction happens, like IVF, ICSI, egg and sperm donation, freezing embryos and eggs for later. The HFEA licenses every clinic in the United Kingdom, inspects them, and publishes findings and success rates clinic by clinic. No other fertility regulator publishes at this level, which makes the UK the one country where this sector can be read rather than estimated.",
    "checked": ""
   },
   {
