@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-08",
+ "generated": "2026-11-09",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
    "name": "Federal Register",
    "kind": "feed",
    "ok": true,
-   "rows": 2,
+   "rows": 3,
    "url": "https://www.federalregister.gov/",
    "message": "7 of 7 queries answered"
   },
@@ -125,6 +125,14 @@
    "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/KOR1385.docx",
    "country": "Korea, Republic of",
    "ref": "G/TBT/N/KOR/1385"
+  },
+  {
+   "title": "Pioneer Hi-Bred International, Inc.: Availability of a Petition for a Determination of Nonregulated Status and Draft Plant Pest Risk Assessment for Insect Resistant COR-ØØ121-4 Maize (Zea mays)",
+   "agency": "Agriculture Department",
+   "closes": "2027-01-08",
+   "url": "https://www.federalregister.gov/documents/2026/11/09/2026-22810/pioneer-hi-bred-international-inc-availability-of-a-petition-for-a-determination-of-nonregulated",
+   "country": "United States",
+   "ref": "2026-22810"
   },
   {
    "title": "Proyecto de Norma Metrológica Peruana PNMP 021:2026 “Esfigmomanómetros no invasivos no automáticos”. Parte 1: Requisitos metrológicos y técnicos. Diecisiete (17) páginas, en españolParte 2: Procedimie",
