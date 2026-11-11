@@ -1,6 +1,6 @@
 {
  "note": "IPPC official contact points, Article VIII.2. ORGANIZATION ONLY - the source is a contact list and every personal field is dropped before writing, with an assertion. No website is published in this source, so these name a body and do not link it.",
- "generated": "2026-11-10",
+ "generated": "2026-11-11",
  "contacts": [
   {
    "country": "Guyana",
@@ -180,12 +180,6 @@
    "country": "Russian Federation",
    "region": "Europe",
    "organization": "The Federal Service for Veterinary and Phytosanitary Surveillance, Ministry of Agriculture",
-   "_source": "IPPC official contact points, Art. VIII.2"
-  },
-  {
-   "country": "Bosnia and Herzegovina",
-   "region": "Europe",
-   "organization": "Administration of Bosnia and Herzegovina for Plant Health Protection",
    "_source": "IPPC official contact points, Art. VIII.2"
   },
   {
@@ -1086,6 +1080,12 @@
    "country": "Romania",
    "region": "Europe",
    "organization": "Organization: National Plant Protection Organisation",
+   "_source": "IPPC official contact points, Art. VIII.2"
+  },
+  {
+   "country": "Bosnia and Herzegovina",
+   "region": "Europe",
+   "organization": "MoFTER - ADMINISTRATION OF BOSNIA AND HERZEGOVINA FOR PLANT HEAL TH PROTECTION",
    "_source": "IPPC official contact points, Art. VIII.2"
   }
  ]
