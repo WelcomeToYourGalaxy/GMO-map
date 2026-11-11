@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-10",
+ "generated": "2026-11-11",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
    "name": "Federal Register",
    "kind": "feed",
    "ok": true,
-   "rows": 3,
+   "rows": 4,
    "url": "https://www.federalregister.gov/",
    "message": "7 of 7 queries answered"
   },
@@ -141,6 +141,14 @@
    "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/PER184.docx",
    "country": "Peru",
    "ref": "G/TBT/N/PER/184"
+  },
+  {
+   "title": "Mozza Foods, Inc.: Availability of a Petition for a Determination of Nonregulated Status and Draft Plant Pest Risk Assessment for MF1786-1 Soybean (Glycine max) Expressing Casein Proteins",
+   "agency": "Agriculture Department",
+   "closes": "2027-01-11",
+   "url": "https://www.federalregister.gov/documents/2026/11/12/2026-23015/mozza-foods-inc-availability-of-a-petition-for-a-determination-of-nonregulated-status-and-draft",
+   "country": "United States",
+   "ref": "2026-23015"
   }
  ]
 }
