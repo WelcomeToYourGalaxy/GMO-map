@@ -1,6 +1,6 @@
 {
  "note": "IPPC official contact points, Article VIII.2. ORGANIZATION ONLY - the source is a contact list and every personal field is dropped before writing, with an assertion. No website is published in this source, so these name a body and do not link it.",
- "generated": "2026-11-11",
+ "generated": "2026-11-12",
  "contacts": [
   {
    "country": "Guyana",
@@ -378,12 +378,6 @@
    "country": "Latvia",
    "region": "Europe",
    "organization": "State Plant Protection Service of Latvia",
-   "_source": "IPPC official contact points, Art. VIII.2"
-  },
-  {
-   "country": "Hungary",
-   "region": "Europe",
-   "organization": "National Food Chain Safety Office",
    "_source": "IPPC official contact points, Art. VIII.2"
   },
   {
@@ -1086,6 +1080,12 @@
    "country": "Bosnia and Herzegovina",
    "region": "Europe",
    "organization": "MoFTER - ADMINISTRATION OF BOSNIA AND HERZEGOVINA FOR PLANT HEAL TH PROTECTION",
+   "_source": "IPPC official contact points, Art. VIII.2"
+  },
+  {
+   "country": "Hungary",
+   "region": "Europe",
+   "organization": "Ministry of Agriculture and Food",
    "_source": "IPPC official contact points, Art. VIII.2"
   }
  ]
