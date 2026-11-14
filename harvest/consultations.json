@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-13",
+ "generated": "2026-11-14",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
@@ -22,9 +22,9 @@
    "name": "WTO / ePing notifications",
    "kind": "feed",
    "ok": true,
-   "rows": 9,
+   "rows": 10,
    "url": "https://eping.wto.org/en/Search",
-   "message": "106775 notifications scanned"
+   "message": "106825 notifications scanned"
   },
   {
    "name": "EFSA",
@@ -149,6 +149,14 @@
    "url": "https://www.federalregister.gov/documents/2026/11/12/2026-23015/mozza-foods-inc-availability-of-a-petition-for-a-determination-of-nonregulated-status-and-draft",
    "country": "United States",
    "ref": "2026-23015"
+  },
+  {
+   "title": "Ordinance on Genetically Modified Foodstuffs (GMFO)",
+   "agency": "WTO Addendum to Regular Notification",
+   "closes": "2027-01-14",
+   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NCHE77A4.docx",
+   "country": "Switzerland",
+   "ref": "G/SPS/N/CHE/77/Add.4"
   }
  ]
 }
