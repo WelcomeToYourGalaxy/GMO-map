@@ -1,6 +1,6 @@
 {
  "note": "US environmental-release authorisations harvested from the APHIS BRS public data files (public domain), plus hand-curated records from other registers. Only records with a release component are included — import and interstate movement are not releases. Every position is a state centroid: APHIS publishes release states, never coordinates, so every record is precise:false and draws as a dashed ring. Canadian records come from the CFIA PNT dataset and sit at the national centroid, because that register records a national approval rather than a planting location. Everywhere else is not yet harvested.",
- "generated": "2026-11-13",
+ "generated": "2026-11-14",
  "dropped": {
   "reason": "never authorised — withdrawn, denied, void, returned, incomplete or cancelled",
   "by_status": {
@@ -12,7 +12,7 @@
   "seen": 60577,
   "share_pct": 10.1
  },
- "source": "APHIS BRS public data files, 2026-11-13",
+ "source": "APHIS BRS public data files, 2026-11-14",
  "projects": [
   {
    "name": "DIR 201 — GM wheat & barley field trial (yield enhancement)",
@@ -7179,9 +7179,9 @@
    "impact": 1,
    "company": "California Polytechnic University- San Luis Obispo Strawberry Center",
    "size": "1 declared release location across 1 state",
-   "status": "Superceded",
+   "status": "Superceded — expired",
    "phase": "pre",
-   "lapsed": false,
+   "lapsed": true,
    "date": "2025-11-13",
    "url": "https://www.aphis.usda.gov/biotechnology-permits/releases",
    "desc": "Permit to release genetically engineered fruit fly at 1 declared location in CA. Applicant: California Polytechnic University- San Luis Obispo Strawberry Center. Status: Superceded. Declared traits: marker gene, other. The applicant claimed confidential business information on this record, so the trait description is partly withheld as [CBI] in the source. The dot is scattered inside the state, not placed at a site: APHIS publishes the state and the number of release locations, never the locations themselves. Australia is the only regulator in the world that publishes field trial sites. Position is a state centroid, not the site — APHIS publishes release states, never coordinates."
@@ -7197,9 +7197,9 @@
    "impact": 1,
    "company": "University of California Berkeley",
    "size": "1 declared release location across 1 state",
-   "status": "Superceded",
+   "status": "Superceded — expired",
    "phase": "pre",
-   "lapsed": false,
+   "lapsed": true,
    "date": "2025-11-13",
    "url": "https://www.aphis.usda.gov/biotechnology-permits/releases",
    "desc": "Permit to release genetically engineered thale cress at 1 declared location in CA. Applicant: University of California Berkeley. Status: Superceded. Declared traits: other. The dot is scattered inside the state, not placed at a site: APHIS publishes the state and the number of release locations, never the locations themselves. Australia is the only regulator in the world that publishes field trial sites. Position is a state centroid, not the site — APHIS publishes release states, never coordinates."
@@ -7215,9 +7215,9 @@
    "impact": 1,
    "company": "BASF Agricultural Solutions US LLC",
    "size": "1 declared release location across 1 state",
-   "status": "Acknowledged",
+   "status": "Acknowledged — expired",
    "phase": "post",
-   "lapsed": false,
+   "lapsed": true,
    "date": "2025-11-13",
    "url": "https://www.aphis.usda.gov/biotechnology-permits/releases",
    "desc": "Notification to release genetically engineered soybean at 1 declared location in PR. Applicant: BASF Agricultural Solutions US LLC. Status: Acknowledged. Declared traits: other, herbicide resistance, marker gene. The applicant claimed confidential business information on this record, so the trait description is partly withheld as [CBI] in the source. The dot is scattered inside the state, not placed at a site: APHIS publishes the state and the number of release locations, never the locations themselves. Australia is the only regulator in the world that publishes field trial sites. Position is a state centroid, not the site — APHIS publishes release states, never coordinates."
@@ -7233,9 +7233,9 @@
    "impact": 2,
    "company": "University of California Berkeley",
    "size": "2 declared release locations across 1 state",
-   "status": "Issued",
+   "status": "Issued — expired",
    "phase": "post",
-   "lapsed": false,
+   "lapsed": true,
    "date": "2025-11-13",
    "url": "https://www.aphis.usda.gov/biotechnology-permits/releases",
    "desc": "Permit to release genetically engineered thale cress at 2 declared locations in CA. Applicant: University of California Berkeley. Status: Issued. Declared traits: other. The dot is scattered inside the state, not placed at a site: APHIS publishes the state and the number of release locations, never the locations themselves. Australia is the only regulator in the world that publishes field trial sites. Position is a state centroid, not the site — APHIS publishes release states, never coordinates."
@@ -7251,9 +7251,9 @@
    "impact": 1,
    "company": "Agragene Inc",
    "size": "1 declared release location across 1 state",
-   "status": "Issued",
+   "status": "Issued — expired",
    "phase": "post",
-   "lapsed": false,
+   "lapsed": true,
    "date": "2025-11-13",
    "url": "https://www.aphis.usda.gov/biotechnology-permits/releases",
    "desc": "Permit to release genetically engineered fruit fly at 1 declared location in CA. Applicant: Agragene Inc. Status: Issued. Declared traits: marker gene, other. The applicant claimed confidential business information on this record, so the trait description is partly withheld as [CBI] in the source. The dot is scattered inside the state, not placed at a site: APHIS publishes the state and the number of release locations, never the locations themselves. Australia is the only regulator in the world that publishes field trial sites. Position is a state centroid, not the site — APHIS publishes release states, never coordinates."
