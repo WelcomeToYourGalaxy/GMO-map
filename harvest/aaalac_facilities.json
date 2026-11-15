@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-08",
+ "generated": "2026-11-15",
  "note": "AAALAC International accredited organisations. Voluntary accreditation, not a register: absence means not accredited, not no animal research. City-level positions only.",
  "projects": [
   {
@@ -2629,7 +2629,7 @@
    "checked": ""
   },
   {
-   "name": "BeOne Medicins (Shanghai) Research & Development Co., Ltd.",
+   "name": "BeOne Medicines (Shanghai) Research & Development Co., Ltd.",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
    "lat": 31.14336,
@@ -2638,7 +2638,7 @@
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
-   "company": "BeOne Medicins (Shanghai) Research & Development Co., Ltd..",
+   "company": "BeOne Medicines (Shanghai) Research & Development Co., Ltd..",
    "size": "",
    "status": "AAALAC accredited",
    "phase": "post",
@@ -2651,7 +2651,7 @@
     "lab_animals"
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of BeOne Medicins (Shanghai) Research & Development Co., Ltd... Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of BeOne Medicines (Shanghai) Research & Development Co., Ltd... Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -28785,7 +28785,7 @@
    "checked": ""
   },
   {
-   "name": "Walter Reed Army Institute of Research and Naval Medical Research Center",
+   "name": "Walter Reed Army Institute of Research/Naval Medical Research and Development Command (WRAIR/NMRDC)",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
    "lat": 38.99595,

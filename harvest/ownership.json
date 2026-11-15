@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-08",
+ "generated": "2026-11-15",
  "note": "Ownership as the registers state it, plus chains visible in the names themselves. Company filings are not read here, so this shows trading relationships rather than share ownership.",
  "groups": [
   {
@@ -930,7 +930,7 @@
    ]
   },
   {
-   "owner": "Genesis",
+   "owner": "GENESIS",
    "basis": "inferred from the site's own name",
    "sites": 13,
    "countries": [
@@ -1037,7 +1037,7 @@
    ]
   },
   {
-   "owner": "VIDA",
+   "owner": "Vida",
    "basis": "inferred from the site's own name",
    "sites": 13,
    "countries": [
@@ -1757,7 +1757,7 @@
     },
     {
      "name": "Instituto Bernabeu Albacete",
-     "lat": 38.99692,
+     "lat": 38.99689,
      "lng": -1.86094,
      "where": "Albacete",
      "source": "osm_facilities.json"
@@ -3724,7 +3724,7 @@
    ]
   },
   {
-   "owner": "FERTILAB",
+   "owner": "Fertilab",
    "basis": "inferred from the site's own name",
    "sites": 3,
    "countries": [
@@ -7616,7 +7616,7 @@
    ]
   },
   {
-   "owner": "BeOne Medicins (Shanghai) Research & Development Co., Ltd",
+   "owner": "BeOne Medicines (Shanghai) Research & Development Co., Ltd",
    "basis": "stated by the register",
    "sites": 1,
    "countries": [
@@ -7624,7 +7624,7 @@
    ],
    "members": [
     {
-     "name": "BeOne Medicins (Shanghai) Research & Development Co., Ltd.",
+     "name": "BeOne Medicines (Shanghai) Research & Development Co., Ltd.",
      "lat": 31.14336,
      "lng": 121.66198,
      "where": "SHANGHAI, P.R. CHINA",
@@ -63480,6 +63480,23 @@
      "lat": 9.95617,
      "lng": 78.15469,
      "where": "Madurai",
+     "source": "osm_facilities.json"
+    }
+   ]
+  },
+  {
+   "owner": "One Sky Health",
+   "basis": "stated by the register",
+   "sites": 1,
+   "countries": [
+    "Billings"
+   ],
+   "members": [
+    {
+     "name": "Surgery Center",
+     "lat": 45.79027,
+     "lng": -108.51649,
+     "where": "Billings",
      "source": "osm_facilities.json"
     }
    ]
