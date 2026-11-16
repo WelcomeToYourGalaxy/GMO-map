@@ -1,6 +1,6 @@
 {
  "note": "US environmental-release authorisations harvested from the APHIS BRS public data files (public domain), plus hand-curated records from other registers. Only records with a release component are included — import and interstate movement are not releases. Every position is a state centroid: APHIS publishes release states, never coordinates, so every record is precise:false and draws as a dashed ring. Canadian records come from the CFIA PNT dataset and sit at the national centroid, because that register records a national approval rather than a planting location. Everywhere else is not yet harvested.",
- "generated": "2026-11-15",
+ "generated": "2026-11-16",
  "dropped": {
   "reason": "never authorised — withdrawn, denied, void, returned, incomplete or cancelled",
   "by_status": {
@@ -12,7 +12,7 @@
   "seen": 60577,
   "share_pct": 10.1
  },
- "source": "APHIS BRS public data files, 2026-11-15",
+ "source": "APHIS BRS public data files, 2026-11-16",
  "projects": [
   {
    "name": "DIR 201 — GM wheat & barley field trial (yield enhancement)",
@@ -514206,6 +514206,32 @@
    "checked": ""
   },
   {
+   "name": "Gynem",
+   "source": "industry:repro",
+   "type": "Fertility clinic (OpenStreetMap)",
+   "lat": 50.13646,
+   "lng": 14.45273,
+   "state": "",
+   "precise": true,
+   "addr_grade": "mapped",
+   "impact": 1,
+   "company": "",
+   "size": "",
+   "status": "Mapped in OpenStreetMap",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "repro:clinics"
+   ],
+   "species": [
+    "human"
+   ],
+   "url": "https://www.openstreetmap.org/node/2500345757",
+   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
+   "checked": ""
+  },
+  {
    "name": "Northwest Fertility Center",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -525987,7 +526013,7 @@
    "name": "Instituto Bernabeu Albacete",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 38.99692,
+   "lat": 38.99689,
    "lng": -1.86094,
    "state": "Albacete",
    "precise": true,
@@ -530638,6 +530664,58 @@
    "checked": ""
   },
   {
+   "name": "Kinderwunschzentrum Darmstadt MVZ",
+   "source": "industry:repro",
+   "type": "Fertility clinic (OpenStreetMap)",
+   "lat": 49.87178,
+   "lng": 8.62721,
+   "state": "Darmstadt",
+   "precise": true,
+   "addr_grade": "mapped",
+   "impact": 1,
+   "company": "",
+   "size": "",
+   "status": "Mapped in OpenStreetMap",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "repro:clinics"
+   ],
+   "species": [
+    "human"
+   ],
+   "url": "https://www.openstreetmap.org/node/14363264902",
+   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
+   "checked": ""
+  },
+  {
+   "name": "Klinik Seri Kinrara @ Seri Kembangan",
+   "source": "industry:repro",
+   "type": "Fertility clinic (OpenStreetMap)",
+   "lat": 3.00791,
+   "lng": 101.66721,
+   "state": "Seri Kembangan",
+   "precise": true,
+   "addr_grade": "mapped",
+   "impact": 1,
+   "company": "",
+   "size": "",
+   "status": "Mapped in OpenStreetMap",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "repro:clinics"
+   ],
+   "species": [
+    "human"
+   ],
+   "url": "https://www.openstreetmap.org/node/14371979554",
+   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
+   "checked": ""
+  },
+  {
    "name": "Fertility clinic (unnamed in OpenStreetMap)",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
@@ -534385,7 +534463,7 @@
    "name": "University Hospital",
    "source": "industry:repro",
    "type": "Fertility clinic (OpenStreetMap)",
-   "lat": 5.10518,
+   "lat": 5.10517,
    "lng": -1.28284,
    "state": "",
    "precise": true,
@@ -534717,6 +534795,32 @@
    ],
    "url": "https://www.openstreetmap.org/way/824738155",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by Dr.N.N.Kannappan. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
+   "checked": ""
+  },
+  {
+   "name": "Surgery Center",
+   "source": "industry:repro",
+   "type": "Fertility clinic (OpenStreetMap)",
+   "lat": 45.79027,
+   "lng": -108.51649,
+   "state": "Billings",
+   "precise": true,
+   "addr_grade": "mapped",
+   "impact": 1,
+   "company": "One Sky Health",
+   "size": "",
+   "status": "Mapped in OpenStreetMap",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "repro:clinics"
+   ],
+   "species": [
+    "human"
+   ],
+   "url": "https://www.openstreetmap.org/way/842489827",
+   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. Operated by One Sky Health. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
   {
@@ -536900,6 +537004,32 @@
     "human"
    ],
    "url": "https://www.openstreetmap.org/way/1575936151",
+   "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
+   "checked": ""
+  },
+  {
+   "name": "Fertility clinic (unnamed in OpenStreetMap)",
+   "source": "industry:repro",
+   "type": "Fertility clinic (OpenStreetMap)",
+   "lat": 32.81797,
+   "lng": 13.22101,
+   "state": "",
+   "precise": true,
+   "addr_grade": "mapped",
+   "impact": 1,
+   "company": "",
+   "size": "",
+   "status": "Mapped in OpenStreetMap",
+   "phase": "post",
+   "date": "",
+   "otype": "company",
+   "tags": [
+    "repro:clinics"
+   ],
+   "species": [
+    "human"
+   ],
+   "url": "https://www.openstreetmap.org/way/1577544604",
    "desc": "A clinic mapped in OpenStreetMap as offering fertility treatment. OpenStreetMap holds what somebody chose to map, so a country with few points here may be thinly mapped rather than thinly served. That is the reverse of the national registers alongside it, which are close to complete for one country and silent everywhere else. This layer is a cross-check and a source of leads, not a count.",
    "checked": ""
   },
@@ -539634,7 +539764,7 @@
    "checked": ""
   },
   {
-   "name": "BeOne Medicins (Shanghai) Research & Development Co., Ltd.",
+   "name": "BeOne Medicines (Shanghai) Research & Development Co., Ltd.",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
    "lat": 31.14336,
@@ -539643,7 +539773,7 @@
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
-   "company": "BeOne Medicins (Shanghai) Research & Development Co., Ltd..",
+   "company": "BeOne Medicines (Shanghai) Research & Development Co., Ltd..",
    "size": "",
    "status": "AAALAC accredited",
    "phase": "post",
@@ -539656,7 +539786,7 @@
     "lab_animals"
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of BeOne Medicins (Shanghai) Research & Development Co., Ltd... Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of BeOne Medicines (Shanghai) Research & Development Co., Ltd... Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -565790,7 +565920,7 @@
    "checked": ""
   },
   {
-   "name": "Walter Reed Army Institute of Research and Naval Medical Research Center",
+   "name": "Walter Reed Army Institute of Research/Naval Medical Research and Development Command (WRAIR/NMRDC)",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
    "lat": 38.99595,
