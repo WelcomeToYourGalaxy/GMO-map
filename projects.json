@@ -1,6 +1,6 @@
 {
  "note": "US environmental-release authorisations harvested from the APHIS BRS public data files (public domain), plus hand-curated records from other registers. Only records with a release component are included — import and interstate movement are not releases. Every position is a state centroid: APHIS publishes release states, never coordinates, so every record is precise:false and draws as a dashed ring. Canadian records come from the CFIA PNT dataset and sit at the national centroid, because that register records a national approval rather than a planting location. Everywhere else is not yet harvested.",
- "generated": "2026-11-20",
+ "generated": "2026-11-21",
  "dropped": {
   "reason": "never authorised — withdrawn, denied, void, returned, incomplete or cancelled",
   "by_status": {
@@ -12,7 +12,7 @@
   "seen": 60577,
   "share_pct": 10.1
  },
- "source": "APHIS BRS public data files, 2026-11-20",
+ "source": "APHIS BRS public data files, 2026-11-21",
  "projects": [
   {
    "name": "DIR 201 — GM wheat & barley field trial (yield enhancement)",
@@ -7017,9 +7017,9 @@
    "impact": 1,
    "company": "University of Illinois",
    "size": "1 declared release location across 1 state",
-   "status": "Superceded",
+   "status": "Superceded — expired",
    "phase": "pre",
-   "lapsed": false,
+   "lapsed": true,
    "date": "2025-11-20",
    "url": "https://www.aphis.usda.gov/biotechnology-permits/releases",
    "desc": "Permit to release genetically engineered soybean at 1 declared location in PR. Applicant: University of Illinois. Status: Superceded. Declared traits: herbicide resistance, agronomic properties. The dot is scattered inside the state, not placed at a site: APHIS publishes the state and the number of release locations, never the locations themselves. Australia is the only regulator in the world that publishes field trial sites. Position is a state centroid, not the site — APHIS publishes release states, never coordinates."
@@ -7035,9 +7035,9 @@
    "impact": 1,
    "company": "University of Illinois",
    "size": "1 declared release location across 1 state",
-   "status": "Superceded",
+   "status": "Superceded — expired",
    "phase": "pre",
-   "lapsed": false,
+   "lapsed": true,
    "date": "2025-11-20",
    "url": "https://www.aphis.usda.gov/biotechnology-permits/releases",
    "desc": "Permit to release genetically engineered soybean at 1 declared location in PR. Applicant: University of Illinois. Status: Superceded. Declared traits: agronomic properties, herbicide resistance. The dot is scattered inside the state, not placed at a site: APHIS publishes the state and the number of release locations, never the locations themselves. Australia is the only regulator in the world that publishes field trial sites. Position is a state centroid, not the site — APHIS publishes release states, never coordinates."
@@ -7053,9 +7053,9 @@
    "impact": 2,
    "company": "University of Illinois",
    "size": "2 declared release locations across 1 state",
-   "status": "Issued",
+   "status": "Issued — expired",
    "phase": "post",
-   "lapsed": false,
+   "lapsed": true,
    "date": "2025-11-20",
    "url": "https://www.aphis.usda.gov/biotechnology-permits/releases",
    "desc": "Permit to release genetically engineered soybean at 2 declared locations in PR. Applicant: University of Illinois. Status: Issued. Declared traits: agronomic properties, herbicide resistance. The dot is scattered inside the state, not placed at a site: APHIS publishes the state and the number of release locations, never the locations themselves. Australia is the only regulator in the world that publishes field trial sites. Position is a state centroid, not the site — APHIS publishes release states, never coordinates."
@@ -452669,6 +452669,25 @@
    "checked": ""
   },
   {
+   "name": "JBK(S) 602-1/1/16",
+   "source": "bch:decision",
+   "type": "organism not named in the title, national biosafety decision",
+   "lat": 4.2,
+   "lng": 102.0,
+   "state": "MY",
+   "precise": false,
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "['{\"normalizedUID\":\"MST-FGØ72-2\",\"eventID\":\"1605\",\"decisions\":{\"feed\":true,\"food\":true},\"uniqueIdentification\":\"MST-FGØ72-2\"}']",
+   "phase": "post",
+   "date": "2014-12-19",
+   "lapsed": false,
+   "url": "https://bch.cbd.int/en/database/52000000cbd0800000019ee6",
+   "desc": "A decision on a living modified organism, filed by the country itself to the Biosafety Clearing-House. Article 20 of the Cartagena Protocol requires every party to file its release and market decisions there within fifteen days, and 173 parties are bound by it. The United States is not among them. Nowhere else holds national release decisions from this many countries in one place. A country with no records here has not necessarily approved nothing — it may not have filed, and from the outside those two look the same.",
+   "checked": ""
+  },
+  {
    "name": "Biosafety Law 1 for Comoros",
    "source": "bch:decision",
    "type": "organism not named in the title, national biosafety decision",
@@ -479079,25 +479098,6 @@
    "checked": ""
   },
   {
-   "name": "JBK(S) 602-1/1/16",
-   "source": "bch:decision",
-   "type": "organism not named in the title, national biosafety decision",
-   "lat": 4.2,
-   "lng": 102.0,
-   "state": "MY",
-   "precise": false,
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "['{\"normalizedUID\":\"MST-FGØ72-2\",\"eventID\":\"1605\",\"decisions\":{\"feed\":true,\"food\":true},\"uniqueIdentification\":\"MST-FGØ72-2\"}']",
-   "phase": "post",
-   "date": "2014-12-19",
-   "lapsed": false,
-   "url": "https://bch.cbd.int/en/database/52000000cbd0800000019ee6",
-   "desc": "A decision on a living modified organism, filed by the country itself to the Biosafety Clearing-House. Article 20 of the Cartagena Protocol requires every party to file its release and market decisions there within fifteen days, and 173 parties are bound by it. The United States is not among them. Nowhere else holds national release decisions from this many countries in one place. A country with no records here has not necessarily approved nothing — it may not have filed, and from the outside those two look the same.",
-   "checked": ""
-  },
-  {
    "name": "Algodón genéticamente modificado (Gossypium hirsutum) Resistente a Lepidópteros. Tolerante a los herbicidas dicamba, glufosinato de amonio y glifosato",
    "source": "bch:decision",
    "type": "cotton, national biosafety decision",
@@ -481103,7 +481103,7 @@
    "impact": 2,
    "company": "",
    "size": "",
-   "status": "['{\"normalizedUID\":\"MST-FGØ72-2\",\"eventID\":\"1605\",\"decisions\":{\"environmentalImport\":true,\"feed\":true,\"food\":true},\"uniqueIdentification\":\"MST-FGØ72-2\"}']",
+   "status": "approved",
    "phase": "post",
    "date": "2014-01-09",
    "lapsed": false,
