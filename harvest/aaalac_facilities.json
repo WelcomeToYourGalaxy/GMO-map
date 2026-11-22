@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-15",
+ "generated": "2026-11-22",
  "note": "AAALAC International accredited organisations. Voluntary accreditation, not a register: absence means not accredited, not no animal research. City-level positions only.",
  "projects": [
   {
@@ -2395,32 +2395,6 @@
    "checked": ""
   },
   {
-   "name": "Jiangsu Johnsen Bioresource Co., Ltd",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 31.27871,
-   "lng": 120.72376,
-   "state": "JIANGSU PROVINCE, P.R. CHINA",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Beijing Life-Biosciences Co., Ltd.",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Beijing Life-Biosciences Co., Ltd.. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
    "name": "Beijing Division, Qidong Division and Gu'an Division of Beijing Marshall Biotechnology Co., Ltd.",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -4498,6 +4472,32 @@
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
    "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Centre Testing International Group Co., Ltd. (CTI). Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Centro Nacional de Primatas (CENP)",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": -1.37403,
+   "lng": -48.40166,
+   "state": "ANANINDEUA, PARÁ, BRAZIL",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {
@@ -9467,32 +9467,6 @@
    "checked": ""
   },
   {
-   "name": "Evotec Anti-infectives Group",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": 53.26066,
-   "lng": -2.12552,
-   "state": "CHESHIRE, MACCLESFIELD, UNITED KINGDOM",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "Evotec SE",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Evotec SE. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
    "name": "Exelixis, Inc.",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
@@ -12744,6 +12718,32 @@
   },
   {
    "name": "Jiangsu Huajing Molecular Image and Medicine Research Institute Co., Ltd.",
+   "source": "industry:animals",
+   "type": "Accredited animal research organisation",
+   "lat": 31.27871,
+   "lng": 120.72376,
+   "state": "JIANGSU PROVINCE, P.R. CHINA",
+   "precise": false,
+   "addr_grade": "administrative",
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "AAALAC accredited",
+   "phase": "post",
+   "date": "",
+   "otype": "institute",
+   "tags": [
+    "animals:services"
+   ],
+   "species": [
+    "lab_animals"
+   ],
+   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "checked": ""
+  },
+  {
+   "name": "Jiangsu Johnsen Bioresource Co., Ltd",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
    "lat": 31.27871,
@@ -17117,32 +17117,6 @@
    "lat": 39.73924,
    "lng": -104.98486,
    "state": "DENVER, CO, UNITED STATES",
-   "precise": false,
-   "addr_grade": "administrative",
-   "impact": 2,
-   "company": "",
-   "size": "",
-   "status": "AAALAC accredited",
-   "phase": "post",
-   "date": "",
-   "otype": "institute",
-   "tags": [
-    "animals:services"
-   ],
-   "species": [
-    "lab_animals"
-   ],
-   "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
-   "checked": ""
-  },
-  {
-   "name": "National Primate Center (CENP)",
-   "source": "industry:animals",
-   "type": "Accredited animal research organisation",
-   "lat": -1.37403,
-   "lng": -48.40166,
-   "state": "ANAINDEUA, PARÁ, BRAZIL",
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
@@ -24781,7 +24755,7 @@
    "checked": ""
   },
   {
-   "name": "Therapeutic Systems Research Laboratories, Inc.",
+   "name": "TSRLabs",
    "source": "industry:animals",
    "type": "Accredited animal research organisation",
    "lat": 42.28137,
@@ -24790,7 +24764,7 @@
    "precise": false,
    "addr_grade": "administrative",
    "impact": 2,
-   "company": "",
+   "company": "Therapeutic Systems Research Laboratories, Inc.",
    "size": "",
    "status": "AAALAC accredited",
    "phase": "post",
@@ -24803,7 +24777,7 @@
     "lab_animals"
    ],
    "url": "https://www.aaalac.org/accreditation/directory/directory-of-accredited-organizations-search-result/",
-   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
+   "desc": "An organisation accredited by AAALAC International for its care and use of laboratory animals. Part of Therapeutic Systems Research Laboratories, Inc.. Accreditation is voluntary and paid for, so this is a list of organisations that chose to be inspected rather than a register of everyone doing the work. An organisation absent from it is not accredited; that says nothing about whether it uses animals. In several countries the largest users are absent for exactly that reason. The directory gives a city and country and no street address, so this point marks where the organisation is registered rather than the building where animals are held.",
    "checked": ""
   },
   {

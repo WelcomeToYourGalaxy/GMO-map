@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-15",
+ "generated": "2026-11-22",
  "bch": [
   {
    "name": "TUC-873RH-7 - Herbicide-tolerant sugarcane",
@@ -1849,18 +1849,6 @@
    "url": "https://data.gov.au/data/dataset/nsw-3-11467-government-gazette-of-the-state-of-new-south-wales-week-no-48-2011"
   },
   {
-   "title": "Government Gazette of the State of New South Wales Week No. 06/2009",
-   "org": "NSW Government",
-   "files": [
-    {
-     "name": "document 12665",
-     "format": "PDF",
-     "url": "https://data.nsw.gov.au/data/dataset/e20aa307-06a5-4a64-8abb-42e6f2f31f2c/resource/bb071024-4f01-43dc-999a-adfffb3e5f45/download/document_12665.pdf"
-    }
-   ],
-   "url": "https://data.gov.au/data/dataset/nsw-3-11614-government-gazette-of-the-state-of-new-south-wales-week-no-06-2009"
-  },
-  {
    "title": "Privacy NSW Annual Report 2006 2007",
    "org": "NSW Government",
    "files": [
@@ -1871,6 +1859,18 @@
     }
    ],
    "url": "https://data.gov.au/data/dataset/nsw-3-11049-privacy-nsw-annual-report-2006-2007"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 06/2009",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12665",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/e20aa307-06a5-4a64-8abb-42e6f2f31f2c/resource/bb071024-4f01-43dc-999a-adfffb3e5f45/download/document_12665.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11614-government-gazette-of-the-state-of-new-south-wales-week-no-06-2009"
   },
   {
    "title": "Government Gazette of the State of New South Wales Week No. 42/2005",
@@ -1921,18 +1921,6 @@
    "url": "https://data.gov.au/data/dataset/nsw-3-11569-government-gazette-of-the-state-of-new-south-wales-week-no-51-2009"
   },
   {
-   "title": "Government Gazette of the State of New South Wales Week No. 44/2008",
-   "org": "NSW Government",
-   "files": [
-    {
-     "name": "document 12682",
-     "format": "PDF",
-     "url": "https://data.nsw.gov.au/data/dataset/e1c7362d-9c12-405e-bf23-a565088a2883/resource/6f2c91c1-6aa3-449b-8712-6ed2d2f467e2/download/document_12682.pdf"
-    }
-   ],
-   "url": "https://data.gov.au/data/dataset/nsw-3-11628-government-gazette-of-the-state-of-new-south-wales-week-no-44-2008"
-  },
-  {
    "title": "Government Gazette of the State of New South Wales Week No. 44/2005",
    "org": "NSW Government",
    "files": [
@@ -1943,6 +1931,18 @@
     }
    ],
    "url": "https://data.gov.au/data/dataset/nsw-3-11784-government-gazette-of-the-state-of-new-south-wales-week-no-44-2005"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 44/2008",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12682",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/e1c7362d-9c12-405e-bf23-a565088a2883/resource/6f2c91c1-6aa3-449b-8712-6ed2d2f467e2/download/document_12682.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11628-government-gazette-of-the-state-of-new-south-wales-week-no-44-2008"
   },
   {
    "title": "Government Gazette of the State of New South Wales Week No. 41/2011",
@@ -1993,18 +1993,6 @@
    "url": "https://data.gov.au/data/dataset/nsw-3-10619-department-of-environment-and-conservation-nsw-annual-report-2003-04"
   },
   {
-   "title": "Government Gazette of the State of New South Wales Week No. 08/2003",
-   "org": "NSW Government",
-   "files": [
-    {
-     "name": "document 13081",
-     "format": "PDF",
-     "url": "https://data.nsw.gov.au/data/dataset/dc15e2c3-b3be-43a6-beee-4eb6b6c6650d/resource/5a1b7ee3-813a-49ea-93ab-5de0e84082f3/download/document_13081.pdf"
-    }
-   ],
-   "url": "https://data.gov.au/data/dataset/nsw-3-11925-government-gazette-of-the-state-of-new-south-wales-week-no-08-2003"
-  },
-  {
    "title": "WAMSI 2 - Dredging Node - Project 4.1 - Assessing impacts of dredging on corals, Western Australia",
    "org": "Australian Ocean Data Network",
    "files": [
@@ -2040,6 +2028,18 @@
     }
    ],
    "url": "https://data.gov.au/data/dataset/wamsi-2-dredging-node-project-4-1-assessing-impacts-of-dredging-on-corals-western-australia"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 08/2003",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 13081",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/dc15e2c3-b3be-43a6-beee-4eb6b6c6650d/resource/5a1b7ee3-813a-49ea-93ab-5de0e84082f3/download/document_13081.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11925-government-gazette-of-the-state-of-new-south-wales-week-no-08-2003"
   },
   {
    "title": "NSW Child Death Review Team Annual Report 2014",
@@ -2114,18 +2114,6 @@
    "url": "https://data.gov.au/data/dataset/nsw-3-10357-privacy-nsw-annual-report-2005-06"
   },
   {
-   "title": "Government Gazette of the State of New South Wales Week No. 04/2008",
-   "org": "NSW Government",
-   "files": [
-    {
-     "name": "document 12753",
-     "format": "PDF",
-     "url": "https://data.nsw.gov.au/data/dataset/ffc6cf33-7ee3-4211-b669-c7cae61ebce6/resource/f9bbf70f-962e-41e8-949a-a4115e6994e0/download/document_12753.pdf"
-    }
-   ],
-   "url": "https://data.gov.au/data/dataset/nsw-3-11668-government-gazette-of-the-state-of-new-south-wales-week-no-04-2008"
-  },
-  {
    "title": "Botanic Gardens Trust Annual Report 2005-2006",
    "org": "NSW Government",
    "files": [
@@ -2136,6 +2124,18 @@
     }
    ],
    "url": "https://data.gov.au/data/dataset/nsw-3-9750-botanic-gardens-trust-annual-report-2005-2006"
+  },
+  {
+   "title": "Government Gazette of the State of New South Wales Week No. 04/2008",
+   "org": "NSW Government",
+   "files": [
+    {
+     "name": "document 12753",
+     "format": "PDF",
+     "url": "https://data.nsw.gov.au/data/dataset/ffc6cf33-7ee3-4211-b669-c7cae61ebce6/resource/f9bbf70f-962e-41e8-949a-a4115e6994e0/download/document_12753.pdf"
+    }
+   ],
+   "url": "https://data.gov.au/data/dataset/nsw-3-11668-government-gazette-of-the-state-of-new-south-wales-week-no-04-2008"
   },
   {
    "title": "Government Gazette of the State of New South Wales Week No. 46/2008",

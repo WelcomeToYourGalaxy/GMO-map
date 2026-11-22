@@ -1,11 +1,11 @@
 {
  "after_merge": 0,
- "corpus": 1523,
+ "corpus": 1527,
  "mapped": 0,
  "reasons": {
-  "no_place_match": 1008,
-  "sector_or_market": 10,
-  "supralocal": 23
+  "no_place_match": 998,
+  "sector_or_market": 8,
+  "supralocal": 25
  },
- "wire_items": 1041
+ "wire_items": 1031
 }
