@@ -1,6 +1,6 @@
 {
  "note": "IPPC official contact points, Article VIII.2. ORGANIZATION ONLY - the source is a contact list and every personal field is dropped before writing, with an assertion. No website is published in this source, so these name a body and do not link it.",
- "generated": "2026-11-22",
+ "generated": "2026-11-23",
  "contacts": [
   {
    "country": "Guyana",
@@ -249,12 +249,6 @@
    "_source": "IPPC official contact points, Art. VIII.2"
   },
   {
-   "country": "Afghanistan",
-   "region": "Near East",
-   "organization": "Plant Protection and Quarantine DIrectorate",
-   "_source": "IPPC official contact points, Art. VIII.2"
-  },
-  {
    "country": "Uganda",
    "region": "Africa",
    "organization": "Ministry of Agriculture Animal Industry and Fisheries",
@@ -354,12 +348,6 @@
    "country": "Sweden",
    "region": "Europe",
    "organization": "Swedish Board of Agriculture",
-   "_source": "IPPC official contact points, Art. VIII.2"
-  },
-  {
-   "country": "Syrian Arab Republic",
-   "region": "Near East",
-   "organization": "Ministry of Agriculture",
    "_source": "IPPC official contact points, Art. VIII.2"
   },
   {
@@ -1086,6 +1074,12 @@
    "country": "Hungary",
    "region": "Europe",
    "organization": "Ministry of Agriculture and Food",
+   "_source": "IPPC official contact points, Art. VIII.2"
+  },
+  {
+   "country": "Syrian Arab Republic",
+   "region": "Near East",
+   "organization": "Plant Protection Directorate, Ministry of Agriculture",
    "_source": "IPPC official contact points, Art. VIII.2"
   }
  ]
