@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24",
+ "generated": "2026-11-25",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
@@ -22,9 +22,9 @@
    "name": "WTO / ePing notifications",
    "kind": "feed",
    "ok": true,
-   "rows": 9,
+   "rows": 10,
    "url": "https://eping.wto.org/en/Search",
-   "message": "106995 notifications scanned"
+   "message": "107022 notifications scanned"
   },
   {
    "name": "EFSA",
@@ -133,6 +133,14 @@
    "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NCHE77A4.docx",
    "country": "Switzerland",
    "ref": "G/SPS/N/CHE/77/Add.4"
+  },
+  {
+   "title": "General Requirements for Genetically Modified Unprocessed Agricultural Products",
+   "agency": "WTO Regular notification",
+   "closes": "2027-01-23",
+   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NJOR51.docx",
+   "country": "Jordan",
+   "ref": "G/SPS/N/JOR/51"
   }
  ]
 }
