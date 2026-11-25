@@ -1,6 +1,6 @@
 {
  "note": "US environmental-release authorisations harvested from the APHIS BRS public data files (public domain), plus hand-curated records from other registers. Only records with a release component are included — import and interstate movement are not releases. Every position is a state centroid: APHIS publishes release states, never coordinates, so every record is precise:false and draws as a dashed ring. Canadian records come from the CFIA PNT dataset and sit at the national centroid, because that register records a national approval rather than a planting location. Everywhere else is not yet harvested.",
- "generated": "2026-11-24",
+ "generated": "2026-11-25",
  "dropped": {
   "reason": "never authorised — withdrawn, denied, void, returned, incomplete or cancelled",
   "by_status": {
@@ -12,7 +12,7 @@
   "seen": 60577,
   "share_pct": 10.1
  },
- "source": "APHIS BRS public data files, 2026-11-24",
+ "source": "APHIS BRS public data files, 2026-11-25",
  "projects": [
   {
    "name": "DIR 201 — GM wheat & barley field trial (yield enhancement)",
@@ -442995,6 +442995,25 @@
    "date": "",
    "url": "https://www.ogtr.gov.au/what-weve-approved/crop-field-trial-map",
    "desc": "WHAT. A licensed GMO crop field trial site, Disease resistance, Selectable marker – antibiotic, held by Queensland University of Technology. WHERE IT SITS. OGTR named the council area this site is in and published no coordinate on the page this was read from, so this marker sits in that council area and not at the trial itself. WHY IT MATTERS. OGTR names the council area of every licensed site, its area in hectares and the licence it runs under. No other register on this map states where a release is at all, which is the comparison worth making even at this resolution.",
+   "checked": ""
+  },
+  {
+   "name": "NBA International Scientific Conference",
+   "source": "bch:decision",
+   "type": "organism not named in the title, national biosafety decision",
+   "lat": -0.02,
+   "lng": 37.9,
+   "state": "KE",
+   "precise": false,
+   "impact": 2,
+   "company": "",
+   "size": "",
+   "status": "2026-11-25",
+   "phase": "post",
+   "date": "2026-11-25",
+   "lapsed": false,
+   "url": "https://bch.cbd.int/en/database/52000000cbd0800000049def",
+   "desc": "A decision on a living modified organism, filed by the country itself to the Biosafety Clearing-House. Article 20 of the Cartagena Protocol requires every party to file its release and market decisions there within fifteen days, and 173 parties are bound by it. The United States is not among them. Nowhere else holds national release decisions from this many countries in one place. A country with no records here has not necessarily approved nothing — it may not have filed, and from the outside those two look the same.",
    "checked": ""
   },
   {
