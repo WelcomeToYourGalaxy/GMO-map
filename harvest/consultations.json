@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25",
+ "generated": "2026-11-26",
  "note": "Comment windows open at the time of harvest. The map checks the generated date and refuses to show this list if it is stale, because a closed window presented as open is worse than no list at all. sources_reached counts FEEDS that answered; a venue with no fetchable list is carried as kind:\"note\" and is not counted.",
  "sources": [
   {
@@ -21,10 +21,10 @@
   {
    "name": "WTO / ePing notifications",
    "kind": "feed",
-   "ok": true,
-   "rows": 10,
+   "ok": false,
+   "rows": 0,
    "url": "https://eping.wto.org/en/Search",
-   "message": "107022 notifications scanned"
+   "message": "the workbook was fetched but could not be read: File is not a zip file"
   },
   {
    "name": "EFSA",
@@ -43,65 +43,9 @@
    "message": "The Cartagena Protocol obliges a party to consult the public (Art. 23) but does not require the consultation to be filed, and the BCH publishes no open-window record type. Its decision records document decisions already taken. Search the national records for your own country."
   }
  ],
- "sources_reached": 3,
+ "sources_reached": 2,
  "sources_total": 3,
  "consultations": [
-  {
-   "title": "DJS 2434:2026 – Terms and definitions of genetically modified (GM) foods",
-   "agency": "WTO Regular notification",
-   "closes": "2026-12-08",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/JOR109.docx",
-   "country": "Jordan",
-   "ref": "G/TBT/N/JOR/109"
-  },
-  {
-   "title": "Terms and definitions of genetically modified (GM) foods",
-   "agency": "WTO Regular notification",
-   "closes": "2026-12-12",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NJOR50.docx",
-   "country": "Jordan",
-   "ref": "G/SPS/N/JOR/50"
-  },
-  {
-   "title": "General requirements for novel feeds and feed products of biotechnology.",
-   "agency": "WTO Regular notification",
-   "closes": "2026-12-12",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NSAU637.docx",
-   "country": "Saudi Arabia, Kingdom of",
-   "ref": "G/SPS/N/SAU/637"
-  },
-  {
-   "title": "General requirements for novel feeds and feed products of biotechnology",
-   "agency": "WTO Regular notification",
-   "closes": "2026-12-13",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/SAU1458.docx",
-   "country": "Saudi Arabia, Kingdom of",
-   "ref": "G/TBT/N/SAU/1458"
-  },
-  {
-   "title": "Proyecto de resolución \"Por medio de la cual se actualizan los requisitos sanitarios para la importación a Colombia de semen bovino congelado, procedente de Estados Unidos, para mejoramiento genético\"",
-   "agency": "WTO Regular notification",
-   "closes": "2026-12-25",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NCOL438.docx",
-   "country": "Colombia",
-   "ref": "G/SPS/N/COL/438"
-  },
-  {
-   "title": "DJS 2438:2026 – General Requirements for Genetically Modified Unprocessed Agricultural Products",
-   "agency": "WTO Regular notification",
-   "closes": "2027-01-01",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/JOR111.docx",
-   "country": "Jordan",
-   "ref": "G/TBT/N/JOR/111"
-  },
-  {
-   "title": "Proposed amendment to the “Regulation on Safety Assessment for Genetically Modified Food Products” (MFDS notification No. 2023-43, 14 June 2023)",
-   "agency": "WTO Regular notification",
-   "closes": "2027-01-01",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/KOR1385.docx",
-   "country": "Korea, Republic of",
-   "ref": "G/TBT/N/KOR/1385"
-  },
   {
    "title": "Pioneer Hi-Bred International, Inc.: Availability of a Petition for a Determination of Nonregulated Status and Draft Plant Pest Risk Assessment for Insect Resistant COR-ØØ121-4 Maize (Zea mays)",
    "agency": "Agriculture Department",
@@ -111,36 +55,12 @@
    "ref": "2026-22810"
   },
   {
-   "title": "Proyecto de Norma Metrológica Peruana PNMP 021:2026 “Esfigmomanómetros no invasivos no automáticos”. Parte 1: Requisitos metrológicos y técnicos. Diecisiete (17) páginas, en españolParte 2: Procedimie",
-   "agency": "WTO Regular notification",
-   "closes": "2027-01-10",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/TBTN26/PER184.docx",
-   "country": "Peru",
-   "ref": "G/TBT/N/PER/184"
-  },
-  {
    "title": "Mozza Foods, Inc.: Availability of a Petition for a Determination of Nonregulated Status and Draft Plant Pest Risk Assessment for MF1786-1 Soybean (Glycine max) Expressing Casein Proteins",
    "agency": "Agriculture Department",
    "closes": "2027-01-11",
    "url": "https://www.federalregister.gov/documents/2026/11/12/2026-23015/mozza-foods-inc-availability-of-a-petition-for-a-determination-of-nonregulated-status-and-draft",
    "country": "United States",
    "ref": "2026-23015"
-  },
-  {
-   "title": "Ordinance on Genetically Modified Foodstuffs (GMFO)",
-   "agency": "WTO Addendum to Regular Notification",
-   "closes": "2027-01-14",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NCHE77A4.docx",
-   "country": "Switzerland",
-   "ref": "G/SPS/N/CHE/77/Add.4"
-  },
-  {
-   "title": "General Requirements for Genetically Modified Unprocessed Agricultural Products",
-   "agency": "WTO Regular notification",
-   "closes": "2027-01-23",
-   "url": "https://docs.wto.org/imrd/directdoc.asp?DDFDocuments/T/G/SPS/NJOR51.docx",
-   "country": "Jordan",
-   "ref": "G/SPS/N/JOR/51"
   }
  ]
 }
